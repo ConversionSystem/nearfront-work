@@ -296,7 +296,8 @@ def profile_for(url, rel, work=False):
     """
     if rel.startswith("public/reports/"):
         return "report"
-    if work and (rel == "public/index.html" or rel.startswith("public/proposals/")):
+    if work and (rel == "public/index.html" or rel == "public/404.html"
+                 or rel.startswith("public/proposals/")):
         return "report"
     if rel == "public/404.html":
         return "error"
