@@ -262,8 +262,10 @@ def git_changed(root, base):
     except Exception:
         pass
     try:
+        # -uall lists untracked FILES. Without it git reports a brand-new page as
+        # its directory ("public/webinars/"), and the new file is never checked.
         out = subprocess.check_output(
-            ["git", "status", "--porcelain"],
+            ["git", "status", "--porcelain", "-uall"],
             cwd=root, stderr=subprocess.STDOUT).decode("utf-8", "replace")
         for line in out.splitlines():
             if len(line) > 3 and not line[:2].strip().startswith("D"):
