@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garden of Eden: Growth Proposal</title>
+<style>
+  :root {
+    --navy: #1F2A44;
+    --navy-dark: #141c30;
+    --gold: #8A6D3B;
+    --gold-light: #C9A227;
+    --green: #1E7145;
+    --red: #A13B2A;
+    --bg: #F2F0EC;
+    --card-border: #E4E1D9;
+    --text: #1A1A1A;
+    --text-muted: #6B6B6B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 24px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .eyebrow.dark-on-light { color: var(--gold); }
+  .card-dark {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: 14px;
+    padding: 32px 36px;
+    color: #fff;
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .header .subtitle {
+    color: var(--gold-light);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+  .divider-gold {
+    width: 56px;
+    height: 3px;
+    background: var(--gold-light);
+    margin: 0 0 16px;
+    border-radius: 2px;
+  }
+  .header .meta {
+    color: #B8BFCF;
+    font-size: 12.5px;
+    margin: 0;
+  }
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px 28px;
+  }
+  .stat-strip.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat .label {
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 10px;
+    color: #9AA3B8;
+    font-weight: 700;
+  }
+  .stat .value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .stat .sub {
+    font-size: 11.5px;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .section-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin: 8px 0 14px;
+  }
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+  .phase-card {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-top: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .phase-card.phase-2 { border-top-color: var(--navy); }
+  .phase-card.phase-3 { border-top-color: #B7B2A6; }
+  .phase-card h3 {
+    font-size: 15px;
+    margin: 0 0 10px;
+    color: var(--navy);
+  }
+  .phase-card p {
+    margin: 0;
+    color: #3a3a3a;
+    font-size: 13px;
+  }
+  .phase-card .tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    background: #FBF4E5;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .phase-card.phase-2 .tag { color: var(--navy); background: #EBEEF4; }
+  .phase-card.phase-3 .tag { color: #7a7566; background: #F1EFEA; }
+
+  .gap-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+  .gap-card {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .gap-card .big {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+  .gap-card .title {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .gap-card .desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  .chart-card {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 24px 28px 12px;
+    margin-bottom: 24px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  thead th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    font-weight: 700;
+    padding: 12px 16px;
+    background: #FAFAF8;
+    border-bottom: 1px solid var(--card-border);
+  }
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tr.milestone-1 td { background: #FBF4E5; }
+  tr.milestone-2 td { background: #EDF5EF; }
+  .pos { color: var(--green); font-weight: 700; }
+  .muted-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 10px 4px 28px;
+    line-height: 1.6;
+  }
+  .channel-name { font-weight: 700; color: var(--navy); }
+  .channel-desc { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .spend { color: var(--gold); font-weight: 700; }
+  .revenue { color: var(--green); font-weight: 700; }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .tl-card {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px 16px;
+  }
+  .tl-card.target { background: #FBF4E5; border-color: #E9D9AE; }
+  .tl-card.target.final { background: #EDF5EF; border-color: #BFDCC9; }
+  .tl-card .mo { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; }
+  .tl-card .headline { font-size: 14px; font-weight: 700; color: var(--navy); margin: 4px 0 8px; }
+  .tl-card .headline.gold { color: var(--gold); }
+  .tl-card .headline.green { color: var(--green); }
+  .tl-card .body { font-size: 11.5px; color: #444; line-height: 1.5; }
+
+  .note-box {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--navy);
+    border-radius: 8px;
+    padding: 18px 22px;
+    font-size: 12.5px;
+    color: #3a3a3a;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding-top: 12px;
+  }
+  .footer strong { color: var(--navy); }
+
+  @media (max-width: 900px) {
+    .stat-strip, .stat-strip.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .phase-grid, .gap-list, .timeline { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="card-dark header">
+    <div class="eyebrow">Nearfront: Growth Proposal</div>
+    <h1>Garden of Eden: Hayward &amp; Tracy Growth Plan</h1>
+    <p class="subtitle">$1.14M/mo combined baseline &rarr; $1.36M/mo within 6 months. $1.53M/mo within 12 months.</p>
+    <div class="divider-gold"></div>
+    <p class="meta">Prepared for Ashwin Bhagat | goe.menu | Nearfront | Guillermo Bravo</p>
+    <p class="meta" style="margin-top: 10px;">Built at full access: Google Search Console, Google Analytics 4, Google Business Profile, and Treez. This is a data-grounded growth model, not a template SEO pitch, every figure above traces back to a live report.</p>
+  </div>
+
+  <!-- Starting Point -->
+  <div class="section-label">Starting point (Q2 2026 actuals)</div>
+  <div class="card-dark">
+    <div class="stat-strip cols-4">
+      <div class="stat">
+        <div class="label">Combined gross sales / month</div>
+        <div class="value">$1,141,337</div>
+        <div class="sub">Treez, Apr&ndash;Jun avg</div>
+      </div>
+      <div class="stat">
+        <div class="label">Hayward / Tracy split</div>
+        <div class="value">66 / 34</div>
+        <div class="sub">$746,559 vs $394,779 /mo</div>
+      </div>
+      <div class="stat">
+        <div class="label">Tickets / month</div>
+        <div class="value">~25,339</div>
+        <div class="sub">$44.65 avg blended ticket</div>
+      </div>
+      <div class="stat">
+        <div class="label">goe.menu sessions / month</div>
+        <div class="value">~16,608</div>
+        <div class="sub">68% organic search</div>
+      </div>
+    </div>
+    <div class="stat-strip cols-4" style="margin-top:24px;">
+      <div class="stat">
+        <div class="label">Target, 6 months</div>
+        <div class="value">$1.36M</div>
+        <div class="sub">January 2027</div>
+      </div>
+      <div class="stat">
+        <div class="label">Target, 12 months</div>
+        <div class="value">$1.53M</div>
+        <div class="sub">July 2027</div>
+      </div>
+      <div class="stat">
+        <div class="label">Locations live / pipeline</div>
+        <div class="value">2 / 2</div>
+        <div class="sub">Sunol coming soon, 4th reported</div>
+      </div>
+      <div class="stat">
+        <div class="label">Weed delivery visibility today</div>
+        <div class="value">0%</div>
+        <div class="sub">Both locations, 20-mile grid</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why SEO leads -->
+  <div class="section-label">Why SEO leads: three quantified, fixable gaps</div>
+  <div class="gap-list">
+    <div class="gap-card">
+      <div class="big">0%</div>
+      <div class="title">Weed delivery: zero visibility</div>
+      <div class="desc">0% Share of Local Voice at both stores across a 20-mile, 81-point grid, confirmed twice. Top competitors sit at 42% (Hayward) and 67% (Tracy) Share of Local Voice in the same radius. Root cause: missing GBP delivery category and an underbuilt delivery page. Real demand sitting untapped: 3,600&ndash;5,500 searches/month nationally at low-to-moderate difficulty.</div>
+    </div>
+    <div class="gap-card">
+      <div class="big">#9</div>
+      <div class="title">Tracy's organic ranking</div>
+      <div class="desc">Tracy ranks #9 for its own branded term, behind three direct competitors and Garden of Eden's own Weedmaps listing. Hayward, by contrast, ranks #1 for the same type of term. Closing this gap alone is a direct, quantifiable lift.</div>
+    </div>
+    <div class="gap-card">
+      <div class="big">DR 24</div>
+      <div class="title">Domain authority &amp; AI visibility gap</div>
+      <div class="desc">goe.menu carries a Domain Rating of 24 against directly researched competitors Cookies Hayward (DR 41) and Stiiizy (DR 66), plus national directories at 72&ndash;94 DR. The same gap shows up in AI search: both locations already surface in ChatGPT for local queries, but Hayward sits 2nd and Tracy last among the businesses cited. Roughly two-thirds of historical referring domains have been lost and were never rebuilt.</div>
+    </div>
+  </div>
+
+  <!-- Keyword-level proof -->
+  <div class="section-label">Keyword-level proof: content wins, ranks</div>
+  <div class="card-dark">
+    <div class="stat-strip cols-4">
+      <div class="stat">
+        <div class="label">Keywords tracked</div>
+        <div class="value">50</div>
+        <div class="sub">All 25 cities in the confirmed delivery zone</div>
+      </div>
+      <div class="stat">
+        <div class="label">Ranking in Google today</div>
+        <div class="value">15</div>
+        <div class="sub">30% of tracked keywords</div>
+      </div>
+      <div class="stat">
+        <div class="label">Not ranking at all</div>
+        <div class="value">35</div>
+        <div class="sub">70%, all in cities with no page yet</div>
+      </div>
+      <div class="stat">
+        <div class="label">Avg. position, if ranking</div>
+        <div class="value">9.0</div>
+        <div class="sub">Google desktop, Jul 20 2026</div>
+      </div>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Keyword</th><th>Position</th><th>Landing page</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Tracy dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
+      <tr><td>Hayward dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
+      <tr><td>Castro Valley dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
+      <tr><td>Tracy weed delivery</td><td class="pos">2</td><td>goe.menu/services/delivery/</td></tr>
+      <tr><td>San Lorenzo dispensary</td><td class="pos">4</td><td>goe.menu/</td></tr>
+      <tr><td>Ripon dispensary</td><td class="pos">4</td><td>goe.menu/location-tracy/ripon-ca/</td></tr>
+      <tr><td>Sunol dispensary</td><td class="pos">5</td><td>goe.menu/</td></tr>
+      <tr><td>Hayward weed delivery</td><td class="pos">6</td><td>goe.menu/</td></tr>
+      <tr><td>French Camp weed delivery</td><td>11</td><td>goe.menu/services/delivery/</td></tr>
+      <tr><td>Mountain House dispensary</td><td>12</td><td>goe.menu/location-tracy/mountain-house-ca/</td></tr>
+      <tr><td>Lathrop dispensary</td><td>14</td><td>goe.menu/location-tracy/lathrop-ca/</td></tr>
+      <tr><td>Livermore dispensary</td><td>14</td><td>goe.menu/hayward/livermore-ca/</td></tr>
+      <tr><td>San Leandro weed delivery</td><td>16</td><td>goe.menu/services/delivery/</td></tr>
+      <tr><td>Sunol weed delivery</td><td>16</td><td>goe.menu/</td></tr>
+      <tr><td>San Lorenzo weed delivery</td><td>25</td><td>goe.menu/</td></tr>
+      <tr><td>Byron dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Byron weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Castro Valley weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Discovery Bay dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Discovery Bay weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Dublin dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Dublin weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Fremont dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Fremont weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>French Camp dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Lathrop weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Livermore weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Manteca dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Manteca weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Mountain House weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Newark dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Newark weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Pleasanton dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Pleasanton weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Ripon weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>San Leandro dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>San Ramon dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>San Ramon weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Union City dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Union City weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Atlanta dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Atlanta weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Brentwood dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Brentwood weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Knightsen dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Knightsen weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Oakley dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Oakley weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Wagner dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
+      <tr><td>Wagner weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
+    </tbody>
+  </table>
+  <p class="muted-note">Every ranking keyword sits in a city where goe.menu already has a page (Hayward, Tracy, Sunol, Livermore, Mountain House, Ripon, Lathrop) or picks up incidental proximity ranking. Every city with no dedicated content does not rank at all. This is direct, keyword-level confirmation that Phase 1's page-by-page build order is the right sequence, not a guess. It also shows the delivery landing page is gaining real organic traction on the web ("tracy weed delivery" ranks #2, "hayward weed delivery" ranks #6), even though the Google Business Profile delivery category gap is separately holding back Maps visibility (see the 0% Share of Local Voice figure above). All 25 cities in the confirmed zone, including the five most recently added (Oakley, Brentwood, Wagner, Atlanta, and Knightsen), are now fully populated in the Ahrefs Rank Tracker; none of the five have started ranking yet, which is expected since no dedicated page exists for them.</p>
+
+  <div class="section-label">All 25 cities in the confirmed delivery zone</div>
+  <div class="chart-card">
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; font-size: 13px;">
+      <div>
+        <div class="channel-name" style="margin-bottom: 8px;">Hayward zone (12)</div>
+        <div style="color: #3a3a3a; line-height: 1.8;">Hayward, Castro Valley, Dublin, Livermore, Pleasanton, San Leandro, San Lorenzo, San Ramon, Sunol, Newark, Fremont, Union City</div>
+      </div>
+      <div>
+        <div class="channel-name" style="margin-bottom: 8px;">Tracy zone (13)</div>
+        <div style="color: #3a3a3a; line-height: 1.8;">Tracy, Mountain House, Oakley, Discovery Bay, Brentwood, Byron, Manteca, Ripon, Wagner, Atlanta, Lathrop, French Camp, Knightsen</div>
+      </div>
+    </div>
+    <p class="muted-note" style="margin-top: 14px; margin-bottom: 0;">Zones confirmed against Garden of Eden's own delivery service-area maps. Oakland, Alameda, Danville, Milpitas, Berkeley, Emeryville, Escalon, and Stockton have been removed from the roadmap; they were in the earlier straight-line-radius estimate but sit outside the confirmed zone.</p>
+  </div>
+
+  <div class="chart-card">
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #6B6B6B;">
+      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #1F2A44;"></span>Hayward</span>
+      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #8A6D3B;"></span>Tracy</span>
+    </div>
+    <div style="position: relative; width: 100%; height: 260px;">
+      <canvas id="solvChart" role="img" aria-label="Grouped bar chart of Local Falcon Share of Local Voice by keyword group for Hayward and Tracy. Dispensary near me: Hayward 88.9%, Tracy 90.1%. Dispensary: Hayward 74.1%, Tracy 93.8%. Cannabis store: Hayward 80.3%, Tracy 91.4%. Branded city term: Hayward 100%, Tracy 64.2%. Weed delivery: both 0%.">Local pack Share of Local Voice by keyword and location.</canvas>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Local Falcon Google Maps grids: dispensary near me term (dominant) vs. weed delivery term (invisible), same store-centered radius.</div>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+      <div>
+        <img src="https://lf-static-v2.localfalcon.com/image/eba36b2dec5873c" alt="Hayward dispensary near me Local Falcon grid, ARP 2.27, SoLV 89%" style="width:100%; border-radius:8px; border:1px solid var(--card-border);">
+        <div style="font-size:11.5px; color:var(--text-muted); margin-top:6px;">Hayward, "dispensary near me": ARP 2.27, SoLV 89%</div>
+      </div>
+      <div>
+        <img src="https://lf-static-v2.localfalcon.com/image/c03e91a80edee38" alt="Tracy dispensary near me Local Falcon grid, ARP 2.07, SoLV 90%" style="width:100%; border-radius:8px; border:1px solid var(--card-border);">
+        <div style="font-size:11.5px; color:var(--text-muted); margin-top:6px;">Tracy, "dispensary near me": ARP 2.07, SoLV 90%</div>
+      </div>
+      <div>
+        <img src="https://lf-static-v2.localfalcon.com/image/e05a1153c479ca7" alt="Hayward weed delivery Local Falcon grid, 20 mile radius, 0% SoLV" style="width:100%; border-radius:8px; border:1px solid var(--card-border);">
+        <div style="font-size:11.5px; color:var(--text-muted); margin-top:6px;">Hayward, "weed delivery" (20mi): 0% SoLV, top competitor 42%</div>
+      </div>
+      <div>
+        <img src="https://lf-static-v2.localfalcon.com/image/e90a785013a2cd5" alt="Tracy weed delivery Local Falcon grid, 20 mile radius, 0% SoLV" style="width:100%; border-radius:8px; border:1px solid var(--card-border);">
+        <div style="font-size:11.5px; color:var(--text-muted); margin-top:6px;">Tracy, "weed delivery" (20mi): 0% SoLV, top competitor 67%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div style="position: relative; width: 100%; height: 400px;">
+      <canvas id="serpChart" role="img" aria-label="Horizontal bar chart of Ahrefs Google positions for the 15 ranking keywords out of 50 tracked, sorted best to worst. Tracy dispensary 2, Hayward dispensary 2, Castro Valley dispensary 2, Tracy weed delivery 2, San Lorenzo dispensary 4, Ripon dispensary 4, Sunol dispensary 5, Hayward weed delivery 6, French Camp weed delivery 11, Mountain House dispensary 12, Lathrop dispensary 14, Livermore dispensary 14, San Leandro weed delivery 16, Sunol weed delivery 16, San Lorenzo weed delivery 25. The remaining 35 tracked keywords do not rank at all.">Ahrefs Google positions for ranking keywords.</canvas>
+    </div>
+  </div>
+
+  <!-- Growth Phases -->
+  <div class="section-label">SEO growth, phased across 12 months</div>
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="tag">Phase 1 &middot; Now</div>
+      <h3>SEO: foundation</h3>
+      <p>Fix the GBP delivery category gap on both listings, rebuild the delivery landing page around "dispensary delivery near me" and "dispensary delivery," bring Tracy's on-site content and links up to Hayward's standard, and launch geo-expansion pages for Sunol, Livermore, and Mountain House ahead of or alongside their delivery buildout.</p>
+      <p style="margin-top: 10px;">Backed by a structured authority and AI-visibility program: interlinked social profiles and web 2.0 properties, tiered drip-feed indexing, multiple authority hubs with citations, and contextual, high-authority backlinks to the homepage first, roughly 20 links to pave the way for every dispensary and delivery page as it publishes. The first three months focus on overall site authority plus Tracy's organic ranking and AI surfacing, with the goal of overtaking Stiiizy in Tracy's search results.</p>
+      <p style="margin-top: 10px;">Programmatic retargeting launches in parallel from month 1, a small, dedicated budget aimed at the existing customer list and site visitors rather than cold acquisition, so there is a return-generating channel live from day one while SEO compounds underneath it.</p>
+    </div>
+    <div class="phase-card phase-2">
+      <div class="tag">Phase 2 &middot; Month 4&ndash;6</div>
+      <h3>SEO: expansion</h3>
+      <p>Geo-expansion pages extend to the next tier of delivery cities. The backlink program moves past the homepage to the delivery hub page and any city page outside the top 5. Tracy's organic ranking and Domain Rating climb toward overtaking Stiiizy in Tracy's search results, and AI surfacing improves alongside it. Programmatic retargeting continues at the same lean budget, reinvesting returns rather than scaling media spend.</p>
+    </div>
+    <div class="phase-card phase-3">
+      <div class="tag">Phase 3 &middot; Month 7&ndash;12</div>
+      <h3>SEO: maturity</h3>
+      <p>Full city-page coverage across both delivery zones, Domain Rating matured off a year of contextual link building, and organic search carrying the majority of incremental revenue growth. Programmatic retargeting is reviewed against a full year of data and rebudgeted only if the existing-customer list has grown enough to justify it.</p>
+    </div>
+  </div>
+
+  <!-- Revenue Forecast -->
+  <div class="section-label">Revenue forecast, August 2026 to July 2027</div>
+  <div class="chart-card">
+    <svg viewBox="0 0 1000 320" width="100%" height="280" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="20" x2="960" y2="20" stroke="#EDEAE2" stroke-width="1"/>
+      <line x1="60" y1="94" x2="960" y2="94" stroke="#EDEAE2" stroke-width="1"/>
+      <line x1="60" y1="169" x2="960" y2="169" stroke="#EDEAE2" stroke-width="1"/>
+      <line x1="60" y1="243" x2="960" y2="243" stroke="#EDEAE2" stroke-width="1"/>
+      <text x="10" y="24" font-size="11" fill="#9A9A9A">$1.6M</text>
+      <text x="10" y="98" font-size="11" fill="#9A9A9A">$1.4M</text>
+      <text x="10" y="173" font-size="11" fill="#9A9A9A">$1.2M</text>
+      <text x="10" y="247" font-size="11" fill="#9A9A9A">$1.0M</text>
+
+      <polygon points="60,280 60,190 160,178 260,165 360,152 460,135 560,123 660,110 760,93 860,72 960,46 960,280"
+        fill="#8A6D3B" opacity="0.12"/>
+      <polyline points="60,190 160,178 260,165 360,152 460,135 560,123 660,110 760,93 860,72 960,46"
+        fill="none" stroke="#8A6D3B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <circle cx="60" cy="190" r="5" fill="#1F2A44"/>
+      <circle cx="160" cy="178" r="4" fill="#8A6D3B"/>
+      <circle cx="260" cy="165" r="4" fill="#8A6D3B"/>
+      <circle cx="360" cy="152" r="4" fill="#8A6D3B"/>
+      <circle cx="460" cy="135" r="4" fill="#8A6D3B"/>
+      <circle cx="560" cy="123" r="4" fill="#8A6D3B"/>
+      <circle cx="660" cy="110" r="6" fill="#1E7145"/>
+      <circle cx="760" cy="93" r="4" fill="#8A6D3B"/>
+      <circle cx="860" cy="72" r="4" fill="#8A6D3B"/>
+      <circle cx="960" cy="46" r="6" fill="#1E7145"/>
+
+      <text x="45" y="305" font-size="11" fill="#8a8a8a">Jul 26</text>
+      <text x="145" y="305" font-size="11" fill="#8a8a8a">Aug</text>
+      <text x="248" y="305" font-size="11" fill="#8a8a8a">Sep</text>
+      <text x="348" y="305" font-size="11" fill="#8a8a8a">Oct</text>
+      <text x="445" y="305" font-size="11" fill="#8a8a8a">Nov</text>
+      <text x="548" y="305" font-size="11" fill="#8a8a8a">Dec</text>
+      <text x="635" y="305" font-size="11" fill="#8A6D3B" font-weight="700">Jan 27 &#9733;</text>
+      <text x="725" y="305" font-size="11" fill="#8a8a8a">Feb&ndash;Mar</text>
+      <text x="825" y="305" font-size="11" fill="#8a8a8a">Apr&ndash;May</text>
+      <text x="925" y="305" font-size="11" fill="#1E7145" font-weight="700">Jul 27 &#9733;</text>
+    </svg>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Month</th><th>Projected combined revenue</th><th>vs. today</th><th>Primary driver</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Jul 2026 (Now)</strong></td><td><strong>$1,141,337</strong></td><td>n/a</td><td>Baseline (Treez Q2 avg)</td></tr>
+      <tr><td>Aug 2026</td><td><strong>$1,175,577</strong></td><td class="pos">+3%</td><td>GBP delivery category fixed &middot; Ahrefs Rank Tracker live &middot; programmatic retargeting live</td></tr>
+      <tr><td>Sep 2026</td><td><strong>$1,209,817</strong></td><td class="pos">+6%</td><td>Delivery landing page rebuild live &middot; review push begins</td></tr>
+      <tr><td>Oct 2026</td><td><strong>$1,244,057</strong></td><td class="pos">+9%</td><td>Tracy content build indexing &middot; backlink program underway</td></tr>
+      <tr><td>Nov 2026</td><td><strong>$1,289,711</strong></td><td class="pos">+13%</td><td>First delivery pages ranking &middot; Sunol geo page live</td></tr>
+      <tr><td>Dec 2026</td><td><strong>$1,323,951</strong></td><td class="pos">+16%</td><td>Backlink program compounding &middot; programmatic retargeting hitting target return</td></tr>
+      <tr class="milestone-1"><td><strong>Jan 2027 &#9733;</strong></td><td><strong>$1,358,191</strong></td><td class="pos">+19%</td><td><strong>Target 1: 6-month milestone</strong></td></tr>
+      <tr><td>Feb&ndash;Mar 2027</td><td><strong>$1,403,845</strong></td><td class="pos">+23%</td><td>Domain Rating climbing &middot; Tracy organic ranking top 3</td></tr>
+      <tr><td>Apr&ndash;May 2027</td><td><strong>$1,460,912</strong></td><td class="pos">+28%</td><td>Full delivery footprint live across both markets</td></tr>
+      <tr class="milestone-2"><td><strong>Jun&ndash;Jul 2027 &#9733;</strong></td><td><strong>$1,529,392</strong></td><td class="pos">+34%</td><td><strong>Target 2: 12-month milestone</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="muted-note">Floor projections built on the confirmed size of each gap above (delivery visibility, Tracy's organic ranking, backlink authority) rather than blended industry averages. Faster-than-modeled SEO compounding, which is the typical pattern once a 0%-visibility gap like the delivery channel is closed, would pull both milestones forward.</p>
+
+  <!-- Monthly Investment -->
+  <div class="section-label">Monthly investment: what it costs to get there</div>
+  <div class="card-dark">
+    <div class="stat-strip cols-4">
+      <div class="stat">
+        <div class="label">Monthly recurring investment</div>
+        <div class="value">$9,000</div>
+        <div class="sub">Rising to $11,750 once both hub add-ons start in month 2</div>
+      </div>
+      <div class="stat">
+        <div class="label">Retargeting return target</div>
+        <div class="value">8x</div>
+        <div class="sub">Backlink program priced at 60% margin, not ROI-attributed</div>
+      </div>
+      <div class="stat">
+        <div class="label">Combined revenue base</div>
+        <div class="value">$1.14M</div>
+        <div class="sub">Treez, monthly avg</div>
+      </div>
+      <div class="stat">
+        <div class="label">One-time setup &amp; build</div>
+        <div class="value">$5,040</div>
+        <div class="sub">Delivery-zone landing pages only</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Monthly spend</th><th>Return target</th><th>Projected revenue</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="channel-name">Authority &amp; backlink program: Hayward</div>
+          <div class="channel-desc">Contextual, high-authority link building dedicated to the Hayward location, part of the drip-feed indexing and authority-hub program described in Phase 1. Priced to close the Domain Rating gap against Cookies Hayward and Stiiizy.</div>
+        </td>
+        <td class="spend">$3,750</td>
+        <td>n/a</td>
+        <td class="revenue">n/a</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="channel-name">Authority &amp; backlink program: Tracy</div>
+          <div class="channel-desc">Same program, dedicated to the Tracy location, sequenced to overtake Stiiizy in Tracy's search results within the first three months.</div>
+        </td>
+        <td class="spend">$3,750</td>
+        <td>n/a</td>
+        <td class="revenue">n/a</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="channel-name">Delivery hub backlink add-on</div>
+          <div class="channel-desc">Begins month 2, once the delivery-zone landing pages are live. Supports the delivery hub page and any city delivery page outside the top 5, sequentially powering them up with local listicles.</div>
+        </td>
+        <td class="spend">$1,375</td>
+        <td>n/a</td>
+        <td class="revenue">n/a</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="channel-name">Dispensary near me hub backlink add-on</div>
+          <div class="channel-desc">Begins month 2, once the dispensary-near-me pages are live. Supports the dispensary-near-me pages across the satellite cities, sequentially powering them up with local listicles.</div>
+        </td>
+        <td class="spend">$1,375</td>
+        <td>n/a</td>
+        <td class="revenue">n/a</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="channel-name">Programmatic retargeting: existing customers &amp; site visitors</div>
+          <div class="channel-desc">Live from month 1. Targets the existing Treez customer list plus goe.menu site visitors, not cold acquisition, which is why the return target runs well above a typical prospecting campaign.</div>
+        </td>
+        <td class="spend">$1,500</td>
+        <td>8x</td>
+        <td class="revenue">$12,000<br><span style="color:#888;font-weight:400;font-size:11px;">From month 1</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-label">Pass-through platform cost</div>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Scope</th><th>Monthly fee</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="channel-name">Website subscription: headless commerce theme</td>
+        <td>Monthly platform/theme subscription for the headless storefront build (vendor: TBD). Live from month 1. Billed at cost, no markup.</td>
+        <td class="spend">$800</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="muted-note">Passed through at cost, separate from the marketing channels above, which carry no margin.</p>
+
+  <div class="section-label">One-time setup &amp; content build</div>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Scope</th><th>One-time fee</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="channel-name">Delivery-zone landing pages</td>
+        <td>42 new pages across the 23 satellite cities in the confirmed delivery zone (19 dispensary-intent, 23 delivery-intent), human-written content, design, and upload. Livermore, Lathrop, Ripon, and Mountain House already have a dispensary page built, so those 4 are excluded from the count. $120 per page.</td>
+        <td class="spend">$5,040</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="muted-note">Total one-time investment: $5,040, billed once at kickoff, not recurring. Retargeting audience and pixel integration is folded into the $1,500/mo retargeting line above rather than billed separately.</p>
+
+  <!-- Milestone Timeline -->
+  <div class="section-label">Milestone timeline</div>
+  <div class="timeline">
+    <div class="tl-card">
+      <div class="mo">Mo 1&ndash;2 &middot; Aug&ndash;Sep 26</div>
+      <div class="headline">Foundation</div>
+      <div class="body">GBP delivery category and attributes added on both listings. Delivery landing page rebuild scoped and live. Ahrefs Rank Tracker populated for Hayward and Tracy. Programmatic retargeting launches in parallel, aimed at the existing customer list.</div>
+    </div>
+    <div class="tl-card">
+      <div class="mo">Mo 3&ndash;4 &middot; Oct&ndash;Nov 26</div>
+      <div class="headline">Build</div>
+      <div class="body">Tracy content and on-page work live. Sunol, Livermore, and Mountain House geo pages built. Backlink program underway and extending past the homepage as new pages publish.</div>
+    </div>
+    <div class="tl-card target">
+      <div class="mo">Mo 5&ndash;6 &middot; Dec 26&ndash;Jan 27</div>
+      <div class="headline gold">$1.36M: Target 1</div>
+      <div class="body">Delivery visibility measurably improved in Local Falcon scans. Tracy's organic ranking climbing. Programmatic retargeting tracking to the 8x target return on a lean, existing-customer budget.</div>
+    </div>
+    <div class="tl-card">
+      <div class="mo">Mo 7&ndash;9 &middot; Feb&ndash;Apr 27</div>
+      <div class="headline">Compounding</div>
+      <div class="body">SEO becomes the largest incremental channel as delivery and organic rankings mature. Domain Rating climbing off the backlink program, Tracy closing in on Stiiizy's rankings. Programmatic retargeting reviewed for a modest rebudget only if warranted by list growth.</div>
+    </div>
+    <div class="tl-card target final">
+      <div class="mo">Mo 10&ndash;12 &middot; May&ndash;Jul 27</div>
+      <div class="headline green">$1.53M: Target 2</div>
+      <div class="body">Full two-location delivery and organic footprint live, including Sunol's opening. SEO carrying the majority of incremental growth. Retention program mature.</div>
+    </div>
+  </div>
+
+  <!-- Data note -->
+  <div class="note-box">
+    <strong>Data and methodology:</strong> Revenue baseline and all Treez figures are Q2 2026 (April&ndash;June) actuals pulled directly from Treez POS exports, confirmed by location. Google Business Profile, Search Console, and Local Falcon figures are live via Windsor.ai and Local Falcon's API as of July 20, 2026. Google Analytics 4 is connected and confirms 49,824 sessions for the quarter, but purchase and transaction tracking is not yet implemented in GA4, so this model is built on Treez POS actuals rather than GA4 revenue attribution; installing that tracking is a parallel recommendation, not a dependency for this plan. The Ahrefs Rank Tracker project is now fully populated with all 50 keywords across the 25 cities in the confirmed delivery zone, including the five most recently added (Oakley, Brentwood, Wagner, Atlanta, and Knightsen), and the keyword-level proof above reflects live data across the full set. This proposal reflects our full engagement tier: Garden of Eden has granted Google tools access plus point-of-sale and loyalty system access, which is what makes a model like this possible in the first place. A lighter, no-access review only covers what's publicly visible; this one is built on the actual numbers. This plan intentionally excludes paid Google Ads and Meta acquisition spend. The same 6- and 12-month revenue targets are carried by SEO plus a lean, existing-customer retargeting program, which keeps total monthly investment lower while targeting a materially higher blended return than a paid-acquisition-led plan would. Let us know if there are additional data points, budget constraints, or timeline preferences to factor in before this goes final.
+  </div>
+
+  <div class="footer">
+    Nearfront | nearfront.com | <strong>Guillermo Bravo</strong> | Prepared for Ashwin Bhagat &middot; Garden of Eden &middot; goe.menu
+  </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const solvLabels = ['Dispensary near me','Dispensary','Cannabis store','Branded city term','Weed delivery'];
+const solvHayward = [88.89, 74.07, 80.25, 100.00, 0.00];
+const solvTracy = [90.12, 93.83, 91.36, 64.20, 0.00];
+
+new Chart(document.getElementById('solvChart'), {
+  type: 'bar',
+  data: {
+    labels: solvLabels,
+    datasets: [
+      { label: 'Hayward', data: solvHayward, backgroundColor: '#1F2A44', borderRadius: 4, maxBarThickness: 24 },
+      { label: 'Tracy', data: solvTracy, backgroundColor: '#8A6D3B', borderRadius: 4, maxBarThickness: 24 }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => c.dataset.label + ': ' + c.parsed.y + '%' } } },
+    scales: {
+      y: { min: 0, max: 100, grid: { color: '#E4E1D9' }, ticks: { callback: (v) => v + '%', color: '#6B6B6B' } },
+      x: { grid: { display: false }, ticks: { color: '#6B6B6B' } }
+    }
+  }
+});
+
+const serpRows = [
+  ['Tracy dispensary', 2], ['Hayward dispensary', 2], ['Castro Valley dispensary', 2], ['Tracy weed delivery', 2],
+  ['San Lorenzo dispensary', 4], ['Ripon dispensary', 4], ['Sunol dispensary', 5], ['Hayward weed delivery', 6],
+  ['French Camp weed delivery', 11], ['Mountain House dispensary', 12], ['Lathrop dispensary', 14], ['Livermore dispensary', 14],
+  ['San Leandro weed delivery', 16], ['Sunol weed delivery', 16], ['San Lorenzo weed delivery', 25]
+].sort((a, b) => a[1] - b[1]);
+const serpColors = serpRows.map((r) => (r[1] <= 10 ? '#1E7145' : r[1] <= 20 ? '#8A6D3B' : '#A13B2A'));
+
+new Chart(document.getElementById('serpChart'), {
+  type: 'bar',
+  data: {
+    labels: serpRows.map((r) => r[0]),
+    datasets: [{ data: serpRows.map((r) => r[1]), backgroundColor: serpColors, borderRadius: 4, maxBarThickness: 24 }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => 'Position ' + c.parsed.x } } },
+    scales: {
+      x: { min: 0, grid: { color: '#E4E1D9' }, ticks: { color: '#6B6B6B' } },
+      y: { grid: { display: false }, ticks: { color: '#6B6B6B' } }
+    }
+  }
+});
+</script>
+</body>
+</html>
