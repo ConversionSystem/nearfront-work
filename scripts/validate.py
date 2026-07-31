@@ -47,6 +47,24 @@ PROTECTED = (
 # Reference page for the shared nav/footer shell. Every marketing page must match it.
 SHELL_REF = "services/thca-seo/index.html"
 
+# Tags that must never be pasted into a page: they belong inside the GTM
+# container. A hard-coded tag alongside the container's own double-counts every
+# hit, and it dodges the rule that a new tracker ships with its privacy
+# disclosure. The vendor "install our pixel" instructions all produce these.
+TRACKERS_OUTSIDE_GTM = [
+    (r"googletagmanager\.com/gtag/js", "a raw gtag.js tag (GA4 or Google Ads)"),
+    (r"google-analytics\.com/(analytics|ga)\.js", "a legacy Google Analytics tag"),
+    (r"connect\.facebook\.net|\bfbq\s*\(", "a Meta pixel"),
+    (r"static\.ads-twitter\.com|\btwq\s*\(", "an X/Twitter pixel"),
+    (r"snap\.licdn\.com|\b_linkedin_partner_id\b", "a LinkedIn insight tag"),
+    (r"analytics\.tiktok\.com|\bttq\s*\.", "a TikTok pixel"),
+    (r"clarity\.ms", "a Microsoft Clarity tag"),
+    (r"static\.hotjar\.com|\bhj\s*\(", "a Hotjar tag"),
+    (r"cdn\.segment\.com", "a Segment tag"),
+    (r"js\.hs-scripts\.com", "a HubSpot tag"),
+    (r"cdn\.callrail\.com|\bcalltrk\b", "a CallRail tag"),
+]
+
 
 def repo_root():
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -482,18 +500,36 @@ def validate(root, args):
         d = docs.get(rel)
         if d is None:
             continue
+
+        # These two run on EVERY page, including proposals and the work index.
+        # A second container double-counts every event and splits the data, and
+        # a tag pasted straight into a page bypasses the container entirely.
+        for other in set(re.findall(r"GTM-[A-Z0-9]{4,}", d.raw)):
+            if other != GTM_ID:
+                add(Finding(ERROR, rel, 1, "gtm-foreign",
+                            "second container %s; this site uses %s only" % (other, GTM_ID),
+                            "Two containers double-count every event and split the reporting. "
+                            "Add tags inside the existing container instead."))
+        for pat, what in TRACKERS_OUTSIDE_GTM:
+            m = re.search(pat, d.raw, re.I)
+            if m:
+                ln = d.raw[:m.start()].count("\n") + 1
+                add(Finding(ERROR, rel, ln, "tracker-outside-gtm",
+                            "%s is hard-coded into the page" % what,
+                            "Every tag ships through container %s so it stays measurable and "
+                            "disclosable. A hard-coded tag double-counts alongside the "
+                            "container's, and any new tracker must ship in the same deploy as "
+                            "its privacy-policy disclosure. See CLAUDE.md, Measurement."
+                            % GTM_ID))
+
         if work and profile_for(urls[rel], rel, work) == "report":
-            continue
+            continue  # proposals and the work index stay out of analytics
         n = d.raw.count(GTM_ID)
         if n < 2:
             add(Finding(ERROR, rel, 1, "gtm",
                         "expected the GTM head snippet and the noscript iframe (%s appears %d time(s))"
                         % (GTM_ID, n),
                         "Copy both blocks from public/%s." % SHELL_REF))
-        for other in set(re.findall(r"GTM-[A-Z0-9]{4,}", d.raw)):
-            if other != GTM_ID:
-                add(Finding(ERROR, rel, 1, "gtm-foreign",
-                            "unexpected container %s; this site uses %s only" % (other, GTM_ID)))
 
     # --- em dash (HTML only; assets carry them in comments) ----------------
     for rel in in_scope:

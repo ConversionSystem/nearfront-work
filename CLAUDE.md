@@ -45,6 +45,14 @@ Push to `main`, Cloudflare builds from Git, live in about 30 seconds. Every bran
 
 Copy `templates/proposal.html` to `public/proposals/<client>/<topic>/index.html` and fill the tokens. It is self-contained: inline `<style>`, no shared CSS or JS, no canonical, no Open Graph, no JSON-LD, `noindex,nofollow`. Add a link to it from `public/index.html`. **Never promote a proposal into the production repo.**
 
+## Tags and pixels: one container, no exceptions
+
+The site uses a single Google Tag Manager container, **`GTM-NFLQTMGP`**, and campaign landing pages inherit it from `templates/landing-page.html`. That is how conversions on this host stay measurable.
+
+**Never paste a tag into a page.** Not a `gtag.js` snippet, not a Meta pixel, not Clarity, Hotjar, CallRail, or anything a vendor's "install our pixel" page hands you. Two tags double-count every event and split the reporting, and a hard-coded tag skips the rule that a new tracker ships with its privacy-policy disclosure. Every tag goes **inside** the existing container instead. `scripts/validate.py` blocks this (`gtm-foreign`, `tracker-outside-gtm`); if you hit that error, the fix is a container change, not a code change. Ask Steve.
+
+The host index, `/proposals/*`, and the 404 carry no container on purpose: client proposals stay out of our analytics, the same rule the client dashboards follow.
+
 ## House rules, inherited from production, non-negotiable
 
 No em dashes anywhere. **No health or efficacy claims**: these are regulated industries, use research-use and compliance framing. Every factual or commercial claim needs a documented source. Primary CTA is **"Get Ranked Free"** linking to `/book/`. "Log In" goes to `https://app.nearfront.com/login`. NAP is exactly `550 W B St, 4th Floor, San Diego, CA 92101` and `(760) 829-2735`. **"Nubravo LLC" never appears in public-facing copy**, legal pages only.
