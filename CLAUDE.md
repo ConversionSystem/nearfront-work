@@ -9,7 +9,7 @@ Guidance for Claude Code / Claude Cowork working in this repository.
 1. **Client proposals** at `public/proposals/<client>/<topic>/index.html`. Sent to clients and prospects. Self-contained. Never promoted anywhere.
 2. **Marketing drafts** at the **exact path the page will occupy on nearfront.com**, so promoting is a file copy with no edits.
 
-Served at **go.nearfront.com**, **lp.nearfront.com**, and **proposals.nearfront.com** (Cloudflare Pages project `nearfront-work`, native Git integration, no build step). Use `proposals.` in links to clients, `lp.` for campaigns, `go.` otherwise. All three serve identical content.
+Served at **lp.nearfront.com** (Cloudflare Pages project `nearfront-work`, native Git integration, no build step). Proposals and landing pages both live on this host; the path tells them apart.
 
 **Every page on this host is noindexed, and this host can never publish to nearfront.com.** There are no deploy credentials in this repo by design.
 

@@ -1,6 +1,6 @@
 # Nearfront Work
 
-Your sandbox. Everything here goes live at **go.nearfront.com** about 30 seconds after you push, and none of it is visible to Google.
+Your sandbox. Everything here goes live at **lp.nearfront.com** about 30 seconds after you push, and none of it is visible to Google.
 
 **Nothing you do in this repo can affect nearfront.com.**
 
@@ -10,7 +10,7 @@ Tell Cowork what you want. It reads `CLAUDE.md` and follows the house rules. Pus
 
 ## Two kinds of thing
 
-- **A client proposal** goes to `proposals.nearfront.com/proposals/<client>/<topic>/`. Send that link to the client. It stays here permanently.
+- **A client proposal** goes to `lp.nearfront.com/proposals/<client>/<topic>/`. Send that link to the client. It stays here permanently.
 - **A marketing page that needs to rank on Google** gets built here first, then promoted (below). It only ranks once it is on nearfront.com.
 
 Campaign landing pages for ads, email, or outreach do **not** need promoting. They work perfectly here, and being invisible to Google is usually what you want for a campaign page.
@@ -35,7 +35,7 @@ Red must be fixed. Yellow is worth reading. Ask Cowork to fix anything red.
 
 ## Promote a page to nearfront.com
 
-1. Look at it on go.nearfront.com. Happy with it?
+1. Look at it on lp.nearfront.com. Happy with it?
 2. Ask Cowork: *"promote /services/your-idea/ to production."* It copies the file into your fork of the main repo, adds the sitemap entry, adds the hub-page card and an internal link, runs the checks, and opens a pull request.
 3. Steve reviews and merges. Live in about a minute, initially noindexed.
 4. Steve turns on indexing once he is happy with it.
