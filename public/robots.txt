@@ -1,0 +1,14 @@
+# Crawling is ALLOWED here on purpose.
+#
+# Every response on this host carries "X-Robots-Tag: noindex, nofollow" (see
+# public/_headers). That is what actually keeps these pages out of Google.
+#
+# DO NOT add "Disallow: /". Blocking the crawl PREVENTS Google from ever
+# reading the noindex header, and URLs discovered through links then get
+# indexed URL-only. That exact failure ("Indexed, though blocked by
+# robots.txt") is already an open issue on nearfront.com. Allowing the crawl
+# and serving noindex is the combination that works.
+#
+# There is deliberately no Sitemap: line and no sitemap.xml on this host.
+User-agent: *
+Allow: /

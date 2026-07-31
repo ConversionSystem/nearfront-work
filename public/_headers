@@ -1,0 +1,14 @@
+# Every response on this host is noindex. This is the work lane: drafts,
+# campaign landing pages, and client proposals. None of it should ever appear
+# in Google, and none of it should compete with nearfront.com.
+#
+# Do not remove, narrow, or reorder this block.
+/*
+  X-Robots-Tag: noindex, nofollow
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Short cache: drafts change often and need to refresh for reviewers.
+/assets/*
+  Cache-Control: public, max-age=3600

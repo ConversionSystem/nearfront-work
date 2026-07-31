@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{CLIENT}} proposal | Nearfront</title>
+<meta name="description" content="{{ONE_LINE_SUMMARY}}">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f1f22">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+  :root{--dark:#1c3439;--dark-2:#162c30;--dark-3:#0f1f22;--gold:#c3a25d;--gold-dk:#ae8d49;
+        --white:#fff;--off:#f7f6f2;--muted:#7a7a6e;--line:#e8e6df;--text:#1a1a18}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--white);
+       color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .mast{background:var(--dark);padding:20px 32px;display:flex;align-items:center;
+        justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .wordmark{color:var(--white);font-size:17px;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  .mast-meta{color:rgba(255,255,255,.55);font-size:12.5px}
+  .mast-meta strong{color:var(--gold)}
+  .titleblock{max-width:900px;margin:0 auto;padding:56px 32px 8px}
+  .titleblock h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,44px);line-height:1.15;
+                 color:var(--dark);margin-bottom:12px}
+  .subtitle{color:var(--muted);font-size:16px;max-width:640px}
+  .wrap{max-width:900px;margin:0 auto;padding:24px 32px 72px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:28px 30px;margin-top:24px;background:var(--white)}
+  .card h2{font-family:Georgia,serif;font-size:20px;color:var(--dark);margin-bottom:12px}
+  .card h3{font-size:15px;color:var(--dark);margin:18px 0 6px}
+  .card p, .card li{color:var(--muted);font-size:14.5px;line-height:1.75}
+  .card ul{margin:8px 0 0 20px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:18px}
+  .kpi{background:var(--off);border-radius:10px;padding:16px 18px}
+  .kpi .n{font-size:26px;font-weight:700;color:var(--dark);font-family:Georgia,serif}
+  .kpi .l{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+  .price{font-family:Georgia,serif;font-size:22px;color:var(--dark);font-weight:700}
+  .cta{background:var(--dark);border-radius:12px;padding:32px;margin-top:28px;text-align:center}
+  .cta h2{color:var(--white);font-family:Georgia,serif;font-size:22px;margin-bottom:10px}
+  .cta p{color:rgba(255,255,255,.6);font-size:14.5px;margin-bottom:18px}
+  .btn{display:inline-block;background:var(--gold);color:var(--dark-3);text-decoration:none;
+       font-weight:700;font-size:15px;padding:13px 26px;border-radius:6px}
+  .foot{max-width:900px;margin:0 auto;padding:0 32px 56px;color:var(--muted);font-size:12.5px}
+  .foot a{color:var(--gold-dk)}
+  @media (max-width:640px){ .titleblock,.wrap,.foot{padding-left:20px;padding-right:20px} .card{padding:22px} }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <a class="wordmark" href="https://nearfront.com/">Nearfront</a>
+  <span class="mast-meta"><strong>{{CLIENT}}</strong> · {{SCOPE_LINE}}</span>
+</header>
+
+<div class="titleblock">
+  <h1>{{HEADLINE}}</h1>
+  <p class="subtitle">{{SUBTITLE}}</p>
+</div>
+
+<main class="wrap">
+
+  <section class="card">
+    <h2>Where you are today</h2>
+    <p>{{SITUATION}}</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n">{{KPI_1_N}}</div><div class="l">{{KPI_1_LABEL}}</div></div>
+      <div class="kpi"><div class="n">{{KPI_2_N}}</div><div class="l">{{KPI_2_LABEL}}</div></div>
+      <div class="kpi"><div class="n">{{KPI_3_N}}</div><div class="l">{{KPI_3_LABEL}}</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>What we would do</h2>
+    <h3>{{WORKSTREAM_1}}</h3>
+    <p>{{WORKSTREAM_1_BODY}}</p>
+    <h3>{{WORKSTREAM_2}}</h3>
+    <p>{{WORKSTREAM_2_BODY}}</p>
+  </section>
+
+  <section class="card">
+    <h2>Scope and timeline</h2>
+    <table>
+      <thead><tr><th>Phase</th><th>Work</th><th>Timing</th></tr></thead>
+      <tbody>
+        <tr><td>{{PHASE_1}}</td><td>{{PHASE_1_WORK}}</td><td>{{PHASE_1_WHEN}}</td></tr>
+        <tr><td>{{PHASE_2}}</td><td>{{PHASE_2_WORK}}</td><td>{{PHASE_2_WHEN}}</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Investment</h2>
+    <p class="price">{{PRICE}}</p>
+    <p>{{PRICE_NOTE}}</p>
+  </section>
+
+  <section class="cta">
+    <h2>{{CTA_H2}}</h2>
+    <p>{{CTA_BODY}}</p>
+    <a class="btn" href="https://nearfront.com/book/">Book a call</a>
+  </section>
+
+</main>
+
+<div class="foot">
+  Prepared for {{CLIENT}} by Nearfront · 550 W B St, 4th Floor, San Diego, CA 92101 ·
+  <a href="tel:+17608292735">(760) 829-2735</a> ·
+  <a href="mailto:bravo@nearfront.com">bravo@nearfront.com</a><br>
+  This proposal is confidential and prepared for the named recipient.
+</div>
+
+</body>
+</html>
