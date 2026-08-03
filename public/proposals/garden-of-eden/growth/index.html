@@ -265,6 +265,31 @@
     .stat-strip, .stat-strip.cols-4 { grid-template-columns: repeat(2, 1fr); }
     .phase-grid, .gap-list, .timeline { grid-template-columns: 1fr; }
   }
+
+  .tab-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 7px 16px;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
 </style>
 </head>
 <body>
@@ -375,63 +400,58 @@
       </div>
     </div>
   </div>
-  <table>
-    <thead>
-      <tr><th>Keyword</th><th>Position</th><th>Landing page</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Tracy dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
-      <tr><td>Hayward dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
-      <tr><td>Castro Valley dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
-      <tr><td>Tracy weed delivery</td><td class="pos">2</td><td>goe.menu/services/delivery/</td></tr>
-      <tr><td>San Lorenzo dispensary</td><td class="pos">4</td><td>goe.menu/</td></tr>
-      <tr><td>Ripon dispensary</td><td class="pos">4</td><td>goe.menu/location-tracy/ripon-ca/</td></tr>
-      <tr><td>Sunol dispensary</td><td class="pos">5</td><td>goe.menu/</td></tr>
-      <tr><td>Hayward weed delivery</td><td class="pos">6</td><td>goe.menu/</td></tr>
-      <tr><td>French Camp weed delivery</td><td>11</td><td>goe.menu/services/delivery/</td></tr>
-      <tr><td>Mountain House dispensary</td><td>12</td><td>goe.menu/location-tracy/mountain-house-ca/</td></tr>
-      <tr><td>Lathrop dispensary</td><td>14</td><td>goe.menu/location-tracy/lathrop-ca/</td></tr>
-      <tr><td>Livermore dispensary</td><td>14</td><td>goe.menu/hayward/livermore-ca/</td></tr>
-      <tr><td>San Leandro weed delivery</td><td>16</td><td>goe.menu/services/delivery/</td></tr>
-      <tr><td>Sunol weed delivery</td><td>16</td><td>goe.menu/</td></tr>
-      <tr><td>San Lorenzo weed delivery</td><td>25</td><td>goe.menu/</td></tr>
-      <tr><td>Byron dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Byron weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Castro Valley weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Discovery Bay dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Discovery Bay weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Dublin dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Dublin weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Fremont dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Fremont weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>French Camp dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Lathrop weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Livermore weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Manteca dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Manteca weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Mountain House weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Newark dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Newark weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Pleasanton dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Pleasanton weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Ripon weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>San Leandro dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>San Ramon dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>San Ramon weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Union City dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Union City weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Atlanta dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Atlanta weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Brentwood dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Brentwood weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Knightsen dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Knightsen weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Oakley dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Oakley weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Wagner dispensary</td><td>Not ranking</td><td>No page yet</td></tr>
-      <tr><td>Wagner weed delivery</td><td>Not ranking</td><td>No page yet</td></tr>
-    </tbody>
-  </table>
+  <div class="tab-row">
+    <button type="button" class="tab-btn active" data-group="kw" data-tab="dispensary">Dispensary keywords</button>
+    <button type="button" class="tab-btn" data-group="kw" data-tab="delivery">Weed delivery keywords</button>
+    <button type="button" class="tab-btn" data-group="kw" data-tab="notranking">Not ranking</button>
+  </div>
+
+  <div class="tab-panel active" data-group="kw" data-tab="dispensary">
+    <table>
+      <thead>
+        <tr><th>Keyword</th><th>Position</th><th>Landing page</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tracy dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
+        <tr><td>Hayward dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
+        <tr><td>Castro Valley dispensary</td><td class="pos">2</td><td>goe.menu/</td></tr>
+        <tr><td>San Lorenzo dispensary</td><td class="pos">4</td><td>goe.menu/</td></tr>
+        <tr><td>Ripon dispensary</td><td class="pos">4</td><td>goe.menu/location-tracy/ripon-ca/</td></tr>
+        <tr><td>Sunol dispensary</td><td class="pos">5</td><td>goe.menu/</td></tr>
+        <tr><td>Mountain House dispensary</td><td>12</td><td>goe.menu/location-tracy/mountain-house-ca/</td></tr>
+        <tr><td>Lathrop dispensary</td><td>14</td><td>goe.menu/location-tracy/lathrop-ca/</td></tr>
+        <tr><td>Livermore dispensary</td><td>14</td><td>goe.menu/hayward/livermore-ca/</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-panel" data-group="kw" data-tab="delivery">
+    <table>
+      <thead>
+        <tr><th>Keyword</th><th>Position</th><th>Landing page</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tracy weed delivery</td><td class="pos">2</td><td>goe.menu/services/delivery/</td></tr>
+        <tr><td>Hayward weed delivery</td><td class="pos">6</td><td>goe.menu/</td></tr>
+        <tr><td>French Camp weed delivery</td><td>11</td><td>goe.menu/services/delivery/</td></tr>
+        <tr><td>San Leandro weed delivery</td><td>16</td><td>goe.menu/services/delivery/</td></tr>
+        <tr><td>Sunol weed delivery</td><td>16</td><td>goe.menu/</td></tr>
+        <tr><td>San Lorenzo weed delivery</td><td>25</td><td>goe.menu/</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-panel" data-group="kw" data-tab="notranking">
+    <table>
+      <thead>
+        <tr><th>Intent</th><th>Cities not yet ranking (no page yet)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Dispensary</td><td>Byron, Discovery Bay, Dublin, Fremont, French Camp, Manteca, Newark, Pleasanton, San Leandro, San Ramon, Union City, Atlanta, Brentwood, Knightsen, Oakley, Wagner</td></tr>
+        <tr><td>Weed delivery</td><td>Byron, Castro Valley, Discovery Bay, Dublin, Fremont, Lathrop, Livermore, Manteca, Mountain House, Newark, Pleasanton, Ripon, San Ramon, Union City, Atlanta, Brentwood, Knightsen, Oakley, Wagner</td></tr>
+      </tbody>
+    </table>
+  </div>
   <p class="muted-note">Every ranking keyword sits in a city where goe.menu already has a page (Hayward, Tracy, Sunol, Livermore, Mountain House, Ripon, Lathrop) or picks up incidental proximity ranking. Every city with no dedicated content does not rank at all. This is direct, keyword-level confirmation that Phase 1's page-by-page build order is the right sequence, not a guess. It also shows the delivery landing page is gaining real organic traction on the web ("tracy weed delivery" ranks #2, "hayward weed delivery" ranks #6), even though the Google Business Profile delivery category gap is separately holding back Maps visibility (see the 0% Share of Local Voice figure above). All 25 cities in the confirmed zone, including the five most recently added (Oakley, Brentwood, Wagner, Atlanta, and Knightsen), are now fully populated in the Ahrefs Rank Tracker; none of the five have started ranking yet, which is expected since no dedicated page exists for them.</p>
 
   <div class="section-label">All 25 cities in the confirmed delivery zone</div>
@@ -493,9 +513,7 @@
     <div class="phase-card">
       <div class="tag">Phase 1 &middot; Now</div>
       <h3>SEO: foundation</h3>
-      <p>Fix the GBP delivery category gap on both listings, rebuild the delivery landing page around "dispensary delivery near me" and "dispensary delivery," bring Tracy's on-site content and links up to Hayward's standard, and launch geo-expansion pages for Sunol, Livermore, and Mountain House ahead of or alongside their delivery buildout.</p>
-      <p style="margin-top: 10px;">Backed by a structured authority and AI-visibility program: interlinked social profiles and web 2.0 properties, tiered drip-feed indexing, multiple authority hubs with citations, and contextual, high-authority backlinks to the homepage first, roughly 20 links to pave the way for every dispensary and delivery page as it publishes. This program is set up in month 1 and starts active spend in month 2, once the delivery-zone pages exist to support it, rather than billing for link building before there is anything for it to point to. The first three months focus on overall site authority plus Tracy's organic ranking and AI surfacing, with the goal of overtaking Stiiizy in Tracy's search results.</p>
-      <p style="margin-top: 10px;">This proposal is SEO-focused: the core investment is the authority and backlink program above. Programmatic retargeting is available separately as an optional add-on, not part of either core package, for accounts that want a lean, existing-customer paid channel running alongside SEO.</p>
+      <p>Fix the GBP delivery category gap on both listings, rebuild the delivery landing page, bring Tracy's on-site content and links up to Hayward's standard, and launch geo-expansion pages for Sunol, Livermore, and Mountain House, backed by a structured authority and AI-visibility program (interlinked social profiles, tiered drip-feed indexing, authority hubs with citations, and roughly 20 contextual, high-authority backlinks to the homepage first) that is set up in month 1 and starts active spend in month 2, once the delivery-zone pages exist to support it; the first three months focus on overall site authority plus Tracy's organic ranking and AI surfacing, with the goal of overtaking Stiiizy in Tracy's search results, and this proposal is SEO-focused, with programmatic retargeting available separately as an optional add-on, not part of either core package.</p>
     </div>
     <div class="phase-card phase-2">
       <div class="tag">Phase 2 &middot; Month 4&ndash;6</div>
@@ -665,112 +683,227 @@
   </table>
 
   <!-- Investment Calendar -->
-  <div class="section-label">Investment calendar: cost by month (Package 2, full)</div>
-  <div class="chart-card">
-    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #6B6B6B;">
-      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #8A6D3B;"></span>One-time (month 1 only)</span>
-      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #1F2A44;"></span>Recurring (starts month 2)</span>
-    </div>
-    <svg viewBox="0 0 1000 320" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of total monthly Nearfront investment for Package 2, the full SEO program. Aug 2026 is one-time setup only, 5,540 to 7,040 dollars. Sep 2026 through Jul 2027 is a flat 10,000 dollars per month in recurring spend once the backlink program and both hub add-ons begin in month 2. Package 1 recurring would be 3,750 dollars per month instead, and the optional retargeting add-on would add 1,500 dollars per month to either package.">
-      <line x1="60" y1="20" x2="960" y2="20" stroke="#EDEAE2" stroke-width="1"/>
-      <line x1="60" y1="85" x2="960" y2="85" stroke="#EDEAE2" stroke-width="1"/>
-      <line x1="60" y1="150" x2="960" y2="150" stroke="#EDEAE2" stroke-width="1"/>
-      <line x1="60" y1="215" x2="960" y2="215" stroke="#EDEAE2" stroke-width="1"/>
-      <line x1="60" y1="280" x2="960" y2="280" stroke="#EDEAE2" stroke-width="1"/>
-      <text x="10" y="24" font-size="11" fill="#9A9A9A">$16k</text>
-      <text x="10" y="89" font-size="11" fill="#9A9A9A">$12k</text>
-      <text x="10" y="154" font-size="11" fill="#9A9A9A">$8k</text>
-      <text x="10" y="219" font-size="11" fill="#9A9A9A">$4k</text>
-      <text x="18" y="284" font-size="11" fill="#9A9A9A">$0</text>
-
-      <rect x="80" y="178" width="60" height="102" fill="#8A6D3B" rx="3"/>
-      <rect x="180" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="280" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="380" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="480" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="580" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="680" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="780" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-      <rect x="880" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
-
-      <text x="110" y="170" font-size="10.5" fill="#8A6D3B" font-weight="700" text-anchor="middle">$5.5k&ndash;$7k</text>
-      <text x="210" y="109" font-size="10.5" fill="#1F2A44" font-weight="700" text-anchor="middle">$10k</text>
-      <text x="710" y="109" font-size="10.5" fill="#1F2A44" font-weight="700" text-anchor="middle">$10k</text>
-
-      <text x="110" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Aug 26</text>
-      <text x="210" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Sep</text>
-      <text x="310" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Oct</text>
-      <text x="410" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Nov</text>
-      <text x="510" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Dec</text>
-      <text x="610" y="300" font-size="11" fill="#8A6D3B" font-weight="700" text-anchor="middle">Jan 27 &#9733;</text>
-      <text x="710" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Feb&ndash;Mar</text>
-      <text x="810" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Apr&ndash;May</text>
-      <text x="910" y="300" font-size="11" fill="#1E7145" font-weight="700" text-anchor="middle">Jun&ndash;Jul 27 &#9733;</text>
-    </svg>
+  <div class="section-label">Investment calendar: cost by month</div>
+  <div class="tab-row">
+    <button type="button" class="tab-btn active" data-group="calendar" data-tab="pkg1">Package 1 (core)</button>
+    <button type="button" class="tab-btn" data-group="calendar" data-tab="pkg2">Package 2 (full)</button>
   </div>
 
-  <table>
-    <thead>
-      <tr><th>Month</th><th>Recurring spend</th><th>One-time spend</th><th>Total that month</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Aug 2026 (Mo 1)</strong></td>
-        <td>n/a</td>
-        <td>$5,540&ndash;$7,040</td>
-        <td><strong>$5,540&ndash;$7,040</strong></td>
-      </tr>
-      <tr>
-        <td><strong>Sep 2026 (Mo 2)</strong></td>
-        <td>$10,000</td>
-        <td>n/a</td>
-        <td><strong>$10,000</strong></td>
-      </tr>
-      <tr>
-        <td>Oct 2026 (Mo 3)</td>
-        <td>$10,000</td>
-        <td>n/a</td>
-        <td>$10,000</td>
-      </tr>
-      <tr>
-        <td>Nov 2026 (Mo 4)</td>
-        <td>$10,000</td>
-        <td>n/a</td>
-        <td>$10,000</td>
-      </tr>
-      <tr>
-        <td>Dec 2026 (Mo 5)</td>
-        <td>$10,000</td>
-        <td>n/a</td>
-        <td>$10,000</td>
-      </tr>
-      <tr class="milestone-1">
-        <td><strong>Jan 2027 (Mo 6)</strong></td>
-        <td>$10,000</td>
-        <td>n/a</td>
-        <td><strong>$10,000</strong></td>
-      </tr>
-      <tr>
-        <td>Feb&ndash;Mar 2027 (Mo 7&ndash;8)</td>
-        <td>$10,000/mo</td>
-        <td>n/a</td>
-        <td>$10,000/mo</td>
-      </tr>
-      <tr>
-        <td>Apr&ndash;May 2027 (Mo 9&ndash;10)</td>
-        <td>$10,000/mo</td>
-        <td>n/a</td>
-        <td>$10,000/mo</td>
-      </tr>
-      <tr class="milestone-2">
-        <td><strong>Jun&ndash;Jul 2027 (Mo 11&ndash;12)</strong></td>
-        <td>$10,000/mo</td>
-        <td>n/a</td>
-        <td><strong>$10,000/mo</strong></td>
-      </tr>
-    </tbody>
-  </table>
-  <p class="muted-note">12-month total investment (Package 2, full): $115,540&ndash;$117,040, combining $110,000 in recurring spend ($10,000/mo across the 11 months from September through July, once the backlink program and both hub add-ons begin in month 2) and $5,540&ndash;$7,040 in one-time setup billed once at kickoff in month 1. If Package 1 (core) is selected instead, recurring spend is $3,750/mo ($1,875 Hayward + $1,875 Tracy) in place of $10,000/mo, for a 12-month total of $46,790&ndash;$48,290. Adding the optional retargeting add-on adds $1,500/mo to either package from month 2 onward ($16,500 over 11 months). Month 1 is one-time setup only either way, so there is no recurring bill before the delivery-zone pages exist to support it.</p>
+  <div class="tab-panel active" data-group="calendar" data-tab="pkg1">
+    <div class="chart-card">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #6B6B6B;">
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #8A6D3B;"></span>One-time (month 1 only)</span>
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #1F2A44;"></span>Recurring (starts month 2)</span>
+      </div>
+      <svg viewBox="0 0 1000 320" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of total monthly Nearfront investment for Package 1, the core SEO program. Aug 2026 is one-time setup only, 5,540 to 7,040 dollars. Sep 2026 through Jul 2027 is a flat 3,750 dollars per month in recurring spend once the backlink program begins in month 2. Package 2 recurring would be 10,000 dollars per month instead, and the optional retargeting add-on would add 1,500 dollars per month to either package.">
+        <line x1="60" y1="20" x2="960" y2="20" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="85" x2="960" y2="85" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="150" x2="960" y2="150" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="215" x2="960" y2="215" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="280" x2="960" y2="280" stroke="#EDEAE2" stroke-width="1"/>
+        <text x="10" y="24" font-size="11" fill="#9A9A9A">$16k</text>
+        <text x="10" y="89" font-size="11" fill="#9A9A9A">$12k</text>
+        <text x="10" y="154" font-size="11" fill="#9A9A9A">$8k</text>
+        <text x="10" y="219" font-size="11" fill="#9A9A9A">$4k</text>
+        <text x="18" y="284" font-size="11" fill="#9A9A9A">$0</text>
+
+        <rect x="80" y="178" width="60" height="102" fill="#8A6D3B" rx="3"/>
+        <rect x="180" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="280" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="380" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="480" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="580" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="680" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="780" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+        <rect x="880" y="219" width="60" height="61" fill="#1F2A44" rx="3"/>
+
+        <text x="110" y="170" font-size="10.5" fill="#8A6D3B" font-weight="700" text-anchor="middle">$5.5k&ndash;$7k</text>
+        <text x="210" y="211" font-size="10.5" fill="#1F2A44" font-weight="700" text-anchor="middle">$3.75k</text>
+        <text x="710" y="211" font-size="10.5" fill="#1F2A44" font-weight="700" text-anchor="middle">$3.75k</text>
+
+        <text x="110" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Aug 26</text>
+        <text x="210" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Sep</text>
+        <text x="310" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Oct</text>
+        <text x="410" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Nov</text>
+        <text x="510" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Dec</text>
+        <text x="610" y="300" font-size="11" fill="#8A6D3B" font-weight="700" text-anchor="middle">Jan 27 &#9733;</text>
+        <text x="710" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Feb&ndash;Mar</text>
+        <text x="810" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Apr&ndash;May</text>
+        <text x="910" y="300" font-size="11" fill="#1E7145" font-weight="700" text-anchor="middle">Jun&ndash;Jul 27 &#9733;</text>
+      </svg>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Month</th><th>Recurring spend</th><th>One-time spend</th><th>Total that month</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aug 2026 (Mo 1)</strong></td>
+          <td>n/a</td>
+          <td>$5,540&ndash;$7,040</td>
+          <td><strong>$5,540&ndash;$7,040</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Sep 2026 (Mo 2)</strong></td>
+          <td>$3,750</td>
+          <td>n/a</td>
+          <td><strong>$3,750</strong></td>
+        </tr>
+        <tr>
+          <td>Oct 2026 (Mo 3)</td>
+          <td>$3,750</td>
+          <td>n/a</td>
+          <td>$3,750</td>
+        </tr>
+        <tr>
+          <td>Nov 2026 (Mo 4)</td>
+          <td>$3,750</td>
+          <td>n/a</td>
+          <td>$3,750</td>
+        </tr>
+        <tr>
+          <td>Dec 2026 (Mo 5)</td>
+          <td>$3,750</td>
+          <td>n/a</td>
+          <td>$3,750</td>
+        </tr>
+        <tr class="milestone-1">
+          <td><strong>Jan 2027 (Mo 6)</strong></td>
+          <td>$3,750</td>
+          <td>n/a</td>
+          <td><strong>$3,750</strong></td>
+        </tr>
+        <tr>
+          <td>Feb&ndash;Mar 2027 (Mo 7&ndash;8)</td>
+          <td>$3,750/mo</td>
+          <td>n/a</td>
+          <td>$3,750/mo</td>
+        </tr>
+        <tr>
+          <td>Apr&ndash;May 2027 (Mo 9&ndash;10)</td>
+          <td>$3,750/mo</td>
+          <td>n/a</td>
+          <td>$3,750/mo</td>
+        </tr>
+        <tr class="milestone-2">
+          <td><strong>Jun&ndash;Jul 2027 (Mo 11&ndash;12)</strong></td>
+          <td>$3,750/mo</td>
+          <td>n/a</td>
+          <td><strong>$3,750/mo</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted-note">12-month total investment (Package 1, core): $46,790&ndash;$48,290, combining $41,250 in recurring spend ($3,750/mo across the 11 months from September through July, once the backlink program begins in month 2) and $5,540&ndash;$7,040 in one-time setup billed once at kickoff in month 1. If Package 2 (full) is selected instead, recurring spend is $10,000/mo in place of $3,750/mo, for a 12-month total of $115,540&ndash;$117,040. Adding the optional retargeting add-on adds $1,500/mo to either package from month 2 onward ($16,500 over 11 months). Month 1 is one-time setup only either way, so there is no recurring bill before the delivery-zone pages exist to support it.</p>
+  </div>
+
+  <div class="tab-panel" data-group="calendar" data-tab="pkg2">
+    <div class="chart-card">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #6B6B6B;">
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #8A6D3B;"></span>One-time (month 1 only)</span>
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #1F2A44;"></span>Recurring (starts month 2)</span>
+      </div>
+      <svg viewBox="0 0 1000 320" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of total monthly Nearfront investment for Package 2, the full SEO program. Aug 2026 is one-time setup only, 5,540 to 7,040 dollars. Sep 2026 through Jul 2027 is a flat 10,000 dollars per month in recurring spend once the backlink program and both hub add-ons begin in month 2. Package 1 recurring would be 3,750 dollars per month instead, and the optional retargeting add-on would add 1,500 dollars per month to either package.">
+        <line x1="60" y1="20" x2="960" y2="20" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="85" x2="960" y2="85" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="150" x2="960" y2="150" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="215" x2="960" y2="215" stroke="#EDEAE2" stroke-width="1"/>
+        <line x1="60" y1="280" x2="960" y2="280" stroke="#EDEAE2" stroke-width="1"/>
+        <text x="10" y="24" font-size="11" fill="#9A9A9A">$16k</text>
+        <text x="10" y="89" font-size="11" fill="#9A9A9A">$12k</text>
+        <text x="10" y="154" font-size="11" fill="#9A9A9A">$8k</text>
+        <text x="10" y="219" font-size="11" fill="#9A9A9A">$4k</text>
+        <text x="18" y="284" font-size="11" fill="#9A9A9A">$0</text>
+
+        <rect x="80" y="178" width="60" height="102" fill="#8A6D3B" rx="3"/>
+        <rect x="180" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="280" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="380" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="480" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="580" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="680" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="780" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+        <rect x="880" y="117" width="60" height="163" fill="#1F2A44" rx="3"/>
+
+        <text x="110" y="170" font-size="10.5" fill="#8A6D3B" font-weight="700" text-anchor="middle">$5.5k&ndash;$7k</text>
+        <text x="210" y="109" font-size="10.5" fill="#1F2A44" font-weight="700" text-anchor="middle">$10k</text>
+        <text x="710" y="109" font-size="10.5" fill="#1F2A44" font-weight="700" text-anchor="middle">$10k</text>
+
+        <text x="110" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Aug 26</text>
+        <text x="210" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Sep</text>
+        <text x="310" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Oct</text>
+        <text x="410" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Nov</text>
+        <text x="510" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Dec</text>
+        <text x="610" y="300" font-size="11" fill="#8A6D3B" font-weight="700" text-anchor="middle">Jan 27 &#9733;</text>
+        <text x="710" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Feb&ndash;Mar</text>
+        <text x="810" y="300" font-size="11" fill="#8a8a8a" text-anchor="middle">Apr&ndash;May</text>
+        <text x="910" y="300" font-size="11" fill="#1E7145" font-weight="700" text-anchor="middle">Jun&ndash;Jul 27 &#9733;</text>
+      </svg>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Month</th><th>Recurring spend</th><th>One-time spend</th><th>Total that month</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aug 2026 (Mo 1)</strong></td>
+          <td>n/a</td>
+          <td>$5,540&ndash;$7,040</td>
+          <td><strong>$5,540&ndash;$7,040</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Sep 2026 (Mo 2)</strong></td>
+          <td>$10,000</td>
+          <td>n/a</td>
+          <td><strong>$10,000</strong></td>
+        </tr>
+        <tr>
+          <td>Oct 2026 (Mo 3)</td>
+          <td>$10,000</td>
+          <td>n/a</td>
+          <td>$10,000</td>
+        </tr>
+        <tr>
+          <td>Nov 2026 (Mo 4)</td>
+          <td>$10,000</td>
+          <td>n/a</td>
+          <td>$10,000</td>
+        </tr>
+        <tr>
+          <td>Dec 2026 (Mo 5)</td>
+          <td>$10,000</td>
+          <td>n/a</td>
+          <td>$10,000</td>
+        </tr>
+        <tr class="milestone-1">
+          <td><strong>Jan 2027 (Mo 6)</strong></td>
+          <td>$10,000</td>
+          <td>n/a</td>
+          <td><strong>$10,000</strong></td>
+        </tr>
+        <tr>
+          <td>Feb&ndash;Mar 2027 (Mo 7&ndash;8)</td>
+          <td>$10,000/mo</td>
+          <td>n/a</td>
+          <td>$10,000/mo</td>
+        </tr>
+        <tr>
+          <td>Apr&ndash;May 2027 (Mo 9&ndash;10)</td>
+          <td>$10,000/mo</td>
+          <td>n/a</td>
+          <td>$10,000/mo</td>
+        </tr>
+        <tr class="milestone-2">
+          <td><strong>Jun&ndash;Jul 2027 (Mo 11&ndash;12)</strong></td>
+          <td>$10,000/mo</td>
+          <td>n/a</td>
+          <td><strong>$10,000/mo</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted-note">12-month total investment (Package 2, full): $115,540&ndash;$117,040, combining $110,000 in recurring spend ($10,000/mo across the 11 months from September through July, once the backlink program and both hub add-ons begin in month 2) and $5,540&ndash;$7,040 in one-time setup billed once at kickoff in month 1. If Package 1 (core) is selected instead, recurring spend is $3,750/mo ($1,875 Hayward + $1,875 Tracy) in place of $10,000/mo, for a 12-month total of $46,790&ndash;$48,290. Adding the optional retargeting add-on adds $1,500/mo to either package from month 2 onward ($16,500 over 11 months). Month 1 is one-time setup only either way, so there is no recurring bill before the delivery-zone pages exist to support it.</p>
+  </div>
 
   <!-- Milestone Timeline -->
   <div class="section-label">Milestone timeline</div>
@@ -862,6 +995,16 @@ new Chart(document.getElementById('serpChart'), {
       y: { grid: { display: false }, ticks: { color: '#6B6B6B' } }
     }
   }
+});
+
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var group = btn.dataset.group;
+    document.querySelectorAll('.tab-btn[data-group="' + group + '"]').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel[data-group="' + group + '"]').forEach(function(p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelector('.tab-panel[data-group="' + group + '"][data-tab="' + btn.dataset.tab + '"]').classList.add('active');
+  });
 });
 </script>
 </body>
