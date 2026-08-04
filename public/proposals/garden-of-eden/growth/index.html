@@ -56,6 +56,13 @@
     font-weight: 600;
     margin: 0 0 18px;
   }
+  .header .forecast-highlight {
+    color: var(--gold-light);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin: 0 0 8px;
+  }
   .divider-gold {
     width: 56px;
     height: 3px;
@@ -298,8 +305,9 @@
   <!-- Header -->
   <div class="card-dark header">
     <div class="eyebrow">Nearfront: Growth Proposal</div>
-    <h1>Garden of Eden: Hayward &amp; Tracy Growth Plan</h1>
-    <p class="subtitle">$1.14M/mo combined baseline &rarr; $1.36M/mo within 6 months, $1.53M/mo within 12 months on Package 2 (full). Package 1 (core) reaches $1.32M and $1.46M on the same timeline.</p>
+    <h1>Garden of Eden Growth Plan</h1>
+    <p class="forecast-highlight">$1.36M within 6 months. $1.53M within 12 months.</p>
+    <p class="subtitle">$1.14M/mo combined baseline today, on Package 2 (full). Package 1 (core) reaches $1.32M and $1.46M on the same timeline.</p>
     <div class="divider-gold"></div>
     <p class="meta">Prepared for Ashwin Bhagat | goe.menu | Nearfront | Guillermo Bravo</p>
     <p class="meta" style="margin-top: 10px;">Built at full access: Google Search Console, Google Analytics 4, Google Business Profile, and Treez. This is a data-grounded growth model, not a template SEO pitch, every figure above traces back to a live report.</p>
@@ -497,16 +505,6 @@
   </div>
 
   <div class="chart-card">
-    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #6B6B6B;">
-      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #1F2A44;"></span>Hayward</span>
-      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: #8A6D3B;"></span>Tracy</span>
-    </div>
-    <div style="position: relative; width: 100%; height: 260px;">
-      <canvas id="solvChart" role="img" aria-label="Grouped bar chart of Local Falcon Share of Local Voice by keyword group for Hayward and Tracy. Dispensary near me: Hayward 88.9%, Tracy 90.1%. Dispensary: Hayward 74.1%, Tracy 93.8%. Cannabis store: Hayward 80.3%, Tracy 91.4%. Branded city term: Hayward 100%, Tracy 64.2%. Weed delivery: both 0%.">Local pack Share of Local Voice by keyword and location.</canvas>
-    </div>
-  </div>
-
-  <div class="chart-card">
     <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Local Falcon Google Maps grids: dispensary near me term (dominant) vs. weed delivery term (invisible), same store-centered radius.</div>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
       <div>
@@ -525,12 +523,6 @@
         <img src="https://lf-static-v2.localfalcon.com/image/e90a785013a2cd5" alt="Tracy weed delivery Local Falcon grid, 20 mile radius, 0% SoLV" style="width:100%; border-radius:8px; border:1px solid var(--card-border);">
         <div style="font-size:11.5px; color:var(--text-muted); margin-top:6px;">Tracy, "weed delivery" (20mi): 0% SoLV, top competitor 67%</div>
       </div>
-    </div>
-  </div>
-
-  <div class="chart-card">
-    <div style="position: relative; width: 100%; height: 400px;">
-      <canvas id="serpChart" role="img" aria-label="Horizontal bar chart of Ahrefs Google positions for the 15 ranking keywords out of 50 tracked, sorted best to worst. Tracy dispensary 2, Hayward dispensary 2, Castro Valley dispensary 2, Tracy weed delivery 2, San Lorenzo dispensary 4, Ripon dispensary 4, Sunol dispensary 5, Hayward weed delivery 6, French Camp weed delivery 11, Mountain House dispensary 12, Lathrop dispensary 14, Livermore dispensary 14, San Leandro weed delivery 16, Sunol weed delivery 16, San Lorenzo weed delivery 25. The remaining 35 tracked keywords do not rank at all.">Ahrefs Google positions for ranking keywords.</canvas>
     </div>
   </div>
 
@@ -1050,58 +1042,7 @@
   </div>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const solvLabels = ['Dispensary near me','Dispensary','Cannabis store','Branded city term','Weed delivery'];
-const solvHayward = [88.89, 74.07, 80.25, 100.00, 0.00];
-const solvTracy = [90.12, 93.83, 91.36, 64.20, 0.00];
-
-new Chart(document.getElementById('solvChart'), {
-  type: 'bar',
-  data: {
-    labels: solvLabels,
-    datasets: [
-      { label: 'Hayward', data: solvHayward, backgroundColor: '#1F2A44', borderRadius: 4, maxBarThickness: 24 },
-      { label: 'Tracy', data: solvTracy, backgroundColor: '#8A6D3B', borderRadius: 4, maxBarThickness: 24 }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => c.dataset.label + ': ' + c.parsed.y + '%' } } },
-    scales: {
-      y: { min: 0, max: 100, grid: { color: '#E4E1D9' }, ticks: { callback: (v) => v + '%', color: '#6B6B6B' } },
-      x: { grid: { display: false }, ticks: { color: '#6B6B6B' } }
-    }
-  }
-});
-
-const serpRows = [
-  ['Tracy dispensary', 2], ['Hayward dispensary', 2], ['Castro Valley dispensary', 2], ['Tracy weed delivery', 2],
-  ['San Lorenzo dispensary', 4], ['Ripon dispensary', 4], ['Sunol dispensary', 5], ['Hayward weed delivery', 6],
-  ['French Camp weed delivery', 11], ['Mountain House dispensary', 12], ['Lathrop dispensary', 14], ['Livermore dispensary', 14],
-  ['San Leandro weed delivery', 16], ['Sunol weed delivery', 16], ['San Lorenzo weed delivery', 25]
-].sort((a, b) => a[1] - b[1]);
-const serpColors = serpRows.map((r) => (r[1] <= 10 ? '#1E7145' : r[1] <= 20 ? '#8A6D3B' : '#A13B2A'));
-
-new Chart(document.getElementById('serpChart'), {
-  type: 'bar',
-  data: {
-    labels: serpRows.map((r) => r[0]),
-    datasets: [{ data: serpRows.map((r) => r[1]), backgroundColor: serpColors, borderRadius: 4, maxBarThickness: 24 }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => 'Position ' + c.parsed.x } } },
-    scales: {
-      x: { min: 0, grid: { color: '#E4E1D9' }, ticks: { color: '#6B6B6B' } },
-      y: { grid: { display: false }, ticks: { color: '#6B6B6B' } }
-    }
-  }
-});
-
 document.querySelectorAll('.tab-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var group = btn.dataset.group;
