@@ -522,9 +522,19 @@ def validate(root, args):
                             "its privacy-policy disclosure. See CLAUDE.md, Measurement."
                             % GTM_ID))
 
-        if work and profile_for(urls[rel], rel, work) == "report":
-            continue  # proposals and the work index stay out of analytics
+        prof = profile_for(urls[rel], rel, work)
         n = d.raw.count(GTM_ID)
+        if prof == "report":
+            # Client reports and proposals carry NO container. The container
+            # loads GA4, RB2B person-level identification and other vendor tags,
+            # none of which belong on a page a client opens to read their own
+            # confidential report. Enforced here so it cannot quietly come back.
+            if n or "googletagmanager" in d.raw:
+                add(Finding(ERROR, rel, 1, "reports-no-analytics",
+                            "client report page loads the GTM container",
+                            "Remove the GTM head snippet and the noscript iframe. "
+                            "These pages must not be tracked."))
+            continue
         if n < 2:
             add(Finding(ERROR, rel, 1, "gtm",
                         "expected the GTM head snippet and the noscript iframe (%s appears %d time(s))"
