@@ -1,0 +1,56 @@
+{
+  "state": "Maryland",
+  "abbr": "MD",
+  "slug": "maryland",
+  "tier": "adult-use",
+  "updated": "2026-08-10",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "md-sales-tax",
+      "claim": "sales and use tax rate on adult-use cannabis",
+      "value": 12,
+      "unit": "percent",
+      "as_of": "2025-07-01",
+      "source_name": "Comptroller of Maryland, quarterly adult-use cannabis tax revenue reports",
+      "source_url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/06-16-2026-maryland-collects-26-million-in-cannabis-tax-revenue-from-january-to-march.pdf",
+      "retrieved": "2026-08-10",
+      "verify": "Rate rose from 9 to 12 percent on 2025-07-01 under the Budget Reconciliation and Financing Act of 2025. The Comptroller's quarterly releases describe Jul-Sep 2025 as the first full quarter at 12 percent.",
+      "note": "TRAP: the Comptroller's static page at marylandcomptroller.gov/cannabis.html still states 9 percent and is out of date. Cite the quarterly report, never that page. Re-verify before every Maryland publish, since a further increase to 15 percent was proposed for fiscal 2027 in the BRFA and may or may not have taken effect.",
+      "used_on": []
+    },
+    {
+      "id": "md-tax-revenue-q1-2026",
+      "claim": "adult-use cannabis sales and use tax collected, January to March 2026",
+      "value": 26200000,
+      "unit": "USD",
+      "as_of": "2026-03-31",
+      "source_name": "Comptroller of Maryland media release, 2026-06-16",
+      "source_url": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/06-16-2026-maryland-collects-26-million-in-cannabis-tax-revenue-from-january-to-march.pdf",
+      "retrieved": "2026-08-10",
+      "verify": "Headline figure 26.2 million for the January to March 2026 quarter",
+      "used_on": []
+    },
+    {
+      "id": "md-adult-use-start",
+      "claim": "adult-use cannabis sales began in Maryland",
+      "value": "2023-07-01",
+      "unit": "date",
+      "as_of": "2023-07-01",
+      "source_name": "Comptroller of Maryland, adult-use cannabis tax page",
+      "source_url": "https://www.marylandcomptroller.gov/cannabis.html",
+      "retrieved": "2026-08-10",
+      "verify": "Page states the cannabis sales and use tax took effect 2023-07-01, which is the start of legal adult-use sales",
+      "note": "Only the effective-date element of this page is used. Its 9 percent rate figure is stale, see md-sales-tax.",
+      "used_on": []
+    }
+  ],
+  "gaps": [
+    "Licensed dispensary count: the MCA dispensary page cites 101 licensed entities but is marked archived and carries no as-of date. Pull the current count from the MCA 2026 data dashboard download before publishing any dispensary number.",
+    "License classes: MD distinguishes standard, micro, and incubator-space dispensary licenses plus social-equity rounds. Break the count down by class rather than publishing one aggregate.",
+    "Per-city counts for Baltimore, Silver Spring, Frederick, Annapolis: needed for city pages.",
+    "Zoning versus opt-out: MD localities zone rather than ban outright. Confirm the precise mechanism before writing the local-control sentence, since the CA framing does not transfer."
+  ],
+  "cities": [],
+  "faqs": []
+}

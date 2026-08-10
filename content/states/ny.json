@@ -1,0 +1,80 @@
+{
+  "state": "New York",
+  "abbr": "NY",
+  "slug": "new-york",
+  "tier": "adult-use",
+  "updated": "2026-08-10",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "ny-retail-dispensary-licenses",
+      "claim": "active adult-use retail dispensary licenses",
+      "value": 664,
+      "unit": "licenses",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
+      "source_url": "https://data.ny.gov/d/jskf-tt3q",
+      "retrieved": "2026-08-10",
+      "verify": "Socrata API grouped by license_type: https://data.ny.gov/resource/jskf-tt3q.json?$select=license_type,count(*)&$group=license_type",
+      "note": "LICENSES ISSUED, not stores open. Say licensed, never open or operating, unless a separate operating count is sourced.",
+      "used_on": []
+    },
+    {
+      "id": "ny-caurd-licenses",
+      "claim": "adult-use conditional retail dispensary (CAURD) licenses",
+      "value": 451,
+      "unit": "licenses",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
+      "source_url": "https://data.ny.gov/d/jskf-tt3q",
+      "retrieved": "2026-08-10",
+      "verify": "Same grouped query. CAURD was the earlier justice-involved licensing round and is a separate class from the standard retail license.",
+      "used_on": []
+    },
+    {
+      "id": "ny-microbusiness-licenses",
+      "claim": "adult-use microbusiness licenses",
+      "value": 477,
+      "unit": "licenses",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
+      "source_url": "https://data.ny.gov/d/jskf-tt3q",
+      "retrieved": "2026-08-10",
+      "verify": "Same grouped query",
+      "used_on": []
+    },
+    {
+      "id": "ny-nyc-dispensary-concentration",
+      "claim": "retail dispensary licenses in the five boroughs",
+      "value": {"Brooklyn": 145, "Manhattan": 142, "Bronx": 43, "Staten Island": 27},
+      "unit": "licenses by city field",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
+      "source_url": "https://data.ny.gov/d/jskf-tt3q",
+      "retrieved": "2026-08-10",
+      "verify": "Socrata: $select=city,count(*) filtered to license_type like '%Retail Dispensary%', grouped by city. Manhattan appears as city value 'New York'. Queens is absent from the top rows and must be checked separately, since OCM records Queens addresses under neighborhood names such as Astoria and Flushing rather than a single Queens value.",
+      "note": "Feeds the NYC city page. Confirm the Queens aggregation before publishing any borough-complete claim.",
+      "used_on": []
+    },
+    {
+      "id": "ny-upstate-metros",
+      "claim": "retail dispensary licenses in the largest upstate markets",
+      "value": {"Rochester": 38, "Buffalo": 25, "Albany": 20, "Syracuse": 18},
+      "unit": "licenses by city field",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
+      "source_url": "https://data.ny.gov/d/jskf-tt3q",
+      "retrieved": "2026-08-10",
+      "verify": "Same grouped query",
+      "used_on": []
+    }
+  ],
+  "gaps": [
+    "Tax structure: NY levies a state excise plus a local rate, and the THC potency tax was repealed in 2024. Confirm current rates from the NYS Department of Taxation and Finance before any tax sentence ships. Do not carry over the pre-repeal structure.",
+    "Operating store count: licenses issued far exceeds stores open. OCM publishes a dispensary location list that gives a truer open-store number for market-size claims.",
+    "Queens borough aggregation, see the note on ny-nyc-dispensary-concentration.",
+    "Legalization and first-sale dates: MRTA (2021) and the first legal sale (late 2022) both need primary citations."
+  ],
+  "cities": [],
+  "faqs": []
+}

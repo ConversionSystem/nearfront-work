@@ -1,0 +1,67 @@
+{
+  "state": "Oregon",
+  "abbr": "OR",
+  "slug": "oregon",
+  "tier": "adult-use",
+  "updated": "2026-08-10",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "or-retailers-with-sales",
+      "claim": "OLCC-licensed marijuana retailers recording sales",
+      "value": 678,
+      "unit": "retailers",
+      "as_of": "2026-08-01",
+      "source_name": "Oregon Open Data Portal, OLCC Marijuana Market Data: Count of Retailers with Sales",
+      "source_url": "https://data.oregon.gov/business/OLCC-Marijuana-Market-Data-Count-of-Retailers-with/kctd-stii",
+      "retrieved": "2026-08-10",
+      "verify": "Socrata API: https://data.oregon.gov/resource/kctd-stii.json?$order=date%20DESC&$limit=1",
+      "note": "Retailers with recorded sales in the month, which is a truer market-size number than licenses issued. July 2026 was 689 and June 2026 was 688, so the count is drifting down slightly.",
+      "used_on": []
+    },
+    {
+      "id": "or-state-tax",
+      "claim": "state retail tax on recreational marijuana",
+      "value": 17,
+      "unit": "percent",
+      "as_of": "2026-08-10",
+      "source_name": "Oregon Department of Revenue, Marijuana tax program",
+      "source_url": "https://www.oregon.gov/dor/programs/businesses/pages/marijuana.aspx",
+      "retrieved": "2026-08-10",
+      "verify": "DOR page states OLCC retailers charge 17 percent on recreational marijuana",
+      "used_on": []
+    },
+    {
+      "id": "or-local-tax",
+      "claim": "additional local tax cities and counties may levy with voter approval",
+      "value": 3,
+      "unit": "percent maximum",
+      "as_of": "2026-08-10",
+      "source_name": "Oregon Department of Revenue, Marijuana locality taxes",
+      "source_url": "https://www.oregon.gov/dor/programs/businesses/Pages/marijuana-locality-tax.aspx",
+      "retrieved": "2026-08-10",
+      "verify": "Local option up to 3 percent on top of the 17 percent state rate, so a buyer can face up to 20 percent",
+      "used_on": []
+    },
+    {
+      "id": "or-retailer-trend-12mo",
+      "claim": "change in retailers with sales over the prior 12 months",
+      "value": "flat to slightly down",
+      "unit": "qualitative",
+      "as_of": "2026-08-01",
+      "source_name": "Oregon Open Data Portal, OLCC Marijuana Market Data",
+      "source_url": "https://data.oregon.gov/business/OLCC-Marijuana-Market-Data-Count-of-Retailers-with/kctd-stii",
+      "retrieved": "2026-08-10",
+      "verify": "Compare Aug 2026 (678) against the same month prior years via the API before publishing any trend sentence",
+      "note": "PENDING. Do not publish a trend claim until the full series is pulled and the direction is confirmed.",
+      "used_on": []
+    }
+  ],
+  "gaps": [
+    "Legalization and first-sale dates: Measure 91 (2014) and the start of recreational sales need a primary OLCC or Oregon Secretary of State citation before either appears on the page.",
+    "Municipal opt-out count: OLCC publishes opted-out cities and counties. Pull the current list before writing the opt-out sentence.",
+    "Per-city retailer counts for Portland, Eugene, Salem, Bend: needed for city pages. OLCC publishes an active-licenses file that can be grouped by city."
+  ],
+  "cities": [],
+  "faqs": []
+}

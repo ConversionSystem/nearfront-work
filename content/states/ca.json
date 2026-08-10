@@ -1,0 +1,43 @@
+{
+  "state": "California",
+  "abbr": "CA",
+  "slug": "california",
+  "tier": "adult-use",
+  "updated": "2026-08-10",
+  "status": "partial",
+  "facts": [
+    {
+      "id": "ca-excise-tax",
+      "claim": "cannabis excise tax on gross receipts from retail sales",
+      "value": 15,
+      "unit": "percent",
+      "as_of": "2025-10-01",
+      "source_name": "California Department of Tax and Fee Administration, Cannabis Retailers guide",
+      "source_url": "https://cdtfa.ca.gov/industry/cannabis/retailers.htm",
+      "retrieved": "2026-08-10",
+      "verify": "CDTFA: \"Effective October 1, 2025, the cannabis excise tax rate will decrease from 19 percent to 15 percent of the gross receipts from all retail sales of cannabis or cannabis products.\"",
+      "note": "Recent whiplash worth using as a content angle: the rate rose to 19 percent on 2025-07-01, then Assembly Bill 564 returned it to 15 percent on 2025-10-01. Any competitor page still saying 19 percent, or a flat 15 percent with no date, is out of date. Always publish this with its effective date.",
+      "used_on": []
+    },
+    {
+      "id": "ca-excise-history",
+      "claim": "cannabis excise tax was temporarily 19 percent",
+      "value": {"from": "2025-07-01", "to": "2025-09-30", "rate": 19},
+      "unit": "percent, historical",
+      "as_of": "2025-10-01",
+      "source_name": "California Department of Tax and Fee Administration, Cannabis Retailers guide",
+      "source_url": "https://cdtfa.ca.gov/industry/cannabis/retailers.htm",
+      "retrieved": "2026-08-10",
+      "verify": "Same page. AB 564 delayed a scheduled adjustment and restored the 15 percent rate.",
+      "used_on": []
+    }
+  ],
+  "gaps": [
+    "BLOCKING: licensed retailer count. A figure of 1,560 licensed retailers surfaced in search attributed to DCC rulemaking, but fetching the cited rulemaking text did not contain it, so it is UNVERIFIED and must not be published. The DCC data dashboards at cannabis.ca.gov/resources/data-dashboard/ are JavaScript-rendered and did not yield numbers to a plain fetch. Get the count from the Cannabis License Summary Report dashboard directly, or from a DCC open-data export, before the California page ships.",
+    "Local prohibition share: California's defining market fact is that a large share of jurisdictions still ban retail. DCC maintains a local-jurisdiction database. This is the single most valuable California stat and needs a primary source.",
+    "Per-city retailer counts for San Jose, San Diego, Los Angeles, San Francisco, Oakland: needed for the city pages and for the San Jose client market.",
+    "Sales volume: CDTFA publishes taxable cannabis sales by quarter, which sizes the market credibly."
+  ],
+  "cities": [],
+  "faqs": []
+}
