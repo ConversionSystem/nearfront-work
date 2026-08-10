@@ -47,6 +47,18 @@ PROTECTED = (
 # Reference page for the shared nav/footer shell. Every marketing page must match it.
 SHELL_REF = "services/thca-seo/index.html"
 
+# Programmatic page families. Pages sharing a prefix are near-siblings by
+# construction, so they are the ones at risk of becoming templated duplicates.
+# Compared only within their own group; a state page and a city page are
+# expected to differ anyway.
+GEO_PREFIXES = ("cannabis-seo-", "thca-seo-", "peptides-seo-", "dispensary-near-")
+
+# 8-gram Jaccard overlap between two sibling pages, after the shared shell is
+# subtracted. Deeproots' suburb pages measure 27-43% duplicate; Bud Authority's
+# geo pages run 3-12%. Sitting under 10% keeps us on the right side of that gap.
+SHINGLE_WARN = 0.10
+SHINGLE_ERROR = 0.15
+
 # Tags that must never be pasted into a page: they belong inside the GTM
 # container. A hard-coded tag alongside the container's own double-counts every
 # hit, and it dodges the rule that a new tracker ships with its privacy
@@ -161,6 +173,18 @@ def tag_kind(tag):
     return {"title": "title", "script": "jsonld", "a": "a"}.get(tag, tag)
 
 
+def shingles(raw, n=8):
+    """Set of n-word shingles over a page's visible text.
+
+    Scripts and styles are dropped first: JSON-LD mirrors the visible FAQ by
+    design, and counting it would make every well-marked-up page look like a
+    duplicate of itself.
+    """
+    txt = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
+    words = re.findall(r"[a-z0-9]+", re.sub(r"<[^>]+>", " ", txt).lower())
+    return {tuple(words[i:i + n]) for i in range(len(words) - n + 1)}
+
+
 # --------------------------------------------------------------------------
 # _redirects
 
@@ -236,7 +260,10 @@ def health_findings(doc, rel, url):
     out = []
     if url in LEGAL_PAGES:
         return out
-    demote = url.startswith("/blog/")
+    # Blog and the peptides education hub are editorial: they discuss the
+    # regulatory landscape, so efficacy vocabulary appears in description rather
+    # than as a product claim. Money pages keep the full WARN.
+    demote = url.startswith("/blog/") or url.startswith("/peptides/")
     for chunk, line in doc.text:
         for sentence in re.split(r"(?<=[.!?])\s+", chunk):
             if NEGATED.search(sentence):
@@ -837,6 +864,48 @@ def validate(root, args):
         if kb > 250:
             add(Finding(WARN, rel, 1, "page-weight", "page is %.0f KB" % kb,
                         "Large pages hurt Core Web Vitals. Check for inlined base64 images."))
+
+    # --- shingle overlap between programmatic siblings ---------------------
+    # The whole state/city program lives or dies on whether the pages are
+    # genuinely different. Template reuse is fine; recycled prose is not.
+    geo = [r for r in pages if any(url_for(r).lstrip("/").startswith(p)
+                                   for p in GEO_PREFIXES)]
+    if len(geo) > 1:
+        shell = shingles(docs["public/" + SHELL_REF].raw) if "public/" + SHELL_REF in docs else set()
+        sets = {}
+        for rel in geo:
+            d = docs.get(rel)
+            if d is not None:
+                sets[rel] = shingles(d.raw) - shell
+        seen_pairs = set()
+        for a in geo:
+            for b in geo:
+                if a >= b or a not in sets or b not in sets:
+                    continue
+                # group siblings by shared prefix; unlike families need no check
+                pa = next((p for p in GEO_PREFIXES if url_for(a).lstrip("/").startswith(p)), "")
+                pb = next((p for p in GEO_PREFIXES if url_for(b).lstrip("/").startswith(p)), "")
+                if pa != pb:
+                    continue
+                if changed is not None and a not in changed and b not in changed:
+                    continue
+                union = sets[a] | sets[b]
+                if not union:
+                    continue
+                j = len(sets[a] & sets[b]) / float(len(union))
+                key = (a, b)
+                if key in seen_pairs:
+                    continue
+                seen_pairs.add(key)
+                if j >= SHINGLE_ERROR or j >= SHINGLE_WARN:
+                    sev = ERROR if j >= SHINGLE_ERROR else WARN
+                    add(Finding(sev, a, 1, "shingle-overlap",
+                                "%.0f%% of the body text is shared with %s"
+                                % (j * 100, url_for(b)),
+                                "Sibling pages must differ in substance, not just place names. "
+                                "Vary the statistics selected, the questions answered, and the "
+                                "local detail. Threshold: warn at %d%%, fail at %d%%."
+                                % (SHINGLE_WARN * 100, SHINGLE_ERROR * 100)))
 
     # --- protected paths banner -------------------------------------------
     if changed:
