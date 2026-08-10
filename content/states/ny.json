@@ -68,9 +68,34 @@
       "verify": "Same grouped query",
       "used_on": []
     }
+    ,
+    {
+      "id": "ny-retail-tax",
+      "claim": "tax on adult-use cannabis at retail",
+      "value": {"state": 9, "local": 4, "combined": 13},
+      "unit": "percent",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Department of Taxation and Finance, adult-use cannabis products tax",
+      "source_url": "https://www.tax.ny.gov/bus/auc/",
+      "retrieved": "2026-08-10",
+      "verify": "9 percent state plus 4 percent local, the local share staying with the city, town, village, or county where the sale occurs",
+      "used_on": []
+    },
+    {
+      "id": "ny-potency-tax-replaced",
+      "claim": "the per-milligram THC potency tax was replaced by a 9 percent distributor tax",
+      "value": "2024-06-01",
+      "unit": "date",
+      "as_of": "2024-06-01",
+      "source_name": "New York State Department of Taxation and Finance, historical adult-use cannabis rates",
+      "source_url": "https://www.tax.ny.gov/bus/auc-historical-rates.htm",
+      "retrieved": "2026-08-10",
+      "verify": "Before 2024-06-01 the tax ran on milligrams of total THC (0.5 cents per mg flower, 0.8 concentrate, 3 cents edibles). From that date a 9 percent distributor tax applies instead.",
+      "note": "Any content still describing NY cannabis tax in cents per milligram is more than two years out of date.",
+      "used_on": []
+    }
   ],
   "gaps": [
-    "Tax structure: NY levies a state excise plus a local rate, and the THC potency tax was repealed in 2024. Confirm current rates from the NYS Department of Taxation and Finance before any tax sentence ships. Do not carry over the pre-repeal structure.",
     "Operating store count: licenses issued far exceeds stores open. OCM publishes a dispensary location list that gives a truer open-store number for market-size claims.",
     "Queens borough aggregation, see the note on ny-nyc-dispensary-concentration.",
     "Legalization and first-sale dates: MRTA (2021) and the first legal sale (late 2022) both need primary citations."
