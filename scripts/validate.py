@@ -548,7 +548,10 @@ def validate(root, args):
         # These two run on EVERY page, including proposals and the work index.
         # A second container double-counts every event and splits the data, and
         # a tag pasted straight into a page bypasses the container entirely.
-        for other in set(re.findall(r"GTM-[A-Z0-9]{4,}", d.raw)):
+        # Require a boundary before GTM- so a doc filename like
+        # GA4-GTM-SETUP-RUNBOOK.md does not read as a container ID, and require
+        # the ID to end at a boundary so GTM-NFLQTMGP-something is not a match.
+        for other in set(re.findall(r"(?<![A-Za-z0-9-])GTM-[A-Z0-9]{5,}(?![A-Za-z0-9-])", d.raw)):
             if other != GTM_ID:
                 add(Finding(ERROR, rel, 1, "gtm-foreign",
                             "second container %s; this site uses %s only" % (other, GTM_ID),
