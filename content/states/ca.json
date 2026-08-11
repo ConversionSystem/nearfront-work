@@ -124,14 +124,159 @@
       "retrieved": "2026-08-11",
       "verify": "Filter to Jurisdiction Type = 'County': 28 of 58 have 'Are all CCA activities prohibited?' = 'Yes'.",
       "note": "County rules govern unincorporated areas only. An incorporated city inside a banning county may still allow retail, and vice versa."
+    },
+    {
+      "id": "ca-la-county-cities",
+      "value": 88,
+      "unit": "cities",
+      "label": "Incorporated cities in Los Angeles County",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Rows with County='Los Angeles' and Jurisdiction Type='City'.",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv"
+    },
+    {
+      "id": "ca-la-allowing-cities",
+      "value": 20,
+      "unit": "cities",
+      "label": "Los Angeles County cities allowing storefront retail",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "20 allow, 67 prohibit, 1 medical-only (Huntington Park). Allowing: Artesia, Baldwin Park, Bell Gardens, Bellflower, Covina, Culver City, El Monte, Hawthorne, Lancaster, Long Beach, Los Angeles, Lynwood, Malibu, Maywood, Pasadena, Pomona, Redondo Beach, Santa Monica, South El Monte, West Hollywood.",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv"
+    },
+    {
+      "id": "ca-la-prohibiting-city-population",
+      "value": 3249885,
+      "unit": "residents",
+      "label": "Residents of Los Angeles County cities that prohibit storefront retail",
+      "source": "California Department of Finance, Report E-1, Population and Housing Estimates for Cities, Counties and the State, 1 January 2026 (released 1 May 2026) combined with California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "as_of": "2026-01-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sum of DOF 1/1/2026 population for the 67 LA County cities recorded as Retail (Storefront) = Prohibited. Unincorporated Los Angeles County also prohibits all commercial cannabis activity, so the genuinely closed population is larger than this figure.",
+      "note": "Derived by joining two primary sources. Publish as a sum of city populations, never as an official published statistic."
+    },
+    {
+      "id": "ca-la-uninc-prohibited",
+      "value": "Prohibited",
+      "unit": "status",
+      "label": "Unincorporated Los Angeles County storefront retail status",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Row 'Los Angeles County', Jurisdiction Type='County': Retail (Storefront)=Prohibited, all CCA activities prohibited=Yes.",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv"
+    },
+    {
+      "id": "ca-santa-clara-cities",
+      "value": 15,
+      "unit": "cities",
+      "label": "Incorporated cities in Santa Clara County",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Rows with County='Santa Clara' and Jurisdiction Type='City'.",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv"
+    },
+    {
+      "id": "ca-santa-clara-allowing",
+      "value": 2,
+      "unit": "cities",
+      "label": "Santa Clara County cities allowing storefront retail: San Jose and Mountain View",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Only San Jose and Mountain View are recorded as Retail (Storefront)='Allowed'. The other 13 prohibit. Unincorporated Santa Clara County prohibits all commercial cannabis activity.",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv"
+    },
+    {
+      "id": "ca-san-jose-population",
+      "value": 980434,
+      "unit": "residents",
+      "label": "City of San Jose population",
+      "source": "California Department of Finance, Report E-1, Population and Housing Estimates for Cities, Counties and the State, 1 January 2026 (released 1 May 2026)",
+      "source_url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "as_of": "2026-01-01",
+      "retrieved": "2026-08-11",
+      "verify": "E-1 CityCounty2026 sheet, San Jose, total population 1/1/2026."
+    },
+    {
+      "id": "ca-santa-clara-county-population",
+      "value": 1932468,
+      "unit": "residents",
+      "label": "Santa Clara County population",
+      "source": "California Department of Finance, Report E-1, Population and Housing Estimates for Cities, Counties and the State, 1 January 2026 (released 1 May 2026)",
+      "source_url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "as_of": "2026-01-01",
+      "retrieved": "2026-08-11",
+      "verify": "E-1 CityCounty2026 sheet, Santa Clara county row, 1/1/2026."
+    },
+    {
+      "id": "ca-santa-clara-prohibiting-population",
+      "value": 772002,
+      "unit": "residents",
+      "label": "Residents of Santa Clara County cities that prohibit storefront retail",
+      "source": "California Department of Finance, Report E-1, Population and Housing Estimates for Cities, Counties and the State, 1 January 2026 (released 1 May 2026) combined with California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "as_of": "2026-01-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sum of DOF 1/1/2026 population across the 13 prohibiting Santa Clara County cities. Mountain View (88,533) and San Jose (980,434) are the two that allow.",
+      "note": "Derived by joining two primary sources. Not an official published statistic."
+    },
+    {
+      "id": "ca-san-diego-county-cities",
+      "value": 18,
+      "unit": "cities",
+      "label": "Incorporated cities in San Diego County, 9 allowing storefront retail and 9 prohibiting",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Allowing: Chula Vista, Encinitas, Imperial Beach, La Mesa, Lemon Grove, National City, San Diego, Santee, Vista. Unincorporated San Diego County also ALLOWS storefront retail, unlike Los Angeles and Santa Clara.",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "note": "San Diego is the exception among California's large metros. The closed-ring catchment advantage that defines Los Angeles and San Jose does not exist here."
+    },
+    {
+      "id": "ca-san-diego-city-population",
+      "value": 1419531,
+      "unit": "residents",
+      "label": "City of San Diego population",
+      "source": "California Department of Finance, Report E-1, Population and Housing Estimates for Cities, Counties and the State, 1 January 2026 (released 1 May 2026)",
+      "source_url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "as_of": "2026-01-01",
+      "retrieved": "2026-08-11",
+      "verify": "E-1 CityCounty2026 sheet, San Diego city row, 1/1/2026."
+    },
+    {
+      "id": "ca-la-city-population",
+      "value": 3806201,
+      "unit": "residents",
+      "label": "City of Los Angeles population",
+      "source": "California Department of Finance, Report E-1, Population and Housing Estimates for Cities, Counties and the State, 1 January 2026 (released 1 May 2026)",
+      "source_url": "https://dof.ca.gov/forecasting/demographics/estimates-e1/",
+      "as_of": "2026-01-01",
+      "retrieved": "2026-08-11",
+      "verify": "E-1 CityCounty2026 sheet, Los Angeles city row, 1/1/2026."
     }
   ],
   "gaps": [
-    "Per-city retailer counts for San Jose, San Diego, Los Angeles, San Francisco, Oakland: needed for the city pages and for the San Jose client market.",
     "Sales volume: CDTFA publishes taxable cannabis sales by quarter, which sizes the market credibly.",
     "Absolute licensed retailer count: DCC publishes density (4.27 per 100K) rather than a total. Do not publish an absolute count without a primary source that states one.",
-    "CDTFA cannabis tax revenue: the open-data OData endpoint returns HTTP 403 to scripted requests. Sales volume remains unsourced."
+    "CDTFA cannabis tax revenue: the open-data OData endpoint returns HTTP 403 to scripted requests. Sales volume remains unsourced.",
+    "Per-city licensed retailer counts for California metros remain unavailable: DCC publishes ordinance status and statewide density, not per-city license counts. City pages use catchment (who may open where) rather than store counts."
   ],
-  "cities": [],
+  "cities": [
+    "los-angeles",
+    "san-jose",
+    "san-diego"
+  ],
   "faqs": []
 }
