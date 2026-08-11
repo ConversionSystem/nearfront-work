@@ -128,13 +128,92 @@
       "as_of": "2026-08-11",
       "retrieved": "2026-08-11",
       "verify": "Distinct BUSINESS_NAME among retailer licences. The largest hold three each, including Cultivate Leicester, Alternative Therapies Group II, New England Treatment Access and Temescal Wellness."
+    },
+    {
+      "id": "ma-boston-retail-licenses",
+      "value": 47,
+      "unit": "licenses",
+      "label": "Retail licenses with a Boston establishment address",
+      "source": "Massachusetts Cannabis Control Commission open data, l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Filter LICENSE_TYPE = 'Marijuana Retailer' and ESTABLISHMENT_CITY = 'BOSTON'."
+    },
+    {
+      "id": "ma-boston-open",
+      "value": 37,
+      "unit": "retailers",
+      "label": "Boston retailers that have commenced operations",
+      "source": "Massachusetts Cannabis Control Commission open data, l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Of the 47, 37 have COMMENCE_OPS = 'Yes'. Ten have not.",
+      "note": "21 percent of Boston licenses are not trading against 11 percent statewide. Boston is materially harder to get open in than the rest of Massachusetts."
+    },
+    {
+      "id": "ma-boston-operators",
+      "value": 46,
+      "unit": "operators",
+      "label": "Distinct businesses holding Boston retail licenses",
+      "source": "Massachusetts Cannabis Control Commission open data, l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Distinct BUSINESS_NAME among the 47. Only one operator holds two; every other license belongs to a different business.",
+      "note": "Effectively no chain consolidation in Boston, which is unusual for a city this size."
+    },
+    {
+      "id": "ma-boston-equity-licenses",
+      "value": 20,
+      "unit": "licenses",
+      "label": "Boston retail licenses on an equity track, against 18 general applicant",
+      "source": "Massachusetts Cannabis Control Commission open data, l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "PRIORITY_REVIEW_TYPE among the 47: General Applicant 18, Social Equity Participant 13, Economic Empowerment Priority 7, MTC Priority 5, DBE Status 4. Equity tracks (13+7) total 20.",
+      "note": "Boston is the only market measured where equity-track licenses OUTNUMBER general applicants. That is the defining fact of this city."
+    },
+    {
+      "id": "ma-boston-equity-open-rate",
+      "value": 65,
+      "unit": "percent",
+      "label": "Share of Boston equity-track licenses that have opened",
+      "source": "Massachusetts Cannabis Control Commission open data, l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "13 of 20 equity-track Boston licenses have COMMENCE_OPS = 'Yes'.",
+      "note": "PAIRING RULE, same as the statewide figure: never publish without the general-applicant comparison. Boston general applicants are 16 of 18 open, 89 percent."
+    },
+    {
+      "id": "ma-boston-general-open-rate",
+      "value": 89,
+      "unit": "percent",
+      "label": "Share of Boston general-applicant licenses that have opened",
+      "source": "Massachusetts Cannabis Control Commission open data, l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "16 of 18 general-applicant Boston licenses have COMMENCE_OPS = 'Yes'."
     }
   ],
   "gaps": [
     "Per-town open/closed status over time: the file is a snapshot, so it cannot show whether a town's count is rising or falling. Re-pull quarterly to build a trend.",
     "Tax rate: Massachusetts levies state excise plus a local option. Not yet sourced to a Department of Revenue page. Do not publish a rate without one.",
-    "Why equity licences convert to open at a lower rate is not in this data. Report the gap, do not speculate about causes on the page."
+    "Why equity licences convert to open at a lower rate is not in this data. Report the gap, do not speculate about causes on the page.",
+    "ESTABLISHMENT_ZIP is empty for every Boston row in the file, so no neighborhood or ZIP-level breakdown is possible from this source. Do not publish a Boston neighborhood count."
   ],
-  "cities": [],
+  "cities": [
+    "boston"
+  ],
   "faqs": []
 }
