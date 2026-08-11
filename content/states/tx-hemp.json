@@ -1,0 +1,150 @@
+{
+  "state": "Texas",
+  "abbr": "TX",
+  "slug": "texas",
+  "vertical": "thca-hemp",
+  "tier": "hemp-consumable",
+  "updated": "2026-08-11",
+  "status": "ready-pending-legal-review",
+  "facts": [
+    {
+      "id": "tx-hemp-retail-locations",
+      "value": 13608,
+      "unit": "locations",
+      "label": "Distinct physical addresses registered for hemp retail in Texas",
+      "source": "Texas DSHS, Retail Hemp Registrants list dated 14 July 2026",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program/current-licensees-and-registrants",
+      "as_of": "2026-07-14",
+      "retrieved": "2026-08-11",
+      "verify": "Parse the xlsx; every row is ADDRESS_TYPE='PL' (physical location). 14,204 location rows resolve to 13,608 distinct (ADDRESS, CITY, ZIP) tuples.",
+      "file_url": "https://www.dshs.texas.gov/sites/default/files/hemp/License%20Lists/retail-hemp-registrants-7-14-2026.xlsx",
+      "note": "Use the address count, not the row count. 101 license numbers repeat the same address across rows, which inflates a naive row count."
+    },
+    {
+      "id": "tx-hemp-registrations",
+      "value": 10989,
+      "unit": "registrations",
+      "label": "Unique retail hemp registration numbers",
+      "source": "Texas DSHS, Retail Hemp Registrants list dated 14 July 2026",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program/current-licensees-and-registrants",
+      "as_of": "2026-07-14",
+      "retrieved": "2026-08-11",
+      "verify": "Count distinct LICENSE_NUMBER. All 14,205 rows carry LIC_STATUS='Current'.",
+      "file_url": "https://www.dshs.texas.gov/sites/default/files/hemp/License%20Lists/retail-hemp-registrants-7-14-2026.xlsx",
+      "note": "A registration can cover many locations, so registrations and locations are different numbers. Never present one as the other."
+    },
+    {
+      "id": "tx-hemp-businesses",
+      "value": 7538,
+      "unit": "businesses",
+      "label": "Distinct business names holding retail hemp registrations",
+      "source": "Texas DSHS, Retail Hemp Registrants list dated 14 July 2026",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program/current-licensees-and-registrants",
+      "as_of": "2026-07-14",
+      "retrieved": "2026-08-11",
+      "verify": "Count distinct PRIMARY_NAME.",
+      "file_url": "https://www.dshs.texas.gov/sites/default/files/hemp/License%20Lists/retail-hemp-registrants-7-14-2026.xlsx"
+    },
+    {
+      "id": "tx-hemp-largest-registrant",
+      "value": 249,
+      "unit": "locations",
+      "label": "Locations held under a single registration by the largest registrant",
+      "source": "Texas DSHS, Retail Hemp Registrants list dated 14 July 2026",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program/current-licensees-and-registrants",
+      "as_of": "2026-07-14",
+      "retrieved": "2026-08-11",
+      "verify": "LICENSE_NUMBER 4071, BW GAS & CONVENIENCE RETAIL LLC, appears on 249 location rows. Second largest is SPECS FAMILY CORP at 224 (LICENSE_NUMBER 2127).",
+      "file_url": "https://www.dshs.texas.gov/sites/default/files/hemp/License%20Lists/retail-hemp-registrants-7-14-2026.xlsx",
+      "note": "Both are convenience and liquor chains, not specialty hemp retailers. This is the defining structural fact of Texas hemp retail."
+    },
+    {
+      "id": "tx-hemp-manufacturer-licenses",
+      "value": 753,
+      "unit": "licenses",
+      "label": "Current Consumable Hemp Product licences held by manufacturers and processors",
+      "source": "Texas DSHS, Retail Hemp Registrants list dated 14 July 2026",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program/current-licensees-and-registrants",
+      "as_of": "2026-07-14",
+      "retrieved": "2026-08-11",
+      "verify": "Parse consumable-hemp-licensees-7-14-2026.xlsx: 753 rows, all LIC_STATUS='Current', all LICENSE_TYPE='Consumable Hemp Product'.",
+      "file_url": "https://www.dshs.texas.gov/sites/default/files/hemp/License%20Lists/retail-hemp-registrants-7-14-2026.xlsx"
+    },
+    {
+      "id": "tx-hemp-top-cities",
+      "value": "Houston 1660, San Antonio 1140, Austin 966, Dallas 464, Fort Worth 309",
+      "unit": "locations",
+      "label": "Retail hemp location rows by city",
+      "source": "Texas DSHS, Retail Hemp Registrants list dated 14 July 2026",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program/current-licensees-and-registrants",
+      "as_of": "2026-07-14",
+      "retrieved": "2026-08-11",
+      "verify": "Group location rows by CITY. Houston 1,660; San Antonio 1,140; Austin 966; Dallas 464; Fort Worth 309; El Paso 264.",
+      "file_url": "https://www.dshs.texas.gov/sites/default/files/hemp/License%20Lists/retail-hemp-registrants-7-14-2026.xlsx"
+    },
+    {
+      "id": "tx-retail-registration-fee",
+      "value": 5000,
+      "unit": "USD per location per year",
+      "label": "Retail Hemp Registration fee",
+      "source": "Texas DSHS Consumable Hemp Program",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "DSHS: 'The Retail Hemp Registration has been restored to $5,000 annually per location, plus the applicable Texas Online (TOL) fee.' Requirements in 25 TAC 300.",
+      "note": "Per location, not per business. A 249-location registrant faces a very different cost base from a single store."
+    },
+    {
+      "id": "tx-manufacturer-licence-fee",
+      "value": 10000,
+      "unit": "USD per location per year",
+      "label": "Consumable Hemp Product licence fee",
+      "source": "Texas DSHS Consumable Hemp Program",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "DSHS: 'The Consumable Hemp Product license fee has been restored to $10,000 annually per location, plus the applicable TOL fee.'"
+    },
+    {
+      "id": "tx-delta8-scheduling-effective",
+      "value": "2026-07-31",
+      "unit": "date",
+      "label": "Date the Texas schedule affecting delta-8 THC took effect",
+      "source": "Texas DSHS Consumable Hemp Program",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-11",
+      "verify": "DSHS: 'The Texas schedule affecting delta-8 THC becomes effective July 31, 2026.' Follows Texas Supreme Court in Texas Department of State Health Services v. Sky Marketing Corp, which confirmed delta-8 THC is a controlled substance with only naturally occurring trace amounts exempt.",
+      "note": "LIVE RISK. This took effect 11 days before the page was written and AFTER the 14 July 2026 registrant file was published, so the registrant counts describe the market immediately before the change. DSHS states products labeled to contain delta-8, or shown to contain more than trace amounts of tetrahydrocannabinols including delta-8, may be detained and referred to law enforcement."
+    },
+    {
+      "id": "tx-delta9-limit",
+      "value": 0.3,
+      "unit": "percent dry weight",
+      "label": "Maximum delta-9 THC concentration in a consumable hemp product",
+      "source": "Texas Health and Safety Code 443 via DSHS",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "DSHS: 'consumable hemp products may contain delta-9 tetrahydrocannabinol at a concentration of not more than 0.3 percent on a dry weight basis.'"
+    },
+    {
+      "id": "tx-age-21-rule",
+      "value": "2025-10-02",
+      "unit": "date",
+      "label": "Date DSHS adopted emergency 21-plus and ID rules",
+      "source": "Texas DSHS Consumable Hemp Program",
+      "source_url": "https://www.dshs.texas.gov/consumable-hemp-program",
+      "as_of": "2025-10-02",
+      "retrieved": "2026-08-11",
+      "verify": "DSHS: emergency rules adopted 2 Oct 2025 prohibit sales to customers under 21 and require valid government-issued ID before purchase. Violations may result in permanent revocation. Texas Register Rules 300.701 and 300.702."
+    }
+  ],
+  "gaps": [
+    "THC-A / THCA specifically: the DSHS Consumable Hemp Program page does NOT use the terms THCA, THC-A, tetrahydrocannabinolic acid, or 'total THC' anywhere. It addresses delta-8 and delta-9 by name. Do NOT publish any claim about whether THC-A may be sold in Texas. State what DSHS states, cite it, and refer operators to DSHS and their own counsel.",
+    "Post-scheduling registrant counts: the current registrant file predates the 31 July 2026 delta-8 scheduling. Re-pull after the next DSHS list to measure attrition.",
+    "Sales volume: Texas publishes no hemp sales figures comparable to state cannabis programs."
+  ],
+  "cities": [],
+  "faqs": []
+}
