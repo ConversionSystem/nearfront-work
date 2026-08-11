@@ -53,11 +53,15 @@ SHELL_FALLBACKS = ("templates/landing-page.html",)
 # read as foreign on a local-SEO page, which is exactly the wrong signal. Matched
 # case-insensitively on word stems, so "licence/licences/licencing" all trip.
 BRITISH_SPELLINGS = [
-    ("licenc", "licens"), ("neighbour", "neighbor"), ("centre", "center"),
-    ("colour", "color"), ("organis", "organiz"), ("recognis", "recogniz"),
-    ("analyse", "analyze"), ("programme", "program"), ("labelled", "labeled"),
-    ("categoris", "categoriz"), ("behaviour", "behavior"), ("favour", "favor"),
-    ("cancelled", "canceled"), ("travelling", "traveling"), ("defence", "defense"),
+    (r"licenc\w*", "licens-"), (r"neighbour\w*", "neighbor-"), (r"\bcentre\b", "center"),
+    (r"colour\w*", "color-"), (r"organis(?:e|ed|ing|ation)\w*", "organiz-"),
+    (r"recognis(?:e|ed|ing)\w*", "recogniz-"),
+    # "analyses" is the US plural of "analysis", so only the verb forms are British.
+    (r"\banalyse\b|analysed|analysing", "analyze/analyzed/analyzing"),
+    (r"programme\w*", "program-"), (r"(?<!aria-)labelled|labelling", "labeled/labeling"),
+    (r"categoris(?:e|ed|ing|ation)\w*", "categoriz-"), (r"behaviour\w*", "behavior-"),
+    (r"favour(?:s|ed|ing|able)?\b", "favor-"), (r"\bdefence\b", "defense"),
+    (r"travelling|travelled", "traveling/traveled"),
 ]
 
 # Programmatic page families. Pages sharing a prefix are near-siblings by
@@ -617,14 +621,13 @@ def validate(root, args):
         if d is None or profile_for(urls[rel], rel, work) != "marketing":
             continue
         for i, line in enumerate(d.raw.splitlines(), 1):
-            low = line.lower()
-            for brit, us in BRITISH_SPELLINGS:
-                if brit in low:
-                    # "license" as a noun is the US spelling; only "licenc*" is British.
+            for pat, us in BRITISH_SPELLINGS:
+                m = re.search(pat, line, re.I)
+                if m:
                     add(Finding(WARN, rel, i, "british-spelling",
-                                'British spelling "%s..." in %s'
-                                % (brit, line.strip()[:60]),
-                                'Use the US form ("%s..."). Nearfront is a US agency '
+                                'British spelling "%s" in %s'
+                                % (m.group(0), line.strip()[:60]),
+                                'Use the US form (%s). Nearfront is a US agency '
                                 "writing for US businesses." % us))
                     break
 
