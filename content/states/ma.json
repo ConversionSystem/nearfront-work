@@ -1,0 +1,140 @@
+{
+  "state": "Massachusetts",
+  "abbr": "MA",
+  "slug": "massachusetts",
+  "tier": "adult-use",
+  "updated": "2026-08-11",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "ma-retailer-licenses",
+      "value": 457,
+      "unit": "licenses",
+      "label": "Marijuana Retailer licenses issued",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Filter the licence file to LICENSE_TYPE = 'Marijuana Retailer'. 955 licences of all types statewide."
+    },
+    {
+      "id": "ma-retailers-open",
+      "value": 406,
+      "unit": "retailers",
+      "label": "Retailers that have commenced operations",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Of the 457 retailer licences, 406 have COMMENCE_OPS = 'Yes'. 51 have not.",
+      "note": "The CCC publishes commencement status directly, which most states do not. Licensed and trading are different numbers and this file lets you separate them."
+    },
+    {
+      "id": "ma-retailers-not-trading",
+      "value": 51,
+      "unit": "licenses",
+      "label": "Retailer licenses issued but not yet trading (11 percent)",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "457 minus 406. Stage split across all retailer licences: 409 final, 47 provisional, 1 provisional consideration."
+    },
+    {
+      "id": "ma-equity-open-rate",
+      "value": 70,
+      "unit": "percent",
+      "label": "Share of equity-track retailer licenses that have opened",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Retailer licences with PRIORITY_REVIEW_TYPE of 'Social Equity Participant' (47) or 'Economic Empowerment Priority' (27) total 74, of which 52 have COMMENCE_OPS = 'Yes'. 52/74 = 70 percent.",
+      "note": "CRITICAL PAIRING: never publish this without the general-applicant comparison below. Alone it invites a wrong reading. The point is the gap between the two, not the level of either."
+    },
+    {
+      "id": "ma-general-open-rate",
+      "value": 93,
+      "unit": "percent",
+      "label": "Share of general-applicant retailer licenses that have opened",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Retailer licences with PRIORITY_REVIEW_TYPE = 'General Applicant' total 218, of which 202 have COMMENCE_OPS = 'Yes'. 202/218 = 93 percent."
+    },
+    {
+      "id": "ma-price-per-gram-now",
+      "value": 3.87,
+      "unit": "USD per gram",
+      "label": "Average adult-use retail price per gram, June 2026",
+      "source": "Massachusetts Cannabis Control Commission, average retail price per gram series",
+      "source_url": "https://masscannabiscontrol.com/resource/a_sales_au_price_per_gram.csv",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Last row of a_sales_au_price_per_gram: 2026-06, 3.87, Grams."
+    },
+    {
+      "id": "ma-price-per-gram-start",
+      "value": 14.17,
+      "unit": "USD per gram",
+      "label": "Average adult-use retail price per gram, November 2018",
+      "source": "Massachusetts Cannabis Control Commission, average retail price per gram series",
+      "source_url": "https://masscannabiscontrol.com/resource/a_sales_au_price_per_gram.csv",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2018-11-30",
+      "retrieved": "2026-08-11",
+      "verify": "First row of the same series: 2018-11, 14.17, Grams. The decline to 3.87 is 72.7 percent.",
+      "note": "Compute the fall from these two published figures rather than quoting a percentage from anywhere else."
+    },
+    {
+      "id": "ma-towns-with-retail",
+      "value": 150,
+      "unit": "towns",
+      "label": "Massachusetts towns with at least one open retailer",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Distinct ESTABLISHMENT_CITY among the 406 open retailers. Boston 37, Worcester 15, Northampton 10, Brockton 10, Cambridge 10."
+    },
+    {
+      "id": "ma-single-store-towns",
+      "value": 64,
+      "unit": "towns",
+      "label": "Towns with exactly one open retailer",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Group the 406 open retailers by town and count towns with one. 64 of 150."
+    },
+    {
+      "id": "ma-operators",
+      "value": 384,
+      "unit": "operators",
+      "label": "Distinct businesses holding retailer licenses",
+      "source": "Massachusetts Cannabis Control Commission open data, licence file l_licenses_all_details_public",
+      "source_url": "https://masscannabiscontrol.com/open-data/data-catalog/",
+      "file_url": "https://masscannabiscontrol.com/resource/l_licenses_all_details_public.csv",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Distinct BUSINESS_NAME among retailer licences. The largest hold three each, including Cultivate Leicester, Alternative Therapies Group II, New England Treatment Access and Temescal Wellness."
+    }
+  ],
+  "gaps": [
+    "Per-town open/closed status over time: the file is a snapshot, so it cannot show whether a town's count is rising or falling. Re-pull quarterly to build a trend.",
+    "Tax rate: Massachusetts levies state excise plus a local option. Not yet sourced to a Department of Revenue page. Do not publish a rate without one.",
+    "Why equity licences convert to open at a lower rate is not in this data. Report the gap, do not speculate about causes on the page."
+  ],
+  "cities": [],
+  "faqs": []
+}

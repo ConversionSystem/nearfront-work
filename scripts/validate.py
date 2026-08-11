@@ -53,7 +53,7 @@ SHELL_FALLBACKS = ("templates/landing-page.html",)
 # read as foreign on a local-SEO page, which is exactly the wrong signal. Matched
 # case-insensitively on word stems, so "licence/licences/licencing" all trip.
 BRITISH_SPELLINGS = [
-    (r"licenc\w*", "licens-"), (r"neighbour\w*", "neighbor-"), (r"\bcentre\b", "center"),
+    (r"licenc\w*", "licens-"), (r"neighbour\w*", "neighbor-"), (r"\bcentre", "center"),
     (r"colour\w*", "color-"), (r"organis(?:e|ed|ing|ation)\w*", "organiz-"),
     (r"recognis(?:e|ed|ing)\w*", "recogniz-"),
     # "analyses" is the US plural of "analysis", so only the verb forms are British.
