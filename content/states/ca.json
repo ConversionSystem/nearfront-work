@@ -3,8 +3,8 @@
   "abbr": "CA",
   "slug": "california",
   "tier": "adult-use",
-  "updated": "2026-08-10",
-  "status": "partial",
+  "updated": "2026-08-11",
+  "status": "ready",
   "facts": [
     {
       "id": "ca-excise-tax",
@@ -22,7 +22,11 @@
     {
       "id": "ca-excise-history",
       "claim": "cannabis excise tax was temporarily 19 percent",
-      "value": {"from": "2025-07-01", "to": "2025-09-30", "rate": 19},
+      "value": {
+        "from": "2025-07-01",
+        "to": "2025-09-30",
+        "rate": 19
+      },
       "unit": "percent, historical",
       "as_of": "2025-10-01",
       "source_name": "California Department of Tax and Fee Administration, Cannabis Retailers guide",
@@ -30,13 +34,103 @@
       "retrieved": "2026-08-10",
       "verify": "Same page. AB 564 delayed a scheduled adjustment and restored the 15 percent rate.",
       "used_on": []
+    },
+    {
+      "id": "ca-jurisdictions",
+      "value": 540,
+      "unit": "jurisdictions",
+      "label": "California local jurisdictions setting cannabis rules (482 cities + 58 counties)",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Row count of the ordinances CSV; 'Jurisdiction Type' splits 482 City / 58 County.",
+      "note": "DCC states it last reviewed this data in February 2026 and the file was published March 2026, but the per-row 'Updated' column reads January 2022 for 496 of the 540 rows. Treat the aggregate as DCC's last recorded picture of the ordinance landscape, and confirm any single jurisdiction against that city before acting on it."
+    },
+    {
+      "id": "ca-storefront-retail-prohibited",
+      "value": 333,
+      "unit": "jurisdictions",
+      "label": "Jurisdictions prohibiting storefront cannabis retail (61.7 percent of 540)",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Count rows where 'Retail (Storefront)' = 'Prohibited'. 333 prohibited, 202 allowed, 5 medical-only. 333/540 = 61.7 percent.",
+      "note": "DCC states it last reviewed this data in February 2026 and the file was published March 2026, but the per-row 'Updated' column reads January 2022 for 496 of the 540 rows. Treat the aggregate as DCC's last recorded picture of the ordinance landscape, and confirm any single jurisdiction against that city before acting on it."
+    },
+    {
+      "id": "ca-all-retail-prohibited",
+      "value": 301,
+      "unit": "jurisdictions",
+      "label": "Jurisdictions prohibiting all cannabis retail including delivery (55.7 percent)",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Count rows where 'Is all retail prohibited?' = 'Yes'. 301/540 = 55.7 percent.",
+      "note": "DCC states it last reviewed this data in February 2026 and the file was published March 2026, but the per-row 'Updated' column reads January 2022 for 496 of the 540 rows. Treat the aggregate as DCC's last recorded picture of the ordinance landscape, and confirm any single jurisdiction against that city before acting on it."
+    },
+    {
+      "id": "ca-all-activity-prohibited",
+      "value": 283,
+      "unit": "jurisdictions",
+      "label": "Jurisdictions prohibiting every commercial cannabis activity (52.4 percent)",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Count rows where 'Are all CCA activities prohibited?' = 'Yes'. 283/540 = 52.4 percent.",
+      "note": "DCC states it last reviewed this data in February 2026 and the file was published March 2026, but the per-row 'Updated' column reads January 2022 for 496 of the 540 rows. Treat the aggregate as DCC's last recorded picture of the ordinance landscape, and confirm any single jurisdiction against that city before acting on it."
+    },
+    {
+      "id": "ca-retail-licenses-per-100k",
+      "value": 4.27,
+      "unit": "retail licenses per 100,000 people",
+      "label": "California retail license density, published by DCC",
+      "source": "California Department of Cannabis Control, 'Where cannabis businesses are allowed'",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "as_of": "2026-02-28",
+      "retrieved": "2026-08-11",
+      "verify": "DCC's own sentence: 'there are 4.27 retail licenses per 100K people in California (as of Feb 2026)'.",
+      "note": "Use this rather than an absolute retailer count. The 1,560 figure that circulates is not in the DCC document it is attributed to."
+    },
+    {
+      "id": "ca-la-county-city-bans",
+      "value": 67,
+      "unit": "cities",
+      "label": "Los Angeles County cities prohibiting storefront retail, of 88",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Filter to County = 'Los Angeles' and Jurisdiction Type = 'City': 88 rows, 67 with Retail (Storefront) = 'Prohibited' (76 percent). The City of Los Angeles itself allows it.",
+      "note": "DCC states it last reviewed this data in February 2026 and the file was published March 2026, but the per-row 'Updated' column reads January 2022 for 496 of the 540 rows. Treat the aggregate as DCC's last recorded picture of the ordinance landscape, and confirm any single jurisdiction against that city before acting on it."
+    },
+    {
+      "id": "ca-counties-banning-all-activity",
+      "value": 28,
+      "unit": "counties",
+      "label": "Counties prohibiting all commercial cannabis activity in unincorporated areas, of 58",
+      "source": "California Department of Cannabis Control, local cannabis ordinances file",
+      "source_url": "https://cannabis.ca.gov/cannabis-laws/where-cannabis-businesses-are-allowed/",
+      "file_url": "https://cdn.cannabis.ca.gov/wp-content/uploads/sites/2/2026/03/cannabis-local-ordinances.2026-3.18.csv",
+      "as_of": "2026-03-18",
+      "retrieved": "2026-08-11",
+      "verify": "Filter to Jurisdiction Type = 'County': 28 of 58 have 'Are all CCA activities prohibited?' = 'Yes'.",
+      "note": "County rules govern unincorporated areas only. An incorporated city inside a banning county may still allow retail, and vice versa."
     }
   ],
   "gaps": [
-    "BLOCKING: licensed retailer count. A figure of 1,560 licensed retailers surfaced in search attributed to DCC rulemaking, but fetching the cited rulemaking text did not contain it, so it is UNVERIFIED and must not be published. The DCC data dashboards at cannabis.ca.gov/resources/data-dashboard/ are JavaScript-rendered and did not yield numbers to a plain fetch. Get the count from the Cannabis License Summary Report dashboard directly, or from a DCC open-data export, before the California page ships.",
-    "Local prohibition share: California's defining market fact is that a large share of jurisdictions still ban retail. DCC maintains a local-jurisdiction database. This is the single most valuable California stat and needs a primary source.",
     "Per-city retailer counts for San Jose, San Diego, Los Angeles, San Francisco, Oakland: needed for the city pages and for the San Jose client market.",
-    "Sales volume: CDTFA publishes taxable cannabis sales by quarter, which sizes the market credibly."
+    "Sales volume: CDTFA publishes taxable cannabis sales by quarter, which sizes the market credibly.",
+    "Absolute licensed retailer count: DCC publishes density (4.27 per 100K) rather than a total. Do not publish an absolute count without a primary source that states one.",
+    "CDTFA cannabis tax revenue: the open-data OData endpoint returns HTTP 403 to scripted requests. Sales volume remains unsourced."
   ],
   "cities": [],
   "faqs": []
