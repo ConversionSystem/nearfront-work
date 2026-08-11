@@ -55,6 +55,29 @@
       "verify": "Compare Aug 2026 (678) against the same month prior years via the API before publishing any trend sentence",
       "note": "PENDING. Do not publish a trend claim until the full series is pulled and the direction is confirmed.",
       "used_on": []
+    },
+    {
+      "id": "or-retail-licenses-by-city",
+      "claim": "OLCC recreational retailer licenses by city",
+      "value": {
+        "statewide": 795,
+        "Portland": 231,
+        "Eugene": 53,
+        "Salem": 53,
+        "Medford": 44,
+        "Bend": 28,
+        "Beaverton": 18,
+        "Corvallis": 17,
+        "Springfield": 15
+      },
+      "unit": "licenses",
+      "as_of": "2026-08-10",
+      "source_name": "Oregon Liquor and Cannabis Commission, Cannabis Business Licenses (all)",
+      "source_url": "https://www.oregon.gov/olcc/marijuana/Documents/Cannabis-Business-Licenses-All.xlsx",
+      "retrieved": "2026-08-10",
+      "verify": "Parse the xlsx, filter License Type containing 'Retail' (795 rows), and extract the city from PhysicalAddress by taking the tokens before ' OR <zip>'. Multi-word city names need an explicit list or the parse truncates them.",
+      "note": "795 licensed retailers against 678 recording sales in Aug 2026: licensed is not the same as trading, same distinction as New York. Portland's 231 includes roughly 9 addresses in the Washington and Clackamas county portions of the city; Multnomah County alone holds 222. Gresham (6) and Troutdale (1) are separate cities within Multnomah and are NOT part of Portland's count.",
+      "used_on": []
     }
   ],
   "gaps": [
@@ -62,6 +85,14 @@
     "Municipal opt-out count: OLCC publishes opted-out cities and counties. Pull the current list before writing the opt-out sentence.",
     "Per-city retailer counts for Portland, Eugene, Salem, Bend: needed for city pages. OLCC publishes an active-licenses file that can be grouped by city."
   ],
-  "cities": [],
+  "cities": [
+    {
+      "name": "Portland",
+      "slug": "portland",
+      "licensed": 231,
+      "county_multnomah": 222,
+      "share_of_state_pct": 29
+    }
+  ],
   "faqs": []
 }
