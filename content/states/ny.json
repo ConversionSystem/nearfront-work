@@ -46,20 +46,31 @@
     {
       "id": "ny-nyc-dispensary-concentration",
       "claim": "retail dispensary licenses in the five boroughs",
-      "value": {"Brooklyn": 145, "Manhattan": 142, "Bronx": 43, "Staten Island": 27},
+      "value": {
+        "Brooklyn": 145,
+        "Manhattan": 142,
+        "Queens": 128,
+        "Bronx": 43,
+        "Staten Island": 27
+      },
       "unit": "licenses by city field",
       "as_of": "2026-08-10",
       "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
       "source_url": "https://data.ny.gov/d/jskf-tt3q",
       "retrieved": "2026-08-10",
-      "verify": "Socrata: $select=city,count(*) filtered to license_type like '%Retail Dispensary%', grouped by city. Manhattan appears as city value 'New York'. Queens is absent from the top rows and must be checked separately, since OCM records Queens addresses under neighborhood names such as Astoria and Flushing rather than a single Queens value.",
-      "note": "Feeds the NYC city page. Confirm the Queens aggregation before publishing any borough-complete claim.",
+      "verify": "Socrata: $select=city,count(*) filtered to license_type like '%Retail Dispensary%', grouped by city. Manhattan appears as city value 'New York'. QUEENS RESOLVED 2026-08-10: OCM records Queens addresses under 35 separate neighborhood values (Jamaica 14, Flushing 13, Long Island City 11, Astoria 10, Ridgewood 6, Rosedale 6, and 29 more), summing to 128. Any Queens figure must aggregate those, never read a single 'Queens' row.",
+      "note": "Five-borough total is 485. Queens is third-largest and reads as zero if the neighborhood values are not summed.",
       "used_on": []
     },
     {
       "id": "ny-upstate-metros",
       "claim": "retail dispensary licenses in the largest upstate markets",
-      "value": {"Rochester": 38, "Buffalo": 25, "Albany": 20, "Syracuse": 18},
+      "value": {
+        "Rochester": 38,
+        "Buffalo": 25,
+        "Albany": 20,
+        "Syracuse": 18
+      },
       "unit": "licenses by city field",
       "as_of": "2026-08-10",
       "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
@@ -67,12 +78,15 @@
       "retrieved": "2026-08-10",
       "verify": "Same grouped query",
       "used_on": []
-    }
-    ,
+    },
     {
       "id": "ny-retail-tax",
       "claim": "tax on adult-use cannabis at retail",
-      "value": {"state": 9, "local": 4, "combined": 13},
+      "value": {
+        "state": 9,
+        "local": 4,
+        "combined": 13
+      },
       "unit": "percent",
       "as_of": "2026-08-10",
       "source_name": "New York State Department of Taxation and Finance, adult-use cannabis products tax",
@@ -97,7 +111,6 @@
   ],
   "gaps": [
     "Operating store count: licenses issued far exceeds stores open. OCM publishes a dispensary location list that gives a truer open-store number for market-size claims.",
-    "Queens borough aggregation, see the note on ny-nyc-dispensary-concentration.",
     "Legalization and first-sale dates: MRTA (2021) and the first legal sale (late 2022) both need primary citations."
   ],
   "cities": [],
