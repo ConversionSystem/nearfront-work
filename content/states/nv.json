@@ -1,0 +1,116 @@
+{
+  "state": "Nevada",
+  "abbr": "NV",
+  "slug": "nevada",
+  "tier": "adult-use",
+  "updated": "2026-08-11",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "nv-retail-dispensaries",
+      "value": 105,
+      "unit": "licenses",
+      "label": "Active retail dispensary licenses statewide",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'ACTIVE LICENSE LIST', rows where LicenseType = 'Retail Dispensary'. 349 active licenses of all types."
+    },
+    {
+      "id": "nv-clark-dispensaries",
+      "value": 75,
+      "unit": "licenses",
+      "label": "Active retail dispensaries in Clark County (Las Vegas), 71 percent of the state",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Filter active Retail Dispensary rows to County = CLARK: 75 of 105. Washoe (Reno) has 16, Carson City 3, and no other county exceeds 2.",
+      "note": "The file records county, not city, so Clark County is the correct unit. Do not attribute all 75 to the City of Las Vegas: Clark also contains Henderson, North Las Vegas and Paradise, where much of the Strip actually sits."
+    },
+    {
+      "id": "nv-clark-operators",
+      "value": 48,
+      "unit": "operators",
+      "label": "Distinct operators holding Clark County dispensary licenses",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Distinct LicenseName among active Clark Retail Dispensary rows. Statewide 64 operators hold the 105 dispensaries; the largest, Deep Roots Harvest and Arboretum NV Permitco, hold 6 each."
+    },
+    {
+      "id": "nv-lounges-active",
+      "value": 3,
+      "unit": "licenses",
+      "label": "Active cannabis consumption lounge licenses",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'ACTIVE LICENSE LIST', LicenseType = 'Retail Lounge': MM Development Company, Cheyenne Medical Sammy Davis RD263, and TGIG LLC. All three in Clark County."
+    },
+    {
+      "id": "nv-lounges-conditional",
+      "value": 23,
+      "unit": "licenses",
+      "label": "Consumption lounge licenses conditionally approved and not yet open",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'CONDITIONAL LICENSES', LicenseType = 'Retail Lounge': 23 rows, of which 21 are Clark County, plus one Washoe and one each in Nye and Storey.",
+      "note": "The single most actionable fact on this page. The category is set to grow from 3 to as many as 26, almost entirely in Clark County, and search competition for lounge queries is close to nonexistent today."
+    },
+    {
+      "id": "nv-conditional-dispensaries",
+      "value": 23,
+      "unit": "licenses",
+      "label": "Retail dispensary licenses conditionally approved and not yet open",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'CONDITIONAL LICENSES', LicenseType = 'Retail Dispensary': 23 rows. Clark 5, Washoe 4, Douglas 2, Eureka 2, remainder spread."
+    },
+    {
+      "id": "nv-surrendered-revoked",
+      "value": 166,
+      "unit": "licenses",
+      "label": "Licenses surrendered or revoked, all types, cumulative",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'SURRENDERED-REVOKED LICENSES': 166 rows, 147 surrendered and 19 revoked.",
+      "note": "IMPORTANT: only 2 of the 166 are Retail Dispensary. The shakeout hit the supply chain, not retail: 50 medical cultivation, 37 retail cultivation, 26 medical production, 19 retail production, 18 distributors. Do not present this as dispensary attrition."
+    },
+    {
+      "id": "nv-license-mix",
+      "value": "cultivation 106, dispensary 105, production 84, distributor 42, laboratory 8, lounge 3, medical dispensary 1",
+      "unit": "licenses",
+      "label": "Active licenses by type",
+      "source": "Nevada Cannabis Compliance Board, Cannabis Establishment List, July 2026",
+      "source_url": "https://ccb.nv.gov/list-of-licensees/",
+      "file_url": "https://ccb.nv.gov/wp-content/uploads/2026/07/Cannabis-Establishment-List-07.01.26.xlsx",
+      "as_of": "2026-07-01",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'ACTIVE LICENSE LIST' grouped by LicenseType. Totals 349."
+    }
+  ],
+  "gaps": [
+    "City-level dispensary counts: the CCB file records county only. Las Vegas, Henderson, North Las Vegas and Paradise cannot be separated from it. A Las Vegas city page needs a different source.",
+    "Visitor volume: the tourism argument for this market is real but no visitor figure is sourced here. Do not publish one without an LVCVA citation.",
+    "Tax rate: Nevada levies a wholesale and a retail excise tax. Not yet sourced to a Department of Taxation page. Do not publish a rate without one."
+  ],
+  "cities": [],
+  "faqs": []
+}
