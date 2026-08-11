@@ -49,6 +49,17 @@ SHELL_REF = "services/thca-seo/index.html"
 # Work-lane stand-ins for SHELL_REF, which only exists in the production repo.
 SHELL_FALLBACKS = ("templates/landing-page.html",)
 
+# US agency writing for US businesses. British forms keep creeping into drafts and
+# read as foreign on a local-SEO page, which is exactly the wrong signal. Matched
+# case-insensitively on word stems, so "licence/licences/licencing" all trip.
+BRITISH_SPELLINGS = [
+    ("licenc", "licens"), ("neighbour", "neighbor"), ("centre", "center"),
+    ("colour", "color"), ("organis", "organiz"), ("recognis", "recogniz"),
+    ("analyse", "analyze"), ("programme", "program"), ("labelled", "labeled"),
+    ("categoris", "categoriz"), ("behaviour", "behavior"), ("favour", "favor"),
+    ("cancelled", "canceled"), ("travelling", "traveling"), ("defence", "defense"),
+]
+
 # Programmatic page families. Pages sharing a prefix are near-siblings by
 # construction, so they are the ones at risk of becoming templated duplicates.
 # Compared only within their own group; a state page and a city page are
@@ -599,6 +610,23 @@ def validate(root, args):
                             "em dash in %s" % line.strip()[:80],
                             "House style bans em dashes. Use a comma, a period, parentheses, "
                             "or the middot. En dashes and arrows are fine."))
+
+    # --- US spelling -------------------------------------------------------
+    for rel in in_scope:
+        d = docs.get(rel)
+        if d is None or profile_for(urls[rel], rel, work) != "marketing":
+            continue
+        for i, line in enumerate(d.raw.splitlines(), 1):
+            low = line.lower()
+            for brit, us in BRITISH_SPELLINGS:
+                if brit in low:
+                    # "license" as a noun is the US spelling; only "licenc*" is British.
+                    add(Finding(WARN, rel, i, "british-spelling",
+                                'British spelling "%s..." in %s'
+                                % (brit, line.strip()[:60]),
+                                'Use the US form ("%s..."). Nearfront is a US agency '
+                                "writing for US businesses." % us))
+                    break
 
     # --- legal entity leak -------------------------------------------------
     for rel in in_scope:

@@ -1,0 +1,108 @@
+{
+  "state": "Connecticut",
+  "abbr": "CT",
+  "slug": "connecticut",
+  "tier": "adult-use",
+  "updated": "2026-08-11",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "ct-retail-locations",
+      "value": 75,
+      "unit": "locations",
+      "label": "Licensed cannabis retail locations statewide",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Row count of dataset 42yd-3x3d, refreshed 2026-08-11.",
+      "note": "TRAP: the sibling dataset 4vi8-t7ex ('Medical Marijuana and Hybrid Retailers') returns only 45 rows because it excludes the 30 adult-use-only stores. Using it undercounts the market by 40 percent. Always use 42yd-3x3d."
+    },
+    {
+      "id": "ct-hybrid-retailers",
+      "value": 44,
+      "unit": "locations",
+      "label": "Hybrid retailers serving both medical patients and adult-use customers (59 percent)",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Count rows where type = 'Hybrid Retailer'. 44 of 75 = 58.7 percent."
+    },
+    {
+      "id": "ct-adult-use-only",
+      "value": 30,
+      "unit": "locations",
+      "label": "Adult-use-only retailers (40 percent)",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Count rows where type = 'Adult-Use Cannabis Only'. One further store is 'Medical Marijuana Only'."
+    },
+    {
+      "id": "ct-towns-with-retail",
+      "value": 43,
+      "unit": "towns",
+      "label": "Connecticut towns containing at least one licensed retailer",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Distinct city values, title-cased. Hamden, Manchester, New Haven and Hartford lead with 4 each."
+    },
+    {
+      "id": "ct-single-store-towns",
+      "value": 25,
+      "unit": "towns",
+      "label": "Towns with exactly one licensed retailer (58 percent of towns with any)",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Group by city, count towns with exactly one row. 25 of 43.",
+      "note": "The defining commercial fact: in most Connecticut towns that have a dispensary at all, there is exactly one."
+    },
+    {
+      "id": "ct-operators",
+      "value": 65,
+      "unit": "operators",
+      "label": "Distinct licensed operating businesses",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Distinct 'business' values. 53 distinct 'dba' brand names."
+    },
+    {
+      "id": "ct-single-store-operators",
+      "value": 58,
+      "unit": "operators",
+      "label": "Operators running exactly one store (89 percent)",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Group by business, count those with one row. 58 of 65. The largest operators hold only 3 locations each: Divine 1 LLC, Willow Brook Wellness LLC and CT BGP LLC.",
+      "note": "Directly opposite to Texas hemp retail, where a single registration covers 249 locations. Cite the contrast, it is the sharpest comparison in the market set."
+    },
+    {
+      "id": "ct-towns-adult-use-only",
+      "value": 13,
+      "unit": "towns",
+      "label": "Towns whose only retail is adult-use-only, with no hybrid store",
+      "source": "Connecticut Department of Consumer Protection, 'Licensed Cannabis and Medical Marijuana Retail Locations' (dataset 42yd-3x3d)",
+      "source_url": "https://data.ct.gov/Health-and-Human-Services/Licensed-Cannabis-and-Medical-Marijuana-Retail-Loca/42yd-3x3d",
+      "as_of": "2026-08-11",
+      "retrieved": "2026-08-11",
+      "verify": "Towns appearing in the adult-use-only set but not the hybrid set: 24 towns have adult-use-only stores, 29 have hybrid stores, 11 have both, so 13 have adult-use-only and no hybrid.",
+      "note": "Medical patients in those 13 towns cannot buy locally as patients. That is a distinct, underserved search intent."
+    }
+  ],
+  "gaps": [
+    "Sales and pricing: data.ct.gov datasets f382-bnu5 (Cannabis Retail Sales by Month) and ttwq-xhyz (Average Price Per Gram) report rowsUpdatedAt 2026-08-10 but return empty rows over both the JSON and CSV resource endpoints. Do not publish CT sales figures until a working source is found.",
+    "Tax rate: not yet sourced to a primary CT statute or DRS page. Do not publish a CT cannabis tax rate without one."
+  ],
+  "cities": [],
+  "faqs": []
+}
