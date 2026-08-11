@@ -46,6 +46,8 @@ PROTECTED = (
 
 # Reference page for the shared nav/footer shell. Every marketing page must match it.
 SHELL_REF = "services/thca-seo/index.html"
+# Work-lane stand-ins for SHELL_REF, which only exists in the production repo.
+SHELL_FALLBACKS = ("templates/landing-page.html",)
 
 # Programmatic page families. Pages sharing a prefix are near-siblings by
 # construction, so they are the ones at risk of becoming templated duplicates.
@@ -108,7 +110,12 @@ class Doc(HTMLParser):
         self._stack = []
         self._grab = None
         self._href = ""
-        self._depth = {"nav": 0, "footer": 0}
+        # Count nav/footer nesting so link capture can be scoped to the BRANDED
+        # shell only. The footer contains <nav class="footer-links">, so a plain
+        # "am I inside any <nav>" test folds every footer link into nav_hrefs and
+        # makes the shell comparison nearly a no-op.
+        self._nav_open = self._footer_open = 0
+        self._site_nav_at = self._site_footer_at = None
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -130,13 +137,17 @@ class Doc(HTMLParser):
             self._grab = ("a", line, [])
             self._href = a.get("href", "")
         elif tag == "nav":
+            self._nav_open += 1
             if "site-nav" in (a.get("class") or ""):
                 self.has_site_nav = True
-            self._depth["nav"] += 1
+                if self._site_nav_at is None:
+                    self._site_nav_at = self._nav_open
         elif tag == "footer":
+            self._footer_open += 1
             if "site-footer" in (a.get("class") or ""):
                 self.has_site_footer = True
-            self._depth["footer"] += 1
+                if self._site_footer_at is None:
+                    self._site_footer_at = self._footer_open
 
     def handle_endtag(self, tag):
         if self._stack and tag in self._stack:
@@ -151,13 +162,19 @@ class Doc(HTMLParser):
                 self.jsonld.append((body, line))
             elif kind == "a":
                 self.links.append((self._href, body.strip(), line))
-                if self._depth["nav"] > 0:
+                if self._site_nav_at is not None:
                     self.nav_hrefs.add(self._href)
-                if self._depth["footer"] > 0:
+                if self._site_footer_at is not None:
                     self.footer_hrefs.add(self._href)
             self._grab = None
-        if tag in ("nav", "footer") and self._depth[tag] > 0:
-            self._depth[tag] -= 1
+        if tag == "nav" and self._nav_open > 0:
+            if self._site_nav_at == self._nav_open:
+                self._site_nav_at = None
+            self._nav_open -= 1
+        elif tag == "footer" and self._footer_open > 0:
+            if self._site_footer_at == self._footer_open:
+                self._site_footer_at = None
+            self._footer_open -= 1
 
     def handle_data(self, data):
         if self._grab:
@@ -600,8 +617,39 @@ def validate(root, args):
             continue
         findings.extend(health_findings(d, rel, urls[rel]))
 
+    def load_doc(root_dir, relpath, addf):
+        path = os.path.join(root_dir, relpath)
+        if not os.path.exists(path):
+            return None
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                raw = fh.read()
+            d = Doc()
+            d.feed(raw)
+            d.raw = raw
+            return d
+        except Exception as e:
+            addf(Finding(WARN, relpath, 0, "unreadable", str(e)))
+            return None
+
     # --- brand + shared shell ---------------------------------------------
-    ref = docs.get("public/" + SHELL_REF)
+    # The shell reference lives in production. The work lane has no copy of it,
+    # so fall back to the landing-page template, whose nav and footer are the
+    # same verbatim blocks. Without this the comparison below silently does
+    # nothing on the exact lane where hand-written navs get introduced.
+    ref, ref_label = docs.get("public/" + SHELL_REF), SHELL_REF
+    if ref is None:
+        for cand in SHELL_FALLBACKS:
+            d = load_doc(root, cand, add)
+            if d is not None and d.has_site_nav and d.has_site_footer:
+                ref, ref_label = d, cand
+                break
+    if ref is None and any(profile_for(urls[r], r, work) == "marketing" for r in in_scope):
+        add(Finding(ERROR, "scripts/validate.py", 1, "brand-shell-noref",
+                    "no shell reference found (tried public/%s, %s)"
+                    % (SHELL_REF, ", ".join(SHELL_FALLBACKS)),
+                    "Without a reference the nav/footer comparison cannot run and "
+                    "hand-written shells ship unchecked. Restore one of those files."))
     for rel in in_scope:
         d = docs.get(rel)
         if d is None or profile_for(urls[rel], rel, work) != "marketing":
@@ -647,8 +695,8 @@ def validate(root, args):
                     if extra:
                         bits.append("extra %s" % ", ".join(extra))
                     add(Finding(ERROR, rel, 1, "brand-shell",
-                                "%s links differ from public/%s: %s"
-                                % (label, SHELL_REF, "; ".join(bits)),
+                                "%s links differ from %s: %s"
+                                % (label, ref_label, "; ".join(bits)),
                                 "The nav and footer are copied verbatim into every page. "
                                 "Changing one page's set is almost always a mistake."))
 

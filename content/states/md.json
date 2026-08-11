@@ -3,7 +3,7 @@
   "abbr": "MD",
   "slug": "maryland",
   "tier": "adult-use",
-  "updated": "2026-08-10",
+  "updated": "2026-08-11",
   "status": "ready",
   "facts": [
     {
@@ -43,14 +43,149 @@
       "verify": "Page states the cannabis sales and use tax took effect 2023-07-01, which is the start of legal adult-use sales",
       "note": "Only the effective-date element of this page is used. Its 9 percent rate figure is stale, see md-sales-tax.",
       "used_on": []
+    },
+    {
+      "id": "md-dispensary-licenses",
+      "value": 121,
+      "unit": "licenses",
+      "label": "Dispensary licenses statewide (119 standard, 2 micro)",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download JUN 2026, sheet 'License Data Summary Metrics'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Open the JUN 2026 workbook from the MCA Data Dashboard page, sheet 'License Data Summary Metrics', row 'Dispensary'."
+    },
+    {
+      "id": "md-dispensary-locations",
+      "value": 119,
+      "unit": "locations",
+      "label": "Dispensary locations with a physical address",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download JUN 2026, sheet 'Dispensaries Address Data' (119 rows) and sheet 'Dispensaries by County' (sums to 119)",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Count rows in 'Dispensaries Address Data'; cross-check against the county sheet total.",
+      "note": "121 licenses vs 119 addressed locations. Two dispensary licenses are issued but not yet operating at a listed address. Do not present the two numbers as interchangeable."
+    },
+    {
+      "id": "md-baltimore-city-dispensaries",
+      "value": 11,
+      "unit": "dispensaries",
+      "label": "Dispensaries in Baltimore City",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Dispensaries by County', row 'Baltimore City'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'Dispensaries by County', row 'Baltimore City' = 11. Confirm against 'Dispensaries Address Data' filtered to County = 'Baltimore City'.",
+      "note": "CRITICAL: Baltimore City is an independent city and belongs to no county. The separate row 'Baltimore' = 20 is Baltimore COUNTY. Never add them, and never report 20 as the city figure."
+    },
+    {
+      "id": "md-baltimore-county-dispensaries",
+      "value": 20,
+      "unit": "dispensaries",
+      "label": "Dispensaries in Baltimore County (separate jurisdiction)",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Dispensaries by County', row 'Baltimore'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Sheet 'Dispensaries by County', row 'Baltimore' = 20. Largest single jurisdiction in the state.",
+      "note": "Baltimore County is the state's largest dispensary jurisdiction, ahead of Montgomery County's 19. It surrounds but excludes Baltimore City."
+    },
+    {
+      "id": "md-baltimore-boundary-overlap",
+      "value": 2,
+      "unit": "stores",
+      "label": "Baltimore County stores with a Baltimore mailing address and Baltimore in the trade name",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Dispensaries Address Data', rows where County = 'Baltimore' and the geocoding address city is 'Baltimore'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Health for Life Baltimore, 6807 Rolling Mill Rd, Baltimore MD 21224; Green Goods Baltimore, 717 North Point Blvd, Baltimore MD 21224. County field reads 'Baltimore' (the county), not 'Baltimore City'.",
+      "note": "ZIP 21224 straddles the line: Greenlabs at 1522 Eastern Ave is Baltimore City in the same ZIP. This is the boundary trap the page is built on."
+    },
+    {
+      "id": "md-baltimore-city-zips",
+      "value": 8,
+      "unit": "ZIP codes",
+      "label": "Distinct ZIP codes containing Baltimore City's 11 dispensaries",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Dispensaries Address Data'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "21201 x2, 21206, 21209, 21211 x2, 21212, 21224, 21230 x2, 21231.",
+      "note": "No ZIP holds more than two. The city has no dispensary cluster."
+    },
+    {
+      "id": "md-baltimore-city-population",
+      "value": 568271,
+      "unit": "residents",
+      "label": "Baltimore City resident population estimate",
+      "source": "Maryland Department of Planning via Maryland Open Data Portal, 'Maryland and Jurisdictions Population Estimates 2020-2024'",
+      "source_url": "https://opendata.maryland.gov/d/r7ky-rq9s",
+      "as_of": "2024-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Dataset r7ky-rq9s, jurisdiction 'Baltimore City', latest reporting period ending 2024-06-30."
+    },
+    {
+      "id": "md-baltimore-county-population",
+      "value": 852425,
+      "unit": "residents",
+      "label": "Baltimore County resident population estimate",
+      "source": "Maryland Department of Planning via Maryland Open Data Portal, 'Maryland and Jurisdictions Population Estimates 2020-2024'",
+      "source_url": "https://opendata.maryland.gov/d/r7ky-rq9s",
+      "as_of": "2024-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Dataset r7ky-rq9s, jurisdiction 'Baltimore County', latest reporting period ending 2024-06-30."
+    },
+    {
+      "id": "md-ytd-sales-jun-2026",
+      "value": 601513759,
+      "unit": "USD",
+      "label": "Maryland year-to-date cannabis market sales through June 2026",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Market Sales Summary Metrics', metric 'Year to Date Market Sales'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "Latest month row (Excel serial 46174 = 2026-06-01). Total price excludes sales tax per the MCA note tab."
+    },
+    {
+      "id": "md-median-price-per-gram",
+      "value": 7.71,
+      "unit": "USD per gram",
+      "label": "Median price per gram, June 2026",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Market Sales Summary Metrics'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "June 2026 = $7.71, down from $9.29 in December 2023 in the same series."
+    },
+    {
+      "id": "md-adult-use-transaction-share",
+      "value": 86.6,
+      "unit": "percent",
+      "label": "Adult-use share of June 2026 dispensary transactions",
+      "source": "MCA Dashboard Data Download JUN 2026, sheet 'Dispensary Transactions'",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUN%202026.xlsx",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-11",
+      "verify": "June 2026: 1,453,703 adult-use and 224,119 medical = 1,677,822 total; 1453703/1677822 = 86.6 percent."
     }
   ],
   "gaps": [
-    "Licensed dispensary count: the MCA dispensary page cites 101 licensed entities but is marked archived and carries no as-of date. Pull the current count from the MCA 2026 data dashboard download before publishing any dispensary number.",
-    "License classes: MD distinguishes standard, micro, and incubator-space dispensary licenses plus social-equity rounds. Break the count down by class rather than publishing one aggregate.",
-    "Per-city counts for Baltimore, Silver Spring, Frederick, Annapolis: needed for city pages.",
-    "Zoning versus opt-out: MD localities zone rather than ban outright. Confirm the precise mechanism before writing the local-control sentence, since the CA framing does not transfer."
+    "Zoning versus opt-out: MD localities zone rather than ban outright. Confirm the precise mechanism before writing the local-control sentence, since the CA framing does not transfer.",
+    "Baltimore City neighborhood names are inferred from street addresses and ZIPs, not published by MCA. Do not publish a neighborhood-level dispensary count as a state figure."
   ],
-  "cities": [],
+  "cities": [
+    "baltimore"
+  ],
   "faqs": []
 }
