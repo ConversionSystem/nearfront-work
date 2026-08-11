@@ -283,6 +283,13 @@ TIER_C = re.compile(r"\b(clinically proven|fda[- ]approved|guaranteed results|10
                     r"no side effects|doctor recommended|dosages?|dosing|daily dose|"
                     r"mg per day|for human use|safe for humans|human consumption|"
                     r"weight loss|muscle growth|anti-aging|testosterone boost)\b", re.I)
+# "treat X as Y" is a rhetorical construction, never a medical claim. On
+# 2026-08-12 it accounted for every single health-claim notice on the site, 13
+# of 13, which is precisely the "ignored within a week" failure the tiering
+# above was built to avoid. Suppressed only when the sentence carries no
+# condition term, so "treat chronic pain as needed" still fires.
+TREAT_AS = re.compile(r"\btreat(?:s|ed|ing)?\b(?:\s+\S+){0,10}?\s+\bas\b", re.I)
+
 NEGATED = re.compile(r"\b(no|not|never|without|free of|avoids?|cannot|can't|we do not|"
                      r"is not|research[- ]use|research use only|compliance|compliant|"
                      r"disclaim\w*|prohibit\w*|ban(?:ned|s)?|restrict\w*)\b", re.I)
@@ -300,7 +307,10 @@ def health_findings(doc, rel, url):
         for sentence in re.split(r"(?<=[.!?])\s+", chunk):
             if NEGATED.search(sentence):
                 continue
-            a, b, c = TIER_A.search(sentence), TIER_B.search(sentence), TIER_C.search(sentence)
+            b, c = TIER_B.search(sentence), TIER_C.search(sentence)
+            # Only strip the rhetorical 'treat as' when no condition is named.
+            probe = sentence if b else TREAT_AS.sub(" ", sentence)
+            a = TIER_A.search(probe)
             hit, sev = None, None
             if a and b:
                 hit, sev = "%s + %s" % (a.group(0), b.group(0)), WARN
