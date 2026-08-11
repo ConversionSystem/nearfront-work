@@ -107,12 +107,64 @@
       "verify": "Before 2024-06-01 the tax ran on milligrams of total THC (0.5 cents per mg flower, 0.8 concentrate, 3 cents edibles). From that date a 9 percent distributor tax applies instead.",
       "note": "Any content still describing NY cannabis tax in cents per milligram is more than two years out of date.",
       "used_on": []
+    },
+    {
+      "id": "ny-active-vs-licensed",
+      "claim": "retail dispensary licenses that are operationally active, versus issued",
+      "value": {
+        "statewide_active": 638,
+        "statewide_non_operational": 423,
+        "Brooklyn": {
+          "licensed": 145,
+          "active": 82
+        },
+        "Manhattan": {
+          "licensed": 142,
+          "active": 95
+        },
+        "Queens": {
+          "licensed": 128,
+          "active": 71
+        },
+        "Bronx": {
+          "licensed": 43,
+          "active": 22
+        },
+        "Staten Island": {
+          "licensed": 27,
+          "active": 14
+        }
+      },
+      "unit": "licenses",
+      "as_of": "2026-08-10",
+      "source_name": "New York State Office of Cannabis Management, Current OCM Licenses (data.ny.gov)",
+      "source_url": "https://data.ny.gov/d/jskf-tt3q",
+      "retrieved": "2026-08-10",
+      "verify": "The dataset carries an operational_status field with values Active and Non-Operational. Filter license_type like '%Retail Dispensary%' and group by operational_status. Queens requires summing its 35 neighborhood city values.",
+      "note": "Resolves the licenses-versus-open-stores gap. Statewide 638 of 1,115 retail licenses are Active. Borough active share: Manhattan 67 percent, Brooklyn 57, Staten Island 52, Bronx 51, Queens 55. Roughly four in ten licensed NYC dispensaries are not trading.",
+      "used_on": []
     }
   ],
   "gaps": [
-    "Operating store count: licenses issued far exceeds stores open. OCM publishes a dispensary location list that gives a truer open-store number for market-size claims.",
     "Legalization and first-sale dates: MRTA (2021) and the first legal sale (late 2022) both need primary citations."
   ],
-  "cities": [],
+  "cities": [
+    {
+      "name": "Brooklyn",
+      "slug": "brooklyn",
+      "licensed": 145,
+      "active": 82,
+      "top_zips": {
+        "11222": 11,
+        "11216": 9,
+        "11226": 8,
+        "11237": 8,
+        "11215": 8,
+        "11238": 8,
+        "11201": 7,
+        "11211": 6
+      }
+    }
+  ],
   "faqs": []
 }
