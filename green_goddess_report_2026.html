@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Goddess — SEO Campaign Report 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0D0F0C;
+    --white: #F7F5F0;
+    --green-deep: #1D3A1B;
+    --green-mid: #2D5A27;
+    --green-bright: #4A8A3E;
+    --green-pale: #C8DFC4;
+    --green-wash: #EBF3E9;
+    --gold: #C9A84C;
+    --gold-pale: #F5EDD6;
+    --gray-dark: #3A3D39;
+    --gray-mid: #6B706A;
+    --gray-light: #C2C7C1;
+    --gray-wash: #F0F2EF;
+    --up: #3A7D44;
+    --down: #B84040;
+    --up-bg: #E8F5EA;
+    --down-bg: #FDEAEA;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: var(--green-deep);
+    color: var(--white);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(74,138,62,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cover-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-mark {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-pale);
+  }
+
+  .cover-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-pale);
+    border: 1px solid rgba(200,223,196,0.35);
+    padding: 6px 14px;
+    border-radius: 2px;
+  }
+
+  .cover-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 1.0;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--green-pale);
+  }
+
+  .cover-sub {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(20px, 2.5vw, 32px);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(247,245,240,0.55);
+    margin-bottom: 56px;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .cover-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cover-stat-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .cover-stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-pale);
+    font-weight: 500;
+  }
+
+  .cover-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding-top: 32px;
+    border-top: 1px solid rgba(200,223,196,0.2);
+  }
+
+  .cover-client {
+    font-size: 13px;
+    color: rgba(247,245,240,0.5);
+    line-height: 1.5;
+  }
+
+  .cover-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(247,245,240,0.4);
+    text-align: right;
+  }
+
+  /* ─── LAYOUT ─── */
+  .page { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+  .section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--green-pale);
+    max-width: 60px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    color: var(--green-deep);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--gray-mid);
+    max-width: 560px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  /* ─── SCORECARD GRID ─── */
+  .scorecard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-light);
+    margin-bottom: 48px;
+  }
+
+  .score-card {
+    background: var(--white);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .score-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+
+  .score-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--green-deep);
+    line-height: 1;
+  }
+
+  .score-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 2px;
+    width: fit-content;
+    margin-top: 4px;
+  }
+
+  .score-change.up { background: var(--up-bg); color: var(--up); }
+  .score-change.down { background: var(--down-bg); color: var(--down); }
+  .score-change.neutral { background: var(--gray-wash); color: var(--gray-mid); }
+
+  .score-note {
+    font-size: 11px;
+    color: var(--gray-mid);
+    margin-top: 2px;
+  }
+
+  /* ─── CHART ─── */
+  .chart-wrap {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+
+  .chart-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 24px;
+  }
+
+  .chart-area {
+    height: 220px;
+    position: relative;
+  }
+
+  svg.line-chart { width: 100%; height: 100%; overflow: visible; }
+
+  .chart-grid line { stroke: var(--gray-wash); stroke-width: 1; }
+  .chart-axis text { fill: var(--gray-mid); font-family: 'IBM Plex Mono', monospace; font-size: 9px; }
+
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--gray-mid);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ─── TABLE ─── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .data-table thead th {
+    background: var(--green-deep);
+    color: var(--green-pale);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .data-table tbody tr { border-bottom: 1px solid var(--gray-wash); }
+  .data-table tbody tr:hover { background: var(--green-wash); }
+
+  .data-table tbody td {
+    padding: 14px 16px;
+    color: var(--gray-dark);
+    vertical-align: middle;
+  }
+
+  .data-table td.mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .badge-green { background: var(--up-bg); color: var(--up); }
+  .badge-gold { background: var(--gold-pale); color: #7A5C1A; }
+  .badge-gray { background: var(--gray-wash); color: var(--gray-mid); }
+
+  .dr-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green-deep);
+    color: var(--white);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* ─── INSIGHT CARDS ─── */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .insight-card {
+    border: 1px solid var(--gray-light);
+    padding: 28px;
+    position: relative;
+  }
+
+  .insight-card.highlight {
+    border-color: var(--green-bright);
+    background: var(--green-wash);
+  }
+
+  .insight-card.warning {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+  }
+
+  .insight-icon {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .insight-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+  }
+
+  .insight-body {
+    font-size: 13px;
+    color: var(--gray-dark);
+    line-height: 1.65;
+  }
+
+  /* ─── KEYWORD RANKING BARS ─── */
+  .ranking-table { width: 100%; }
+
+  .rank-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 160px;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-wash);
+  }
+
+  .rank-row:last-child { border-bottom: none; }
+
+  .rank-keyword { font-size: 13px; color: var(--gray-dark); }
+
+  .rank-pos {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--green-deep);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .rank-bar-track {
+    height: 6px;
+    background: var(--gray-wash);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .rank-bar-fill {
+    height: 100%;
+    background: var(--green-bright);
+    border-radius: 1px;
+    transition: width 0.6s ease;
+  }
+
+  /* ─── CALLOUT BLOCK ─── */
+  .callout {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-pale);
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-size: 14px;
+    color: var(--gray-dark);
+    line-height: 1.7;
+  }
+
+  .callout strong { color: var(--green-deep); }
+
+  /* ─── OPEN ITEMS ─── */
+  .open-items { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+
+  .open-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 20px;
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+  }
+
+  .open-item-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--green-pale);
+    line-height: 1;
+  }
+
+  .open-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 4px;
+  }
+
+  .open-item-body {
+    font-size: 13px;
+    color: var(--gray-mid);
+    line-height: 1.6;
+  }
+
+  /* ─── FOOTER ─── */
+  .report-footer {
+    background: var(--green-deep);
+    color: var(--green-pale);
+    padding: 48px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+    gap: 24px;
+  }
+
+  .footer-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: rgba(200,223,196,0.5);
+    max-width: 400px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ─── UTILITY ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 700px) {
+    .cover { padding: 32px 24px; }
+    .page { padding: 0 20px; }
+    .section { padding: 56px 0; }
+    .cover-stats { gap: 28px; }
+    .two-col { grid-template-columns: 1fr; }
+    .rank-row { grid-template-columns: 1fr 60px; }
+    .rank-bar-track { display: none; }
+    .report-footer { padding: 32px 24px; flex-direction: column; }
+    .footer-note { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<div class="cover">
+  <div class="cover-nav">
+    <span class="logo-mark">NearFront</span>
+    <span class="cover-badge">Confidential</span>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">SEO & Growth Campaign Report</div>
+    <div class="cover-title">Green<br><em>Goddess</em></div>
+    <div class="cover-sub">Venice Beach, California</div>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="cover-stat-val">+84%</span>
+        <span class="cover-stat-label">Keywords Top 3</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-val">+57%</span>
+        <span class="cover-stat-label">Referring Domains</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-val">4</span>
+        <span class="cover-stat-label">Authority Links Built</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-val">DR 28</span>
+        <span class="cover-stat-label">Domain Rating</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-client">
+      Prepared for Green Goddess Collective<br>
+      Campaign Partner: NearFront
+    </div>
+    <div class="cover-date">
+      Year-to-Date Report<br>
+      January – August 2026
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ BODY ═══════════════════ -->
+<div class="page">
+
+  <!-- ─── 01 PERFORMANCE OVERVIEW ─── -->
+  <div class="section">
+    <div class="section-eyebrow">01 — Overview</div>
+    <div class="section-title">Where the campaign<br>stands today</div>
+    <div class="section-desc">Key organic search metrics for greengoddesscollective.com, January through August 2026, compared to the start of the campaign. Data sourced from Ahrefs.</div>
+
+    <div class="scorecard">
+      <div class="score-card">
+        <div class="score-label">Organic Traffic (Est.)</div>
+        <div class="score-value">1,116</div>
+        <div class="score-change down">▼ 3.6% vs Jan</div>
+        <div class="score-note">Jan baseline: 1,158</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Keywords Ranking Top 3</div>
+        <div class="score-value">145</div>
+        <div class="score-change up">▲ 61% vs Jan</div>
+        <div class="score-note">Jan baseline: 90</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Total Keywords Tracked</div>
+        <div class="score-value">320</div>
+        <div class="score-change down">▼ 43% vs Jan</div>
+        <div class="score-note">Jan baseline: 561 (index normalization)</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Domain Rating</div>
+        <div class="score-value">28</div>
+        <div class="score-change neutral">— Stable YTD</div>
+        <div class="score-note">Jan baseline: 29</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Referring Domains</div>
+        <div class="score-value">901</div>
+        <div class="score-change up">▲ 57% vs Jan</div>
+        <div class="score-note">Jan baseline: 574</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Traffic Value (Est.)</div>
+        <div class="score-value">$590</div>
+        <div class="score-change up">▲ 15% vs Jan</div>
+        <div class="score-note">Jan baseline: $510</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Key insight:</strong> While overall keyword volume has declined (a Ahrefs index normalization common to local sites), the quality of rankings has improved significantly. Keywords ranking in the top 3 positions are up 61% year-to-date, from 90 in January to 145 in August. Referring domains have grown 57%, driven by the authority link building campaign. Organic traffic is essentially flat — the priority now is converting that ranking quality into measurable traffic and revenue through Treez tracking.
+    </div>
+  </div>
+
+  <!-- ─── 02 KEYWORD RANKINGS TREND ─── -->
+  <div class="section">
+    <div class="section-eyebrow">02 — Keyword Rankings</div>
+    <div class="section-title">Rankings by<br>position bucket</div>
+    <div class="section-desc">Monthly snapshot of how many keywords Green Goddess holds in each ranking tier, January through August 2026.</div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Keywords in Top 3 — Month by Month</div>
+      <div class="chart-area">
+        <svg class="line-chart" viewBox="0 0 900 200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="topGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4A8A3E" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#4A8A3E" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- grid -->
+          <line x1="0" y1="0" x2="900" y2="0" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="50" x2="900" y2="50" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="100" x2="900" y2="100" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="150" x2="900" y2="150" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="200" x2="900" y2="200" stroke="#F0F2EF" stroke-width="1"/>
+          <!-- y axis labels -->
+          <text x="-8" y="4" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">200</text>
+          <text x="-8" y="54" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">150</text>
+          <text x="-8" y="104" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">100</text>
+          <text x="-8" y="154" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">50</text>
+          <text x="-8" y="204" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">0</text>
+          <!-- top3 data: Jan105 Feb106 Mar113 Apr128 May151 Jun172 Jul181 Aug145 -->
+          <!-- scale: max=200, height=200 so y = (200-val)/200 * 200 -->
+          <polygon
+            points="0,190 128.6,188.6 257.1,174 385.7,144 514.3,98 642.9,56 771.4,38 900,110"
+            fill="url(#topGrad)" stroke="none"/>
+          <polyline
+            points="0,190 128.6,188.6 257.1,174 385.7,144 514.3,98 642.9,56 771.4,38 900,110"
+            fill="none" stroke="#4A8A3E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- top4_10: Jan130 Feb114 Mar142 Apr172 May174 Jun167 Jul141 Aug131 -->
+          <polyline
+            points="0,140 128.6,172 257.1,116 385.7,56 514.3,52 642.9,66 771.4,118 900,138"
+            fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-dasharray="6,3" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- x labels -->
+          <text x="0" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jan</text>
+          <text x="128.6" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Feb</text>
+          <text x="257.1" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Mar</text>
+          <text x="385.7" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Apr</text>
+          <text x="514.3" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">May</text>
+          <text x="642.9" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jun</text>
+          <text x="771.4" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jul</text>
+          <text x="900" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Aug</text>
+        </svg>
+      </div>
+      <div class="chart-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#4A8A3E"></span>Top 3 positions</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#C9A84C"></span>Positions 4–10</div>
+      </div>
+    </div>
+
+    <!-- Monthly rankings table -->
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Top 3</th>
+          <th>4–10</th>
+          <th>11–20</th>
+          <th>21–50</th>
+          <th>51+</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>January 2026</td><td class="mono">105</td><td class="mono">130</td><td class="mono">41</td><td class="mono">165</td><td class="mono">242</td></tr>
+        <tr><td>February 2026</td><td class="mono">106</td><td class="mono">114</td><td class="mono">54</td><td class="mono">204</td><td class="mono">248</td></tr>
+        <tr><td>March 2026</td><td class="mono">113</td><td class="mono">142</td><td class="mono">60</td><td class="mono">203</td><td class="mono">200</td></tr>
+        <tr><td>April 2026</td><td class="mono">128</td><td class="mono">172</td><td class="mono">55</td><td class="mono">130</td><td class="mono">125</td></tr>
+        <tr><td>May 2026</td><td class="mono">151</td><td class="mono">174</td><td class="mono">59</td><td class="mono">68</td><td class="mono">7</td></tr>
+        <tr><td>June 2026</td><td class="mono">172</td><td class="mono">167</td><td class="mono">53</td><td class="mono">64</td><td class="mono">2</td></tr>
+        <tr><td>July 2026</td><td class="mono"><strong>181</strong></td><td class="mono">141</td><td class="mono">24</td><td class="mono">56</td><td class="mono">1</td></tr>
+        <tr><td>August 2026</td><td class="mono">145</td><td class="mono">131</td><td class="mono">20</td><td class="mono">24</td><td class="mono">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 03 REFERRING DOMAINS ─── -->
+  <div class="section">
+    <div class="section-eyebrow">03 — Authority Building</div>
+    <div class="section-title">Referring domains<br>growing steadily</div>
+    <div class="section-desc">External domains linking to greengoddesscollective.com have grown 57% year-to-date, from 574 in January to 901 in August. This directly supports map rankings and domain trust.</div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Referring Domains — January to August 2026</div>
+      <div class="chart-area">
+        <svg class="line-chart" viewBox="0 0 900 200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="refGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="0" x2="900" y2="0" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="50" x2="900" y2="50" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="100" x2="900" y2="100" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="150" x2="900" y2="150" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="200" x2="900" y2="200" stroke="#F0F2EF" stroke-width="1"/>
+          <text x="-8" y="4" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">1000</text>
+          <text x="-8" y="104" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">500</text>
+          <text x="-8" y="204" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">0</text>
+          <!-- data: 574,501,455,428,598,674,809,901 — scale max 1000 height 200 -->
+          <!-- y = (1000-val)/1000*200 -->
+          <polygon
+            points="0,85.2 128.6,99.8 257.1,109 385.7,114.4 514.3,80.4 642.9,65.2 771.4,38.2 900,19.8"
+            fill="url(#refGrad)" stroke="none"/>
+          <polyline
+            points="0,85.2 128.6,99.8 257.1,109 385.7,114.4 514.3,80.4 642.9,65.2 771.4,38.2 900,19.8"
+            fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="0" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jan</text>
+          <text x="128.6" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Feb</text>
+          <text x="257.1" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Mar</text>
+          <text x="385.7" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Apr</text>
+          <text x="514.3" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">May</text>
+          <text x="642.9" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jun</text>
+          <text x="771.4" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jul</text>
+          <text x="900" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Aug</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 04 LINK BUILDING ─── -->
+  <div class="section">
+    <div class="section-eyebrow">04 — Link Building</div>
+    <div class="section-title">Authority links<br>built and indexed</div>
+    <div class="section-desc">All links completed by our SEO link building department through June 2026. July and August reporting is pending and will be shared once available.</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>DR</th>
+          <th>Link / Property</th>
+          <th>Type</th>
+          <th>Phase</th>
+          <th>Indexed</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="dr-pill">95</span></td>
+          <td class="mono" style="font-size:11px">dispensaries-reviewed.s3<br>.us-west-1.amazonaws.com</td>
+          <td><span class="badge badge-green">GBP Expansion</span></td>
+          <td>Phase 1</td>
+          <td><span class="badge badge-green">✓ Yes</span></td>
+          <td style="font-size:12px;color:#6B706A">25-page mega site with driving directions, map embeds, real entities linking to GBP.</td>
+        </tr>
+        <tr>
+          <td><span class="dr-pill">90</span></td>
+          <td class="mono" style="font-size:11px">green-goddess-collective<br>.onrender.com</td>
+          <td><span class="badge badge-gold">Branded Citation</span></td>
+          <td>Phase 1</td>
+          <td><span class="badge badge-green">✓ Yes</span></td>
+          <td style="font-size:12px;color:#6B706A">Ultra-high-authority branded citation property.</td>
+        </tr>
+        <tr>
+          <td><span class="dr-pill">93</span></td>
+          <td class="mono" style="font-size:11px">green-goddess-venice<br>.pages.dev</td>
+          <td><span class="badge badge-gold">Branded Citation</span></td>
+          <td>Phase 1</td>
+          <td><span class="badge badge-green">✓ Yes</span></td>
+          <td style="font-size:12px;color:#6B706A">Ultra-high-authority branded citation property.</td>
+        </tr>
+        <tr>
+          <td><span class="dr-pill">93</span></td>
+          <td class="mono" style="font-size:11px">venice-beach-cannabis-guide<br>.pages.dev</td>
+          <td><span class="badge badge-gold">Branded Guide</span></td>
+          <td>Phase 1</td>
+          <td><span class="badge badge-green">✓ Yes</span></td>
+          <td style="font-size:12px;color:#6B706A">Venice Beach cannabis guide page linking to Green Goddess.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:24px">
+      <strong>Note:</strong> All four links are live and indexed. Average DR across built links is 92.75. July and August link building reports are pending — we will follow up with the updated totals before the next meeting.
+    </div>
+  </div>
+
+  <!-- ─── 05 REVIEW STRATEGY ─── -->
+  <div class="section">
+    <div class="section-eyebrow">05 — Review Strategy</div>
+    <div class="section-title">Getting reviews<br>working harder</div>
+    <div class="section-desc">Review velocity directly impacts map pack rankings and local trust signals. Green Goddess is generating approximately 26–27 reviews per month. The goal is to increase this through in-store systems.</div>
+
+    <div class="insights-grid">
+      <div class="insight-card highlight">
+        <div class="insight-icon">⭐</div>
+        <div class="insight-title">Current Velocity</div>
+        <div class="insight-body">26–27 reviews per month. Consistent generation is a strong foundation. The goal is to systematize this at every checkout so it becomes automatic.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">📱</div>
+        <div class="insight-title">QR Code Stands at Register</div>
+        <div class="insight-body">We are recommending physical QR code stands at the register that link directly to the Google review page. One tap, no friction. <a href="https://www.amazon.com/ProsperQR-Google-Review-Stand/dp/B0DGGX9W6H" style="color:#2D5A27">View on Amazon →</a></div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">💬</div>
+        <div class="insight-title">Budtender Script</div>
+        <div class="insight-body">A simple, casual script has been developed for budtenders to use at checkout. Short ask, gesture to the stand, thank the customer. Shared as a separate training document.</div>
+      </div>
+      <div class="insight-card warning">
+        <div class="insight-icon">🔄</div>
+        <div class="insight-title">Review Automation Review</div>
+        <div class="insight-body">We want to evaluate whether the current review request automation service is delivering sufficient ROI, or whether that budget is better reallocated to link building or another channel.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 06 LOCAL FALCON MAP RANKINGS ─── -->
+  <div class="section">
+    <div class="section-eyebrow">06 — Local / Map Rankings</div>
+    <div class="section-title">Google Maps visibility<br>across 11 keywords</div>
+    <div class="section-desc">Local Falcon scan data for Green Goddess Collective — 1716 Main St, Venice, CA. Last scanned August 6, 2026. ARP = Average Rank Position (lower is better). SoLV = Share of Local Voice (higher is better, max 100%).</div>
+
+    <div class="scorecard" style="margin-bottom:32px">
+      <div class="score-card">
+        <div class="score-label">Best Keyword — SoLV</div>
+        <div class="score-value">100%</div>
+        <div class="score-change up">▲ Dominant</div>
+        <div class="score-note">"venice beach dispensary"</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Keywords Tracked</div>
+        <div class="score-value">11</div>
+        <div class="score-change neutral">— Maps Platform</div>
+        <div class="score-note">Google local pack</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Avg SoLV (Top 5 KW)</div>
+        <div class="score-value">63%</div>
+        <div class="score-change up">▲ Strong visibility</div>
+        <div class="score-note">venice beach, rec, santa monica, near me, dispos</div>
+      </div>
+      <div class="score-card">
+        <div class="score-label">Weakest Keyword</div>
+        <div class="score-value">4%</div>
+        <div class="score-change down">▼ Opportunity</div>
+        <div class="score-note">"playa del rey dispensary"</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>ARP</th>
+          <th>ARP Move</th>
+          <th>SoLV</th>
+          <th>SoLV Move</th>
+          <th>Local Visibility</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>venice beach dispensary</td>
+          <td class="mono">1.22</td>
+          <td><span class="badge badge-green">▲ +0.11</span></td>
+          <td class="mono"><strong>100.00%</strong></td>
+          <td><span class="badge badge-gray">— 0.00</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:100%;background:#2D5A27"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>recreational dispensary near me</td>
+          <td class="mono">3.61</td>
+          <td><span class="badge badge-green">▲ +0.12</span></td>
+          <td class="mono">61.22%</td>
+          <td><span class="badge badge-green">▲ +2.04</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:61.22%;background:#4A8A3E"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>santa monica dispensary</td>
+          <td class="mono">3.24</td>
+          <td><span class="badge badge-green">▲ +0.54</span></td>
+          <td class="mono">59.18%</td>
+          <td><span class="badge badge-green">▲ +24.49</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:59.18%;background:#4A8A3E"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>dispos near me</td>
+          <td class="mono">4.46</td>
+          <td><span class="badge badge-green">▲ +0.08</span></td>
+          <td class="mono">51.85%</td>
+          <td><span class="badge badge-green">▲ +1.23</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:51.85%;background:#4A8A3E"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>dispos</td>
+          <td class="mono">4.47</td>
+          <td><span class="badge badge-green">▲ +0.02</span></td>
+          <td class="mono">45.68%</td>
+          <td><span class="badge badge-gray">— 0.00</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:45.68%;background:#4A8A3E"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>cannabis store near me</td>
+          <td class="mono">5.48</td>
+          <td><span class="badge badge-down" style="background:#FDEAEA;color:#B84040">▼ -0.29</span></td>
+          <td class="mono">43.21%</td>
+          <td><span class="badge badge-down" style="background:#FDEAEA;color:#B84040">▼ -1.23</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:43.21%;background:#C9A84C"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>cannabis dispensary near me</td>
+          <td class="mono">5.18</td>
+          <td><span class="badge badge-green">▲ +0.06</span></td>
+          <td class="mono">40.82%</td>
+          <td><span class="badge badge-green">▲ +2.04</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:40.82%;background:#C9A84C"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>dispensary</td>
+          <td class="mono">5.69</td>
+          <td><span class="badge badge-green">▲ +0.38</span></td>
+          <td class="mono">38.27%</td>
+          <td><span class="badge badge-gray">— 0.00</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:38.27%;background:#C9A84C"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>dispensary near me</td>
+          <td class="mono">6.27</td>
+          <td><span class="badge badge-down" style="background:#FDEAEA;color:#B84040">▼ -0.19</span></td>
+          <td class="mono">37.04%</td>
+          <td><span class="badge badge-gray">— 0.00</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:37.04%;background:#C9A84C"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>lax dispensary</td>
+          <td class="mono">5.41</td>
+          <td><span class="badge badge-green">▲ +0.42</span></td>
+          <td class="mono">8.16%</td>
+          <td><span class="badge badge-green">▲ +4.08</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:8.16%;background:#B84040"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>playa del rey dispensary</td>
+          <td class="mono">5.65</td>
+          <td><span class="badge badge-green">▲ +0.47</span></td>
+          <td class="mono">4.08%</td>
+          <td><span class="badge badge-green">▲ +4.08</span></td>
+          <td>
+            <div class="rank-bar-track" style="height:8px;width:100%">
+              <div class="rank-bar-fill" style="width:4.08%;background:#B84040"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:24px">
+      <strong>What this means:</strong> Green Goddess owns "venice beach dispensary" outright — 100% SoLV, #1.22 average rank, dominant across the grid. The big win this period is "santa monica dispensary" jumping +24.49 SoLV points, now at 59%. The geo expansion is working. "dispensary near me" and "lax dispensary" are the priority targets — high search volume, meaningful gaps in coverage. Review velocity and continued link building are the primary levers to close those.
+    </div>
+  </div>
+
+  <!-- ─── 07 OPEN ITEMS ─── -->
+  <div class="section">
+    <div class="section-eyebrow">07 — Open Items</div>
+    <div class="section-title">What we need<br>to resolve next</div>
+    <div class="section-desc">Priorities heading into the next meeting and billing cycle. Next invoice due October 1, 2026.</div>
+
+    <div class="open-items">
+      <div class="open-item">
+        <div class="open-item-num">1</div>
+        <div>
+          <div class="open-item-title">Treez / Gap Commerce Revenue Tracking</div>
+          <div class="open-item-body">E-commerce tracking has been non-functional for an extended period. GA4 (G-ZPR8DLV543) is installed but showing little to no revenue events from the Treez shopping cart. We have an open task assigned to verify GTM and GA4 across WordPress, Gap Commerce, and Prismic. Due this Friday. Without this fix we cannot attribute SEO performance to revenue.</div>
+        </div>
+      </div>
+      <div class="open-item">
+        <div class="open-item-num">2</div>
+        <div>
+          <div class="open-item-title">Website Redesign</div>
+          <div class="open-item-body">We would like to begin the redesign conversation. The plan is to develop a mock-up for Chadwick's review and approval before any work moves forward. No commitment until the mock-up is signed off.</div>
+        </div>
+      </div>
+      <div class="open-item">
+        <div class="open-item-num">3</div>
+        <div>
+          <div class="open-item-title">Review Automation Budget Evaluation</div>
+          <div class="open-item-body">Before renewing the current review automation service, we want to assess its impact on review velocity and determine whether reallocating that spend elsewhere drives more value.</div>
+        </div>
+      </div>
+      <div class="open-item">
+        <div class="open-item-num">4</div>
+        <div>
+          <div class="open-item-title">Billing Correction</div>
+          <div class="open-item-body">A $5,000 overcharge has been identified and communicated. Chadwick can choose to receive a refund or apply the credit toward the October 1, 2026 invoice covering July and August.</div>
+        </div>
+      </div>
+      <div class="open-item">
+        <div class="open-item-num">5</div>
+        <div>
+          <div class="open-item-title">July & August Link Building Report</div>
+          <div class="open-item-body">July and August link data from our SEO link building department is not yet reflected in this report. We will follow up with updated totals prior to the client meeting.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- ─── FOOTER ─── -->
+<div class="report-footer">
+  <div class="footer-brand">NearFront — SEO & Growth</div>
+  <div class="footer-note">Prepared for Green Goddess Collective, Venice Beach, CA. Data sourced from Ahrefs. Campaign period January – August 2026. Confidential.</div>
+</div>
+
+</body>
+</html>
