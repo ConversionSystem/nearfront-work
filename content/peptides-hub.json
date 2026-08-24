@@ -1,0 +1,63 @@
+{
+  "hub": "peptides",
+  "updated": "2026-08-24",
+  "retrieved": "2026-08-24",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "pep-google-policy",
+      "claim": "Google Ads prohibits promotion of unapproved pharmaceuticals and supplements",
+      "source": "Google Ads policy, Healthcare and medicines / Unapproved pharmaceuticals and supplements",
+      "source_url": "https://support.google.com/adspolicy/answer/176031",
+      "verify": "Policy text: Google 'doesn't allow the promotion of certain products, regardless of any claims of legality', including 'all items on this non-exhaustive list of unapproved pharmaceuticals and supplements', 'products that imply they're as effective as prescription drugs or controlled substances', and 'products that have been subject to any government or regulatory action or warning'."
+    },
+    {
+      "id": "pep-meta-policy",
+      "claim": "Meta restricts drug and pharmaceutical ads; prescription drug promotion requires LegitScript certification and written permission, and Meta prohibits unsafe substances at its sole discretion",
+      "source": "Meta Advertising Standards, Drugs and Pharmaceuticals",
+      "source_url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/drugs-pharmaceuticals/",
+      "verify": "Standard requires online pharmacies and telehealth providers promoting prescription drugs to be actively certified with LegitScript and to apply for permission; prescription drug ads limited to US, Canada, New Zealand, 18 plus. Ads may not promote 'illicit or recreational drugs, or other unsafe substances, products or supplements, as determined by Meta at its sole discretion'."
+    },
+    {
+      "id": "pep-fda-category2",
+      "claim": "FDA places bulk drug substances that may present significant safety risks in category 2 of its interim compounding policy, and named peptides appear on that list",
+      "source": "FDA, Certain Bulk Drug Substances for Use in Compounding that May Present Significant Safety Risks",
+      "source_url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+      "verify": "Page fetched 2026-08-24. Exact framing: 'Bulk drug substances that may present significant safety risks have been placed in category 2 under the interim policies.' Individually verified present on the page: BPC-157, ipamorelin, CJC-1295, AOD-9604, epitalon, selank, semax, dihexa, melanotan, kisspeptin, plus thymosin-family and GHRP-family entries.",
+      "note": "BPC-157 entry verbatim: 'Compounded drugs containing BPC-157 may pose risk for immunogenicity for certain routes of administration and may have complexities with regard to peptide-related impurities and active pharmaceutical ingredient (API) characterization. FDA has identified no, or only limited, safety-related information for the proposed routes of administration.'"
+    },
+    {
+      "id": "pep-pcac-2026",
+      "claim": "FDA's Pharmacy Compounding Advisory Committee discussed BPC-157 (free base) and BPC-157 acetate for the 503A Bulks List at its July 23-24, 2026 meeting",
+      "source": "FDA Advisory Committee Calendar",
+      "source_url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "verify": "Meeting page lists 'BPC-157-related bulk drug substances (BPC-157 (free base)/ BPC-157 acetate)' among substances considered for inclusion on the 503A Bulks List."
+    },
+    {
+      "id": "pep-interim-policy",
+      "claim": "FDA's interim policy on 503A compounding was finalized in January 2025, replacing the 2017 final and the December 2023 draft",
+      "source": "FDA guidance, Interim Policy on Compounding Using Bulk Drug Substances Under Section 503A",
+      "source_url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/interim-policy-compounding-using-bulk-drug-substances-under-section-503a-federal-food-drug-and",
+      "verify": "Guidance page states it finalizes the draft guidance issued December 2023 and replaces the final guidance issued January 2017."
+    },
+    {
+      "id": "pep-warning-letters",
+      "claim": "FDA issued warning letters on December 10, 2024 to research-peptide sellers, stating that research-only and not-for-human-consumption labeling did not change the products' status as unapproved new drugs where site evidence showed human-use intent",
+      "source": "FDA warning letters: Summit Research Peptides (695607, 12/10/2024) and Prime Vitality Inc. dba Prime Peptides (695156, 12/10/2024); related letters to Veronvy, Xcel Research LLC and Swisschems",
+      "source_url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/summit-research-peptides-695607-12102024",
+      "verify": "Letters cite semaglutide, retatrutide, cagrilintide, tirzepatide and mazdutide products as unapproved new drugs under sections 505(a) and 301(d) of the FD&C Act. Prime Peptides letter: despite labeling for 'research purposes only' and 'not for human consumption or clinical use', website evidence established the products were intended to be drugs for human use.",
+      "note": "Never name these companies pejoratively on the page; state what FDA's letters say and link them."
+    },
+    {
+      "id": "pep-ymyl",
+      "claim": "Google designates health-adjacent topics as Your Money or Your Life and holds them to its highest content standards",
+      "source": "Google Search Central, Creating helpful, reliable, people-first content",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "verify": "Fetched 2026-08-24. Exact text: 'topics that could significantly impact the health, financial stability, or safety of people, or the welfare or well-being of society. We call these \"Your Money or Your Life\" topics, or YMYL for short.' Page also states raters are trained to assess strong E-E-A-T."
+    }
+  ],
+  "gaps": [
+    "State-level peptide market data: peptides are not state-licensed as a category, so no per-state licensee file exists. Peptides state pages fail the sourcing bar and are not built. Recorded 2026-08-24 after probing CA (DCA), FL (DOH 401), TX (no board dataset).",
+    "LegitScript certification scope for peptide clinics specifically: Meta and Google both reference LegitScript for telehealth; whether a given peptide clinic model is certifiable is a LegitScript determination, not ours. Do not promise certifiability."
+  ]
+}
