@@ -1,0 +1,71 @@
+{
+  "purpose": "Evidence base for the /vs/ comparison pages. Every public claim on those pages must trace to a row here. Re-verify ALL rows before any promotion: the 2026-08-11 recon was already stale by 08-24 (Bud Authority added FAQPage schema and rebuilt; Deeproots noindexed its satellites; Range shipped metro pages).",
+  "retrieved": "2026-08-24",
+  "evidence_dir": "scratchpad vs-evidence/ archived HTML from this run",
+  "competitors": {
+    "bud_authority": {
+      "domain": "budauthority.com",
+      "checked": "2026-08-24",
+      "facts": [
+        "396 URLs in sitemap.xml; 136 flat cannabis-seo-* geo pages (states + cities mixed in one namespace)",
+        "FAQPage schema PRESENT: 6 blocks on homepage, 6 on /cannabis-seo-arizona (site rebuilt on Next.js/Vercel). The old 'zero FAQPage sitewide' finding is dead. DO NOT CLAIM IT.",
+        "No Dataset schema on the state page checked (/cannabis-seo-arizona: 0)",
+        "/cannabis-seo-arizona visible text 2,713 words",
+        "llms.txt present, 36,588 bytes",
+        "Comparison hub at /guides/comparison/: bud-authority-vs-cannaplanners, -vs-deeproots, -vs-nisonco, -vs-rank-really-high, plus cannabis-seo-agency-alternatives",
+        "cannabis-seo-agency-alternatives page contains zero mentions of Nearfront",
+        "Heavy AEO content: 14 /aeo-geo-knowledge/ + 13 /answer-engine-optimization/ + 11 /generative-engine-optimization/ URLs"
+      ],
+      "concede": "Largest published geo footprint in the category, a real AEO knowledge base, and llms.txt. Their comparison hub exists and ours did not until now."
+    },
+    "deeproots": {
+      "domain": "deeproots.io",
+      "checked": "2026-08-24",
+      "facts": [
+        "Satellite pages live on dev.deeproots.io/areas/dispensary-near-{suburb}/ (clackamas and gresham both 200)",
+        "Both sampled satellites carry a noindex meta tag. The old 'indexable dev subdomain' finding is dead. DO NOT CLAIM IT.",
+        "8-gram overlap between the two sampled satellites: 15.3 percent (our sibling threshold: warn at 10, fail at 15)",
+        "Zero FAQPage and zero LocalBusiness schema on both sampled satellites"
+      ],
+      "concede": "The satellite-page concept around a client location is genuinely good, and their 'Enjoy {Suburb}' local-business blocks are the best idea in the pattern."
+    },
+    "range_marketing": {
+      "domain": "rangemarketing.com",
+      "checked": "2026-08-24",
+      "facts": [
+        "Homepage title lists six metros: 'New York City, NY, Detroit, MI, Phoenix, AZ, Las Vegas, NV, Minneapolis, MN & Kansas City, MO'",
+        "269 page URLs in sitemap; metro-named pages exist for THREE of the six advertised metros: phoenix-az, kansas-city-mo, and NYC (several). None found for Detroit, Las Vegas or Minneapolis.",
+        "AEO productization on homepage: 'What Is AEO?', 'Cannaboost Product Optimization', 'AI Receptionist', 'Agentic Targeting', 'Answer Engine Strategy & Audit' (literal word AEO x4)",
+        "153 cannabis blog posts"
+      ],
+      "concede": "They productized AEO earlier and harder than anyone else in the category, and the software angle is real differentiation."
+    },
+    "cannabis_creative": {
+      "domain": "cannabiscreative.com",
+      "checked": "2026-08-24",
+      "facts": [
+        "Homepage contains zero mentions of AEO or answer engine",
+        "wp-sitemap present (9 child sitemaps); no geo landing pages found under checked patterns",
+        "No pricing verified on site this session. The earlier $25k-75k recon figure is NOT re-verified. DO NOT PUBLISH IT."
+      ],
+      "concede": "An established, full-service agency with a broad portfolio; design and brand work is the visible strength."
+    }
+  },
+  "nearfront": {
+    "checked": "2026-08-24",
+    "facts": [
+      "18 geo pages live (8 state + 9 city + hub), every statistic sourced to a named state agency file with as-of and retrieved dates",
+      "FAQPage + Dataset (with citation arrays) + BreadcrumbList on every geo page",
+      "Measured max 8-gram overlap between any two geo pages: 6.9 percent",
+      "/how-we-rank-ourselves/ publishes our own rankings monthly",
+      "Peptides compliance library citing FDA, Google and Meta primary documents",
+      "No public pricing; engagement starts with a free data audit"
+    ]
+  },
+  "rules": [
+    "No AggregateRating schema anywhere on /vs/ pages",
+    "Every competitor claim carries 'checked 24 August 2026' or equivalent dating in visible copy",
+    "Concede-first structure; no disparagement; describe what their SITE shows, never what their business does",
+    "Pages stay on the work lane until founder/legal review. Do not promote with the same-session pattern."
+  ]
+}
