@@ -54,6 +54,28 @@
       "source": "Google Search Central, Creating helpful, reliable, people-first content",
       "source_url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
       "verify": "Fetched 2026-08-24. Exact text: 'topics that could significantly impact the health, financial stability, or safety of people, or the welfare or well-being of society. We call these \"Your Money or Your Life\" topics, or YMYL for short.' Page also states raters are trained to assess strong E-E-A-T."
+    },
+    {
+      "id": "pep-ftc-substantiation",
+      "claim": "FTC requires adequate substantiation for all objective health product claims, express or implied, before dissemination, with health claims requiring competent and reliable scientific evidence",
+      "source": "FTC, Health Products Compliance Guidance",
+      "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verify": "Fetched 2026-08-24. Exact text: two principles, '1) Advertising must be truthful and not misleading; and 2) Before disseminating an ad, advertisers must have adequate substantiation for all objective product claims conveyed, expressly or by implication'. Health-related claims 'require substantiation in the form of competent and reliable scientific evidence'. 'Advertising' is defined to cover 'the variety of marketing techniques and promotion methods'. Guidance states 'the same legal principles apply to the marketing of any health-related product' and has a section on consumer testimonials and expert endorsements."
+    },
+    {
+      "id": "pep-legitscript-cert",
+      "claim": "LegitScript healthcare merchant certification exists for working with major advertising platforms and payment processors, with eligibility and documentation requirements",
+      "source": "LegitScript, Healthcare Merchant Certification 101 Guide",
+      "source_url": "https://www.legitscript.com/certification/healthcare-merchant-certification/",
+      "verify": "Fetched 2026-08-24. Page describes what certification is, 'why it matters for working with major advertising platforms and payment processors', eligibility, and required documentation.",
+      "note": "Never promise a specific business is certifiable; that is LegitScript's determination."
+    },
+    {
+      "id": "pep-glp1-timeline",
+      "claim": "FDA declared the tirzepatide shortage resolved 2024-10-02 and the semaglutide shortage resolved in 2025; 503A enforcement discretion has ended, 503B ended 2025-03-19 (tirzepatide) and 2025-05-22 (semaglutide); FDA proposed excluding semaglutide, tirzepatide and liraglutide from the 503B bulks list; neither drug is on the shortage list now",
+      "source": "FDA: 'FDA clarifies policies for compounders as national GLP-1 supply begins to stabilize' and press announcement 'FDA Proposes to Exclude Semaglutide, Tirzepatide, and Liraglutide on 503B Bulks List'",
+      "source_url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-clarifies-policies-compounders-national-glp-1-supply-begins-stabilize",
+      "verify": "Searched and confirmed on fda.gov 2026-08-24; declaratory order on tirzepatide shortage resolution also on fda.gov (media/184606)."
     }
   ],
   "gaps": [
