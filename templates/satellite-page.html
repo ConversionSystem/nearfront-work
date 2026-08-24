@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--
+  ============================================================================
+  SATELLITE PAGE TEMPLATE  -  dispensary-near-{{SUBURB_SLUG}}
+  One page per suburb surrounding a CLIENT dispensary location. These deploy to
+  the CLIENT'S domain, never to nearfront.com. The demo on this host exists to
+  show the pattern and is noindexed like everything here.
+
+  Credit where due: the surrounding-suburb pattern and the local-business block
+  are ideas Deeproots ran first. Our rules for running them:
+
+  1. UNIQUENESS GATE. Sibling satellite pages must measure under 10 percent
+     8-gram overlap (scripts/validate.py shingle check). Under 15 is a hard
+     fail. If two suburbs cannot be written distinctly, they do not both get
+     pages.
+  2. SOURCED FACTS ONLY. Any market number (license counts, tax rates) comes
+     from the state facts file in content/states/, cited inline with dates.
+     No number without a source. If a suburb has no facts, the page carries
+     none rather than inventing color.
+  3. REAL PLACES ONLY. The local block links real, verified institutions
+     (city hall, chamber, library, landmarks), each URL curl-checked the day
+     the page ships. No invented businesses, no scraped lists.
+  4. HONEST GEOGRAPHY. Say plainly that the store is in {{CLIENT_CITY}}, not
+     in {{SUBURB}}, and give the real drive relationship. Google and customers
+     both punish pretending.
+  5. CLIENT SCHEMA. LocalBusiness lives on the client's location page, once.
+     Satellite pages carry Service + areaServed + FAQPage + BreadcrumbList and
+     point at the location page, so the client competes as one entity, not as
+     a page farm.
+
+  Tokens: {{SUBURB}} {{SUBURB_SLUG}} {{CLIENT_NAME}} {{CLIENT_CITY}}
+  {{CLIENT_DOMAIN}} {{CLIENT_LOCATION_URL}} {{DRIVE_DESC}} {{STATE_FACT_BLOCK}}
+  {{LOCAL_BLOCK}} {{FAQ_HTML}} {{FAQ_JSONLD}} {{PUBLISHED_ISO}}
+  ============================================================================
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dispensary Near {{SUBURB}} | {{CLIENT_NAME}}</title>
+<meta name="description" content="Looking for a dispensary near {{SUBURB}}? {{CLIENT_NAME}} in {{CLIENT_CITY}} serves {{SUBURB}} customers daily. {{DRIVE_DESC}}">
+<link rel="canonical" href="https://{{CLIENT_DOMAIN}}/dispensary-near-{{SUBURB_SLUG}}/">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Service", "name": "Dispensary serving {{SUBURB}}",
+      "serviceType": "Cannabis dispensary",
+      "provider": { "@type": "LocalBusiness", "@id": "https://{{CLIENT_DOMAIN}}/#location", "name": "{{CLIENT_NAME}}", "url": "https://{{CLIENT_LOCATION_URL}}" },
+      "areaServed": { "@type": "City", "name": "{{SUBURB}}", "containedInPlace": { "@type": "State", "name": "{{STATE}}" } },
+      "url": "https://{{CLIENT_DOMAIN}}/dispensary-near-{{SUBURB_SLUG}}/" },
+    {{FAQ_JSONLD}},
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://{{CLIENT_DOMAIN}}/" },
+      { "@type": "ListItem", "position": 2, "name": "Areas we serve", "item": "https://{{CLIENT_DOMAIN}}/areas/" },
+      { "@type": "ListItem", "position": 3, "name": "{{SUBURB}}", "item": "https://{{CLIENT_DOMAIN}}/dispensary-near-{{SUBURB_SLUG}}/" }
+    ] }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Client site shell goes here: the client's own nav/header. -->
+
+<main id="main">
+  <section>
+    <h1>Dispensary Near {{SUBURB}}</h1>
+    <p>{{CLIENT_NAME}} is located in {{CLIENT_CITY}}, {{DRIVE_DESC}} We are not inside {{SUBURB}} city limits and we will not pretend otherwise; we are the nearest licensed option many {{SUBURB}} customers actually use, and this page exists to answer their questions honestly.</p>
+  </section>
+
+  <section>
+    <h2>The {{SUBURB}} picture, with sources</h2>
+    {{STATE_FACT_BLOCK}}
+  </section>
+
+  <section>
+    <h2>Getting here from {{SUBURB}}</h2>
+    <p>{{DIRECTIONS_PARAGRAPH}}</p>
+  </section>
+
+  <section>
+    <h2>While you are in {{SUBURB}}</h2>
+    <!-- REAL institutions only, every URL verified the day this ships. -->
+    {{LOCAL_BLOCK}}
+  </section>
+
+  <section>
+    <h2>Common questions from {{SUBURB}} customers</h2>
+    {{FAQ_HTML}}
+  </section>
+</main>
+
+<!-- Client site footer. -->
+</body>
+</html>
