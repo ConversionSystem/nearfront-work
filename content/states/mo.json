@@ -1,0 +1,65 @@
+{
+  "state": "Missouri",
+  "abbr": "MO",
+  "slug": "cannabis-seo-kansas-city",
+  "tier": "adult-use",
+  "updated": "2026-08-24",
+  "status": "Adult-use since February 2023 (Amendment 3, Nov 2022); medical since October 2020. Regulator: Division of Cannabis Regulation (DCR) in DHSS.",
+  "facts": [
+    {
+      "id": "mo-dispensary-licenses",
+      "value": 224,
+      "unit": "licenses",
+      "label": "Licensed dispensaries statewide",
+      "source": "Missouri DHSS Division of Cannabis Regulation, Licensed Facilities page, Dispensary Licensees list (state Tableau at dataviz.mo.gov, workbook LiscenseeContactList)",
+      "source_url": "https://health.mo.gov/business-professionals/cannabis-regulation/licensee-compliance-guidance/licensed-facilities",
+      "file_url": "https://dataviz.mo.gov/t/missouri/views/LiscenseeContactList/DispensaryLicensees",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-24",
+      "verify": "The embedded view queries live; captured the vizql bootstrap payload from the state's own embed and read the Dispensaries worksheet: 224 rows, license numbers DIS000001+. Direct .csv export is auth-walled; the embed context is public. Extracted table saved as mo-dispensaries.csv."
+    },
+    {
+      "id": "kc-dispensaries",
+      "value": 23,
+      "unit": "licenses",
+      "label": "Licensed dispensaries in Kansas City proper",
+      "source": "Same DCR Dispensary Licensees list, address city field = KANSAS CITY (exact)",
+      "source_url": "https://health.mo.gov/business-professionals/cannabis-regulation/licensee-compliance-guidance/licensed-facilities",
+      "file_url": "https://dataviz.mo.gov/t/missouri/views/LiscenseeContactList/DispensaryLicensees",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-24",
+      "verify": "23 rows with city KANSAS CITY, the largest city count in the state (Saint Louis city 22). Excludes North Kansas City (separate municipality, 0 rows) and metro suburbs (Independence 4). ATO dates by year: 18 in 2021, 2 in 2022, 0 in 2023, 2 in 2024 (both December), 1 in 2025 (2025-03-28, Dream Leaf). From the Earth holds 3 of the 23. Multi-location DBAs counted per license row."
+    },
+    {
+      "id": "mo-au-sales-py24",
+      "value": 1260000000,
+      "unit": "USD",
+      "label": "Adult-use retail sales, program year 2024",
+      "source": "Missouri DHSS, 2024 Medical and Adult-Use Cannabis Annual Report (PY24 = Dec 1, 2023 to Nov 30, 2024), Funding section",
+      "source_url": "https://health.mo.gov/sites/health/files/media/pdf/2026/03/2024-medical-and-adult-use-annual-report.pdf",
+      "as_of": "2024-11-30",
+      "retrieved": "2026-08-24",
+      "verify": "Report states $1.26 billion adult-use retail sales in PY24, cumulative $2.2 billion since Feb 2023 launch; $72.3M adult-use sales tax to the Veterans, Health and Community Reinvestment Fund. Medical: $182M PY24, cumulative $1.07B, $7.4M tax to the Veterans Fund."
+    },
+    {
+      "id": "mo-new-licenses-py24",
+      "value": 71,
+      "unit": "licenses",
+      "label": "New facility licenses and certifications issued in PY24",
+      "source": "Missouri DHSS 2024 Annual Report, Figure 9",
+      "source_url": "https://health.mo.gov/sites/health/files/media/pdf/2026/03/2024-medical-and-adult-use-annual-report.pdf",
+      "as_of": "2024-11-30",
+      "retrieved": "2026-08-24",
+      "verify": "Figure 9 breakdown: Cultivation 1, Dispensary 7, Manufacturing 1, Microbusiness Dispensary 25, Microbusiness Wholesale 33, Seed to Sale 7, Transportation 4. These are new issuances during PY24, NOT the statewide active count (that is the 224 in mo-dispensary-licenses). Microbusiness: 57 new in PY24, 96 since inception."
+    }
+  ],
+  "gaps": [
+    "Current-month statewide sales: DCR's sales dashboard (dataviz.mo.gov SalesDashboard/SalesStory) is auth-walled outside the page embed; PY24 annual report is the newest parsed sales figure. Capture the embed the same way as the licensee list if monthly numbers are needed.",
+    "Kansas City open data portal (data.kcmo.org): zero cannabis datasets; no city-side license list exists to cross-check the DCR 23.",
+    "Kansas City sales dollars: Missouri publishes no city- or county-level sales.",
+    "The dispensary list's ATO dates cap at 2025-03-28; if a page claims 'newest dispensary', re-pull the list first.",
+    "Missouri 3% local option cannabis sales tax (city + county stacking was upheld 2024-2025): no primary document on file; do not assert local tax rates until fetched."
+  ],
+  "cities": ["Kansas City"],
+  "faqs": []
+}

@@ -1,0 +1,176 @@
+{
+  "state": "Michigan",
+  "abbr": "MI",
+  "slug": "cannabis-seo-detroit",
+  "tier": "adult-use",
+  "updated": "2026-08-24",
+  "status": "Adult-use licensed under MRTMA (retail since December 2019); medical facilities under MMFLA. Regulator: Cannabis Regulatory Agency (CRA).",
+  "facts": [
+    {
+      "id": "mi-au-sales-july-2026",
+      "value": 270539568,
+      "unit": "USD",
+      "label": "Statewide adult-use sales, July 2026",
+      "source": "Michigan Cannabis Regulatory Agency, Monthly Report July 1 - July 31, 2026, Adult-Use Establishment Licensing sec. 1 Product Sales, 'July Total' row",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "Parse the docx (zipfile + word/document.xml). Sales by Product Type table under Adult-Use sec. 1: July Total $270,539,568.39. Exact page value $270,539,568.39, rounded down on page copy."
+    },
+    {
+      "id": "mi-au-sales-cumulative",
+      "value": 15152251268,
+      "unit": "USD",
+      "label": "Cumulative adult-use sales since market open",
+      "source": "CRA Monthly Report July 2026, Additional Sales Information table, 'Sales To Date (July 31)'",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "Same table: $15,152,251,267.88."
+    },
+    {
+      "id": "mi-au-flower-price",
+      "value": 58.95,
+      "unit": "USD/oz",
+      "label": "Average adult-use retail flower price per ounce, July 2026",
+      "source": "CRA Monthly Report July 2026, Additional Sales Information, 'Average Retail Flower Price (oz.)'",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "Cell label includes '(oz.)'. Medical equivalent is $78.86/oz in the MMFLA section."
+    },
+    {
+      "id": "mi-au-retailers",
+      "value": 836,
+      "unit": "licenses",
+      "label": "Active adult-use retailer licenses statewide",
+      "source": "CRA Monthly Report July 2026, Adult-Use sec. 7 Active Licenses table",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "Active Licenses table: Retailer 836. Same table: Class A Grower 9, Class B 68, Class C 798, Excess Grower 61, Processor 268, Microbusiness 6, Class A Microbusiness 8, Secure Transporter 21, Safety Compliance 20, Designated Consumption 6, Event Organizer 31."
+    },
+    {
+      "id": "mi-industry-employees",
+      "value": 41257,
+      "unit": "employees",
+      "label": "Employees in licensed cannabis businesses statewide",
+      "source": "CRA Monthly Report July 2026, sec. 21 Total Number of Employees Under the MMFLA and MRTMA",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "Number of Employees, As of July 31: 41,257."
+    },
+    {
+      "id": "mi-wayne-sales-july-2026",
+      "value": 30649104,
+      "unit": "USD",
+      "label": "Wayne County adult-use sales, July 2026",
+      "source": "CRA Monthly Report July 2026, Adult-Use sec. 22 Sales By Region, Wayne table, 'July Total'",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "Wayne regional table July Total $30,649,103.63. Wayne is broken out as its own region; share of statewide July sales = 30,649,104 / 270,539,568 = 11.3%. CRA regional tables are the only sub-state sales the state publishes; city-level sales are not published."
+    },
+    {
+      "id": "mi-medical-sales-july-2026",
+      "value": 311726,
+      "unit": "USD",
+      "label": "Statewide medical facility sales, July 2026",
+      "source": "CRA Monthly Report July 2026, Medical Marijuana Facility Licensing sec. 1 Product Sales, 'July Total'",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "MMFLA Product Sales July Total $311,725.63, versus $270.5M adult-use: medical is roughly 0.1% of licensed retail sales. Active Provisioning Centers: 87."
+    },
+    {
+      "id": "mi-patients",
+      "value": 52115,
+      "unit": "patients",
+      "label": "Registered medical marijuana patients statewide",
+      "source": "CRA Monthly Report July 2026, MMMP registry table 'As of July 31', Total row",
+      "source_url": "https://www.michigan.gov/cra/resources/cannabis-regulatory-agency-licensing-reports/cannabis-regulatory-agency-statistical-report",
+      "file_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Agency-Reports/Statistical-Reports/monthly-report/July-2026-Monthly-Report.docx?rev=3974aef5248e45b0b14c35cb4e32346a&hash=A5068094EE94CB8AE7034FD2D411A888",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-08-24",
+      "verify": "County table Total 52,115. Wayne County 9,433 patients, the largest county count. Registry counts only; no condition data is used on any page."
+    },
+    {
+      "id": "det-retail-licenses",
+      "value": 67,
+      "unit": "licenses",
+      "label": "Licensed adult-use retail marijuana businesses in Detroit",
+      "source": "City of Detroit, Licensed Marijuana Locations Dashboard (BSEED), KPI 'CNT(LICENSED_MARIJUANA_BUSINESSES)' for License Type = Retail",
+      "source_url": "https://experience.arcgis.com/experience/3e6d1955e1724170808ab86740b59082/",
+      "file_url": "https://codtableau.detroitmi.gov/t/DoIT-Data-Public/views/LicensedMarijuanaBusinesses/LicensedMarijuanaBusinesses",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-24",
+      "verify": "The dashboard queries the city database live; captured the vizql bootstrap payload and read the KPI worksheet: Retail 67, Medical Marijuana Provisioning Center 34. Map worksheet lists 85 distinct business names at 90 mapped license points (some addresses hold both license types)."
+    },
+    {
+      "id": "det-treasury-stores",
+      "value": 61,
+      "unit": "licenses",
+      "label": "Licensed retail stores and microbusinesses in Detroit (FY2025 excise distribution basis)",
+      "source": "Michigan Department of Treasury, Adult-Use Marijuana Distributions based on FY2025 revenues (paid February 2026); license counts as of 9/30/2025 per the document",
+      "source_url": "https://www.michigan.gov/treasury/-/media/Project/Websites/treasury/ORTA/Adult-Use-Marijuana/FY-2025/FY-2025-Adult-Use-Marijuana-Distributions-02-24-2026.pdf",
+      "as_of": "2025-09-30",
+      "retrieved": "2026-08-24",
+      "verify": "Row '82-2050 Detroit City Wayne 61 3,295,043.10'. 61 x $54,017.10 per license = $3,295,043.10 exactly. Detroit's 61 is the largest municipal count in the file. Statewide: 860 licenses across 234 municipalities, $93,773,685.60 distributed. Wayne County row 82-0000: 98 licenses, $5,293,675.80."
+    },
+    {
+      "id": "det-excise-payment",
+      "value": 3295043,
+      "unit": "USD",
+      "label": "Detroit's FY2025 adult-use excise tax distribution",
+      "source": "Michigan Department of Treasury, Adult-Use Marijuana Distributions based on FY2025 revenues, February 2026",
+      "source_url": "https://www.michigan.gov/treasury/-/media/Project/Websites/treasury/ORTA/Adult-Use-Marijuana/FY-2025/FY-2025-Adult-Use-Marijuana-Distributions-02-24-2026.pdf",
+      "as_of": "2026-02-24",
+      "retrieved": "2026-08-24",
+      "verify": "$3,295,043.10 to the City of Detroit; $54,017.10 per eligible license statewide."
+    },
+    {
+      "id": "det-bseed-licenses",
+      "value": 154,
+      "unit": "licenses",
+      "label": "Active City of Detroit marijuana facility business licenses (all facility types)",
+      "source": "City of Detroit BSEED, Business Licenses (Current) open dataset, license_type = 'Medical Marijuana Facility License' (the city's single marijuana facility license type)",
+      "source_url": "https://data.detroitmi.gov/",
+      "file_url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_active_business_licenses/FeatureServer/0/query?where=license_type='Medical Marijuana Facility License'&outFields=*&f=json",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-24",
+      "verify": "154 rows; dataset DCAT modified 2026-08-24. Bulk CSV: https://data.detroitmi.gov/api/download/v1/items/2addfbf566464896b4aa032ac873549b/csv?layers=0. Covers all city-licensed marijuana facilities (not only retail); do not conflate with the state Treasury count of 61 retail stores or the city dashboard's 67 retail KPI."
+    },
+    {
+      "id": "det-provisioning-centers",
+      "value": 34,
+      "unit": "licenses",
+      "label": "Medical marijuana provisioning centers in Detroit",
+      "source": "City of Detroit, Licensed Marijuana Locations Dashboard (BSEED), KPI for License Type = Medical Marijuana Provisioning Center",
+      "source_url": "https://experience.arcgis.com/experience/3e6d1955e1724170808ab86740b59082/",
+      "file_url": "https://codtableau.detroitmi.gov/t/DoIT-Data-Public/views/LicensedMarijuanaBusinesses/LicensedMarijuanaBusinesses",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-24",
+      "verify": "Same capture as det-retail-licenses. 34 of Michigan's 87 statewide provisioning centers are in Detroit (39%)."
+    }
+  ],
+  "gaps": [
+    "Detroit city-level sales dollars: not published by CRA or the city. Wayne County ($30.6M July 2026) is the closest official figure; never present it as Detroit-only.",
+    "August 2026 data: July 2026 is the latest complete CRA month at retrieval.",
+    "Three Detroit license counts exist and must never be mixed on a page without their dates and lenses: 61 (state Treasury, retail stores + microbusinesses, as of 2025-09-30), 67 (city dashboard KPI, retail, live query 2026-08-24), 154 (city BSEED, all facility types, 2026-08-24). Pick one per claim and date it.",
+    "CRA monthly reports from March 2026 onward are .docx, earlier months .pdf; the parse method is zipfile + word/document.xml.",
+    "Detroit adult-use opt-in history (2021 ordinance, litigation, first licenses): no primary document on file; do not assert dates until one is fetched.",
+    "Michigan's adult-use excise tax rate (10% statutory under MRTMA): no primary rate document on file; pages cite the Treasury distribution without asserting the rate."
+  ],
+  "cities": [
+    "Detroit"
+  ],
+  "faqs": []
+}

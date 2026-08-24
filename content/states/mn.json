@@ -1,0 +1,88 @@
+{
+  "state": "Minnesota",
+  "abbr": "MN",
+  "slug": "cannabis-seo-minneapolis",
+  "tier": "adult-use",
+  "updated": "2026-08-24",
+  "status": "Adult-use legalized August 2023; first cannabis business licenses issued June 2025 (retail opening wave 2025-2026). Regulator: Office of Cannabis Management (OCM). Hemp-derived (LPHE) retail predates licensed cannabis retail.",
+  "facts": [
+    {
+      "id": "mn-licensed-businesses",
+      "value": 313,
+      "unit": "licenses",
+      "label": "Licensed cannabis businesses statewide",
+      "source": "Minnesota OCM, licensed businesses roster xlsx (mn.gov asset tcm1202-714418), sheet 'Licensed cannabis businesses'",
+      "source_url": "https://mn.gov/ocm/",
+      "file_url": "https://mn.gov/ocm/assets/MN_OCM_licensed_businesses_070626_v2_tcm1202-714418.xlsx",
+      "as_of": "2026-07-06",
+      "retrieved": "2026-08-24",
+      "verify": "313 data rows. By type: Microbusiness 219, Medical Cannabis Combination 19, Mezzobusiness 17, Retail 14, Transporter 12, Wholesaler 8, Cultivator 7, Testing 6, Delivery 5, Event Organizer 4, Manufacturer 2. First license issued 2025-06-18, latest 2026-07-06. Saved as mn-ocm-licensed-live.xlsx; parse with zipfile+ElementTree."
+    },
+    {
+      "id": "mpls-licensed-businesses",
+      "value": 24,
+      "unit": "licenses",
+      "label": "Licensed cannabis businesses in Minneapolis, the most of any Minnesota city",
+      "source": "Same OCM roster, City column = Minneapolis",
+      "source_url": "https://mn.gov/ocm/",
+      "file_url": "https://mn.gov/ocm/assets/MN_OCM_licensed_businesses_070626_v2_tcm1202-714418.xlsx",
+      "as_of": "2026-07-06",
+      "retrieved": "2026-08-24",
+      "verify": "24 rows: 15 Microbusiness, 3 Mezzobusiness, 2 Event Organizer, 1 each Delivery, Transporter, Wholesaler, Medical Cannabis Combination. 19 of the 24 are retail sites with street addresses. City ranking: Minneapolis 24, Saint Paul 23, Moorhead 15, Duluth 6. Examples: Green Goods (207 S 9th St), Legacy Cannabis (2930 S Lyndale Ave), Watchtower Dispensary (3400 University Ave SE)."
+    },
+    {
+      "id": "mpls-lphe-retailers",
+      "value": 253,
+      "unit": "registrations",
+      "label": "Hemp-derived (LPHE) retailers with Minneapolis retail addresses",
+      "source": "Same OCM roster, sheet 'Licensed LPHE businesses'",
+      "source_url": "https://mn.gov/ocm/",
+      "file_url": "https://mn.gov/ocm/assets/MN_OCM_licensed_businesses_070626_v2_tcm1202-714418.xlsx",
+      "as_of": "2026-07-06",
+      "retrieved": "2026-08-24",
+      "verify": "2,742 rows in the LPHE sheet, 2,611 LPHE Retailers statewide, 253 with 'Minneapolis, MN' retail site address. LPHE = lower-potency hemp edibles, a distinct registration from cannabis business licenses; never sum the two."
+    },
+    {
+      "id": "mn-grt-rate",
+      "value": 15,
+      "unit": "percent",
+      "label": "Cannabis gross receipts tax rate",
+      "source": "Minnesota Department of Revenue, Cannabis Tax page (updated 2026-04-23)",
+      "source_url": "https://www.revenue.state.mn.us/cannabis-tax",
+      "as_of": "2026-04-23",
+      "retrieved": "2026-08-24",
+      "verify": "15% cannabis gross receipts tax plus 6.875% state sales tax plus local taxes. Original 2023 rate was 10% (per 2024 tax handbook and LGCA docs); raised to 15%."
+    },
+    {
+      "id": "mn-grt-fy2024",
+      "value": 11628000,
+      "unit": "USD",
+      "label": "Cannabis gross receipts tax collections, FY2024",
+      "source": "Minnesota Department of Revenue, 2024 Tax Handbook (corrected edition posted June 2026), Revenue Collections table",
+      "source_url": "https://www.revenue.state.mn.us/sites/default/files/2026-06/2024-tax-handbook-online-post-publication-corrected.pdf",
+      "as_of": "2024-06-30",
+      "retrieved": "2026-08-24",
+      "verify": "FY2023 $0, FY2024 $11,628,000 at the original 10% rate. FY2024 pre-dates licensed dispensaries, so these collections are mostly hemp-derived (LPHE) sales. Frame as hemp-era collections, never as dispensary sales."
+    },
+    {
+      "id": "mn-lgca-zero",
+      "value": 0,
+      "unit": "USD",
+      "label": "2025 Local Government Cannabis Aid distributed to cities",
+      "source": "Minnesota Department of Revenue, 2025 Local Government Cannabis Aid summary and city amounts (rev. 08/2025)",
+      "source_url": "https://www.revenue.state.mn.us/sites/default/files/2025-08/2025-local-government-cannabis-aid-summary-final.pdf",
+      "as_of": "2025-08-31",
+      "retrieved": "2026-08-24",
+      "verify": "OCM certified zero licensed cannabis businesses as of 2025-01-01 (licensing began mid-2025) and the aid was repealed (2025 1st Spec. Sess. Ch. 13 art. 8); city distributions $0.00 statewide, $2.37M cities share cancelled to the General Fund. Account balance was $4,929,084.42 on 2025-06-30."
+    }
+  ],
+  "gaps": [
+    "Current statewide or city sales dollars: OCM's Cannabis Market Monitor is a Power BI Gov embed (app.powerbigov.us, token in mn-wb-market-monitor.html); not captured. No official MN dispensary sales figure is on file; do not cite one.",
+    "The 2025 OCM Cannabis Market Analysis Report PDF was removed from the live CMS (tcm1202-719782 404s); Wayback capture exists but replay 502'd on 2026-08-24. Retry if report numbers are wanted.",
+    "mn.gov/ocm .jsp pages sit behind a Radware bot wall; only /ocm/assets/* files and sitemap.xml fetch cleanly. The roster asset id tcm1202-714418 is the stable slot; re-pull it for updates.",
+    "Roster is as of 2026-07-06; licensing is moving fast in this young market, so re-pull before republishing counts.",
+    "Minneapolis municipal cannabis registration/zoning specifics: no primary document on file; do not assert."
+  ],
+  "cities": ["Minneapolis"],
+  "faqs": []
+}

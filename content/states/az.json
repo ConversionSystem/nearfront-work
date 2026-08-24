@@ -1,0 +1,85 @@
+{
+  "state": "Arizona",
+  "abbr": "AZ",
+  "slug": "cannabis-seo-phoenix",
+  "tier": "adult-use",
+  "updated": "2026-08-24",
+  "status": "Adult-use since January 2021 (Prop 207); medical since 2010. Regulator: ADHS. License structure caps establishments (roughly one per pharmacy ratio), so the statewide count moves very slowly.",
+  "facts": [
+    {
+      "id": "az-establishments",
+      "value": 170,
+      "unit": "licenses",
+      "label": "Adult-use marijuana establishments statewide",
+      "source": "ADHS Arizona Marijuana Program monthly report, July 2026 ('As of 8/1/2026' statement in file)",
+      "source_url": "https://www.azdhs.gov/documents/licensing/medical-marijuana/reports/2026/mm-jul26.pdf",
+      "as_of": "2026-08-01",
+      "retrieved": "2026-08-24",
+      "verify": "In-file sentence: 'As of 8/1/2026, there are a total of 170 establishments, with 169 operating facilities.' Same report: 136 medical marijuana dispensaries, all 136 operating. PDF uses hex-CID fonts; extraction needs a ToUnicode-map decoder (az_pdfextract2.py in scratchpad)."
+    },
+    {
+      "id": "az-patients",
+      "value": 70444,
+      "unit": "patients",
+      "label": "Active qualifying medical marijuana patients statewide",
+      "source": "ADHS Arizona Marijuana Program monthly report, July 2026",
+      "source_url": "https://www.azdhs.gov/documents/licensing/medical-marijuana/reports/2026/mm-jul26.pdf",
+      "as_of": "2026-08-01",
+      "retrieved": "2026-08-24",
+      "verify": "70,444 active patients; Maricopa County 44,045 (62.5%). The 16 county rows re-sum to exactly 70,444. Patient registry counts only; no condition data is used on any page."
+    },
+    {
+      "id": "az-au-sales-fy2026",
+      "value": 1068498368,
+      "unit": "USD",
+      "label": "Adult-use taxable sales, FY2026 (July 2025 to June 2026)",
+      "source": "Arizona DOR, Marijuana TPT and Excise Taxable Sales and Tax Collections by Period Covered (updated monthly; file Last-Modified 2026-08-12)",
+      "source_url": "https://azdor.gov/sites/default/files/document/MJ_byPeriodCovered.pdf",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-24",
+      "verify": "FY2026 row: adult-use $1,068,498,368, medical $132,047,500; collections total $268,899,620 (AU TPT $90.3M, medical TPT $11.4M, excise $167.3M). June 2026 preliminary; DOR notes figures restate as late returns process. Excise = exactly 16.00% of excise-basis sales each FY. Period-covered basis; the by-Category file uses received-by-DOR basis and shows FY2026 $281,961,540. Cite ONE basis only, never mix."
+    },
+    {
+      "id": "az-au-sales-cumulative",
+      "value": 5252694270,
+      "unit": "USD",
+      "label": "Cumulative adult-use taxable sales since January 2021",
+      "source": "Arizona DOR, same by-Period-Covered file, cumulative row",
+      "source_url": "https://azdor.gov/sites/default/files/document/MJ_byPeriodCovered.pdf",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-24",
+      "verify": "Jan 2021 through Jun 2026: adult-use $5,252,694,270, medical $2,089,105,235, total collections $1,492,786,929."
+    },
+    {
+      "id": "phx-facilities-current",
+      "value": 47,
+      "unit": "facilities",
+      "label": "Marijuana facilities in Phoenix on the state's live lookup",
+      "source": "ADHS AZ Care Check (azcarecheck.azdhs.gov), facility type Marijuana Facilities, queried live",
+      "source_url": "https://azcarecheck.azdhs.gov/s/",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-24",
+      "verify": "Captured the app's aura response after selecting Marijuana Facilities: 181 facility records statewide (180 operating, 1 not), Phoenix 47 (all operating), Tucson 23, Mesa 17, Scottsdale 8, Tempe 7. Saved as az-facilities.csv. Payload labels every record's program 'Medical Marijuana', so no adult-use/medical split is claimable from this source; say 'marijuana facilities', not 'dispensaries by program'. Phoenix share 47/181 = 26%, coherent with 38/143 = 27% on the 2021 list."
+    },
+    {
+      "id": "phx-establishments-2021",
+      "value": 38,
+      "unit": "licenses",
+      "label": "Licensed marijuana establishments in Phoenix on the last published ADHS list",
+      "source": "ADHS Licensed Marijuana Establishments list, document footer 'Updated 06.30.2021, Total Licensees: 143'",
+      "source_url": "https://www.azdhs.gov/documents/licensing/medical-marijuana/applications/licensed-marijuana-establishments.pdf",
+      "as_of": "2021-06-30",
+      "retrieved": "2026-08-24",
+      "verify": "Phoenix 38 of 143 (36 Open, 2 Not Operating); Tucson 15, Mesa 14. STALE BY FIVE YEARS and ADHS's last published list (Wayback digest identical 2021-09-21 through 2026-07-10). Only usable with explicit dating; current per-facility data lives in AZ Care Check (azcarecheck.azdhs.gov, Salesforce app)."
+    }
+  ],
+  "gaps": [
+    "Adult-use vs medical split for Phoenix: AZ Care Check's payload labels every facility 'Medical Marijuana', so the 47 Phoenix facilities cannot be split by program from any file on hand; ADHS's statewide 170/136 split cannot be projected onto Phoenix.",
+    "City-level sales: AZDOR publishes jurisdiction-type splits (state/county/city pools) but no per-city sales.",
+    "Adult-use vs medical basis: two DOR files use different accounting bases (period-covered vs received); never mix figures across them.",
+    "Establishment cap mechanics (Prop 207 pharmacy ratio): no primary document on file; do not assert the ratio without fetching the statute.",
+    "ADHS lab count sentence in the July 2026 report fell in an unmapped glyph run; not extracted."
+  ],
+  "cities": ["Phoenix"],
+  "faqs": []
+}
