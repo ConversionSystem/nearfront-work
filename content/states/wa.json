@@ -1,0 +1,116 @@
+{
+  "state": "Washington",
+  "abbr": "WA",
+  "slug": "washington",
+  "tier": "adult-use",
+  "updated": "2026-08-24",
+  "status": "ready",
+  "facts": [
+    {
+      "id": "wa-retailer-records",
+      "value": 1146,
+      "unit": "licenses",
+      "label": "Cannabis retailer licenses ever issued and still on the register",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Sheet 'Retailers 8-18-2026', rows where Priv Desc = 'CANNABIS RETAILER'. The file also holds 82 'RETAIL CERTIFICATE HOLDER' rows, which are excluded from every count here."
+    },
+    {
+      "id": "wa-closed-permanent",
+      "value": 680,
+      "unit": "licenses",
+      "label": "Retailer licenses with status CLOSED (PERMANENT), 59.3 percent of all retailer records",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Count Privilege Status = 'CLOSED (PERMANENT)' among the 1,146 retailer rows: 680. Active (issued) is 462, expired 2, closed temporary 2.",
+      "note": "FRAMING RULE. This is cumulative across the market's life, not an annual failure rate. Washington's first adult-use sales were in 2014, so the correct sentence is 'of every retail license ever issued' or 'over the market's life'. Never write or imply that 59 percent closed in a year."
+    },
+    {
+      "id": "wa-active-retailers",
+      "value": 462,
+      "unit": "retailers",
+      "label": "Retailers with status ACTIVE (ISSUED)",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Count Privilege Status = 'ACTIVE (ISSUED)' among retailer rows. Spread across 148 cities and 38 counties."
+    },
+    {
+      "id": "wa-city-attrition",
+      "value": "Everett 72, Tacoma 66, Seattle 63, Olympia 61, Bellingham 60, Lynnwood 58, Vancouver 53, Spokane 51",
+      "unit": "percent closed",
+      "label": "Share of each city's retailer licenses that are permanently closed",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Per city, closed/(closed+active). Everett 33 closed vs 13 active. Seattle 90 closed vs 52 active. Tacoma 35 vs 18. Spokane 23 vs 22."
+    },
+    {
+      "id": "wa-seattle-split",
+      "value": "52 active, 90 closed",
+      "unit": "licenses",
+      "label": "Seattle retailer licenses by status",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Filter retailer rows to City = SEATTLE. King County overall holds 96 active retailers, the largest county total."
+    },
+    {
+      "id": "wa-active-cities",
+      "value": 148,
+      "unit": "cities",
+      "label": "Cities with at least one active retailer",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Distinct City among the 462 active retailers. 64 of those cities have exactly one."
+    },
+    {
+      "id": "wa-single-store-cities",
+      "value": 64,
+      "unit": "cities",
+      "label": "Cities with exactly one active retailer",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Group active retailers by City, count cities with one."
+    },
+    {
+      "id": "wa-social-equity-retailers",
+      "value": 11,
+      "unit": "retailers",
+      "label": "Active retailers licensed through the social equity program",
+      "source": "Washington State Liquor and Cannabis Board, cannabis retailer list dated 18 August 2026",
+      "source_url": "https://lcb.wa.gov/records/frequently-requested-lists",
+      "file_url": "https://lcb.wa.gov/sites/default/files/2026-08/CannabisApplicants08182026.xlsx",
+      "as_of": "2026-08-18",
+      "retrieved": "2026-08-24",
+      "verify": "Sheet 'SE Retailers 8-18-2026': 11 rows, all Status = 'ACTIVE (ISSUED)'. Located in East Wenatchee, Kennewick, Lakewood, Malo, Moses Lake, Orting, Puyallup, Spokane, Union Gap and Vancouver.",
+      "note": "Small absolute number. Report it as a count and location list, not as a percentage of anything, and do not compare it to the Massachusetts equity figures: the two states run different programs and the files are not measuring the same thing."
+    }
+  ],
+  "gaps": [
+    "Closure dates are not in this file, so the pace of attrition over time cannot be shown, only the cumulative total. A time series would need historical copies of the list.",
+    "Reasons for closure are not published. Report the count, never a cause.",
+    "Sales and price data: WA LCB publishes excise tax by county but it was not pulled for this page. Do not quote WA revenue figures without it.",
+    "Tax rate: WA levies a 37 percent excise tax on retail cannabis. Not yet sourced to a primary LCB or DOR page, so it is not on the page."
+  ],
+  "cities": [],
+  "faqs": []
+}
