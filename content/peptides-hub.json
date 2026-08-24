@@ -76,6 +76,28 @@
       "source": "FDA: 'FDA clarifies policies for compounders as national GLP-1 supply begins to stabilize' and press announcement 'FDA Proposes to Exclude Semaglutide, Tirzepatide, and Liraglutide on 503B Bulks List'",
       "source_url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-clarifies-policies-compounders-national-glp-1-supply-begins-stabilize",
       "verify": "Searched and confirmed on fda.gov 2026-08-24; declaratory order on tirzepatide shortage resolution also on fda.gov (media/184606)."
+    },
+    {
+      "id": "pep-google-extended",
+      "claim": "Google-Extended is a standalone robots.txt product token used in a control capacity; it has no separate user agent string and no effect on Google Search",
+      "source": "Google, common crawlers documentation",
+      "source_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "verify": "Fetched 2026-08-24. Exact text: 'Google-Extended doesn't have a separate HTTP request user agent string. Crawling is done with existing Google user agent strings; the robots.txt user-agent token is used in a control capacity' and it 'has no effect on Google Search'."
+    },
+    {
+      "id": "pep-llmstxt",
+      "claim": "llms.txt is a published proposal (v2) for a file that helps LLMs understand a site",
+      "source": "llmstxt.org",
+      "source_url": "https://llmstxt.org/",
+      "verify": "Fetched 2026-08-24; page titled 'The /llms.txt file, v2' with format spec and examples. Category adoption datapoint: budauthority.com serves a 36,588-byte llms.txt, verified same day."
+    },
+    {
+      "id": "pep-fda-dietary-ingredient",
+      "claim": "FDA defines a dietary supplement as a product for ingestion containing a dietary ingredient: vitamins, minerals, herbs and botanicals, amino acids, dietary substances such as enzymes and live microbials, and their concentrates and metabolites",
+      "source": "FDA, Questions and Answers on Dietary Supplements",
+      "source_url": "https://www.fda.gov/food/information-consumers-using-dietary-supplements/questions-and-answers-dietary-supplements",
+      "verify": "Fetched 2026-08-24; definition quoted from the page.",
+      "note": "Whether any given peptide qualifies as a dietary ingredient is a regulatory determination. Never assert that a peptide is or is not a lawful supplement; describe the definition and who decides."
     }
   ],
   "gaps": [
