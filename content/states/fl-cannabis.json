@@ -1,0 +1,67 @@
+{
+  "state": "Florida",
+  "abbr": "FL",
+  "slug": "cannabis-seo-florida",
+  "tier": "medical-only",
+  "updated": "2026-08-25",
+  "status": "Medical only. Cannabis is dispensed by vertically integrated Medical Marijuana Treatment Centers (MMTCs) licensed by the Department of Health's Office of Medical Marijuana Use (OMMU) under s.381.986, F.S. OMMU publishes a weekly update PDF with patient counts and an operator-level dispensing table. Hemp is a separate program under FDACS: see fl-hemp.json.",
+  "facts": [
+    {
+      "id": "fl-patients",
+      "value": 939639,
+      "unit": "patients",
+      "label": "Qualified patients holding an active ID card",
+      "source": "Florida Department of Health, Office of Medical Marijuana Use, weekly update dated 21 August 2026, Patients section",
+      "source_url": "https://knowthefactsmmj.com/about/weekly-updates/",
+      "file_url": "https://knowthefactsmmj.com/wp-content/uploads/ommu_updates/2026/082126-OMMU-Update.pdf",
+      "as_of": "2026-08-21",
+      "retrieved": "2026-08-25",
+      "verify": "'Qualified Patients (Active ID Card): 939,639'. The weekly PDF filename encodes its date as MMDDYY; check knowthefactsmmj.com/about/weekly-updates/ for the newest before reusing this figure."
+    },
+    {
+      "id": "fl-dispensing-locations",
+      "value": 776,
+      "unit": "dispensing locations",
+      "label": "MMTC dispensing locations statewide",
+      "source": "Same OMMU weekly update, MMTC Dispensations table for 14 to 20 August 2026, Total row",
+      "source_url": "https://knowthefactsmmj.com/about/weekly-updates/",
+      "file_url": "https://knowthefactsmmj.com/wp-content/uploads/ommu_updates/2026/082126-OMMU-Update.pdf",
+      "as_of": "2026-08-20",
+      "retrieved": "2026-08-25",
+      "verify": "The table's own Total row reads 776. IMPORTANT: the PDF's text stream repeats the table across page renders, so a naive regex sum returns 1,466. Summing the 25 named operator rows by hand gives exactly 776, matching the Total row. Always reconcile against the printed Total."
+    },
+    {
+      "id": "fl-trulieve-share",
+      "value": 21.9,
+      "unit": "percent",
+      "label": "Share of Florida dispensing locations operated by Trulieve",
+      "source": "Same OMMU weekly update, MMTC Dispensations table",
+      "source_url": "https://knowthefactsmmj.com/about/weekly-updates/",
+      "file_url": "https://knowthefactsmmj.com/wp-content/uploads/ommu_updates/2026/082126-OMMU-Update.pdf",
+      "as_of": "2026-08-20",
+      "retrieved": "2026-08-25",
+      "verify": "Trulieve 170 of 776 = 21.9%. Next: MUV 86, Curaleaf 75, Ayr 65, Surterra 44, Green Dragon 41. Top four operators hold 396 of 776 = 51.0%. Twenty-five MMTCs appear in the table, three of which show n/a locations and three of which show zero."
+    },
+    {
+      "id": "fl-weekly-thc",
+      "value": 439096212,
+      "unit": "mg THC",
+      "label": "Medical marijuana dispensed in one week, measured in milligrams of THC",
+      "source": "Same OMMU weekly update, MMTC Dispensations table Total row, week of 14 to 20 August 2026",
+      "source_url": "https://knowthefactsmmj.com/about/weekly-updates/",
+      "file_url": "https://knowthefactsmmj.com/wp-content/uploads/ommu_updates/2026/082126-OMMU-Update.pdf",
+      "as_of": "2026-08-20",
+      "retrieved": "2026-08-25",
+      "verify": "439,096,212 mg THC plus 1,049 mg CBD of low-THC cannabis, plus 152,157.424 ounces of marijuana in a form for smoking, in that single week. Report as dispensed volumes, never as sales dollars: OMMU publishes no revenue figure."
+    }
+  ],
+  "gaps": [
+    "Sales revenue: OMMU publishes dispensed volumes (mg THC and ounces), not dollars. Do not state a Florida medical market size in dollars from this source.",
+    "City-level counts: the weekly update lists operators and location totals but no city breakdown. MMTC addresses are published at knowthefactsmmj.com/MMTC as a separate page; parse that before attempting any Florida city page.",
+    "Qualified physician count: the weekly update links a physician list rather than printing a total. Fetch the list page if the number is needed.",
+    "Adult use: Florida remains medical only at retrieval. Do not describe it as adult-use or predict a ballot outcome.",
+    "This file covers the OMMU cannabis programme only. Florida hemp is a separate FDACS programme with its own file (fl-hemp.json); never merge the two sets of numbers."
+  ],
+  "cities": [],
+  "faqs": []
+}
