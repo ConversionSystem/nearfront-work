@@ -70,6 +70,10 @@ BRITISH_SPELLINGS = [
 # expected to differ anyway.
 GEO_PREFIXES = ("cannabis-seo-", "thca-seo-", "peptides-seo-", "dispensary-near-")
 
+# Directories outside public/ that may legitimately hold .html: page templates,
+# archived competitor evidence, and the read-only production reference copies.
+NON_SERVED_HTML_DIRS = ("templates/", "content/", "reference/")
+
 # 8-gram Jaccard overlap between two sibling pages, after the shared shell is
 # subtracted. Deeproots' suburb pages measure 27-43% duplicate; Bud Authority's
 # geo pages run 3-12%. Sitting under 10% keeps us on the right side of that gap.
@@ -380,6 +384,26 @@ def html_files(public):
             if f.endswith(".html"):
                 full = os.path.join(dirpath, f)
                 out.append(os.path.relpath(full, os.path.dirname(public)).replace(os.sep, "/"))
+    return sorted(out)
+
+
+def stray_html(root):
+    """HTML that lives outside public/ and is not an allowed non-served file.
+
+    html_files() walks public/ only, so no other check in this validator can
+    see a page sitting at the repo root.
+    """
+    out = []
+    for dirpath, dirs, files in os.walk(root):
+        dirs[:] = [d for d in dirs
+                   if not d.startswith(".") and d not in ("node_modules", "public")]
+        for f in files:
+            if not f.endswith(".html"):
+                continue
+            rel = os.path.relpath(os.path.join(dirpath, f), root).replace(os.sep, "/")
+            if rel.startswith(NON_SERVED_HTML_DIRS):
+                continue
+            out.append(rel)
     return sorted(out)
 
 
@@ -1008,6 +1032,22 @@ def validate(root, args):
                                 "Vary the statistics selected, the questions answered, and the "
                                 "local detail. Threshold: warn at %d%%, fail at %d%%."
                                 % (SHINGLE_WARN * 100, SHINGLE_ERROR * 100)))
+
+    # --- html uploaded outside public/ -------------------------------------
+    # Cloudflare Pages serves public/ and nothing else, so a page dropped
+    # anywhere else is unreachable while every other signal still reports
+    # success: GitHub accepts the commit, Pages builds green, and every check
+    # above walks public/ so none of them ever sees the file. Two client
+    # reports sat unreachable for a week exactly this way. This is the only
+    # check that looks outside public/.
+    for rel in stray_html(root):
+        add(Finding(ERROR, rel, 1, "stray-root-html",
+                    "HTML outside public/, so Cloudflare Pages never serves it",
+                    "Move it to public/<path>/index.html. Client reports belong at "
+                    "public/reports/<slug>/index.html. Uploading through the GitHub "
+                    "web UI drops files at the repo root, which is the usual cause. "
+                    "If the file is not meant to be a page, put it under templates/, "
+                    "content/, or reference/."))
 
     # --- protected paths banner -------------------------------------------
     if changed:
