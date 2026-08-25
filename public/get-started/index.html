@@ -292,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       for(var i=0;i<f1.length;i++){if(!f1[i].reportValidity())return;}
       document.getElementById('fx-picked').hidden=false;
       document.getElementById('fx-picked-name').textContent=document.getElementById('fx-dispensary').value;
-      document.getElementById('fx-picked-loc').textContent=' - '+document.getElementById('fx-city').value+', '+document.getElementById('fx-state').value;
+      document.getElementById('fx-picked-loc').textContent='\u00b7 '+document.getElementById('fx-city').value+', '+document.getElementById('fx-state').value;
       var st=document.getElementById('fx-state').value;
       document.getElementById('fx-guide-url').value=GUIDES[st]?('https://nearfront.com'+GUIDES[st]):'https://nearfront.com/markets/';
     }
