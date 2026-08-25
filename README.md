@@ -4,6 +4,8 @@ Your sandbox. Everything here goes live at **lp.nearfront.com** about 30 seconds
 
 **Nothing you do in this repo can affect nearfront.com.**
 
+Publishing from your own machine for the first time? See [SETUP.md](SETUP.md).
+
 ## Make something
 
 Tell Cowork what you want. It reads `CLAUDE.md` and follows the house rules. Push when you like it. That is the whole loop, and you never need anyone's approval.
