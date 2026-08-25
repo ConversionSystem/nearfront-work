@@ -45,7 +45,7 @@ PROTECTED = (
 )
 
 # Reference page for the shared nav/footer shell. Every marketing page must match it.
-SHELL_REF = "services/thca-seo/index.html"
+SHELL_REF = "services/cannabis-dispensary-seo/index.html"
 # Work-lane stand-ins for SHELL_REF, which only exists in the production repo.
 SHELL_FALLBACKS = ("templates/landing-page.html",)
 
@@ -68,7 +68,7 @@ BRITISH_SPELLINGS = [
 # construction, so they are the ones at risk of becoming templated duplicates.
 # Compared only within their own group; a state page and a city page are
 # expected to differ anyway.
-GEO_PREFIXES = ("cannabis-seo-", "thca-seo-", "peptides-seo-", "dispensary-near-")
+GEO_PREFIXES = ("cannabis-seo-", "thca-seo-", "dispensary-near-")
 
 # Directories outside public/ that may legitimately hold .html: page templates,
 # archived competitor evidence, and the read-only production reference copies.
@@ -550,7 +550,11 @@ def validate(root, args):
             elif prof == "marketing" and not href.endswith("/"):
                 add(Finding(ERROR, rel, ln, "head-canonical",
                             "canonical %s is missing its trailing slash" % href))
-            elif prof == "marketing" and href != want:
+            elif prof == "marketing" and href != want and url != "/preview-home/":
+                # /preview-home/ is the review copy of the production homepage.
+                # Its canonical deliberately stays https://nearfront.com/ because
+                # promotion copies the CONTENT into production index.html, and on
+                # this noindexed host the canonical must point at production.
                 add(Finding(ERROR, rel, ln, "head-canonical",
                             "canonical is %s but this file serves %s" % (href, want)))
 
