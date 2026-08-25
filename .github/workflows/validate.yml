@@ -1,0 +1,41 @@
+# Validate only. This workflow must never gain a deploy step or a secret.
+#
+# Cloudflare already builds this repo from Git on its own, and a Pages token is
+# account scoped, so a token stored here could deploy over nearfront.com.
+# Keeping this repo credential free is what makes autonomous publishing safe
+# (CLAUDE.md, "Deploy"). This job only reads the tree and runs the validator.
+# It needs no secret and is granted none.
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Read only. Nothing here writes to the repo or to Cloudflare.
+permissions:
+  contents: read
+
+# A superseded run tells us nothing useful, so cancel it.
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the site validator
+        # Whole tree, deliberately not --base. The failure this job exists to
+        # catch was a client report uploaded outside public/, which stayed
+        # invisible through later unrelated pushes; a diff against main would
+        # not have surfaced it. Shallow checkout is fine because we never diff.
+        #
+        # --profile work is required: this is the sandbox host, so the marketing
+        # head contract does not apply to proposals, reports, or the host index.
+        #
+        # --format github turns findings into inline annotations on the changed
+        # lines and writes a table to the run summary. Exit is 1 on any error.
+        run: python3 scripts/validate.py --profile work --format github
