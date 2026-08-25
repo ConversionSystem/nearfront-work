@@ -45,15 +45,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-ghost { color: rgba(255,255,255,0.85); padding: 14px 24px; border-radius: 4px; font-size: 14px; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); transition: all .2s; display: inline-flex; align-items: center; gap: 8px; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* Hero industry cards */
-  .hero-industries { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .ind-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 18px 16px; transition: all .25s; cursor: default; }
-  .ind-card.featured { border-color: rgba(195,162,93,0.35); background: rgba(195,162,93,0.06); }
-  .ind-card:hover { background: rgba(195,162,93,0.08); border-color: rgba(195,162,93,0.4); transform: translateY(-2px); }
-  .ind-icon { font-size: 22px; margin-bottom: 8px; }
-  .ind-name { font-size: 12px; font-weight: 700; color: var(--white); }
-  .ind-sub { font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 3px; line-height: 1.4; }
-  .ind-badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; background: var(--gold); color: var(--dark); padding: 2px 7px; border-radius: 2px; margin-bottom: 6px; text-transform: uppercase; }
+  /* Hero Map Pack panel */
+  .mp-panel { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+  .mp-search { display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.28); border: 1px solid var(--border); border-radius: 999px; padding: 10px 16px; }
+  .mp-search-icon { width: 13px; height: 13px; border: 2px solid rgba(255,255,255,0.55); border-radius: 50%; position: relative; flex-shrink: 0; }
+  .mp-search-icon::after { content: ''; position: absolute; right: -5px; bottom: -4px; width: 6px; height: 2px; background: rgba(255,255,255,0.55); transform: rotate(45deg); }
+  .mp-search-text { font-size: 14px; color: rgba(255,255,255,0.82); }
+  .mp-slots { margin-top: 16px; }
+  .mp-slot { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 5px; background: rgba(195,162,93,0.09); border: 1px solid rgba(195,162,93,0.3); margin-bottom: 7px; }
+  .mp-num { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: var(--gold); color: var(--dark-3); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .mp-bars { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+  .mp-bars i { display: block; height: 6px; border-radius: 3px; background: rgba(195,162,93,0.55); }
+  .mp-bars i + i { height: 4px; background: rgba(255,255,255,0.16); }
+  .mp-rest { margin-top: 12px; padding-top: 13px; border-top: 1px dashed var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.45); }
+  .mp-rest span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+  .mp-line { margin: 16px 0 0; font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.5; }
+  .mp-factors { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 11px; }
+  .mp-f { display: grid; grid-template-columns: 84px 1fr; gap: 12px; align-items: baseline; }
+  .mp-f-name { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
+  .mp-f-desc { font-size: 12px; color: rgba(255,255,255,0.72); line-height: 1.5; }
+  .mp-src { margin: 15px 0 0; font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .mp-src a { color: rgba(255,255,255,0.72); text-decoration: underline; text-underline-offset: 2px; }
+  .mp-src a:hover { color: var(--gold); }
 
   /* TRUST BAR */
   .trust-bar { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 40px; display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
@@ -190,7 +203,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .chain::before { display: none; }
   }
   @media (max-width: 560px) {
-    .hero-industries, .ind-grid, .stats-inner, .why-grid, .case-grid, .stack-sources { grid-template-columns: 1fr; }
+    .ind-grid, .stats-inner, .why-grid, .case-grid, .stack-sources { grid-template-columns: 1fr; }
     .chain { grid-template-columns: repeat(2,1fr); }
     .stat-card { border-left: none; border-top: 1px solid var(--line); }
     .stat-card:first-child { border-top: none; }
@@ -311,29 +324,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-    <div class="hero-industries">
-      <div class="ind-card featured">
-        <div class="ind-badge">Proof</div>
-        <div class="ind-icon" aria-hidden="true">📊</div>
-        <div class="ind-name">31 Sourced Market Guides</div>
-        <div class="ind-sub">Every stat from a state agency’s own file, dated and re-checkable. <a href="/markets/" style="color:var(--gold);font-weight:600">See the guides →</a></div>
+    <div class="mp-panel">
+      <div class="mp-search"><span class="mp-search-icon" aria-hidden="true"></span><span class="mp-search-text">dispensary near me</span></div>
+      <div class="mp-slots" aria-hidden="true">
+        <div class="mp-slot"><span class="mp-num">1</span><span class="mp-bars"><i style="width:72%"></i><i style="width:46%"></i></span></div>
+        <div class="mp-slot"><span class="mp-num">2</span><span class="mp-bars"><i style="width:58%"></i><i style="width:38%"></i></span></div>
+        <div class="mp-slot"><span class="mp-num">3</span><span class="mp-bars"><i style="width:64%"></i><i style="width:41%"></i></span></div>
+        <div class="mp-rest">Every other dispensary in town <span>Below the fold</span></div>
       </div>
-      <div class="ind-card featured">
-        <div class="ind-badge">Public</div>
-        <div class="ind-icon" aria-hidden="true">📈</div>
-        <div class="ind-name">We Rank Ourselves in Public</div>
-        <div class="ind-sub">Our own keywords, published monthly, flat months included. <a href="/how-we-rank-ourselves/" style="color:var(--gold);font-weight:600">See the log →</a></div>
+      <p class="mp-line">Three slots decide who gets the walk-in. Everything we do is aimed at one of them.</p>
+      <div class="mp-factors">
+        <div class="mp-f"><span class="mp-f-name">Relevance</span><span class="mp-f-desc">How well the profile matches the search. Categories, menu, and the signals on your site.</span></div>
+        <div class="mp-f"><span class="mp-f-name">Distance</span><span class="mp-f-desc">How far your store is from the person searching. You can't move the store, so you cover the radius around it.</span></div>
+        <div class="mp-f"><span class="mp-f-name">Prominence</span><span class="mp-f-desc">How well known the store is. Reviews, citations, and links, built at a pace that holds.</span></div>
       </div>
-      <div class="ind-card">
-        <div class="ind-icon" aria-hidden="true">⚖️</div>
-        <div class="ind-name">Compare Us to Anyone</div>
-        <div class="ind-sub">Four named-competitor comparisons, every claim dated. <a href="/vs/" style="color:var(--gold);font-weight:600">Read them →</a></div>
-      </div>
-      <div class="ind-card">
-        <div class="ind-icon" aria-hidden="true">🎙️</div>
-        <div class="ind-name">Founder-Led Since 2007</div>
-        <div class="ind-sub">Built Foottraffik, the first cannabis SEO company. Exited 2021. <a href="/about-us/" style="color:var(--gold);font-weight:600">The story →</a></div>
-      </div>
+      <p class="mp-src">Relevance, distance and prominence are <a href="https://support.google.com/business/answer/7091" rel="noopener">Google's own three ranking factors</a>, not our theory of them.</p>
     </div>
   </div>
 </section>
