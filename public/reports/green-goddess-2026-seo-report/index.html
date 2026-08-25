@@ -5,36 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Green Goddess · SEO Campaign Report 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0D0F0C;
-    --white: #F7F5F0;
-    --green-deep: #1D3A1B;
-    --green-mid: #2D5A27;
-    --green-bright: #4A8A3E;
-    --green-pale: #C8DFC4;
-    --green-wash: #EBF3E9;
-    --gold: #C9A84C;
-    --gold-pale: #F5EDD6;
-    --gray-dark: #3A3D39;
-    --gray-mid: #6B706A;
-    --gray-light: #C2C7C1;
-    --gray-wash: #F0F2EF;
-    --up: #3A7D44;
-    --down: #B84040;
-    --up-bg: #E8F5EA;
-    --down-bg: #FDEAEA;
+    --black: #111a1c;
+    --white: #f5f2ed;
+    --green-deep: #1c3439;
+    --green-mid: #2a4a50;
+    --green-bright: #c3a25d;
+    --green-pale: #e8e4dd;
+    --green-wash: #f2ece0;
+    --gold: #c3a25d;
+    --gold-pale: #f6f1e6;
+    --gray-dark: #4a5257;
+    --gray-mid: #8a9199;
+    --gray-light: #e8e4dd;
+    --gray-wash: #edeae3;
+    --up: #1a6b3a;
+    --down: #c0392b;
+    --up-bg: #eef7f0;
+    --down-bg: #fef0ef;
   }
+
+  /* Inter is proportional, so the figures that used to sit in a mono
+     face need tabular figures to keep the columns aligned. */
+  .data-table, .score-value, .score-label, .rank-pos, .dr-pill,
+  .badge, .cover-stat-val { font-variant-numeric: tabular-nums; }
 
   html { font-size: 16px; scroll-behavior: smooth; }
 
   body {
     background: var(--white);
     color: var(--black);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -57,8 +62,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(74,138,62,0.25) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.12) 0%, transparent 60%);
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(195,162,93,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(195,162,93,0.12) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -71,7 +76,7 @@
   }
 
   .logo-mark {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -80,12 +85,12 @@
   }
 
   .cover-badge {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--green-pale);
-    border: 1px solid rgba(200,223,196,0.35);
+    border: 1px solid rgba(232,228,221,0.35);
     padding: 6px 14px;
     border-radius: 2px;
   }
@@ -99,7 +104,7 @@
   }
 
   .cover-eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -108,10 +113,10 @@
   }
 
   .cover-title {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: clamp(52px, 7vw, 96px);
     line-height: 1.0;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 8px;
   }
@@ -122,11 +127,11 @@
   }
 
   .cover-sub {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: clamp(20px, 2.5vw, 32px);
     font-weight: 400;
     font-style: italic;
-    color: rgba(247,245,240,0.55);
+    color: rgba(245,242,237,0.55);
     margin-bottom: 56px;
   }
 
@@ -143,7 +148,8 @@
   }
 
   .cover-stat-val {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 36px;
     color: var(--gold);
     line-height: 1;
@@ -164,19 +170,19 @@
     position: relative;
     z-index: 1;
     padding-top: 32px;
-    border-top: 1px solid rgba(200,223,196,0.2);
+    border-top: 1px solid rgba(232,228,221,0.2);
   }
 
   .cover-client {
     font-size: 13px;
-    color: rgba(247,245,240,0.5);
+    color: rgba(245,242,237,0.5);
     line-height: 1.5;
   }
 
   .cover-date {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 12px;
-    color: rgba(247,245,240,0.4);
+    color: rgba(245,242,237,0.4);
     text-align: right;
   }
 
@@ -192,7 +198,7 @@
 
   /* ─── SECTION HEADERS ─── */
   .section-eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -212,9 +218,9 @@
   }
 
   .section-title {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: clamp(28px, 4vw, 44px);
-    font-weight: 400;
+    font-weight: 700;
     color: var(--green-deep);
     line-height: 1.15;
     margin-bottom: 8px;
@@ -247,7 +253,7 @@
   }
 
   .score-label {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 10px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -255,7 +261,8 @@
   }
 
   .score-value {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 38px;
     color: var(--green-deep);
     line-height: 1;
@@ -292,7 +299,7 @@
   }
 
   .chart-title {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -308,7 +315,7 @@
   svg.line-chart { width: 100%; height: 100%; overflow: visible; }
 
   .chart-grid line { stroke: var(--gray-wash); stroke-width: 1; }
-  .chart-axis text { fill: var(--gray-mid); font-family: 'IBM Plex Mono', monospace; font-size: 9px; }
+  .chart-axis text { fill: var(--gray-mid); font-family: 'Inter', system-ui, sans-serif; font-size: 9px; }
 
   .chart-legend {
     display: flex;
@@ -342,7 +349,7 @@
   .data-table thead th {
     background: var(--green-deep);
     color: var(--green-pale);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 9px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -361,7 +368,7 @@
   }
 
   .data-table td.mono {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 12px;
   }
 
@@ -372,11 +379,11 @@
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.05em;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
   .badge-green { background: var(--up-bg); color: var(--up); }
-  .badge-gold { background: var(--gold-pale); color: #7A5C1A; }
+  .badge-gold { background: var(--gold-pale); color: #6b5730; }
   .badge-gray { background: var(--gray-wash); color: var(--gray-mid); }
 
   .dr-pill {
@@ -388,7 +395,7 @@
     border-radius: 50%;
     background: var(--green-deep);
     color: var(--white);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 11px;
     font-weight: 500;
   }
@@ -423,7 +430,8 @@
   }
 
   .insight-title {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
     font-size: 18px;
     color: var(--green-deep);
     margin-bottom: 8px;
@@ -452,7 +460,7 @@
   .rank-keyword { font-size: 13px; color: var(--gray-dark); }
 
   .rank-pos {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 13px;
     color: var(--green-deep);
     font-weight: 500;
@@ -500,7 +508,8 @@
   }
 
   .open-item-num {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 24px;
     color: var(--green-pale);
     line-height: 1;
@@ -532,7 +541,7 @@
   }
 
   .footer-brand {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -540,7 +549,7 @@
 
   .footer-note {
     font-size: 12px;
-    color: rgba(200,223,196,0.5);
+    color: rgba(232,228,221,0.5);
     max-width: 400px;
     text-align: right;
     line-height: 1.6;
@@ -572,7 +581,7 @@
 <!-- ═══════════════════ COVER ═══════════════════ -->
 <div class="cover">
   <div class="cover-nav">
-    <span class="logo-mark">NearFront</span>
+    <span class="logo-mark">Nearfront</span>
     <span class="cover-badge">Confidential</span>
   </div>
 
@@ -604,7 +613,7 @@
   <div class="cover-footer">
     <div class="cover-client">
       Prepared for Green Goddess Collective<br>
-      Campaign Partner: NearFront
+      Campaign Partner: Nearfront
     </div>
     <div class="cover-date">
       Year-to-Date Report<br>
@@ -678,22 +687,22 @@
         <svg class="line-chart" viewBox="0 0 900 200" preserveAspectRatio="none">
           <defs>
             <linearGradient id="topGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#4A8A3E" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#4A8A3E" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#c3a25d" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#c3a25d" stop-opacity="0"/>
             </linearGradient>
           </defs>
           <!-- grid -->
-          <line x1="0" y1="0" x2="900" y2="0" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="50" x2="900" y2="50" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="100" x2="900" y2="100" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="150" x2="900" y2="150" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="200" x2="900" y2="200" stroke="#F0F2EF" stroke-width="1"/>
+          <line x1="0" y1="0" x2="900" y2="0" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="50" x2="900" y2="50" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="100" x2="900" y2="100" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="150" x2="900" y2="150" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="200" x2="900" y2="200" stroke="#edeae3" stroke-width="1"/>
           <!-- y axis labels -->
-          <text x="-8" y="4" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">200</text>
-          <text x="-8" y="54" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">150</text>
-          <text x="-8" y="104" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">100</text>
-          <text x="-8" y="154" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">50</text>
-          <text x="-8" y="204" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">0</text>
+          <text x="-8" y="4" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">200</text>
+          <text x="-8" y="54" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">150</text>
+          <text x="-8" y="104" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">100</text>
+          <text x="-8" y="154" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">50</text>
+          <text x="-8" y="204" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">0</text>
           <!-- top3 data: Jan105 Feb106 Mar113 Apr128 May151 Jun172 Jul181 Aug145 -->
           <!-- scale: max=200, height=200 so y = (200-val)/200 * 200 -->
           <polygon
@@ -701,25 +710,25 @@
             fill="url(#topGrad)" stroke="none"/>
           <polyline
             points="0,190 128.6,188.6 257.1,174 385.7,144 514.3,98 642.9,56 771.4,38 900,110"
-            fill="none" stroke="#4A8A3E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            fill="none" stroke="#c3a25d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <!-- top4_10: Jan130 Feb114 Mar142 Apr172 May174 Jun167 Jul141 Aug131 -->
           <polyline
             points="0,140 128.6,172 257.1,116 385.7,56 514.3,52 642.9,66 771.4,118 900,138"
-            fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-dasharray="6,3" stroke-linecap="round" stroke-linejoin="round"/>
+            fill="none" stroke="#c3a25d" stroke-width="1.8" stroke-dasharray="6,3" stroke-linecap="round" stroke-linejoin="round"/>
           <!-- x labels -->
-          <text x="0" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jan</text>
-          <text x="128.6" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Feb</text>
-          <text x="257.1" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Mar</text>
-          <text x="385.7" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Apr</text>
-          <text x="514.3" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">May</text>
-          <text x="642.9" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jun</text>
-          <text x="771.4" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jul</text>
-          <text x="900" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Aug</text>
+          <text x="0" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Jan</text>
+          <text x="128.6" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Feb</text>
+          <text x="257.1" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Mar</text>
+          <text x="385.7" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Apr</text>
+          <text x="514.3" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">May</text>
+          <text x="642.9" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Jun</text>
+          <text x="771.4" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Jul</text>
+          <text x="900" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Aug</text>
         </svg>
       </div>
       <div class="chart-legend">
-        <div class="legend-item"><span class="legend-dot" style="background:#4A8A3E"></span>Top 3 positions</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#C9A84C"></span>Positions 4–10</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#c3a25d"></span>Top 3 positions</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#c3a25d"></span>Positions 4–10</div>
       </div>
     </div>
 
@@ -760,18 +769,18 @@
         <svg class="line-chart" viewBox="0 0 900 200" preserveAspectRatio="none">
           <defs>
             <linearGradient id="refGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.2"/>
-              <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#c3a25d" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#c3a25d" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <line x1="0" y1="0" x2="900" y2="0" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="50" x2="900" y2="50" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="100" x2="900" y2="100" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="150" x2="900" y2="150" stroke="#F0F2EF" stroke-width="1"/>
-          <line x1="0" y1="200" x2="900" y2="200" stroke="#F0F2EF" stroke-width="1"/>
-          <text x="-8" y="4" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">1000</text>
-          <text x="-8" y="104" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">500</text>
-          <text x="-8" y="204" text-anchor="end" fill="#6B706A" font-family="IBM Plex Mono" font-size="10">0</text>
+          <line x1="0" y1="0" x2="900" y2="0" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="50" x2="900" y2="50" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="100" x2="900" y2="100" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="150" x2="900" y2="150" stroke="#edeae3" stroke-width="1"/>
+          <line x1="0" y1="200" x2="900" y2="200" stroke="#edeae3" stroke-width="1"/>
+          <text x="-8" y="4" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">1000</text>
+          <text x="-8" y="104" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">500</text>
+          <text x="-8" y="204" text-anchor="end" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="10">0</text>
           <!-- data: 574,501,455,428,598,674,809,901; scale max 1000 height 200 -->
           <!-- y = (1000-val)/1000*200 -->
           <polygon
@@ -779,15 +788,15 @@
             fill="url(#refGrad)" stroke="none"/>
           <polyline
             points="0,85.2 128.6,99.8 257.1,109 385.7,114.4 514.3,80.4 642.9,65.2 771.4,38.2 900,19.8"
-            fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="0" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jan</text>
-          <text x="128.6" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Feb</text>
-          <text x="257.1" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Mar</text>
-          <text x="385.7" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Apr</text>
-          <text x="514.3" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">May</text>
-          <text x="642.9" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jun</text>
-          <text x="771.4" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Jul</text>
-          <text x="900" y="220" text-anchor="middle" fill="#6B706A" font-family="IBM Plex Mono" font-size="9">Aug</text>
+            fill="none" stroke="#c3a25d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="0" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Jan</text>
+          <text x="128.6" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Feb</text>
+          <text x="257.1" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Mar</text>
+          <text x="385.7" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Apr</text>
+          <text x="514.3" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">May</text>
+          <text x="642.9" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Jun</text>
+          <text x="771.4" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Jul</text>
+          <text x="900" y="220" text-anchor="middle" fill="#8a9199" font-family="Inter, system-ui, sans-serif" font-size="9">Aug</text>
         </svg>
       </div>
     </div>
@@ -817,7 +826,7 @@
           <td><span class="badge badge-green">GBP Expansion</span></td>
           <td>Phase 1</td>
           <td><span class="badge badge-green">✓ Yes</span></td>
-          <td style="font-size:12px;color:#6B706A">25-page mega site with driving directions, map embeds, real entities linking to GBP.</td>
+          <td style="font-size:12px;color:#8a9199">25-page mega site with driving directions, map embeds, real entities linking to GBP.</td>
         </tr>
         <tr>
           <td><span class="dr-pill">90</span></td>
@@ -825,7 +834,7 @@
           <td><span class="badge badge-gold">Branded Citation</span></td>
           <td>Phase 1</td>
           <td><span class="badge badge-green">✓ Yes</span></td>
-          <td style="font-size:12px;color:#6B706A">Ultra-high-authority branded citation property.</td>
+          <td style="font-size:12px;color:#8a9199">Ultra-high-authority branded citation property.</td>
         </tr>
         <tr>
           <td><span class="dr-pill">93</span></td>
@@ -833,7 +842,7 @@
           <td><span class="badge badge-gold">Branded Citation</span></td>
           <td>Phase 1</td>
           <td><span class="badge badge-green">✓ Yes</span></td>
-          <td style="font-size:12px;color:#6B706A">Ultra-high-authority branded citation property.</td>
+          <td style="font-size:12px;color:#8a9199">Ultra-high-authority branded citation property.</td>
         </tr>
         <tr>
           <td><span class="dr-pill">93</span></td>
@@ -841,7 +850,7 @@
           <td><span class="badge badge-gold">Branded Guide</span></td>
           <td>Phase 1</td>
           <td><span class="badge badge-green">✓ Yes</span></td>
-          <td style="font-size:12px;color:#6B706A">Venice Beach cannabis guide page linking to Green Goddess.</td>
+          <td style="font-size:12px;color:#8a9199">Venice Beach cannabis guide page linking to Green Goddess.</td>
         </tr>
       </tbody>
     </table>
@@ -866,7 +875,7 @@
       <div class="insight-card">
         <div class="insight-icon">📱</div>
         <div class="insight-title">QR Code Stands at Register</div>
-        <div class="insight-body">We are recommending physical QR code stands at the register that link directly to the Google review page. One tap, no friction. <a href="https://www.amazon.com/ProsperQR-Google-Review-Stand/dp/B0DGGX9W6H" style="color:#2D5A27">View on Amazon →</a></div>
+        <div class="insight-body">We are recommending physical QR code stands at the register that link directly to the Google review page. One tap, no friction. <a href="https://www.amazon.com/ProsperQR-Google-Review-Stand/dp/B0DGGX9W6H" style="color:#2a4a50">View on Amazon →</a></div>
       </div>
       <div class="insight-card">
         <div class="insight-icon">💬</div>
@@ -934,7 +943,7 @@
           <td><span class="badge badge-gray">– 0.00</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:100%;background:#2D5A27"></div>
+              <div class="rank-bar-fill" style="width:100%;background:#2a4a50"></div>
             </div>
           </td>
         </tr>
@@ -946,7 +955,7 @@
           <td><span class="badge badge-green">▲ +2.04</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:61.22%;background:#4A8A3E"></div>
+              <div class="rank-bar-fill" style="width:61.22%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
@@ -958,7 +967,7 @@
           <td><span class="badge badge-green">▲ +24.49</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:59.18%;background:#4A8A3E"></div>
+              <div class="rank-bar-fill" style="width:59.18%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
@@ -970,7 +979,7 @@
           <td><span class="badge badge-green">▲ +1.23</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:51.85%;background:#4A8A3E"></div>
+              <div class="rank-bar-fill" style="width:51.85%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
@@ -982,19 +991,19 @@
           <td><span class="badge badge-gray">– 0.00</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:45.68%;background:#4A8A3E"></div>
+              <div class="rank-bar-fill" style="width:45.68%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
         <tr>
           <td>cannabis store near me</td>
           <td class="mono">5.48</td>
-          <td><span class="badge badge-down" style="background:#FDEAEA;color:#B84040">▼ -0.29</span></td>
+          <td><span class="badge badge-down" style="background:#fef0ef;color:#c0392b">▼ -0.29</span></td>
           <td class="mono">43.21%</td>
-          <td><span class="badge badge-down" style="background:#FDEAEA;color:#B84040">▼ -1.23</span></td>
+          <td><span class="badge badge-down" style="background:#fef0ef;color:#c0392b">▼ -1.23</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:43.21%;background:#C9A84C"></div>
+              <div class="rank-bar-fill" style="width:43.21%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
@@ -1006,7 +1015,7 @@
           <td><span class="badge badge-green">▲ +2.04</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:40.82%;background:#C9A84C"></div>
+              <div class="rank-bar-fill" style="width:40.82%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
@@ -1018,19 +1027,19 @@
           <td><span class="badge badge-gray">– 0.00</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:38.27%;background:#C9A84C"></div>
+              <div class="rank-bar-fill" style="width:38.27%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
         <tr>
           <td>dispensary near me</td>
           <td class="mono">6.27</td>
-          <td><span class="badge badge-down" style="background:#FDEAEA;color:#B84040">▼ -0.19</span></td>
+          <td><span class="badge badge-down" style="background:#fef0ef;color:#c0392b">▼ -0.19</span></td>
           <td class="mono">37.04%</td>
           <td><span class="badge badge-gray">– 0.00</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:37.04%;background:#C9A84C"></div>
+              <div class="rank-bar-fill" style="width:37.04%;background:#c3a25d"></div>
             </div>
           </td>
         </tr>
@@ -1042,7 +1051,7 @@
           <td><span class="badge badge-green">▲ +4.08</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:8.16%;background:#B84040"></div>
+              <div class="rank-bar-fill" style="width:8.16%;background:#c0392b"></div>
             </div>
           </td>
         </tr>
@@ -1054,7 +1063,7 @@
           <td><span class="badge badge-green">▲ +4.08</span></td>
           <td>
             <div class="rank-bar-track" style="height:8px;width:100%">
-              <div class="rank-bar-fill" style="width:4.08%;background:#B84040"></div>
+              <div class="rank-bar-fill" style="width:4.08%;background:#c0392b"></div>
             </div>
           </td>
         </tr>
@@ -1115,7 +1124,7 @@
 
 <!-- ─── FOOTER ─── -->
 <div class="report-footer">
-  <div class="footer-brand">NearFront &middot; SEO & Growth</div>
+  <div class="footer-brand">Nearfront &middot; SEO & Growth</div>
   <div class="footer-note">Prepared for Green Goddess Collective, Venice Beach, CA. Data sourced from Ahrefs. Campaign period January – August 2026. Confidential.</div>
 </div>
 
