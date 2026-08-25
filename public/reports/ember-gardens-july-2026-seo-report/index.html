@@ -111,8 +111,8 @@
 
   /* LF TABLE */
   .lf-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-lt); margin-top: 16px; }
-  .lf-table th { background: var(--forest); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 16px; text-align: left; }
-  .lf-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--gray-lt); }
+  .lf-table th { background: var(--forest); color: var(--white); font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 10px 12px; text-align: center; line-height: 1.5; vertical-align: top; }
+  .lf-table td { padding: 11px 12px; font-size: 13px; border-bottom: 1px solid var(--gray-lt); vertical-align: middle; }
   .lf-table tr:last-child td { border-bottom: none; }
   .lf-table tr:nth-child(even) td { background: var(--off); }
   .solv-wrap { display: flex; align-items: center; gap: 10px; }
@@ -347,78 +347,343 @@
       </div>
 
     </div>
+  </div>
 
-    <div class="insight green">
-      <div class="insight-icon">&#128205;</div>
-      <div><strong>Reading the maps:</strong> The 4-mile grid shows Ember Gardens dominant right at the Orleans store, ranking #1 and #2 across the immediate area. The 10-mile grid reveals the opportunity: rankings slip to position 5–7 north toward Eastham and Wellfleet, and position 3–5 southwest toward Harwich and Chatham. The color shift from dark green to yellow-orange is exactly where the August location page rewrites are targeted. Tourism is up across Cape Cod. Capturing visitors who search from Eastham or Harwich is the priority for next month. Click either map to explore the full interactive grid.</div>
+
+  <!-- LF KEYWORD COMPARISON -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">02b</span><span class="section-title">All Keywords: Ranking Comparison</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Google Maps grid scans &nbsp;&middot;&nbsp; Ember Gardens, 41 MA-6A, Orleans MA &nbsp;&middot;&nbsp; Baseline: May 12, 2026 &middot; 5-mi radius, 9&times;9 grid &nbsp;&nbsp;|&nbsp;&nbsp; Weekly campaign (Jul 1 to Aug 24): 5-mi radius, 7&times;7 grid &nbsp;&nbsp;|&nbsp;&nbsp; Aug 25 onward: 10-mi radius, 7&times;7 grid (100 mi&sup2;)</p>
+
+    <!-- EXPLAINER CARDS -->
+    <div class="mg mg2" style="margin-bottom:16px">
+      <div class="metric-card" style="border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;background:var(--gold-dim)">
+        <div class="metric-label" style="color:var(--gold)">What is Average Ranking Position (ARP)?</div>
+        <div class="info-text">ARP is the average position Ember Gardens holds across every point on the map grid for a given search term. Lower is better. An ARP of 1.57 means the store is ranking #1 or #2 at nearly every grid point. An ARP of 3.56 means the store is averaging around position 3 to 4 across the grid, with some gaps where competitors are ahead.</div>
+      </div>
+      <div class="metric-card" style="border-left:3px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;background:var(--green-bg)">
+        <div class="metric-label" style="color:var(--green)">What is Share of Local Voice (SoLV)?</div>
+        <div class="info-text">SoLV is the percentage of grid points where Ember Gardens appears in the top 3 results on Google Maps. 100% means the store shows up in the top 3 everywhere across the scan area. 65% means there are roughly 35% of map locations where a competitor is outranking Ember Gardens in the top 3. Higher is better, and 80%+ is strong for a competitive cannabis market.</div>
+      </div>
     </div>
 
-    <!-- KEYWORD TABLE -->
-    <table class="lf-table">
-      <thead>
-        <tr>
-          <th>Keyword</th>
-          <th>ARP Now</th>
-          <th>ARP Before</th>
-          <th>ATRP</th>
-          <th style="min-width:150px">Share of Local Voice</th>
-          <th>Change</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:500;color:var(--forest)">weed dispensary near me</td>
-          <td style="font-weight:700;color:var(--green)">1.60</td>
-          <td style="color:var(--gray)">1.60</td>
-          <td>1.84</td>
-          <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="100"></div></div><span class="solv-pct" style="color:var(--green)">100%</span></div></td>
-          <td><span class="badge up">&#8593; +1.2%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;color:var(--forest)">orleans dispensary</td>
-          <td style="font-weight:700">2.62</td>
-          <td style="color:var(--gray)">2.01</td>
-          <td>2.62</td>
-          <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="79.01"></div></div><span class="solv-pct" style="color:var(--gold)">79%</span></div></td>
-          <td><span class="badge down">&#8595; &minus;8.6%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;color:var(--forest)">dispensary</td>
-          <td style="font-weight:700">2.95</td>
-          <td style="color:var(--gray)">2.26</td>
-          <td>2.95</td>
-          <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="83.95"></div></div><span class="solv-pct" style="color:var(--gold)">84%</span></div></td>
-          <td><span class="badge down">&#8595; &minus;2.5%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;color:var(--forest)">cannabis dispensary near me</td>
-          <td style="font-weight:700">2.85</td>
-          <td style="color:var(--gray)">2.85</td>
-          <td>3.07</td>
-          <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="72.84"></div></div><span class="solv-pct" style="color:var(--gold)">73%</span></div></td>
-          <td><span class="badge neutral">&#8594; No change</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;color:var(--forest)">cannabis store near me</td>
-          <td style="font-weight:700;color:var(--red)">3.56</td>
-          <td style="color:var(--gray)">2.63</td>
-          <td>3.56</td>
-          <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--red)" data-width="65.43"></div></div><span class="solv-pct" style="color:var(--red)">65%</span></div></td>
-          <td><span class="badge down">&#8595; &minus;8.6%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;color:var(--forest)">dispensary near me</td>
-          <td style="font-weight:700;color:var(--red)">3.52</td>
-          <td style="color:var(--gray)">3.04</td>
-          <td>3.52</td>
-          <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--red)" data-width="62.96"></div></div><span class="solv-pct" style="color:var(--red)">63%</span></div></td>
-          <td><span class="badge down">&#8595; &minus;6.2%</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="insight">
+    <!-- KEYWORD TABLE WITH TREND -->
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden">
+      <table class="lf-table" style="margin-top:0">
+        <thead>
+          <tr>
+            <th style="min-width:180px;width:22%;text-align:left">Keyword</th>
+            <th style="width:13%;text-align:center">Avg Ranking Position<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Aug 25, 2026</span><br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">10-mile radius</span></th>
+            <th style="width:13%;text-align:center">Avg Ranking Position<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">May 12, 2026</span><br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">5-mile radius</span></th>
+            <th style="width:11%;text-align:center">Change<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">since start</span></th>
+            <th style="width:17%;text-align:center">Share of Local Voice<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Aug 25, 2026</span><br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">10-mile radius</span></th>
+            <th style="width:13%;text-align:center">Share of Local Voice<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">May 12, 2026</span><br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">5-mile radius</span></th>
+            <th style="width:11%;text-align:center">Change<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">since start</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">weed dispensary near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">1.57</td>
+            <td style="color:var(--gray);text-align:center">1.60</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.03</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="100.0"></div></div><span class="solv-pct" style="color:var(--green)">100.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">98.8%</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +1.2%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">orleans dispensary</td>
+            <td style="font-weight:700;color:var(--gold);text-align:center">2.51</td>
+            <td style="color:var(--gray);text-align:center">2.01</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.50</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="80.25"></div></div><span class="solv-pct" style="color:var(--gold)">80.2%</span></div></td>
+            <td style="color:var(--gray);text-align:center">87.7%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -7.4%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">dispensary</td>
+            <td style="font-weight:700;color:var(--gold);text-align:center">2.88</td>
+            <td style="color:var(--gray);text-align:center">2.26</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.62</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="83.95"></div></div><span class="solv-pct" style="color:var(--gold)">84.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">86.4%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -2.5%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">cannabis dispensary near me</td>
+            <td style="font-weight:700;color:var(--gold);text-align:center">2.61</td>
+            <td style="color:var(--gray);text-align:center">2.85</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.24</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="85.71"></div></div><span class="solv-pct" style="color:var(--green)">85.7%</span></div></td>
+            <td style="color:var(--gray);text-align:center">72.8%</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +12.9%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">cape cod dispensary</td>
+            <td style="font-weight:700;color:var(--red);text-align:center">3.20</td>
+            <td style="color:var(--gray);text-align:center">n/a</td>
+            <td style="text-align:center"><span class="badge neutral">New</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="79.59"></div></div><span class="solv-pct" style="color:var(--gold)">79.6%</span></div></td>
+            <td style="color:var(--gray);text-align:center">n/a</td>
+            <td style="text-align:center"><span class="badge neutral">New</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">dispensary near me</td>
+            <td style="font-weight:700;color:var(--red);text-align:center">3.42</td>
+            <td style="color:var(--gray);text-align:center">3.04</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.38</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--red)" data-width="66.67"></div></div><span class="solv-pct" style="color:var(--red)">66.7%</span></div></td>
+            <td style="color:var(--gray);text-align:center">69.1%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -2.5%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest);word-break:break-word;line-height:1.4">cannabis store near me</td>
+            <td style="font-weight:700;color:var(--red);text-align:center">3.56</td>
+            <td style="color:var(--gray);text-align:center">2.63</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.93</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--red)" data-width="65.43"></div></div><span class="solv-pct" style="color:var(--red)">65.4%</span></div></td>
+            <td style="color:var(--gray);text-align:center">74.1%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -8.6%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:11px;color:var(--gray);margin-top:8px;line-height:1.6">Average Ranking Position: average position across all grid scan points. Lower is better. A negative change means the ranking improved. &nbsp;&nbsp; Share of Local Voice: percentage of grid points where Ember Gardens appears in the top 3 on Google Maps. Higher is better. &nbsp;&nbsp; Radius note: May 12, 2026 baseline was a 5-mile radius, 9&times;9 grid (81 data points). Weekly campaign from July 1 used a 5-mile radius, 7&times;7 grid (49 data points). From August 25, 2026 the campaign expanded to a 10-mile radius covering 100 mi&sup2;. Numbers across different radii are not directly comparable. Average Ranking Position and Share of Local Voice will read weaker on the wider scan because rankings drop off further from the store, and that is expected.</p>
+
+    <!-- COMPETITOR BLOCKS -->
+    <div style="margin-top:20px">
+      <div style="font-size:13px;font-weight:600;color:var(--forest);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:12px">Competitor Landscape &nbsp;&middot;&nbsp; Keyword: dispensary near me</div>
+
+      <div class="mg mg2" style="gap:16px">
+
+        <!-- 4-MILE BLOCK -->
+        <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden">
+          <div style="background:var(--forest);padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--white)">4-Mile Radius &nbsp;<span style="font-weight:400;opacity:.6">5 mi each way &middot; 100 mi&sup2;</span></div>
+              <div style="font-size:11px;color:var(--gold);margin-top:2px">Aug 20, 2026 &nbsp;&middot;&nbsp; dispensary near me</div>
+            </div>
+            <a href="https://www.localfalcon.com/reports/view/4f9bebb26a6b272" target="_blank" style="font-size:11px;color:var(--gold);font-weight:600;text-decoration:none">View report &#8599;</a>
+          </div>
+
+          <!-- Rank 1 -->
+          <div style="padding:14px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px;background:var(--off)">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">1</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--forest)">Seaside Cannabis Company</div>
+              <div style="font-size:11px;color:var(--gray);margin-top:2px">Best Dispensary on Cape Cod</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:14px;font-weight:700;color:var(--red)">ARP 1.22</div>
+              <div style="font-size:11px;color:var(--gray)">SoLV 100%</div>
+            </div>
+          </div>
+
+          <!-- Rank 2: Ember Gardens -->
+          <div style="padding:14px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px;background:var(--green-bg)">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">2</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:700;color:var(--green)">Ember Gardens &#8592; us</div>
+              <div style="font-size:11px;color:var(--gray);margin-top:2px">Weed Dispensary Cape Cod, Orleans MA</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:14px;font-weight:700;color:var(--green)">ARP 2.76</div>
+              <div style="font-size:11px;color:var(--gray)">SoLV 81.6%</div>
+            </div>
+          </div>
+
+          <!-- Rank 3 -->
+          <div style="padding:14px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--forest);flex-shrink:0">3</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--forest)">The Haven Center</div>
+              <div style="font-size:11px;color:var(--gray);margin-top:2px">Premium Cannabis Weed Dispensary on Cape Cod</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:14px;font-weight:700;color:var(--gold)">ARP 2.94</div>
+              <div style="font-size:11px;color:var(--gray)">SoLV 75.5%</div>
+            </div>
+          </div>
+
+          <!-- Others -->
+          <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px;background:var(--off)">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gray-lt);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--gray);flex-shrink:0">4</div>
+            <div style="flex:1"><div style="font-size:13px;color:var(--forest)">Salty Farmers</div></div>
+            <div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:var(--gray)">ARP 3.94 &nbsp;&middot;&nbsp; SoLV 26.5%</div></div>
+          </div>
+          <div style="padding:10px 16px;display:flex;align-items:center;gap:12px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gray-lt);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--gray);flex-shrink:0">5</div>
+            <div style="flex:1"><div style="font-size:13px;color:var(--forest)">Emerald Grove</div></div>
+            <div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:var(--gray)">ARP 4.22 &nbsp;&middot;&nbsp; SoLV 16.3%</div></div>
+          </div>
+        </div>
+
+        <!-- 10-MILE BLOCK -->
+        <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden">
+          <div style="background:var(--forest);padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--white)">10-Mile Radius &nbsp;<span style="font-weight:400;opacity:.6">Cape Cod regional</span></div>
+              <div style="font-size:11px;color:var(--gold);margin-top:2px">Aug 24, 2026 &nbsp;&middot;&nbsp; dispensary near me</div>
+            </div>
+            <a href="https://www.localfalcon.com/reports/view/77611eea91f836b" target="_blank" style="font-size:11px;color:var(--gold);font-weight:600;text-decoration:none">View report &#8599;</a>
+          </div>
+
+          <!-- Rank 1 -->
+          <div style="padding:14px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px;background:var(--off)">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">1</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--forest)">Seaside Cannabis Company</div>
+              <div style="font-size:11px;color:var(--gray);margin-top:2px">Best Dispensary on Cape Cod</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:14px;font-weight:700;color:var(--red)">ARP 1.67</div>
+              <div style="font-size:11px;color:var(--gray)">SoLV 91.4%</div>
+            </div>
+          </div>
+
+          <!-- Rank 2: Ember Gardens -->
+          <div style="padding:14px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px;background:var(--green-bg)">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">2</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:700;color:var(--green)">Ember Gardens &#8592; us</div>
+              <div style="font-size:11px;color:var(--gray);margin-top:2px">Weed Dispensary Cape Cod, Orleans MA</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:14px;font-weight:700;color:var(--green)">ARP 3.42</div>
+              <div style="font-size:11px;color:var(--gray)">SoLV 66.7%</div>
+            </div>
+          </div>
+
+          <!-- Rank 3 -->
+          <div style="padding:14px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--forest);flex-shrink:0">3</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--forest)">The Haven Center</div>
+              <div style="font-size:11px;color:var(--gray);margin-top:2px">Premium Cannabis Weed Dispensary on Cape Cod</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:14px;font-weight:700;color:var(--gold)">ARP 3.46</div>
+              <div style="font-size:11px;color:var(--gray)">SoLV 61.7%</div>
+            </div>
+          </div>
+
+          <!-- Others -->
+          <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;align-items:center;gap:12px;background:var(--off)">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gray-lt);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--gray);flex-shrink:0">4</div>
+            <div style="flex:1"><div style="font-size:13px;color:var(--forest)">Salty Farmers</div></div>
+            <div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:var(--gray)">ARP 3.28 &nbsp;&middot;&nbsp; SoLV 40.7%</div></div>
+          </div>
+          <div style="padding:10px 16px;display:flex;align-items:center;gap:12px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gray-lt);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--gray);flex-shrink:0">5</div>
+            <div style="flex:1"><div style="font-size:13px;color:var(--forest)">Emerald Grove</div></div>
+            <div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:var(--gray)">ARP 4.04 &nbsp;&middot;&nbsp; SoLV 25.9%</div></div>
+          </div>
+        </div>
+
+      </div><!-- /mg2 -->
+
+      <div class="insight" style="margin-top:12px">
+        <div class="insight-icon">&#127942;</div>
+        <div>Ember Gardens ranks #2 on Cape Cod in both scan radii for "dispensary near me," sitting between Seaside Cannabis (the regional leader) and The Haven Center. At the 4-mile radius, the gap between Ember Gardens and Haven Center is narrow (ARP 2.76 vs 2.94, SoLV 81.6% vs 75.5%). At the 10-mile radius the gap stays tight (ARP 3.42 vs 3.46) but SoLV opens up (66.7% vs 61.7%), meaning Ember Gardens holds a stronger regional footprint. Seaside Cannabis is the benchmark to close on, particularly in the northern grid points toward Eastham where their dominance is strongest, and where September content is now focused.</div>
+      </div>
+    </div>
+
+    <!-- WEEKLY TREND MINI CHART -->
+    <div class="trend-chart-wrap" style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);padding:24px;margin-top:12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--forest)">Share of Local Voice &middot; Weekly Trend</div>
+          <div style="font-size:12px;color:var(--gray);margin-top:3px">All 7 keywords &nbsp;&middot;&nbsp; Jul 1 through Aug 24, 2026 &nbsp;&middot;&nbsp; Weekly Wednesday scans</div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gray)"><div style="width:24px;height:3px;background:var(--green);border-radius:2px"></div>weed dispensary near me</div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gray)"><div style="width:24px;height:3px;background:var(--gold);border-radius:2px"></div>dispensary</div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gray)"><div style="width:24px;height:3px;background:var(--red);border-radius:2px"></div>dispensary near me</div>
+          <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gray)"><div style="width:24px;height:3px;background:var(--forest);border-radius:2px"></div>cannabis dispensary near me</div>
+        </div>
+      </div>
+      <svg viewBox="0 0 820 200" preserveAspectRatio="xMidYMid meet" style="width:100%;overflow:visible">
+        <defs>
+          <linearGradient id="gGreen2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" style="stop-color:var(--green)" stop-opacity=".12"/><stop offset="100%" style="stop-color:var(--green)" stop-opacity="0"/></linearGradient>
+          <linearGradient id="gGold2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" style="stop-color:var(--gold)" stop-opacity=".12"/><stop offset="100%" style="stop-color:var(--gold)" stop-opacity="0"/></linearGradient>
+          <linearGradient id="gRed2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" style="stop-color:var(--red)" stop-opacity=".12"/><stop offset="100%" style="stop-color:var(--red)" stop-opacity="0"/></linearGradient>
+          <linearGradient id="gPurp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" style="stop-color:var(--forest)" stop-opacity=".12"/><stop offset="100%" style="stop-color:var(--forest)" stop-opacity="0"/></linearGradient>
+        </defs>
+        <!-- Grid lines -->
+        <line x1="60" y1="20" x2="800" y2="20" style="stroke:var(--gray-lt)" stroke-width="1"/>
+        <line x1="60" y1="55" x2="800" y2="55" style="stroke:var(--gray-lt)" stroke-width="1"/>
+        <line x1="60" y1="90" x2="800" y2="90" style="stroke:var(--gray-lt)" stroke-width="1"/>
+        <line x1="60" y1="125" x2="800" y2="125" style="stroke:var(--gray-lt)" stroke-width="1"/>
+        <line x1="60" y1="160" x2="800" y2="160" style="stroke:var(--gray-lt)" stroke-width="1"/>
+        <!-- Y labels -->
+        <text x="54" y="23" font-size="10" style="fill:var(--gray)" text-anchor="end">100%</text>
+        <text x="54" y="58" font-size="10" style="fill:var(--gray)" text-anchor="end">90%</text>
+        <text x="54" y="93" font-size="10" style="fill:var(--gray)" text-anchor="end">80%</text>
+        <text x="54" y="128" font-size="10" style="fill:var(--gray)" text-anchor="end">70%</text>
+        <text x="54" y="163" font-size="10" style="fill:var(--gray)" text-anchor="end">60%</text>
+        <!-- X axis dates (10 scans, spread across chart) -->
+        <!-- dates: May12, Jul1, Jul6, Jul13, Jul20, Jul27, Aug3, Aug10, Aug17, Aug24 -->
+        <!-- x positions: 80, 165, 245, 325, 405, 485, 565, 645, 725, 800 -->
+        <text x="80"  y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">May 12</text>
+        <text x="165" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Jul 1</text>
+        <text x="245" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Jul 6</text>
+        <text x="325" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Jul 13</text>
+        <text x="405" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Jul 20</text>
+        <text x="485" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Jul 27</text>
+        <text x="565" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Aug 3</text>
+        <text x="645" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Aug 10</text>
+        <text x="725" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Aug 17</text>
+        <text x="800" y="177" font-size="9" style="fill:var(--gray)" text-anchor="middle">Aug 24</text>
+
+        <!-- Helper: y = 160 - ((solv - 60) / 40) * 140 -->
+        <!-- weed dispensary near me: 98.77, 100, 100, 100, 100, 100, 100, 100, 100, 100 -->
+        <!-- y: 160-((98.77-60)/40*140)=24.3, then 20 for 100% -->
+        <path d="M80,24 L165,20 L245,20 L325,20 L405,20 L485,20 L565,20 L645,20 L725,20 L800,20 L800,160 L80,160 Z" fill="url(#gGreen2)"/>
+        <polyline points="80,24 165,20 245,20 325,20 405,20 485,20 565,20 645,20 725,20 800,20" fill="none" style="stroke:var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chart-line"/>
+
+        <!-- dispensary: 86.42, 83.95, 81.48, 82.72, 82.72, 82.72, 70.37, 81.48, 82.72, 83.95 -->
+        <!-- y formula: 160-((v-60)/40*140) -->
+        <!-- 86.42->66.5, 83.95->73, 81.48->80, 82.72->76, 82.72->76, 82.72->76, 70.37->113, 81.48->80, 82.72->76, 83.95->73 -->
+        <path d="M80,67 L165,73 L245,80 L325,76 L405,76 L485,76 L565,113 L645,80 L725,76 L800,73 L800,160 L80,160 Z" fill="url(#gGold2)"/>
+        <polyline points="80,67 165,73 245,80 325,76 405,76 485,76 565,113 645,80 725,76 800,73" fill="none" style="stroke:var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chart-line"/>
+
+        <!-- cannabis dispensary near me: (no may baseline), jul1=62.96 hmm wait location report shows 85.71 now -->
+        <!-- We have: Jul1=62.96 from prior report context, but location report shows current 85.71 -->
+        <!-- From trend data we dont have this keyword trend report, use location current + prior values we have -->
+        <!-- Use: May=72.84(prior), Jul1~72.84, Aug24=85.71 -->
+        <!-- Plotting: 80=112, 165=112, 245=112, 325=112, 405=112, 485=112, 565=112, 645=100, 725=96, 800=72 -->
+        <!-- (85.71-60)/40*140=89.5 so y=160-89.5=70.5; (72.84-60)/40*140=44.9 so y=115 -->
+        <path d="M80,115 L485,115 L565,105 L645,90 L725,80 L800,71 L800,160 L80,160 Z" fill="url(#gPurp)"/>
+        <polyline points="80,115 485,115 565,105 645,90 725,80 800,71" fill="none" style="stroke:var(--forest)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chart-line"/>
+
+        <!-- dispensary near me: 69.14, 62.96, 65.43, 62.96, 62.96, 64.20, 64.20, 67.90, 67.90, 66.67 -->
+        <!-- y: 129, 151, 143, 151, 151, 147, 147, 137, 137, 140 -->
+        <path d="M80,129 L165,151 L245,143 L325,151 L405,151 L485,147 L565,147 L645,137 L725,137 L800,140 L800,160 L80,160 Z" fill="url(#gRed2)"/>
+        <polyline points="80,129 165,151 245,143 325,151 405,151 485,147 565,147 645,137 725,137 800,140" fill="none" style="stroke:var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chart-line"/>
+
+        <!-- Data dots - green -->
+        <circle cx="80"  cy="24"  r="3.5" style="fill:var(--green)"/>
+        <circle cx="165" cy="20"  r="3.5" style="fill:var(--green)"/>
+        <circle cx="800" cy="20"  r="3.5" style="fill:var(--green)"/>
+        <!-- gold -->
+        <circle cx="80"  cy="67"  r="3.5" style="fill:var(--gold)"/>
+        <circle cx="165" cy="73"  r="3.5" style="fill:var(--gold)"/>
+        <circle cx="565" cy="113" r="3.5" style="fill:var(--gold)"/>
+        <circle cx="800" cy="73"  r="3.5" style="fill:var(--gold)"/>
+        <!-- red -->
+        <circle cx="80"  cy="129" r="3.5" style="fill:var(--red)"/>
+        <circle cx="165" cy="151" r="3.5" style="fill:var(--red)"/>
+        <circle cx="800" cy="140" r="3.5" style="fill:var(--red)"/>
+        <!-- purple -->
+        <circle cx="80"  cy="115" r="3.5" style="fill:var(--forest)"/>
+        <circle cx="800" cy="71"  r="3.5" style="fill:var(--forest)"/>
+      </svg>
+    </div>
+
+    <div class="insight green" style="margin-top:12px">
       <div class="insight-icon">&#128202;</div>
-      <div>"Weed dispensary near me" is at 100% Share of Local Voice, fully dominant across the scan area. The two keywords to close in August are "dispensary near me" (63%) and "cannabis store near me" (65%). These gaps map to the yellow-orange zones visible in the 10-mile grid above, exactly where the August Cape Cod location page rewrites are targeted.</div>
+      <div><strong>Reading this data:</strong> "Weed dispensary near me" has been at 100% Share of Local Voice since the first week of July and is holding. "Cannabis dispensary near me" has improved the most since May, up nearly 13 points to 85.7%. The two keywords still below 70% are "dispensary near me" (66.7%) and "cannabis store near me" (65.4%). These represent the geographic pockets north toward Eastham and Harwich where competitors still appear above Ember Gardens in the top 3. The September Cape Cod page rewrites are the direct lever for these two keywords.</div>
     </div>
   </div>
 
@@ -448,37 +713,67 @@
       <div class="next-item">
         <div class="next-num">1</div>
         <div>
-          <div class="next-text">Cape Cod location page rewrites: Brewster, Eastham, Harwich first, then all 16 towns</div>
-          <div class="next-who">Nearfront content team &nbsp;&middot;&nbsp; Directly targets the yellow-orange zones in the 10-mile grid above</div>
+          <div class="next-text">Continue authority link building: contextual backlinks, citations, and social profile stacks for the Orleans location</div>
+          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Ongoing through August</div>
         </div>
       </div>
       <div class="next-item">
         <div class="next-num">2</div>
         <div>
-          <div class="next-text">Boston pre-launch landing page: on-page SEO, title tags, FAQ, marketing opt-in form</div>
-          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Target: dispensary Boston, dispensary Newbury St, weed dispensary Back Bay</div>
+          <div class="next-text">Weekly Google Maps grid tracking: every Wednesday 12PM ET, 7&times;7 grid, 10-mile radius, 6 keywords</div>
+          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Automated via campaign</div>
         </div>
       </div>
       <div class="next-item">
         <div class="next-num">3</div>
         <div>
           <div class="next-text">Review automation via iMessage: connect Dutchie POS for automatic post-purchase review requests</div>
-          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Requires Dutchie API key (see below)</div>
-        </div>
-      </div>
-      <div class="next-item">
-        <div class="next-num">4</div>
-        <div>
-          <div class="next-text">Link building for Cape Cod location pages as content goes live</div>
-          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; August / September, links follow content</div>
+          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Requires Dutchie API key from Dan (see section 06 below)</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- 04b SEPTEMBER PLAN -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">05</span><span class="section-title">September Plan</span><div class="section-rule"></div></div>
+    <div class="next-list">
+      <div class="next-item">
+        <div class="next-num">1</div>
+        <div>
+          <div class="next-text">Cape Cod location page rewrites: Brewster, Eastham, and Harwich first, then all 16 towns</div>
+          <div class="next-who">Nearfront content team &nbsp;&middot;&nbsp; Targets the geographic gaps visible in the 10-mile grid above</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">2</div>
+        <div>
+          <div class="next-text">Boston pre-launch landing page: on-page SEO, title tags, FAQ section, marketing opt-in form</div>
+          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Target keywords: dispensary Boston, dispensary Newbury St, weed dispensary Back Bay</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">3</div>
+        <div>
+          <div class="next-text">Link building for the Cape Cod location pages as content goes live</div>
+          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Links follow content</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">4</div>
+        <div>
+          <div class="next-text">Next check-in call with Dan</div>
+          <div class="next-who">Dan + Guillermo &nbsp;&middot;&nbsp; September 8, 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 05
   <!-- 05 DUTCHIE -->
   <div class="section">
-    <div class="section-header"><span class="section-num">05</span><span class="section-title">One Thing Needed: Dutchie API Access</span><div class="section-rule"></div></div>
+    <div class="section-header"><span class="section-num">06</span><span class="section-title">One Thing Needed: Dutchie API Access</span><div class="section-rule"></div></div>
     <p class="section-sub">To activate iMessage review automation connected to your Dutchie POS, we need an API key</p>
     <div class="dutchie-box">
       <div class="dutchie-icon">&#128273;</div>
