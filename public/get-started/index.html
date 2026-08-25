@@ -112,6 +112,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "areaServed": ["US","GB","CA","AU"]
     }, { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearfront.com/" }, { "@type": "ListItem", "position": 2, "name": "Get Started", "item": "https://nearfront.com/get-started/" } ] } ] }
 </script>
+<style>
+  .fx-wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .fx-hero { padding: 72px 0 8px; text-align: center; }
+  .fx-hero h1 { font-family: Georgia, serif; font-size: clamp(30px,4.5vw,44px); color: var(--dark); line-height: 1.15; margin-top: 14px; }
+  .fx-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin: 16px auto 0; max-width: 560px; }
+  .fx-sub-sm { font-size: 15px; color: var(--muted); line-height: 1.65; margin: 10px 0 18px; }
+  .fx-funnel { padding: 36px 0 24px; }
+  .fx-steps { display: flex; gap: 10px; justify-content: center; list-style: none; padding: 0; margin: 0 0 26px; }
+  .fx-step { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .fx-step span { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); font-weight: 700; }
+  .fx-step.is-active { color: var(--dark); font-weight: 600; }
+  .fx-step.is-active span { background: var(--gold); border-color: var(--gold); color: #0f1f22; }
+  .fx-step.is-done span { background: #0f1f22; border-color: #0f1f22; color: #fff; }
+  .fx-panel { border: 1px solid var(--line); border-radius: 14px; padding: 28px; background: var(--white); box-shadow: 0 14px 40px rgba(15,31,34,0.06); margin: 0; }
+  .fx-legend { font-family: Georgia, serif; font-size: 22px; color: var(--dark); padding: 0; margin-bottom: 16px; }
+  .fx-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 560px) { .fx-row { grid-template-columns: 1fr; } }
+  .fx-picked { background: rgba(195,162,93,0.08); border: 1px solid var(--gold); border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px; }
+  .fx-edit { margin-left: 10px; color: var(--gold-dk); font-weight: 600; }
+  .fx-fineprint { font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 12px; }
+  .fx-skip { text-align: center; margin-top: 14px; font-size: 14px; }
+  .fx-skip a { color: var(--muted); text-decoration: underline; }
+  .fx-trust { border-top: 1px solid var(--line); margin-top: 28px; padding: 22px 0 34px; }
+  .fx-trust-row { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; font-size: 13px; color: var(--muted); max-width: 900px; }
+  .bk-embed { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--white); height: 490px; }
+  .bk-embed iframe { width: 100%; height: 670px; border: 0; display: block; margin-top: -180px; }
+  @media (max-width: 660px) { .bk-embed { height: 930px; } .bk-embed iframe { height: 1195px; margin-top: -220px; } }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -141,200 +169,189 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <main id="main">
-<div class="signup-wrap">
-  <div class="signup-inner">
 
-    <div class="signup-header">
-      <span class="section-tag">Get Started</span>
-      <h1>Pick your plan. <br>Start <em>ranking.</em></h1>
-      <p>Every plan starts with a free data audit. No commitment until you see exactly where you stand and what it takes to win your market.</p>
-    </div>
+<section class="fx-hero">
+  <div class="fx-wrap">
+    <span class="svc-kicker">Free data audit</span>
+    <h1>Your spot in the Map Pack starts here.</h1>
+    <p class="fx-sub">Dispensaries can't buy Google or Meta ads, so the Map Pack decides who gets the customer. Tell us which store is yours and we'll show you exactly where you stand. No credit card, no website access, no contract.</p>
+  </div>
+</section>
 
-    <div class="trust-row">
-      <div class="trust-item"><span class="trust-icon">✓</span> Free data audit included</div>
-      <div class="trust-item"><span class="trust-icon">✓</span> No long-term contract required</div>
-      <div class="trust-item"><span class="trust-icon">✓</span> Cannabis-retail fluent</div>
-      <div class="trust-item"><span class="trust-icon">✓</span> Revenue-first reporting</div>
-    </div>
+<section class="fx-funnel" id="request-audit">
+  <div class="fx-wrap">
+    <ol class="fx-steps" aria-label="Progress">
+      <li class="fx-step is-active" data-step-dot="1"><span>1</span> Your dispensary</li>
+      <li class="fx-step" data-step-dot="2"><span>2</span> Where to send it</li>
+      <li class="fx-step" data-step-dot="3"><span>3</span> Walk it through</li>
+    </ol>
 
-    <div class="pkg-grid">
+    <form class="fx-form" id="lead-form" action="/api/lead" method="post">
+      <input type="hidden" name="stage" value="funnel">
+      <input type="hidden" name="state_guide_url" id="fx-guide-url" value="">
+      <input type="hidden" name="industry" value="Cannabis &amp; Dispensaries">
 
-      <!-- Plan 1: Outcome SEO -->
-      <div class="pkg">
-        <div class="pkg-top">
-          <div class="pkg-label">Plan 1, Foundation</div>
-          <div class="pkg-title">Outcome SEO</div>
-          <div class="pkg-tagline">Local SEO, Google Maps, and AI search visibility, all tracked to revenue. The foundation every dispensary needs.</div>
-        </div>
-        <div class="pkg-body">
-          <p class="pkg-desc">For licensed cannabis dispensaries, single-location and multi-location, that need to own their Maps presence and organic rankings.</p>
-          <ul class="pkg-features">
-            <li>Google Maps SoLV optimization and tracking</li>
-            <li>Google Business Profile management</li>
-            <li>Google Search Console monitoring</li>
-            <li>Google Analytics 4 revenue attribution</li>
-            <li>Google AI Overviews, Gemini, ChatGPT, and Grok visibility</li>
-            <li>Apple Maps ranking</li>
-            <li>Link building and domain authority growth</li>
-            <li>Weekly Maps scan reports</li>
-            <li>Monthly business review (revenue, calls, directions)</li>
-            <li>Competitor movement monitoring</li>
-          </ul>
-          <a href="/book/" class="pkg-cta outline">Book a free audit →</a>
-        </div>
-      </div>
-
-      <!-- Plan 2: Full Stack -->
-      <div class="pkg featured">
-        <div class="pkg-popular">Most Popular</div>
-        <div class="pkg-top">
-          <div class="pkg-label">Plan 2, Full Stack</div>
-          <div class="pkg-title">Omni-Channel Growth</div>
-          <div class="pkg-tagline">SEO + paid search + programmatic + CRO. Everything connected to one revenue outcome.</div>
-        </div>
-        <div class="pkg-body">
-          <p class="pkg-desc">For brands ready to combine organic authority with paid amplification, Google Ads, YouTube, programmatic, and conversion optimization all tied to the same outcome.</p>
-          <ul class="pkg-features">
-            <li>Everything in Outcome SEO</li>
-            <li>Google Ads and YouTube campaign management</li>
-            <li>Programmatic advertising and commerce media</li>
-            <li>Omni-channel audience targeting</li>
-            <li>Conversion rate optimization</li>
-            <li>Ecommerce SEO (product and category pages)</li>
-            <li>POS-connected attribution (Jane, Dutchie, Treez)</li>
-            <li>Vendor coordination and performance auditing</li>
-            <li>Quarterly outcome chain review and strategy reset</li>
-            <li>Dedicated account oversight from senior team</li>
-          </ul>
-          <a href="/book/" class="pkg-cta gold">Get Ranked Free →</a>
-        </div>
-      </div>
-
-    </div>
-
-    <style>
-      .lead{max-width:760px;margin:0 auto 40px;background:var(--dark-2);border:1px solid var(--border);border-radius:12px;padding:36px}
-      .lead h2{font-size:24px;font-family:Georgia,serif;color:var(--white);margin-bottom:8px}
-      .lead p.lead-sub{font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:28px}
-      .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-      .lead-field{display:flex;flex-direction:column;gap:6px}
-      .lead-field.full{grid-column:1 / -1}
-      .lead-field label{font-size:12px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,0.75);text-transform:uppercase}
-      .lead-field .req{color:var(--gold)}
-      .lead-field input,.lead-field select,.lead-field textarea{background:var(--dark-3);border:1px solid var(--border);border-radius:6px;padding:12px 14px;color:var(--white);font-size:15px;font-family:inherit}
-      .lead-field input:focus,.lead-field select:focus,.lead-field textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
-      .lead-field textarea{min-height:96px;resize:vertical}
-      .lead-consent{grid-column:1 / -1;display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.5}
-      .lead-consent a{color:var(--gold);text-decoration:none}
-      .lead-consent a:hover{text-decoration:underline}
-      .lead-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-      .lead-submit{grid-column:1 / -1;background:var(--gold);color:var(--dark);border:none;border-radius:6px;padding:15px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s}
-      .lead-submit:hover{background:var(--gold-lt)}
-      @media (max-width:640px){ .lead-grid{grid-template-columns:1fr} .lead{padding:24px} }
-      .lead-status{border-radius:8px;padding:18px 20px;font-size:14.5px;line-height:1.7;margin-top:18px;color:#fff}
-      .lead-status[hidden]{display:none}
-      .lead-status-ok:target{display:block}
-      .lead-status a{color:var(--gold);text-decoration:underline}
-      .lead-status-ok{background:rgba(195,162,93,0.12);border:1px solid var(--gold)}
-      .lead-status-err{background:rgba(214,84,84,0.12);border:1px solid rgba(214,84,84,0.65)}
-      .lead-submit[disabled]{opacity:.6;cursor:default}
-    </style>
-    <section class="lead" aria-labelledby="lead-h" id="request-audit">
-      <h2 id="lead-h">Or request your free audit by message</h2>
-      <p class="lead-sub">Prefer not to book a call yet? Send the basics and we'll come back with a data audit and where your gaps are. No commitment.</p>
-      <!-- Posts to the Cloudflare Pages Function at /functions/api/lead.js (Resend delivery
-           to bravo@nearfront.com). Works without JS too: the function 303s back here with
-           ?sent=1, which the script below turns into the success panel. -->
-      <form class="lead-grid" id="lead-form" action="/api/lead" method="post">
+      <fieldset class="fx-panel" data-step="1">
+        <legend class="fx-legend">Claim your market before a competitor does</legend>
         <div class="lead-field">
-          <label for="lf-name">Full name <span class="req" aria-hidden="true">*</span></label>
-          <input id="lf-name" name="name" type="text" autocomplete="name" required>
+          <label for="fx-dispensary">Dispensary name <span class="req" aria-hidden="true">*</span> <small>(as listed on Google)</small></label>
+          <input id="fx-dispensary" name="dispensary" type="text" autocomplete="organization" required>
+        </div>
+        <div class="fx-row">
+          <div class="lead-field">
+            <label for="fx-city">City <span class="req" aria-hidden="true">*</span></label>
+            <input id="fx-city" name="city" type="text" autocomplete="address-level2" required>
+          </div>
+          <div class="lead-field">
+            <label for="fx-state">State <span class="req" aria-hidden="true">*</span></label>
+            <select id="fx-state" name="state" required>
+              <option value="" selected disabled>Select</option>
+            </select>
+          </div>
         </div>
         <div class="lead-field">
-          <label for="lf-email">Work email <span class="req" aria-hidden="true">*</span></label>
-          <input id="lf-email" name="email" type="email" autocomplete="email" required>
+          <label for="fx-website">Website <small>(optional)</small></label>
+          <input id="fx-website" name="website" type="url" autocomplete="url" placeholder="https://">
+        </div>
+        <button class="lead-submit fx-next" type="button" data-goto="2">Continue &rarr;</button>
+      </fieldset>
+
+      <fieldset class="fx-panel" data-step="2" hidden>
+        <legend class="fx-legend">Where can we send your audit?</legend>
+        <div class="fx-picked" id="fx-picked" hidden>
+          <strong id="fx-picked-name"></strong> <span id="fx-picked-loc"></span>
+          <a href="#request-audit" class="fx-edit" data-goto="1">edit</a>
+        </div>
+        <div class="fx-row">
+          <div class="lead-field">
+            <label for="fx-name">Your full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="fx-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="lead-field">
+            <label for="fx-email">Your email <span class="req" aria-hidden="true">*</span></label>
+            <input id="fx-email" name="email" type="email" autocomplete="email" required>
+          </div>
         </div>
         <div class="lead-field">
-          <label for="lf-company">Company <span class="req" aria-hidden="true">*</span></label>
-          <input id="lf-company" name="company" type="text" autocomplete="organization" required>
+          <label for="fx-phone">Mobile number <small>(optional, for reminders)</small></label>
+          <input id="fx-phone" name="phone" type="tel" autocomplete="tel">
         </div>
-        <div class="lead-field">
-          <label for="lf-website">Website</label>
-          <input id="lf-website" name="website" type="url" autocomplete="url" placeholder="https://">
+        <div class="lead-consent">
+          <input id="fx-sms" name="sms_consent" type="checkbox" value="yes">
+          <label for="fx-sms">I agree to receive text messages from Nearfront about my request. Message frequency varies; message and data rates may apply. Reply STOP to cancel.</label>
         </div>
-        <div class="lead-field">
-          <label for="lf-phone">Phone</label>
-          <input id="lf-phone" name="phone" type="tel" autocomplete="tel">
-        </div>
-        <div class="lead-field">
-          <label for="lf-industry">Primary industry <span class="req" aria-hidden="true">*</span></label>
-          <select id="lf-industry" name="industry" required>
-            <option value="" selected disabled>Select one</option>
-            <option>Cannabis &amp; Dispensaries</option>
-            <option>THC-A &amp; Hemp</option>
-            <option>Peptides &amp; Research</option>
-            <option>Alcohol &amp; Spirits</option>
-            <option>Other regulated</option>
-          </select>
-        </div>
-        <div class="lead-field full">
-          <label for="lf-msg">What do you want to improve?</label>
-          <textarea id="lf-msg" name="message" placeholder="Locations, markets, and the outcome you're after."></textarea>
+        <div class="lead-consent">
+          <input id="lf-consent" name="consent" type="checkbox" required>
+          <label for="lf-consent">I agree to be contacted about my request and have read the <a href="/privacy-policy/">Privacy Policy</a>. We'll also send the monthly ranking update; unsubscribe anytime.</label>
         </div>
         <div class="lead-hp" aria-hidden="true">
           <label for="lf-website2">Leave this field empty</label>
           <input id="lf-website2" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
         </div>
-        <div class="lead-consent">
-          <input id="lf-consent" name="consent" type="checkbox" required>
-          <label for="lf-consent">I agree to be contacted about my request and have read the <a href="/privacy-policy/">Privacy Policy</a>.</label>
-        </div>
-        <button class="lead-submit" type="submit">Request my free audit</button>
-      </form>
-      <div class="lead-status lead-status-ok" id="lead-ok" hidden tabindex="-1" role="status">
-        <strong>Request received.</strong> We'll come back with your data audit and where your gaps are. Want to talk sooner? <a href="/book/">Book a free call</a> or call <a href="tel:+17608292735">(760) 829-2735</a>.
-      </div>
-      <div class="lead-status lead-status-err" id="lead-fail" hidden role="alert">
-        Something went wrong sending your request. Please try again, or email us directly at <a href="mailto:bravo@nearfront.com">bravo@nearfront.com</a>.
-      </div>
-      <script>
-      (function(){
-        var form=document.getElementById('lead-form');
-        if(!form)return;
-        var ok=document.getElementById('lead-ok'),fail=document.getElementById('lead-fail');
-        function dl(ev,extra){
-          window.dataLayer=window.dataLayer||[];
-          var p={event:ev};
-          if(extra)for(var k in extra)p[k]=extra[k];
-          window.dataLayer.push(p);
-        }
-        function showOk(){form.hidden=true;fail.hidden=true;ok.hidden=false;if(ok.focus)ok.focus();}
-        if(/[?&]sent=1(&|$)/.test(location.search))showOk();
-        if(/[?&]error=1(&|$)/.test(location.search))fail.hidden=false;
-        form.addEventListener('submit',function(e){
-          e.preventDefault();
-          if(form._gotcha&&form._gotcha.value){showOk();return;}
-          dl('form_submit_attempt',{lead_source:'contact_form'});
-          var btn=form.querySelector('.lead-submit');
-          btn.disabled=true;btn.textContent='Sending...';
-          fetch('/api/lead',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-            .then(function(r){if(!r.ok)throw new Error('http_'+r.status);return r.json();})
-            .then(function(){dl('form_submit_success',{lead_source:'contact_form'});showOk();})
-            .catch(function(err){
-              dl('form_submit_error',{error_code:String((err&&err.message)||'network')});
-              fail.hidden=false;
-              btn.disabled=false;btn.textContent='Request my free audit';
-            });
-        });
-      })();
-      </script>
-    </section>
+        <button class="lead-submit" type="submit">Get my free audit &rarr;</button>
+        <p class="fx-fineprint">No credit card, website access, or contract needed.</p>
+      </fieldset>
+    </form>
 
-    <p class="login-note">Already a client? <a href="https://app.nearfront.com/login">Log in to your dashboard →</a></p>
+    <div class="fx-panel" data-step="3" hidden id="fx-book">
+      <h2 class="fx-legend">Your audit is queued. Want it walked through live?</h2>
+      <p class="fx-sub-sm">Grab twenty minutes with Guillermo and get your numbers explained, not just emailed. Or skip it and watch your inbox.</p>
+      <div class="bk-embed">
+        <iframe title="Book your audit walkthrough"
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Z8VHXVxf5dA6OpXSb1H2N1wZw2Mce1sEWRnNstAWdFDIKz-F_nGqrzwKmv85-a_isAkAAsLot?gv=true"
+          loading="lazy"></iframe>
+      </div>
+      <p class="fx-skip"><a href="#" id="fx-skip">Skip for now, email me the highlights instead</a></p>
+      <div class="lead-status lead-status-ok" id="fx-done" hidden tabindex="-1" role="status">
+        <strong>All set.</strong> Your audit request is in. Watch your inbox for a note from Guillermo, and call <a href="tel:+17608292735">(760) 829-2735</a> any time.
+      </div>
+    </div>
 
+    <div class="lead-status lead-status-ok" id="lead-ok" hidden tabindex="-1" role="status">
+      <strong>Request received.</strong> We'll come back with your data audit. Want to talk sooner? <a href="/book/">Book a free call</a> or call <a href="tel:+17608292735">(760) 829-2735</a>.
+    </div>
+    <div class="lead-status lead-status-err" id="lead-fail" hidden role="alert">
+      Something went wrong sending your request. Please try again, or email us directly at <a href="mailto:bravo@nearfront.com">bravo@nearfront.com</a>.
+    </div>
   </div>
-</div>
+</section>
 
+<section class="fx-trust">
+  <div class="fx-wrap fx-trust-row">
+    <div>Every stat from a state agency's file</div>
+    <div>We publish our own rankings monthly</div>
+    <div>Founder-led since 2007</div>
+    <div>San Diego, California</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var GUIDES={'CA':'/cannabis-seo-california/','WA':'/cannabis-seo-washington/','MA':'/cannabis-seo-massachusetts/','CT':'/cannabis-seo-connecticut/','NV':'/cannabis-seo-nevada/','OR':'/cannabis-seo-oregon/','MD':'/cannabis-seo-maryland/','NY':'/cannabis-seo-new-york/','MI':'/cannabis-seo-michigan/','AZ':'/cannabis-seo-arizona/','MO':'/cannabis-seo-missouri/','MN':'/cannabis-seo-minnesota/','IL':'/cannabis-seo-illinois/','CO':'/cannabis-seo-colorado/','FL':'/cannabis-seo-florida/'};
+  var STATES=[['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']];
+  var sel=document.getElementById('fx-state');
+  STATES.forEach(function(s){var o=document.createElement('option');o.value=s[0];o.textContent=s[1];sel.appendChild(o);});
+
+  var form=document.getElementById('lead-form');
+  function dl(ev,extra){window.dataLayer=window.dataLayer||[];var p={event:ev};if(extra)for(var k in extra)p[k]=extra[k];window.dataLayer.push(p);}
+  function panels(){return document.querySelectorAll('[data-step]');}
+  function show(n){
+    panels().forEach(function(p){var is=p.getAttribute('data-step')===String(n);if(p.tagName==='FIELDSET'||p.id==='fx-book'){p.hidden=!is;}});
+    document.querySelectorAll('[data-step-dot]').forEach(function(d){d.classList.toggle('is-active',d.getAttribute('data-step-dot')===String(n));d.classList.toggle('is-done',Number(d.getAttribute('data-step-dot'))<n);});
+    dl('funnel_step',{funnel_step:n});
+    window.scrollTo({top:document.getElementById('request-audit').offsetTop-20,behavior:'smooth'});
+  }
+  document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(e){
+    e.preventDefault();
+    var to=Number(b.getAttribute('data-goto'));
+    if(to===2){
+      var f1=['fx-dispensary','fx-city','fx-state'].map(function(id){return document.getElementById(id);});
+      for(var i=0;i<f1.length;i++){if(!f1[i].reportValidity())return;}
+      document.getElementById('fx-picked').hidden=false;
+      document.getElementById('fx-picked-name').textContent=document.getElementById('fx-dispensary').value;
+      document.getElementById('fx-picked-loc').textContent=' - '+document.getElementById('fx-city').value+', '+document.getElementById('fx-state').value;
+      var st=document.getElementById('fx-state').value;
+      document.getElementById('fx-guide-url').value=GUIDES[st]?('https://nearfront.com'+GUIDES[st]):'https://nearfront.com/markets/';
+    }
+    show(to);
+  });});
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    dl('form_submit_attempt');
+    var btn=form.querySelector('[type=submit]');btn.disabled=true;btn.textContent='Sending...';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'accept':'application/json'}})
+      .then(function(r){return r.json().catch(function(){return {ok:r.ok};});})
+      .then(function(j){
+        if(j&&j.ok){dl('form_submit_success');show(3);}
+        else{throw new Error('bad');}
+      })
+      .catch(function(){dl('form_submit_error');document.getElementById('lead-fail').hidden=false;btn.disabled=false;btn.textContent='Get my free audit \u2192';});
+  });
+
+  document.getElementById('fx-skip').addEventListener('click',function(e){
+    e.preventDefault();
+    document.querySelector('#fx-book .bk-embed').hidden=true;
+    document.getElementById('fx-skip').hidden=true;
+    var d=document.getElementById('fx-done');d.hidden=false;d.focus();
+    dl('funnel_skip_booking');
+  });
+
+  /* Booking engagement events, same contract as /book/ */
+  var seen=false;
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting&&!seen&&!document.getElementById('fx-book').hidden){seen=true;dl('booking_widget_view',{booking_provider:'google_calendar'});}});}):null;
+  if(io)io.observe(document.querySelector('#fx-book .bk-embed'));
+  window.addEventListener('blur',function(){
+    if(document.activeElement&&document.activeElement.tagName==='IFRAME'&&!document.getElementById('fx-book').hidden){
+      dl('booking_engaged',{booking_provider:'google_calendar'});
+    }
+  });
+
+  /* No-JS 303 fallback flags (legacy) */
+  if(location.search.indexOf('sent=1')!==-1){var ok=document.getElementById('lead-ok');ok.hidden=false;}
+  if(location.search.indexOf('error=1')!==-1){document.getElementById('lead-fail').hidden=false;}
+})();
+</script>
 </main>
 
 <footer class="site-footer">
