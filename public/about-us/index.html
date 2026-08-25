@@ -64,7 +64,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* STORY */
   .story{background:var(--off);padding:100px 40px}
-  .story-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .story-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
+  /* Prose cannot stretch, so the column fills the row and its closing link
+     anchors to the bottom instead of leaving dead space under the text. */
+  .story-text{display:flex;flex-direction:column}
+  .story-more{margin-top:auto;padding-top:20px}
   .story-text h2{font-size:clamp(28px,3vw,42px);font-family:Georgia,serif;font-weight:700;color:var(--dark);line-height:1.15;margin-bottom:24px}
   .story-text p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:20px}
   .story-text p:last-child{margin-bottom:0}
@@ -236,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Our journey started in 2007, long before local SEO was mainstream. We built one of the first performance-driven SEO agencies, then launched Foottraffik, the first cannabis-focused SEO company, scaling it across dozens of markets before exiting in 2021.</p>
       <p>One thing became clear through all of it: businesses in regulated industries needed a system built specifically for them. One that understood compliance restrictions, platform suppression, and how to drive revenue anyway.</p>
       <p>Nearfront was built to solve that problem. We operate out of downtown San Diego and serve clients across the US, UK, Canada, and Australia, all with the same outcome-first methodology we've refined over nearly two decades.</p>
-      <p style="margin-top:20px"><a href="/our-story/" style="color:var(--gold-dk);font-weight:700;text-decoration:none">Read our full story →</a></p>
+      <p class="story-more"><a href="/our-story/" style="color:var(--gold-dk);font-weight:700;text-decoration:none">Read our full story →</a></p>
     </div>
     <div class="fade-up">
       <span class="section-tag">Timeline</span>
