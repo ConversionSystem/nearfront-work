@@ -50,6 +50,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }, { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearfront.com/" }, { "@type": "ListItem", "position": 2, "name": "Get Started", "item": "https://nearfront.com/get-started/" } ] } ] }
 </script>
 <style>
+  /* This block loads after site.css, so the page background is set here:
+     site.css's body rule would otherwise win and leave a white page
+     behind a white card. */
+  body { background: var(--off); }
   /* Lead funnel: dark hero band, light card, one action per step. */
   .fx-wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   .fx-hero { background: var(--dark-3); padding: 76px 0 96px; text-align: center; position: relative; overflow: hidden; }
