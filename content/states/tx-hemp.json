@@ -144,7 +144,7 @@
     "THC-A / THCA specifically: the DSHS Consumable Hemp Program page does NOT use the terms THCA, THC-A, tetrahydrocannabinolic acid, or 'total THC' anywhere. It addresses delta-8 and delta-9 by name. Do NOT publish any claim about whether THC-A may be sold in Texas. State what DSHS states, cite it, and refer operators to DSHS and their own counsel.",
     "Post-scheduling registrant counts: the current registrant file predates the 31 July 2026 delta-8 scheduling. Re-pull after the next DSHS list to measure attrition.",
     "Sales volume: Texas publishes no hemp sales figures comparable to state cannabis programs.",
-    "Hemp expansion states probed 2026-08-24: TN moved HDCP licensing to TABC (mockingbird.abc.tn.gov application portal, no published licensee list; note: gas stations ineligible for TN hemp licenses effective 2026-01-01 per TABC banner, the inverse of Texas's structure). GA consumable-hemp pages 404 at checked paths; NC 404; FL FDACS hemp pages render via JS with no visible list. No state ships without a parseable primary file."
+    "Hemp expansion states, re-hunted 2026-08-25: FLORIDA is now BUILT (see fl-hemp.json). GEORGIA remains blocked, its hemp licensing moved to a login-walled portal at gaag.micorp.io/hemp and agr.georgia.gov publishes only application-process PDFs, no licensee list. TENNESSEE remains portal-only; the one xlsx on its hemp page is an unrelated agriculture directory. NORTH CAROLINA's ncagr.gov hemp page now 404s; find its replacement before re-probing."
   ],
   "cities": [],
   "faqs": []
