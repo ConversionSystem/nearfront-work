@@ -123,7 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* MEASUREMENT STACK */
   .stack { background: var(--dark); padding: 100px 40px; }
-  .stack-inner { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .stack-inner { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: stretch; }
   .stack-heading { margin-bottom: 8px; }
   .stack-subhead { font-size: 14px; color: rgba(255,255,255,0.62); margin-top: 12px; margin-bottom: 32px; line-height: 1.6; max-width: 480px; }
   .stack-sources { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -136,7 +136,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .stack-ai-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin: 24px 0 12px; }
   .stack-quote { border-left: 3px solid var(--gold); padding: 24px 28px; background: var(--dark-2); margin-bottom: 28px; }
   .stack-quote p { font-size: 15px; font-family: Georgia,serif; font-style: italic; color: var(--white); line-height: 1.65; }
-  .outcome-chain-mini { display: flex; flex-direction: column; gap: 8px; }
+  /* The chain fills whatever height the source grid opposite it takes, so the
+     column never ends early and leaves dead space. The connector line runs
+     behind the rows and shows through the gaps. */
+  .stack-right { display: flex; flex-direction: column; }
+  .outcome-chain-mini { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; position: relative; }
+  .outcome-chain-mini::before { content: ''; position: absolute; left: 27px; top: 18px; bottom: 18px; width: 1px; background: linear-gradient(rgba(195,162,93,0.18), rgba(195,162,93,0.55)); }
+  .ocm-row { position: relative; }
   .ocm-row { display: flex; align-items: center; gap: 14px; padding: 13px 18px; background: var(--dark-2); border: 1px solid var(--border); border-radius: 4px; }
   .ocm-arrow { color: var(--gold); font-size: 14px; flex-shrink: 0; }
   .ocm-text { font-size: 13px; color: rgba(255,255,255,0.8); }
