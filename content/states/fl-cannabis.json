@@ -53,15 +53,42 @@
       "as_of": "2026-08-20",
       "retrieved": "2026-08-25",
       "verify": "439,096,212 mg THC plus 1,049 mg CBD of low-THC cannabis, plus 152,157.424 ounces of marijuana in a form for smoking, in that single week. Report as dispensed volumes, never as sales dollars: OMMU publishes no revenue figure."
+    },
+    {
+      "id": "fl-authorized-locations",
+      "value": 777,
+      "unit": "dispensing locations",
+      "label": "Authorized dispensing locations on the state's MMTC address list",
+      "source": "Florida Department of Health, Office of Medical Marijuana Use, MMTC page (operator contact and dispensing location addresses)",
+      "source_url": "https://knowthefactsmmj.com/mmtc/",
+      "as_of": "2026-08-25",
+      "retrieved": "2026-08-25",
+      "verify": "777 address rows across 23 operators, 170 cities and 48 counties. This is ONE MORE than the weekly update's 776 and the difference is fully explained: Wildflower Cannabis holds one authorized location (Jacksonville Beach) that dispensed nothing in the week of 14-20 August, so it shows 0 in the weekly dispensations table. Every other operator count matches the weekly table exactly once brand names are aligned (Sunnyside* = Sunnyside 31, GTI (Rise Dispensaries) = GTI 24, One Plant = Indiva 7, Eden Florida, LLC = Eden 4). Use 777 for authorized locations and 776 for locations that dispensed in that week, and never present them as the same measure."
+    },
+    {
+      "id": "fl-city-counts",
+      "value": 43,
+      "unit": "dispensing locations",
+      "label": "Dispensing locations in Orlando, the most of any Florida city",
+      "source": "Same OMMU MMTC address list, city field",
+      "source_url": "https://knowthefactsmmj.com/mmtc/",
+      "as_of": "2026-08-25",
+      "retrieved": "2026-08-25",
+      "verify": "City ranking: Orlando 43, Tampa 36, Jacksonville 35, Tallahassee 21, West Palm Beach 19, Miami 19, Pensacola 19, St. Petersburg 18, Ocala 15, Gainesville 14. County ranking: Palm Beach 56, Pinellas 54, Hillsborough 52, Orange 51, Lee 43, Duval 40, Miami-Dade 39, Broward 37. Saved as fl-locations.csv."
     }
   ],
   "gaps": [
     "Sales revenue: OMMU publishes dispensed volumes (mg THC and ounces), not dollars. Do not state a Florida medical market size in dollars from this source.",
-    "City-level counts: the weekly update lists operators and location totals but no city breakdown. MMTC addresses are published at knowthefactsmmj.com/MMTC as a separate page; parse that before attempting any Florida city page.",
     "Qualified physician count: the weekly update links a physician list rather than printing a total. Fetch the list page if the number is needed.",
     "Adult use: Florida remains medical only at retrieval. Do not describe it as adult-use or predict a ballot outcome.",
-    "This file covers the OMMU cannabis programme only. Florida hemp is a separate FDACS programme with its own file (fl-hemp.json); never merge the two sets of numbers."
+    "This file covers the OMMU cannabis programme only. Florida hemp is a separate FDACS programme with its own file (fl-hemp.json); never merge the two sets of numbers.",
+    "City counts come from the live MMTC address list and carry that day's date, while volumes come from the dated weekly PDF. The two have different currencies; never pair a city count with a weekly volume as though they describe the same moment."
   ],
-  "cities": [],
+  "cities": [
+    "Orlando",
+    "Miami",
+    "Tampa",
+    "Jacksonville"
+  ],
   "faqs": []
 }
