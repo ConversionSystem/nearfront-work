@@ -9,14 +9,14 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --forest: #1c3439; --forest-deep: #111f22;
+    --forest: #1c3439; --forest-deep: #111f22; --ink: #111a1c;
     --gold: #c3a25d; --gold-lt: #d4b878; --gold-dim: rgba(195,162,93,.15);
     --white: #ffffff; --off: #f5f2ed; --gray: #8a9199; --gray-lt: #e8e4dd;
     --green: #1a6b3a; --green-bg: #eef7f0; --red: #c0392b; --red-bg: #fef0ef;
     --radius: 10px; --shadow: 0 2px 16px rgba(28,52,57,.08);
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', system-ui, sans-serif; background: var(--off); color: #111a1c; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--off); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
   /* NAV */
   nav { position: sticky; top: 0; z-index: 100; background: var(--forest-deep); border-bottom: 1px solid rgba(195,162,93,.2); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
