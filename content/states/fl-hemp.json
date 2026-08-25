@@ -1,0 +1,98 @@
+{
+  "state": "Florida",
+  "abbr": "FL",
+  "slug": "thca-seo-florida",
+  "tier": "hemp",
+  "updated": "2026-08-25",
+  "status": "Hemp and hemp extract for human consumption are regulated by FDACS under Rule 5K-4.034, Florida Administrative Code. Cultivation is licensed by the FDACS Division of Plant Industry. This file records what state documents say; it never asserts the legal status of THC-A or any specific cannabinoid.",
+  "facts": [
+    {
+      "id": "fl-cultivation-licenses",
+      "value": 431,
+      "unit": "licenses",
+      "label": "Active hemp cultivation licenses on the state's published report",
+      "source": "FDACS Division of Plant Industry, Active License Report - HEMP (the report linked from the Hemp Cultivation Licensing page; the file's own title block is dated 4/24/2025)",
+      "source_url": "https://www.fdacs.gov/Divisions-Offices/Plant-Industry/Hemp-Cultivation-Licensing",
+      "file_url": "https://www.fdacs.gov/content/download/92628/file/Active-License-Reports-HEMP-4-24-2025.pdf",
+      "as_of": "2025-04-24",
+      "retrieved": "2026-08-25",
+      "verify": "8-page PDF, hex-CID fonts; decode with the embedded ToUnicode CMap (equivalently glyph id + 29) and reconstruct rows from Td/Tm coordinates. 435 text rows, 431 unique license numbers (format YY_NNNNNN). This is the only active-license report FDACS publishes; the download id 92628 serves it regardless of the filename, so the 4/24/2025 date in the filename is the file's own currency."
+    },
+    {
+      "id": "fl-cultivation-counties",
+      "value": 57,
+      "unit": "counties",
+      "label": "Florida counties with at least one licensed hemp cultivator",
+      "source": "Same FDACS Active License Report - HEMP",
+      "source_url": "https://www.fdacs.gov/Divisions-Offices/Plant-Industry/Hemp-Cultivation-Licensing",
+      "file_url": "https://www.fdacs.gov/content/download/92628/file/Active-License-Reports-HEMP-4-24-2025.pdf",
+      "as_of": "2025-04-24",
+      "retrieved": "2026-08-25",
+      "verify": "357 of the 435 rows carry a county string matching Florida's official county list; the other 78 wrap across PDF lines and lose the field. 57 distinct counties appear among the parsed rows, so 57 is a floor, never a total: unparsed rows can only add counties. Leaders among parsed rows: Lake 31, Suwannee 21, Alachua 17, Hillsborough 16, Orange 15. Always state these as 'among rows that parsed', or use the floor framing."
+    },
+    {
+      "id": "fl-safe-summer-total",
+      "value": 155932,
+      "unit": "packages",
+      "label": "Hemp packages removed in five weeks of Operation Safe Summer",
+      "source": "FDACS press release, 'Commissioner Wilton Simpson Provides Update on Operation Safe Summer: Over 155,000 Illegal Hemp Packages Removed to Date', 28 July 2025",
+      "source_url": "https://www.fdacs.gov/News-Events/Press-Releases/2025-Press-Releases/Commissioner-Wilton-Simpson-Provides-Update-on-Operation-Safe-Summer-Over-155-000-Illegal-Hemp-Packages-Removed-to-Date",
+      "as_of": "2025-07-28",
+      "retrieved": "2026-08-25",
+      "verify": "Release lists weekly totals: week 1 38,861, week 2 40,796, week 3 6,024, week 4 48,195, week 5 22,056, 'Total to date: Over 155,932'. The removals are for violations of Florida's child-protection standards for packaging, labeling and marketing. Report as packages removed for packaging and labeling violations, never as a product-safety or health finding."
+    },
+    {
+      "id": "fl-cumulative-removals",
+      "value": 800000,
+      "unit": "packages",
+      "label": "Hemp packages removed for violations since 1 July 2023",
+      "source": "Same FDACS release, 28 July 2025",
+      "source_url": "https://www.fdacs.gov/News-Events/Press-Releases/2025-Press-Releases/Commissioner-Wilton-Simpson-Provides-Update-on-Operation-Safe-Summer-Over-155-000-Illegal-Hemp-Packages-Removed-to-Date",
+      "as_of": "2025-07-28",
+      "retrieved": "2026-08-25",
+      "verify": "'Since July 1, 2023, the department has removed over 800,000 packages of hemp products in violation of child-protection' standards. Use 'over 800,000' exactly; the release gives no precise figure."
+    },
+    {
+      "id": "fl-rule-5k4034",
+      "value": "2025-06-16",
+      "unit": "date",
+      "label": "Enforcement date for the amended hemp rule",
+      "source": "FDACS press release, 'Commissioner Wilton Simpson Issues Reminder to Hemp Food Establishments on Upcoming Enforcement of Amended Rule', 2 June 2025",
+      "source_url": "https://www.fdacs.gov/News-Events/Press-Releases/2025-Press-Releases/Commissioner-Wilton-Simpson-Issues-Reminder-to-Hemp-Food-Establishments-on-Upcoming-Enforcement-of-Amended-Rule",
+      "as_of": "2025-06-02",
+      "retrieved": "2026-08-25",
+      "verify": "Rule 5K-4.034, Florida Administrative Code, governing hemp and hemp extract intended for human consumption. Amendments took effect 12 March 2025; FDACS announced 13 March 2025 that enforcement of the new provisions begins 16 June 2025. Named requirements include child-resistant packaging per ASTM D 3475-20, a prohibition on specified color additives, common household measurements for serving sizes, and a scannable barcode or QR code linking to the certificate of analysis, with the COA stating laboratory information and total delta-9 THC concentration."
+    },
+    {
+      "id": "fl-week1-counties",
+      "value": 20,
+      "unit": "counties",
+      "label": "Counties inspected in the first week of Operation Safe Summer",
+      "source": "FDACS press release, 'Nearly 11,000 Hemp Products Removed ... in First Week of Operation', 24 June 2025",
+      "source_url": "https://www.fdacs.gov/News-Events/Press-Releases/2025-Press-Releases/Commissioner-Wilton-Simpson-Announces-Nearly-11-000-Hemp-Products-Removed-for-Violations-of-Child-Protection-Standards-in-First-Week-of-Operation",
+      "as_of": "2025-06-24",
+      "retrieved": "2026-08-25",
+      "verify": "'inspections of hemp retailers and manufacturers in 20 Florida counties and removed nearly 11,000 packages'. The 11,000 is week 1; the same operation's week-1 figure appears as 38,861 in the 28 July release, which counts packages rather than products. Do not add the two: they are different units in different releases. Prefer the July release's package series."
+    },
+    {
+      "id": "fl-stop-sale-2023",
+      "value": 215154,
+      "unit": "products",
+      "label": "Hemp products placed under Stop Sale Orders from one 2023 inspection",
+      "source": "FDACS press release, 'Historic Enforcement Actions Against Hemp Companies for Violations of Florida Law', 11 July 2024",
+      "source_url": "https://www.fdacs.gov/News-Events/Press-Releases/2024-Press-Releases/Commissioner-Wilton-Simpson-Announces-Historic-Enforcement-Actions-Against-Hemp-Companies-for-Violations-of-Florida-Law",
+      "as_of": "2024-07-11",
+      "retrieved": "2026-08-25",
+      "verify": "Stop Sale Orders issued for 215,154 hemp products following an inspection on 31 October 2023. The release also describes a January 2024 reinspection finding relocated product. Name the enforcement action and its date; do not characterise any company beyond what the release states."
+    }
+  ],
+  "gaps": [
+    "Count of licensed hemp FOOD establishments (the retail-facing permit under Rule 5K-4.034): FDACS publishes no list. The Hemp-Food-Establishment-Permit page 404s and the hemp program landing page is a soft 404 that returns HTTP 200 with 'page cannot be found' body text. Do not state a Florida hemp retailer count; the Texas figure has no Florida equivalent.",
+    "Florida hemp retail sales or market size: not published by any state agency found. Do not cite one.",
+    "Legal status of THC-A or any specific cannabinoid in Florida: not asserted anywhere on the page. FDACS documents describe packaging, labeling and COA requirements; they are not a statement of what may be sold. Any legality question goes to counsel.",
+    "City-level Florida hemp data: none published. County is the finest geography in the cultivation report, and 78 of 435 rows lose even that to PDF line wrap.",
+    "Newer enforcement totals: no 2026 hemp press release appears in the FDACS sitemaps as of 2026-08-25, so the 28 July 2025 update is the latest published total. Re-check before any claim about 'current' enforcement volume."
+  ],
+  "cities": [],
+  "faqs": []
+}

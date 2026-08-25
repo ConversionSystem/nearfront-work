@@ -290,6 +290,14 @@ TIER_C = re.compile(r"\b(clinically proven|fda[- ]approved|guaranteed results|10
 # condition term, so "treat chronic pain as needed" still fires.
 TREAT_AS = re.compile(r"\btreat(?:s|ed|ing)?\b(?:\s+\S+){0,10}?\s+\bas\b", re.I)
 
+# "intended for human consumption" is the scope language of state hemp food
+# rules (Florida 5K-4.034 and its equivalents), so a page that quotes the rule
+# it must comply with trips TIER_C on the phrase "human consumption". Stripped
+# before the TIER_C probe on hemp and cannabis pages only. It is NEVER stripped
+# under /peptides/, where research-use framing is the whole point and any
+# "for human consumption" wording must still fire.
+REG_SCOPE = re.compile(r"\bintended for human consumption\b", re.I)
+
 NEGATED = re.compile(r"\b(no|not|never|without|free of|avoids?|cannot|can't|we do not|"
                      r"is not|research[- ]use|research use only|compliance|compliant|"
                      r"disclaim\w*|prohibit\w*|ban(?:ned|s)?|restrict\w*)\b", re.I)
@@ -307,7 +315,9 @@ def health_findings(doc, rel, url):
         for sentence in re.split(r"(?<=[.!?])\s+", chunk):
             if NEGATED.search(sentence):
                 continue
-            b, c = TIER_B.search(sentence), TIER_C.search(sentence)
+            c_probe = (sentence if url.startswith("/peptides/")
+                       else REG_SCOPE.sub(" ", sentence))
+            b, c = TIER_B.search(sentence), TIER_C.search(c_probe)
             # Only strip the rhetorical 'treat as' when no condition is named.
             probe = sentence if b else TREAT_AS.sub(" ", sentence)
             a = TIER_A.search(probe)

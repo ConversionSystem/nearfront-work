@@ -109,7 +109,10 @@
   "gaps": [
     "City-level dispensary counts: the CCB file records county only. Las Vegas, Henderson, North Las Vegas and Paradise cannot be separated from it. A Las Vegas city page needs a different source.",
     "Visitor volume: the tourism argument for this market is real but no visitor figure is sourced here. Do not publish one without an LVCVA citation.",
-    "Tax rate: Nevada levies a wholesale and a retail excise tax. Not yet sourced to a Department of Taxation page. Do not publish a rate without one."
+    "Tax rate: Nevada levies a wholesale and a retail excise tax. Not yet sourced to a Department of Taxation page. Do not publish a rate without one.",
+    "Las Vegas city page: still blocked as of 2026-08-24 (second full hunt). CCB Cannabis-Establishment-List-08.01.26.xlsx is county-only (County column = CLARK; sheets ACTIVE/CONDITIONAL/SURRENDERED-REVOKED, no address or city field). City of Las Vegas ArcGIS layers DO carry city-proper counts (Cannabis_Establishments/FeatureServer/98: 46 records, 20 Retail Cannabis Store, 11 Medical Cannabis Dispensary, 43 active) but the layer's lastEditDate is 2023-05-08 and the live Business_Licenses_View layer stopped updating 2023-12-20, so both are too stale to publish.",
+    "Nevada county-level or city-level cannabis SALES: not published. tax.nv.gov marijuana-statistics pages now resolve to a generic page with no reports, and ccb.nv.gov publishes no sales file. Do not cite Nevada sales figures.",
+    "If the City of Las Vegas refreshes its cannabis ArcGIS layer (check editingInfo.lastEditDate on Cannabis_Establishments/FeatureServer/98), a Las Vegas page becomes buildable: the honest angle is that the Strip is unincorporated Clark County, not the City of Las Vegas, so city-proper counts and metro counts differ by design."
   ],
   "cities": [],
   "faqs": []
