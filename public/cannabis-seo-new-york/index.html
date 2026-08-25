@@ -39,6 +39,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .geo-stat .s a { color: var(--gold-dk); }
   .geo-answer { border-left: 3px solid var(--gold); background: rgba(195,162,93,0.07); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 26px 0; }
   .geo-answer strong { color: var(--dark); }
+  /* The same block appears inside the dark band on these pages, where
+     --dark on --dark rendered the lead-in invisible. */
+  .svc-band .geo-answer strong { color: var(--white); }
   .geo-answer p { font-size: 15px; color: var(--text); line-height: 1.75; margin: 0; }
   .geo-boroughs { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 12px; margin: 24px 0 8px; }
   .geo-bor { border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; background: var(--white); }

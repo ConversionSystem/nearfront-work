@@ -43,6 +43,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .geo-answer { border-left: 3px solid var(--gold); background: rgba(195,162,93,0.07); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 26px 0; }
   .geo-answer p { font-size: 15px; color: var(--text); line-height: 1.75; margin: 0; }
   .geo-answer strong { color: var(--dark); }
+  /* The same block appears inside the dark band on these pages, where
+     --dark on --dark rendered the lead-in invisible. */
+  .svc-band .geo-answer strong { color: var(--white); }
 </style>
 <script type="application/ld+json">
 {
