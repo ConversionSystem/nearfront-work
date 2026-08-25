@@ -14,6 +14,9 @@
     --gold: #c3a25d; --gold-dk: #6b5730; --gold-pale: #f6f1e6; --gold-wash: #f2ece0;
     --off: #f5f2ed; --off-dk: #edeae3; --gray: #8a9199; --gray-lt: #e8e4dd; --gray-dk: #4a5257;
     --green: #1a6b3a; --green-bg: #eef7f0; --red: #c0392b; --red-bg: #fef0ef;
+    /* Channel triplets, so a translucent tint tracks its solid token
+       instead of drifting when that token changes. */
+    --gold-rgb: 195, 162, 93; --gray-lt-rgb: 232, 228, 221; --off-rgb: 245, 242, 237;
   }
 
   /* Inter is proportional, so the figures that used to sit in a mono
@@ -49,8 +52,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(195,162,93,0.25) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(195,162,93,0.12) 0%, transparent 60%);
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(var(--gold-rgb), 0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(var(--gold-rgb), 0.12) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -77,7 +80,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gray-lt);
-    border: 1px solid rgba(232,228,221,0.35);
+    border: 1px solid rgba(var(--gray-lt-rgb), 0.35);
     padding: 6px 14px;
     border-radius: 2px;
   }
@@ -118,7 +121,7 @@
     font-size: clamp(20px, 2.5vw, 32px);
     font-weight: 400;
     font-style: italic;
-    color: rgba(245,242,237,0.55);
+    color: rgba(var(--off-rgb), 0.55);
     margin-bottom: 56px;
   }
 
@@ -157,19 +160,19 @@
     position: relative;
     z-index: 1;
     padding-top: 32px;
-    border-top: 1px solid rgba(232,228,221,0.2);
+    border-top: 1px solid rgba(var(--gray-lt-rgb), 0.2);
   }
 
   .cover-client {
     font-size: 13px;
-    color: rgba(245,242,237,0.5);
+    color: rgba(var(--off-rgb), 0.5);
     line-height: 1.5;
   }
 
   .cover-date {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 12px;
-    color: rgba(245,242,237,0.4);
+    color: rgba(var(--off-rgb), 0.4);
     text-align: right;
   }
 
@@ -536,7 +539,7 @@
 
   .footer-note {
     font-size: 12px;
-    color: rgba(232,228,221,0.5);
+    color: rgba(var(--gray-lt-rgb), 0.5);
     max-width: 400px;
     text-align: right;
     line-height: 1.6;
