@@ -82,6 +82,28 @@
       "as_of": "2026-08-24",
       "retrieved": "2026-08-25",
       "verify": "254 records, layer lastEditDate 2026-08-24. By license name: Marijuana Store 247, Marijuana Hospitality 7. By type: Retail 166, Medical 81, Mobile Hospitality 3, Hospitality with Sales 3, Hospitality 1. By status: License Issued - Active 250, Awaiting Customer Inspections 3, Delinquent 1. This is a city licence count and is not comparable to a state MED store count."
+    },
+    {
+      "id": "den-share-decline",
+      "value": 23.9,
+      "unit": "percent",
+      "label": "Denver County's share of Colorado sales in 2025, down from 47.7% in 2014",
+      "source": "Colorado Department of Revenue, Marijuana Sales by County (j7a3-jgd3), Denver rows and Total rows summed by calendar year within the same dataset",
+      "source_url": "https://data.colorado.gov/resource/j7a3-jgd3.json",
+      "as_of": "2026-05-31",
+      "retrieved": "2026-08-25",
+      "verify": "Share by year: 2014 47.7, 2015 40.9, 2016 38.4, 2017 38.3, 2018 34.7, 2019 33.2, 2020 32.4, 2021 30.6, 2022 26.9, 2023 26.1, 2024 25.5, 2025 23.9, 2026 partial 23.5. Twelve consecutive annual declines. Both numerator and denominator come from the same dataset, so the share is internally consistent; do not compute it against the separate statewide revenue dataset, which has a different latest month."
+    },
+    {
+      "id": "den-sales-decline",
+      "value": 314810969,
+      "unit": "USD",
+      "label": "Denver County sales in 2025, down 55.6% from the 2020 peak",
+      "source": "Same CDOR county sales dataset, Denver rows summed by year",
+      "source_url": "https://data.colorado.gov/resource/j7a3-jgd3.json",
+      "as_of": "2025-12-31",
+      "retrieved": "2026-08-25",
+      "verify": "Denver annual: 2014 $325.9M, 2017 $577.5M, 2020 $709.5M (peak), 2021 $682.1M, 2022 $475.5M, 2023 $399.0M, 2024 $356.4M, 2025 $314,810,969. Peak-to-2025 is -55.6%; 2021-to-2025 is -53.8% against the state's -41.0% over the same span, which is why Denver's share fell. 2026 county data covers January to May only."
     }
   ],
   "gaps": [
@@ -91,6 +113,8 @@
     "2026 is a partial year in every dataset. Only like-for-like windows (January to April) may be compared to prior years.",
     "County rows do not sum to the published Total row (a $1.2M gap in May 2026) because small counties are suppressed or marked NR. Share calculations must use the Total row and disclose the gap."
   ],
-  "cities": ["Denver"],
+  "cities": [
+    "Denver"
+  ],
   "faqs": []
 }
