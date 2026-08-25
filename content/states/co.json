@@ -1,0 +1,96 @@
+{
+  "state": "Colorado",
+  "abbr": "CO",
+  "slug": "cannabis-seo-colorado",
+  "tier": "adult-use",
+  "updated": "2026-08-25",
+  "status": "First adult-use retail market in the United States (sales from January 2014). Regulator: Marijuana Enforcement Division (MED) within the Department of Revenue. Sales and tax data are published as open datasets on data.colorado.gov and refreshed monthly.",
+  "facts": [
+    {
+      "id": "co-peak-vs-2025",
+      "value": 41.0,
+      "unit": "percent",
+      "label": "Decline in annual sales from the 2021 peak to 2025",
+      "source": "Colorado Department of Revenue, Marijuana Sales Revenue in Colorado (Socrata dataset p6y8-s74x), monthly rows summed by calendar year",
+      "source_url": "https://data.colorado.gov/resource/p6y8-s74x.json",
+      "as_of": "2026-04-30",
+      "retrieved": "2026-08-25",
+      "verify": "Annual totals of total_marijuana_sales: 2021 $2,228,994,553 (peak), 2022 $1,768.7M, 2023 $1,529.3M, 2024 $1,397.1M, 2025 $1,315,678,364. 2025 is 41.0% below 2021. Dataset covers 2014-01 through 2026-04 at retrieval; 2026 is partial and must never be presented as a full year."
+    },
+    {
+      "id": "co-jan-apr-series",
+      "value": 416600000,
+      "unit": "USD",
+      "label": "January to April 2026 sales, the sixth consecutive decline in that window",
+      "source": "Same CDOR sales revenue dataset, months 1-4 summed per year",
+      "source_url": "https://data.colorado.gov/resource/p6y8-s74x.json",
+      "as_of": "2026-04-30",
+      "retrieved": "2026-08-25",
+      "verify": "January-April totals: 2021 $768.1M, 2022 $611.9M, 2023 $525.4M, 2024 $476.6M, 2025 $436.8M, 2026 $416.6M. Like-for-like four-month windows, which is the only honest way to use the partial 2026 data. 2026 is 45.8% below the same window in 2021."
+    },
+    {
+      "id": "co-may-2026-county",
+      "value": 107531450,
+      "unit": "USD",
+      "label": "Statewide sales in May 2026, the latest month with county detail",
+      "source": "Colorado Department of Revenue, Marijuana Sales by County in Colorado (Socrata dataset j7a3-jgd3)",
+      "source_url": "https://data.colorado.gov/resource/j7a3-jgd3.json",
+      "as_of": "2026-05-31",
+      "retrieved": "2026-08-25",
+      "verify": "'Total' row for 2026-05: medical $9,046,036 plus retail $98,485,414 = $107,531,450. The 46 individual county rows sum to $106,326,709, $1.2M short of the Total row, because some counties are suppressed or marked NR. Use the Total row as the denominator for any share calculation and say so."
+    },
+    {
+      "id": "co-denver-share",
+      "value": 23.6,
+      "unit": "percent",
+      "label": "Denver County's share of statewide sales, May 2026",
+      "source": "Same CDOR county sales dataset",
+      "source_url": "https://data.colorado.gov/resource/j7a3-jgd3.json",
+      "as_of": "2026-05-31",
+      "retrieved": "2026-08-25",
+      "verify": "Denver $25,354,541 of the $107,531,450 Total row = 23.6%. Next largest: El Paso $11,696,079, Arapahoe $11,303,004, Adams $9,070,823, Larimer $8,003,242. Those five are 60.8% of the state. Seven of 46 county rows report zero."
+    },
+    {
+      "id": "co-medical-decline",
+      "value": 133400000,
+      "unit": "USD",
+      "label": "Medical sales in 2025, down from a 2016 peak of $445.6 million",
+      "source": "Same CDOR sales revenue dataset, total_medical_marijuana_sales summed by year",
+      "source_url": "https://data.colorado.gov/resource/p6y8-s74x.json",
+      "as_of": "2025-12-31",
+      "retrieved": "2026-08-25",
+      "verify": "Medical annual: 2016 $445.6M (peak), 2020 $442.5M, 2021 $404.4M, 2022 $230.8M, 2023 $185.8M, 2024 $163.4M, 2025 $133.4M. 2025 is 70% below the 2016 peak."
+    },
+    {
+      "id": "co-cumulative-tax",
+      "value": 3223897183,
+      "unit": "USD",
+      "label": "Cumulative marijuana taxes and fees collected since 2014",
+      "source": "Colorado Department of Revenue, Marijuana Tax and Fee Revenue (Socrata dataset 3sm5-jtur), total_taxes_fees summed",
+      "source_url": "https://data.colorado.gov/resource/3sm5-jtur.json",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-25",
+      "verify": "149 monthly rows from 2014-02 through 2026-06 sum to $3,223,897,183. Recent years: 2023 $274.1M, 2024 $255.4M, 2025 $236.4M. Note this dataset runs one to two months ahead of the sales datasets; never pair a tax month with a sales month without checking both."
+    },
+    {
+      "id": "den-facilities",
+      "value": 254,
+      "unit": "licenses",
+      "label": "Licensed marijuana facilities in Denver",
+      "source": "City and County of Denver open data, BUSN_MARIJUANAFACILITIES_P feature layer",
+      "source_url": "https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_BUSN_MARIJUANAFACILITIES_P/FeatureServer/210",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-25",
+      "verify": "254 records, layer lastEditDate 2026-08-24. By license name: Marijuana Store 247, Marijuana Hospitality 7. By type: Retail 166, Medical 81, Mobile Hospitality 3, Hospitality with Sales 3, Hospitality 1. By status: License Issued - Active 250, Awaiting Customer Inspections 3, Delinquent 1. This is a city licence count and is not comparable to a state MED store count."
+    }
+  ],
+  "gaps": [
+    "Statewide store count: the MED licensed-facilities file sits behind a CloudFront block that refuses both curl and a headless browser (sbg.colorado.gov returns 403 / 'request could not be satisfied'). Do not state how many dispensaries Colorado has. Denver's own city layer is usable and is the only licence count on file.",
+    "Reasons for the sales decline: not published by any state source. The datasets show the trend and nothing about its causes. Never assert a cause on a page.",
+    "The three CDOR datasets have different currency (sales revenue through 2026-04, county sales through 2026-05, tax through 2026-06). Never pair figures across them without checking each one's latest period.",
+    "2026 is a partial year in every dataset. Only like-for-like windows (January to April) may be compared to prior years.",
+    "County rows do not sum to the published Total row (a $1.2M gap in May 2026) because small counties are suppressed or marked NR. Share calculations must use the Total row and disclose the gap."
+  ],
+  "cities": ["Denver"],
+  "faqs": []
+}

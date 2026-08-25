@@ -1,0 +1,88 @@
+{
+  "state": "Illinois",
+  "abbr": "IL",
+  "slug": "cannabis-seo-illinois",
+  "tier": "adult-use",
+  "updated": "2026-08-25",
+  "status": "Adult-use retail since 1 January 2020; medical since 2015. Licensing by IDFPR, oversight by the Cannabis Regulation Oversight Office. Sales are published as a public Tableau workbook on the state's own server.",
+  "facts": [
+    {
+      "id": "il-june-2026",
+      "value": 131123665,
+      "unit": "USD",
+      "label": "Retail cannabis sales in June 2026",
+      "source": "Illinois Cannabis Sales Figures, public Tableau workbook CannabisSalesFigures, Retail Sales view",
+      "source_url": "https://cannabis.illinois.gov/research-and-data/sales-figures.html",
+      "file_url": "https://public.data.illinois.gov/t/Public/views/CannabisSalesFigures/RetailSales",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-25",
+      "verify": "Adult use $118,150,233 plus medical $12,973,432. Captured from the vizql bootstrap payload of the state's own embed. IMPORTANT parsing rule: numeric columns carry valueIndices into the real/integer pools while alias indices are negative placeholders; reading aliasIndices first returns nulls. Series runs 2015-11 to 2026-06, 128 months per measure."
+    },
+    {
+      "id": "il-step-change",
+      "value": -22.6,
+      "unit": "percent",
+      "label": "One-month drop between May and June 2025, after which sales held at the lower level",
+      "source": "Same Illinois sales workbook, monthly totals",
+      "source_url": "https://cannabis.illinois.gov/research-and-data/sales-figures.html",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-25",
+      "verify": "May 2025 $171.2M to June 2025 $132.4M is -22.6%. The 12 months to May 2025 averaged $166.3M; the 13 months from June 2025 averaged $127.4M, -23.4%. Monthly values since are 118.4 to 133.4, so this is a step to a new level rather than a continuing slide. The state publishes no explanation and none may be asserted."
+    },
+    {
+      "id": "il-annual-peak",
+      "value": 2007700000,
+      "unit": "USD",
+      "label": "Peak annual sales, 2024",
+      "source": "Same Illinois sales workbook, monthly rows summed by calendar year",
+      "source_url": "https://cannabis.illinois.gov/research-and-data/sales-figures.html",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-25",
+      "verify": "Annual totals: 2020 $1,034.5M, 2021 $1,777.0M, 2022 $1,905.9M, 2023 $1,959.6M, 2024 $2,007.7M (peak), 2025 $1,714.0M. 2026 is partial (Jan-Jun $763.6M) and must not be presented as a year. Like-for-like Jan-Jun: 2024 $997.9M, 2025 $953.5M, 2026 $763.6M."
+    },
+    {
+      "id": "il-cumulative",
+      "value": 11680000000,
+      "unit": "USD",
+      "label": "Cumulative retail sales since November 2015",
+      "source": "Same Illinois sales workbook, all months summed",
+      "source_url": "https://cannabis.illinois.gov/research-and-data/sales-figures.html",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-08-25",
+      "verify": "$11.68 billion total, of which $9.15 billion is adult-use (from January 2020) and the balance medical (from November 2015)."
+    },
+    {
+      "id": "il-dispensaries",
+      "value": 258,
+      "unit": "dispensaries",
+      "label": "Licensed dispensaries statewide",
+      "source": "Illinois Annual Cannabis Report 2025, compiled by the Cannabis Regulation Oversight Office, dated 30 September 2025, inspections section",
+      "source_url": "https://idfpr.illinois.gov/profs/adultusecan/annualcannabisreports.html",
+      "file_url": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/forms/auc/fy2025-annual-cannabis-report.pdf",
+      "as_of": "2025-09-30",
+      "retrieved": "2026-08-25",
+      "verify": "'7,568 inspections conducted in FY25 on 258 licensed dispensaries, 21 licensed cultivation centers, 22 licensed craft growers, 17 licensed infusers, 143 licensed transporters.' PDF text is character-spaced; normalize by collapsing single-letter gaps before searching."
+    },
+    {
+      "id": "il-fy25-openings",
+      "value": 93,
+      "unit": "dispensaries",
+      "label": "Dispensaries granted operational licenses in fiscal 2025, the most in any year",
+      "source": "Illinois Annual Cannabis Report 2025",
+      "source_url": "https://idfpr.illinois.gov/profs/adultusecan/annualcannabisreports.html",
+      "file_url": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/forms/auc/fy2025-annual-cannabis-report.pdf",
+      "as_of": "2025-09-30",
+      "retrieved": "2026-08-25",
+      "verify": "'IDFPR issued operational licenses to 93 dispensaries, the most of any year so far, allowing licenses issued under the social equity application processes to surpass the number of legacy operators.' 11 more than FY2024."
+    }
+  ],
+  "gaps": [
+    "City or county level sales: the public workbook's Retail Sales view carries statewide monthly medical and adult-use totals only. Do not state Chicago sales.",
+    "Reason for the June 2025 step change: not published. Report the step, never a cause.",
+    "Dispensary count currency: 258 is as of the FY2025 annual report (30 September 2025) and 93 dispensaries opened in that fiscal year alone, so the live figure is likely higher. Date the number whenever it is used.",
+    "Chicago dispensary list: not sourced yet. Illinois publishes a dispensary locations page; check whether it exposes a machine-readable list before building any Chicago page.",
+    "The sales workbook has other views (wholesale transfers, price comparisons) that were not captured; only the Retail Sales view is on file."
+  ],
+  "cities": [],
+  "faqs": []
+}
