@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn — Link Building Proposal | Nearfront</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #1A2820;
+    --bg2:       #1E2F26;
+    --bg3:       #162218;
+    --card:      #1E2F26;
+    --card2:     #243628;
+    --gold:      #C9A84C;
+    --gold2:     #B8973E;
+    --gold-dim:  rgba(201,168,76,0.15);
+    --gold-bg:   rgba(201,168,76,0.08);
+    --cream:     #F5F0E8;
+    --cream2:    #EDE8DF;
+    --dark-text: #1A2820;
+    --white:     #FFFFFF;
+    --muted:     rgba(255,255,255,0.5);
+    --border:    rgba(201,168,76,0.2);
+    --border2:   rgba(255,255,255,0.08);
+    --green-tag: #2A3D2E;
+    --red:       #C0392B;
+    --amber-tag: #3D300A;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px;
+    background: rgba(26,40,32,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo-mark {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+    letter-spacing: 0.5px; color: var(--white);
+  }
+  .logo-icon {
+    width: 28px; height: 28px;
+    background: var(--gold); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900; color: var(--bg);
+  }
+  .nav-badge {
+    font-size: 11px; color: var(--gold); letter-spacing: 1.5px;
+    text-transform: uppercase; font-weight: 500;
+  }
+
+  /* ── EYEBROW ── */
+  .eyebrow {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 18px; display: block;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; padding: 140px 80px 80px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,168,76,0.04) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 20%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 800; line-height: 1.08; letter-spacing: -1px;
+    margin-bottom: 24px; color: var(--white);
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 16px; color: var(--muted); max-width: 480px;
+    line-height: 1.75; margin-bottom: 40px;
+  }
+  .hero-meta {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    padding-top: 32px; border-top: 1px solid var(--border);
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hm-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); }
+  .hm-val { font-size: 14px; font-weight: 600; color: var(--white); }
+
+  /* hero right — stat cards */
+  .hero-right { position: relative; z-index: 1; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-card {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 8px; padding: 28px 24px;
+    border-left: 3px solid var(--border2);
+    transition: border-color 0.2s;
+  }
+  .stat-card:hover { border-left-color: var(--gold); }
+  .stat-card.gold-border { border-left-color: var(--gold); }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 700; line-height: 1;
+    margin-bottom: 10px;
+  }
+  .stat-num.gold { color: var(--gold); }
+  .stat-num.muted-red { color: #E07070; }
+  .stat-num.white { color: var(--white); }
+  .stat-num.green { color: #7FC47A; }
+  .stat-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 1px solid var(--border2); }
+
+  /* ── SECTIONS on dark ── */
+  .section-dark { padding: 80px; }
+  .section-dark h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 48px); font-weight: 800;
+    line-height: 1.1; letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  .section-sub { font-size: 15px; color: var(--muted); max-width: 580px; margin-bottom: 48px; line-height: 1.75; }
+
+  /* ── CREAM SECTIONS ── */
+  .section-cream {
+    background: var(--cream); padding: 80px;
+    color: var(--dark-text);
+  }
+  .section-cream .eyebrow { color: var(--gold2); }
+  .section-cream h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 48px); font-weight: 800;
+    color: var(--dark-text); line-height: 1.1; margin-bottom: 16px;
+  }
+  .section-cream .section-sub { color: rgba(26,40,32,0.6); }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-bg);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px; margin: 32px 0;
+  }
+  .callout.amber { border-left-color: #C9A84C; background: rgba(201,168,76,0.06); }
+  .callout.green { border-left-color: #7FC47A; background: rgba(127,196,122,0.06); }
+  .callout.cream { border-left-color: var(--gold2); background: rgba(201,168,76,0.08); }
+  .callout-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .callout.green .callout-label { color: #7FC47A; }
+  .callout p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .callout.cream p { color: rgba(26,40,32,0.65); }
+  .callout.cream .callout-label { color: var(--gold2); }
+
+  /* ── KEYWORD TABLE ── */
+  .kw-wrap { border: 1px solid var(--border2); border-radius: 8px; overflow: hidden; }
+  .kw-table { width: 100%; border-collapse: collapse; }
+  .kw-table th {
+    background: var(--bg3); padding: 12px 18px;
+    font-size: 10px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted);
+    text-align: left; border-bottom: 1px solid var(--border2);
+  }
+  .kw-table td { padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 14px; }
+  .kw-table tr:last-child td { border-bottom: none; }
+  .kw-table tr:hover td { background: rgba(201,168,76,0.04); }
+  .kw-name { font-weight: 500; color: var(--white); }
+  .kw-name.quick { color: #7FC47A; }
+  .vol { font-weight: 700; color: var(--gold); }
+  .tp { color: var(--muted); font-size: 13px; }
+  .kd-pill {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 600;
+  }
+  .kd-low { background: rgba(127,196,122,0.15); color: #7FC47A; }
+  .kd-mid { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .kd-high { background: rgba(192,57,43,0.15); color: #E07070; }
+
+  /* cream table */
+  .kw-table-cream { width: 100%; border-collapse: collapse; }
+  .kw-table-cream th {
+    background: var(--cream2); padding: 12px 18px;
+    font-size: 10px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(26,40,32,0.5);
+    text-align: left; border-bottom: 1px solid rgba(26,40,32,0.1);
+  }
+  .kw-table-cream td { padding: 14px 18px; border-bottom: 1px solid rgba(26,40,32,0.08); font-size: 14px; color: var(--dark-text); }
+  .kw-table-cream tr:last-child td { border-bottom: none; }
+  .kw-table-cream tr:hover td { background: rgba(201,168,76,0.05); }
+  .kw-table-cream .vol { color: var(--gold2); font-weight: 700; }
+  .kw-table-cream .win { color: #2E7D32; font-weight: 600; font-size: 13px; }
+  .kw-table-cream .kd-low { background: rgba(46,125,50,0.12); color: #2E7D32; }
+  .kw-table-cream .kd-mid { background: rgba(201,168,76,0.12); color: var(--gold2); }
+  .kw-table-cream .kd-high { background: rgba(192,57,43,0.1); color: #C0392B; }
+
+  /* ── TIER TABS ── */
+  .tier-section { padding: 80px; }
+  .tier-tabs {
+    display: flex; border-radius: 8px 8px 0 0; overflow: hidden;
+    border: 1px solid var(--border2); border-bottom: none;
+  }
+  .tier-tab {
+    flex: 1; padding: 22px 20px; cursor: pointer;
+    background: var(--bg3); border: none; color: var(--muted);
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+    text-align: center; transition: all 0.2s; position: relative;
+  }
+  .tier-tab:not(:last-child) { border-right: 1px solid var(--border2); }
+  .tier-tab:hover { background: var(--card); color: var(--white); }
+  .tier-tab.active { background: var(--card2); color: var(--white); }
+  .tier-tab.active::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold);
+  }
+  .tier-price {
+    display: block; font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 700; color: var(--gold);
+    margin-bottom: 3px;
+  }
+  .tier-name { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; }
+
+  .tier-panel { display: none; border: 1px solid var(--border2); border-radius: 0 0 8px 8px; overflow: hidden; }
+  .tier-panel.active { display: block; }
+
+  .tier-header {
+    padding: 28px 32px; border-bottom: 1px solid var(--border2);
+    background: var(--card2);
+    border-left: 4px solid var(--gold);
+  }
+  .tier-header h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px;
+    font-weight: 700; margin-bottom: 8px;
+  }
+  .tier-header p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 700px; }
+
+  .tier-item {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 24px; align-items: center;
+    padding: 18px 32px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.15s;
+  }
+  .tier-item:last-of-type { border-bottom: none; }
+  .tier-item:hover { background: var(--gold-bg); }
+  .ti-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--white); }
+  .ti-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .ti-price {
+    font-family: 'Playfair Display', serif; font-size: 18px;
+    font-weight: 700; color: var(--gold); white-space: nowrap; text-align: right;
+  }
+  .tier-tag {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 4px; border: 1px solid var(--gold);
+    color: var(--gold); background: var(--gold-dim); margin-bottom: 6px;
+  }
+  .tier-tag.month1 { border-color: #7FC47A; color: #7FC47A; background: rgba(127,196,122,0.1); }
+
+  .tier-total {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 32px;
+    background: var(--bg3); border-top: 1px solid var(--border2);
+  }
+  .tt-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); }
+  .tt-price {
+    font-family: 'Playfair Display', serif; font-size: 32px;
+    font-weight: 700; color: var(--gold);
+  }
+  .tier-timeline {
+    padding: 18px 32px; border-top: 1px solid var(--border2);
+    background: var(--gold-bg); font-size: 13px; color: var(--muted); line-height: 1.6;
+  }
+  .tier-timeline strong { color: var(--white); }
+
+  /* ── ON-PAGE ADDON ── */
+  .addon-wrap { margin-top: 32px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .addon-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 28px 32px; background: var(--card2); border-bottom: 1px solid var(--border2);
+    border-left: 4px solid var(--gold);
+  }
+  .addon-head h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .addon-head p { font-size: 14px; color: var(--muted); max-width: 580px; }
+  .addon-price-box { text-align: right; flex-shrink: 0; margin-left: 32px; }
+  .addon-price { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--gold); }
+  .addon-price-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
+  .addon-item {
+    display: flex; gap: 14px; padding: 16px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 14px; color: var(--muted);
+  }
+  .addon-item strong { color: var(--white); }
+  .addon-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
+
+  /* ── COMPARE TABLE ── */
+  .compare-wrap { border: 1px solid var(--border2); border-radius: 8px; overflow: hidden; }
+  .compare-table { width: 100%; border-collapse: collapse; }
+  .compare-table th {
+    padding: 16px 20px; background: var(--bg3); font-size: 12px;
+    font-weight: 600; text-align: center; border-bottom: 1px solid var(--border2);
+    color: var(--muted);
+  }
+  .compare-table th:first-child { text-align: left; }
+  .compare-table th.gold-h { color: var(--gold); }
+  .compare-table td {
+    padding: 13px 20px; border-top: 1px solid rgba(255,255,255,0.04);
+    font-size: 13px; text-align: center; color: var(--muted);
+  }
+  .compare-table td:first-child { text-align: left; font-weight: 500; color: var(--white); }
+  .compare-table tr:hover td { background: var(--gold-bg); }
+  .check { color: #7FC47A; }
+  .cross { color: rgba(255,255,255,0.12); }
+
+  /* ── KPI GRID ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .kpi-card {
+    background: var(--card2); border: 1px solid var(--border2);
+    border-radius: 8px; padding: 24px;
+    border-left: 3px solid var(--border); transition: border-color 0.2s;
+  }
+  .kpi-card:hover { border-left-color: var(--gold); }
+  .kpi-icon { font-size: 18px; margin-bottom: 12px; }
+  .kpi-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .kpi-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── BUTTONS ── */
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: var(--dark-text);
+    padding: 14px 32px; border-radius: 6px; font-size: 14px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-gold:hover { background: #D4B562; transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block; background: transparent; color: var(--gold);
+    padding: 14px 32px; border-radius: 6px; font-size: 14px; font-weight: 600;
+    text-decoration: none; border: 1px solid var(--gold); transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--gold-dim); }
+  .cta-row { display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  .footer-dark {
+    border-top: 1px solid var(--border2); padding: 40px 80px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-meta { font-size: 13px; color: var(--muted); }
+
+  /* ── SCROLL FADE ── */
+  .fade { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade.in { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 48px; }
+    .section-dark, .section-cream, .tier-section, .footer-dark { padding: 60px 24px; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .tier-tabs { flex-direction: column; }
+    .addon-head { flex-direction: column; gap: 20px; }
+    .addon-price-box { text-align: left; margin-left: 0; }
+    .footer-dark { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-mark">
+    <div class="logo-icon">NF</div>
+    NEARFRONT
+  </div>
+  <div class="nav-badge">Link Building Proposal &nbsp;·&nbsp; Turn &nbsp;·&nbsp; April 2026</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">SERP Authority Campaign</span>
+    <h1>Turn has the traffic.<br><em>Now let's own<br>the category.</em></h1>
+    <p class="hero-sub">A non-brand link building campaign for turn.me targeting the disposable vape and weed pen keyword cluster. Three budget tiers. Editorial links that hold. Full attribution every month.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hm-label">Client</span>
+        <span class="hm-val">Turn / turn.me</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hm-label">Domain Rating</span>
+        <span class="hm-val">44 / 100</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hm-label">Organic Traffic</span>
+        <span class="hm-val">26,000 / mo</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hm-label">THCA Budget</span>
+        <span class="hm-val">Separate Proposal</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-card gold-border">
+        <div class="stat-num gold">67K</div>
+        <div class="stat-label">Monthly searches<br>"weed pen"</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num muted-red">KD 62–66</div>
+        <div class="stat-label">Core keyword<br>difficulty range</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num muted-red">0</div>
+        <div class="stat-label">Non-brand page 1<br>rankings today</div>
+      </div>
+      <div class="stat-card gold-border">
+        <div class="stat-num green">158K</div>
+        <div class="stat-label">Traffic potential<br>in this cluster</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- SITUATION -->
+<div class="section-dark fade">
+  <span class="eyebrow">01 &nbsp;—&nbsp; The Situation</span>
+  <h2>Strong brand. Zero non-brand<br>page 1 presence.</h2>
+  <p class="section-sub">turn.me ranks #1 for virtually every branded term and pulls 26,000 organic visits per month. The opportunity is entirely in the category — disposable carts, weed pen, THC vape — where Turn currently doesn't show up.</p>
+  <div class="callout amber">
+    <div class="callout-label">Honest Assessment</div>
+    <p>KD 48 to 66 is competitive national territory. With DR 44 as the starting point, Turn is in the game but not ahead of it yet. A consistent 6-month campaign at the $5,000 or $10,000 tier is the realistic path to page 1 for the core terms. The $2,500 tier will move the near-me store locator keywords (KD 35–44) within 60 to 90 days.</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- KEYWORDS -->
+<div class="section-cream fade">
+  <span class="eyebrow">02 &nbsp;—&nbsp; Target Keywords</span>
+  <h2>turn.me — Non-Brand Cluster</h2>
+  <p class="section-sub" style="color:rgba(26,40,32,0.6)">All non-brand. Near-me terms are the quick wins. Volume leaders are the 6-month play. Data from Ahrefs, US market.</p>
+
+  <div style="border:1px solid rgba(26,40,32,0.15); border-radius:8px; overflow:hidden;">
+    <table class="kw-table-cream">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Monthly Volume</th>
+          <th>Difficulty</th>
+          <th>Traffic Potential</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>weed pen</strong></td><td class="vol">67,000</td><td><span class="kd-pill kd-mid">KD 48</span></td><td>149,000</td></tr>
+        <tr><td><strong>weed cart</strong></td><td class="vol">26,000</td><td><span class="kd-pill kd-mid">KD 54</span></td><td>149,000</td></tr>
+        <tr><td><strong>disposable weed pen</strong></td><td class="vol">14,000</td><td><span class="kd-pill kd-high">KD 66</span></td><td>158,000</td></tr>
+        <tr><td><strong>thc vape pen</strong></td><td class="vol">13,000</td><td><span class="kd-pill kd-mid">KD 53</span></td><td>158,000</td></tr>
+        <tr><td><strong>disposable cart</strong></td><td class="vol">11,000</td><td><span class="kd-pill kd-high">KD 65</span></td><td>149,000</td></tr>
+        <tr><td><strong>disposable carts</strong></td><td class="vol">8,400</td><td><span class="kd-pill kd-high">KD 62</span></td><td>144,000</td></tr>
+        <tr><td><strong>dispo carts</strong></td><td class="vol">2,700</td><td><span class="kd-pill kd-high">KD 65</span></td><td>158,000</td></tr>
+        <tr><td><strong>thc disposable</strong></td><td class="vol">2,200</td><td><span class="kd-pill kd-high">KD 62</span></td><td>4,000</td></tr>
+        <tr><td><strong>disposable thc pen</strong></td><td class="vol">1,200</td><td><span class="kd-pill kd-high">KD 63</span></td><td>145,000</td></tr>
+        <tr><td style="color:#2E7D32;font-weight:600">⚡ vape carts near me</td><td class="vol">1,600</td><td><span class="kd-pill kd-low">KD 37</span></td><td>600</td></tr>
+        <tr><td style="color:#2E7D32;font-weight:600">⚡ weed pen near me</td><td class="vol">900</td><td><span class="kd-pill kd-low">KD 35</span></td><td>6,300</td></tr>
+        <tr><td style="color:#2E7D32;font-weight:600">⚡ disposable thc pen near me</td><td class="vol">10</td><td><span class="kd-pill kd-mid">KD 44</span></td><td>147,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout green" style="background:rgba(46,125,50,0.08); border-left-color:#2E7D32; margin-top:24px;">
+    <div class="callout-label" style="color:#2E7D32">⚡ Quick Wins — Store Locator Terms</div>
+    <p style="color:rgba(26,40,32,0.65)">The near-me terms feed directly into the /stores page, which already receives ~50% of homepage visitors. These can rank within 60 to 90 days at any budget tier — providing immediate, measurable lift on the highest-intent traffic on the site.</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- TIERS -->
+<div class="tier-section fade">
+  <span class="eyebrow">03 &nbsp;—&nbsp; Budget Options</span>
+  <h2>Three tiers. One strategy.</h2>
+  <p class="section-sub">All built on the SERP Managed Track backbone with A La Carte boosters layered on top. Every link carries a Tier-2/3 power and indexing guarantee. Nothing counted until indexed.</p>
+
+  <div class="tier-tabs">
+    <button class="tier-tab active" onclick="showTier('t1',this)">
+      <span class="tier-price">$2,500</span>
+      <span class="tier-name">Foundation</span>
+    </button>
+    <button class="tier-tab" onclick="showTier('t2',this)">
+      <span class="tier-price">$5,000</span>
+      <span class="tier-name">Growth</span>
+    </button>
+    <button class="tier-tab" onclick="showTier('t3',this)">
+      <span class="tier-price">$10,000</span>
+      <span class="tier-name">Authority</span>
+    </button>
+  </div>
+
+  <!-- T1 -->
+  <div class="tier-panel active" id="panel-t1">
+    <div class="tier-header">
+      <h3>Foundation — $2,500 / month</h3>
+      <p>Best for establishing foundational authority and moving near-me and local terms within 60 to 90 days. High-KD national terms like "disposable carts" will require 9 to 12 months at this level.</p>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">SERP Managed Track — Essential</div><div class="ti-desc">Backbone link program, 30-day TAT, white-label reporting</div></div>
+      <div class="ti-price">$1,100</div>
+    </div>
+    <div class="tier-item">
+      <div>
+        <div class="tier-tag month1">Month 1 Deliverable</div>
+        <div class="ti-name">On-Page SEO — 5 Pages</div>
+        <div class="ti-desc">Human-written keyword optimization: title tags, meta descriptions, H1/H2/H3, body content on 5 priority pages</div>
+      </div>
+      <div class="ti-price">$600</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Editorial Guest Post DR40+ × 2</div><div class="ti-desc">Contextual dofollow links on real, trafficked sites — DR40 minimum, indexed</div></div>
+      <div class="ti-price">$230</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Niche Edit (Link Insertion) DR50+ × 2</div><div class="ti-desc">Links inserted into aged, indexed posts on relevant sites — DR50 minimum</div></div>
+      <div class="ti-price">$198</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Keyword-Targeted Backlinks</div><div class="ti-desc">3-tier build anchored to disposable / cart money pages, up to 5 keyword variations</div></div>
+      <div class="ti-price">$178</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Press Release — Standard (300+ outlets)</div><div class="ti-desc">Authority signal + 3 dofollow links distributed to 300+ news outlets</div></div>
+      <div class="ti-price">$98</div>
+    </div>
+    <div class="tier-total">
+      <div class="tt-label">Monthly Total</div>
+      <div class="tt-price">$2,404</div>
+    </div>
+    <div class="tier-timeline">
+      <strong>Near-me terms (KD 35–44):</strong> 60–90 days &nbsp;·&nbsp; <strong>Core disposable terms (KD 62–66):</strong> 9–12 months &nbsp;·&nbsp; <strong>Month 1:</strong> On-page SEO for 5 pages included
+    </div>
+  </div>
+
+  <!-- T2 -->
+  <div class="tier-panel" id="panel-t2">
+    <div class="tier-header">
+      <h3>Growth — $5,000 / month</h3>
+      <p>For seriously competitive national terms. Premium DR60+ editorial placements and an entity cloud stack accelerate authority accumulation. Page 1 movement on core terms is realistic within 4 to 6 months.</p>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">SERP Managed Track — Growth</div><div class="ti-desc">Mid-competition push, priority queue, white-label reporting, dedicated strategist</div></div>
+      <div class="ti-price">$1,700</div>
+    </div>
+    <div class="tier-item">
+      <div>
+        <div class="tier-tag month1">Month 1 Deliverable</div>
+        <div class="ti-name">On-Page SEO — 10 Pages</div>
+        <div class="ti-desc">Human-written keyword optimization across 10 priority pages</div>
+      </div>
+      <div class="ti-price">$1,200</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Editorial Guest Post DR60+ × 3</div><div class="ti-desc">Premium editorial authority on high-DR real sites — DR60 minimum, indexed</div></div>
+      <div class="ti-price">$1,014</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Niche Edit DR60+ × 3</div><div class="ti-desc">3 link insertions in aged, ranked posts — DR60 minimum, indexed</div></div>
+      <div class="ti-price">$1,014</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">News Site DoFollow Links × 3</div><div class="ti-desc">Media-grade authority on real news sites — higher trust than generic blogs</div></div>
+      <div class="ti-price">$534</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Press Release — AP+ Premium (600+ outlets)</div><div class="ti-desc">AP wire + finance portals, maximum AI citation weight</div></div>
+      <div class="ti-price">$238</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Entity Cloud Stack</div><div class="ti-desc">5 interlinked pages on AWS, Azure, GCP, DigitalOcean, Oracle — 4-tier dofollow + indexing</div></div>
+      <div class="ti-price">$498</div>
+    </div>
+    <div class="tier-total">
+      <div class="tt-label">Monthly Total</div>
+      <div class="tt-price">$6,198</div>
+    </div>
+    <div class="tier-timeline">
+      <strong>Near-me terms (KD 35–44):</strong> 30–60 days &nbsp;·&nbsp; <strong>Core disposable terms (KD 62–66):</strong> 4–6 months &nbsp;·&nbsp; <strong>Month 1:</strong> On-page SEO for 10 pages included
+    </div>
+  </div>
+
+  <!-- T3 -->
+  <div class="tier-panel" id="panel-t3">
+    <div class="tier-header">
+      <h3>Authority — $10,000 / month</h3>
+      <p>For winning outright in a competitive national category. EDU/GOV links, 3-pack cloud stack, Wikipedia reference, double the editorial volume. Page 1 positions 1–3 for weed pen and weed cart within 6 months.</p>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">SERP Managed Track — Authority</div><div class="ti-desc">Dedicated strategist, national competitive campaigns, highest priority queue</div></div>
+      <div class="ti-price">$2,500</div>
+    </div>
+    <div class="tier-item">
+      <div>
+        <div class="tier-tag month1">Month 1 Deliverable</div>
+        <div class="ti-name">On-Page SEO — 20 Pages</div>
+        <div class="ti-desc">Full-site on-page optimization across 20 pages, human-written</div>
+      </div>
+      <div class="ti-price">$2,400</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Editorial Guest Post DR60+ × 6</div><div class="ti-desc">6 premium editorial placements on high-DR real sites</div></div>
+      <div class="ti-price">$2,028</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Niche Edit DR60+ × 6</div><div class="ti-desc">6 link insertions in aged, ranked posts — DR60 minimum</div></div>
+      <div class="ti-price">$2,028</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">News Site DoFollow Links × 5 pack</div><div class="ti-desc">5-pack media authority on real news portals</div></div>
+      <div class="ti-price">$518</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">EDU / GOV Authority Links × 2</div><div class="ti-desc">Premium trust layer — critical for regulated / YMYL niches like cannabis</div></div>
+      <div class="ti-price">$480</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Entity Cloud Stack 3-pack</div><div class="ti-desc">3x cloud stacks across AWS, Azure, GCP, DigitalOcean, Oracle with full indexing</div></div>
+      <div class="ti-price">$1,298</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Press Release — AP+ Premium × 2</div><div class="ti-desc">2 AP wire releases per month for maximum authority and AI citation signals</div></div>
+      <div class="ti-price">$476</div>
+    </div>
+    <div class="tier-item">
+      <div><div class="ti-name">Wikipedia Reference Link</div><div class="ti-desc">Top-tier trust signal and entity / AI confidence — editorial process, acceptance-based</div></div>
+      <div class="ti-price">$598</div>
+    </div>
+    <div class="tier-total">
+      <div class="tt-label">Monthly Total</div>
+      <div class="tt-price">$10,326</div>
+    </div>
+    <div class="tier-timeline">
+      <strong>Near-me terms:</strong> 30 days &nbsp;·&nbsp; <strong>Core disposable terms pos. 1–3:</strong> 4–6 months &nbsp;·&nbsp; <strong>Weed pen + weed cart (67K / 26K):</strong> 6–9 months &nbsp;·&nbsp; <strong>Month 1:</strong> 20 pages on-page SEO
+    </div>
+  </div>
+
+  <!-- ON-PAGE ADDON -->
+  <div class="addon-wrap">
+    <div class="addon-head">
+      <div>
+        <h3>Month 1 Add-On — On-Page SEO</h3>
+        <p>Before links move rankings, pages need to be optimized for the keywords we're targeting. This is the foundation every tier builds on — and it delivers in Month 1.</p>
+      </div>
+      <div class="addon-price-box">
+        <div class="addon-price">$120</div>
+        <div class="addon-price-label">per page &nbsp;·&nbsp; retail</div>
+      </div>
+    </div>
+    <div class="addon-item"><div class="addon-dot"></div><div><strong>Title tag rewrite</strong> — keyword-targeted, within character limits, click-optimized</div></div>
+    <div class="addon-item"><div class="addon-dot"></div><div><strong>Meta description</strong> — human-written, conversion-focused, unique per page</div></div>
+    <div class="addon-item"><div class="addon-dot"></div><div><strong>Header structure</strong> — H1, H2, H3 rebuilt around the target keyword cluster</div></div>
+    <div class="addon-item"><div class="addon-dot"></div><div><strong>Body content update</strong> — natural keyword integration, not stuffed, brand voice maintained</div></div>
+    <div class="addon-item"><div class="addon-dot"></div><div><strong>Internal linking</strong> — link to and from related category and product pages</div></div>
+    <div class="addon-item" style="border:none"><div class="addon-dot"></div><div>All copy written by a human, not AI-generated. Quality matches the Turn brand.</div></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- COMPARE -->
+<div class="section-dark fade">
+  <span class="eyebrow">04 &nbsp;—&nbsp; Tier Comparison</span>
+  <h2>Side by side.</h2>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Deliverable</th>
+          <th class="gold-h">$2,500 / mo</th>
+          <th class="gold-h">$5,000 / mo</th>
+          <th class="gold-h">$10,000 / mo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SERP Managed Track</td><td>Essential</td><td>Growth</td><td>Authority</td></tr>
+        <tr><td>On-Page SEO (Month 1)</td><td>5 pages</td><td>10 pages</td><td>20 pages</td></tr>
+        <tr><td>Editorial Guest Posts</td><td>DR40+ × 2</td><td>DR60+ × 3</td><td>DR60+ × 6</td></tr>
+        <tr><td>Niche Edits</td><td>DR50+ × 2</td><td>DR60+ × 3</td><td>DR60+ × 6</td></tr>
+        <tr><td>News Site Links</td><td><span class="cross">—</span></td><td>× 3</td><td>× 5 pack</td></tr>
+        <tr><td>EDU / GOV Links</td><td><span class="cross">—</span></td><td><span class="cross">—</span></td><td>× 2</td></tr>
+        <tr><td>Entity Cloud Stack</td><td><span class="cross">—</span></td><td>Single</td><td>3-pack</td></tr>
+        <tr><td>Press Release</td><td>Standard</td><td>AP+ Premium</td><td>AP+ Premium × 2</td></tr>
+        <tr><td>Wikipedia Reference</td><td><span class="cross">—</span></td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+        <tr><td>Near-me terms (KD 35–44)</td><td>60–90 days</td><td>30–60 days</td><td>30 days</td></tr>
+        <tr><td>Core disposable / cart terms</td><td>9–12 months</td><td>4–6 months</td><td>4–6 months</td></tr>
+        <tr><td>Weed pen / weed cart (67K / 26K)</td><td>12+ months</td><td>6–9 months</td><td>6–9 months</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<!-- PODPAK -->
+<div class="section-cream fade">
+  <span class="eyebrow">05 &nbsp;—&nbsp; Separate Budget</span>
+  <h2>podpak.me — THCA / Hemp</h2>
+  <p class="section-sub" style="color:rgba(26,40,32,0.6)">A completely different competitive environment from turn.me. Most THCA terms have KD of 1 to 22. This is early-mover territory that can be won at the $2,500 tier within 60 to 90 days. Separate proposal to follow.</p>
+
+  <div style="border:1px solid rgba(26,40,32,0.15); border-radius:8px; overflow:hidden;">
+    <table class="kw-table-cream">
+      <thead>
+        <tr><th>Keyword</th><th>Monthly Volume</th><th>Difficulty</th><th>Opportunity</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>thca flower</strong></td><td class="vol">42,000</td><td><span class="kd-pill kd-high">KD 60</span></td><td style="color:#8B6914">High volume, competitive</td></tr>
+        <tr><td><strong>thca cart</strong></td><td class="vol">1,700</td><td><span class="kd-pill kd-low">KD 18</span></td><td class="win">Rank in 60 days</td></tr>
+        <tr><td><strong>thca disposable</strong></td><td class="vol">1,400</td><td><span class="kd-pill kd-low">KD 1</span></td><td class="win">Rank in 30 days</td></tr>
+        <tr><td><strong>thca pen</strong></td><td class="vol">700</td><td><span class="kd-pill kd-low">KD 22</span></td><td class="win">Rank in 60 days</td></tr>
+        <tr><td><strong>thca vape pen</strong></td><td class="vol">400</td><td><span class="kd-pill kd-low">KD 21</span></td><td class="win">Rank in 60 days</td></tr>
+        <tr><td><strong>thca pods</strong></td><td class="vol">100</td><td><span class="kd-pill kd-low">KD 3</span></td><td class="win">Rank in 30 days</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout cream" style="margin-top:24px">
+    <div class="callout-label">Why a Separate Budget</div>
+    <p>KD 1 to 22 is pre-competitive. The investment and timeline to rank for these terms is a fraction of the turn.me disposable cluster. Bundling them together would mean overcharging for THCA rankings that are genuinely easy wins. A separate $2,500/mo campaign for podpak.me will deliver faster, cleaner results with a clear ROI story.</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- KPIs -->
+<div class="section-dark fade">
+  <span class="eyebrow">06 &nbsp;—&nbsp; KPIs & Reporting</span>
+  <h2>Accountability built in.</h2>
+  <p class="section-sub">Full white-label report every month. Baseline documented at campaign start so every improvement is measured against a verified starting point.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-icon">📊</div>
+      <div class="kpi-title">Keyword Position Report</div>
+      <div class="kpi-desc">Monthly position tracking for all target terms. GSC click and impression movement month over month.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🔗</div>
+      <div class="kpi-title">Link Placement Report</div>
+      <div class="kpi-desc">Every link placed that month: domain, DR, anchor text, indexed status, live URL. Nothing counted until indexed.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">📈</div>
+      <div class="kpi-title">Domain Rating Progression</div>
+      <div class="kpi-desc">Monthly Ahrefs DR snapshot to track authority accumulation over the campaign period.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">📍</div>
+      <div class="kpi-title">Store Locator Tracking</div>
+      <div class="kpi-desc">GSC clicks and impressions for near-me terms feeding the /stores page — the highest-intent conversion path.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">📋</div>
+      <div class="kpi-title">Baseline Documentation</div>
+      <div class="kpi-desc">All metrics documented before Month 1 goes live. Every improvement is measured against a verified start.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">✍️</div>
+      <div class="kpi-title">On-Page SEO Delivery</div>
+      <div class="kpi-desc">Month 1: all optimized pages with before / after of title tags, meta descriptions, and header structure.</div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="mailto:bravo@nearfront.com?subject=Turn Link Building — Ready to Start" class="btn-gold">Approve &amp; Get Started</a>
+    <a href="mailto:bravo@nearfront.com?subject=Turn Link Building — Question" class="btn-outline">Ask a Question</a>
+  </div>
+</div>
+
+<hr>
+
+<div class="footer-dark">
+  <div class="footer-logo">
+    <div class="logo-icon">NF</div>
+    <span style="font-size:15px; font-weight:700; margin-left:10px;">NEARFRONT</span>
+  </div>
+  <div class="footer-meta">Guillermo Bravo &nbsp;·&nbsp; bravo@nearfront.com &nbsp;·&nbsp; nearfront.com &nbsp;·&nbsp; April 2026</div>
+</div>
+
+<script>
+  function showTier(id, btn) {
+    document.querySelectorAll('.tier-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
