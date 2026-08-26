@@ -55,7 +55,7 @@ The host index, `/proposals/*`, and the 404 carry no container on purpose: clien
 
 ## House rules, inherited from production, non-negotiable
 
-No em dashes anywhere. **No health or efficacy claims**: these are regulated industries, use research-use and compliance framing. Every factual or commercial claim needs a documented source. Primary CTA is **"Get Ranked Free"** linking to `/book/`. "Log In" goes to `https://app.nearfront.com/login`. NAP is exactly `550 W B St, 4th Floor, San Diego, CA 92101` and `(760) 829-2735`. **"Nubravo LLC" never appears in public-facing copy**, legal pages only.
+No em dashes anywhere. **No health or efficacy claims**: these are regulated industries, use research-use and compliance framing. Every factual or commercial claim needs a documented source. Primary CTA is **"Get Ranked Free"** linking to `/get-started/` (the funnel captures the lead, then offers the calendar; `/book/` stays live for direct booking links). "Log In" goes to `https://app.nearfront.com/login`. NAP is exactly `550 W B St, 4th Floor, San Diego, CA 92101` and `(760) 829-2735`. **"Nubravo LLC" never appears in public-facing copy**, legal pages only.
 
 ## Promoting a page to production
 
