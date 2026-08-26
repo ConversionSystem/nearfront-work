@@ -32,7 +32,9 @@ NAP_ADDRESS = "550 W B St, 4th Floor, San Diego, CA 92101"
 NAP_TEL_HREF = "tel:+17608292735"
 LOGIN_URL = "https://app.nearfront.com/login"
 CTA_LABEL = "Get Ranked Free"
-CTA_HREF = "/book/"
+# The primary CTA sends people to the funnel, which captures the lead before
+# offering the calendar. /book/ stays live for direct booking links.
+CTA_HREF = "/get-started/"
 
 # Pages allowed to name the legal entity in visible copy.
 LEGAL_PAGES = {"/privacy-policy/", "/master-subscription-agreement/"}

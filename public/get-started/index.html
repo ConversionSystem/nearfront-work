@@ -62,16 +62,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Two-column funnel: the pitch stays on screen while the form is filled,
      so the form reads as part of the page rather than a modal on top of it. */
   .fx-split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); min-height: calc(100vh - 76px); align-items: stretch; }
-  .fx-rail { background: var(--dark-3); padding: 64px 48px; position: relative; overflow: hidden; display: flex; align-items: center; }
+  .fx-rail { background: var(--dark-3); padding: 56px 48px; position: relative; overflow: hidden; display: flex; align-items: center; }
   .fx-rail::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(195,162,93,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(195,162,93,0.05) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
   .fx-rail-inner { position: relative; z-index: 1; max-width: 460px; margin-left: auto; }
   .fx-rail h1 { font-family: Georgia, serif; font-size: clamp(28px,3.2vw,40px); color: var(--white); line-height: 1.15; letter-spacing: -0.5px; margin-top: 14px; }
   .fx-sub { font-size: 16px; color: rgba(255,255,255,0.74); line-height: 1.7; margin: 16px 0 0; }
   .fx-sub-sm { font-size: 15px; color: var(--muted); line-height: 1.65; margin: 10px 0 18px; }
-  .fx-rail-list { list-style: none; padding: 0; margin: 26px 0 0; }
-  .fx-rail-list li { position: relative; padding-left: 26px; margin-bottom: 12px; font-size: 14.5px; color: rgba(255,255,255,0.85); line-height: 1.55; }
+  /* The Map Pack, drawn rather than screenshotted: it shows what the audit is
+     about without inventing a business, a rating, or a result. */
+  .fx-mp { margin-top: 28px; border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: rgba(255,255,255,0.03); }
+  .fx-mp-search { display: flex; align-items: center; gap: 9px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; margin-bottom: 12px; }
+  .fx-mp-icon { width: 12px; height: 12px; border: 2px solid rgba(255,255,255,0.5); border-radius: 50%; position: relative; flex-shrink: 0; }
+  .fx-mp-icon::after { content: ''; position: absolute; right: -4px; bottom: -4px; width: 6px; height: 2px; background: rgba(255,255,255,0.5); transform: rotate(45deg); }
+  .fx-mp-q { font-size: 13px; color: rgba(255,255,255,0.75); }
+  .fx-mp-slot { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 6px; background: rgba(195,162,93,0.1); border: 1px solid rgba(195,162,93,0.28); margin-bottom: 6px; }
+  .fx-mp-num { width: 21px; height: 21px; flex-shrink: 0; border-radius: 50%; background: var(--gold); color: var(--dark-3); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .fx-mp-bars { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .fx-mp-bars i { display: block; height: 5px; border-radius: 3px; background: rgba(195,162,93,0.5); }
+  .fx-mp-bars i + i { height: 4px; background: rgba(255,255,255,0.14); }
+  .fx-mp-rest { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 11.5px; color: rgba(255,255,255,0.42); }
+  .fx-mp-rest span { font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .fx-reassure { margin: 18px 0 0; text-align: center; font-size: 12.5px; color: var(--muted); }
+  .fx-rail-list { list-style: none; padding: 0; margin: 22px 0 0; }
+  .fx-rail-list li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.55; }
   .fx-rail-list li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
-  .fx-rail-founder { display: flex; gap: 12px; align-items: center; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+  .fx-rail-founder { display: flex; gap: 12px; align-items: center; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.5; }
   .fx-rail-founder img { border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--gold); flex-shrink: 0; }
   .fx-rail-founder strong { color: var(--white); font-size: 13.5px; }
 
@@ -153,6 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 660px) { .bk-embed { height: 930px; } .bk-embed iframe { height: 1195px; margin-top: -220px; } }
   @media (max-width: 900px) {
     .fx-split { grid-template-columns: 1fr; min-height: 0; }
+    .fx-mp { display: none; }
     .fx-rail { padding: 104px 24px 40px; }  /* clears the fixed nav */
     .fx-rail-inner { margin: 0 auto; max-width: 560px; }
     .fx-panelcol { padding: 32px 20px 40px; }
@@ -189,9 +205,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/services/">Services</a>
     <a href="/about-us/">About</a>
     <a href="/seo-rockstars-podcast/">Podcast</a>
-    <a href="/get-started/">Free Audit</a>
-    <a href="https://app.nearfront.com/login" class="nav-login">Log In</a>
-    <a href="/book/" class="nav-cta">Get Ranked Free</a>
+        <a href="https://app.nearfront.com/login" class="nav-login">Log In</a>
+    <a href="/get-started/" class="nav-cta">Get Ranked Free</a>
   </div>
 </nav>
 
@@ -203,8 +218,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="svc-kicker">Free data audit</span>
       <h1>Your spot in the Map Pack starts here.</h1>
       <p class="fx-sub">Dispensaries can't buy Google or Meta ads, so the Map Pack decides who gets the customer. Tell us which store is yours and we'll show you exactly where you stand.</p>
+      <div class="fx-mp" aria-hidden="true">
+        <div class="fx-mp-search"><span class="fx-mp-icon"></span><span class="fx-mp-q">dispensary near me</span></div>
+        <div class="fx-mp-slot"><span class="fx-mp-num">1</span><span class="fx-mp-bars"><i style="width:74%"></i><i style="width:44%"></i></span></div>
+        <div class="fx-mp-slot"><span class="fx-mp-num">2</span><span class="fx-mp-bars"><i style="width:58%"></i><i style="width:36%"></i></span></div>
+        <div class="fx-mp-slot"><span class="fx-mp-num">3</span><span class="fx-mp-bars"><i style="width:65%"></i><i style="width:40%"></i></span></div>
+        <div class="fx-mp-rest">Every other dispensary in town <span>Below the fold</span></div>
+      </div>
       <ul class="fx-rail-list">
-        <li>Your Map Pack position across the whole trade area, not just your address</li>
+        <li>Your position in those three slots, across the whole trade area</li>
         <li>The dispensaries actually competing with you, named</li>
         <li>Every number sourced, dated, and checkable</li>
       </ul>
@@ -318,6 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="lead-status lead-status-err" id="lead-fail" hidden role="alert">
       Something went wrong sending your request. Please try again, or email us directly at <a href="mailto:bravo@nearfront.com">bravo@nearfront.com</a>.
     </div>
+    <p class="fx-reassure">Takes about a minute. We reply with your audit, not a sales sequence.</p>
     </div>
   </div>
   </div>
