@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Progress rail */
   .fx-steps { display: flex; list-style: none; padding: 0; margin: 0 0 24px; }
-  .fx-step { display: flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .fx-step { display: flex; align-items: center; gap: 9px; font-size: 12.5px; color: var(--muted); font-weight: 600; white-space: nowrap; }
   .fx-step + .fx-step::before { content: ''; flex: 1; min-width: 18px; height: 1px; background: var(--line); margin: 0 12px; }
   .fx-step { flex: 1; }
   .fx-step:last-child { flex: 0 0 auto; }
@@ -162,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fx-row { grid-template-columns: 1fr; }
     .fx-hero { padding: 56px 0 86px; }
     .fx-panel { padding: 24px 20px 22px; }
-    .fx-step + .fx-step::before { width: 14px; margin: 0 7px; }
+    .fx-step + .fx-step::before { min-width: 12px; margin: 0 8px; }
     .fx-step { font-size: 0; gap: 0; }
     .fx-step span { font-size: 12px; }
   }
