@@ -337,10 +337,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     async function init(){
       try {
         var lib = await google.maps.importLibrary('places');
-        var el = new lib.PlaceAutocompleteElement({
-          includedPrimaryTypes: ['establishment'],
-          includedRegionCodes: ['us']
-        });
+        /* Region only. A primary-type filter was deliberately left out: the
+           Places type list has no cannabis category, and an unaccepted value
+           would break the widget on the first real key. */
+        var el = new lib.PlaceAutocompleteElement({ includedRegionCodes: ['us'] });
         el.id = 'fx-place';
         document.getElementById('fx-place-host').appendChild(el);
         lookup.hidden = false;
