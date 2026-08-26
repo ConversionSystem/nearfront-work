@@ -492,7 +492,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     dl('funnel_step',{funnel_step:n});
     /* offsetTop is measured from the positioned ancestor, not the document, so
        it returned ~0 here and the page never moved between steps. */
-    var t=document.getElementById('request-audit').getBoundingClientRect().top+window.pageYOffset-12;
+    /* Offset by the fixed nav, or the progress row lands underneath it. */
+    var navEl=document.querySelector('.site-nav');
+    var navH=navEl?navEl.getBoundingClientRect().height:64;
+    var t=document.getElementById('request-audit').getBoundingClientRect().top+window.pageYOffset-navH-16;
     window.scrollTo({top:t<0?0:t,behavior:'smooth'});
   }
   document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(e){
