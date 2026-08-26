@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fx-split.fx-focus .fx-rail { display: none; }
   /* Top-aligned with a deliberate gap, rather than centered: centering a tall
      card in a short window pushes its head under the fixed nav. */
-  .fx-split.fx-focus .fx-panelcol { align-items: flex-start; padding-top: 64px; }
+  .fx-split.fx-focus .fx-panelcol { align-items: flex-start; padding-top: 104px; }
     /* safe centering: when the rail's content is taller than the viewport,
      plain centering clips the top of it under the fixed nav. */
   .fx-rail { background: var(--dark-3); padding: 88px 48px 56px; position: relative; overflow: hidden; display: flex; align-items: safe center; }
@@ -186,7 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fx-rail { padding: 104px 24px 40px; }  /* clears the fixed nav */
     .fx-rail-inner { margin: 0 auto; max-width: 560px; }
     .fx-panelcol { padding: 32px 20px 40px; }
-    .fx-split.fx-focus .fx-panelcol { padding-top: 88px; }  /* 64px fixed nav + gap */
+    .fx-split.fx-focus .fx-panelcol { padding-top: 104px; }  /* 64px fixed nav + gap */
     .fx-rail-list, .fx-rail-founder { display: none; }
   }
   @media (max-width: 560px) {
@@ -495,7 +495,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* Offset by the fixed nav, or the progress row lands underneath it. */
     var navEl=document.querySelector('.site-nav');
     var navH=navEl?navEl.getBoundingClientRect().height:64;
-    var t=document.getElementById('request-audit').getBoundingClientRect().top+window.pageYOffset-navH-16;
+    var t=document.getElementById('request-audit').getBoundingClientRect().top+window.pageYOffset-navH-40;
     window.scrollTo({top:t<0?0:t,behavior:'smooth'});
   }
   document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(e){
