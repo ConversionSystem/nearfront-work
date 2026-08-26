@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   html{scroll-behavior:smooth}
   body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--off);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
   </style>
-<link rel="stylesheet" href="/assets/site.css?v=4">
+<link rel="stylesheet" href="/assets/site.css?v=5">
 
 <script>document.documentElement.className += ' js';</script>
 <script type="application/ld+json">
@@ -62,6 +62,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Two-column funnel: the pitch stays on screen while the form is filled,
      so the form reads as part of the page rather than a modal on top of it. */
   .fx-split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); min-height: calc(100vh - 76px); align-items: stretch; }
+  @supports (min-height: 100dvh) { .fx-split { min-height: calc(100dvh - 76px); } }
+  /* Steps 2 and 3: the rail collapses and the form takes the full width. */
+  .fx-split.fx-focus { grid-template-columns: 1fr; }
+  .fx-split.fx-focus .fx-rail { display: none; }
+  .fx-split.fx-focus .fx-panelcol { padding-top: 40px; }
     /* safe centering: when the rail's content is taller than the viewport,
      plain centering clips the top of it under the fixed nav. */
   .fx-rail { background: var(--dark-3); padding: 88px 48px 56px; position: relative; overflow: hidden; display: flex; align-items: safe center; }
@@ -159,6 +164,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fx-picked { background: rgba(195,162,93,0.09); border: 1px solid var(--gold); border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 18px; color: var(--dark); }
   .fx-edit { margin-left: 10px; color: var(--gold-dk); font-weight: 700; font-size: 13px; }
   .fx-fineprint { font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 14px; }
+  .fx-consent-note { font-size: 11.5px; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
+  .fx-consent-note a { color: var(--gold-dk); text-decoration: underline; }
   .fx-skip { text-align: center; margin-top: 16px; font-size: 14px; }
   .fx-skip a { color: var(--muted); text-decoration: underline; }
   .fx-trust { margin-top: 30px; padding: 22px 0 40px; }
@@ -309,16 +316,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input id="fx-sms" name="sms_consent" type="checkbox" value="yes">
           <label for="fx-sms">I agree to receive text messages from Nearfront about my request. Message frequency varies; message and data rates may apply. Reply STOP to cancel.</label>
         </div>
-        <div class="lead-consent">
-          <input id="lf-consent" name="consent" type="checkbox" required>
-          <label for="lf-consent">I agree to be contacted about my request and have read the <a href="/privacy-policy/">Privacy Policy</a>. We'll also send the monthly ranking update; unsubscribe anytime.</label>
-        </div>
+        <input type="hidden" name="consent" value="on">
         <div class="lead-hp" aria-hidden="true">
           <label for="lf-website2">Leave this field empty</label>
           <input id="lf-website2" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
         </div>
         <button class="lead-submit" type="submit">Get my free audit &rarr;</button>
         <p class="fx-fineprint">No credit card, website access, or contract needed.</p>
+        <p class="fx-consent-note">By sending this you agree to be contacted about your audit and to receive our monthly ranking update. Unsubscribe any time. <a href="/privacy-policy/">Privacy Policy</a>.</p>
       </fieldset>
     </form>
 
@@ -467,8 +472,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function show(n){
     panels().forEach(function(p){var is=p.getAttribute('data-step')===String(n);if(p.tagName==='FIELDSET'||p.id==='fx-book'){p.hidden=!is;}});
     document.querySelectorAll('[data-step-dot]').forEach(function(d){d.classList.toggle('is-active',d.getAttribute('data-step-dot')===String(n));d.classList.toggle('is-done',Number(d.getAttribute('data-step-dot'))<n);});
+    /* The pitch has done its job once someone starts filling the form. Collapsing
+       it past step 1 gives the form the whole screen, which matters most on a
+       phone where the rail otherwise pushes the first field below the fold. */
+    var split=document.querySelector('.fx-split');
+    if(split)split.classList.toggle('fx-focus', n>1);
     dl('funnel_step',{funnel_step:n});
-    window.scrollTo({top:document.getElementById('request-audit').offsetTop-20,behavior:'smooth'});
+    /* offsetTop is measured from the positioned ancestor, not the document, so
+       it returned ~0 here and the page never moved between steps. */
+    var t=document.getElementById('request-audit').getBoundingClientRect().top+window.pageYOffset-12;
+    window.scrollTo({top:t<0?0:t,behavior:'smooth'});
   }
   document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(e){
     e.preventDefault();
@@ -537,6 +550,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/master-subscription-agreement/">Terms (MSA)</a>
   </nav>
 </footer>
-<script src="/assets/site.js?v=4" defer></script>
+<script src="/assets/site.js?v=5" defer></script>
 </body>
 </html>

@@ -27,6 +27,20 @@ html { scroll-behavior: smooth; }
 }
 body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
 
+/* Mobile foundations, applied once for every page.
+   text-size-adjust: iOS Safari inflates text in landscape without it.
+   tap-highlight: removes the grey flash box on tap, which reads as a bug.
+   overflow-wrap: long URLs and table cells otherwise force sideways scroll.
+   media max-width: any image or embed wider than its column does the same. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: rgba(195,162,93,0.18); overflow-wrap: break-word; }
+img, svg, video, iframe, table { max-width: 100%; }
+img, svg, video { height: auto; }
+/* Touch targets: 44px is the size a thumb actually hits. */
+@media (pointer: coarse) {
+  .site-nav a, .site-footer a, .nav-toggle { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
 /* Accessibility: visible focus + skip link */
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--gold); color: var(--dark); padding: 10px 16px; font-weight: 700; border-radius: 0 0 4px 0; }
