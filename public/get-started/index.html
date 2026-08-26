@@ -185,6 +185,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   @media (max-width: 560px) {
     .fx-row { grid-template-columns: 1fr; }
+    /* On a 667px phone the rail pushed the first field to y=619, so step one
+       looked like a header with the form hidden below it. Kicker and headline
+       carry the pitch here; the card's own heading continues it. */
+    .fx-rail { padding: 76px 20px 26px; }
+    .fx-rail h1 { font-size: clamp(26px,7vw,32px); margin-top: 10px; }
+    .fx-rail .fx-sub { display: none; }
     .fx-hero { padding: 56px 0 86px; }
     .fx-panel { padding: 24px 20px 22px; }
     .fx-step + .fx-step::before { min-width: 12px; margin: 0 8px; }
