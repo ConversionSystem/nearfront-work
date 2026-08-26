@@ -36,6 +36,17 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { -webkit-tap-highlight-color: rgba(195,162,93,0.18); overflow-wrap: break-word; }
 img, svg, video, iframe, table { max-width: 100%; }
 img, svg, video { height: auto; }
+/* Nothing may force sideways scroll on a phone. Every nowrap in the codebase
+   is a pill, chip, table cell or trust item that is fine to wrap once the
+   screen is narrow; left as-is they push the page 4 to 21px wider than the
+   viewport, which reads as a broken page even though nothing is missing. */
+/* Prefixed with body so these beat the page-level <style> blocks, which load
+   AFTER site.css and would otherwise win on equal specificity. */
+@media (max-width: 560px) {
+  body .trust-item, body .toc-strip, body .toc-strip a, body .pill, body .vpill,
+  body .type-chip, body .svc-related a, body .post-related a,
+  body .vs-table td:first-child, body .svc-cta a, body .stack-sources a { white-space: normal; }
+}
 /* Touch targets: 44px is the size a thumb actually hits. */
 @media (pointer: coarse) {
   .site-nav a, .site-footer a, .nav-toggle { min-height: 44px; display: inline-flex; align-items: center; }
