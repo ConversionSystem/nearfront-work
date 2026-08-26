@@ -153,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 660px) { .bk-embed { height: 930px; } .bk-embed iframe { height: 1195px; margin-top: -220px; } }
   @media (max-width: 900px) {
     .fx-split { grid-template-columns: 1fr; min-height: 0; }
-    .fx-rail { padding: 48px 24px 40px; }
+    .fx-rail { padding: 104px 24px 40px; }  /* clears the fixed nav */
     .fx-rail-inner { margin: 0 auto; max-width: 560px; }
     .fx-panelcol { padding: 32px 20px 40px; }
     .fx-rail-list, .fx-rail-founder { display: none; }
@@ -228,6 +228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="stage" value="funnel">
       <input type="hidden" name="state_guide_url" id="fx-guide-url" value="">
       <input type="hidden" name="place_id" id="fx-place-id" value="">
+      <input type="hidden" name="state_name" id="fx-state-name" value="">
       <input type="hidden" name="industry" value="Cannabis &amp; Dispensaries">
 
       <fieldset class="fx-panel" data-step="1">
@@ -453,7 +454,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.getElementById('fx-picked').hidden=false;
       document.getElementById('fx-picked-name').textContent=document.getElementById('fx-dispensary').value;
       document.getElementById('fx-picked-loc').textContent='\u00b7 '+document.getElementById('fx-city').value+', '+document.getElementById('fx-state').value;
-      var st=document.getElementById('fx-state').value;
+      var stSel=document.getElementById('fx-state');
+      var st=stSel.value;
+      document.getElementById('fx-state-name').value=stSel.selectedIndex>0?stSel.options[stSel.selectedIndex].text:'';
       document.getElementById('fx-guide-url').value=GUIDES[st]?('https://nearfront.com'+GUIDES[st]):'https://nearfront.com/markets/';
     }
     show(to);
