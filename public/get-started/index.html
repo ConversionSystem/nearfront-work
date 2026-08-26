@@ -62,7 +62,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Two-column funnel: the pitch stays on screen while the form is filled,
      so the form reads as part of the page rather than a modal on top of it. */
   .fx-split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); min-height: calc(100vh - 76px); align-items: stretch; }
-  .fx-rail { background: var(--dark-3); padding: 56px 48px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    /* safe centering: when the rail's content is taller than the viewport,
+     plain centering clips the top of it under the fixed nav. */
+  .fx-rail { background: var(--dark-3); padding: 88px 48px 56px; position: relative; overflow: hidden; display: flex; align-items: safe center; }
   .fx-rail::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(195,162,93,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(195,162,93,0.05) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
   .fx-rail-inner { position: relative; z-index: 1; max-width: 460px; margin-left: auto; }
   .fx-rail h1 { font-family: Georgia, serif; font-size: clamp(28px,3.2vw,40px); color: var(--white); line-height: 1.15; letter-spacing: -0.5px; margin-top: 14px; }
