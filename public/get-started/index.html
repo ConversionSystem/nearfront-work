@@ -9,6 +9,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NFLQTMGP');</script>
 <!-- End Google Tag Manager -->
+<!-- Google Places lookup: paste a referrer-restricted browser key (Places API New,
+     restricted to https://nearfront.com/*) into content="" below to switch the
+     dispensary search on. Empty means the funnel uses the manual fields, which is
+     the shipped default and always works. -->
+<meta name="google-places-key" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Pick a plan and start with a free data audit. Local SEO for cannabis dispensaries, tracked to revenue.">
 <link rel="canonical" href="https://nearfront.com/get-started/">
@@ -90,6 +95,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .lead-field input:focus, .lead-field select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(195,162,93,0.18); }
   .lead-field input::placeholder { color: #b3b3aa; }
   .req { color: var(--gold-dk); }
+
+  /* Google Places lookup. Hidden unless a key is present and the API loads, so
+     the manual fields remain the default path and nothing depends on Google. */
+  .fx-lookup gmp-place-autocomplete { width: 100%; display: block; }
+  .fx-lookup #fx-place-host { --gmp-mat-color-surface: #fff; }
+  .fx-manual-toggle { margin: 8px 0 0; }
+  .fx-manual-toggle button { background: none; border: 0; padding: 0; font: inherit; font-size: 12.5px; color: var(--muted); text-decoration: underline; cursor: pointer; }
+  .fx-manual-toggle button:hover { color: var(--gold-dk); }
 
   /* Consent rows */
   .lead-consent { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; margin: 14px 0; }
@@ -176,11 +189,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <form class="fx-form" id="lead-form" action="/api/lead" method="post">
       <input type="hidden" name="stage" value="funnel">
       <input type="hidden" name="state_guide_url" id="fx-guide-url" value="">
+      <input type="hidden" name="place_id" id="fx-place-id" value="">
       <input type="hidden" name="industry" value="Cannabis &amp; Dispensaries">
 
       <fieldset class="fx-panel" data-step="1">
         <legend class="fx-legend">Claim your market before a competitor does</legend>
-        <div class="lead-field">
+        <div class="lead-field fx-lookup" id="fx-lookup" hidden>
+          <label for="fx-place">Find your dispensary <span class="req" aria-hidden="true">*</span> <small>(search Google)</small></label>
+          <div id="fx-place-host"></div>
+          <p class="fx-manual-toggle"><button type="button" id="fx-manual-btn">Or enter the details manually</button></p>
+        </div>
+        <div class="lead-field" id="fx-name-field">
           <label for="fx-dispensary">Dispensary name <span class="req" aria-hidden="true">*</span> <small>(as listed on Google)</small></label>
           <input id="fx-dispensary" name="dispensary" type="text" autocomplete="organization" required>
         </div>
@@ -274,6 +293,93 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function(){
+
+  /* Google Places dispensary lookup.
+     Entirely optional: without a key in <meta name="google-places-key">, or if
+     Google fails to load, this function returns and the manual fields stay as
+     they are. The lead form never depends on it. */
+  (function(){
+    var meta = document.querySelector('meta[name="google-places-key"]');
+    var key = meta && meta.content ? meta.content.trim() : '';
+    if (!key) return;
+
+    var lookup = document.getElementById('fx-lookup');
+    var nameField = document.getElementById('fx-name-field');
+    var cityField = document.getElementById('fx-city');
+    var stateSel = document.getElementById('fx-state');
+    var siteField = document.getElementById('fx-website');
+    var nameInput = document.getElementById('fx-dispensary');
+    var placeIdInput = document.getElementById('fx-place-id');
+    var manualBtn = document.getElementById('fx-manual-btn');
+    if (!lookup || !nameField) return;
+
+    function showManual(){
+      nameField.hidden = false;
+      var row = cityField ? cityField.closest('.fx-row') : null;
+      if (row) row.hidden = false;
+      if (siteField) siteField.closest('.lead-field').hidden = false;
+    }
+    function hideManual(){
+      nameField.hidden = true;
+      var row = cityField ? cityField.closest('.fx-row') : null;
+      if (row) row.hidden = true;
+      if (siteField) siteField.closest('.lead-field').hidden = true;
+    }
+
+    var s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key) +
+            '&loading=async&libraries=places&v=weekly';
+    s.async = true;
+    s.onerror = function(){ /* leave the manual fields exactly as they are */ };
+    s.onload = function(){ init(); };
+    document.head.appendChild(s);
+
+    async function init(){
+      try {
+        var lib = await google.maps.importLibrary('places');
+        var el = new lib.PlaceAutocompleteElement({
+          includedPrimaryTypes: ['establishment'],
+          includedRegionCodes: ['us']
+        });
+        el.id = 'fx-place';
+        document.getElementById('fx-place-host').appendChild(el);
+        lookup.hidden = false;
+        hideManual();
+        if (nameInput) nameInput.required = false;
+
+        el.addEventListener('gmp-select', async function(ev){
+          try {
+            var place = ev.placePrediction.toPlace();
+            /* Essentials-tier fields only. Adding rating/userRatingCount here
+               would move the call to the Place Details Pro SKU. */
+            await place.fetchFields({ fields: ['id','displayName','formattedAddress','addressComponents','websiteURI'] });
+            if (nameInput) nameInput.value = place.displayName || '';
+            if (placeIdInput) placeIdInput.value = place.id || '';
+            if (siteField && place.websiteURI) siteField.value = place.websiteURI;
+            var comps = place.addressComponents || [];
+            for (var i=0;i<comps.length;i++){
+              var types = comps[i].types || [];
+              if (types.indexOf('locality') !== -1 && cityField) cityField.value = comps[i].longText;
+              if (types.indexOf('administrative_area_level_1') !== -1 && stateSel){
+                for (var j=0;j<stateSel.options.length;j++){
+                  if (stateSel.options[j].text === comps[i].longText){ stateSel.selectedIndex = j; break; }
+                }
+                stateSel.dispatchEvent(new Event('change', {bubbles:true}));
+              }
+            }
+            if (window.dataLayer) window.dataLayer.push({event:'funnel_place_selected'});
+          } catch (e) { showManual(); if (nameInput) nameInput.required = true; }
+        });
+      } catch (e) { /* API present but unusable: manual fields already visible */ }
+    }
+
+    if (manualBtn) manualBtn.addEventListener('click', function(){
+      showManual();
+      if (nameInput) { nameInput.required = true; nameInput.focus(); }
+      manualBtn.parentElement.hidden = true;
+    });
+  })();
+
   var GUIDES={'CA':'/cannabis-seo-california/','WA':'/cannabis-seo-washington/','MA':'/cannabis-seo-massachusetts/','CT':'/cannabis-seo-connecticut/','NV':'/cannabis-seo-nevada/','OR':'/cannabis-seo-oregon/','MD':'/cannabis-seo-maryland/','NY':'/cannabis-seo-new-york/','MI':'/cannabis-seo-michigan/','AZ':'/cannabis-seo-arizona/','MO':'/cannabis-seo-missouri/','MN':'/cannabis-seo-minnesota/','IL':'/cannabis-seo-illinois/','CO':'/cannabis-seo-colorado/','FL':'/cannabis-seo-florida/'};
   var STATES=[['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],['GA','Georgia'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming']];
   var sel=document.getElementById('fx-state');
