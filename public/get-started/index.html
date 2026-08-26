@@ -66,7 +66,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Steps 2 and 3: the rail collapses and the form takes the full width. */
   .fx-split.fx-focus { grid-template-columns: 1fr; }
   .fx-split.fx-focus .fx-rail { display: none; }
-  .fx-split.fx-focus .fx-panelcol { padding-top: 40px; }
+  /* Top-aligned with a deliberate gap, rather than centred: centring a tall
+     card in a short window pushes its head under the fixed nav. */
+  .fx-split.fx-focus .fx-panelcol { align-items: flex-start; padding-top: 64px; }
     /* safe centering: when the rail's content is taller than the viewport,
      plain centering clips the top of it under the fixed nav. */
   .fx-rail { background: var(--dark-3); padding: 88px 48px 56px; position: relative; overflow: hidden; display: flex; align-items: safe center; }
@@ -97,7 +99,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fx-rail-founder img { border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--gold); flex-shrink: 0; }
   .fx-rail-founder strong { color: var(--white); font-size: 13.5px; }
 
-  .fx-panelcol { background: var(--off); padding: 56px 48px; display: flex; align-items: center; }
+  /* justify-content matters here: the form is a flex item, so the auto margins
+     on the wrapper inside it cannot centre anything once the rail collapses
+     and this column spans the full width. */
+  .fx-panelcol { background: var(--off); padding: 56px 48px; display: flex; align-items: center; justify-content: center; }
   .fx-formwrap { width: 100%; max-width: 560px; margin: 0 auto; }
 
   /* Progress rail */
@@ -181,6 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fx-rail { padding: 104px 24px 40px; }  /* clears the fixed nav */
     .fx-rail-inner { margin: 0 auto; max-width: 560px; }
     .fx-panelcol { padding: 32px 20px 40px; }
+    .fx-split.fx-focus .fx-panelcol { padding-top: 28px; }
     .fx-rail-list, .fx-rail-founder { display: none; }
   }
   @media (max-width: 560px) {
