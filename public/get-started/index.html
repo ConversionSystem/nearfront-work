@@ -98,8 +98,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Google Places lookup. Hidden unless a key is present and the API loads, so
      the manual fields remain the default path and nothing depends on Google. */
-  .fx-lookup gmp-place-autocomplete { width: 100%; display: block; }
-  .fx-lookup #fx-place-host { --gmp-mat-color-surface: #fff; }
+  /* The hidden attribute loses to any display rule, and .fx-row is a grid, so
+     hiding the manual fields needs this to actually take effect. */
+  [hidden] { display: none !important; }
+  /* The widget follows the visitor's color scheme, which renders it black on
+     this white card for anyone browsing in dark mode. The card is always
+     light, so pin the widget to light and feed it the site's tokens. */
+  .fx-lookup gmp-place-autocomplete {
+    width: 100%; display: block; color-scheme: light;
+    --gmp-mat-color-surface: #ffffff;
+    --gmp-mat-color-on-surface: #1a1a18;
+    --gmp-mat-color-on-surface-variant: #6b6b60;
+    --gmp-mat-color-outline: #e8e6df;
+    --gmp-mat-color-primary: #ae8d49;
+  }
   .fx-manual-toggle { margin: 8px 0 0; }
   .fx-manual-toggle button { background: none; border: 0; padding: 0; font: inherit; font-size: 12.5px; color: var(--muted); text-decoration: underline; cursor: pointer; }
   .fx-manual-toggle button:hover { color: var(--gold-dk); }
@@ -330,9 +342,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key) +
             '&loading=async&libraries=places&v=weekly';
     s.async = true;
-    s.onerror = function(){ /* leave the manual fields exactly as they are */ };
-    s.onload = function(){ init(); };
+    s.onerror = function(){ warn('Places script failed to load'); };
+    /* onload fires when the bootstrap arrives, which can be BEFORE
+       google.maps.importLibrary exists. Wait for the function itself rather
+       than for the script element, or init throws and we silently fall back. */
+    s.onload = function(){ whenReady(0); };
     document.head.appendChild(s);
+
+    function warn(m){ if (window.console && console.warn) console.warn('[places] ' + m); }
+    function whenReady(tries){
+      if (window.google && google.maps && typeof google.maps.importLibrary === 'function') { init(); return; }
+      if (tries > 100) { warn('Maps API never became ready; using manual fields'); return; }
+      setTimeout(function(){ whenReady(tries + 1); }, 100);
+    }
 
     async function init(){
       try {
@@ -368,9 +390,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               }
             }
             if (window.dataLayer) window.dataLayer.push({event:'funnel_place_selected'});
-          } catch (e) { showManual(); if (nameInput) nameInput.required = true; }
+          } catch (e) { warn('could not read the selected place: ' + e); showManual(); if (nameInput) nameInput.required = true; }
         });
-      } catch (e) { /* API present but unusable: manual fields already visible */ }
+      } catch (e) { warn('lookup unavailable, manual fields remain: ' + e); }
     }
 
     if (manualBtn) manualBtn.addEventListener('click', function(){
