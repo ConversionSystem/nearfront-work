@@ -169,6 +169,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fx-picked { background: rgba(195,162,93,0.09); border: 1px solid var(--gold); border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 18px; color: var(--dark); }
   .fx-edit { margin-left: 10px; color: var(--gold-dk); font-weight: 700; font-size: 13px; }
   .fx-fineprint { font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 14px; }
+  /* Step 4: the page people land on after booking or skipping. */
+  .fx-next-list { list-style: none; padding: 0; margin: 22px 0 0; counter-reset: nf; }
+  .fx-next-list li { position: relative; padding-left: 34px; margin-bottom: 14px; font-size: 14.5px; color: var(--text); line-height: 1.6; counter-increment: nf; }
+  .fx-next-list li::before { content: counter(nf); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: var(--dark-3); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .fx-booking-box { margin-top: 22px; padding: 18px 20px; background: rgba(195,162,93,0.09); border: 1px solid var(--gold); border-radius: 10px; }
+  .fx-booking-box h3 { font-size: 14px; color: var(--dark); margin-bottom: 8px; }
+  .fx-booking-box p { font-size: 13.5px; color: var(--text); line-height: 1.6; }
+  .fx-booking-note { margin-top: 8px; font-size: 12.5px; color: var(--muted); }
+  .fx-thanks-links { display: flex; flex-direction: column; gap: 8px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .fx-thanks-links a { font-size: 14px; color: var(--gold-dk); font-weight: 600; text-decoration: none; }
+  .fx-thanks-links a:hover { text-decoration: underline; }
+  .fx-booked-cue { text-align: center; margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+  .fx-booked-cue button { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: var(--gold-dk); text-decoration: underline; cursor: pointer; }
   .fx-consent-note { font-size: 11.5px; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
   .fx-consent-note a { color: var(--gold-dk); text-decoration: underline; }
   .fx-skip { text-align: center; margin-top: 16px; font-size: 14px; }
@@ -176,10 +189,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fx-trust { margin-top: 30px; padding: 22px 0 40px; }
   .fx-trust-row { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; font-size: 12.5px; color: var(--muted); max-width: 900px; margin: 0 auto; }
 
-  .bk-embed { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--white); height: 490px; }
-  .bk-embed iframe { width: 100%; height: 670px; border: 0; display: block; margin-top: -180px; }
+  /* No crop. The previous rule pulled the iframe up 180px inside a 490px box to
+     hide Google's header, which also cut the bottom of the month view off. */
+  .bk-embed { background: var(--white); }
+  .bk-embed iframe { width: 100%; height: 780px; border: 0; display: block; border-radius: 12px; }
 
-  @media (max-width: 660px) { .bk-embed { height: 930px; } .bk-embed iframe { height: 1195px; margin-top: -220px; } }
+  @media (max-width: 660px) { .bk-embed iframe { height: 900px; } }
   @media (max-width: 900px) {
     .fx-split { grid-template-columns: 1fr; min-height: 0; }
     .fx-mp { display: none; }
@@ -272,6 +287,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="state_guide_url" id="fx-guide-url" value="">
       <input type="hidden" name="place_id" id="fx-place-id" value="">
       <input type="hidden" name="state_name" id="fx-state-name" value="">
+      <input type="hidden" name="address" id="fx-address" value="">
       <input type="hidden" name="industry" value="Cannabis &amp; Dispensaries">
 
       <fieldset class="fx-panel" data-step="1">
@@ -347,10 +363,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Z8VHXVxf5dA6OpXSb1H2N1wZw2Mce1sEWRnNstAWdFDIKz-F_nGqrzwKmv85-a_isAkAAsLot?gv=true"
           loading="lazy"></iframe>
       </div>
+      <p class="fx-booked-cue">Booked your time? <button type="button" id="fx-booked">Yes, I booked it</button></p>
       <p class="fx-skip"><a href="#" id="fx-skip">Skip for now, email me the highlights instead</a></p>
-      <div class="lead-status lead-status-ok" id="fx-done" hidden tabindex="-1" role="status">
-        <strong>All set.</strong> Your audit request is in. Watch your inbox for a note from Guillermo, and call <a href="tel:+17608292735">(760) 829-2735</a> any time.
+    </div>
+
+    <div class="fx-panel" data-step="4" hidden id="fx-thanks" tabindex="-1">
+      <h2 class="fx-legend" id="fx-thanks-title">You are all set.</h2>
+      <p class="fx-sub-sm" id="fx-thanks-lead">Your audit request is in for <strong id="fx-thanks-name">your dispensary</strong>.</p>
+
+      <ol class="fx-next-list">
+        <li><strong>Now.</strong> A confirmation is on its way to <span id="fx-thanks-email">your inbox</span>.</li>
+        <li><strong>Within two business days.</strong> Guillermo pulls your Google Business Profile, maps your Map Pack position across your trade area, and names the dispensaries competing with you.</li>
+        <li><strong>Then.</strong> You get the audit itself, with every number sourced and dated so you can check it.</li>
+      </ol>
+
+      <div class="fx-booking-box" id="fx-booking-box" hidden>
+        <h3>About your call</h3>
+        <p>Google has emailed you the confirmation. That email carries your <strong>cancel and reschedule links</strong>, the <strong>Google Meet joining link</strong>, and an <strong>add to calendar</strong> option, and the appointment is already on your calendar if you booked while signed in.</p>
+        <p class="fx-booking-note">Cannot find it? Check spam, then call <a href="tel:+17608292735">(760) 829-2735</a> and we will sort it out.</p>
       </div>
+
+      <div class="fx-thanks-links">
+        <a href="/markets/" id="fx-guide-link">Read your market's sourced guide</a>
+        <a href="/how-we-rank-ourselves/">See our own rankings, published monthly</a>
+        <a href="/dispensary-marketing/">The dispensary marketing guide</a>
+      </div>
+
+      <p class="fx-fineprint">Questions before then? Email <a href="mailto:bravo@nearfront.com">bravo@nearfront.com</a> or call <a href="tel:+17608292735">(760) 829-2735</a>.</p>
     </div>
 
     <div class="lead-status lead-status-ok" id="lead-ok" hidden tabindex="-1" role="status">
@@ -448,6 +487,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             await place.fetchFields({ fields: ['id','displayName','formattedAddress','addressComponents','websiteURI'] });
             if (nameInput) nameInput.value = place.displayName || '';
             if (placeIdInput) placeIdInput.value = place.id || '';
+            var addrInput = document.getElementById('fx-address');
+            if (addrInput) addrInput.value = place.formattedAddress || '';
             if (siteField && place.websiteURI) siteField.value = place.websiteURI;
             var comps = place.addressComponents || [];
             for (var i=0;i<comps.length;i++){
@@ -482,8 +523,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function dl(ev,extra){window.dataLayer=window.dataLayer||[];var p={event:ev};if(extra)for(var k in extra)p[k]=extra[k];window.dataLayer.push(p);}
   function panels(){return document.querySelectorAll('[data-step]');}
   function show(n){
-    panels().forEach(function(p){var is=p.getAttribute('data-step')===String(n);if(p.tagName==='FIELDSET'||p.id==='fx-book'){p.hidden=!is;}});
-    document.querySelectorAll('[data-step-dot]').forEach(function(d){d.classList.toggle('is-active',d.getAttribute('data-step-dot')===String(n));d.classList.toggle('is-done',Number(d.getAttribute('data-step-dot'))<n);});
+    panels().forEach(function(p){var is=p.getAttribute('data-step')===String(n);if(p.tagName==='FIELDSET'||p.id==='fx-book'||p.id==='fx-thanks'){p.hidden=!is;}});
+    document.querySelectorAll('[data-step-dot]').forEach(function(d){var dn=Number(d.getAttribute('data-step-dot'));d.classList.toggle('is-active',dn===n);d.classList.toggle('is-done',dn<n);});
     /* The pitch has done its job once someone starts filling the form. Collapsing
        it past step 1 gives the form the whole screen, which matters most on a
        phone where the rail otherwise pushes the first field below the fold. */
@@ -506,7 +547,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       for(var i=0;i<f1.length;i++){if(!f1[i].reportValidity())return;}
       document.getElementById('fx-picked').hidden=false;
       document.getElementById('fx-picked-name').textContent=document.getElementById('fx-dispensary').value;
-      document.getElementById('fx-picked-loc').textContent='\u00b7 '+document.getElementById('fx-city').value+', '+document.getElementById('fx-state').value;
+      var addrVal=(document.getElementById('fx-address')||{value:''}).value;
+      document.getElementById('fx-picked-loc').textContent='\u00b7 '+(addrVal||(document.getElementById('fx-city').value+', '+document.getElementById('fx-state').value));
       var stSel=document.getElementById('fx-state');
       var st=stSel.value;
       document.getElementById('fx-state-name').value=stSel.selectedIndex>0?stSel.options[stSel.selectedIndex].text:'';
@@ -528,12 +570,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .catch(function(){dl('form_submit_error');document.getElementById('lead-fail').hidden=false;btn.disabled=false;btn.textContent='Get my free audit \u2192';});
   });
 
+  /* Both exits land on the same thank-you panel, filled with what they already
+     told us so nobody has to read a generic confirmation. */
+  function thanks(booked){
+    var nm=document.getElementById('fx-dispensary').value.trim();
+    var em=document.getElementById('fx-email').value.trim();
+    if(nm)document.getElementById('fx-thanks-name').textContent=nm;
+    if(em)document.getElementById('fx-thanks-email').textContent=em;
+    var guide=document.getElementById('fx-guide-url').value;
+    var gl=document.getElementById('fx-guide-link');
+    if(guide&&gl){gl.href=guide;var sn=document.getElementById('fx-state-name').value;
+      gl.textContent=sn?('Read the sourced market guide for '+sn):'Read your market\u2019s sourced guide';}
+    document.getElementById('fx-booking-box').hidden=!booked;
+    document.getElementById('fx-thanks-title').textContent=booked?'Booked. See you then.':'You are all set.';
+    show(4);
+    var t=document.getElementById('fx-thanks');t.focus();
+  }
   document.getElementById('fx-skip').addEventListener('click',function(e){
     e.preventDefault();
-    document.querySelector('#fx-book .bk-embed').hidden=true;
-    document.getElementById('fx-skip').hidden=true;
-    var d=document.getElementById('fx-done');d.hidden=false;d.focus();
     dl('funnel_skip_booking');
+    thanks(false);
+  });
+  document.getElementById('fx-booked').addEventListener('click',function(){
+    dl('funnel_booking_confirmed_self_reported');
+    thanks(true);
   });
 
   /* Booking engagement events, same contract as /book/ */
