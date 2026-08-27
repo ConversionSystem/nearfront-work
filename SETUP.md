@@ -35,17 +35,24 @@ thing blocking you. The session keeps an allowlist of repositories it may push
 to, and this repo is not on it. The commit is already safe in your session, so
 once the repo is allowed, push again and nothing needs rebuilding.
 
-For a Claude session on the web, that allowlist normally comes from the
-**Claude GitHub App**, and this is the part that is NOT yours to fix alone:
-`nearfront-work` belongs to the ConversionSystem account, so the app has to be
-installed or granted on **that** account, by its owner (Steve), with this
-repository selected. A collaborator cannot grant themselves another owner's
-repo from their side. Once the grant exists, start a fresh session with this
-repository attached and the proxy accepts the push.
+The owner-side grant is NOT the problem, so do not chase it: the Claude
+GitHub App is installed on the ConversionSystem account with **All
+repositories**, which covers this repo (verified 2026-08-28). What the proxy
+error means for a collaborator is that YOUR side of the link is missing, and
+it has two parts, both in your own accounts:
 
-This bit us for weeks. The web uploader looked like the only way to get a file
-into GitHub, when the actual blockers were one app grant and one session
-setting.
+1. On claude.ai, connect your GitHub account (authorize the Claude GitHub App
+   as your GitHub user, the same user that has write access here).
+2. Start a fresh session with `ConversionSystem/nearfront-work` attached in
+   the session's repository picker. An existing session does not pick up new
+   repos.
+
+If the repo does not appear in your picker after step 1, say so; that is the
+signal worth debugging, not the owner grant.
+
+This bit us for weeks, and the diagnosis moved three times: it was not HTTPS
+credentials, and it was not a missing owner grant. The uploader below works
+regardless.
 
 ### Credential problems
 
