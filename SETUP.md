@@ -22,7 +22,30 @@ every time, and an agent running `git push` for you cannot type one.
 
 ## 2. If the push fails
 
-This error means the remote is HTTPS and there is no credential behind it:
+**Check this one first.** If the push dies with a git proxy message rather than
+a git error:
+
+```
+access denied by the git proxy: ConversionSystem/nearfront-work is not in
+this session's authorized repository set
+```
+
+then git and your credentials are fine and the agent session itself is the
+thing blocking you. The session keeps an allowlist of repositories it may push
+to, and this repo is not on it. Add it in your own Claude settings, under the
+session's authorized repositories or sources. Nobody else can grant this for
+you: it is not a GitHub permission, not a setting in this repo, and not
+something another person's session can change on your behalf. The commit is
+already safe on your machine, so once the repo is allowed, push again and
+nothing needs rebuilding.
+
+This bit us for weeks. The web uploader looked like the only way to get a file
+into GitHub, when the actual blocker was one allowlist entry.
+
+### Credential problems
+
+This different error means the remote is HTTPS and there is no credential
+behind it:
 
 ```
 fatal: could not read Username for 'https://github.com'
