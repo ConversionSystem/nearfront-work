@@ -126,3 +126,21 @@ because it only ever scanned `public/`.
 There is now a `stray-root-html` check that errors on any HTML outside
 `public/`, and CI runs it on every push, so this specific mistake cannot repeat
 silently. Cloning and pushing is still the better path.
+
+### If the uploader is the only channel you have
+
+Blocked by the git proxy above and need something live today? The uploader is
+fine, as long as you **type the full path**. It is only dangerous because it
+defaults to wherever you happen to be browsing.
+
+1. Open the repo and press **Add file, Create new file**.
+2. In the filename box type the whole path, slashes included:
+   `public/proposals/<client>/<topic>/index.html`. GitHub creates each folder
+   as you type a slash.
+3. Paste the file contents and commit.
+
+Typing the path is what makes this safe. Drag and drop cannot do it, because a
+dropped file lands in the folder you are looking at. If you get it wrong, CI
+fails on `stray-root-html` and tells you, rather than the page quietly 404ing.
+
+Fix the proxy allowlist when you can. This is the stopgap, not the habit.
