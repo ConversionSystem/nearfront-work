@@ -69,6 +69,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Top-aligned with a deliberate gap, rather than centered: centering a tall
      card in a short window pushes its head under the fixed nav. */
   .fx-split.fx-focus .fx-panelcol { align-items: flex-start; padding-top: 104px; }
+  /* The calendar step needs a wider card than the form steps do. */
+  .fx-split.fx-wide .fx-formwrap { max-width: 880px; }
     /* safe centering: when the rail's content is taller than the viewport,
      plain centering clips the top of it under the fixed nav. */
   .fx-rail { background: var(--dark-3); padding: 88px 48px 56px; position: relative; overflow: hidden; display: flex; align-items: safe center; }
@@ -529,7 +531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        it past step 1 gives the form the whole screen, which matters most on a
        phone where the rail otherwise pushes the first field below the fold. */
     var split=document.querySelector('.fx-split');
-    if(split)split.classList.toggle('fx-focus', n>1);
+    if(split){split.classList.toggle('fx-focus', n>1);split.classList.toggle('fx-wide', n===3);}
     dl('funnel_step',{funnel_step:n});
     /* offsetTop is measured from the positioned ancestor, not the document, so
        it returned ~0 here and the page never moved between steps. */
