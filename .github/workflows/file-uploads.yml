@@ -1,0 +1,78 @@
+# Files web-uploaded HTML into the served tree.
+#
+# NOT a deploy workflow, and it must stay that way. Deployment remains
+# Cloudflare's Git integration; this job holds no Cloudflare secret and adds
+# none. Its only credential is the automatic GITHUB_TOKEN, which is scoped to
+# this repository alone: it cannot reach ConversionSystem/nearfront and it
+# cannot touch Cloudflare, so the CLAUDE.md credential rule (about
+# account-scoped Cloudflare tokens) is preserved.
+#
+# Why this exists: files added through github.com's uploader land wherever the
+# uploader was pointed, usually the repo root, where Pages serves nothing.
+# Three client files were stranded that way, one for a week. Instead of just
+# failing the push (stray-root-html) and leaving the uploader stuck, this
+# moves the file where it belongs, adds the noindex tag if missing, and lets
+# the next build deploy it. The filename becomes the URL slug; a filename
+# containing "proposal" routes to /proposals/, everything else to /reports/.
+name: File uploads
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+concurrency:
+  group: file-uploads
+  cancel-in-progress: false
+jobs:
+  file:
+    # the bot's own follow-up push must not retrigger this job
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move stray HTML into public/ and add noindex
+        run: |
+          python3 - <<'PY'
+          import os, re
+          # Keep in sync with NON_SERVED_HTML_DIRS in scripts/validate.py.
+          ALLOWED = ("public/", "templates/", "content/", "reference/")
+          TAG = '<meta name="robots" content="noindex,nofollow">'
+          def inject(s):
+              if '<meta name="robots"' in s: return s
+              if '<meta name="viewport"' in s:
+                  return re.sub(r'(<meta name="viewport"[^>]*>)', r'\1\n'+TAG, s, count=1)
+              if '</title>' in s:
+                  return s.replace('</title>', '</title>\n'+TAG, 1)
+              m = re.search(r'<head[^>]*>', s)
+              if m: return s[:m.end()]+'\n'+TAG+s[m.end():]
+              return TAG+'\n'+s
+          moved = []
+          for root, dirs, files in os.walk('.'):
+              dirs[:] = [d for d in dirs if not d.startswith('.')
+                         and d not in ('node_modules','public','templates','content','reference')]
+              for f in files:
+                  if not f.endswith('.html'): continue
+                  rel = os.path.relpath(os.path.join(root, f), '.').replace(os.sep, '/')
+                  if rel.startswith(ALLOWED): continue
+                  slug = re.sub(r'[^a-z0-9]+', '-', f[:-5].lower()).strip('-')
+                  if slug in ('', 'index'): slug = 'upload-'+os.environ.get('GITHUB_RUN_ID', 'x')
+                  kind = 'proposals' if 'proposal' in slug else 'reports'
+                  dest = 'public/%s/%s/index.html' % (kind, slug)
+                  s = open(rel, encoding='utf-8', errors='replace').read()
+                  os.makedirs(os.path.dirname(dest), exist_ok=True)
+                  open(dest, 'w', encoding='utf-8').write(inject(s))
+                  os.remove(rel)
+                  moved.append('%s -> %s' % (rel, dest))
+          open('.filed.txt', 'w').write('\n'.join(moved))
+          print('\n'.join(moved) if moved else 'nothing to file')
+          PY
+      - name: Commit and push if anything moved
+        run: |
+          MOVES=$(cat .filed.txt); rm -f .filed.txt
+          if [ -z "$MOVES" ]; then echo "clean"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          printf 'File web upload into public/ (auto)\n\n%s\n' "$MOVES" | git commit -q -F -
+          for i in 1 2 3; do git push && exit 0; git pull --rebase; done
+          exit 1

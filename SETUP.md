@@ -32,15 +32,20 @@ this session's authorized repository set
 
 then git and your credentials are fine and the agent session itself is the
 thing blocking you. The session keeps an allowlist of repositories it may push
-to, and this repo is not on it. Add it in your own Claude settings, under the
-session's authorized repositories or sources. Nobody else can grant this for
-you: it is not a GitHub permission, not a setting in this repo, and not
-something another person's session can change on your behalf. The commit is
-already safe on your machine, so once the repo is allowed, push again and
-nothing needs rebuilding.
+to, and this repo is not on it. The commit is already safe in your session, so
+once the repo is allowed, push again and nothing needs rebuilding.
+
+For a Claude session on the web, that allowlist normally comes from the
+**Claude GitHub App**, and this is the part that is NOT yours to fix alone:
+`nearfront-work` belongs to the ConversionSystem account, so the app has to be
+installed or granted on **that** account, by its owner (Steve), with this
+repository selected. A collaborator cannot grant themselves another owner's
+repo from their side. Once the grant exists, start a fresh session with this
+repository attached and the proxy accepts the push.
 
 This bit us for weeks. The web uploader looked like the only way to get a file
-into GitHub, when the actual blocker was one allowlist entry.
+into GitHub, when the actual blockers were one app grant and one session
+setting.
 
 ### Credential problems
 
@@ -129,18 +134,25 @@ silently. Cloning and pushing is still the better path.
 
 ### If the uploader is the only channel you have
 
-Blocked by the git proxy above and need something live today? The uploader is
-fine, as long as you **type the full path**. It is only dangerous because it
-defaults to wherever you happen to be browsing.
+Upload the file anywhere in the repo through github.com (**Add file, Upload
+files**) and the repo files it for you. A workflow watches every push: any
+`.html` that lands outside `public/` is moved to
+`public/reports/<filename-as-slug>/index.html`, gets the noindex tag if it is
+missing, and is pushed back by `github-actions[bot]`. Cloudflare deploys that
+commit like any other, so the page is live about a minute after the upload.
 
-1. Open the repo and press **Add file, Create new file**.
-2. In the filename box type the whole path, slashes included:
-   `public/proposals/<client>/<topic>/index.html`. GitHub creates each folder
-   as you type a slash.
-3. Paste the file contents and commit.
+Two things to know:
 
-Typing the path is what makes this safe. Drag and drop cannot do it, because a
-dropped file lands in the folder you are looking at. If you get it wrong, CI
-fails on `stray-root-html` and tells you, rather than the page quietly 404ing.
+- **The filename is the URL.** `ember-gardens-august-2026.html` becomes
+  `/reports/ember-gardens-august-2026/`. Put the word `proposal` in the
+  filename to route to `/proposals/<slug>/` instead. Re-uploading the same
+  filename updates the same URL.
+- **Your commit will show a red X; the bot's follow-up goes green.** The red
+  is the validator seeing the file at the root before the bot moves it. Em
+  dashes are still yours to fix: the validator flags each one with a line
+  number, and the github.com editor is enough to fix them.
 
-Fix the proxy allowlist when you can. This is the stopgap, not the habit.
+Typing the full path at upload time (**Add file, Create new file**, then the
+path with slashes) still works and skips the bot entirely.
+
+Fix the proxy allowlist when you can. Upload is the stopgap, not the habit.
