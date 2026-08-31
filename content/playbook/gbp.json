@@ -1,0 +1,240 @@
+{
+  "spoke": "Google Business Profile for dispensaries",
+  "slug": "dispensary-google-business-profile",
+  "phase": "Phase 2, spoke 1",
+  "updated": "2026-08-31",
+  "method": "Every rule below was read firsthand from Google's own Help Center on the retrieved date. Nothing is quoted from a third-party SEO blog. Where Google does not publish something, it goes in `gaps` and never onto the page.",
+  "facts": [
+    {
+      "id": "gbp-cannabis-sab",
+      "label": "Cannabis businesses cannot be service-area businesses without a storefront",
+      "rule": "Businesses associated with products or services that require the customer to be a certain minimum age, like alcohol, cannabis, or weapons, are not permitted as service-area businesses without a storefront.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines, section 'Ineligible businesses'",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-08-31",
+      "verify": "Google names cannabis EXPLICITLY in this list, alongside alcohol and weapons. This is the single most consequential documented cannabis-specific GBP rule that exists. Consequence: a delivery-only cannabis operation with no storefront customers can visit is not eligible for a Business Profile at all. A storefront dispensary that also delivers is eligible on the strength of the storefront.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-eligibility-inperson",
+      "label": "Eligibility requires in-person contact during stated hours",
+      "rule": "To qualify for a Business Profile, a business must make in-person contact with customers during its stated hours.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines, section 'Eligible businesses'",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-08-31",
+      "verify": "Pairs with gbp-cannabis-sab. Stated hours must be hours the store is actually open to people, not order-processing hours."
+    },
+    {
+      "id": "gbp-ranking-factors",
+      "label": "Local results are based on relevance, distance and prominence",
+      "rule": "Local results are mainly based on relevance, distance, and popularity. Relevance is how well a Business Profile matches what someone is searching for. Distance refers to how far each business is from the customer who is searching. Prominence means how well-known a business is, based on info like how many websites link to your business and how many reviews you have.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "WORDING NUANCE, do not smooth it over: the summary sentence says 'relevance, distance, and popularity' while the third subheading immediately below is titled 'Prominence'. Google uses both words on the same page. Most agency blogs quote 'prominence' as if it were the only term used. If the page quotes this, quote it as it stands."
+    },
+    {
+      "id": "gbp-no-paid-ranking",
+      "label": "Local ranking cannot be bought",
+      "rule": "There's no way to request or pay for a better local ranking on Google. We do our best to keep the search algorithm details confidential to make the ranking system as fair as possible for everyone.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "Google's own words, flagged 'Important' on the page. Useful against vendors who sell Map Pack placement as if it were inventory."
+    },
+    {
+      "id": "gbp-restricted-content",
+      "label": "No sale offers, purchase links or promotions for regulated goods",
+      "rule": "For some products or services subject to controls and local regulations, you must follow certain guidelines when posting content. The content you upload may not feature calls to action or offers for the sale of products or services that are subject to local legal regulations. This includes, but is not limited to, alcohol, gambling, tobacco, guns, health and medical devices, regulated pharmaceuticals, adult services, and financial services. The content shouldn't display: links to a landing page where it is possible to purchase restricted goods or services; email address and/or phone numbers to contact for the purchase of restricted goods; promotional offers for restricted goods or services, for example deals, coupons, pricing information or other promotions.",
+      "source": "Google Business Profile Help, Prohibited & restricted content, section 'Restricted content'",
+      "source_url": "https://support.google.com/business/answer/7400114",
+      "retrieved": "2026-08-31",
+      "verify": "HONESTY REQUIREMENT: cannabis is NOT named in Google's enumerated list. The list is prefaced 'includes, but is not limited to', and the governing phrase is 'products or services that are subject to controls and local regulations', which cannabis plainly is. The page must say this exactly that way and must not claim Google names cannabis here. Google DOES name cannabis in the eligibility article (see gbp-cannabis-sab); it does not name it in this one.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-incidental-menus",
+      "label": "Images of menus are excluded as incidental",
+      "rule": "Note that incidental depictions of these products are excluded from this policy. Examples include: images of menus; images where alcoholic beverages are present but not the main focus.",
+      "source": "Google Business Profile Help, Prohibited & restricted content, section 'Restricted content'",
+      "source_url": "https://support.google.com/business/answer/7400114",
+      "retrieved": "2026-08-31",
+      "verify": "Directly answers the most common dispensary question: a menu photo is explicitly carved out, a post advertising 20% off flower is not. The distinction is offer versus depiction."
+    },
+    {
+      "id": "gbp-posts-defer",
+      "label": "Posts and photos inherit the restricted-content rules",
+      "rule": "Our prohibited and restricted content policies apply to your submitted or published photos and videos. You're responsible for making sure that your posted content complies with all applicable laws and regulations.",
+      "source": "Google Business Profile Help, Business Profile photos & videos policy and posts content policy",
+      "source_url": "https://support.google.com/business/answer/7213077",
+      "retrieved": "2026-08-31",
+      "verify": "Completes the chain: Posts and Photos do not have their own softer rule set, they defer to the restricted-content policy above."
+    },
+    {
+      "id": "gbp-products-shopping",
+      "label": "Profile product listings are governed by Shopping policy",
+      "rule": "If your uploaded product data doesn't meet the product data specifications or Shopping policy requirements, your products may be subject to warnings, disapprovals, limited visibility or suspension.",
+      "source": "Google Business Profile Help, Product approval policies",
+      "source_url": "https://support.google.com/business/answer/10786874",
+      "retrieved": "2026-08-31",
+      "verify": "Step one of a two-step chain. Step two is gbp-shopping-drugs."
+    },
+    {
+      "id": "gbp-shopping-drugs",
+      "label": "Shopping prohibits recreational drugs and psychoactive substances",
+      "rule": "Dangerous products. Examples of dangerous content: Recreational drugs (chemical or herbal); psychoactive substances; equipment to facilitate drug use; weapons, ammunition, explosive materials and fireworks; instructions for making explosives or other harmful products; tobacco products.",
+      "source": "Google Merchant Center Help, Shopping ads policies, section 'Prohibited content'",
+      "source_url": "https://support.google.com/merchants/answer/6149970",
+      "retrieved": "2026-08-31",
+      "verify": "Step two. Chained with gbp-products-shopping this is a sourced answer to 'can I list my menu in the Products section of my Business Profile?': no, THC products are prohibited content under the policy that governs profile products. This chain is the honest version of a question most agencies answer with a shrug.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-instore-products-limited",
+      "label": "In-store product display is limited by region and business type",
+      "rule": "Add in-store products. Important: This is available only for retail businesses in eligible countries or regions.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "A second, independent reason not to build a dispensary strategy around profile product listings."
+    },
+    {
+      "id": "gbp-name-rules",
+      "label": "The business name must be the real-world name, nothing more",
+      "rule": "Your name should reflect your business's real-world name, as used consistently on your storefront, website, stationery, and as known to customers. Including unnecessary information in your business name isn't permitted, and could result in the suspension of your Business Profile. Names must not include marketing taglines, store codes, trademark or registered signs, fully capitalized words, business hours information, phone numbers or website URLs, special characters or irrelevant legal terms such as LLC, LTD or INC, or service or product information.",
+      "source": "Google Business Profile Help, Guidelines for representing your business on Google, section 'Name'",
+      "source_url": "https://support.google.com/business/answer/3038177",
+      "retrieved": "2026-08-31",
+      "verify": "Google's own examples: 'TD Bank, America's Most Convenient Bank' not allowed, 'TD Bank' allowed. 'Midas Auto Service Experts' not allowed. Directly kills the common dispensary tactic of appending 'Dispensary Denver' or 'Weed Store Near Me' to the profile name. Google explicitly ties this to suspension risk. NOTE the documented exception: special characters or legal terms ARE permitted if you can provide real-world proof such as signage, business cards or invoices that consistently display them.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-fewest-categories",
+      "label": "Use the fewest categories that describe the core business",
+      "rule": "Choose the fewest number of categories it takes to describe your overall core business. There should only be one profile per business, as this can cause problems with how your information displays on Google Maps and Search.",
+      "source": "Google Business Profile Help, Guidelines for representing your business on Google, section 'Understand basic guidelines'",
+      "source_url": "https://support.google.com/business/answer/3038177",
+      "retrieved": "2026-08-31",
+      "verify": "Runs directly against the widespread advice to stuff every plausible secondary category. Google's stated instruction is the opposite: fewest, not most."
+    },
+    {
+      "id": "gbp-description-rules",
+      "label": "The description may not carry links, prices or promotions",
+      "rule": "In addition to our overall guidelines on prohibited and restricted content, make sure that your business description does not: display low-quality, irrelevant, or distracting content; focus on special promotions, prices, and offer sales, for example 'Everything on sale, -50%'; display links. No links of any type are allowed.",
+      "source": "Google Business Profile Help, Guidelines for representing your business on Google, section 'Business description'",
+      "source_url": "https://support.google.com/business/answer/3038177",
+      "retrieved": "2026-08-31",
+      "verify": "The 'no links of any type' rule is absolute and stated flatly. Combined with gbp-restricted-content it means a dispensary description cannot carry a menu link or a deal."
+    },
+    {
+      "id": "gbp-review-solicitation",
+      "label": "What Google actually permits when asking for reviews",
+      "rule": "We do not allow merchants to: offer incentives, such as payment, discounts, free goods and/or services, in exchange for posting any review or revision or removal of a negative review; discourage or prohibit negative reviews, or selectively solicit positive reviews from customers. When soliciting reviews, merchants should not require or pressure users to leave ratings or write reviews while on the premises, nor should they request that specific content be included. We do allow merchants to: solicit or encourage the posting of content that does represent a genuine experience, without offering incentives to do so or attempting to influence the rating or the contents of the review.",
+      "source": "Google Business Profile Help, Prohibited & restricted content, section 'Rating Manipulation'",
+      "source_url": "https://support.google.com/business/answer/7400114",
+      "retrieved": "2026-08-31",
+      "verify": "Four separate prohibitions plus one explicit permission. The 'selectively solicit positive reviews' clause is the one that outlaws review gating, and the 'while on the premises' clause is the one that outlaws the budtender-with-a-tablet tactic. Reserve the full treatment for the reviews spoke; this page states the rule and links across.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-verification-methods",
+      "label": "Verification methods are assigned by Google, not chosen",
+      "rule": "Important: Verification methods are automatically determined by Google and can't be changed. The verification options available to you depend on your business type, public info, region, or business hours. In some cases, you may need to verify your business with more than one method. If your business is eligible for video verification, we recommend that you use this option. To get your verification code, make sure you can answer your business phone number or receive text messages. Interactive Voice Response (IVR) systems won't get the code.",
+      "source": "Google Business Profile Help, Verify your business on Google",
+      "source_url": "https://support.google.com/business/answer/7107242",
+      "retrieved": "2026-08-31",
+      "verify": "Kills the common request 'can you get me postcard verification instead'. The IVR detail is a real operational trap for multi-location operators whose published number reaches a phone tree."
+    },
+    {
+      "id": "gbp-video-verification-showing",
+      "label": "What live video verification asks you to show",
+      "rule": "Make sure you're at your business and can show your location and ownership during the call. For example, be prepared to show: your current location, such as outside signs, nearby businesses, or a street sign that confirms your business location; your business or equipment, such as your products, branded equipment, marketing materials, or tools you use to serve customers; proof you manage the business, such as access to employee-only areas or items like a cash register, kitchen, storage room, or non-sensitive business documents. Live video calls are only available within the business hours of your location.",
+      "source": "Google Business Profile Help, Verify your business on Google, section 'Live video call'",
+      "source_url": "https://support.google.com/business/answer/7107242",
+      "retrieved": "2026-08-31",
+      "verify": "Directly actionable for a dispensary: exterior signage, the licence on the wall, the secure storage area and the POS terminal all satisfy the three things Google asks to see."
+    },
+    {
+      "id": "gbp-suspension-appeal",
+      "label": "The appeal process and its 60-minute evidence window",
+      "rule": "Important: Once you open the evidence form, you must submit it within 60 minutes or it won't be attached to your appeal. Evidence that can help strengthen your appeal includes: official business registration; a business license; tax certificates; utility bills for the business such as electricity, phone, water, internet. For any documents you submit as evidence, check that the business name and address match the profile you want to make an appeal for. Important: Do not create a new Business Profile for the same business while your appeal is under review.",
+      "source": "Google Business Profile Help, Fix suspended or disabled profiles",
+      "source_url": "https://support.google.com/business/answer/4569145",
+      "retrieved": "2026-08-31",
+      "verify": "The 60-minute window is the detail that sinks most appeals, because operators open the form before gathering documents. For a dispensary the state cannabis licence is the strongest single document and matches Google's 'a business license' example exactly. The 'do not create a new profile' warning matters because duplicate creation is the reflex response to a suspension.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-suspension-products",
+      "label": "Suspension knocks out product listings for up to five days after reinstatement",
+      "rule": "If your Business Profile gets suspended, all your products will gain a 'Not Approved' status. Once your Business Profile is reinstated, products are automatically reprocessed and become available within 5 days of reinstatement.",
+      "source": "Google Business Profile Help, Product approval policies",
+      "source_url": "https://support.google.com/business/answer/10786874",
+      "retrieved": "2026-08-31",
+      "verify": "Reinstatement is not instant recovery. Useful for setting expectations after an appeal succeeds."
+    },
+    {
+      "id": "gbp-authorized-rep",
+      "label": "Rules that bind an agency managing a profile it does not own",
+      "rule": "Any individual or company that manages business information for a Business Profile that they don't own is considered an authorized representative. Authorized representatives must never claim a Business Profile without express consent from the business owner, must always work directly with the business owner to complete verification, must always keep the business owner informed about which actions the authorized representative will take, and must always transfer Business Profile ownership to the business owner immediately upon request. Note that the phone number and website for a Business Profile should always be the single, authoritative phone number and website for the business and be verifiable by the business owner. Failure to adhere to these policies may result in a suspension for the Business Profile and/or Google Account.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines, section 'Additional guidelines for authorized representatives'",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-08-31",
+      "verify": "Two uses. First, it is the standard a dispensary should hold its agency to, which is on-brand for a concede-first page. Second, the 'single, authoritative phone number' rule constrains call-tracking numbers on the profile, a live question in local SEO.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "gbp-ownership-revoked",
+      "label": "Ownership can be revoked for inactivity",
+      "rule": "In some instances ownership may be revoked due to one of the following reasons: you haven't signed in to your account recently; the business confirmed that you or your agency is no longer authorized to manage this page; we've been unable to reach you by email after multiple attempts to confirm your affiliation with the business; you or another profile owner deleted your profile; you created your business profile through another Google product and that product profile has been suspended.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines, section 'Ownership'",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-08-31",
+      "verify": "Signing in periodically is a documented retention requirement, not folklore."
+    }
+  ],
+  "gaps": [
+    "GBP CATEGORY NAMES. Google does not publish its Business Profile category list anywhere in the Help Center, and the old public category file is gone. Do NOT state that 'Cannabis store' or 'Cannabis dispensary' is an available category, and do not publish a ranked list of dispensary categories, however common that claim is in competitor content. Attempted verification on 2026-08-31: the category help article 404s, and reading a live dispensary profile from search was blocked by Google's bot CAPTCHA, which we do not solve. The page may state Google's sourced rule (fewest categories) and describe the procedure of reading the options Google offers inside your own profile. That is a procedure, not a claim.",
+    "WHETHER GOOGLE ENFORCES THE RESTRICTED-CONTENT RULE AGAINST CANNABIS SPECIFICALLY. The policy text does not name cannabis in its enumerated list of regulated goods, and Google publishes no enforcement guidance for the category. The page must reason from the governing phrase ('subject to controls and local regulations') and say plainly that the list does not name cannabis. Never assert an enforcement pattern we have not observed and documented.",
+    "SUSPENSION RATES FOR DISPENSARIES. No published data exists from Google or any regulator on how often cannabis profiles are suspended relative to other categories. Every number circulating on this in agency content is unsourced. Do not repeat one, and do not publish our own estimate.",
+    "WHETHER CANNABIS PROFILES GET DIFFERENT VERIFICATION TREATMENT. Undocumented. Google says methods are assigned automatically based on business type, region, public info and hours, which leaves the question open. State the documented rule and stop there.",
+    "TIME TO REINSTATEMENT AFTER APPEAL. Google says it reviews the appeal and emails a decision, with no stated turnaround. The only documented duration on the whole path is the 5-day product reprocessing window after reinstatement. Do not publish a typical appeal timeline.",
+    "WHETHER A MENU IFRAME ON THE LINKED WEBSITE AFFECTS PROFILE STANDING. Not addressed by any Google policy we read. Belongs to the menu-SEO spoke as an open question, not as an assertion here.",
+    "THE DATE GOOGLE RENAMED GOOGLE MY BUSINESS. A first draft of the page said Google retired the name in 2021. Two candidate Help Center articles returned nothing on 2026-08-31 and no Google page we read states the date, so the claim was removed rather than shipped on memory. The page now says only that Google's own help center calls the product Google Business Profile, which is directly observable on every article cited here."
+  ],
+  "internal_links": {
+    "money_page_anchor": "/services/cannabis-dispensary-seo/#gbp",
+    "map_pack_spoke": "/blog/dispensary-near-me-map-pack/",
+    "pillar": "/dispensary-marketing/",
+    "markets_hub": "/markets/"
+  },
+  "redirect_retargets": {
+    "count": 23,
+    "note": "All 23 currently point at /services/cannabis-dispensary-seo/ or /blog/. Content-intent slugs move to the new guide; the money-page target stays only where the old URL sold a service rather than taught a topic.",
+    "rules": [
+      "/gmb-everywhere-chrome-extension/",
+      "/google-business-profile-optimization-checklist/",
+      "/google-my-business-optimization-services/",
+      "/google-my-business-rank-checker/",
+      "/google-my-business-ranking-checker/",
+      "/how-do-i-verify-my-google-business-account/",
+      "/how-to-get-a-google-business-profile/",
+      "/how-to-optimize-google-business-profile/",
+      "/service-area-business-google-my-business/",
+      "/tag/gmb-everywhere-chrome-extension/",
+      "/tag/gmb-optimization/",
+      "/tag/gmb-ranking/",
+      "/tag/google-business-profile-optimization-checklist/",
+      "/tag/google-business-profile/",
+      "/tag/google-business-verification/",
+      "/tag/google-my-business-optimization-services/",
+      "/tag/google-my-business-rank-checker/",
+      "/tag/google-my-business-ranking-checker/",
+      "/tag/how-to-verify-my-google-business-account/",
+      "/tag/service-area-business-google-my-business/",
+      "/tag/what-is-a-google-business-profile/",
+      "/webinars/google-business-profile-engagement/",
+      "/what-is-a-google-business-profile/"
+    ]
+  }
+}
