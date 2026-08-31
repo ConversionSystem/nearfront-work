@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFLQTMGP');</script>
+<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Schema for Dispensaries: What Google Requires | Nearfront</title>
+<meta name="description" content="LocalBusiness markup for a dispensary: the two required properties, the type that does not exist, and the rating rule most sites break.">
+<link rel="canonical" href="https://nearfront.com/dispensary-local-schema/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f1f22">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nearfront">
+<meta property="og:title" content="Local Schema for Dispensaries: What Google Requires | Nearfront">
+<meta property="og:description" content="schema.org has no cannabis business type. Here is what Google actually requires, what it does, and what it will not do for your rankings.">
+<meta property="og:url" content="https://nearfront.com/dispensary-local-schema/">
+<meta property="og:image" content="https://nearfront.com/assets/logo.svg">
+<meta property="article:published_time" content="2026-08-31">
+<meta property="article:author" content="Guillermo Bravo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Local Schema for Dispensaries: What Google Requires | Nearfront">
+<meta name="twitter:description" content="schema.org has no cannabis business type. Here is what Google actually requires, what it does, and what it will not do for your rankings.">
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  .post-hero { background: var(--dark-3); padding: 130px 20px 60px; position: relative; overflow: hidden; }
+  .post-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(195,162,93,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(195,162,93,0.04) 1px,transparent 1px); background-size: 60px 60px; }
+  .post-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .post-hero h1 { font-size: clamp(30px,4vw,46px); font-family: Georgia,serif; font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .post-meta { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .post-meta a { color: var(--gold); text-decoration: none; }
+  .post-body { max-width: 720px; margin: 0 auto; padding: 60px 20px 30px; }
+  .post-body p { font-size: 16.5px; color: #3a3a35; line-height: 1.85; margin-bottom: 20px; }
+  .post-body h2 { font-size: 26px; font-family: Georgia,serif; font-weight: 700; color: var(--dark); margin: 40px 0 16px; line-height: 1.2; }
+  .post-body h3 { font-size: 18px; font-weight: 700; color: var(--dark); margin: 26px 0 10px; line-height: 1.3; }
+  .post-body ul, .post-body ol { margin: 0 0 20px 22px; }
+  .post-body li { font-size: 16px; color: #3a3a35; line-height: 1.75; margin-bottom: 8px; }
+  .post-body a { color: var(--gold-dk); }
+  .post-body .takeaway { border-left: 3px solid var(--gold); background: rgba(195,162,93,0.07); padding: 18px 22px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--text); line-height: 1.7; margin: 28px 0; }
+  .post-body blockquote { margin: 22px 0; padding: 16px 22px; background: #f6f5f1; border-left: 3px solid var(--dark-3); border-radius: 0 8px 8px 0; }
+  .post-body blockquote p { margin: 0; font-size: 15.5px; color: var(--dark); line-height: 1.7; }
+  .post-body blockquote cite { display: block; margin-top: 10px; font-size: 13px; font-style: normal; color: var(--muted); }
+  .post-author { max-width: 720px; margin: 20px auto 0; padding: 24px 20px; display: flex; gap: 16px; align-items: flex-start; border-top: 1px solid var(--line); }
+  .post-author img { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .pa-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .pa-bio { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+  .post-related { max-width: 720px; margin: 0 auto; padding: 10px 20px 60px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "image": { "@type": "ImageObject", "url": "https://nearfront.com/assets/guillermo-bravo.jpg", "width": 520, "height": 520 },
+      "headline": "Local schema for dispensaries",
+      "description": "LocalBusiness markup for a dispensary: the two required properties, the type that does not exist, and the rating rule most sites break.",
+      "url": "https://nearfront.com/dispensary-local-schema/",
+      "datePublished": "2026-08-31",
+      "dateModified": "2026-08-31",
+      "author": { "@type": "Person", "name": "Guillermo Bravo", "url": "https://nearfront.com/about-us/" },
+      "publisher": { "@type": "Organization", "@id": "https://nearfront.com/#org", "name": "Nearfront", "url": "https://nearfront.com/", "logo": { "@type": "ImageObject", "url": "https://nearfront.com/assets/logo.svg" } },
+      "mainEntityOfPage": "https://nearfront.com/dispensary-local-schema/",
+      "citation": [
+        "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+        "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+        "https://schema.org/Store",
+        "https://support.google.com/business/answer/7091",
+        "https://support.google.com/business/answer/2721884"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What schema type should a dispensary use?", "acceptedAnswer": { "@type": "Answer", "text": "Store, or LocalBusiness if you prefer to stay general. Google asks you to use the most specific LocalBusiness sub-type possible, but there is no cannabis sub-type to use. We enumerated schema.org/Store on August 31, 2026 and found 29 sub-types, from AutoPartsStore to WholesaleStore, with nothing cannabis-related among them. LiquorStore is the closest regulated-goods analogue and a dispensary is not a liquor store. Pharmacy exists and is the wrong answer for a recreational dispensary, because it is inaccurate and it pulls a retail store into health territory it should stay out of." } },
+        { "@type": "Question", "name": "What properties does Google actually require?", "acceptedAnswer": { "@type": "Answer", "text": "Two. Google's required properties for LocalBusiness are name and address, where address is a PostalAddress. Everything else on the long lists sold as mandatory is recommended rather than required. Recommended properties that are genuinely useful for a dispensary include openingHoursSpecification, geo coordinates, telephone and url. Google does note that coordinates must carry at least five decimal places of precision, which hand-written markup often gets wrong." } },
+        { "@type": "Question", "name": "Can I mark up my dispensary's star rating?", "acceptedAnswer": { "@type": "Answer", "text": "Almost certainly not the way you have been told. Google scopes the aggregateRating property with an explicit note: it is only recommended for sites that capture reviews about other local businesses. That describes directories and review platforms, not a store publishing its own rating on its own website. Google also warns that violating the structured data guidelines can earn a manual action against your site, so marking up a rating outside the documented use case is not a free bet." } },
+        { "@type": "Question", "name": "Should I use the menu property for my dispensary menu?", "acceptedAnswer": { "@type": "Answer", "text": "No. It reads like an exact match, and it is not. Google's documentation scopes the menu property to food establishments: it is the fully-qualified URL of the menu for a restaurant or similar. A cannabis product list is not what the property describes, however naturally the industry uses the word menu for it." } },
+        { "@type": "Question", "name": "Does schema markup help a dispensary rank in the Map Pack?", "acceptedAnswer": { "@type": "Answer", "text": "Google never claims it does. The local ranking documentation names relevance, distance and prominence and does not mention structured data at all. The structured data documentation talks about knowledge panels and rich-result eligibility on Google Search, which is a different surface from the Map Pack. Markup is worth having for what it is documented to do. It is not a Map Pack tactic and anyone selling it as one is going beyond what Google says." } },
+        { "@type": "Question", "name": "Does schema help my dispensary appear in AI answers?", "acceptedAnswer": { "@type": "Answer", "text": "Google says the opposite of the common pitch. Its guidance on optimizing for generative AI search lists overfocusing on structured data among the things you do not need to do: structured data is not required for generative AI search, and there is no special schema.org markup to add for it. Google still recommends keeping structured data, because it helps with eligibility for rich results on Google Search. Keep it for that reason, not for AI." } },
+        { "@type": "Question", "name": "Where should the markup go on a multi-location dispensary site?", "acceptedAnswer": { "@type": "Answer", "text": "On each location's own page. Google says you can add LocalBusiness structured data to any page on your site, though it makes more sense on a page that contains information about your business, and that you should define each local business location as a LocalBusiness type. If you run a medical counter and a recreational floor under one roof, Google's department property covers that, with the naming format store name plus department name." } },
+        { "@type": "Question", "name": "Will markup guarantee a rich result?", "acceptedAnswer": { "@type": "Answer", "text": "No, and Google's wording is careful about this. Required properties make your content eligible for display as a rich result. Eligible is not the same as guaranteed, and Google maintains a separate troubleshooting guide listing reasons a rich result may not appear. We have not run a controlled test on dispensary pages, so we are not going to promise you one." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearfront.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Local schema for dispensaries", "item": "https://nearfront.com/dispensary-local-schema/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFLQTMGP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Primary">
+  <a href="/" class="nav-logo" aria-label="Nearfront home">
+    <svg width="32" height="32" viewBox="18.59 55 148 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="ng" x1="18.59" y1="98.33" x2="165.86" y2="98.33" gradientUnits="userSpaceOnUse"><stop offset=".24" stop-color="#ae8d49"/><stop offset=".48" stop-color="#c3a25d"/></linearGradient></defs>
+      <polygon fill="url(#ng)" points="18.59 138.8 65.01 58.82 78.02 81.6 71.11 94.05 64.58 84.68 40.95 126.35 57.71 126.44 96.9 58.15 165.86 57.79 158.01 70.72 104.6 71.18 64.58 138.87 18.59 138.8"/>
+      <polygon fill="#c3a25d" points="82.94 118.54 90.38 106.51 96.4 116.45 112.53 88.92 138.51 88.92 131.46 101.72 119.32 101.72 96.48 142.21 82.94 118.54"/>
+      <polygon fill="#c3a25d" points="142.61 89.22 150.15 89.22 143.15 102.03 135.44 102.03 142.61 89.22"/>
+    </svg>
+    <span>Nearfront</span>
+  </a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
+  <div class="nav-links" id="nav-menu">
+    <a href="/services/">Services</a>
+    <a href="/about-us/">About</a>
+    <a href="/seo-rockstars-podcast/">Podcast</a>
+        <a href="https://app.nearfront.com/login" class="nav-login">Log In</a>
+    <a href="/get-started/" class="nav-cta">Get Ranked Free</a>
+  </div>
+</nav>
+<main id="main">
+
+<div class="post-hero">
+  <div class="post-hero-inner fade-up">
+    <span class="svc-kicker">Dispensary local SEO playbook &middot; Spoke 7</span>
+    <h1>Local schema for dispensaries</h1>
+    <p class="post-meta">By <a href="/about-us/">Guillermo Bravo</a> &middot; August 31, 2026 &middot; 11 min read &middot; <a href="/services/cannabis-dispensary-seo/#technical-ai">&larr; Dispensary SEO service</a></p>
+  </div>
+</div>
+
+<article class="post-body fade-up">
+<p>Structured data is the easiest thing in local SEO to sell and the easiest to get wrong, because almost nobody selling it reads the documentation and almost nobody buying it can check. It is also, for a dispensary, a place where the standard advice runs into a wall that does not exist for other retailers: <strong>schema.org has no cannabis business type.</strong></p>
+
+<p>This page is what Google's documentation actually says, read on August 31, 2026, plus one thing we checked ourselves because no documentation answers it.</p>
+
+<div class="takeaway">The short version: two properties are required, not twenty. There is no dispensary type, so use Store. The rating property most sites use is scoped to review sites and not to you. Markup earns rich-result eligibility on Search. It does not move the Map Pack and Google says it is not needed for AI.</div>
+
+<h2 id="type">The type that does not exist</h2>
+
+<p>Google's instruction is clear enough: "Define each local business location as a LocalBusiness type. Use the most specific LocalBusiness sub-type possible; for example, Restaurant, DaySpa, HealthClub, and so on."</p>
+
+<p>So what is the most specific sub-type for a cannabis retailer? We went and counted. On August 31, 2026, <a href="https://schema.org/Store" rel="noopener">schema.org/Store</a> lists 29 sub-types:</p>
+
+<p>AutoPartsStore, BikeStore, BookStore, ClothingStore, ComputerStore, ConvenienceStore, DepartmentStore, ElectronicsStore, FurnitureStore, GardenStore, GroceryStore, HardwareStore, HobbyShop, HomeGoodsStore, JewelryStore, LiquorStore, MensClothingStore, MobilePhoneStore, MovieRentalStore, MusicStore, OfficeEquipmentStore, OutletStore, PawnShop, PetStore, ShoeStore, SportingGoodsStore, TireShop, ToyStore, WholesaleStore.</p>
+
+<p>Nothing cannabis-related. A text search of that page for cannabis, marijuana, dispensary and weed returns nothing at all.</p>
+
+<p>That leaves three options and only one good one.</p>
+
+<ul>
+  <li><strong>Store.</strong> Accurate, general, defensible. This is the answer.</li>
+  <li><strong>LocalBusiness.</strong> Also fine, one level less specific. Nothing breaks.</li>
+  <li><strong>Pharmacy.</strong> Available, tempting, and wrong for a recreational dispensary. It is inaccurate on its face, and it drags a retail store into health and medical territory it has every reason to stay out of. Do not do this because a plugin offered it.</li>
+</ul>
+
+<p>One more trap: if you are reaching for <code>additionalType</code> to bolt on a cannabis descriptor, Google says explicitly that it is not supported. Multiple types go in an array instead.</p>
+
+<h2 id="required">Two required properties, not twenty</h2>
+
+<p>Schema is usually sold as complexity. <a href="https://developers.google.com/search/docs/appearance/structured-data/local-business" rel="noopener">Google's requirement</a> is two properties:</p>
+
+<ul>
+  <li><strong>name</strong>, the name of the business.</li>
+  <li><strong>address</strong>, a PostalAddress, with the advice to "include as many properties as possible" inside it.</li>
+</ul>
+
+<p>That is the whole required list. Everything else is recommended, which means it may improve the result but its absence does not make you ineligible. The recommended properties actually worth adding for a dispensary are the boring ones: <code>openingHoursSpecification</code>, <code>telephone</code>, <code>url</code>, and <code>geo</code> coordinates.</p>
+
+<p>On coordinates, Google sets a specific bar that hand-written markup routinely misses: latitude and longitude "must be at least 5 decimal places" of precision. Rounding to three will not do.</p>
+
+<p>Google also notes that LocalBusiness is a sub-type of Organization and recommends following the Organization fields as well, which is the tidy way to connect a store's markup to the parent company that owns it.</p>
+
+<h2 id="rating">The rating property almost everyone misuses</h2>
+
+<p>This is the most commonly broken rule in local schema, and Google states the scope in a single sentence attached to the property itself:</p>
+
+<blockquote>
+<p>aggregateRating: This property is only recommended for sites that capture reviews about other local businesses.</p>
+<cite>Google Search Central, Local business (LocalBusiness) structured data</cite>
+</blockquote>
+
+<p>Read that again, because it is the opposite of how the property is normally used. Google scopes <code>aggregateRating</code> to sites that collect reviews <em>about other businesses</em>, which describes directories and review platforms. A dispensary publishing its own star average, in its own markup, on its own website, is not the case Google is describing.</p>
+
+<p>And this is not a costless experiment. The guidelines section of the same page carries a warning: "If your site violates one or more of these guidelines, then Google may issue a manual action against it."</p>
+
+<div class="takeaway">If a plugin or an agency has put a five-star aggregateRating into your dispensary's markup, that is worth looking at this week. It is the single most likely thing on your site to be outside Google's documented use, and manual actions are considerably more expensive than the rich result was ever going to be worth.</div>
+
+<h2 id="menu">The menu property is not your menu</h2>
+
+<p>A small one that catches dispensaries specifically, because the industry borrowed a restaurant word. Google's <code>menu</code> property is documented as: "For food establishments, the fully-qualified URL of the menu."</p>
+
+<p>Your product list is not a food menu, and the property is scoped to food establishments. It looks like an exact match and it is not one.</p>
+
+<p>If you run a medical counter and a recreational floor under one roof, the property that genuinely fits is <code>department</code>, and Google gives the naming convention: store name plus department name, "for example, gMart and gMart Pharmacy," unless the department is separately branded, in which case its own brand name stands alone.</p>
+
+<h2 id="does">What markup actually does, and what it does not</h2>
+
+<p>Being precise here matters, because schema gets sold with two claims Google does not make.</p>
+
+<p><strong>What Google documents:</strong> LocalBusiness markup lets you tell Google about business hours, departments, and other details, and required properties make content "eligible for display as a rich result," typically a knowledge panel with business details on Google Search.</p>
+
+<p><strong>What Google does not say:</strong> that markup affects Map Pack position. The local ranking documentation names relevance, distance and prominence, and never mentions structured data. Those are different surfaces, and the Business Profile, not your markup, is what the Map Pack draws on. <a href="/blog/dispensary-near-me-map-pack/">The Map Pack guide</a> covers what does move that block.</p>
+
+<p><strong>What Google explicitly denies:</strong> that markup is an AI visibility tactic. Its guidance on generative AI search lists overfocusing on structured data among the things you can ignore, saying structured data "isn't required for generative AI search, and there's no special schema.org markup you need to add," while recommending you keep it for rich-result eligibility. Keep your schema. Do not buy it as an AI play.</p>
+
+<p>Note also the word Google chose: <em>eligible</em>. Required properties make you eligible for a rich result. They do not guarantee one, and Google maintains a whole troubleshooting guide for cases where a rich result does not appear. We have not run a controlled test on dispensary pages, so we are not going to promise you a rich result either.</p>
+
+<h2 id="open">The interesting open question</h2>
+
+<p>Here is the one we genuinely cannot answer, and it is the most useful thing on this page for anyone thinking carefully.</p>
+
+<p>Google states that it compiles Business Profiles from several sources, the first being "publicly-available information, such as crawled web content (e.g., information from a business' official website)." Structured data on your own site is plainly crawled web content, and it is the most machine-readable statement of your name, address, hours and phone that exists anywhere.</p>
+
+<p>So it is reasonable to suspect that clean LocalBusiness markup helps Google confirm your details, which matters a great deal given that Google may update your profile from outside sources and may <a href="/dispensary-local-citations/">refuse your own corrections when it cannot confirm them</a>.</p>
+
+<p>Reasonable to suspect. Not documented. Google never connects the two, and we are not going to pretend the inference is a citation. We mention it because it is a sensible reason to keep your markup accurate even while conceding that markup does not rank you, and because you should be able to see where our reasoning stops and our evidence ends.</p>
+
+<h2 id="not-published">What Google does not publish</h2>
+
+<ul>
+  <li><strong>Whether markup affects Map Pack ranking.</strong> Never claimed. The ranking page does not mention structured data.</li>
+  <li><strong>Whether your markup feeds or reconciles your Business Profile.</strong> Plausible from the sources list, never stated.</li>
+  <li><strong>Which type a dispensary should use.</strong> No cannabis type exists; Store is a judgment call, not a documented answer.</li>
+  <li><strong>Whether rich results actually appear for dispensary pages.</strong> Eligibility is documented, appearance is not guaranteed, and we have run no controlled test.</li>
+  <li><strong>Whether markup helps AI answers.</strong> Google says it is not required and there is no special markup for it.</li>
+</ul>
+
+<h2 id="checklist">The working checklist</h2>
+
+<ol>
+  <li><strong>Check your type.</strong> Store or LocalBusiness. Not Pharmacy. Not an invented cannabis type. Not <code>additionalType</code>.</li>
+  <li><strong>Confirm name and address exist</strong> and that the address matches the one on your Business Profile and your signage exactly.</li>
+  <li><strong>Audit for aggregateRating.</strong> If your own star rating is marked up on your own site, that is outside Google's documented use and carries manual-action risk.</li>
+  <li><strong>Remove the menu property</strong> if it points at your product list. It is scoped to food establishments.</li>
+  <li><strong>Fix coordinate precision</strong> to at least five decimal places.</li>
+  <li><strong>Put each location's markup on that location's page,</strong> and use <code>department</code> for a medical counter inside a recreational store.</li>
+  <li><strong>Validate it,</strong> then judge it by rich-result eligibility rather than by rankings, because rankings are not what it is for.</li>
+</ol>
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="svc-faq-item"><h3>What schema type should a dispensary use?</h3><p>Store, or LocalBusiness if you prefer to stay general. Google asks you to use the most specific LocalBusiness sub-type possible, but there is no cannabis sub-type to use. We enumerated schema.org/Store on August 31, 2026 and found 29 sub-types, from AutoPartsStore to WholesaleStore, with nothing cannabis-related among them. LiquorStore is the closest regulated-goods analogue and a dispensary is not a liquor store. Pharmacy exists and is the wrong answer for a recreational dispensary, because it is inaccurate and it pulls a retail store into health territory it should stay out of.</p></div>
+  <div class="svc-faq-item"><h3>What properties does Google actually require?</h3><p>Two. Google's required properties for LocalBusiness are name and address, where address is a PostalAddress. Everything else on the long lists sold as mandatory is recommended rather than required. Recommended properties that are genuinely useful for a dispensary include openingHoursSpecification, geo coordinates, telephone and url. Google does note that coordinates must carry at least five decimal places of precision, which hand-written markup often gets wrong.</p></div>
+  <div class="svc-faq-item"><h3>Can I mark up my dispensary's star rating?</h3><p>Almost certainly not the way you have been told. Google scopes the aggregateRating property with an explicit note: it is only recommended for sites that capture reviews about other local businesses. That describes directories and review platforms, not a store publishing its own rating on its own website. Google also warns that violating the structured data guidelines can earn a manual action against your site, so marking up a rating outside the documented use case is not a free bet.</p></div>
+  <div class="svc-faq-item"><h3>Should I use the menu property for my dispensary menu?</h3><p>No. It reads like an exact match, and it is not. Google's documentation scopes the menu property to food establishments: it is the fully-qualified URL of the menu for a restaurant or similar. A cannabis product list is not what the property describes, however naturally the industry uses the word menu for it.</p></div>
+  <div class="svc-faq-item"><h3>Does schema markup help a dispensary rank in the Map Pack?</h3><p>Google never claims it does. The local ranking documentation names relevance, distance and prominence and does not mention structured data at all. The structured data documentation talks about knowledge panels and rich-result eligibility on Google Search, which is a different surface from the Map Pack. Markup is worth having for what it is documented to do. It is not a Map Pack tactic and anyone selling it as one is going beyond what Google says.</p></div>
+  <div class="svc-faq-item"><h3>Does schema help my dispensary appear in AI answers?</h3><p>Google says the opposite of the common pitch. Its guidance on optimizing for generative AI search lists overfocusing on structured data among the things you do not need to do: structured data is not required for generative AI search, and there is no special schema.org markup to add for it. Google still recommends keeping structured data, because it helps with eligibility for rich results on Google Search. Keep it for that reason, not for AI.</p></div>
+  <div class="svc-faq-item"><h3>Where should the markup go on a multi-location dispensary site?</h3><p>On each location's own page. Google says you can add LocalBusiness structured data to any page on your site, though it makes more sense on a page that contains information about your business, and that you should define each local business location as a LocalBusiness type. If you run a medical counter and a recreational floor under one roof, Google's department property covers that, with the naming format store name plus department name.</p></div>
+  <div class="svc-faq-item"><h3>Will markup guarantee a rich result?</h3><p>No, and Google's wording is careful about this. Required properties make your content eligible for display as a rich result. Eligible is not the same as guaranteed, and Google maintains a separate troubleshooting guide listing reasons a rich result may not appear. We have not run a controlled test on dispensary pages, so we are not going to promise you one.</p></div>
+</article>
+  <div class="post-author">
+    <img src="/assets/guillermo-bravo.jpg" alt="Guillermo Bravo" width="56" height="56" loading="lazy">
+    <div>
+      <div class="pa-name">Guillermo Bravo</div>
+      <div class="pa-bio">Founder &amp; CEO of Nearfront. In SEO since 2007. Founded Foottraffik, the first cannabis-focused SEO company, and exited in 2021. Hosts the SEO Rockstars podcast.</div>
+    </div>
+  </div>
+
+<div class="post-related">
+  <div class="svc-related">
+      <a href="/dispensary-google-business-profile/">The Business Profile guide</a>
+      <a href="/blog/dispensary-near-me-map-pack/">How the Map Pack ranks dispensaries</a>
+      <a href="/dispensary-local-citations/">Citations and NAP guide</a>
+      <a href="/markets/">Sourced market guides by state</a>
+  </div>
+</div>
+
+<section class="svc-cta">
+  <div class="svc-cta-inner fade-up">
+    <h2>Want your markup checked against Google's actual requirements?</h2>
+    <p>We will run the same audit on your store that we run on ourselves, count your reviews and ratings against the stores currently holding the Map Pack in your trade area, and check your request process against the rules above.</p>
+    <a href="/get-started/" class="btn-primary" style="font-size:15px;padding:16px 40px">Get Ranked Free</a>
+  </div>
+</section>
+
+</main>
+<aside aria-label="Related reading" style="background:var(--dark);border-top:1px solid var(--border);padding:48px 40px">
+  <div style="max-width:var(--maxw);margin:0 auto">
+    <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)">Related reading</span>
+    <div style="display:flex;flex-wrap:wrap;gap:16px 32px;margin-top:18px;font-size:15px">
+      <a href="/dispensary-marketing/" style="color:var(--gold);font-weight:600">Dispensary Marketing →</a><a href="/blog/dispensary-near-me-map-pack/" style="color:var(--gold);font-weight:600">The Map Pack, explained →</a><a href="/services/cannabis-dispensary-seo/" style="color:var(--gold);font-weight:600">Cannabis Dispensary SEO →</a>
+    </div>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Nearfront<br>550 W B St, 4th Floor, San Diego, CA 92101 · <a href="tel:+17608292735" style="color:var(--gold)">(760) 829-2735</a></span>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/services/">Services</a>
+    <a href="/about-us/">About</a>
+    <a href="/seo-rockstars-podcast/">Podcast</a>
+    <a href="/get-started/">Get Started</a>
+    <a href="/blog/">Blog</a>
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="/master-subscription-agreement/">Terms (MSA)</a>
+  </nav>
+</footer>
+<script src="/assets/site.js?v=6" defer></script>
+</body>
+</html>

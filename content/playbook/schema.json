@@ -1,0 +1,129 @@
+{
+  "spoke": "Local schema for dispensaries",
+  "slug": "dispensary-local-schema",
+  "phase": "Phase 2, spoke 7 (taken ahead of spokes 5 and 6, see order_note)",
+  "updated": "2026-08-31",
+  "order_note": "Spoke 5 (menu/Dutchie iframe SEO) was attempted first and deferred. Google publishes NO iframe indexing guidance (checked the JavaScript SEO basics, fix-search-javascript and canonicalization docs on 2026-08-31), dutchie.com is behind Cloudflare bot protection which we do not work around, guessed dispensary domains returned parked or dead sites, and Weedmaps/Leafly listing pages render results client-side and geolocated away from the target market. That spoke needs real dispensary URLs running Dutchie or Jane before it can be written to the standard of spokes 1-4. Spoke 7 was taken instead because it is fully documented by Google Search Central.",
+  "method": "Google Search Central read firsthand 2026-08-31, plus a firsthand enumeration of schema.org Store subtypes to settle the question of what type a dispensary should use.",
+  "facts": [
+    {
+      "id": "sc-required-properties",
+      "label": "Only two properties are required",
+      "rule": "You must include the required properties for your content to be eligible for display as a rich result. Required properties: address (PostalAddress), the physical location of the business, include as many properties as possible; and name (Text), the name of the business.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "Two required properties, name and address. Everything else on the very long lists sold as mandatory is recommended, not required. Worth stating plainly because schema is usually sold as complexity.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "sc-most-specific-subtype",
+      "label": "Google asks for the most specific sub-type",
+      "rule": "Define each local business location as a LocalBusiness type. Use the most specific LocalBusiness sub-type possible; for example, Restaurant, DaySpa, HealthClub, and so on. Since LocalBusiness is a subtype of Organization, we recommend following the fields for Organization in addition to the fields required and recommended below. If you have multiple types, specify them as an array (additionalType isn't supported).",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "The instruction that creates the dispensary problem, because the most specific sub-type does not exist. See sc-no-cannabis-type. Also note additionalType is explicitly unsupported, which is the workaround people reach for.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "sc-no-cannabis-type",
+      "label": "schema.org has no cannabis or dispensary type",
+      "rule": "schema.org/Store lists 29 sub-types: AutoPartsStore, BikeStore, BookStore, ClothingStore, ComputerStore, ConvenienceStore, DepartmentStore, ElectronicsStore, FurnitureStore, GardenStore, GroceryStore, HardwareStore, HobbyShop, HomeGoodsStore, JewelryStore, LiquorStore, MensClothingStore, MobilePhoneStore, MovieRentalStore, MusicStore, OfficeEquipmentStore, OutletStore, PawnShop, PetStore, ShoeStore, SportingGoodsStore, TireShop, ToyStore, WholesaleStore. None is cannabis-related.",
+      "source": "schema.org/Store, enumerated firsthand",
+      "source_url": "https://schema.org/Store",
+      "retrieved": "2026-08-31",
+      "verify": "FIRSTHAND ENUMERATION, not a claim from memory. A text search of the page for cannabis, marijuana, dispensary and weed returned nothing. LiquorStore is the closest regulated-goods analogue and a dispensary is not a liquor store. Pharmacy exists and must NOT be used for a recreational dispensary: it is inaccurate, and it drags a retail store into health-adjacent territory, which is against our own house rules. The honest answer is Store, or LocalBusiness, and saying so is more useful than inventing a type.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "sc-aggregate-rating-limit",
+      "label": "aggregateRating is not for marking up your own reviews",
+      "rule": "aggregateRating (AggregateRating): This property is only recommended for sites that capture reviews about other local businesses: the average rating of the local business based on multiple ratings or reviews.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data, Recommended properties",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "THE MOST COMMONLY VIOLATED RULE IN LOCAL SCHEMA. Google scopes aggregateRating to sites that capture reviews ABOUT OTHER businesses, meaning directories and review sites. A dispensary marking up its own star rating on its own site is not the use case Google describes. Audited nearfront.com on 2026-08-31: zero pages use aggregateRating, so we have no correction debt here.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "sc-menu-food-only",
+      "label": "The menu property is for food establishments",
+      "rule": "menu (URL): For food establishments, the fully-qualified URL of the menu.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "Directly relevant and counter-intuitive: a dispensary calls its product list a menu, but Google's menu property is scoped to food establishments. Using it for a cannabis product list is a misuse of the property."
+    },
+    {
+      "id": "sc-geo-precision",
+      "label": "Coordinates need at least five decimal places",
+      "rule": "geo.latitude (Number): The latitude of the business location. The precision must be at least 5 decimal places. geo.longitude (Number): the same.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "A concrete, checkable requirement that hand-written markup routinely fails."
+    },
+    {
+      "id": "sc-department-naming",
+      "label": "Department naming format",
+      "rule": "department (LocalBusiness): a nested item for a single department. Include the store name with the department name in the following format: {store name} {department name}. For example, gMart and gMart Pharmacy. If the department name is explicitly branded, specify a department name by itself. For example: Best Buy and Geek Squad.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "Relevant to dispensaries running a medical counter and a recreational floor under one roof, which is the closest real analogue to a department."
+    },
+    {
+      "id": "sc-manual-action",
+      "label": "Breaking the guidelines can earn a manual action",
+      "rule": "Warning: If your site violates one or more of these guidelines, then Google may issue a manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data, Guidelines",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "The consequence clause. Marking up a rating you do not have, or a business type you are not, is not a free bet.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "sc-what-it-does",
+      "label": "What LocalBusiness markup actually produces",
+      "rule": "When users search for businesses on Google Search or Maps, Search results may display a prominent Google knowledge panel with details about a business that matched the query. With Local Business structured data, you can tell Google about business hours, different departments within a business, reviews (if your site captures reviews about other businesses), and more.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "Scopes the honest claim: knowledge panel detail and rich-result eligibility on Search. Not Map Pack position, and not AI visibility."
+    },
+    {
+      "id": "sc-not-required-for-ai",
+      "label": "Structured data is not required for AI search",
+      "rule": "Overfocusing on structured data: Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add. However, it's a good idea to continue using it as part of your overall SEO strategy, as it helps with being eligible for rich results on Google Search.",
+      "source": "Google Search Central, Optimizing for generative AI search",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-08-31",
+      "verify": "Carried from spoke 2, where it forced a correction of our own Map Pack post. Belongs here too, because 'schema for AI visibility' is the pitch this spoke has to defuse."
+    },
+    {
+      "id": "sc-placement",
+      "label": "Where to put it",
+      "rule": "You can add LocalBusiness structured data to any page on your site, though it may make more sense to put it on a page that contains information about your business.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "Answers the multi-location question in the simplest available way: put each location's markup on that location's own page."
+    }
+  ],
+  "gaps": [
+    "WHETHER LOCALBUSINESS MARKUP AFFECTS MAP PACK RANKING. Google never claims it does. The local ranking page names relevance, distance and prominence and does not mention structured data at all; the structured data documentation talks about rich results and knowledge panels on Search. Do not imply markup moves map position.",
+    "WHETHER GOOGLE USES YOUR LOCALBUSINESS MARKUP TO RECONCILE OR UPDATE YOUR BUSINESS PROFILE. This is the most interesting open question in the spoke and it connects to spoke 4. Google states it compiles profiles from 'publicly-available information, such as crawled web content (e.g., information from a business' official website)'. Structured data on your own site is plainly crawled web content, so it is reasonable to suspect markup helps Google confirm your details. Google never says so. Present the reasoning as reasoning and label the conclusion unproven.",
+    "WHAT TYPE A DISPENSARY SHOULD USE. schema.org has no cannabis type (verified firsthand). Store or LocalBusiness are the defensible answers. Pharmacy is available and is the wrong answer for a recreational dispensary on accuracy grounds. There is no authoritative source saying which is best because the question has no published answer.",
+    "WHETHER RICH RESULTS ACTUALLY APPEAR FOR DISPENSARIES. Google says required properties make content ELIGIBLE for rich results, which is not a guarantee, and Google's own troubleshooting docs list many reasons a rich result may not show. We have not run a controlled test on dispensary pages. Do not promise a rich result.",
+    "WHETHER MARKUP HELPS AI ANSWERS. Google says the opposite of the common pitch: structured data is not required for generative AI search and there is no special markup for it."
+  ],
+  "self_audit": {
+    "checked": "2026-08-31",
+    "result": "Enumerated every JSON-LD @type across all production pages. 26 distinct types in use, none of them aggregateRating, so nearfront.com has no self-serving rating markup to retract. One ProfessionalService with one GeoCoordinates and one OpeningHoursSpecification, which is appropriate for a single-location agency. No correction debt from this spoke."
+  },
+  "redirect_retargets": {
+    "count": 0,
+    "note": "No schema, structured-data or markup slugs exist in the legacy redirect file. This spoke inherits no aged 301s and lives on its content alone, same as the menu spoke would."
+  }
+}
