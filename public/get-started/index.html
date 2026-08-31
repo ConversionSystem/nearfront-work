@@ -201,6 +201,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .bk-embed iframe { width: 100%; height: 760px; border: 0; display: block; margin-top: -200px; }
 
   @media (max-width: 660px) { .bk-embed { height: 620px; } .bk-embed iframe { height: 860px; margin-top: -212px; } }
+  /* Real-iPhone fix. The site nav is position:fixed, so when the iOS keyboard
+     opens and Safari scrolls the focused field into view, the card heading
+     slides underneath the bar (owner's screen recording, 2026-08-27). Emulated
+     Chromium never fires that keyboard scroll, which is how it slipped through.
+     On this page's mobile view the nav scrolls away with the page instead, so
+     nothing can ever be trapped under it, and iOS's fixed-element-plus-keyboard
+     jank goes with it. This block loads after site.css, so it wins. */
+  @media (max-width: 900px) {
+    .site-nav { position: absolute; }
+  }
+  /* Desktop keeps the fixed nav, so anything scrolled to programmatically or
+     by focus must clear it. */
+  .fx-panel, .lead-field input, .lead-field select, #fx-place-host { scroll-margin-top: 88px; }
   @media (max-width: 900px) {
     .fx-split { grid-template-columns: 1fr; min-height: 0; }
     .fx-mp { display: none; }
@@ -506,6 +519,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               }
             }
             if (window.dataLayer) window.dataLayer.push({event:'funnel_place_selected'});
+            var cont=document.querySelector('.fx-next');
+            if (cont) { cont.scrollIntoView({block:'center',behavior:'smooth'}); }
           } catch (e) { warn('could not read the selected place: ' + e); showManual(); if (nameInput) nameInput.required = true; }
         });
       } catch (e) { warn('lookup unavailable, manual fields remain: ' + e); }
