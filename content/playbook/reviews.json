@@ -1,0 +1,134 @@
+{
+  "spoke": "Dispensary reviews: getting them compliantly, and what Google actually rewards",
+  "slug": "dispensary-google-reviews",
+  "phase": "Phase 2, spoke 3",
+  "updated": "2026-08-31",
+  "method": "Every rule read firsthand from Google's Help Center on 2026-08-31 and quoted with its source. This spoke also settles a claim the site has been making across many pages, so the correction sweep is part of the deliverable, not a side task.",
+  "facts": [
+    {
+      "id": "rv-score-is-plain-average",
+      "label": "The star score is a plain average of all ratings",
+      "rule": "The review score is the average of all ratings published on Google for that place or business. Important: After someone leaves a new review, it may take up to 2 weeks to get an updated review score.",
+      "source": "Google Business Profile Help, Understand review scores for local places & businesses",
+      "source_url": "https://support.google.com/business/answer/4801187",
+      "retrieved": "2026-08-31",
+      "verify": "DECISIVE AGAINST THE VELOCITY MYTH AT THE SCORE LEVEL. Google says average of ALL ratings, with no recency weighting, no decay and no windowing. Combined with the ranking page naming only review count and positive ratings, there are now two independent Google statements and neither mentions recency. The two-week lag is also useful: a store that asks for reviews and checks its score the next day will think nothing happened.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "rv-prominence-inputs",
+      "label": "What Google ties reviews to in ranking",
+      "rule": "Prominence means how well-known a business is. This factor's also based on info like how many websites link to your business and how many reviews you have. More reviews and positive ratings can help your business's local ranking.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "COUNT and RATINGS. Not recency, not pace, not velocity. This is the sourced ceiling on what may be claimed about reviews and ranking.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "rv-sanctioned-ask",
+      "label": "Google's own review request mechanism and where it says to put it",
+      "rule": "To make it easier for customers to leave reviews on your Business Profile, you can create and share a link or QR code to request reviews. To encourage them to use the link or QR code: include it on your receipts; include it in thank you emails; add it at the end of a chat interaction; print and display the QR code in your store. Currently, reviews QR codes can only be generated on a computer browser, not on mobile devices.",
+      "source": "Google Business Profile Help, Create a Google link or QR code to request reviews",
+      "source_url": "https://support.google.com/business/answer/16816815",
+      "retrieved": "2026-08-31",
+      "verify": "Google endorses in-store display of the QR code. Read alongside rv-no-premises-pressure this gives the real distinction: a passive QR code on the counter is Google's own suggestion, while a budtender standing over someone asking them to review is the prohibited behavior. Nobody publishes that distinction and it is the single most useful thing on this page for a store manager.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "rv-incentives-banned",
+      "label": "Incentives are prohibited, in both directions",
+      "rule": "Offering incentives, like free or discounted goods or services, to customers in exchange for reviews is considered fake engagement and is strictly prohibited. This includes posting reviews, changing reviews, or removing negative reviews.",
+      "source": "Google Business Profile Help, Create a Google link or QR code to request reviews (restated on Tips to get more reviews)",
+      "source_url": "https://support.google.com/business/answer/16816815",
+      "retrieved": "2026-08-31",
+      "verify": "Note the scope: it covers paying to REMOVE or CHANGE a negative review too, not just to post a positive one. Three separate Google pages carry this rule."
+    },
+    {
+      "id": "rv-no-gating",
+      "label": "Review gating and on-premises pressure are prohibited",
+      "rule": "We do not allow merchants to: discourage or prohibit negative reviews, or selectively solicit positive reviews from customers. When soliciting reviews, merchants should not require or pressure users to leave ratings or write reviews while on the premises, nor should they request that specific content be included. This includes merchants requesting that staff solicit a certain number of reviews, and merchants requesting that staff solicit reviews that include specific content, including content that identifies a staff member.",
+      "source": "Google Business Profile Help, Prohibited & restricted content, section 'Rating Manipulation'",
+      "source_url": "https://support.google.com/business/answer/7400114",
+      "retrieved": "2026-08-31",
+      "verify": "FOUR distinct prohibitions. The staff-quota clause and the name-a-budtender clause are the two that catch dispensaries, because both are common incentive-comp practices on a retail floor.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "rv-what-is-allowed",
+      "label": "What Google explicitly permits",
+      "rule": "We do allow merchants to: Solicit or encourage the posting of content that does represent a genuine experience, without offering incentives to do so or attempting to influence the rating or the contents of the review.",
+      "source": "Google Business Profile Help, Prohibited & restricted content, section 'Rating Manipulation'",
+      "source_url": "https://support.google.com/business/answer/7400114",
+      "retrieved": "2026-08-31",
+      "verify": "The permission matters as much as the prohibitions. Nervous operators often stop asking entirely, which is not what the policy requires."
+    },
+    {
+      "id": "rv-reply-guidance",
+      "label": "How Google says to reply, including to negative reviews",
+      "rule": "Be professional and polite. Keep it short and simple. Make your replies count: instead of sending the same thank you to everyone, focus on reviews where you can share a helpful update or answer a question. Be conversational, not promotional: your reviewers are already customers, so avoid using your response to offer deals or promotions. For negative reviews: protect privacy and avoid personal attacks; never share a reviewer's private information; be honest and explain limitations; apologize when appropriate; personalize your reply; respond in a timely manner.",
+      "source": "Google Business Profile Help, Tips to get more reviews",
+      "source_url": "https://support.google.com/business/answer/3474122",
+      "retrieved": "2026-08-31",
+      "verify": "The 'not promotional' rule lines up with the restricted-content rule from spoke 1: a dispensary cannot put a priced offer in a review reply any more than in a Post. The privacy rule matters more than usual here, because a reply that confirms someone bought cannabis discloses something sensitive about them."
+    },
+    {
+      "id": "rv-value-all-reviews",
+      "label": "Google argues against chasing a perfect rating",
+      "rule": "Value all reviews: Honest and balanced reviews can help potential customers decide. A mix of positive and negative feedback often feels more trustworthy. As best practice, reply to reviews and share your perspective.",
+      "source": "Google Business Profile Help, Tips to get more reviews",
+      "source_url": "https://support.google.com/business/answer/3474122",
+      "retrieved": "2026-08-31",
+      "verify": "Google's own words, useful against the instinct to suppress or fight every negative review."
+    },
+    {
+      "id": "rv-removal-eligibility",
+      "label": "What Google will and will not remove",
+      "rule": "You can report any review, but only those that violate Google policies are eligible for removal. Do not report a review just because you disagree with it or dislike it. Google doesn't get involved in conflict between businesses and customers. Negative reviews can highlight areas for improvement and aren't always a sign of poor service. Review evaluation typically takes several days. You can check the status of your report in the Reviews Management Tool.",
+      "source": "Google Business Profile Help, Report inappropriate reviews on your Business Profile",
+      "source_url": "https://support.google.com/business/answer/4596773",
+      "retrieved": "2026-08-31",
+      "verify": "The sourced answer to 'how do I get this bad review taken down': only on a policy violation, and Google states outright that it will not referee a dispute. Extortion scams have a separate reporting path.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "rv-missing-reviews",
+      "label": "Why reviews go missing, including after a reinstatement",
+      "rule": "Usually, reviews are removed for policy violations like spam or inappropriate content. Reviews are checked to ensure they comply with our policies; in some cases this process might take a few days, which can delay a review's appearance. If you recently merged Business Profiles, it might take a few days for reviews from both profiles to display. Reviews removed for policy violations won't be restored. In certain situations, Google might temporarily disable user-created content, including reviews, for certain Business Profiles or business categories to protect business owners. Tip: Sometimes reviews might be removed after a Business Profile is reinstated. If this happens, contact support for assistance.",
+      "source": "Google Business Profile Help, About missing or delayed reviews",
+      "source_url": "https://support.google.com/business/answer/10313341",
+      "retrieved": "2026-08-31",
+      "verify": "TWO FINDINGS THAT CHAIN TO SPOKE 1. First, Google can disable reviews for whole business CATEGORIES, which is a live risk for a regulated category even though Google has not applied it to cannabis. Second, reviews can disappear after a reinstatement, so a suspension can cost a store its review corpus on top of its listing. That is a concrete argument for treating the profile as a compliance surface.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "rv-sms-consent",
+      "label": "Texting a review request is governed by the FCC, not Google",
+      "rule": "The FCC requires prior express consent before sending marketing texts to a consumer.",
+      "source": "FCC, Stop Unwanted Robocalls and Texts",
+      "source_url": "https://www.fcc.gov/consumers/guides/stop-unwanted-robocalls-and-texts",
+      "retrieved": "2026-08-26",
+      "verify": "Carried forward from the dispensary-marketing pillar, verified there on 2026-08-26. Relevant because SMS is the most common review-request channel sold to dispensaries and it is the one governed by a regulator rather than by Google."
+    }
+  ],
+  "gaps": [
+    "WHETHER REVIEW RECENCY OR VELOCITY AFFECTS RANKING. Two independent Google statements bear on this and neither mentions recency: the ranking page names review count and positive ratings, and the review-score page says the score is 'the average of all ratings'. That is strong evidence of absence at the score level and silence at the ranking level. It remains silence, not a denial, so the honest position is that Google does not publish it, not that Google has ruled it out. SITE-WIDE CORRECTION REQUIRED: as of 2026-08-31 roughly nine Nearfront pages asserted recency or velocity as a ranking cause, and the money page attributed it to Google by name.",
+    "WHETHER A REVIEW REQUEST COUNTS AS ADVERTISING UNDER STATE CANNABIS LAW. Several states regulate cannabis advertising in ways that could plausibly reach a review request sent by email or SMS, including age-audience thresholds and license-number requirements. No state regulator we read addresses review solicitation directly. Do not tell operators their review request is or is not regulated advertising; tell them the question exists and belongs to their counsel.",
+    "WHETHER GOOGLE TREATS CANNABIS AS A CATEGORY ELIGIBLE FOR DISABLED REVIEWS. Google says it may disable user-generated content for 'certain Business Profiles or business categories' and names only schools as a worked example. There is no evidence Google has applied this to cannabis and no published list. State the mechanism, not a prediction.",
+    "HOW LONG REMOVAL DECISIONS TAKE. Google says review evaluation 'typically takes several days' and gives no ceiling. No published turnaround for appeals of removal decisions.",
+    "WHETHER REPLYING TO REVIEWS AFFECTS RANKING. Google recommends replying and frames it as a customer-trust practice. It does not claim replies influence ranking. Do not imply they do.",
+    "ANY BENCHMARK FOR HOW MANY REVIEWS WINS A GIVEN MARKET. The keyword map lists a 'how many reviews wins a metro Map Pack' study as a future blog topic built from public data using our own stated method. Until that study exists and publishes its method, no number goes on this page."
+  ],
+  "correction_sweep": {
+    "reason": "Shipping a spoke that says recency is undocumented while nine live pages assert it would repeat the incoherence spoke 1 and 2 each had to fix, at larger scale.",
+    "type_a_ranking_causation": ["cannabis-seo-oregon (attributes it to Google by name)", "cannabis-seo-michigan", "cannabis-seo-detroit", "cannabis-seo-new-york", "cannabis-seo-san-diego", "cannabis-seo-san-jose", "cannabis-seo-portland", "cannabis-seo-brooklyn", "cannabis-seo-minneapolis", "services/cannabis-dispensary-seo (money page card, attributes it to Google by name)"],
+    "type_b_customer_behavior": ["cannabis-seo-colorado", "cannabis-seo-denver", "cannabis-seo-missouri", "cannabis-seo-orlando", "cannabis-seo-phoenix", "cannabis-seo-maryland"],
+    "type_c_service_naming_leave_alone": ["services/index.html JSON-LD serviceType", "dispensary-marketing operational sentence"],
+    "rule": "Type A asserts Google ranks on recency and must be corrected to count and ratings, which are documented and lose nothing in sales terms. Type B describes a customer comparing two stores, which is a claim about human behavior rather than the algorithm; soften where it reads as algorithmic, otherwise leave. Type C is a service component name, not a claim about Google, and stays."
+  },
+  "redirect_retargets": {
+    "count": 9,
+    "rules": ["/benefits-of-google-reviews/", "/get-more-google-reviews/", "/how-to-get-google-reviews-compliantly/", "/local-seo-services/review-generation-tool/", "/tag/attorney-reviews/", "/tag/benefits-of-google-reviews/", "/tag/get-more-google-reviews/", "/tag/review-management/", "/webinars/reviews-for-local-seo-and-conversions/"],
+    "note": "/tag/attorney-reviews/ is off-ICP legacy from the old agency and goes to the guide as the nearest topical match rather than to the money page."
+  }
+}
