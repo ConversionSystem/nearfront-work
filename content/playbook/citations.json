@@ -1,0 +1,104 @@
+{
+  "spoke": "Citations and NAP for dispensaries",
+  "slug": "dispensary-local-citations",
+  "phase": "Phase 2, spoke 4",
+  "updated": "2026-08-31",
+  "method": "Every rule read firsthand from Google's Help Center on 2026-08-31. This spoke had to concede its own premise up front: Google does not name citations as a ranking factor. The page is built on what Google DOES document, which turns out to be a stronger and more specific argument than the one the industry usually makes.",
+  "thesis": "Citations are not a documented ranking factor and this page says so in the first paragraph. The sourced case is data integrity, not ranking juice: Google compiles and UPDATES your profile from crawled web content, licensed third-party data and user reports; Google may reject your own edits if it cannot confirm their accuracy; and Google states that inaccurate business info means your profile might not show up for relevant searches. Bad data on the web can therefore overwrite your profile, block your corrections, and cost you visibility, without citations ever being a ranking signal.",
+  "facts": [
+    {
+      "id": "ct-sources",
+      "label": "The four sources Google compiles a profile from",
+      "rule": "Information in profiles is compiled from a variety of sources: publicly-available information, such as crawled web content (e.g., information from a business' official website); licensed data from third parties; users who contribute factual information (such as addresses and phone numbers), and content (such as photos and reviews), including business owners who claim profiles through Google Business Profile; information based on Google's interactions with a local place or business.",
+      "source": "Google Business Profile Help, Understand how Google sources & uses info in Business Profiles & local search results",
+      "source_url": "https://support.google.com/business/answer/2721884",
+      "retrieved": "2026-08-31",
+      "verify": "THE FOUNDATION OF THE WHOLE PAGE. Google states outright that it compiles profile information from crawled web content and licensed third-party data. That is the sourced mechanism by which off-profile business data reaches the profile. It is NOT a statement that citations rank you.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ct-google-updates-you",
+      "label": "Third-party sources can change your profile without you",
+      "rule": "To help keep your Business Profile accurate, Google gathers info from different sources, like user reports and licensed content. If sources report that your profile info is incorrect or outdated, Google may update your profile. Important: You can't manage all Google updates through your Business Profile. In the profile editor, text color shows the type of update: Blue shows info changed by Google.",
+      "source": "Google Business Profile Help, Understand Google updates on your Business Profile",
+      "source_url": "https://support.google.com/business/answer/3480441",
+      "retrieved": "2026-08-31",
+      "verify": "The smoking gun. Google says plainly that outside sources reporting your info as wrong can cause Google to change your profile, and that you cannot manage all of those changes. Blue text in the editor is the tell. This is the concrete risk citation work actually mitigates.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ct-edits-rejected",
+      "label": "Google may refuse your own correction if it cannot confirm it",
+      "rule": "Edits that you make to your verified Business Profile are reviewed to ensure they follow our guidelines. Edits usually take up to 10 minutes to review, but sometimes it can take up to 30 days. Not approved: Google might not approve changes if it can't confirm its accuracy. You might be able to appeal rejected business information edits.",
+      "source": "Google Business Profile Help, Understand what happens to your Business Profile edits",
+      "source_url": "https://support.google.com/business/answer/3038311",
+      "retrieved": "2026-08-31",
+      "verify": "CLOSES THE LOOP. Google confirms accuracy against the sources in ct-sources. So inconsistent data across the web does not merely fail to help you, it can actively block you from correcting your own profile, and a rejected edit can take up to 30 days to come back. This is the argument for citation hygiene that does not require citations to be a ranking factor.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ct-accuracy-and-visibility",
+      "label": "Google ties accurate information to showing up at all",
+      "rule": "Businesses with complete and accurate info are more likely to show up in local search results. If your business info isn't accurate, your Business Profile might not show up for relevant searches in your area.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "The visibility consequence, in Google's words, phrased as accuracy rather than as citations. This is the honest bridge between data hygiene and being found.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ct-prominence-links-not-citations",
+      "label": "What Google actually names under prominence",
+      "rule": "Prominence means how well-known a business is. This factor's also based on info like how many websites link to your business and how many reviews you have.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "LINKS, not directory listings. A citation in the industry sense is a mention of name, address and phone, often unlinked. Google names websites that LINK to your business. The page must concede this in the opening rather than bury it.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ct-one-profile",
+      "label": "One profile per business",
+      "rule": "There should only be one profile per business, as this can cause problems with how your information displays on Google Maps and Search.",
+      "source": "Google Business Profile Help, Guidelines for representing your business on Google",
+      "source_url": "https://support.google.com/business/answer/3038177",
+      "retrieved": "2026-08-31",
+      "verify": "Duplicate suppression is the one piece of classic citation work Google explicitly endorses, because Google states the rule itself. Carried from spoke 1."
+    },
+    {
+      "id": "ct-authoritative-nap",
+      "label": "One authoritative phone number and website",
+      "rule": "Note that the phone number and website for a Business Profile should always be the single, authoritative phone number and website for the business and be verifiable by the business owner.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-08-31",
+      "verify": "Google's own version of NAP consistency, stated as a requirement for the profile rather than as a ranking tactic. Note 'verifiable by the business owner', which is the standard a directory listing has to match. Carried from spoke 1."
+    },
+    {
+      "id": "ct-bulk-blank-field",
+      "label": "A blank field in a bulk upload invites an automatic update",
+      "rule": "When you use a spreadsheet to update multiple locations, make sure to import them before you manage Google updates. If a field stays the same as your last upload, Google ignores it. If you change a field, the system accepts the new value: this new value replaces both the previous value and any updated info. If a field is blank: an automatic update may apply.",
+      "source": "Google Business Profile Help, Understand Google updates on your Business Profile",
+      "source_url": "https://support.google.com/business/answer/3480441",
+      "retrieved": "2026-08-31",
+      "verify": "A real trap for multi-location operators: leaving a cell empty in the bulk sheet is not neutral, it is an invitation for Google to fill that field from third-party data. Nobody publishes this."
+    }
+  ],
+  "gaps": [
+    "WHETHER CITATIONS ARE A RANKING FACTOR. Google names inbound links and review count under prominence and never names directory citations or NAP consistency. This page concedes that in the opening paragraph rather than burying it. The sourced case for citation work is data integrity, which is a different and more defensible claim.",
+    "WHICH THIRD PARTIES GOOGLE LICENSES DATA FROM. Google says 'licensed data from third parties' and names none of them. Every published list of 'the data aggregators Google uses' is inference. Do not name Foursquare, Data Axle, Neustar/Localeze or any other provider as a Google source; we cannot source it.",
+    "WHETHER WEEDMAPS OR LEAFLY FEED GOOGLE. This is the question a dispensary actually wants answered and there is no Google statement about either. They are crawlable web content, which is a category Google names, but that is an inference and must be presented as one. Never assert that a Weedmaps listing feeds a Google Business Profile.",
+    "HOW MANY CITATIONS A BUSINESS NEEDS. No Google figure, no threshold, no benchmark. Any count sold as a target is a vendor's packaging, not a Google requirement.",
+    "WHETHER UNLINKED MENTIONS COUNT FOR ANYTHING. Google names websites that LINK to your business. Whether an unlinked name-address-phone mention carries weight is not addressed anywhere we read.",
+    "HOW LONG A GOOGLE UPDATE TAKES TO REVERSE. Google documents up to 30 days for an edit review and says some Google updates cannot be managed from the profile at all. No published path or timeline for the ones you cannot manage."
+  ],
+  "correction_check": {
+    "checked": "2026-08-31",
+    "findings": "Money page #citations card says 'One clean NAP everywhere Google checks', which implies Google checks directories. Google documents crawled web content and licensed third-party data as sources, so the claim is close but the phrasing overstates our knowledge of what Google checks. Homepage prominence line reads 'Reviews, citations, and links', adding citations to the two inputs Google names. Both are softer than the velocity claim, which put words in Google's mouth, but the homepage is a PROTECTED file and the fix is cosmetic rather than corrective, so it is flagged to the owner rather than changed.",
+    "action": "Money page card reworded to the documented mechanism. Homepage flagged, not edited."
+  },
+  "redirect_retargets": {
+    "count": 18,
+    "note": "Larger than the keyword map's estimate of 12 because the tag archives were counted separately there. All citation, NAP and business-listing slugs go to the guide; none are service-intent enough to keep on the money page."
+  }
+}
