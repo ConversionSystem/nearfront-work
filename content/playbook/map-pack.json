@@ -1,0 +1,143 @@
+{
+  "spoke": "How the Map Pack ranks dispensaries",
+  "slug": "blog/dispensary-near-me-map-pack",
+  "phase": "Phase 2, spoke 2 (refresh of an existing post, not a new URL)",
+  "updated": "2026-08-31",
+  "url_decision": "The post stays at /blog/dispensary-near-me-map-pack/. The keyword map says 'promote to spoke, refresh', which is an information-architecture promotion, not a URL change. Moving a live indexed URL to a flat slug would buy a cosmetically better path at the cost of a redirect hop on the one page in this cluster that already has history. The legacy 301s can point at the existing URL just as well.",
+  "method": "Same as the GBP spoke: every rule read firsthand from Google on the retrieved date, quoted with its source. The refresh exists because the 2026-07-01 version asserted several things Google does not publish. Those are corrected here and disclosed on the page rather than quietly edited out.",
+  "facts": [
+    {
+      "id": "mp-three-factors",
+      "label": "The three published local ranking factors",
+      "rule": "Local results are mainly based on relevance, distance, and popularity. Relevance is how well a Business Profile matches what someone is searching for. Distance refers to how far each business is from the customer who's searching. If a customer doesn't share where they are, Google uses what it knows about their location. Prominence means how well-known a business is.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "Google uses 'popularity' in the summary sentence and 'Prominence' as the subheading, on the same page. Quote it as it stands.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mp-prominence-inputs",
+      "label": "What Google says prominence is built from",
+      "rule": "This factor's also based on info like how many websites link to your business and how many reviews you have. More reviews and positive ratings can help your business's local ranking.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "Google names exactly two inputs: inbound LINKS to the business, and review COUNT plus positive RATINGS. It does not name directory citations, and it does not name review recency or velocity. See gaps.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mp-no-paid-ranking",
+      "label": "Local ranking cannot be bought",
+      "rule": "There's no way to request or pay for a better local ranking on Google.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-08-31",
+      "verify": "Flagged Important on Google's own page. Doubly relevant for dispensaries, who cannot buy ads around the pack either."
+    },
+    {
+      "id": "mp-review-asking",
+      "label": "How Google says to ask for reviews",
+      "rule": "Remind customers to leave reviews: To leave reviews, you can ask customers to visit a Google link or scan a QR code. Reply to reviews: Show customers that their feedback matters. Value all reviews: Honest and balanced reviews can help potential customers decide. A mix of positive and negative feedback often feels more trustworthy.",
+      "source": "Google Business Profile Help, Tips to get more reviews",
+      "source_url": "https://support.google.com/business/answer/3474122",
+      "retrieved": "2026-08-31",
+      "verify": "Google publishes a sanctioned request mechanism (its own review link or QR code), which is the answer to 'how do I ask without breaking the rules'. The 'mix of positive and negative feedback often feels more trustworthy' line is Google arguing against chasing a perfect rating."
+    },
+    {
+      "id": "mp-review-incentives-banned",
+      "label": "Incentives for reviews are prohibited",
+      "rule": "Offering incentives, like free or discounted goods or services, in exchange for customers to post reviews, change reviews, or remove negative reviews is considered fake & misleading content and is strictly prohibited.",
+      "source": "Google Business Profile Help, Tips to get more reviews",
+      "source_url": "https://support.google.com/business/answer/3474122",
+      "retrieved": "2026-08-31",
+      "verify": "Restated here from the same rule quoted in the GBP spoke's prohibited-content source. Two separate Google pages carry it."
+    },
+    {
+      "id": "mp-replies-not-promotional",
+      "label": "Review replies must not carry offers",
+      "rule": "Be conversational, not promotional: Your reviewers are already customers, so avoid using your response to offer deals or promotions.",
+      "source": "Google Business Profile Help, Tips to get more reviews",
+      "source_url": "https://support.google.com/business/answer/3474122",
+      "retrieved": "2026-08-31",
+      "verify": "Lines up with the restricted-content rule from the GBP spoke: a dispensary cannot put a priced offer in a review reply any more than in a Post."
+    },
+    {
+      "id": "mp-ai-business-profile",
+      "label": "Google says the Business Profile helps AI visibility",
+      "rule": "Where appropriate, generative AI responses can include product listings, product information, and information about local businesses. Using products like Merchant Center and Google Business Profiles can help your products and services to be visible in both AI responses and other Google Search results.",
+      "source": "Google Search Central, Optimizing for generative AI search",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-08-31",
+      "verify": "This is the sourced version of the claim the old post made loosely. Google names the Business Profile as a lever for AI visibility. It does NOT name schema as one; see mp-ai-structured-data.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mp-ai-structured-data",
+      "label": "Structured data is not required for AI search",
+      "rule": "Overfocusing on structured data: Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add. However, it's a good idea to continue using it as part of your overall SEO strategy, as it helps with being eligible for rich results on Google Search.",
+      "source": "Google Search Central, Optimizing for generative AI search, section 'Mythbusting generative AI search'",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-08-31",
+      "verify": "CONTRADICTS OUR OWN 2026-07-01 POST, which said LocalBusiness schema is 'how you become quotable to the machines'. Google says schema is not required for AI and there is no special markup for it, while remaining worth keeping for rich-result eligibility. The correction must be made on the page, not quietly.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mp-ai-llmstxt",
+      "label": "Google Search ignores llms.txt",
+      "rule": "LLMS.txt files and other 'special' markup: You don't need to create new machine readable files, AI text files, markup, or Markdown to appear in Google Search (including its generative AI capabilities), as Google Search itself doesn't use them. It's completely fine if you decide to create and maintain LLMS.txt files (or other similar files) for other services or systems that use these files. Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.",
+      "source": "Google Search Central, Optimizing for generative AI search, section 'Mythbusting generative AI search'",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-08-31",
+      "verify": "SELF-IMPLICATING AND WORTH SAYING OUT LOUD: nearfront.com publishes llms.txt and llms-full.txt. Google states plainly that Google Search ignores them. They may still be read by other assistants, which is Google's own carve-out ('for other services or systems that use these files'). Checked 2026-08-31: no Nearfront page claims llms.txt drives Google AI visibility, so there is no live claim to retract, only a temptation not to make. The /vs/bud-authority/ mention is purely descriptive of the competitor's own file.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mp-ai-other-myths",
+      "label": "Three more things Google says are unnecessary for AI search",
+      "rule": "Chunking content: There's no requirement to break your content into tiny pieces for AI to better understand it. There's no ideal page length. Rewriting content just for AI systems: You don't need to write in a specific way just for generative AI search. Seeking inauthentic 'mentions': seeking inauthentic mentions across the web isn't as helpful as it might seem.",
+      "source": "Google Search Central, Optimizing for generative AI search, section 'Mythbusting generative AI search'",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-08-31",
+      "verify": "Useful as a short list of tactics a dispensary is currently being sold and does not need to buy."
+    },
+    {
+      "id": "mp-localbusiness-schema",
+      "label": "What LocalBusiness structured data actually does",
+      "rule": "When users search for businesses on Google Search or Maps, Search results may display a prominent Google knowledge panel with details about a business that matched the query. With Local Business structured data, you can tell Google about business hours, different departments within a business, reviews (if your site captures reviews about other businesses), and more.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-08-31",
+      "verify": "Scopes the honest claim for schema: it is about rich results and knowledge-panel detail on Search, not about Map Pack position and not about AI."
+    },
+    {
+      "id": "mp-ads-prohibited",
+      "label": "A dispensary cannot buy its way onto that screen",
+      "rule": "Google's advertising policy disallows ads for substances that alter mental state for the purpose of recreation or otherwise induce highs, with a narrow carve-out for certified advertisers promoting topical hemp-derived CBD at 0.3% THC or less in California, Colorado and Puerto Rico.",
+      "source": "Google Ads Help, Dangerous products or services (Google Ads policy)",
+      "source_url": "https://support.google.com/adspolicy/answer/6014299",
+      "retrieved": "2026-08-26",
+      "verify": "Carried forward from the dispensary-marketing pillar, where it was verified on 2026-08-26. Not re-fetched for this refresh; the pillar is the page of record for this claim."
+    }
+  ],
+  "gaps": [
+    "REVIEW RECENCY AND VELOCITY AS RANKING FACTORS. Google documents review COUNT and positive RATINGS ('More reviews and positive ratings can help your business's local ranking'). It says nothing anywhere we can find about recency or velocity being weighted. THIS IS A CORRECTION OF OUR OWN PUBLISHED CLAIM: the 2026-07-01 version of this post stated 'Google weighs review recency and velocity, not just the average' as fact, in the body and again in the FAQ. It is a widely held industry belief and may well be true, but we cannot source it, and sourcing is the entire basis on which this site asks to be believed. The refreshed page states what Google documents and names the belief as a belief.",
+    "THE FIGURE 'FIFTEEN FRESH REVIEWS A MONTH'. The old post claimed a store earning fifteen fresh reviews a month 'will generally outrank' a store with a larger frozen count. That number has no source and no study behind it. Removed, not softened.",
+    "PHOTO COUNT THRESHOLDS. The old post said 'ten or more real photos'. Google lists adding photos and videos as a way to improve local ranking and publishes no count, no cadence and no threshold. Removed.",
+    "CITATION CONSISTENCY AS A RANKING FACTOR. Google names 'how many websites link to your business' under prominence. It does not name directory citations or NAP consistency as a ranking input anywhere we read. Google does say complete and accurate business information helps a profile show up for relevant searches, which is a different and weaker claim than the one usually made about citations. The page now makes the weaker, sourced claim and flags the stronger one as industry practice.",
+    "THE NUMBER OF RESULTS IN THE PACK. Commonly three, and usually three in observation, but Google does not document a fixed count and the layout varies. The page says 'usually three' rather than asserting a rule.",
+    "HOW THE THREE FACTORS ARE WEIGHTED AGAINST EACH OTHER. Google lists relevance, distance and prominence without ranking or weighting them, and states that it keeps algorithm details confidential. Any claim that one is 'the single biggest factor' is unsourced. The old post called the profile 'the single biggest lever'; that phrasing is gone."
+  ],
+  "internal_links": {
+    "spoke_1": "/dispensary-google-business-profile/",
+    "money_page_anchor": "/services/cannabis-dispensary-seo/#maps-grid",
+    "pillar": "/dispensary-marketing/",
+    "markets_hub": "/markets/"
+  },
+  "redirect_retargets": {
+    "to_map_pack_post": 43,
+    "to_gbp_guide": 4,
+    "left_on_money_page": 5,
+    "note": "Slugs about how to rank, what the pack is, ranking factors and measuring rank go to this post. Slugs about getting listed or not showing up ('get my business on google maps', 'why is my business not showing on google maps') go to the GBP guide, because those are eligibility and suspension questions. Service-intent slugs ('services', 'service', 'platform') stay on the money page. Two ads-intent slugs (/advertise-on-google-maps/, /google-maps-local-search-ads/) previously pointed at the dropped /services/meta-ads/ page and now point here, because this post is the page that explains a dispensary cannot buy that placement."
+  }
+}
