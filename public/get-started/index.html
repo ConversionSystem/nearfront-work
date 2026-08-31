@@ -182,21 +182,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fx-thanks-links { display: flex; flex-direction: column; gap: 8px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
   .fx-thanks-links a { font-size: 14px; color: var(--gold-dk); font-weight: 600; text-decoration: none; }
   .fx-thanks-links a:hover { text-decoration: underline; }
+  .fx-book-head { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .fx-book-head h3 { font-family: Georgia, serif; font-size: 18px; color: var(--dark); margin-bottom: 6px; }
+  .fx-book-head p { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 14px; }
   .fx-booked-cue { text-align: center; margin-top: 16px; font-size: 13.5px; color: var(--muted); }
   .fx-booked-cue button { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: var(--gold-dk); text-decoration: underline; cursor: pointer; }
   .fx-consent-note { font-size: 11.5px; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
   .fx-consent-note a { color: var(--gold-dk); text-decoration: underline; }
-  .fx-skip { text-align: center; margin-top: 16px; font-size: 14px; }
-  .fx-skip a { color: var(--muted); text-decoration: underline; }
   .fx-trust { margin-top: 30px; padding: 22px 0 40px; }
   .fx-trust-row { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; font-size: 12.5px; color: var(--muted); max-width: 900px; margin: 0 auto; }
 
   /* No crop. The previous rule pulled the iframe up 180px inside a 490px box to
      hide Google's header, which also cut the bottom of the month view off. */
-  .bk-embed { background: var(--white); }
-  .bk-embed iframe { width: 100%; height: 780px; border: 0; display: block; border-radius: 12px; }
+  /* Google's embed leads with a tall header block (title, duration, description)
+     before the times. Cropping it keeps the picker on screen without a long
+     scroll; the box is sized so the times themselves are never cut. */
+  .bk-embed { background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; height: 560px; }
+  .bk-embed iframe { width: 100%; height: 760px; border: 0; display: block; margin-top: -200px; }
 
-  @media (max-width: 660px) { .bk-embed iframe { height: 900px; } }
+  @media (max-width: 660px) { .bk-embed { height: 600px; } .bk-embed iframe { height: 860px; margin-top: -260px; } }
   @media (max-width: 900px) {
     .fx-split { grid-template-columns: 1fr; min-height: 0; }
     .fx-mp { display: none; }
@@ -281,7 +285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <ol class="fx-steps" aria-label="Progress">
       <li class="fx-step is-active" data-step-dot="1"><span>1</span> Your dispensary</li>
       <li class="fx-step" data-step-dot="2"><span>2</span> Where to send it</li>
-      <li class="fx-step" data-step-dot="3"><span>3</span> Walk it through</li>
+      <li class="fx-step" data-step-dot="3"><span>3</span> Done</li>
     </ol>
 
     <form class="fx-form" id="lead-form" action="/api/lead" method="post">
@@ -343,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input id="fx-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(760) 555-0123" required>
         </div>
         <div class="lead-consent">
-          <input id="fx-sms" name="sms_consent" type="checkbox" value="yes">
+          <input id="fx-sms" name="sms_consent" type="checkbox" value="yes" checked>
           <label for="fx-sms">I agree to receive text messages from Nearfront about my request. Message frequency varies; message and data rates may apply. Reply STOP to cancel.</label>
         </div>
         <input type="hidden" name="consent" value="on">
@@ -357,32 +361,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </fieldset>
     </form>
 
-    <div class="fx-panel" data-step="3" hidden id="fx-book">
-      <h2 class="fx-legend">Your audit is queued. Want it walked through live?</h2>
-      <p class="fx-sub-sm">Grab twenty minutes with Guillermo and get your numbers explained, not just emailed. Or skip it and watch your inbox.</p>
-      <div class="bk-embed">
-        <iframe title="Book your audit walkthrough"
-          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Z8VHXVxf5dA6OpXSb1H2N1wZw2Mce1sEWRnNstAWdFDIKz-F_nGqrzwKmv85-a_isAkAAsLot?gv=true"
-          loading="lazy"></iframe>
-      </div>
-      <p class="fx-booked-cue">Booked your time? <button type="button" id="fx-booked">Yes, I booked it</button></p>
-      <p class="fx-skip"><a href="#" id="fx-skip">Skip for now, email me the highlights instead</a></p>
-    </div>
-
-    <div class="fx-panel" data-step="4" hidden id="fx-thanks" tabindex="-1">
+    <div class="fx-panel" data-step="3" hidden id="fx-book" tabindex="-1">
       <h2 class="fx-legend" id="fx-thanks-title">You are all set.</h2>
-      <p class="fx-sub-sm" id="fx-thanks-lead">Your audit request is in for <strong id="fx-thanks-name">your dispensary</strong>.</p>
+      <p class="fx-sub-sm">Your audit request is in for <strong id="fx-thanks-name">your dispensary</strong>. A confirmation is on its way to <span id="fx-thanks-email">your inbox</span>.</p>
 
       <ol class="fx-next-list">
-        <li><strong>Now.</strong> A confirmation is on its way to <span id="fx-thanks-email">your inbox</span>.</li>
         <li><strong>Within two business days.</strong> Guillermo pulls your Google Business Profile, maps your Map Pack position across your trade area, and names the dispensaries competing with you.</li>
         <li><strong>Then.</strong> You get the audit itself, with every number sourced and dated so you can check it.</li>
       </ol>
 
       <div class="fx-booking-box" id="fx-booking-box" hidden>
         <h3>About your call</h3>
-        <p>Google has emailed you the confirmation. That email carries your <strong>cancel and reschedule links</strong>, the <strong>Google Meet joining link</strong>, and an <strong>add to calendar</strong> option, and the appointment is already on your calendar if you booked while signed in.</p>
-        <p class="fx-booking-note">Cannot find it? Check spam, then call <a href="tel:+17608292735">(760) 829-2735</a> and we will sort it out.</p>
+        <p>Google has emailed you the confirmation. That email carries your <strong>cancel and reschedule links</strong>, the <strong>Google Meet joining link</strong>, and an <strong>add to calendar</strong> option.</p>
+        <p class="fx-booking-note">Cannot find it? Check spam, then call <a href="tel:+17608292735">(760) 829-2735</a>.</p>
+      </div>
+
+      <div id="fx-book-offer">
+        <div class="fx-book-head">
+          <h3>Want it walked through live?</h3>
+          <p>Optional. Twenty minutes with Guillermo, and your numbers explained rather than emailed.</p>
+        </div>
+        <div class="bk-embed">
+          <iframe title="Book your audit walkthrough"
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Z8VHXVxf5dA6OpXSb1H2N1wZw2Mce1sEWRnNstAWdFDIKz-F_nGqrzwKmv85-a_isAkAAsLot?gv=true"
+            loading="lazy"></iframe>
+        </div>
+        <p class="fx-booked-cue">Booked a time? <button type="button" id="fx-booked">Yes, I booked it</button></p>
       </div>
 
       <div class="fx-thanks-links">
@@ -390,8 +394,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/how-we-rank-ourselves/">See our own rankings, published monthly</a>
         <a href="/dispensary-marketing/">The dispensary marketing guide</a>
       </div>
-
-      <p class="fx-fineprint">Questions before then? Email <a href="mailto:bravo@nearfront.com">bravo@nearfront.com</a> or call <a href="tel:+17608292735">(760) 829-2735</a>.</p>
     </div>
 
     <div class="lead-status lead-status-ok" id="lead-ok" hidden tabindex="-1" role="status">
@@ -525,7 +527,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function dl(ev,extra){window.dataLayer=window.dataLayer||[];var p={event:ev};if(extra)for(var k in extra)p[k]=extra[k];window.dataLayer.push(p);}
   function panels(){return document.querySelectorAll('[data-step]');}
   function show(n){
-    panels().forEach(function(p){var is=p.getAttribute('data-step')===String(n);if(p.tagName==='FIELDSET'||p.id==='fx-book'||p.id==='fx-thanks'){p.hidden=!is;}});
+    panels().forEach(function(p){var is=p.getAttribute('data-step')===String(n);if(p.tagName==='FIELDSET'||p.id==='fx-book'){p.hidden=!is;}});
     document.querySelectorAll('[data-step-dot]').forEach(function(d){var dn=Number(d.getAttribute('data-step-dot'));d.classList.toggle('is-active',dn===n);d.classList.toggle('is-done',dn<n);});
     /* The pitch has done its job once someone starts filling the form. Collapsing
        it past step 1 gives the form the whole screen, which matters most on a
@@ -566,7 +568,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     fetch(form.action,{method:'POST',body:new FormData(form),headers:{'accept':'application/json'}})
       .then(function(r){return r.json().catch(function(){return {ok:r.ok};});})
       .then(function(j){
-        if(j&&j.ok){dl('form_submit_success');show(3);}
+        if(j&&j.ok){dl('form_submit_success');fillDone();show(3);}
         else{throw new Error('bad');}
       })
       .catch(function(){dl('form_submit_error');document.getElementById('lead-fail').hidden=false;btn.disabled=false;btn.textContent='Get my free audit \u2192';});
@@ -574,7 +576,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   /* Both exits land on the same thank-you panel, filled with what they already
      told us so nobody has to read a generic confirmation. */
-  function thanks(booked){
+  /* Fill the finish screen with what they already told us. */
+  function fillDone(){
     var nm=document.getElementById('fx-dispensary').value.trim();
     var em=document.getElementById('fx-email').value.trim();
     if(nm)document.getElementById('fx-thanks-name').textContent=nm;
@@ -583,19 +586,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var gl=document.getElementById('fx-guide-link');
     if(guide&&gl){gl.href=guide;var sn=document.getElementById('fx-state-name').value;
       gl.textContent=sn?('Read the sourced market guide for '+sn):'Read your market\u2019s sourced guide';}
-    document.getElementById('fx-booking-box').hidden=!booked;
-    document.getElementById('fx-thanks-title').textContent=booked?'Booked. See you then.':'You are all set.';
-    show(4);
-    var t=document.getElementById('fx-thanks');t.focus();
   }
-  document.getElementById('fx-skip').addEventListener('click',function(e){
-    e.preventDefault();
-    dl('funnel_skip_booking');
-    thanks(false);
-  });
   document.getElementById('fx-booked').addEventListener('click',function(){
     dl('funnel_booking_confirmed_self_reported');
-    thanks(true);
+    document.getElementById('fx-booking-box').hidden=false;
+    document.getElementById('fx-book-offer').hidden=true;
+    document.getElementById('fx-thanks-title').textContent='Booked. See you then.';
+    document.getElementById('fx-book').focus();
   });
 
   /* Booking engagement events, same contract as /book/ */
