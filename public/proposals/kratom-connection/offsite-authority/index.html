@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>The Kratom Connection · Offsite Authority Proposal | Nearfront</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --navy-950:#080B10;
+    --navy-900:#0F1620;
+    --navy-800:#182131;
+    --navy-700:#232E42;
+    --gold-400:#DCB86B;
+    --gold-500:#C9A15A;
+    --gold-600:#A9803C;
+    --cream-50:#FAF7F1;
+    --cream-100:#F1EAD9;
+    --cream-200:#E7DCC3;
+    --ink-900:#1D2129;
+    --ink-700:#3A3F49;
+    --ink-600:#565C66;
+    --ink-400:#8A8F99;
+    --line-dark: rgba(232,222,196,0.14);
+    --line-light: rgba(29,33,41,0.12);
+    --green-600:#4C7A5B;
+    --green-050:#EAF1EB;
+    --red-600:#AE5138;
+    --red-050:#F7EBE6;
+    --shadow-1: 0 1px 2px rgba(15,22,32,0.06), 0 8px 24px -12px rgba(15,22,32,0.18);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream-50);
+    color:var(--ink-900);
+    font-family:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+
+  h1,h2,h3,h4{
+    font-family:'Sora',ui-sans-serif,system-ui,sans-serif;
+    font-weight:700;
+    margin:0;
+    text-wrap:balance;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+
+  .mono{font-family:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-600);
+  }
+  .eyebrow.on-dark{color:var(--gold-400);}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 clamp(20px,5vw,64px);
+  }
+  section{padding:clamp(56px,8vw,104px) 0;}
+
+  /* ---------- NAV ---------- */
+  .topbar{
+    background:var(--navy-950);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{
+    width:34px; height:34px; border-radius:8px;
+    background:linear-gradient(155deg,var(--navy-700),var(--navy-800));
+    border:1px solid var(--line-dark);
+    position:relative; flex:none;
+  }
+  .brand-mark svg{position:absolute; inset:0; width:100%; height:100%;}
+  .brand-name{color:#fff; font-family:'Sora'; font-weight:700; font-size:0.98rem; letter-spacing:0.01em;}
+  .brand-sub{color:var(--gold-400); font-family:'IBM Plex Mono'; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; margin-top:1px;}
+  .topbar-meta{color:var(--ink-400); font-family:'IBM Plex Mono'; font-size:0.72rem; text-align:right; line-height:1.5;}
+  .topbar-meta strong{color:#E7DCC3; font-weight:600;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 480px at 82% -10%, rgba(201,161,90,0.16), transparent 60%),
+      linear-gradient(180deg,var(--navy-900),var(--navy-950));
+    color:#fff;
+    padding:clamp(48px,7vw,84px) 0 clamp(56px,8vw,92px);
+  }
+  .hero-kicker{
+    display:flex; align-items:center; gap:14px; margin-bottom:28px;
+    color:var(--ink-400); font-family:'IBM Plex Mono'; font-size:0.78rem;
+  }
+  .hero-kicker .rule{flex:1; height:1px; background:var(--line-dark);}
+  .hero h1{
+    color:#fff; font-size:clamp(2.1rem,4.4vw,3.4rem); line-height:1.08;
+    max-width:15ch; margin-bottom:22px;
+  }
+  .hero h1 em{font-style:normal; color:var(--gold-400);}
+  .hero-sub{
+    color:#C7CCD6; font-size:1.08rem; line-height:1.65; max-width:56ch; margin-bottom:36px;
+  }
+  .hero-stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line-dark); border:1px solid var(--line-dark); border-radius:12px; overflow:hidden;
+  }
+  /* Every other 4-up grid in this file breaks down at these widths; the hero
+     stats did not, so on a phone the four numbers were squeezed into ~93px
+     columns and clipped by the wrapper's overflow:hidden ("40,965" showed as
+     "40,9"). Two columns keeps the hero compact and above the fold. */
+  @media (max-width:900px){ .hero-stats{grid-template-columns:repeat(2,1fr);} }
+  .hero-stat{background:var(--navy-900); padding:20px 18px;}
+  .hero-stat .num{font-family:'IBM Plex Mono'; font-weight:600; font-size:1.5rem; color:#fff; font-variant-numeric:tabular-nums;}
+  .hero-stat .num.down{color:#D98C74;}
+  .hero-stat .lbl{font-size:0.76rem; color:var(--ink-400); margin-top:6px; line-height:1.4;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .head{max-width:44rem; margin-bottom:44px;}
+  .head .eyebrow{margin-bottom:12px; display:block;}
+  .head h2{font-size:clamp(1.5rem,2.6vw,2rem); color:var(--ink-900); margin-bottom:14px;}
+  .head p{color:var(--ink-600); font-size:1.02rem; line-height:1.65; max-width:60ch;}
+  section.on-dark .head h2{color:#fff;}
+  section.on-dark .head p{color:#C7CCD6;}
+
+  /* ---------- DATA CARDS ---------- */
+  .grid{display:grid; gap:16px;}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:900px){ .g4{grid-template-columns:repeat(2,1fr);} .g3{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .g4,.g3,.g2{grid-template-columns:1fr;} }
+
+  .card{
+    background:#fff; border:1px solid var(--line-light); border-radius:12px;
+    padding:22px 20px; box-shadow:var(--shadow-1);
+  }
+  .card .num{font-family:'IBM Plex Mono'; font-weight:600; font-size:1.7rem; color:var(--ink-900); font-variant-numeric:tabular-nums;}
+  .card .lbl{font-size:0.86rem; color:var(--ink-600); margin-top:6px; line-height:1.45;}
+  .card .tag{display:inline-block; margin-top:12px; font-family:'IBM Plex Mono'; font-size:0.68rem; letter-spacing:0.06em; padding:3px 8px; border-radius:20px;}
+  .tag.warn{background:var(--red-050); color:var(--red-600);}
+  .tag.ok{background:var(--green-050); color:var(--green-600);}
+  .tag.flat{background:var(--cream-100); color:var(--ink-600);}
+
+  /* ---------- TABLES ---------- */
+  .tbl-wrap{overflow-x:auto; border:1px solid var(--line-light); border-radius:12px; background:#fff; box-shadow:var(--shadow-1);}
+  table{width:100%; border-collapse:collapse; min-width:560px;}
+  th{
+    text-align:left; font-family:'IBM Plex Mono'; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-400); font-weight:600; padding:13px 16px; border-bottom:1px solid var(--line-light);
+    background:var(--cream-50);
+  }
+  td{padding:13px 16px; border-bottom:1px solid var(--line-light); font-size:0.92rem; color:var(--ink-700); vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td.num, th.num{font-family:'IBM Plex Mono'; font-variant-numeric:tabular-nums; color:var(--ink-900);}
+  td.strong{color:var(--ink-900); font-weight:600;}
+  .row-flag{color:var(--red-600); font-weight:600;}
+  .row-win{color:var(--green-600); font-weight:600;}
+
+  .tbl-wrap.on-dark{background:var(--navy-800); border-color:var(--line-dark);}
+  .on-dark th{background:var(--navy-900); color:var(--ink-400); border-color:var(--line-dark);}
+  .on-dark td{color:#DDE2EA; border-color:var(--line-dark);}
+  .on-dark td.strong{color:#fff;}
+  .on-dark td.num, .on-dark th.num{color:#fff;}
+
+  /* ---------- COMPARE PANELS ---------- */
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-light); border:1px solid var(--line-light); border-radius:12px; overflow:hidden;}
+  @media (max-width:760px){.compare{grid-template-columns:1fr;}}
+  .compare-col{background:#fff; padding:26px 24px;}
+  .compare-col.accent{background:var(--navy-900); color:#fff;}
+  .compare-col h4{font-size:1.02rem; margin-bottom:14px;}
+  .compare-col.accent h4{color:#fff;}
+  .compare-row{padding:12px 0; border-top:1px solid var(--line-light); font-size:0.88rem; color:var(--ink-600); line-height:1.5;}
+  .compare-col.accent .compare-row{border-color:var(--line-dark); color:#C7CCD6;}
+  .compare-row:first-child{border-top:none;}
+  .compare-row b{display:block; color:var(--ink-900); font-weight:600; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px; font-family:'IBM Plex Mono';}
+  .compare-col.accent .compare-row b{color:var(--gold-400);}
+
+  /* ---------- PILLARS (Compass architecture) ---------- */
+  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media (max-width:900px){.pillars{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.pillars{grid-template-columns:1fr;}}
+  .pillar{background:#fff; border:1px solid var(--line-light); border-radius:12px; padding:22px; box-shadow:var(--shadow-1);}
+  .pillar .pnum{font-family:'IBM Plex Mono'; font-size:0.7rem; color:var(--gold-600); font-weight:600; letter-spacing:0.08em;}
+  .pillar h4{font-size:1rem; margin:8px 0 10px; color:var(--ink-900);}
+  .pillar ul{margin:0; padding:0; list-style:none;}
+  .pillar li{font-size:0.85rem; color:var(--ink-600); line-height:1.55; padding:5px 0 5px 14px; position:relative;}
+  .pillar li:before{content:""; position:absolute; left:0; top:13px; width:5px; height:5px; border-radius:50%; background:var(--gold-500);}
+
+  /* ---------- TOOLS ---------- */
+  .tools{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:700px){.tools{grid-template-columns:1fr;}}
+  .tool{background:var(--cream-100); border:1px solid var(--cream-200); border-radius:12px; padding:20px;}
+  .tool h4{font-size:0.96rem; margin-bottom:6px;}
+  .tool p{font-size:0.85rem; color:var(--ink-600); line-height:1.55;}
+  .tool .phase{font-family:'IBM Plex Mono'; font-size:0.65rem; color:var(--gold-600); letter-spacing:0.06em; margin-top:10px; display:inline-block;}
+
+  /* ---------- NUMBERED PRIORITY LIST ---------- */
+  .steps{display:flex; flex-direction:column; gap:0;}
+  .step{display:grid; grid-template-columns:56px 1fr; gap:18px; padding:20px 0; border-top:1px solid var(--line-light);}
+  .step:first-child{border-top:none;}
+  .step .sn{font-family:'IBM Plex Mono'; font-weight:600; font-size:1.1rem; color:var(--gold-600);}
+  .step h4{font-size:0.98rem; margin-bottom:5px; color:var(--ink-900);}
+  .step p{font-size:0.88rem; color:var(--ink-600); line-height:1.55;}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media (max-width:900px){.roadmap{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.roadmap{grid-template-columns:1fr;}}
+  .rm-card{background:#fff; border:1px solid var(--line-light); border-radius:12px; padding:20px; box-shadow:var(--shadow-1); position:relative;}
+  .rm-card:before{content:""; position:absolute; top:0; left:0; right:0; height:4px; border-radius:12px 12px 0 0; background:var(--gold-500);}
+  .rm-card .wk{font-family:'IBM Plex Mono'; font-size:0.7rem; color:var(--gold-600); font-weight:600; letter-spacing:0.06em;}
+  .rm-card p{font-size:0.86rem; color:var(--ink-600); line-height:1.55; margin-top:8px;}
+
+  /* ---------- PRICING ---------- */
+  .price-wrap{background:var(--navy-900); border-radius:16px; overflow:hidden; border:1px solid var(--line-dark);}
+  .price-head{padding:26px 28px; border-bottom:1px solid var(--line-dark); display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap;}
+  .price-head h4{color:#fff; font-size:1.1rem;}
+  .price-head .q1{font-family:'IBM Plex Mono'; color:var(--gold-400); font-size:0.78rem; text-align:right;}
+  .price-line{display:grid; grid-template-columns:1fr auto; gap:20px; padding:20px 28px; border-bottom:1px solid var(--line-dark); align-items:start;}
+  .price-line:last-of-type{border-bottom:none;}
+  .price-line h5{color:#fff; font-family:'Sora'; font-size:0.94rem; margin-bottom:5px;}
+  .price-line p{color:#A9B0BC; font-size:0.83rem; line-height:1.55; max-width:52ch;}
+  .price-line .amt{font-family:'IBM Plex Mono'; color:var(--gold-400); font-weight:600; font-size:1.05rem; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .price-total{background:var(--navy-950); padding:22px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  .price-total .t1{color:#fff; font-family:'Sora'; font-weight:700; font-size:1rem;}
+  .price-total .t2{color:var(--ink-400); font-size:0.78rem; margin-top:3px;}
+  .price-total .tamt{font-family:'IBM Plex Mono'; color:var(--gold-400); font-weight:700; font-size:1.4rem;}
+
+  /* ---------- MEASURE ---------- */
+  .measure{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media (max-width:860px){.measure{grid-template-columns:1fr;}}
+  .measure-col{background:#fff; border:1px solid var(--line-light); border-radius:12px; padding:22px; box-shadow:var(--shadow-1);}
+  .measure-col .eyebrow{margin-bottom:10px; display:block;}
+  .measure-col ul{margin:0; padding:0; list-style:none;}
+  .measure-col li{font-size:0.85rem; color:var(--ink-600); line-height:1.55; padding:6px 0 6px 14px; position:relative; border-top:1px solid var(--line-light);}
+  .measure-col li:first-child{border-top:none;}
+  .measure-col li:before{content:"\2022"; position:absolute; left:0; color:var(--ink-400);}
+
+  .promise-box{
+    border:1px dashed var(--line-light); border-radius:12px; padding:22px 24px; margin-top:24px;
+    background:var(--cream-100);
+  }
+  .promise-box p{font-size:0.88rem; color:var(--ink-700); line-height:1.65;}
+  .promise-box b{color:var(--ink-900);}
+
+  /* ---------- CTA FOOTER ---------- */
+  .cta{background:linear-gradient(180deg,var(--navy-950),var(--navy-900)); color:#fff;}
+  .cta .wrap{text-align:center; display:flex; flex-direction:column; align-items:center;}
+  .cta h2{color:#fff; font-size:clamp(1.7rem,3.4vw,2.5rem); max-width:22ch; margin-bottom:16px;}
+  .cta p.note{color:#A9B0BC; max-width:52ch; font-size:0.98rem; line-height:1.6; margin-bottom:36px;}
+  .cta-btns{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:30px;}
+  .btn{
+    font-family:'Sora'; font-weight:600; font-size:0.92rem; padding:14px 26px; border-radius:9px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1px solid transparent;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn:focus-visible{outline:2px solid var(--gold-400); outline-offset:3px;}
+  .btn.gold{background:var(--gold-500); color:var(--navy-950);}
+  .btn.gold:hover{background:var(--gold-400);}
+  .btn.outline{border-color:rgba(255,255,255,0.28); color:#fff;}
+  .btn.outline:hover{border-color:rgba(255,255,255,0.55);}
+  .cta-phone{color:var(--ink-400); font-family:'IBM Plex Mono'; font-size:0.82rem;}
+  .cta-divider{width:100%; max-width:280px; height:1px; background:var(--line-dark); margin:28px auto;}
+  .cta-credit{color:var(--ink-400); font-size:0.8rem; line-height:1.7;}
+  .cta-credit strong{color:#DDE2EA;}
+
+  ::selection{background:var(--gold-500); color:var(--navy-950);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 34 34"><path d="M7 25 L27 9" stroke="#C9A15A" stroke-width="2.4" stroke-linecap="round"/><path d="M7 17 L21 9" stroke="#DCB86B" stroke-width="2.4" stroke-linecap="round" opacity="0.6"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">NEARFRONT</div>
+        <div class="brand-sub">Growth &amp; Authority Agency</div>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      Prepared for <strong>The Kratom Connection</strong><br>
+      Updated September 3, 2026
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-kicker">
+      <span>OFFSITE AUTHORITY PROPOSAL</span><span class="rule"></span><span>thekratomconnection.com</span>
+    </div>
+    <h1>Ten years of loyal customers, and almost none of it visible to <em>Google</em>.</h1>
+    <p class="hero-sub">A deeper audit of Search Console, GA4, and Ahrefs shows a site with real product and real repeat buyers that ranks for almost nothing beyond its own brand name, and a domain authority that has been quietly eroding since early 2025. This proposal is the plan to fix both, without the low-quality link buying that caused the second problem.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num down">24</div><div class="lbl">Domain Rating today, down from a stable 48 to 50 through 2024</div></div>
+      <div class="hero-stat"><div class="num down">0 / 13</div><div class="lbl">Tracked keywords ranking today; "buy kratom capsules" lost position 28 in August</div></div>
+      <div class="hero-stat"><div class="num">98%</div><div class="lbl">Of organic traffic is visitors who already know the brand name</div></div>
+      <div class="hero-stat"><div class="num">40,965</div><div class="lbl">Search impressions in 90 days, converting to just 631 clicks</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="standing">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Where the account stands</span>
+      <h2>The store is invisible past its own name.</h2>
+      <p>Over the last 90 days the site earned 631 clicks from 40,965 impressions, a 1.5% click-through rate. Of the roughly 1,470 organic sessions GA4 recorded over three months, 863 landed on the homepage. The strain, vein-color, and speed pages, the pages built to catch buyers mid-decision, received between zero and three organic sessions each.</p>
+    </div>
+
+    <div class="grid g4" style="margin-bottom:16px;">
+      <div class="card"><div class="num">631 / 40,965</div><div class="lbl">Clicks / impressions, last 90 days</div><span class="tag flat">GSC</span></div>
+      <div class="card"><div class="num">1,470</div><div class="lbl">Organic sessions, last 3 months (site-wide)</div><span class="tag flat">GA4</span></div>
+      <div class="card"><div class="num">22 kw</div><div class="lbl">Ranking organic keywords, ~71 est. visits/mo</div><span class="tag warn">Ahrefs</span></div>
+      <div class="card"><div class="num">9</div><div class="lbl">AI-search citations across ChatGPT, Perplexity &amp; AI Overviews</div><span class="tag flat">Ahrefs</span></div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Page</th><th class="num">Organic sessions (3 mo)</th><th>What it tells us</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">Homepage</td><td class="num">863</td><td>Nearly all traffic funnels through one URL: branded visitors, not buyers arriving mid-decision.</td></tr>
+          <tr><td>/kratom-capsules/</td><td class="num">78</td><td>The strongest product-category page, still a fraction of the homepage.</td></tr>
+          <tr><td>/kratom-powder/</td><td class="num">22</td><td>Second product form, minimal organic pull.</td></tr>
+          <tr><td>White-vein hub</td><td class="num">3</td><td rowspan="1">Vein, speed, and strain hub pages, the pages this proposal targets, are effectively invisible to search.</td></tr>
+          <tr><td>Green-vein hub</td><td class="num">2</td><td>&nbsp;</td></tr>
+          <tr><td>Fast-speed hub</td><td class="num">2</td><td>&nbsp;</td></tr>
+          <tr><td>Red-vein hub / Yellow-gold hub / Slow-speed hub / /strains/</td><td class="num">1 each</td><td>&nbsp;</td></tr>
+          <tr><td>Moderate-speed hub</td><td class="num">0</td><td>&nbsp;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:20px;" class="tbl-wrap">
+      <table>
+        <thead><tr><th>Non-brand terms already ranking</th><th class="num">Position</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">parachuting kratom</td><td class="num row-win">#1</td><td>Ahrefs</td></tr>
+          <tr><td class="strong">speciofoline</td><td class="num row-win">#2</td><td>Ahrefs</td></tr>
+          <tr><td>kratom boise idaho</td><td class="num">#7</td><td>Ahrefs</td></tr>
+          <tr><td>kratom products near me (SF page)</td><td class="num">#10</td><td>Ahrefs</td></tr>
+          <tr><td class="row-flag">buy kratom capsules</td><td class="num row-flag">Lost; held #28 until August</td><td>Ahrefs Rank Tracker</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="on-dark" style="background:var(--navy-950);">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow on-dark">Competitive landscape</span>
+      <h2>Competitors aren't just bigger: the site's own authority is going the wrong way.</h2>
+      <p>Domain Rating held a stable 48 to 50 through 2024, dropped to roughly 30 in early 2025, and has drifted down to 24 since. Meanwhile the referring-domain count jumped from roughly 450 to roughly 900 between July and September 2026, but the new links are a mix of PR-wire syndication and Ahrefs-flagged spam sellers, not authority.</p>
+    </div>
+    <div class="tbl-wrap on-dark">
+      <table>
+        <thead><tr><th>Site</th><th class="num">Domain Rating</th><th>Ranking for "kratom capsules"</th><th class="num">Referring domains on that page</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">thekratomconnection.com</td><td class="num">24</td><td>Not ranking</td><td class="num">21</td></tr>
+          <tr><td>Kats Botanicals</td><td class="num">42</td><td>#1</td><td class="num">43</td></tr>
+          <tr><td>Kraken Kratom</td><td class="num">58</td><td>#2</td><td class="num">n/a</td></tr>
+          <tr><td>Happy Hippo</td><td class="num">50</td><td>#3 to 4</td><td class="num">n/a</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid g2" style="margin-top:16px;">
+      <div class="card" style="background:var(--navy-800); border-color:var(--line-dark);">
+        <div class="tag warn" style="margin:0 0 10px;">Risk flagged</div>
+        <p style="color:#DDE2EA; font-size:0.9rem; line-height:1.6;">New referring domains cluster around PR-wire syndication (ipsnews, wlrn) and Ahrefs-flagged spam sellers, including rankyour.website, buybacklinks.agency, backlinker.shop, and factmags. Several product/blog pages (Gold Bali capsules, Red Hulu capsules, Super Speciosa alternatives) are flagged "Very high" AI-content level.</p>
+      </div>
+      <div class="card" style="background:var(--navy-800); border-color:var(--line-dark);">
+        <div class="tag ok" style="margin:0 0 10px;">Worth keeping</div>
+        <p style="color:#DDE2EA; font-size:0.9rem; line-height:1.6;">Inside the same link profile sits a real cluster of NPR-affiliate stations (LAist, WAMC, KALW, Boise State Public Radio), an NIH.gov reference, and the American Kratom Association. Recommendation: stop any paid low-cost link buying immediately. This program replaces it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Why an authority asset, not a link list</span>
+      <h2>Kratom is one of the hardest link-building categories there is.</h2>
+      <p>Two things are true at once: the long tail of kratom queries is nearly uncontested, with Ahrefs keyword difficulty near zero, yet the site ranks page 3 to 6 for them on weak on-page and internal linking. The real money terms ("kratom capsules," "buy kratom," "buy kratom online") sit behind competitors with two to three times the domain authority, winnable only through a long, expensive guest-post game in a category most publishers won't touch, and that path hands ranking control to third-party webmasters who can delete a link anytime.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-col">
+        <h4>thekratomconnection.com</h4>
+        <div class="compare-row"><b>Visitor intent</b>Transactional: someone who already knows the brand and is ready to buy.</div>
+        <div class="compare-row"><b>Who wins the query</b>Only the retailer with the strongest domain authority, a losing position at DR 24.</div>
+        <div class="compare-row"><b>Google's stance</b>Skeptical of a retailer answering health-adjacent questions on its own product pages.</div>
+        <div class="compare-row"><b>AI answer engines</b>Rarely cite product pages as a source.</div>
+        <div class="compare-row"><b>Ownership</b>The client, outright.</div>
+      </div>
+      <div class="compare-col accent">
+        <h4>The Kratom Compass</h4>
+        <div class="compare-row"><b>Visitor intent</b>Informational, comparative, diagnostic: the research phase before a purchase.</div>
+        <div class="compare-row"><b>Who wins the query</b>The most useful, independent explanation wins; authority can be earned, not just bought.</div>
+        <div class="compare-row"><b>Google's stance</b>Sourced, expert-attributed education is exactly what YMYL review favors.</div>
+        <div class="compare-row"><b>AI answer engines</b>Cite structured explanations, comparisons, and definitions.</div>
+        <div class="compare-row"><b>Ownership</b>The client, both. Compass is transferable in-house anytime.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream-100);">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The centerpiece</span>
+      <h2>The Kratom Compass</h2>
+      <p>An independent guide to kratom veins, speeds, strains, and forms, organized around the decision a person is actually trying to make, built on the store's own vein × speed × strain × form taxonomy, a real editorial advantage no competitor is using. It earns its own search and AI visibility, then hands educated buyers to thekratomconnection.com.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pnum">01</span>
+        <h4>Learn what kratom is</h4>
+        <ul>
+          <li>What is kratom (Mitragyna speciosa)</li>
+          <li>Mitragynine &amp; 7-hydroxymitragynine explained</li>
+          <li>How kratom is harvested and dried</li>
+          <li>Why vein color changes the effect</li>
+          <li>What "lab-tested" actually means</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pnum">02</span>
+        <h4>Understand veins &amp; speeds</h4>
+        <ul>
+          <li>Red vs. white vs. green vein</li>
+          <li>Yellow and gold kratom explained</li>
+          <li>The fast / moderate / slow speed framework</li>
+          <li>Which vein for which time of day</li>
+          <li>Why the same strain varies batch to batch</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pnum">03</span>
+        <h4>Know the strains</h4>
+        <ul>
+          <li>Maeng Da explained</li>
+          <li>Bali and Gold Bali</li>
+          <li>Borneo vs. Maeng Da</li>
+          <li>Green Malay &middot; Bentuangie (fermented)</li>
+          <li>Hulu Kapuas &middot; Elephant, plus every strain the store carries</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pnum">04</span>
+        <h4>Choose the form</h4>
+        <ul>
+          <li>Capsules vs. powder</li>
+          <li>Extract vs. powder <span style="color:var(--gold-600);">(600 searches/mo, KD 0)</span></li>
+          <li>How to take kratom powder</li>
+          <li>How many capsules equal a gram</li>
+          <li>Toss-and-wash, tea, parachuting <span style="color:var(--green-600);">(already #1)</span></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pnum">05</span>
+        <h4>Buy smarter</h4>
+        <ul>
+          <li>How to read a kratom Certificate of Analysis</li>
+          <li>What mitragynine percentages do &amp; don't tell you</li>
+          <li>Contaminant testing: heavy metals, salmonella, E. coli</li>
+          <li>What the AKA GMP program means</li>
+          <li>Spotting adulterated / 7-OH-spiked products</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pnum">06</span>
+        <h4>Legal &amp; local</h4>
+        <ul>
+          <li>Is kratom legal in my state (maintained reference)</li>
+          <li>Kratom Consumer Protection Acts explained</li>
+          <li>Flying with kratom</li>
+          <li>Where to buy in Boise, Reno, SF, San Diego, Carlsbad</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <span class="eyebrow" style="display:block; margin-bottom:16px;">Interactive tools</span>
+      <div class="tools">
+        <div class="tool"><h4>Strain Finder</h4><p>A 4 to 5 question quiz that recommends a vein, speed, and strain, with reasoning shown, and routes to the matching capsule or powder product.</p><span class="phase">LAUNCH</span></div>
+        <div class="tool"><h4>Capsule to Powder Converter</h4><p>Converts capsule counts to grams and compares cost-per-gram across sizes, routing into capsule and powder category pages.</p><span class="phase">LAUNCH</span></div>
+        <div class="tool"><h4>COA Decoder</h4><p>Enter lab-report values, get a plain-English alkaloid and contaminant reading, with a link to TKC's own lab-testing page.</p><span class="phase">LAUNCH</span></div>
+        <div class="tool"><h4>State Legality Checker</h4><p>Pick a state, see status, age limits, and pending legislation, with a shipping-eligibility note back to the store.</p><span class="phase">PHASE 2</span></div>
+      </div>
+    </div>
+    <p style="margin-top:22px; font-size:0.82rem; color:var(--ink-600); max-width:60ch;">Every tool describes products and measurements only, with no medical or dosing advice, and appropriate disclaimers throughout.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Media &amp; distribution layer</span>
+      <h2>The Compass doesn't sit still once it's built.</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h4 style="font-size:0.98rem; margin-bottom:8px;">The Speciosa Sessions</h4>
+        <p style="font-size:0.87rem; color:var(--ink-600); line-height:1.6;">Short-form podcast built from Compass content, including "Why Vein Color Matters," "Reading a COA in Five Minutes," "Fast vs. Slow Strains," and "The Kratom Consumer Protection Act, Explained." Distributed to 8 to 12 podcast platforms. Each episode becomes a podcast, video, transcript, article, FAQ, and shorts.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:0.98rem; margin-bottom:8px;">Video &amp; shorts</h4>
+        <p style="font-size:0.87rem; color:var(--ink-600); line-height:1.6;">Explainer clips built for YouTube and short-form platforms, embedded directly into Compass pages.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:0.98rem; margin-bottom:8px;">Living social network</h4>
+        <p style="font-size:0.87rem; color:var(--ink-600); line-height:1.6;">Branded, interlinked profiles and Web 2.0 properties around the Compass and store, posted on schedule and feeding fresh FAQs and articles back into the Compass.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:0.98rem; margin-bottom:8px;">Tiered power &amp; guaranteed indexing</h4>
+        <p style="font-size:0.87rem; color:var(--ink-600); line-height:1.6;">Every property and link supported by a Tier-2/3 layer and multi-crawler submission until indexed, with free rework or replacement if a placement never indexes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream-100);">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Onsite, in priority order</span>
+      <h2>The cheapest ranking gains are still sitting on the site itself.</h2>
+      <p>Ranked by cost-to-fix versus impact; this is the order the work should happen in, not a checklist to pick from.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="sn">01</div><div><h4>Fix GA4 ecommerce tracking (week 1)</h4><p>Purchase and transaction events are currently blank across all channels for three months despite real revenue. Without this, nothing downstream can be tied to revenue.</p></div></div>
+      <div class="step"><div class="sn">02</div><div><h4>On-page optimization of six priority pages</h4><p>/kratom-capsules/, /kratom-powder/, /green-vein-kratom/, /red-vein-kratom/, /white-vein-kratom/, and /strains/: titles, headers, meta, above-fold copy that reads human, and FAQ schema. Included in this proposal.</p></div></div>
+      <div class="step"><div class="sn">03</div><div><h4>Internal linking</h4><p>Vein, speed, and strain pages are effectively orphaned. Every product should link to its vein/speed/strain page; homepage "Shop by" tiles should become real, crawlable links with descriptive anchors; the Compass links into all of them. The single cheapest ranking gain available.</p></div></div>
+      <div class="step"><div class="sn">04</div><div><h4>404 &amp; redirect cleanup</h4><p>From the technical audit fix list: redirect old strain URLs and parameter pages to their current equivalents.</p></div></div>
+      <div class="step"><div class="sn">05</div><div><h4>Five partner-retail city pages</h4><p>Boise, Reno, San Francisco, San Diego, and Carlsbad, built to the SF page's standard, map embeds and driving directions, mirrored on the Compass. The "kratom near me" play.</p></div></div>
+      <div class="step"><div class="sn">06</div><div><h4>Stop buying low-cost links</h4><p>Cancel any vendor still delivering spam-flagged 2026 placements; assess disavow need during the technical audit.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Scope &amp; investment</span>
+      <h2>Built as a managed quarterly program, not a one-time link buy.</h2>
+    </div>
+    <div class="price-wrap">
+      <div class="price-head">
+        <h4>SERP &amp; Organic Authority Program</h4>
+        <div class="q1">QUARTER 1<br>SEPT TO NOV 2026</div>
+      </div>
+      <div class="price-line">
+        <div>
+          <h5>SERP / Organic Authority tier (managed, quarterly)</h5>
+          <p>Month 1: living social network, Web 2.0 authority properties, first posts. Month 2: the Kratom Compass build. Month 3: amplification, including podcast, PR syndication, listicles, and tiered power. Includes a dedicated strategist and monthly reporting.</p>
+        </div>
+        <div class="amt">$2,500 / mo</div>
+      </div>
+      <div class="price-line">
+        <div>
+          <h5>Niche edits &times; 20 (one-time)</h5>
+          <p>Contextual links from aged, trafficked, relevant posts into the vein-color and strain content cluster.</p>
+        </div>
+        <div class="amt">$1,900</div>
+      </div>
+      <div class="price-total">
+        <div><div class="t1">Quarter 1 total</div><div class="t2">Ongoing from Quarter 2, at $2,500/mo: new authority assets created; one-time boosters only as needed.</div></div>
+        <div class="tamt">$9,400</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream-100);">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">90-day roadmap</span>
+      <h2>What happens, and when.</h2>
+      <p>Link equity typically compounds over 60 to 90 days, so the Quarter 1 report will show early signals such as indexation, impressions, queries appearing, and referral clicks, rather than full effect. Quarter 2 is when rankings on the capsules cluster and the long tail should become visible.</p>
+    </div>
+    <div class="roadmap">
+      <div class="rm-card"><div class="wk">WEEKS 1 TO 2</div><p>Technical audit and fix list; GA4 ecommerce diagnosis; Compass topic map finalized; social and Web 2.0 foundation begins.</p></div>
+      <div class="rm-card"><div class="wk">WEEKS 3 TO 4</div><p>On-page optimization of the six priority pages delivered; internal-link map; niche edits and guest posts placed and submitted for indexing.</p></div>
+      <div class="rm-card"><div class="wk">WEEKS 5 TO 8</div><p>Compass built: 40+ pages across six sections, three tools, schema, analytics, and Search Console. First podcast episodes recorded.</p></div>
+      <div class="rm-card"><div class="wk">WEEKS 9 TO 12</div><p>Compass launched and indexed; podcast, video, and shorts distributed; PR syndication; five city pages live; Q1 report and Q2 plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">How we measure</span>
+      <h2>Monthly reporting, plus a quarterly video walkthrough.</h2>
+    </div>
+    <div class="measure">
+      <div class="measure-col">
+        <span class="eyebrow">The store</span>
+        <ul>
+          <li>Non-brand organic sessions &amp; share of total</li>
+          <li>Positions for the 13 tracked terms + vein/strain long tail</li>
+          <li>Organic transactions &amp; revenue, once GA4 is fixed</li>
+          <li>Local impressions &amp; clicks on the five city pages</li>
+        </ul>
+      </div>
+      <div class="measure-col">
+        <span class="eyebrow">The Kratom Compass</span>
+        <ul>
+          <li>Search impressions &amp; clicks</li>
+          <li>Indexed pages &amp; queries appearing</li>
+          <li>Tool usage &amp; referral clicks to the store</li>
+          <li>AI-search citations, where measurable responsibly</li>
+        </ul>
+      </div>
+      <div class="measure-col">
+        <span class="eyebrow">Authority</span>
+        <ul>
+          <li>Referring domains gained</li>
+          <li>Links built, indexed, and verified</li>
+          <li>Domain Rating trend &amp; spam-link cleanup</li>
+          <li>Podcast &amp; social engagement</li>
+        </ul>
+      </div>
+    </div>
+    <div class="promise-box">
+      <p><b>What we do not promise:</b> no guaranteed rankings or AI citations; no agency can promise that honestly. We guarantee the scope of work, the quality standard, indexation of everything built, and transparent reporting. Kratom is a regulated, scrutinized category: content respects that, with no health claims, no dosing advice, sourced content, clear disclaimers, and no link tactics that would embarrass the brand if a journalist or regulator looked.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow on-dark" style="margin-bottom:18px;">Next steps</span>
+    <h2>Let's get The Kratom Connection out of Google jail.</h2>
+    <p class="note">1. Approve the program tier and the niche-edit booster. 2. Grant Nearfront access to GA4, Search Console, and WooCommerce admin (or connect with your developer) so the tracking fix and audit can start in week one. 3. A 30-minute kickoff to confirm the Compass topic map, the five partner-retail locations, and who signs off on strain content.</p>
+    <div class="cta-btns">
+      <a class="btn gold" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1Z8VHXVxf5dA6OpXSb1H2N1wZw2Mce1sEWRnNstAWdFDIKz-F_nGqrzwKmv85-a_isAkAAsL" target="_blank" rel="noopener">Approve &amp; schedule kickoff &rarr;</a>
+      <a class="btn outline" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1Z8VHXVxf5dA6OpXSb1H2N1wZw2Mce1sEWRnNstAWdFDIKz-F_nGqrzwKmv85-a_isAkAAsL" target="_blank" rel="noopener">Schedule a review call</a>
+      <a class="btn outline" href="mailto:bravo@nearfront.com?subject=Kratom%20Connection%20Proposal%3A%20Question">Ask a question</a>
+    </div>
+    <div class="cta-phone">bravo@nearfront.com</div>
+    <div class="cta-divider"></div>
+    <div class="cta-credit"><strong>Prepared by Guillermo Bravo, Nearfront</strong><br>Prepared for The Kratom Connection &middot; Data pulled September 3, 2026</div>
+  </div>
+</section>
+</body>
+</html>
