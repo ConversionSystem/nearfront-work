@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>House of Dank - Local SEO Proposal | Nearfront</title>
+<style>
+  :root{
+    --forest:#1c3439;
+    --gold:#c3a25d;
+    --gold-dark:#ae8d49;
+    --cream-50:#f8f8f6;
+    --cream-100:#f1f1ee;
+    --ink:#1c3439;
+    --ink-soft:#4b5c60;
+    --line:#e3e1da;
+    --white:#ffffff;
+    --danger:#a8452f;
+    --radius-sm:12px;
+    --radius-lg:18px;
+    --content-w:1140px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Neue Haas Grotesk Display","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream-50);
+    line-height:1.5;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--content-w);margin:0 auto;padding:0 28px;}
+  .hero{
+    background:linear-gradient(160deg,var(--forest) 0%,#152a2e 100%);
+    color:var(--cream-50);
+    padding:64px 0 72px;
+  }
+  .hero .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,44px);
+    line-height:1.15;
+    margin:0 0 18px;
+    max-width:820px;
+  }
+  .hero p{
+    font-size:17px;
+    color:#cfd8d6;
+    max-width:640px;
+    margin:0 0 6px;
+  }
+  .hero .stat-row{
+    display:flex;
+    gap:36px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .hero .stat{min-width:140px;}
+  .hero .stat .num{font-size:30px;font-weight:700;color:var(--white);}
+  .hero .stat .label{font-size:12px;color:#a9bcb9;text-transform:uppercase;letter-spacing:.08em;margin-top:4px;}
+
+  .section{padding:56px 0;}
+  .section h2{font-size:26px;margin:0 0 8px;}
+  .section .lede{color:var(--ink-soft);max-width:720px;margin:0 0 32px;font-size:15.5px;}
+
+  .callout{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    border-radius:var(--radius-sm);
+    padding:22px 26px;
+    margin-bottom:36px;
+  }
+  .callout .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--gold-dark);
+    background:#faf3e4;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  .callout h3{margin:0 0 8px;font-size:18px;}
+  .callout p{margin:0;color:var(--ink-soft);font-size:15px;}
+  .callout ul{margin:10px 0 0;padding-left:18px;color:var(--ink-soft);font-size:14.5px;}
+  .callout ul li{margin-bottom:5px;}
+
+  .grid-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:16px;
+  }
+  .grid-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:20px;
+  }
+  .grid-card .loc-name{font-weight:700;font-size:15px;margin-bottom:2px;}
+  .grid-card .loc-addr{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px;}
+  .grid-card .solv-num{font-size:32px;font-weight:700;line-height:1;}
+  .grid-card .solv-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin:4px 0 12px;}
+  .grid-card .reviews{font-size:12.5px;color:var(--ink-soft);margin-top:12px;}
+  .grid-card .reviews b{color:var(--gold-dark);}
+  .status-pill{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:600;
+    padding:4px 10px;
+    border-radius:999px;
+  }
+  .status-ground{background:#fbeae6;color:var(--danger);}
+  .status-building{background:#fdf3e0;color:var(--gold-dark);}
+  .status-strong{background:#e7f2ea;color:#2c6e4f;}
+  .status-leading{background:#1c3439;color:var(--gold);}
+
+  .comp-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:13px;
+    padding:7px 0;
+    border-bottom:1px solid var(--cream-100);
+  }
+  .comp-row:last-child{border-bottom:none;}
+  .comp-row .c-name{color:var(--ink-soft);}
+  .comp-row .c-val{font-weight:700;}
+
+  table.rec-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    overflow:hidden;
+    font-size:14px;
+  }
+  table.rec-table th, table.rec-table td{
+    padding:13px 16px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+  }
+  table.rec-table th{
+    background:var(--cream-100);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+  table.rec-table tr:last-child td{border-bottom:none;}
+  .tier-badge{
+    display:inline-block;
+    font-weight:700;
+    font-size:13px;
+    padding:3px 10px;
+    border-radius:999px;
+  }
+  .tier-authority{background:var(--forest);color:var(--gold);}
+  .tier-growth{background:#e7f2ea;color:#2c6e4f;}
+  .tier-essential{background:var(--cream-100);color:var(--ink);}
+
+  .table-scroll{overflow-x:auto;}
+
+  .tier-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+    margin-top:28px;
+  }
+  .tier-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:26px 22px;
+  }
+  .tier-card h4{margin:0 0 4px;font-size:18px;}
+  .tier-card .price{font-size:28px;font-weight:700;margin:10px 0 2px;}
+  .tier-card .price span{font-size:13px;font-weight:500;color:var(--ink-soft);}
+  .tier-card .quarterly{font-size:13px;color:var(--ink-soft);margin-bottom:14px;}
+  .tier-card .timeline{font-size:12.5px;color:var(--gold-dark);font-weight:600;margin-bottom:14px;}
+  .tier-card ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft);}
+  .tier-card ul li{margin-bottom:6px;}
+
+  .bundle-band{
+    background:var(--forest);
+    color:var(--cream-50);
+    border-radius:var(--radius-lg);
+    padding:32px 34px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:32px;
+  }
+  .bundle-band .big{font-size:30px;font-weight:700;color:var(--white);}
+  .bundle-band .save{color:var(--gold);font-weight:600;font-size:14px;}
+
+  .track-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:26px;
+  }
+  .track-card h4{margin:0 0 6px;font-size:16px;}
+  .track-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px;}
+
+  .map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:28px;}
+  .map-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;}
+  .map-card img{width:100%;display:block;background:var(--cream-100);}
+  .map-card .map-meta{padding:14px 16px;}
+  .map-card .map-name{font-weight:700;font-size:14.5px;margin:0 0 2px;color:var(--forest);}
+  .map-card .map-stats{color:var(--ink-soft);font-size:13px;}
+  .map-fallback{display:none;}
+  .map-img-wrap.img-failed img{display:none;}
+  .map-img-wrap.img-failed .map-fallback{display:block;}
+  .lf-map{
+    position:relative;
+    aspect-ratio:1;
+    background:#e9ede9;
+    background-image:
+      linear-gradient(rgba(255,255,255,.85) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(255,255,255,.85) 2px, transparent 2px),
+      linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+    background-size:64px 64px,64px 64px,22px 22px,22px 22px;
+    padding:9px;
+    display:grid;
+    grid-template-columns:repeat(9,1fr);
+    gap:2px;
+    align-content:center;
+  }
+  .lf-pin{
+    aspect-ratio:1;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:8.5px;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-.02em;
+    box-shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+  .map-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;}
+  .map-legend span{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-soft);}
+  .map-legend i{width:13px;height:13px;border-radius:50%;display:block;}
+
+  .proof-row{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-top:28px;}
+  @media (max-width:760px){.proof-row{grid-template-columns:1fr;}}
+  .proof-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;}
+  .proof-label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-bottom:14px;}
+  .dash-mock{background:var(--forest);border-radius:var(--radius-sm);padding:18px;color:var(--cream-50);}
+  .dash-header{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--cream-100);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .dash-period{color:var(--gold);font-weight:600;}
+  .dash-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .dash-stat{background:rgba(255,255,255,.06);border-radius:10px;padding:12px 10px;text-align:center;}
+  .dash-num{font-size:19px;font-weight:700;color:var(--white);}
+  .dash-lbl{font-size:11px;color:var(--cream-100);margin-top:4px;line-height:1.3;}
+  .chat-mock{background:var(--cream-50);border-radius:var(--radius-sm);padding:18px;display:flex;flex-direction:column;gap:8px;}
+  .bubble{max-width:82%;padding:9px 13px;border-radius:16px;font-size:13.5px;line-height:1.35;}
+  .bubble-out{background:var(--line);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;}
+  .bubble-in{background:var(--forest);color:var(--white);align-self:flex-end;border-bottom-right-radius:4px;}
+  .bubble-link{background:var(--gold);color:var(--forest);align-self:flex-end;font-weight:700;border-bottom-right-radius:4px;}
+
+  .footer-cta{
+    background:var(--forest);
+    color:var(--cream-50);
+    padding:56px 0 64px;
+    text-align:center;
+  }
+  .footer-cta h2{color:var(--white);font-size:26px;margin:0 0 12px;}
+  .footer-cta p{color:#c7d3d1;max-width:520px;margin:0 auto 28px;}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14.5px;
+    text-decoration:none;
+  }
+  .btn-gold{background:var(--gold);color:var(--forest);}
+  .btn-outline{border:1px solid #4b6a67;color:var(--cream-50);}
+  .footer-note{font-size:12px;color:#8ba3a0;margin-top:28px;}
+
+  @media (max-width:640px){
+    .bundle-band{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Nearfront &middot; Local SEO Proposal</div>
+    <h1>Google Maps decides who gets the next order across all 16 House of Dank locations.</h1>
+    <p>We pulled live Google Maps ranking data across a 9x9 grid, 2.5-mile radius, for every Michigan location and 5 of the searches your customers actually type. Here is exactly where you stand today, and what it takes to lead in each market.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">16</div><div class="label">Locations scanned</div></div>
+      <div class="stat"><div class="num">5</div><div class="label">Keywords per location</div></div>
+      <div class="stat"><div class="num">45%</div><div class="label">Chain-wide avg. SoLV, core terms</div></div>
+      <div class="stat"><div class="num">0%</div><div class="label">SoLV on "weed delivery"</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h2>The one gap every location shares</h2>
+    <p class="lede">Share of Local Voice (SoLV) is the percentage of the grid where a location shows up in the local 3-pack for a given search. Average Rank Position (ARP) is where it lands when it does show up.</p>
+
+    <div class="callout">
+      <span class="tag">Chain-wide finding</span>
+      <h3>Every single House of Dank location scores 0% SoLV on "weed delivery" and "weed delivery near me"</h3>
+      <p>This isn't one weak store. It's all 16, without exception, and not on one term but two. Zero of 81 grid points at every location, statewide. Nine of your sixteen Google Business Profiles already carry a "Delivery service" category and the site advertises delivery hours at ten locations, so the intent is filed but Google isn't surfacing it. Meanwhile "weed dispensary near me" shows the same pattern while "dispensary near me" performs well, which points at a naming, category and on-page terminology gap around the word "weed" that a single fix can close chain-wide, not sixteen separate problems.</p>
+    </div>
+
+    <h2>Where each location stands today</h2>
+    <p class="lede">Average SoLV across the two core "dispensary near me" terms, 2.5-mile grid, captured 9/6/2026. Google review counts pulled from each Business Profile the same day.</p>
+
+    <div class="grid-section" id="locGrid"></div>
+
+    <div class="callout" style="margin-top:36px;margin-bottom:0;">
+      <span class="tag">Profile health</span>
+      <h3>Three listings are carrying a review gap that ranking work alone won't fix</h3>
+      <ul>
+        <li><b>Garden City, 0 reviews.</b> Confirmed accurate, not a data glitch. An active storefront with zero reviews against siblings running 500 to 4,200 is the single fastest lever in the portfolio.</li>
+        <li><b>Fort St., 1 review.</b> A count this thin on an otherwise workable position is actively suppressing it.</li>
+        <li><b>Woodward, 9 reviews,</b> and the Business Profile website field points at the shophod.com root instead of a dedicated /woodward/ page, so the listing loses both ranking signal and attribution.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Live grid scan, dispensary near me</h2>
+    <p class="lede">This is the actual 9 by 9 grid, 2.5 mile radius scan for your top keyword, one map per location. Green cells mean you show in the local 3 pack from that point, the SoLV and ARP numbers below each map are the results from that scan.</p>
+    <div class="map-legend">
+      <span><i style="background:#34a853;"></i>Rank 1&ndash;3</span>
+      <span><i style="background:#8bc34a;"></i>Rank 4&ndash;6</span>
+      <span><i style="background:#fbbc04;"></i>Rank 7&ndash;10</span>
+      <span><i style="background:#ff9800;"></i>Rank 11&ndash;15</span>
+      <span><i style="background:#ea4335;"></i>Rank 16&ndash;20</span>
+      <span><i style="background:#8e3b3b;"></i>Not in top 20</span>
+    </div>
+    <div class="map-grid" id="mapGrid"></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-100);">
+  <div class="wrap">
+    <h2>Who owns the pack in each market</h2>
+    <p class="lede">Top three competitors on "dispensary near me" at each location, ranked by their own share of local voice inside your grid.</p>
+    <div class="grid-section" id="compGrid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Recommended plan, location by location</h2>
+    <p class="lede">Tier reflects how far each store has to climb and how entrenched the competition is, not how big the city is. The five furthest behind their local pack get the most aggressive plan; the five already leading need maintenance-level work to hold the position.</p>
+
+    <div class="table-scroll">
+      <table class="rec-table">
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Market</th>
+            <th>Avg SoLV today</th>
+            <th>Recommended tier</th>
+            <th>Timeline</th>
+            <th>Monthly</th>
+          </tr>
+        </thead>
+        <tbody id="recBody"></tbody>
+      </table>
+    </div>
+
+    <div class="bundle-band">
+      <div>
+        <div class="save">ALL 16 LOCATIONS, BUNDLED</div>
+        <div class="big">$31,900/mo &nbsp;or&nbsp; $86,130/quarter</div>
+      </div>
+      <div class="save">Save $9,570 per quarter vs. paying monthly</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-100);">
+  <div class="wrap">
+    <h2>What each tier includes</h2>
+    <p class="lede">Same three tiers across every location. The difference is depth and pace, not the fundamentals.</p>
+    <div class="tier-cards">
+      <div class="tier-card">
+        <h4>Essential</h4>
+        <div class="price">$1,150<span>/mo</span></div>
+        <div class="quarterly">$3,105/quarter (10% prepay)</div>
+        <div class="timeline">6&ndash;12 month ranking timeline</div>
+        <ul>
+          <li>Local SEO audit &amp; strategy planning</li>
+          <li>GBP listing optimization &amp; entity/schema setup</li>
+          <li>Local on-page optimization</li>
+          <li>Niche, local &amp; brand signal creation</li>
+          <li>Local video optimization</li>
+          <li>Monthly local visibility report</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <h4>Growth</h4>
+        <div class="price">$2,150<span>/mo</span></div>
+        <div class="quarterly">$5,805/quarter (10% prepay)</div>
+        <div class="timeline">4&ndash;6 month ranking timeline</div>
+        <ul>
+          <li>Everything in Essential</li>
+          <li>Advanced ranking tactics, deeper signal set</li>
+          <li>Local link building &amp; authority guest post with map embed</li>
+          <li>Top ranking listing service</li>
+          <li>Advanced maps tactics &amp; click-through optimization</li>
+          <li>Geo hub &amp; niche hub page build-out</li>
+          <li>Quarterly strategy review &amp; bi-annual press release</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <h4>Authority</h4>
+        <div class="price">$2,650<span>/mo</span></div>
+        <div class="quarterly">$7,155/quarter (10% prepay)</div>
+        <div class="timeline">1&ndash;3 month ranking timeline</div>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Advanced local link building</li>
+          <li>Monthly guest posting</li>
+          <li>Quarterly outreach &amp; link building push</li>
+          <li>Front-loaded campaign for faster early results</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>How you'll see it working</h2>
+    <p class="lede">Every location gets its own live dashboard, not a monthly PDF.</p>
+    <div class="track-grid">
+      <div class="track-card">
+        <h4>Ranking dashboard</h4>
+        <p style="color:var(--ink-soft);font-size:13.5px;margin:0;">One dashboard per location pulling live rankings, Google Analytics 4, and Google Business Profile Search Console data together. GA4 shows revenue tied to organic and local traffic, Google Business shows customer interactions including phone calls and website clicks.</p>
+      </div>
+      <div class="track-card">
+        <h4>Review automation</h4>
+        <p style="color:var(--ink-soft);font-size:13.5px;margin:0;">SMS review requests tied to your POS, sent right after checkout while the visit is fresh. Garden City, Fort St. and Woodward come first.</p>
+      </div>
+      <div class="track-card">
+        <h4>Weekly scan report</h4>
+        <p style="color:var(--ink-soft);font-size:13.5px;margin:0;">The same grid-scan format shown above, re-run every week per location, so you see how the campaign is moving in near real time instead of waiting on a monthly cycle.</p>
+      </div>
+    </div>
+
+    <div class="proof-row">
+      <div class="proof-card">
+        <div class="proof-label">Sample monthly reporting dashboard</div>
+        <div class="dash-mock">
+          <div class="dash-header">
+            <span>House of Dank, Lapeer</span>
+            <span class="dash-period">Sample, last 30 days</span>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><div class="dash-num">$24,180</div><div class="dash-lbl">Organic revenue, GA4</div></div>
+            <div class="dash-stat"><div class="dash-num">410</div><div class="dash-lbl">GBP phone calls</div></div>
+            <div class="dash-stat"><div class="dash-num">690</div><div class="dash-lbl">Website clicks</div></div>
+            <div class="dash-stat"><div class="dash-num">2.0</div><div class="dash-lbl">Avg map rank, ARP</div></div>
+            <div class="dash-stat"><div class="dash-num">96%</div><div class="dash-lbl">Share of local voice</div></div>
+            <div class="dash-stat"><div class="dash-num">Weekly</div><div class="dash-lbl">Scan refresh rate</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-label">Example automated review request</div>
+        <div class="chat-mock">
+          <div class="bubble bubble-out">Thanks for stopping by House of Dank today. Mind rating your visit?</div>
+          <div class="bubble bubble-in">Easy in and out, good selection</div>
+          <div class="bubble bubble-out">Glad to hear it. One tap to leave that on Google?</div>
+          <div class="bubble bubble-link">Leave a Google review &rarr;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-cta">
+  <div class="wrap">
+    <h2>Let's close the delivery gap first</h2>
+    <p>Zero cost to diagnose, one fix could move all 16 locations at once. Text or call to walk through the plan location by location.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="tel:+17608292735">Call (760) 829-2735</a>
+      <a class="btn btn-outline" href="https://calendar.app.google/uwaeqFvoBdraFccA6">Book a call</a>
+    </div>
+    <div class="footer-note">Guillermo Bravo &middot; Nearfront &middot; bravo@nearfront.com</div>
+  </div>
+</footer>
+
+<script>
+  // Live grid-scan data, "dispensary near me," 9x9 grid / 2.5mi, captured 9/6/2026.
+  const LOCS = [
+    {name:"Lapeer", addr:"200 E Genesee St", market:"Lapeer (8k)", avgSolv:75, solv:96, arp:"2.0",
+     rating:4.8, reviews:723, tier:"essential", key:"65ae7b6604534d4",
+     comps:[["GRAMZ Cannabis Outlet",85.2],["Xplore Canna",61.7],["Pure Lapeer",55.6]]},
+    {name:"Saginaw", addr:"3054 E Holland Rd", market:"Saginaw (44k)", avgSolv:74, solv:75, arp:"2.7",
+     rating:4.8, reviews:1070, tier:"essential", key:"d719f2a60ca456c",
+     comps:[["Bloom &amp; Blaze",48.2],["The H.U.B.",38.3],["Top Cannabis Outlet",35.8]]},
+    {name:"Ypsilanti", addr:"80 Ecorse Rd", market:"Ypsilanti (21k)", avgSolv:68, solv:68, arp:"3.2",
+     rating:4.6, reviews:2809, tier:"essential", key:"cfc91106ed8bf5c",
+     comps:[["Endo Vibe Cannabis Centers",55.6],["Exotics Cannabis Co.",51.9],["PLANET JANE",32.1]]},
+    {name:"Grand Rapids", addr:"3510 E Mall Dr SE", market:"Grand Rapids (199k)", avgSolv:67, solv:68, arp:"3.3",
+     rating:4.8, reviews:1848, tier:"essential", key:"f0517d38d63e2bb",
+     comps:[["LIV Cannabis, Grand Rapids",53.1],["Exclusive Grand Rapids",53.1],["High Profile, 44th St",30.9]]},
+    {name:"Ann Arbor", addr:"2730 Jackson Ave", market:"Ann Arbor (124k)", avgSolv:66, solv:65, arp:"4.2",
+     rating:4.7, reviews:1051, tier:"essential", key:"7e5298c0796b357",
+     comps:[["Lume Cannabis Co.",61.7],["Bloom City Club",59.3],["Blue Sky Cannabis Co.",25.9]]},
+    {name:"Kalamazoo", addr:"1986 S Sprinkle Rd", market:"Kalamazoo (74k)", avgSolv:60, solv:59, arp:"4.3",
+     rating:4.7, reviews:1371, tier:"growth", key:"dcd4ca1b207b4a8",
+     comps:[["Exclusive Kalamazoo",48.2],["The Refinery Dispensary",42.0],["Lume Cannabis, Portage",22.2]]},
+    {name:"Traverse City", addr:"514 Munson Ave", market:"Traverse City (16k)", avgSolv:53, solv:62, arp:"3.6",
+     rating:4.7, reviews:1394, tier:"growth", key:"82f96080c713c85",
+     comps:[["Cloud Cannabis, TC",59.3],["Lume Cannabis Co.",38.3],["Green Pharm, TC",28.4]]},
+    {name:"Gratiot", addr:"11999 Gratiot Ave", market:"Detroit (633k)", avgSolv:52, solv:54, arp:"4.2",
+     rating:4.9, reviews:577, tier:"growth", key:"c7ee5de659ee383",
+     comps:[["DACUT Cannabis Dispensary",23.5],["420 Dank",23.5],["King of Budz Cannabis Co.",22.2]]},
+    {name:"Garden City", addr:"32330 Ford Rd Suite C", market:"Garden City (27k)", avgSolv:51, solv:43, arp:"5.4",
+     rating:0, reviews:0, tier:"growth", key:"c9509141c9cd31d",
+     comps:[["Green Acres Dispensary, Westland",61.7],["LIV",58.0],["You rank 3rd here",43.2]]},
+    {name:"Lansing", addr:"2905 N East St", market:"Lansing (113k)", avgSolv:50, solv:52, arp:"3.5",
+     rating:4.8, reviews:1282, tier:"growth", key:"43ac0c5ccc58d2e",
+     comps:[["The Botanical Co.",29.6],["Cannaisseur Provisioning Center",28.4],["First Class Cannabis",24.7]]},
+    {name:"Woodward", addr:"28557 Woodward Ave, Berkley", market:"Berkley (16k)", avgSolv:37, solv:36, arp:"5.3",
+     rating:4.6, reviews:9, tier:"growth", key:"f5bd01cf68b4d83",
+     comps:[["Quality Roots, Berkley",40.7],["Lume Cannabis Co., Berkley",40.7],["Eleven Cannabis Co",23.5]]},
+    {name:"Monroe", addr:"14750 Laplaisance Rd", market:"Monroe (20k)", avgSolv:30, solv:27, arp:"5.8",
+     rating:4.6, reviews:3583, tier:"authority", key:"edc488046ebb408",
+     comps:[["URB Cannabis Dispensary",80.3],["Exclusive Monroe",53.1],["Happy Daze Cannabis",38.3]]},
+    {name:"8 Mile", addr:"3340 E 8 Mile Rd", market:"Detroit (633k)", avgSolv:20, solv:19, arp:"8.8",
+     rating:4.6, reviews:4185, tier:"authority", key:"3fb5d7b7f307a6e",
+     comps:[["JARS Cannabis, Hazel Park",19.8],["Fly Shifter Recreational",16.1],["Pure Cannabis Outlet Warren",14.8]]},
+    {name:"Fort St.", addr:"3394 S Fort St", market:"Detroit (633k)", avgSolv:12, solv:14, arp:"11.1",
+     rating:5.0, reviews:1, tier:"authority", key:"4aef02868d1e332",
+     comps:[["Pleasantrees, Lincoln Park",45.7],["Moses Roses, Lincoln Park",42.0],["Green Acres, Ecorse",29.6]]},
+    {name:"New Buffalo", addr:"19333 M-239", market:"New Buffalo (1.8k)", avgSolv:4, solv:5, arp:"7.7",
+     rating:4.9, reviews:1550, tier:"authority", key:"601434935bb4d08",
+     comps:[["King of Budz",58.0],["Herbology Cannabis",39.5],["Cannabis Club Dispensary",38.3]]},
+    {name:"Center Line", addr:"26829 Lawrence Ave", market:"Center Line (8k)", avgSolv:4, solv:6, arp:"8.8",
+     rating:4.5, reviews:2820, tier:"authority", key:"5c238112882a9cf",
+     comps:[["The Grove",40.7],["PUFF Cannabis, Centerline",39.5],["Loud Cannabis Company",25.9]]},
+  ];
+
+  const TIER = {
+    authority:{label:"Authority", price:"$2,650", timeline:"1&ndash;3 months"},
+    growth:{label:"Growth", price:"$2,150", timeline:"4&ndash;6 months"},
+    essential:{label:"Essential", price:"$1,150", timeline:"6&ndash;12 months"},
+  };
+
+  function statusPill(s){
+    if(s>=70) return '<span class="status-pill status-leading">Leading pack</span>';
+    if(s>=50) return '<span class="status-pill status-strong">Strong position</span>';
+    if(s>=25) return '<span class="status-pill status-building">Building presence</span>';
+    return '<span class="status-pill status-ground">Ground floor</span>';
+  }
+
+  document.getElementById("locGrid").innerHTML = LOCS.map(l => `
+    <div class="grid-card">
+      <div class="loc-name">${l.name}</div>
+      <div class="loc-addr">${l.addr}</div>
+      <div class="solv-num">${l.avgSolv}%</div>
+      <div class="solv-label">avg SoLV</div>
+      ${statusPill(l.avgSolv)}
+      <div class="reviews">${l.reviews === 0 ? '<b>No Google reviews yet</b>' : `<b>${l.rating.toFixed(1)}&#9733;</b> ${l.reviews.toLocaleString()} Google reviews`}</div>
+    </div>
+  `).join("");
+
+  document.getElementById("compGrid").innerHTML = LOCS.map(l => `
+    <div class="grid-card">
+      <div class="loc-name">${l.name}</div>
+      <div class="loc-addr">You: ${l.solv}% SoLV &middot; ARP ${l.arp}</div>
+      ${l.comps.map(c => `<div class="comp-row"><span class="c-name">${c[0]}</span><span class="c-val">${c[1].toFixed(1)}%</span></div>`).join("")}
+    </div>
+  `).join("");
+
+  document.getElementById("recBody").innerHTML = [...LOCS]
+    .sort((a,b) => ["authority","growth","essential"].indexOf(a.tier) - ["authority","growth","essential"].indexOf(b.tier) || b.avgSolv - a.avgSolv)
+    .map(l => `
+      <tr>
+        <td>${l.name}</td>
+        <td>${l.market}</td>
+        <td>${l.avgSolv}%</td>
+        <td><span class="tier-badge tier-${l.tier}">${TIER[l.tier].label}</span></td>
+        <td>${TIER[l.tier].timeline}</td>
+        <td>${TIER[l.tier].price}</td>
+      </tr>
+    `).join("");
+
+  // Per-point ranks from each scan, row 0 = north, col 0 = west. Used only if the
+  // hosted scan image can't load (for example inside a sandboxed preview).
+  const GRID_DATA = {
+    "8 Mile":[21,21,21,21,21,21,16,17,20,21,21,18,13,10,14,15,18,20,21,21,15,6,4,4,13,21,21,20,19,10,21,1,1,9,17,21,15,13,7,4,1,1,7,10,12,20,6,3,2,1,1,7,10,14,7,5,1,1,1,1,5,17,13,4,3,2,3,4,5,5,11,14,7,6,8,5,5,6,10,12,13],
+    "Ann Arbor":[1,1,1,1,1,1,5,8,7,1,4,1,1,1,1,4,8,8,1,1,1,1,1,1,3,7,9,1,1,1,1,1,1,5,10,14,1,1,1,1,1,1,6,14,19,1,1,1,1,3,10,7,15,21,1,1,1,2,2,2,7,14,20,1,1,2,2,2,2,10,18,21,1,1,1,2,2,2,9,19,21],
+    "Center Line":[11,12,8,6,4,4,6,8,7,12,10,5,4,4,4,5,7,7,11,10,4,4,4,3,3,7,13,14,8,4,3,21,3,4,17,7,21,8,6,4,4,2,4,6,9,21,9,21,7,6,4,5,6,13,21,20,11,10,9,8,10,12,16,21,21,20,18,19,15,15,15,16,21,21,21,21,21,21,20,21,19],
+    "Fort St.":[20,17,20,18,17,16,18,21,21,15,11,8,7,9,12,14,18,21,13,5,4,4,6,11,11,14,21,9,3,3,3,2,5,11,16,18,7,3,3,3,1,2,11,15,17,12,5,4,3,3,10,14,15,15,15,8,5,6,7,11,13,14,20,14,13,11,8,10,11,14,15,19,15,15,15,13,13,15,16,16,20],
+    "Garden City":[4,4,5,4,3,4,4,4,7,4,4,3,3,3,2,2,3,6,4,3,7,3,2,2,2,2,9,2,2,2,1,1,2,2,4,12,2,2,2,1,1,1,3,6,13,4,2,2,1,1,1,2,10,13,8,5,4,2,1,4,11,11,13,8,9,7,5,8,10,11,11,13,7,10,11,12,14,12,11,12,12],
+    "Grand Rapids":[6,2,1,1,1,1,1,1,1,5,2,1,1,1,1,1,1,1,7,4,1,1,1,1,1,1,1,10,6,4,1,1,1,1,1,1,9,9,6,2,1,2,2,1,1,12,11,8,4,1,2,2,5,1,10,11,8,5,1,1,1,1,1,9,9,7,3,2,2,1,1,1,9,8,7,5,2,2,2,1,1],
+    "Gratiot":[21,21,18,7,4,3,5,4,5,15,20,8,4,3,4,3,5,7,12,8,2,1,2,3,2,4,5,6,3,1,1,2,2,1,2,3,5,2,1,1,1,1,1,2,6,7,1,1,2,1,1,1,3,5,6,3,1,2,2,1,1,4,7,10,5,2,1,1,1,5,7,9,11,5,3,2,2,2,5,6,8],
+    "Kalamazoo":[7,6,6,5,3,3,3,3,2,6,6,4,4,3,2,2,2,2,7,6,3,2,2,2,2,2,2,7,5,3,2,2,2,2,2,2,8,7,1,1,1,1,1,1,1,11,8,3,3,2,2,1,1,1,12,8,5,5,4,2,1,1,1,15,12,8,8,7,3,3,3,2,13,13,9,11,10,6,4,3,2],
+    "Lansing":[2,2,1,1,1,1,1,1,1,3,2,2,1,1,1,1,1,1,4,2,2,1,1,1,1,2,5,5,3,3,1,2,1,1,3,6,5,5,5,1,1,1,2,4,7,6,7,5,1,1,1,1,6,8,5,5,5,2,4,3,4,6,9,5,7,6,4,4,5,6,8,8,5,5,5,4,4,7,8,8,8],
+    "Lapeer":[3,2,1,1,1,1,1,1,1,3,2,1,1,1,1,2,2,2,2,2,1,1,1,1,4,2,2,2,2,2,1,2,2,2,2,2,2,2,2,3,3,4,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,2,3,2,2,2,3,2,2,2,2,3,3,2,3,2,2,2,2,2,3,3,3],
+    "Monroe":[9,10,9,9,8,4,4,3,2,10,12,10,11,7,4,4,4,2,9,13,13,8,4,4,3,3,3,9,10,12,6,4,3,3,3,5,10,9,6,6,14,3,3,3,3,9,6,5,6,10,5,3,3,2,7,4,5,6,6,6,4,3,2,6,5,5,6,6,5,4,3,2,5,6,6,5,4,4,4,3,2],
+    "New Buffalo":[21,13,11,12,12,10,10,10,8,20,16,10,9,10,9,8,10,9,21,18,8,7,6,9,7,9,9,21,17,7,8,8,3,4,8,9,21,18,5,5,3,2,4,4,6,21,17,6,6,3,4,4,4,5,21,13,5,4,4,4,4,4,4,21,14,6,4,4,4,4,4,4,18,10,7,5,4,4,4,4,4],
+    "Saginaw":[8,7,5,5,5,3,3,3,3,8,7,5,5,4,3,3,3,3,9,6,4,2,1,2,2,2,2,9,5,4,3,1,1,1,2,2,9,5,3,3,1,1,1,1,1,8,2,1,1,1,1,1,1,1,5,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    "Traverse City":[5,4,3,2,2,2,2,2,2,7,4,4,2,2,2,2,2,2,10,6,10,3,2,2,2,2,2,8,7,6,3,2,2,2,1,1,10,8,5,4,2,2,1,1,1,8,7,6,6,2,3,2,1,1,6,6,6,6,3,2,2,2,1,6,6,4,4,3,10,2,2,1,6,5,4,3,3,2,2,2,1],
+    "Woodward":[6,4,6,3,3,3,7,8,8,4,6,4,3,2,2,5,6,8,4,3,2,2,1,1,2,5,8,4,4,3,2,1,1,1,4,8,4,4,4,2,1,1,1,5,9,4,4,4,4,1,2,3,10,17,4,4,3,21,1,20,8,13,21,5,5,3,3,2,7,13,20,21,9,7,5,6,11,13,16,21,21],
+    "Ypsilanti":[9,7,6,4,4,3,2,3,1,10,5,5,4,3,1,1,1,1,7,9,5,3,2,1,1,2,2,8,6,7,5,1,1,2,2,2,10,7,8,5,1,1,1,1,1,12,7,3,1,1,1,1,1,1,10,5,2,1,1,1,1,2,1,6,3,2,1,3,1,1,2,2,5,3,2,1,1,1,1,1,1],
+  };
+  function heatColor(r){
+    if(r<=3) return "#34a853";
+    if(r<=6) return "#8bc34a";
+    if(r<=10) return "#fbbc04";
+    if(r<=15) return "#ff9800";
+    if(r<=20) return "#ea4335";
+    return "#8e3b3b";
+  }
+
+  document.getElementById("mapGrid").innerHTML = LOCS.map(l => `
+    <div class="map-card">
+      <div class="map-img-wrap">
+        <img src="https://lf-static-v2.localfalcon.com/image/${l.key}" alt="${l.name} grid scan, dispensary near me" loading="lazy" onerror="this.closest('.map-img-wrap').classList.add('img-failed')">
+        <div class="map-fallback">
+          <div class="lf-map">
+            ${GRID_DATA[l.name].map(r => `<div class="lf-pin" style="background:${heatColor(r)};">${r>=21?'20+':r}</div>`).join("")}
+          </div>
+        </div>
+      </div>
+      <div class="map-meta">
+        <div class="map-name">${l.name}</div>
+        <div class="map-stats">SoLV ${l.solv}% &middot; ARP ${l.arp}</div>
+      </div>
+    </div>
+  `).join("");
+
+  // Catch images blocked by a sandbox CSP, which does not always fire onerror.
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".map-img-wrap img").forEach(img => {
+      // Only a genuine failure: an image that finished loading with no
+      // dimensions (broken URL, or blocked by a sandbox CSP). The original
+      // test also fired on !img.complete, which is true for every lazy image
+      // still below the fold when load fires, so all 16 real scans were
+      // hidden behind the drawn fallback. Images that fail later are still
+      // caught by the inline onerror.
+      if(img.complete && img.naturalWidth === 0){
+        img.closest(".map-img-wrap").classList.add("img-failed");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
