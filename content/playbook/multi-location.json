@@ -1,0 +1,187 @@
+{
+  "spoke": 8,
+  "slug": "dispensary-multi-location-seo",
+  "phase": "Phase 3, playbook silo",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "money page FAQ, 'Do you work with multi-location dispensaries?'",
+  "method": "Four Google Business Profile bulk-management documents and the Search spam policies fetched and read in full on 2026-09-08, plus facts already recorded in gbp.json, citations.json and schema.json. The doorway and scaled-content policy text is quoted verbatim because the whole second half of the page rests on it.",
+  "thesis": "A multi-location dispensary has two problems that get talked about as one. The profiles are a documented bulk process with rules most chains break at the phone number and the URL. The location pages are the single most likely thing on a cannabis site to be read as doorway abuse, and Google publishes the definition. The page answers both separately and shows the guardrail we use on our own 34-page geo program.",
+  "facts": [
+    {
+      "id": "ml-bulk-threshold",
+      "label": "Bulk management starts at ten locations",
+      "rule": "If your business has 10 or more locations you can add, verify, and manage them in bulk. Duplicate, suspended, or disabled profiles don't count towards the 10 Business Profile minimum.",
+      "source": "Google Business Profile Help, Bulk location management overview; Verify Business Profiles in bulk",
+      "source_url": "https://support.google.com/business/answer/3217744",
+      "retrieved": "2026-09-08",
+      "verify": "Ten is the documented floor, and the exclusion clause matters: a chain with 11 profiles of which two are suspended is under the threshold and does not know it."
+    },
+    {
+      "id": "ml-agency-cannot-bulk",
+      "label": "An agency holding more than one business in an account cannot bulk verify",
+      "rule": "Your spreadsheet has 10 or more profiles from the same business. Agencies with more than one business in one account can't bulk verify.",
+      "source": "Google Business Profile Help, Verify Business Profiles in bulk",
+      "source_url": "https://support.google.com/business/answer/4490296",
+      "retrieved": "2026-09-08",
+      "verify": "LOAD-BEARING FOR AGENCY-MANAGED CHAINS, and almost never mentioned. An agency that puts several dispensary clients into one account has disqualified all of them from bulk verification. The fix is one account or business group per client, which is also the arrangement Google's authorized-representative rules point at.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ml-chain-size-evidence",
+      "label": "Your profile count must match your real chain size",
+      "rule": "The profiles added to your account must accurately reflect the size of your business. You may be required to provide evidence if your chain size differs from the number of profiles in your account. Your spreadsheet has all the profiles you manage. Do not leave out any businesses.",
+      "source": "Google Business Profile Help, Verify Business Profiles in bulk",
+      "source_url": "https://support.google.com/business/answer/4490296",
+      "retrieved": "2026-09-08",
+      "verify": "Google reserves the right to ask for proof of chain size, and requires the sheet to be complete rather than a convenient subset. Relevant to operators who hold licenses under several entity names.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ml-upload-is-not-request",
+      "label": "Uploading the spreadsheet does not request verification",
+      "rule": "Important: Uploading a spreadsheet doesn't send a verification request.",
+      "source": "Google Business Profile Help, Verify Business Profiles in bulk",
+      "source_url": "https://support.google.com/business/answer/4490296",
+      "retrieved": "2026-09-08",
+      "verify": "A one-line trap. Operators upload, see the locations appear in the dashboard, and wait for a verification that was never requested."
+    },
+    {
+      "id": "ml-two-account-shapes",
+      "label": "Two things can be verified: an account or a business group",
+      "rule": "You can verify 2 types of accounts: An individual user account: When your account is verified, all eligible profiles in your account not claimed by someone else are verified. Business groups: When the main owner is verified, all eligible profiles in the group are as well. The profiles can't be owned by someone else.",
+      "source": "Google Business Profile Help, Verify Business Profiles in bulk",
+      "source_url": "https://support.google.com/business/answer/4490296",
+      "retrieved": "2026-09-08",
+      "verify": "Note the repeated 'not claimed by someone else' clause. A location a former agency or a franchisee still owns silently drops out of the bulk verification."
+    },
+    {
+      "id": "ml-call-center-number",
+      "label": "Use a local number and a direct URL for each location, not a call centre and a homepage",
+      "rule": "Use a local phone number instead of a call center number whenever possible. Use direct phone numbers and URLs to the business listed, rather than redirects.",
+      "source": "Google Business Profile Help, Understand delays in bulk verification",
+      "source_url": "https://support.google.com/business/answer/3217747",
+      "retrieved": "2026-09-08",
+      "verify": "THE MOST COMMONLY BROKEN RULE IN CHAIN LISTINGS. Dispensary groups routinely point every profile at one central number and the homepage. Google names both as causes of verification delay, and the URL half is also what makes each location page the destination for its own profile.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ml-store-code-in-name",
+      "label": "No store codes or specialties in the business name",
+      "rule": "Capitalize appropriately. Make sure your business name reflects the same capitalization as it does in real life. Only use your business name. Do not include any additional information about the business, such as its specialty or store code.",
+      "source": "Google Business Profile Help, Understand delays in bulk verification",
+      "source_url": "https://support.google.com/business/answer/3217747",
+      "retrieved": "2026-09-08",
+      "verify": "The multi-location version of the name rule from spoke 1. Store codes belong in the store code column of the bulk sheet, not in the visible name."
+    },
+    {
+      "id": "ml-domain-email",
+      "label": "A non-domain email address slows bulk verification",
+      "rule": "Email addresses that don't contain the official domain name of the business will require additional steps toward verification and may take longer to process.",
+      "source": "Google Business Profile Help, Understand delays in bulk verification",
+      "source_url": "https://support.google.com/business/answer/3217747",
+      "retrieved": "2026-09-08",
+      "verify": "Applies directly to chains verified from a personal address or an agency address."
+    },
+    {
+      "id": "ml-blank-field-invites-update",
+      "label": "A blank cell in the bulk sheet invites Google to fill it",
+      "rule": "When you use a spreadsheet to update multiple locations, make sure to import them before you manage Google updates. If a field stays the same as your last upload, Google ignores it. If you change a field, the system accepts the new value: this new value replaces both the previous value and any updated info. If a field is blank: an automatic update may apply.",
+      "source": "Google Business Profile Help, Understand Google updates on your Business Profile",
+      "source_url": "https://support.google.com/business/answer/3480441",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 4 and it belongs here more than there. Leaving a cell empty is not neutral at scale: across forty locations it is forty invitations for Google to fill the field from third-party data.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ml-one-profile-per-location",
+      "label": "One profile per business, and duplicates cause display problems",
+      "rule": "There should only be one profile per business, as this can cause problems with how your information displays on Google Maps and Search.",
+      "source": "Google Business Profile Help, Guidelines for representing your business on Google",
+      "source_url": "https://support.google.com/business/answer/3038177",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 1. At chain scale the duplicate problem is created by the chain itself: a store that moved, a license transferred, an agency that claimed a second profile."
+    },
+    {
+      "id": "ml-authoritative-nap",
+      "label": "Each profile needs its own authoritative phone and website",
+      "rule": "Note that the phone number and website for a Business Profile should always be the single, authoritative phone number and website for the business and be verifiable by the business owner.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-09-08",
+      "verify": "Reads as a constraint on call-tracking numbers and on pointing every profile at one homepage."
+    },
+    {
+      "id": "ml-doorway",
+      "label": "Google's definition of doorway abuse",
+      "rule": "Doorway abuse is when sites or pages are created to rank for specific, similar search queries. They lead users to intermediate pages that aren't as useful as the final destination. Examples of doorway abuse include: Having multiple websites with slight variations to the URL and home page to maximize their reach for any specific query; Having multiple domain names or pages targeted at specific regions or cities that funnel users to one page; Generating pages to funnel visitors into the actual usable or relevant portion of a site; Creating substantially similar pages that are closer to search results than a clearly defined, browseable hierarchy.",
+      "source": "Google Search Central, Spam policies for Google web search",
+      "source_url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "retrieved": "2026-09-08",
+      "verify": "THE CENTRAL RISK FOR ANY MULTI-LOCATION LOCATION-PAGE PROGRAM. Two of the four examples describe a badly built set of city pages exactly: pages targeted at specific cities that funnel users to one page, and substantially similar pages with no browseable hierarchy. The page quotes all four and then gives the four tests that distinguish a real location page from a doorway.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ml-scaled-content",
+      "label": "Google's definition of scaled content abuse",
+      "rule": "Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings and not helping users. This abusive practice is typically focused on creating large amounts of unoriginal content that provides little to no value to users, no matter how it's created. Examples include: Using generative AI tools or other similar tools to generate many pages without adding value for users; Stitching or combining content from different web pages without adding value; Creating many pages where the content makes little or no sense to a reader but contains search keywords.",
+      "source": "Google Search Central, Spam policies for Google web search",
+      "source_url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "retrieved": "2026-09-08",
+      "verify": "The 'no matter how it's created' clause is the one that matters. The policy is about the output, not the tool, so a hand-written set of near-identical location pages is caught by it and a carefully built AI-assisted set is not automatically caught.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ml-schema-per-location",
+      "label": "Each location gets its own LocalBusiness markup on its own page",
+      "rule": "Define each local business location as a LocalBusiness type. You can add LocalBusiness structured data to any page on your site, though it may make more sense to put it on a page that contains information about your business. department (LocalBusiness): a nested item for a single department. Include the store name with the department name in the following format: {store name} {department name}.",
+      "source": "Google Search Central, Local business (LocalBusiness) structured data",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 7. The department property is how a medical counter inside a recreational store is expressed, rather than as a second location."
+    },
+    {
+      "id": "ml-our-own-guardrail",
+      "label": "The guardrail we run on our own 34-page geo program",
+      "value": {
+        "one_primary_dataset_per_page": "Every guide is built from one state agency file, parsed directly, with source, as-of and retrieved dates on every number.",
+        "distinct_thesis": "Each page rests on a finding no sibling prints. Seattle is closure concentration in four ZIPs; Columbia is a place with no municipal government whose stores share one ZIP; Baltimore is the city and county boundary trap.",
+        "shingle_gate": "scripts/validate.py computes 8-gram Jaccard overlap between every sibling pair, warns at 10 percent and fails the build at 15. Worst pair across 34 guides on 2026-09-08 was 0.058; the two newest pages measured 0.029 against each other.",
+        "hierarchy": "Hub to state to city, linked both ways, with a four-level breadcrumb on city pages, which answers Google's 'clearly defined, browseable hierarchy' wording directly.",
+        "refusal": "Markets that cannot be isolated in an agency file do not get a page. Las Vegas has none for that reason and the site says so in public."
+      },
+      "source": "nearfront.com/markets/, nearfront-repo/scripts/validate.py, SEO-KPI-LEDGER.md",
+      "retrieved": "2026-09-08",
+      "verify": "Every element is publicly checkable on nearfront.com. This is the page's strongest move: we run the exact pattern we are warning about, at 34 pages, and publish the gate we run it through.",
+      "weight": "load-bearing"
+    }
+  ],
+  "gaps": [
+    "NO PUBLISHED THRESHOLD FOR SIMILARITY: Google gives no percentage at which pages become 'substantially similar'. Our 10 percent warn and 15 percent fail are our own thresholds on our own 8-gram measure, not Google's, and the page says so.",
+    "NO DOORWAY PENALTY DATA: Google publishes no data on how often doorway abuse triggers action, or on what the action is for location pages specifically. The page describes the policy and never quantifies risk.",
+    "SATELLITE PAGES ON CLIENT DOMAINS: our own satellite program is permission-gated and no client page exists to show, so the page describes the method and shows only the public demo at /dispensary-near-gresham/.",
+    "MULTI-STATE LICENCE ENTITIES: whether separately licensed entities under one brand should be one chain or several in Google's eyes is not addressed in Google's documentation. Google says only that profile count must reflect the size of the business and that evidence may be required. The page states the rule and flags the ambiguity rather than resolving it.",
+    "CALL TRACKING: Google's rule is that the profile phone number should be the single authoritative number verifiable by the owner. Whether a call-tracking number that forwards to the store satisfies that is not addressed anywhere in Google's documentation. The page states the rule and marks the question open."
+  ],
+  "internal_links": {
+    "out": [
+      "/services/cannabis-dispensary-seo/",
+      "/dispensary-google-business-profile/",
+      "/dispensary-local-citations/",
+      "/dispensary-local-schema/",
+      "/dispensary-website/",
+      "/dispensary-seo/",
+      "/markets/",
+      "/dispensary-near-gresham/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": [],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the visible byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-multi-location-seo/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt entry in the playbook section added on 2026-09-08.",
+    "Money page: its 'Do you work with multi-location dispensaries?' FAQ answer should link this page.",
+    "No legacy 301 retargets exist for this slug."
+  ]
+}
