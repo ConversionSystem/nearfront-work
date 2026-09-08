@@ -1,0 +1,167 @@
+{
+  "spoke": "commercial explainer",
+  "slug": "dispensary-seo",
+  "phase": "commercial pages, plan B4",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "method": "Every component claim on this page rests on a fact already recorded in a playbook facts file (gbp.json, reviews.json, citations.json, map-pack.json, schema.json), re-read on 2026-09-08 before drafting. Three new facts were fetched firsthand for this page: Google's published timeline statement, its guarantee warning, and its audit-expectation sentence. The page adds no claim that is not in one of those places.",
+  "thesis": "Dispensary SEO is not a different discipline from local SEO. It is local SEO run under four documented constraints that other retailers do not have, and the page names all four with Google's own words rather than selling the category as mysterious.",
+  "intent": {
+    "primary": "what is dispensary seo",
+    "secondaries": [
+      "cannabis seo strategy",
+      "marijuana seo",
+      "dispensary seo checklist"
+    ],
+    "non_targets": [
+      "dispensary seo",
+      "dispensary seo services",
+      "dispensary seo agency",
+      "dispensary seo company",
+      "cannabis dispensary seo",
+      "local seo for cannabis dispensaries",
+      "cannabis seo agency"
+    ],
+    "guard": "Title and H1 are definitional and carry none of the words services, agency or company. The money page keeps the only Service entity sitewide; this page carries Article with about pointing at that entity's @id. Monitor per plan G6, check 0 recorded 2026-09-08 (dispensary seo 2 impressions at 14.5, cannabis seo agency none)."
+  },
+  "facts": [
+    {
+      "id": "ex-timeline",
+      "label": "Google's published statement on how long search changes take",
+      "rule": "Every change you make will take some time to be reflected on Google's end. Some changes might take effect in a few hours, others could take several months. In general, you likely want to wait a few weeks to assess whether your work had beneficial effects in Google Search results. Keep in mind that not all changes you make to your website will result in noticeable impact in search results; if you're not satisfied with your results and your business strategies allow it, try iterating with the changes and see if they make a difference.",
+      "source": "Google Search Central, SEO Starter Guide, section 'How long until I see impact in search results?'",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "retrieved": "2026-09-08",
+      "verify": "Fetched and text-searched on 2026-09-08. CORRECTS A PLANNING ASSUMPTION: the roadmap said Google publishes no timeline. It does, in the starter guide, and the wording is hours to several months with a few weeks before judging. The 'do I need an SEO' page carries no timeline at all (searched the same day, zero hits for month or week).",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ex-no-guarantee",
+      "label": "Google's warning about guaranteed rankings",
+      "rule": "No one can guarantee a #1 ranking on Google. Beware of SEOs that claim to guarantee rankings, allege a 'special relationship' with Google, or advertise a 'priority submit' to Google.",
+      "source": "Google Search Central, Do you need an SEO?",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Fetched firsthand 2026-09-08. Pairs with gbp-no-paid-ranking from the profile side. Also the anchor for the seven questions on the future /cannabis-seo-agency/ page.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ex-audit-expectations",
+      "label": "What Google says an SEO audit should produce",
+      "rule": "An SEO audit should be about giving you realistic estimates of improvement, and an estimate of the work involved. If they guarantee you that their changes will give you first place in search results, find someone else.",
+      "source": "Google Search Central, Do you need an SEO?",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Fetched firsthand 2026-09-08. Directly describes what a free data audit should contain, which is the offer this page ends on. Reserve the full treatment for the agency page."
+    },
+    {
+      "id": "ex-solv-not-google",
+      "label": "Grid tracking and Share of Local Voice are industry measurement, not Google features",
+      "rule": "Google publishes no grid metric and no Share of Local Voice metric. Its local ranking documentation describes distance as how far each business is from the customer who is searching, and says that if a customer does not share where they are, Google uses what it knows about their location.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google (for the distance wording); the absence is our own finding",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-09-08",
+      "verify": "NEGATIVE CLAIM, verified firsthand rather than assumed. Fetched and text-searched on 2026-09-08: https://support.google.com/business/answer/7091 (Tips to improve your local ranking on Google) and https://support.google.com/business/answer/9918094 (Understand your Business Profile performance and insights). Hits for 'grid': 0 and 0. For 'share of local voice': 0 and 0. For 'local voice': 0 and 0. The ranking page's three hits for 'distance' are the factor description quoted above. So the honest framing is that a grid samples the distance factor Google does document, that the method was invented by vendors including us, and that any SoLV percentage is our number rather than Google's.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ex-components",
+      "label": "The six components and the facts each rests on",
+      "value": {
+        "google-business-profile": [
+          "gbp-cannabis-sab",
+          "gbp-eligibility-inperson",
+          "gbp-name-rules",
+          "gbp-fewest-categories",
+          "gbp-suspension-appeal"
+        ],
+        "reviews-and-ratings": [
+          "rv-prominence-inputs",
+          "rv-score-is-plain-average",
+          "rv-sanctioned-ask",
+          "rv-no-gating",
+          "rv-incentives-banned",
+          "rv-what-is-allowed"
+        ],
+        "citations-and-nap": [
+          "ct-prominence-links-not-citations",
+          "ct-sources",
+          "ct-google-updates-you",
+          "ct-edits-rejected",
+          "ct-accuracy-and-visibility"
+        ],
+        "maps-grid-and-solv": [
+          "mp-three-factors",
+          "ex-solv-not-google"
+        ],
+        "menu-and-pos": [
+          "sc-menu-food-only",
+          "gbp-products-shopping",
+          "gbp-shopping-drugs"
+        ],
+        "technical-and-ai": [
+          "sc-what-it-does",
+          "sc-no-cannabis-type",
+          "mp-ai-business-profile",
+          "mp-ai-structured-data",
+          "mp-ai-llmstxt"
+        ]
+      },
+      "source": "nearfront-work/content/playbook/{gbp,reviews,citations,map-pack,schema}.json",
+      "retrieved": "2026-09-08",
+      "verify": "Component names and anchor ids match the six .svc-card blocks on the money page exactly (#gbp, #reviews, #citations, #maps-grid, #menu-pos, #technical-ai), so the explainer and the service page describe the same six things in the same order."
+    },
+    {
+      "id": "ex-four-differences",
+      "label": "The four documented constraints that separate dispensary SEO from ordinary local SEO",
+      "value": [
+        "No paid channel: Google Ads disallows ads for substances that alter mental state for recreation (mp-ads-prohibited)",
+        "Cannabis is named in Google's Business Profile eligibility guidelines, so a delivery-only operation with no storefront is not eligible as a service-area business (gbp-cannabis-sab)",
+        "Profile product listings run under Shopping policy, which prohibits recreational drugs and psychoactive substances (gbp-products-shopping plus gbp-shopping-drugs)",
+        "schema.org has no cannabis or dispensary type, enumerated firsthand across all 29 Store sub-types (sc-no-cannabis-type)"
+      ],
+      "source": "gbp.json, map-pack.json, schema.json",
+      "retrieved": "2026-09-08",
+      "verify": "All four are documented by Google or enumerated firsthand. The restricted-content rule (gbp-restricted-content) is deliberately NOT counted as a fifth, because Google does not name cannabis in that list; the page states the rule with that caveat attached.",
+      "weight": "load-bearing"
+    }
+  ],
+  "gaps": [
+    "SHARE OF LOCAL VOICE: no Google definition exists, so the page never presents a grid or a SoLV percentage as a Google metric. Any number we report from a grid is our measurement of Google's output, not a figure Google publishes.",
+    "MONEY-PAGE TIMELINE CLAIM, correction candidate for the owner: /services/cannabis-dispensary-seo/ says profile and review work 'can move the Map Pack within weeks' and that rankings 'compound over 60 to 90 days'. Google's only published timeline is hours to several months with a few weeks before assessing (ex-timeline). The 60 to 90 days figure is ours and is unsourced. Either attach our own dated evidence to it or soften it in the workstream D voice pass; the explainer cites Google's words and says plainly that any specific day count is a vendor estimate.",
+    "MENU IFRAME INDEXING: whether content served inside a third-party menu iframe is indexed for the store's own domain is unanswered. Google's JavaScript SEO and canonicalization documentation was checked on 2026-08-31 and carries no iframe indexing guidance. Spoke 5 stays deferred until 3 to 5 real Dutchie or Jane dispensary URLs exist to test against. The page states the question and refuses the answer.",
+    "GOOGLE CATEGORY LIST: Google does not publish the category list, so the page says use the fewest categories that describe the core business and does not name a best category for a dispensary.",
+    "SUSPENSION RATES: Google publishes no suspension-rate data for any category, cannabis included. The page describes the appeal process and never quantifies risk.",
+    "TIME TO RESULT FOR A DISPENSARY SPECIFICALLY: Google's timeline is generic to Search and says nothing about the Map Pack or about cannabis. We have no controlled study of our own. The page does not convert Google's generic statement into a dispensary promise."
+  ],
+  "internal_links": {
+    "out": [
+      "/services/cannabis-dispensary-seo/ (and its six anchors #gbp #reviews #citations #maps-grid #menu-pos #technical-ai)",
+      "/dispensary-google-business-profile/",
+      "/dispensary-google-reviews/",
+      "/dispensary-local-citations/",
+      "/dispensary-local-schema/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/dispensary-marketing/",
+      "/how-we-rank-ourselves/",
+      "/get-started/"
+    ],
+    "pending": "One 'choosing help' sentence linking /cannabis-seo-agency/ is deliberately absent until that page exists (it ships a week later per plan B4). Add it in the agency page's own promotion push, not before, so this page never carries a dead link."
+  },
+  "redirect_retargets": [
+    "/local-seo-best-practices/",
+    "/local-seo-tips/",
+    "/how-to-dominate-local-seo/",
+    "/local-seo-ranking-factors/",
+    "/ai-and-the-future-of-local-seo-how-automation-is-rewriting-the-playbook/"
+  ],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified, and the visible byline date to the actual promotion date (they read 2026-09-08, the draft date).",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-seo/index.html.",
+    "Money page: add \"@id\": \"https://nearfront.com/services/cannabis-dispensary-seo/#service\" to its Service node (it is the only Service entity sitewide, and this page's Article about points at it).",
+    "Money page: link the explainer from the 'What does dispensary SEO actually include?' FAQ answer.",
+    "/services/: add a spec-card for the explainer.",
+    "sitemap.xml entry at priority 0.7, llms.txt and llms-full.txt lines, and the five legacy 301 retargets above in the owner-approved _redirects batch.",
+    "Record cannibalization check 0 against the money page before the new page indexes (already captured site-wide on 2026-09-08)."
+  ]
+}
