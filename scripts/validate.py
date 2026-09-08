@@ -19,6 +19,7 @@ import argparse
 import json
 import os
 import re
+from html import unescape as html_unescape
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -71,6 +72,29 @@ BRITISH_SPELLINGS = [
 # Compared only within their own group; a state page and a city page are
 # expected to differ anyway.
 GEO_PREFIXES = ("cannabis-seo-", "thca-seo-", "dispensary-near-")
+
+GEO_EXCLUDE = ("cannabis-seo-agency",)
+GEO_DEMO_PAGES = {"/dispensary-near-gresham/"}   # a labelled demo; exempt from geo-freshness
+MONTH = r"(?:January|February|March|April|May|June|July|August|September|October|November|December)"
+RETRIEVED_RE = re.compile(r"\b(?:read|retrieved|queried|downloaded|checked|pulled|parsed|refreshed)\b[^.;]{0,60}?\b\d{1,2} " + MONTH + r" \d{4}", re.I)
+SOURCE_DATE_RE = re.compile(r"\b(?:dated|as of|covering|through|updated|last modified|last edited|stated as of|as published on)\b[^.;]{0,60}?" + MONTH + r" \d{4}", re.I)
+# Words that read as machine-written. Advisory; the statutory "comprehensive license" is allowed.
+AI_TELLS = [r"\bleverag\w*", r"\bnavigat(?:e|ing) the\b", r"\bunlock\w*", r"\bdelv\w*", r"\bin today'?s\b", r"\bever-evolving\b",
+    r"\blandscape\b", r"\bit'?s (?:important|worth) (?:to note|noting)\b", r"\bseamless\w*", r"\brobust\b", r"\bcutting-edge\b",
+    r"\bgame-?changer\b", r"\belevat\w*", r"\bempower\w*", r"\bharness\w*", r"\bstreamlin\w*", r"\btapestry\b", r"\btestament to\b",
+    r"\bunderscor\w*", r"\bcrucial\b", r"\bpivotal\b", r"\bcomprehensive (?:guide|approach|solution|strategy|overview|look|review|analysis|list|resource|suite|platform|service|support|coverage)s?\b", r"\bholistic\b", r"\bsynerg\w*", r"\bfoster\w*",
+    r"\butiliz\w*", r"\bmoreover\b", r"\bfurthermore\b", r"\bin conclusion\b", r"\bdeep dive\b", r"\bdive into\b", r"\bunleash\w*",
+    r"\bsupercharge\w*", r"\bskyrocket\w*", r"\bnext level\b", r"\bbest-in-class\b", r"\bworld-class\b", r"\bstate-of-the-art\b",
+    r"\brevolutioniz\w*", r"\btransformativ\w*", r"\bmeticulous\w*", r"\bvibrant\b", r"\bbustling\b", r"\bnestled\b", r"\bboast\w*",
+    r"\bplethora\b", r"\bmyriad\b", r"\brealm\b", r"\bparamount\b", r"\bembark\w*", r"\bthe world of\b", r"\bbeacon\b"]
+# Hub and service pages that must carry a visible FAQ plus FAQPage. Flip HUB_FAQ_ENABLED in the
+# same commit that ships those FAQs (plan workstream C1) so the check never nags about planned work.
+HUB_FAQ_ENABLED = False
+HUB_FAQ_PAGES = {"/services/", "/markets/", "/about-us/", "/vs/", "/how-we-rank-ourselves/", "/get-started/", "/book/", "/seo-rockstars-podcast/"}
+# Extra evidence-bearing pages beyond /vs/<name>/ and Article pages; add /vs/ and
+# /how-we-rank-ourselves/ when their rebuilds (plan C2) give them sources to link.
+EVIDENCE_PAGES = set()
+COUNT_DRIFT_FILES = ("public/index.html", "public/services/index.html", "public/markets/index.html", "public/llms.txt", "public/llms-full.txt")
 
 # Directories outside public/ that may legitimately hold .html: page templates,
 # archived competitor evidence, and the read-only production reference copies.
@@ -1054,6 +1078,121 @@ def validate(root, args):
                     "web UI drops files at the repo root, which is the usual cause. "
                     "If the file is not meant to be a page, put it under templates/, "
                     "content/, or reference/."))
+
+    # --- audit checks added 2026-09-08 (plan workstream F) -----------------
+    def is_geo(rel):
+        u = url_for(rel).lstrip("/")
+        return any(u.startswith(p) for p in GEO_PREFIXES) and not any(x in u for x in GEO_EXCLUDE)
+
+    def visible(fragment):
+        return re.sub(r"\s+", " ", html_unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+
+    def shell_pairs(raw, tag, cls):
+        m = re.search(r"<%s class=\"%s\".*?</%s>" % (tag, cls, tag), raw, re.S)
+        if not m:
+            return None
+        return [(h, visible(t)) for h, t in re.findall(r'<a [^>]*href="([^"]+)"[^>]*>(.*?)</a>', m.group(0), re.S)]
+
+    ref_doc = docs.get("public/" + SHELL_REF)
+    ref_nav = shell_pairs(ref_doc.raw, "nav", "site-nav") if ref_doc else None
+    ref_foot = shell_pairs(ref_doc.raw, "footer", "site-footer") if ref_doc else None
+
+    for rel in in_scope:
+        d = docs.get(rel)
+        if d is None or profile_for(urls[rel], rel, work) != "marketing":
+            continue
+        url = urls[rel]
+
+        # ai-tell: machine-sounding vocabulary in visible text (advisory)
+        for text, ln in (d.text if not url.startswith("/peptides/") else []):
+            for pat in AI_TELLS:
+                mm = re.search(pat, text, re.I)
+                if mm and mm.group(0)[0].isupper() and mm.start() > 0:
+                    continue   # capitalized mid-sentence: a proper noun such as a program name
+                if mm:
+                    add(Finding(WARN, rel, ln, "ai-tell",
+                                'reads as machine-written: "%s" in %s' % (mm.group(0), text.strip()[:70]),
+                                "Say the plain thing. The humanizer pass keeps facts and sources and rewrites the sentence."))
+                    break
+
+        # geo-freshness: the note under the scorecard must carry the data date and the read date
+        if is_geo(rel) and url not in GEO_DEMO_PAGES and 'class="geo-scorecard"' in d.raw:
+            i = d.raw.find('class="geo-scorecard"')
+            j = d.raw.find('class="svc-note"', i)
+            note = visible(d.raw[j:d.raw.find("</p>", j)]) if j > 0 else ""
+            if not note:
+                add(Finding(ERROR, rel, 1, "geo-freshness", "scorecard has no dated source note",
+                            "Add <p class=\"svc-note\"> under the scorecard naming the agency file, its date, and the day it was read."))
+            else:
+                if not RETRIEVED_RE.search(note):
+                    add(Finding(ERROR, rel, 1, "geo-freshness", "source note lacks a read-on date",
+                                'State the day the file was read, e.g. "read on 24 August 2026".'))
+                if not SOURCE_DATE_RE.search(note):
+                    add(Finding(ERROR, rel, 1, "geo-freshness", "source note lacks the data date",
+                                'State what the file covers, e.g. "dated 18 August 2026" or "as of 30 June 2026".'))
+
+        # evidence-links: pages that make dated third-party claims must link at least one source
+        jl = " ".join(t for t, _ in d.jsonld)
+        evidence = (url.startswith("/vs/") and url != "/vs/") or url in EVIDENCE_PAGES \
+            or (('"Article"' in jl or '"BlogPosting"' in jl) and not url.startswith("/peptides/"))
+        if evidence:
+            ext = [h for h, _t, _l in d.links if h.startswith("http")
+                   and not re.match(r"https?://(www\.)?(nearfront\.com|app\.nearfront\.com|www\.googletagmanager\.com)", h)]
+            if not ext:
+                add(Finding(WARN, rel, 1, "evidence-links", "no outbound source on an evidence-bearing page",
+                            "Link the document each claim came from. Competitor artifacts get rel=\"nofollow noopener\"."))
+
+        # faq-sync: the visible FAQ and the FAQPage copy must hold the same number of questions
+        if '"FAQPage"' in jl:
+            q = len(re.findall(r'"@type":\s*"Question"', jl))
+            v = d.raw.count("svc-faq-item")
+            if v and q != v:
+                add(Finding(ERROR, rel, 1, "faq-sync", "FAQPage has %d questions but the page shows %d" % (q, v),
+                            "Every visible .svc-faq-item needs a matching Question in the JSON-LD, and vice versa."))
+
+        # hub-faq: hub and service pages carry a visible FAQ (enabled with plan C1)
+        if HUB_FAQ_ENABLED and url in HUB_FAQ_PAGES:
+            if '"FAQPage"' not in jl or d.raw.count("svc-faq-item") < 3:
+                add(Finding(WARN, rel, 1, "hub-faq", "hub page has no visible FAQ block with FAQPage markup"))
+
+        # og-image-default: the SVG logo does not render as a social preview
+        og = d.metas.get("og:image")
+        if og and str(og[0]).endswith("logo.svg"):
+            add(Finding(WARN, rel, og[1], "og-image-default", "og:image is the SVG logo",
+                        "Facebook and LinkedIn do not render SVG previews. Point og:image at a 1200x630 PNG under /og/."))
+
+        # brand-shell-text: nav and footer must match SHELL_REF on (href, text), not only on hrefs
+        if ref_nav is not None and rel != "public/" + SHELL_REF:
+            for label, want, got in (("nav", ref_nav, shell_pairs(d.raw, "nav", "site-nav")),
+                                     ("footer", ref_foot, shell_pairs(d.raw, "footer", "site-footer"))):
+                if got is not None and want is not None and got != want:
+                    add(Finding(ERROR, rel, 1, "brand-shell-text",
+                                "%s links differ from %s in href or label" % (label, SHELL_REF),
+                                "Copy the nav and footer verbatim from the shell reference."))
+
+    # count-drift / hub-order: the markets hub is the count and order of record
+    hub_rel = "public/markets/index.html"
+    hub = docs.get(hub_rel)
+    if hub is not None:
+        cards = re.findall(r'<a class="mk-card" href="(/cannabis-seo-[a-z-]+/)"', hub.raw)
+        li = re.search(r'"itemListElement":\s*\[(.*?)\]', hub.raw, re.S)
+        items = re.findall(r'"url":\s*"https://nearfront\.com(/cannabis-seo-[a-z-]+/)"', li.group(1)) if li else []
+        if cards and items and cards != items:
+            add(Finding(WARN, hub_rel, 1, "hub-order", "ItemList order differs from the card order",
+                        "Renumber the ListItems to follow the cards top to bottom."))
+        n = len(items) or len(cards)
+        count_re = re.compile(r"\b(\d+)\s+(?:sourced |state and city |dispensary |cannabis )*(?:market )?(?:guides|markets)\b", re.I)
+        for f in COUNT_DRIFT_FILES:
+            fp = os.path.join(root, f)
+            if not os.path.exists(fp):
+                continue
+            with open(fp, "r", encoding="utf-8") as fh:
+                txt = fh.read()
+            for mm in count_re.finditer(txt):
+                if int(mm.group(1)) != n:
+                    add(Finding(WARN, f, txt[:mm.start()].count("\n") + 1, "count-drift",
+                                'says "%s" but the markets hub lists %d guides' % (mm.group(0), n),
+                                "Update the number, or let the hub be the single source of truth."))
 
     # --- protected paths banner -------------------------------------------
     if changed:
