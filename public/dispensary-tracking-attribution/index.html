@@ -298,13 +298,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <p>One more small trap in the same documentation: if device information is not sent, it "defaults to desktop for Web streams", which quietly skews a device report nobody thinks to question.</p>
 
-<h2 id="ourselves">What this looks like on our own site, gaps included</h2>
+<h2 id="ourselves">A worked example: booking a call</h2>
 
-<p>We publish our own numbers monthly, so it would be strange to write this page without saying where our own measurement is incomplete.</p>
+<p>Take the case that breaks most local setups, because it shows every rule on this page at once.</p>
 
-<p>Our lead form fires a browser event on success, and the conversion is derived from it in the tag manager rather than sent directly. Booking completion is the interesting one: Google publishes no event API for its appointment scheduling, so a booked call cannot be observed in the browser at all. We recover the count server-side from the calendar feed instead and send it as a separate event, which lands as direct for exactly the <code>client_id</code> reason above. That separation is deliberate and it is why our booking count is never merged into our lead count.</p>
+<p>A form submission is easy: the page fires a browser event on success, the visitor's identifier is present, and the conversion can be derived from that event in the tag manager. A booked call is not. Google publishes no event API for its appointment scheduling, so completion cannot be observed in the browser at all. The only way to count it is server-side, reading the calendar feed on a schedule and sending the result in.</p>
 
-<p>The gap: that job needs two environment secrets that are not set yet, so as of today our own north-star number is dormant. It is on the owner's list, it is written down in our tracking strategy document, and we would rather say so on a page about measurement than imply our own house is finished. <a href="/how-we-rank-ourselves/">Our transparency page</a> carries the numbers that do exist.</p>
+<p>Which lands you exactly where the <code>client_id</code> rule above says you will land: that scheduled job never met the visitor, so the event arrives with no source attached and is attributed to direct. The correct response is not to fight it. It is to keep the booking count as its own event, never merged into the form-conversion count, so one honest number is not quietly poisoning the other.</p>
+
+<p>That is the shape of nearly every offline-to-online problem in a dispensary. The outcome you care about happens somewhere the browser cannot see, the bridge back is server-side, and the bridge loses the source. Design the report around that instead of pretending the join is clean, and set out which parts of the chain are instrumented and which are inference before anyone signs off on the numbers.</p>
 
 <h2 id="instead">What to report instead of rankings</h2>
 
@@ -356,7 +358,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="svc-related">
       <a href="/dispensary-google-business-profile/">The Business Profile guide</a>
       <a href="/dispensary-keyword-research/">Keyword research for dispensaries</a>
-      <a href="/how-we-rank-ourselves/">Our own numbers, published monthly</a>
+      <a href="/how-we-rank-ourselves/">How we report</a>
       <a href="/dispensary-seo/">What dispensary SEO is</a>
   </div>
 </div>
