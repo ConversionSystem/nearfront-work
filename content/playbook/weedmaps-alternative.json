@@ -1,0 +1,156 @@
+{
+  "spoke": 12,
+  "slug": "dispensary-weedmaps-alternative",
+  "phase": "Phase 3, playbook silo",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "none",
+  "conflict_of_interest": "THIS IS THE PAGE WHERE WE HAVE THE MOST TO GAIN FROM A PARTICULAR ANSWER. We sell the owned side. The page declares that in its first paragraph, gives the strongest sourced case for renting before the case for owning, and ends with a test the reader runs themselves rather than a verdict from us.",
+  "method": "The cost and structure of the rented side come from WM Technology's own Form 10-Q for the quarter ended 2026-06-30, read on 2026-09-08. The owned side rests on Google's documentation. No third-party estimate, no ROI claim, and no figure for what SEO costs, because this site does not publish pricing.",
+  "thesis": "The question is not which channel is better. It is which of the two structures you want to be in: a fixed inventory of listings priced by competitive auction in each market, cancellable monthly, or a position that cannot be bought and cannot be cancelled but takes months to earn. Weedmaps describes the first in its own filing, and Google describes the second in its documentation.",
+  "facts": [
+    {
+      "id": "wa-auction-fixed-inventory",
+      "label": "Weedmaps featured placement is a competitive auction against fixed inventory per market",
+      "rule": "The Company has a fixed inventory of featured listing and display advertising in each market, and price is generally determined through a competitive auction process that reflects local market demand.",
+      "source": "WM Technology, Inc. Form 10-Q for the quarter ended 2026-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "retrieved": "2026-09-08",
+      "verify": "THE STRUCTURAL FACT THE WHOLE PAGE TURNS ON, and it is the company's own description rather than our characterization. Two consequences follow directly: the number of premium slots in your market does not grow because you want one, and your price rises as your local competitors bid. That is the definition of a rented position.",
+      "as_of": "2026-06-30",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wa-month-to-month",
+      "label": "Subscriptions are one-month terms that auto-renew",
+      "rule": "The Company's Weedmaps for Business subscriptions generally have one-month terms that automatically renew unless notice of cancellation is provided in advance. Featured Listing and WM Deal products are offered as add-on products to the Weedmaps for Business subscriptions.",
+      "source": "WM Technology, Inc. Form 10-Q for the quarter ended 2026-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "retrieved": "2026-09-08",
+      "verify": "Cuts both ways and the page says so. Easy to test for a month, and equally easy to lose the position the month you stop paying.",
+      "as_of": "2026-06-30",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wa-client-churn",
+      "label": "Weedmaps attributes its own client decline to churn in established markets",
+      "rule": "Average monthly paying clients for the six months ended June 30, 2026 decreased 4% to 5,012 average monthly paying clients from 5,210 average monthly paying clients in the same period in 2025. The decrease in average monthly paying clients compared to the same periods in 2025 were primarily due to a churn in more established markets, partially offset by new client acquisitions across certain developing markets. Declines in average monthly revenues per paying client were primarily due to spend declines in established markets driven by continued industry challenges, such as price deflation and ongoing consolidation, partially offset by a positive mixed impact from churn among clients with below-average spend levels.",
+      "source": "WM Technology, Inc. Form 10-Q for the quarter ended 2026-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "retrieved": "2026-09-08",
+      "verify": "The company's own account of who is leaving and why. Note the last clause: average revenue per client held up partly because the clients who churned were below-average spenders, which is a candid disclosure and worth quoting rather than paraphrasing.",
+      "as_of": "2026-06-30",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wa-names-search-as-competitor",
+      "label": "Weedmaps names internet search engines among its competitors",
+      "rule": "Furthermore, we compete with cannabis-focused and general two-sided marketplaces, internet search engines, delivery companies and various other newspaper, television and media companies and other software providers.",
+      "source": "WM Technology, Inc. Form 10-Q for the quarter ended 2026-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "retrieved": "2026-09-08",
+      "verify": "Settles the framing without us having to assert it. The marketplace itself treats search as a competing channel for the same budget.",
+      "as_of": "2026-06-30",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wa-businesses-come-unprompted",
+      "label": "Weedmaps says businesses often list without any sales effort",
+      "rule": "Given our long operating history in the United States and the strength of our network, often businesses will initially list on our platform without targeted sales or marketing efforts by us.",
+      "source": "WM Technology, Inc. Form 10-Q for the quarter ended 2026-06-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "retrieved": "2026-09-08",
+      "verify": "AN HONEST POINT IN THE MARKETPLACE'S FAVOR and the page prints it in the pro-renting section. The demand is already there, which is precisely what a new store does not have.",
+      "as_of": "2026-06-30"
+    },
+    {
+      "id": "wa-organic-costs-nothing",
+      "label": "Google states that appearing in organic results costs nothing and cannot be bought",
+      "rule": "Advertising with Google won't have any effect on your site's presence in our search results. Google never accepts money to include or rank sites in our search results, and it costs nothing to appear in our organic search results.",
+      "source": "Google Search Central, Do you need an SEO?",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "The anchor for the owned side, and deliberately not overstated: it says the placement is not for sale, not that earning it is free of effort or cost.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wa-timeline",
+      "label": "Google's published timeline for search changes",
+      "rule": "Some changes might take effect in a few hours, others could take several months. In general, you likely want to wait a few weeks to assess whether your work had beneficial effects in Google Search results. Keep in mind that not all changes you make to your website will result in noticeable impact in search results.",
+      "source": "Google Search Central, SEO Starter Guide",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from the /dispensary-seo/ explainer. This is the honest cost of the owned side and it belongs in the pro-renting argument, not buried."
+    },
+    {
+      "id": "wa-prominence",
+      "label": "What Google names under prominence",
+      "rule": "Prominence means how well-known a business is. This factor's also based on info like how many websites link to your business and how many reviews you have. More reviews and positive ratings can help your business's local ranking.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-09-08",
+      "verify": "Links and reviews. A marketplace listing is not named. What a listing can do is link to you, which is the one documented way it feeds the owned side."
+    },
+    {
+      "id": "wa-profile-sources",
+      "label": "Google compiles profiles from crawled content and licensed third-party data",
+      "rule": "Information in profiles is compiled from a variety of sources: publicly-available information, such as crawled web content; licensed data from third parties; users who contribute factual information; information based on Google's interactions with a local place or business.",
+      "source": "Google Business Profile Help, Understand how Google sources and uses info in Business Profiles",
+      "source_url": "https://support.google.com/business/answer/2721884",
+      "retrieved": "2026-09-08",
+      "verify": "The sourced reason your marketplace listings must match your profile exactly whichever side of the argument you land on."
+    },
+    {
+      "id": "wa-no-ads",
+      "label": "A dispensary cannot buy Google or Meta ads for THC",
+      "rule": "Google's advertising policy disallows ads for substances that alter mental state for the purpose of recreation or otherwise induce highs, with a narrow carve-out for certified advertisers promoting topical hemp-derived CBD at 0.3% THC or less in California, Colorado and Puerto Rico.",
+      "source": "Google Ads Help, Dangerous products or services",
+      "source_url": "https://support.google.com/adspolicy/answer/6014299",
+      "retrieved": "2026-09-08",
+      "verify": "The strongest structural argument FOR the marketplaces and the page gives it that billing: in a category with no paid search or social, a marketplace is one of the few paid channels that exists at all."
+    },
+    {
+      "id": "wa-the-arithmetic",
+      "label": "The comparison figure, stated as arithmetic rather than as a claim",
+      "value": {
+        "weedmaps_avg_monthly_revenue_per_paying_client_usd": 2807,
+        "period": "three months ended 2026-06-30",
+        "annualized_usd": 33684,
+        "leafly_retailer_arpa_usd": 684,
+        "leafly_period": "three months ended 2025-03-31, final public quarter"
+      },
+      "source": "WM Technology Form 10-Q (2026-06-30); Leafly Holdings Form 10-Q (2025-03-31)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-09-08",
+      "verify": "$2,807 x 12 = $33,684. Simple multiplication of a published average, shown on the page as such.",
+      "note": "GUARDRAIL: this is what the average client pays, not what a dispensary is quoted and not a claim that the money is wasted. The page must not compare it against a Nearfront price, because this site publishes no pricing, and must not assert a return for either side, because we have no dataset that supports one."
+    }
+  ],
+  "gaps": [
+    "IS WEEDMAPS ACCURATE: we cannot answer the query in general. Testing menu accuracy at scale needs real dispensary URLs and their point-of-sale data, the same blocker that has deferred spoke 5 since 2026-08-31. The page tells the reader how to check their own listing in five minutes and refuses to generalize from that to the platform.",
+    "NO ROI COMPARISON: neither Weedmaps nor Leafly publishes leads or orders delivered per dispensary, and we have no client dataset we may publish. The page contains no cost-per-order figure for either side.",
+    "NO PRICE FOR THE OWNED SIDE: this site publishes no pricing by owner decision, so the page states the marketplace average and does not set a Nearfront number against it. Doing otherwise would be the exact self-serving arithmetic the page opens by warning about.",
+    "WHAT A DISPENSARY IS ACTUALLY QUOTED: unknown. The auction structure means the price is local and variable, which is the company's own description.",
+    "TRAFFIC ATTRIBUTION BETWEEN CHANNELS: whether an order that arrived through a marketplace would have arrived anyway is not answerable without a holdout test the store runs itself. The page gives the test rather than an estimate."
+  ],
+  "internal_links": {
+    "out": [
+      "/dispensary-weedmaps-vs-leafly/",
+      "/dispensary-local-citations/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/dispensary-seo/",
+      "/dispensary-website/",
+      "/services/cannabis-dispensary-seo/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": [],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-weedmaps-alternative/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt entry in the playbook section.",
+    "Add weedmaps-alternative to the playbook family regex in reference/gsc_scorecard.py and in TRACKING-METRICS-STRATEGY.md section 11.",
+    "Re-verify against WM Technology's Q3 2026 10-Q in November alongside spoke 11."
+  ]
+}

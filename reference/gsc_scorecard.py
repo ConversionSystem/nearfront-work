@@ -38,7 +38,7 @@ FAMILIES = OrderedDict([
     ("money", r"^/services/(cannabis-dispensary-seo/)?$"),
     ("commercial-new", r"^/(dispensary-seo|cannabis-seo-agency)/$"),
     ("pillar", r"^/dispensary-marketing/$"),
-    ("playbook", r"^/(dispensary-(google-business-profile|google-reviews|local-citations|local-schema|website|menu-seo|multi-location-seo|keyword-research|ai-search|weedmaps-vs-leafly|weedmaps-vs-your-website|tracking-attribution)/|blog/dispensary-near-me-map-pack/)$"),
+    ("playbook", r"^/(dispensary-(google-business-profile|google-reviews|local-citations|local-schema|website|menu-seo|multi-location-seo|keyword-research|ai-search|weedmaps-vs-leafly|weedmaps-alternative|tracking-attribution)/|blog/dispensary-near-me-map-pack/)$"),
     ("geo", r"^/(cannabis-seo-(?!agency/)[a-z0-9-]+/|markets/)$"),
     ("vs", r"^/vs/"),
     ("proof", r"^/(how-we-rank-ourselves|dispensary-map-pack-benchmark|dispensary-near-gresham|blog/(eight-weeks-30-market-guides|first-search-console-numbers))/$"),
