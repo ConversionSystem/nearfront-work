@@ -1,0 +1,179 @@
+{
+  "spoke": 9,
+  "slug": "dispensary-keyword-research",
+  "phase": "Phase 3, playbook silo",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "none; the spoke stands alone and links the money page",
+  "method": "Google's Keyword Planner help, its hiring guidance, its people-first content guidance and the Search Console metric documentation were fetched and read on 2026-09-08. The central number on the page is not a quotation at all: it is a measurement taken from this site's own Search Console export the same day, and the arithmetic is printed so a reader can redo it.",
+  "thesis": "The keyword tools a dispensary is sold were built for advertisers, in the one retail category that cannot advertise. The only first-party query data is Search Console, and on a small site most of the clicks arrive from queries Google will not name. So the work is not tool operation; it is deciding which queries a store can plausibly be shown for, given that distance is measured from the searcher.",
+  "facts": [
+    {
+      "id": "kw-planner-is-an-ads-tool",
+      "label": "Keyword Planner is an advertising planning tool and its volumes are estimates",
+      "rule": "Benefits of Keyword Planner: Discover new keywords: Get suggestions for keywords related to your products, services, or website. View monthly searches: View estimates on the number of searches a keyword gets each month. Determine cost: View the average cost for your ad to show on searches for a keyword. Your plan forecast shows you how many conversions, clicks, or impressions you're likely to get for your keywords based on your spend. Keyword Planner's forecasts are refreshed daily and based on the last 7-10 days, adjusted for seasonality.",
+      "source": "Google Ads Help, Use Keyword Planner",
+      "source_url": "https://support.google.com/google-ads/answer/7337243",
+      "retrieved": "2026-09-08",
+      "verify": "Read the nouns. Estimates, cost per ad, forecasts based on your spend. Every output is framed around running ads. Chained with the ads prohibition this is the page's opening argument: a dispensary is being sold planning data for a channel it is not allowed to use.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "kw-ads-prohibited",
+      "label": "A dispensary cannot buy the ads the tool is designed to plan",
+      "rule": "Google's advertising policy disallows ads for substances that alter mental state for the purpose of recreation or otherwise induce highs, with a narrow carve-out for certified advertisers promoting topical hemp-derived CBD at 0.3% THC or less in California, Colorado and Puerto Rico.",
+      "source": "Google Ads Help, Dangerous products or services",
+      "source_url": "https://support.google.com/adspolicy/answer/6014299",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from map-pack.json (mp-ads-prohibited), verified there on 2026-08-26. The pillar remains the page of record for this claim."
+    },
+    {
+      "id": "kw-no-tool-has-google-data",
+      "label": "No third-party tool has Google's ranking data and none is approved by Google",
+      "rule": "If your SEO uses a third-party tool, keep in mind that Google doesn't evaluate or endorse third-party SEO tools, and these tools don't have access to Google's internal ranking data. Be wary of tools that claim to be \"acceptable\" or \"approved\" by Google Search.",
+      "source": "Google Search Central, Do you need an SEO?",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "The sourced ceiling on every volume and difficulty number a dispensary is shown. Also carried on /cannabis-seo-agency/ as ag-third-party-tools.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "kw-withheld-measurement",
+      "label": "How much query data Google withholds, measured on this site",
+      "value": {
+        "period": "last 3 months to 2026-09-08, search type Web, property sc-domain:nearfront.com",
+        "device_totals": {
+          "impressions": 17476,
+          "clicks": 94
+        },
+        "queries_table": {
+          "rows": 950,
+          "impressions": 12485,
+          "clicks": 16
+        },
+        "withheld": {
+          "impressions": 4991,
+          "impressions_pct": 28.6,
+          "clicks": 78,
+          "clicks_pct": 83.0
+        },
+        "pages_table_impressions": 18854
+      },
+      "source": "Nearfront's own Search Console export, archived unchanged",
+      "source_url": "https://nearfront.com/how-we-rank-ourselves/",
+      "file_url": "~/NearFront/gsc/2026-09-08/nearfront.com-Performance-on-Search-2026-09-08.zip",
+      "as_of": "2026-09-08",
+      "retrieved": "2026-09-08",
+      "verify": "Sum column 4 (last-3-months impressions) and column 2 (clicks) of Queries.csv across all 950 rows; compare against the Devices.csv totals. 12,485 vs 17,476 impressions and 16 vs 94 clicks. Anyone with the export can redo it in one line.",
+      "note": "COULD NOT SOURCE THE RULE ITSELF. We looked for a Google page stating that rare queries are withheld from the query table and did not find one on 2026-09-08 (checked the Performance report overview, the impressions and position help page and two candidate discrepancy URLs, both 404). So the page presents this as our own measurement of our own property and does not attribute a rule to Google. The Pages table summing higher than the device total, 18,854 against 17,476, is a separate aggregation effect that Google's documentation does describe.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "kw-distance-from-searcher",
+      "label": "Distance is measured from the person searching",
+      "rule": "Local results are mainly based on relevance, distance, and popularity. Distance refers to how far each business is from the customer who's searching. If a customer doesn't share where they are, Google uses what it knows about their location.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-09-08",
+      "verify": "THE REASON NEAR-ME VOLUME IS MEANINGLESS FOR A STORE. 'dispensary near me' is one query string that resolves to a different result set for every person who types it, so a national volume figure describes a national aggregate and says nothing about one trade area.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "kw-people-first-warnings",
+      "label": "Google's warning-sign questions for keyword-first content",
+      "rule": "Answering yes to some or all of the questions below is a warning sign that you should reevaluate how you're creating content: Is the content primarily made to attract visits from search engines? Are you producing lots of content on many different topics in hopes that some of it might perform well in search results? Are you using extensive automation to produce content on many topics? Are you mainly summarizing what others have to say without adding much value? Are you writing about things simply because they seem trending and not because you'd write about them otherwise for your existing audience? Does your content leave readers feeling like they need to search again to get better information from other sources?",
+      "source": "Google Search Central, Creating helpful, reliable, people-first content",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "retrieved": "2026-09-08",
+      "verify": "The honest test for any keyword-derived content plan, in Google's own words. Question two describes the standard keyword-list-to-blog-calendar workflow exactly.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "kw-ai-disclosure-questions",
+      "label": "Google's questions about automated and AI-assisted content",
+      "rule": "If automation is used to substantially generate content, here are some questions to ask yourself: Is the use of automation, including AI-generation, self-evident to visitors through disclosures or in other ways? Are you providing background about how automation or AI-generation was used to create content? Are you explaining why automation or AI was seen as useful to produce content?",
+      "source": "Google Search Central, Creating helpful, reliable, people-first content",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "retrieved": "2026-09-08",
+      "verify": "Belongs here because keyword lists are the usual input to bulk generation. Chains to the scaled-content policy quoted on spoke 8."
+    },
+    {
+      "id": "kw-scaled-content",
+      "label": "Scaled content abuse is judged on output, not tooling",
+      "rule": "Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings and not helping users. This abusive practice is typically focused on creating large amounts of unoriginal content that provides little to no value to users, no matter how it's created.",
+      "source": "Google Search Central, Spam policies for Google web search",
+      "source_url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 8, where it is quoted in full alongside the doorway definition."
+    },
+    {
+      "id": "kw-our-query-clusters",
+      "label": "What this site's own queries actually look like, as the worked example",
+      "value": {
+        "brand": "7 queries, 373 impressions, 8 clicks, average position 6.0",
+        "on_topic_non_brand": "150 queries, 1,647 impressions, 1 click, average position 28.5",
+        "geo_subset": "25 queries, 153 impressions, 0 clicks, average position 11.0",
+        "off_topic_legacy": "793 queries, 10,465 impressions, 7 clicks, average position 27.5",
+        "service_style_geo_examples": "cannabis seo oregon 19 impressions at 8.9; dispensary seo colorado 19 at 17.1; cannabis seo colorado 12 at 7.3; dispensary seo oregon 10 at 5.6; los angeles dispensary seo 8 at 6.4",
+        "positioning_cluster": "dispensary local seo 100 impressions at 30.0; cannabis local seo 95 at 16.9; local seo for dispensaries 74 at 29.8; local seo cannabis 61 at 12.7; cannabis dispensary local seo 53 at 29.2, all with zero clicks"
+      },
+      "source": "Nearfront's own Search Console export, parsed by nearfront-work/reference/gsc_scorecard.py",
+      "source_url": "https://nearfront.com/how-we-rank-ourselves/",
+      "as_of": "2026-09-08",
+      "retrieved": "2026-09-08",
+      "verify": "Run reference/gsc_scorecard.py against ~/NearFront/gsc/2026-09-08/. Cluster regexes are recorded in TRACKING-METRICS-STRATEGY.md section 11.",
+      "verify_note": "Every number is on the transparency page too, so a reader can check the page against the page."
+    }
+  ],
+  "gaps": [
+    "SEARCH VOLUME FOR CANNABIS TERMS: we publish none. Every source of volume is either an advertising estimate or a third-party model, and Google states that third-party tools have no access to its ranking data. The page teaches a method that does not need a volume figure rather than quoting numbers it cannot stand behind.",
+    "WHY RARE QUERIES ARE WITHHELD: we measured the withholding on our own property (28.6 percent of impressions, 83 percent of clicks) but could not find a Google page stating the rule on 2026-09-08. The page presents the measurement as ours and attributes no rule to Google. Re-check on the next export and add the citation if it turns up.",
+    "DISPENSARY CONSUMER SEARCH BEHAVIOR: we have no study of how dispensary customers search, and no client query data we may publish. Every query example on the page is from our own property, which is an agency site rather than a store, and the page says so.",
+    "KEYWORD PLANNER ACCESS FOR A CANNABIS ADVERTISER: whether a dispensary can hold an active Google Ads account at all, given the ads prohibition, is not addressed in Google's documentation and we have not tested it. The page describes what the tool is rather than asserting who may use it.",
+    "PER-CITY NEAR-ME VOLUME: does not exist as a measurable quantity, because the query string is the same everywhere and resolves per searcher. Nothing on the page implies otherwise."
+  ],
+  "internal_links": {
+    "out": [
+      "/how-we-rank-ourselves/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/dispensary-multi-location-seo/",
+      "/dispensary-seo/",
+      "/markets/",
+      "/services/cannabis-dispensary-seo/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": {
+    "note": "PROTECTED FILE. These need the owner's approved _redirects batch. Split by intent: research-intent slugs come here, tracking-intent slugs wait for spoke 13.",
+    "to_this_spoke": [
+      "/local-keyword-research-tools/",
+      "/tag/local-keyword-research-tools/",
+      "/how-to-find-competitor-keywords/",
+      "/tag/how-to-find-competitor-keywords/",
+      "/location-specific-keywords/",
+      "/tag/location-specific-keywords/",
+      "/tag/keyword-research/",
+      "/tag/find-my-keywords/",
+      "/what-keywords-do-i-rank-for/",
+      "/tag/what-keywords-do-i-rank-for/"
+    ],
+    "held_for_spoke_13": [
+      "/best-keyword-tracking-software/",
+      "/tag/best-keyword-tracking-software/",
+      "/how-to-track-keyword-performance/",
+      "/tag/how-to-track-keyword-performance/",
+      "/how-to-track-keyword-rankings/",
+      "/tag/how-to-track-keyword-rankings/",
+      "/tag/keyword-tracking-tools/",
+      "/tag/keyword-tracking/",
+      "/tag/serp-tracking/"
+    ],
+    "value": "/local-keyword-research-tools/ alone drew 5,601 impressions in the last 3 months at average position 24.6 and currently 301s to the thin /blog/ index. It is the largest single pool of legacy equity on the domain."
+  },
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the visible byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-keyword-research/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt entry in the playbook section.",
+    "Ask the owner to approve the 10 research-intent _redirects retargets above in the next protected batch."
+  ]
+}
