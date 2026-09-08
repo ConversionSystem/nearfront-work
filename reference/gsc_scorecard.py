@@ -55,16 +55,38 @@ BRAND = re.compile(r"nearfront|near front|guillermo|bravo|foottraffik|seo rockst
 CANNABIS = re.compile(r"dispensar|cannabis|marijuana|weed|thc|420", re.I)
 GEO_TOKENS = re.compile(r"seattle|columbia|baltimore|boston|brooklyn|manhattan|queens|new york|nyc|portland|denver|detroit|kansas city|phoenix|minneapolis|orlando|miami|los angeles|san jose|san diego|california|washington|massachusetts|connecticut|nevada|las vegas|oregon|maryland|michigan|arizona|missouri|minnesota|illinois|colorado|florida|new jersey|ohio|new mexico|delaware|maine|montana|vermont|alaska|rhode island|virginia|texas|oklahoma|pennsylvania|new england", re.I)
 
+# Order matters: the day-30 summary counts TRACKED[:6] as the core terms.
+# Revised for update #3 on 2026-09-08, after /dispensary-seo/, /cannabis-seo-agency/
+# and the full 13-spoke playbook went live in one day.
 TRACKED = [
     ("local seo for cannabis dispensaries", "home"),
-    ("dispensary seo", "money page until /dispensary-seo/ indexes"),
+    ("dispensary seo", "/dispensary-seo/ (moved off the money page; page live 2026-09-08)"),
     ("cannabis dispensary seo", "money page"),
-    ("cannabis seo agency", "/cannabis-seo-agency/ from Oct 8"),
+    ("cannabis seo agency", "/cannabis-seo-agency/ (page live 2026-09-08)"),
     ("dispensary marketing", "pillar"),
     ("how to rank a dispensary on google maps", "map pack post (sixth slot, assigned by rule from export #1)"),
+    # Recorded beside the core six, never counted in it.
+    ("dispensary local seo", "home (family volume leader: 100 impressions in export #1 against 42 for the tracked head)"),
     ("dispensary map pack ranking", "long-tail beside the sixth slot"),
-    ("thca seo", "retired Aug 25, final read"),
-    ("peptide seo agency", "retired Aug 25, final read"),
+    ("cannabis keywords", "/dispensary-keyword-research/ (spoke 9, live 2026-09-08)"),
+    ("dispensary menu seo", "/dispensary-menu-seo/ (spoke 7, live 2026-09-08)"),
+]
+# Retired 2026-09-08 after their final read in export #1, both at zero impressions:
+# "thca seo" and "peptide seo agency". Both verticals were dropped in Aug 2026.
+
+# One service-style head plus one data long-tail per guide. This pair is the
+# doorway test the geo program set for itself: if the heads keep earning nothing
+# while the data questions carry the family, the titles follow the data.
+GEO_TRACKED = [
+    ("cannabis seo seattle", "/cannabis-seo-seattle/ (guide live 2026-09-08, no baseline yet)"),
+    ("how many dispensaries in seattle", "/cannabis-seo-seattle/ long-tail"),
+    ("cannabis seo columbia md", "/cannabis-seo-columbia-md/ (guide live 2026-09-08, no baseline yet)"),
+    ("how many dispensaries in columbia md", "/cannabis-seo-columbia-md/ long-tail"),
+    ("cannabis seo oregon", "/cannabis-seo-oregon/"),
+    ("dispensary seo oregon", "/cannabis-seo-oregon/"),
+    ("cannabis seo colorado", "/cannabis-seo-colorado/"),
+    ("dispensary seo colorado", "/cannabis-seo-colorado/"),
+    ("dispensary seo ny", "/cannabis-seo-new-york/"),
 ]
 CANNIBAL_QUERIES = ["dispensary seo", "dispensary seo agency", "dispensary seo services", "dispensary seo company",
                     "cannabis dispensary seo", "cannabis seo", "cannabis seo agency", "cannabis seo company",
@@ -269,17 +291,31 @@ def main():
     qmap = {r["name"].strip().lower(): r for r in queries}
     P("## Tracked terms (site-wide export; GSC average position is the source of record)")
     P()
-    P("| Term | Target page | Impressions | Clicks | Position | Prev impressions | Prev position |")
-    P("|---|---|---|---|---|---|---|")
+    def term_table(terms, bucket):
+        P("| Term | Target page | Impressions | Clicks | Position | Prev impressions | Prev position |")
+        P("|---|---|---|---|---|---|---|")
+        for term, target in terms:
+            r = qmap.get(term)
+            if r:
+                P("| %s | %s | %d | %d | %.1f | %d | %s |" % (term, target, r["impr"], r["clicks"], r["pos"], r["prev_impr"], ("%.1f" % r["prev_pos"]) if r["prev_impr"] else "none"))
+                bucket[term] = dict(impr=r["impr"], clicks=r["clicks"], pos=r["pos"], prev_impr=r["prev_impr"], prev_pos=r["prev_pos"])
+            else:
+                P("| %s | %s | 0 | 0 | not shown | 0 | none |" % (term, target))
+                bucket[term] = dict(impr=0, clicks=0, pos=None, prev_impr=0, prev_pos=None)
+        P()
+
     J["tracked"] = {}
-    for term, target in TRACKED:
-        r = qmap.get(term)
-        if r:
-            P("| %s | %s | %d | %d | %.1f | %d | %s |" % (term, target, r["impr"], r["clicks"], r["pos"], r["prev_impr"], ("%.1f" % r["prev_pos"]) if r["prev_impr"] else "none"))
-            J["tracked"][term] = dict(impr=r["impr"], clicks=r["clicks"], pos=r["pos"], prev_impr=r["prev_impr"], prev_pos=r["prev_pos"])
-        else:
-            P("| %s | %s | 0 | 0 | not shown | 0 | none |" % (term, target))
-            J["tracked"][term] = dict(impr=0, clicks=0, pos=None, prev_impr=0, prev_pos=None)
+    term_table(TRACKED, J["tracked"])
+
+    P("### Geo terms (head vs long-tail: the doorway test)")
+    P()
+    J["geo_tracked"] = {}
+    term_table(GEO_TRACKED, J["geo_tracked"])
+    heads = [t for t, _ in GEO_TRACKED if t.startswith(("cannabis seo", "dispensary seo"))]
+    tails = [t for t, _ in GEO_TRACKED if t not in heads]
+    P("- Geo heads with an impression: %d of %d; data long-tails with an impression: %d of %d" % (
+        sum(1 for t in heads if J["geo_tracked"][t]["impr"]), len(heads),
+        sum(1 for t in tails if J["geo_tracked"][t]["impr"]), len(tails)))
     P()
 
     # 4. cannibalization ------------------------------------------------------
