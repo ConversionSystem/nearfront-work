@@ -98,7 +98,7 @@ def build(a, lane='work'):
   <div class="svc-cta-inner fade-up">
     <h2>%(cta_h)s</h2>
     <p>%(cta_p)s</p>
-    <a href="/book/" class="btn-primary" style="font-size:15px;padding:16px 40px">Get Ranked Free</a>
+    <a href="/get-started/" class="btn-primary" style="font-size:15px;padding:16px 40px">Get Ranked Free</a>
   </div>
 </section>
 ''' % dict(h1=a['h1'], mins=a['mins'], body=a['body'].strip(), faqs=faqs,

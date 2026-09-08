@@ -42,6 +42,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* The same block appears inside the dark band on these pages, where
      --dark on --dark rendered the lead-in invisible. */
   .svc-band .geo-answer strong { color: var(--white); }
+  /* White cards nested inside the dark band inherited the band's white
+     paragraph color, so their body copy rendered white on white. */
+  .svc-band .svc-card p { color: var(--muted); }
+  .svc-band .svc-card p:first-of-type { color: var(--text); }
   .geo-answer p { font-size: 15px; color: var(--text); line-height: 1.75; margin: 0; }
   .geo-siblings { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
   .geo-siblings a { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 9px 18px; font-size: 14px; font-weight: 600; color: var(--gold-dk); text-decoration: none; background: var(--white); }
@@ -183,8 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/services/">Services</a>
     <a href="/about-us/">About</a>
     <a href="/seo-rockstars-podcast/">Podcast</a>
-    <a href="/get-started/">Pricing</a>
-    <a href="https://app.nearfront.com/login" class="nav-login">Log In</a>
+        <a href="https://app.nearfront.com/login" class="nav-login">Log In</a>
     <a href="/get-started/" class="nav-cta">Get Ranked Free</a>
   </div>
 </nav>

@@ -28,14 +28,14 @@ Push to `main`, Cloudflare builds from Git, live in about 30 seconds. Every bran
 
 ## Building a marketing draft
 
-1. **Check the URL first.** `reference/_redirects` is a read-only copy of production's 755 legacy 301s. Cloudflare applies them before serving files, so a page at a claimed URL is unreachable in production. 222 top-level slugs are taken, including `/contact-us/`, `/webinars/`, and `/google-maps-pack/`.
+1. **Check the URL first.** `reference/_redirects` is a read-only copy of production's 767 legacy 301s. Cloudflare applies them before serving files, so a page at a claimed URL is unreachable in production. 222 top-level slugs are taken, including `/contact-us/`, `/webinars/`, and `/google-maps-pack/`.
    ```bash
    python3 scripts/validate.py --check-url /services/your-slug/
    ```
    Refresh the copy first if it looks stale (`reference/REFRESH.md`).
 2. Create `public/<exact production path>/index.html` from `templates/landing-page.html` and replace every `{{TOKEN}}`.
 3. The canonical is the **production** URL (`https://nearfront.com/<path>/`), not a work URL. That is deliberate: it makes promotion a zero-edit copy, and on a noindexed host it consolidates to the real domain.
-4. Keep `/assets/site.css?v=4` and `/assets/site.js?v=4` root-relative. This repo carries its own copy of both.
+4. Keep `/assets/site.css?v=6` and `/assets/site.js?v=6` root-relative. This repo carries its own copy of both.
 5. Validate before pushing:
    ```bash
    python3 scripts/validate.py --profile work
@@ -59,4 +59,4 @@ No em dashes anywhere. **No health or efficacy claims**: these are regulated ind
 
 ## Promoting a page to production
 
-You cannot push to `ConversionSystem/nearfront`. Promotion is a pull request from a fork that only the repo owner can merge. Steps are in `README.md` under "Promote a page". A promoted page ships noindexed; the owner turns indexing on after review.
+You cannot push to `ConversionSystem/nearfront`. Promotion is a pull request from a fork that only the repo owner can merge. Steps are in `README.md` under "Promote a page". A promoted page ships with `index,follow`: the production validator's `head-robots-index` check rejects noindex on a marketing page, so indexing is decided at promotion, after the owner has reviewed the draft on lp.nearfront.com.
