@@ -1,0 +1,196 @@
+{
+  "spoke": "commercial explainer",
+  "slug": "cannabis-seo-agency",
+  "phase": "commercial pages, plan B4",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "method": "Google's own hiring guidance was fetched and read in full on 2026-09-08, and it turns out to answer almost every question this page needs to ask. Where Google has published the standard, the page quotes Google rather than asserting our own opinion, which is the only honest way for an agency to write a page about choosing an agency. Cannabis-specific questions rest on facts already recorded in gbp.json and on the SoLV finding recorded in dispensary-seo-explainer.json.",
+  "thesis": "Almost every test a buyer needs is already published by Google, including the advice that a small local business can probably do the work itself. An agency page that quotes those tests, including the ones that argue against hiring us, is more useful than one that argues for hiring us.",
+  "intent": {
+    "primary": "cannabis seo agency",
+    "secondaries": [
+      "cannabis seo company",
+      "cannabis seo experts",
+      "best cannabis seo agency",
+      "how to choose a cannabis seo agency"
+    ],
+    "non_targets": [
+      "cannabis seo services",
+      "cannabis seo",
+      "dispensary seo",
+      "cannabis dispensary seo",
+      "what is dispensary seo"
+    ],
+    "guard": "H1 contains no instance of dispensary SEO, which belongs to the explainer and the money page. The page declares no Service node; its Article about points at the money page's #service id. Baseline before launch: cannabis seo agency drew zero impressions in the 2026-09-08 export, so this page starts from nothing and any movement is attributable."
+  },
+  "facts": [
+    {
+      "id": "ag-diy",
+      "label": "Google says a small local business can probably do the work itself",
+      "rule": "If you run a small local business, you can probably do much of the work yourself. We recommend starting with the SEO starter guide, as it's a practical guide to improving your site's SEO and it describes much of what your SEO will do for you. If you decide to hire a professional to do the work for you in the end, it's also useful to be familiar with these techniques so that you can be aware if an SEO wants to use a technique that's not recommended or, worse, strongly discouraged.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "THE OPENING OF THE PAGE, and the reason it can be trusted. Google, not us, says a small local business can probably do much of this itself. Most dispensaries are small local businesses. An agency page that hides this sentence is not worth reading; this one leads with it.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-interview-questions",
+      "label": "Google's own list of questions to ask an SEO",
+      "rule": "Interview your potential SEO. Some useful questions to ask an SEO include: Can you show me examples of your previous work and share some success stories? Do you follow the Google Search Essentials (previously known as Webmaster Guidelines)? What kind of results do you expect to see, and in what timeframe? How do you measure your success? What's your experience in my industry? What's your experience in my country/city? What's your experience developing international sites? How long have you been in business? How can I expect to communicate with you? Will you share with me all the changes you make to my site, and provide detailed information about your recommendations and the reasoning behind them?",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Ten questions, published by Google. The page's seven questions are these plus the cannabis-specific ones, not a list we invented.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-no-guarantee",
+      "label": "The guarantee warning",
+      "rule": "No one can guarantee a #1 ranking on Google. Beware of SEOs that claim to guarantee rankings, allege a \"special relationship\" with Google, or advertise a \"priority submit\" to Google. Be careful if a company is secretive or won't clearly explain what they intend to do.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Also carried on /dispensary-seo/ as ex-no-guarantee. Pairs with gbp-no-paid-ranking, which says the same thing about local ranking specifically.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-audit-expectations",
+      "label": "What an audit should produce, and the access it should need",
+      "rule": "If your SEO offers to do an SEO audit for you, be sure to carefully consider what's involved and only grant read access to Search Console (at this stage, don't grant them write access). An SEO audit should be about giving you realistic estimates of improvement, and an estimate of the work involved. If they guarantee you that their changes will give you first place in search results, find someone else.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Directly describes the free data audit this site opens with, including the access level it should ask for. We ask for read access at the audit stage and this is the reason to say so on the page.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-third-party-tools",
+      "label": "Google does not endorse third-party SEO tools",
+      "rule": "If your SEO uses a third-party tool, keep in mind that Google doesn't evaluate or endorse third-party SEO tools, and these tools don't have access to Google's internal ranking data. Be wary of tools that claim to be \"acceptable\" or \"approved\" by Google Search.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "The sourced answer to a dashboard full of vendor scores. No third-party tool sees Google's ranking data, and no tool is approved by Google. Applies to our own grid too, which is why the page says so about ourselves.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-aeo-geo-named",
+      "label": "Google names AEO and GEO services and tells buyers to check them",
+      "rule": "Evaluate your SEO's recommendations and tools they use. Before making significant changes to your site based on a third-party tool's audit, be sure to check their recommendations against official guidance from Google Search, think critically about any claims or recommendations you hear, and make your own informed decisions. Do they cite official Google documentation as supporting evidence for their recommendations? If they have advice on optimizing for AI experiences (also known as \"AEO\" \"GEO\" services), is their advice aligned with Google Search's official guidance on optimizing for generative AI features?",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "NOTABLE FIND, 2026-09-08. Google names AEO and GEO by name in its hiring guidance and gives buyers a test: does the advice line up with Google's own generative-AI guidance, and does the vendor cite Google's documentation. That guidance is the same page that says structured data is not required for AI search and that Google Search ignores llms.txt (see map-pack.json mp-ai-structured-data and mp-ai-llmstxt). Worth surfacing to the owner: it validates the audit framework and it is a test most AEO and GEO pitches in this category fail.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-never-link",
+      "label": "You should never have to link to an SEO",
+      "rule": "You should never have to link to an SEO. Avoid SEOs that talk about link popularity schemes or submitting your site to thousands of search engines. These are typically useless exercises that don't affect your ranking in the results of the major search engines, at least, not in a way you would likely consider to be positive.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "One sentence that settles the footer-link question and the link-package question at once."
+    },
+    {
+      "id": "ag-responsible",
+      "label": "The client carries the risk",
+      "rule": "If an SEO creates deceptive or misleading content on your behalf, your site could be removed entirely from Google's index. Ultimately, you are responsible for the actions of any companies you hire, so it's best to be sure you know exactly how they intend to \"help\" you.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "The reason the questions matter. The penalty lands on the dispensary's site, not on the agency's."
+    },
+    {
+      "id": "ag-interested",
+      "label": "Google's soft test",
+      "rule": "See if the SEO is interested in you and your business. If they're not interested, find someone who is. Your SEO should ask questions about what makes your business unique, who your competitors are, how search results can help, and how your customers find you.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "The only subjective test on Google's list, and a good closing one."
+    },
+    {
+      "id": "ag-ads-dont-help",
+      "label": "Buying Google Ads does not affect organic placement",
+      "rule": "Advertising with Google won't have any effect on your site's presence in our search results. Google never accepts money to include or rank sites in our search results, and it costs nothing to appear in our organic search results.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Mostly moot for a dispensary, which cannot buy the ads anyway (see map-pack.json mp-ads-prohibited), but it closes the loop on the paid-influences-organic myth."
+    },
+    {
+      "id": "ag-reporting",
+      "label": "Where to report a deceptive SEO",
+      "rule": "If you feel that you were deceived by an SEO in some way, you may want to report it. In the United States, the Federal Trade Commission (FTC) handles complaints about deceptive or unfair business practices. To file a complaint, visit the FTC website to file a complaint online or call 1-877-FTC-HELP.",
+      "source": "Google Search Central, Do you need an SEO? (page last updated 2026-06-05 UTC)",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Included because a page about choosing an agency that omits the recourse is incomplete."
+    },
+    {
+      "id": "ag-authorized-rep",
+      "label": "The standard Google sets for an agency managing a profile it does not own",
+      "rule": "Any individual or company that manages business information for a Business Profile that they don't own is considered an authorized representative. Authorized representatives must never claim a Business Profile without express consent from the business owner, must always work directly with the business owner to complete verification, must always keep the business owner informed about which actions the authorized representative will take, and must always transfer Business Profile ownership to the business owner immediately upon request. Failure to adhere to these policies may result in a suspension for the Business Profile and/or Google Account.",
+      "source": "Google Business Profile Help, Business eligibility and ownership guidelines, section 'Additional guidelines for authorized representatives'",
+      "source_url": "https://support.google.com/business/answer/13763036",
+      "retrieved": "2026-08-31",
+      "verify": "Carried from gbp.json. This is the sourced answer to 'what do I keep if I leave', and the standard a dispensary should hold any agency to, including us. Note the consequence clause: breaking it can suspend the profile and the Google Account.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ag-cannabis-questions",
+      "label": "The four cannabis-specific questions and the facts behind them",
+      "value": {
+        "eligibility": "gbp-cannabis-sab plus gbp-eligibility-inperson: a delivery-only operation with no storefront is not permitted as a service-area business. An agency that does not know this is not a cannabis agency.",
+        "menu-and-products": "gbp-products-shopping plus gbp-shopping-drugs: profile products run under Shopping policy, which prohibits recreational drugs, so no dispensary menu belongs in the Products section.",
+        "measurement": "ex-solv-not-google (dispensary-seo-explainer.json): grid tracking and Share of Local Voice appear nowhere in Google's documentation, verified 2026-09-08. Ask whose number it is.",
+        "ownership": "ag-authorized-rep: profile ownership transfers to the owner immediately on request, by Google's rule."
+      },
+      "source": "gbp.json, dispensary-seo-explainer.json",
+      "retrieved": "2026-09-08",
+      "verify": "These are the four questions a generalist agency cannot answer and a cannabis specialist answers in a sentence each. Every one is checkable by the buyer against Google's own pages."
+    }
+  ],
+  "gaps": [
+    "AGENCY QUALITY: no dataset exists ranking cannabis SEO agencies by outcome, and we will not invent one. The page sends buyers to the four dated /vs/ comparisons and to their own reference checks, per Google's advice to check business references.",
+    "OUR OWN RESULTS: as of the 2026-09-08 Search Console export the site's core pages carry 5,230 impressions and 53 clicks in three months, with no non-brand click on the commercial family. The page must not imply a track record this domain has not earned. It points at /how-we-rank-ourselves/, which prints the real numbers, and says the honest thing: judge the method, and check the log.",
+    "FOOTTRAFFIK-ERA RESULTS: the founder's prior company results are not documented in a form we can publish or verify here, so no client outcome numbers appear on this page.",
+    "PRICING: not published anywhere on the site by owner decision, so the page says pricing is scoped per engagement and does not quote a range.",
+    "COMPETITOR CLAIMS: this page deliberately restates none of the four /vs/ comparisons' specific findings, both to avoid duplicating them and because they carry their own re-verification dates. It links and describes the axis only.",
+    "OWNER SURFACE: Google's hiring page names AEO and GEO services explicitly (ag-aeo-geo-named) and tells buyers to check that advice against Google's generative-AI guidance. Worth telling the owner, since it bears directly on the Layers of SEO framing behind the September audit."
+  ],
+  "internal_links": {
+    "out": [
+      "/vs/ and all four comparison pages",
+      "/how-we-rank-ourselves/",
+      "/services/cannabis-dispensary-seo/",
+      "/dispensary-seo/",
+      "/dispensary-google-business-profile/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/get-started/"
+    ],
+    "in_at_promotion": [
+      "/vs/ gains a card and ItemList position 5",
+      "/services/ gains a spec-card",
+      "/dispensary-seo/ gains its one 'choosing help' sentence linking here, which was deliberately withheld while this page did not exist"
+    ]
+  },
+  "redirect_retargets": [
+    "/webinars/how-to-evaluate-an-seo-company/",
+    "/tag/local-seo-agency/",
+    "/google-places-seo-company/",
+    "/tag/google-places-seo-company/"
+  ],
+  "promotion_checklist": [
+    "Ships one week after /dispensary-seo/ per plan B4, so the cannibalization monitor can separate their effects. Do not promote both in one push.",
+    "Set article:published_time, JSON-LD datePublished and dateModified, and the visible byline date to the promotion date (they read 2026-09-08, the draft date).",
+    "Flip robots to index,follow and copy to nearfront-repo/public/cannabis-seo-agency/index.html.",
+    "/vs/: add the card and ItemList position 5, keeping card order and list order identical.",
+    "/services/: add a spec-card.",
+    "/dispensary-seo/: add the one sentence linking here.",
+    "sitemap.xml at priority 0.7, llms.txt and llms-full.txt lines, and the four legacy 301 retargets above in the owner-approved _redirects batch.",
+    "Validator note: /cannabis-seo-agency/ matches GEO_PREFIXES, so until PR #5 merges its GEO_EXCLUDE constant, the page sits in the geo shingle pool. Measured against all 34 geo guides on 2026-09-08 and the worst pair is far below the warning threshold, so it passes either way."
+  ]
+}
