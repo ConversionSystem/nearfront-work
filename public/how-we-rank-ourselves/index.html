@@ -36,6 +36,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .rk-table tr:last-child td { border-bottom: none; }
   .rk-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: rgba(195,162,93,0.15); color: var(--gold-dk); }
   .rk-note { font-size: 13px; color: var(--muted); font-style: italic; }
+  /* Four-column tables overflowed a 390px viewport (widest 453px in a 350px column) once the
+     Update #2 tables landed. Tighter cells and per-character wrapping keep every table at 100%. */
+  @media (max-width:640px){ .rk-table th, .rk-table td { padding: 10px 10px; overflow-wrap: anywhere; } .rk-table td { font-size: 13.5px; } .rk-table th { font-size: 10.5px; letter-spacing: 1px; } .rk-badge { white-space: nowrap; } }
 </style>
 <script type="application/ld+json">
 {
