@@ -59,14 +59,14 @@ GEO_TOKENS = re.compile(r"seattle|columbia|baltimore|boston|brooklyn|manhattan|q
 # Revised for update #3 on 2026-09-08, after /dispensary-seo/, /cannabis-seo-agency/
 # and the full 13-spoke playbook went live in one day.
 TRACKED = [
-    ("local seo for cannabis dispensaries", "home"),
+    ("dispensary local seo", "home (swapped in as the tracked head 2026-09-08: 100 impressions against 42)"),
     ("dispensary seo", "/dispensary-seo/ (moved off the money page; page live 2026-09-08)"),
     ("cannabis dispensary seo", "money page"),
     ("cannabis seo agency", "/cannabis-seo-agency/ (page live 2026-09-08)"),
     ("dispensary marketing", "pillar"),
     ("how to rank a dispensary on google maps", "map pack post (sixth slot, assigned by rule from export #1)"),
     # Recorded beside the core six, never counted in it.
-    ("dispensary local seo", "home (family volume leader: 100 impressions in export #1 against 42 for the tracked head)"),
+    ("local seo for cannabis dispensaries", "home (was the tracked head through update #2; kept for series continuity)"),
     ("dispensary map pack ranking", "long-tail beside the sixth slot"),
     ("cannabis keywords", "/dispensary-keyword-research/ (spoke 9, live 2026-09-08)"),
     ("dispensary menu seo", "/dispensary-menu-seo/ (spoke 7, live 2026-09-08)"),
@@ -90,7 +90,8 @@ GEO_TRACKED = [
 ]
 CANNIBAL_QUERIES = ["dispensary seo", "dispensary seo agency", "dispensary seo services", "dispensary seo company",
                     "cannabis dispensary seo", "cannabis seo", "cannabis seo agency", "cannabis seo company",
-                    "marijuana seo services", "local seo for cannabis dispensaries"]
+                    "marijuana seo services", "local seo for cannabis dispensaries",
+                    "dispensary local seo"]
 INTERNAL_COUNTRIES = ("Slovakia",)  # this environment's headless browsing geolocates there
 
 
