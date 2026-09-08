@@ -41,9 +41,9 @@ FAMILIES = OrderedDict([
     ("playbook", r"^/(dispensary-(google-business-profile|google-reviews|local-citations|local-schema|website|menu-seo|multi-location-seo|keyword-research|ai-search|weedmaps-vs-leafly|weedmaps-vs-your-website|tracking-attribution)/|blog/dispensary-near-me-map-pack/)$"),
     ("geo", r"^/(cannabis-seo-(?!agency/)[a-z0-9-]+/|markets/)$"),
     ("vs", r"^/vs/"),
-    ("proof", r"^/(how-we-rank-ourselves|dispensary-map-pack-benchmark|dispensary-near-gresham|blog/eight-weeks-30-market-guides)/$"),
+    ("proof", r"^/(how-we-rank-ourselves|dispensary-map-pack-benchmark|dispensary-near-gresham|blog/(eight-weeks-30-market-guides|first-search-console-numbers))/$"),
     ("funnel", r"^/(get-started|book)/$"),
-    ("dropped", r"^/(peptides/|thca-seo-|services/(?!cannabis-dispensary-seo/)[^/]+/|blog/(?!dispensary-near-me-map-pack/|eight-weeks-30-market-guides/)[^/]+/)"),
+    ("dropped", r"^/(peptides/|thca-seo-|services/(?!cannabis-dispensary-seo/)[^/]+/|blog/(?!dispensary-near-me-map-pack/|eight-weeks-30-market-guides/|first-search-console-numbers/)[^/]+/)"),
     ("site", r"^/(about-us|our-story|blog|seo-rockstars-podcast|privacy-policy|master-subscription-agreement)/$"),
 ])
 CORE = ("home", "money", "commercial-new", "pillar", "playbook", "geo", "vs", "proof", "funnel", "site")
