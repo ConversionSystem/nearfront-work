@@ -3,7 +3,7 @@
   "abbr": "MD",
   "slug": "maryland",
   "tier": "adult-use",
-  "updated": "2026-08-11",
+  "updated": "2026-09-08",
   "status": "ready",
   "facts": [
     {
@@ -93,7 +93,7 @@
       "as_of": "2026-06-30",
       "retrieved": "2026-08-11",
       "verify": "Sheet 'Dispensaries by County', row 'Baltimore' = 20. Largest single jurisdiction in the state.",
-      "note": "Baltimore County is the state's largest dispensary jurisdiction, ahead of Montgomery County's 19. It surrounds but excludes Baltimore City."
+      "note": "Baltimore County is the state's largest dispensary jurisdiction, ahead of Montgomery County's 19. It surrounds but excludes Baltimore City. JUL 2026 workbook shows 21 (JUN showed 20) and Montgomery 20 (was 19); the Baltimore page cites JUN with its date. Refresh Baltimore and Maryland together in the quarterly sweep."
     },
     {
       "id": "md-baltimore-boundary-overlap",
@@ -178,14 +178,92 @@
       "as_of": "2026-06-30",
       "retrieved": "2026-08-11",
       "verify": "June 2026: 1,453,703 adult-use and 224,119 medical = 1,677,822 total; 1453703/1677822 = 86.6 percent."
+    },
+    {
+      "id": "md-howard-dispensaries",
+      "value": 9,
+      "unit": "dispensaries",
+      "label": "Dispensaries with a Howard County address",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download, JUL 2026 workbook (sheet Dispensaries by County)",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUL%202026.xlsx",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-09-08",
+      "verify": "Row Howard in Dispensaries by County: 9. The Dispensaries Address Data sheet filtered on County = Howard also returns 9 rows."
+    },
+    {
+      "id": "md-columbia-dispensaries",
+      "value": 4,
+      "unit": "dispensaries",
+      "label": "Dispensaries with a Columbia address",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download, JUL 2026 workbook (sheet Dispensaries Address Data)",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUL%202026.xlsx",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-09-08",
+      "verify": "County = Howard, then Geocoding Address containing 'Columbia Maryland': 7090 Deepage Drive 21045, 8865 Stanford Blvd Unit 131 21045, 6695 Dobbin Rd Suite 110 21045, 8620 Snowden River Parkway 21045. The sheet has no city or ZIP column; both live inside the Geocoding Address string. Do not print trade names: one of the four is a client."
+    },
+    {
+      "id": "md-columbia-single-zip",
+      "value": "21045",
+      "unit": "ZIP code",
+      "label": "All four Columbia dispensaries sit in one ZIP code",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download, JUL 2026 workbook (sheet Dispensaries Address Data)",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUL%202026.xlsx",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-09-08",
+      "verify": "All four Columbia addresses end 21045. No Howard County address ends 21044 or 21046."
+    },
+    {
+      "id": "md-howard-other-locations",
+      "value": "Elkridge 2, Ellicott City 2, North Laurel 1",
+      "unit": "dispensaries",
+      "label": "Howard County dispensaries outside Columbia",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download, JUL 2026 workbook (sheet Dispensaries Address Data)",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUL%202026.xlsx",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-09-08",
+      "verify": "Elkridge: 6000 Marshalee Drive 21075, 8160 Lark Brown Road 21075. Ellicott City: 9291 and 10169 Baltimore National Pike 21042. North Laurel: 9994 Washington Blvd 20723."
+    },
+    {
+      "id": "md-howard-rank",
+      "value": 6,
+      "unit": "rank of 24 jurisdictions",
+      "label": "Howard County's rank by dispensary count among Maryland jurisdictions",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download, JUL 2026 workbook (sheet Dispensaries by County)",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUL%202026.xlsx",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-09-08",
+      "verify": "Sorted descending: Baltimore County 21, Montgomery 20, Prince George's 13, Baltimore City 11, Anne Arundel 11, Howard 9, Frederick 6, Harford 4, then the rest; 24 jurisdictions listed, total 123. State the rank, not the neighbors' counts, so the JUN-dated Baltimore page and this JUL-dated page never disagree."
+    },
+    {
+      "id": "md-statewide-locations-jul-2026",
+      "value": 123,
+      "unit": "dispensary locations",
+      "label": "Addressed dispensary locations statewide",
+      "source": "Maryland Cannabis Administration, Dashboard Data Download, JUL 2026 workbook",
+      "source_url": "https://cannabis.maryland.gov/Pages/Data-Dashboard.aspx",
+      "file_url": "https://cannabis.maryland.gov/Documents/2026%20Data%20Dashboard/MCA%20Dashboard%20Data%20Download%20-%20JUL%202026.xlsx",
+      "as_of": "2026-07-31",
+      "retrieved": "2026-09-08",
+      "verify": "123 rows in Dispensaries Address Data; Dispensaries by County sums to 123; License Data Summary Metrics shows 126 dispensary licenses (123 standard, 3 micro)."
     }
   ],
   "gaps": [
     "Zoning versus opt-out: MD localities zone rather than ban outright. Confirm the precise mechanism before writing the local-control sentence, since the CA framing does not transfer.",
-    "Baltimore City neighborhood names are inferred from street addresses and ZIPs, not published by MCA. Do not publish a neighborhood-level dispensary count as a state figure."
+    "Baltimore City neighborhood names are inferred from street addresses and ZIPs, not published by MCA. Do not publish a neighborhood-level dispensary count as a state figure.",
+    "COLUMBIA GOVERNANCE: Columbia is a census-designated place with no municipal government; Howard County zoning and licensing apply. Confirm the mechanism before any zoning sentence; the California framing does not transfer.",
+    "COLUMBIA VILLAGE NAMES: MCA publishes none. Any village name (Long Reach, Oakland Mills, Owen Brown, Kings Contrivance, Wilde Lake, Town Center) attached to a ZIP is inference.",
+    "HOWARD COUNTY SALES: MCA publishes county counts and statewide sales, never store or county sales. Do not estimate Howard County revenue.",
+    "HOWARD COUNTY POPULATION: the Maryland Open Data series r7ky-rq9s carries two Howard County rows for the period ending 2025-06-30 (337,795 and 339,183, both created 2026-08-19); the automated query for the current vintage failed on 2026-09-08. No per-capita tile until one row is resolved and recorded here.",
+    "COLUMBIA CDP SOURCE: census.gov QuickFacts, data.census.gov and planning.maryland.gov all returned 403 to scripted fetches on 2026-09-08, and the Maryland Manual's Howard County page 404s, so the Columbia page states the census-designated-place status without a link. Verify one of them in a browser on the next sweep and add the link."
   ],
   "cities": [
-    "baltimore"
+    "baltimore",
+    "columbia-md"
   ],
   "faqs": []
 }
