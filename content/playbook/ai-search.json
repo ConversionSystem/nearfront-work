@@ -1,0 +1,202 @@
+{
+  "spoke": 10,
+  "slug": "dispensary-ai-search",
+  "phase": "Phase 3, playbook silo",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion; assistant test runs PENDING",
+  "component_anchor": "#technical-ai",
+  "method": "Google's generative-AI guidance, its crawler documentation and its hiring guidance read in full on 2026-09-08, plus OpenAI's own crawler documentation for the distinction Google cannot make for them. The empirical layer is our own: robots.txt fetched from eight domains the same day and parsed per user agent.",
+  "thesis": "Google names AEO and GEO by name and publishes five things you can ignore, which is most of what the category sells. The one lever it does name is the Business Profile. And underneath all of it sits a layer nobody in cannabis checks: whether the AI crawlers can read the site at all, where blocking the wrong bot costs visibility and blocking the right one costs only training data.",
+  "scope_note": "The keyword map calls this spoke 'AI search visibility, with published tests'. There are no test results on the page yet, because the twelve-query protocol needs assistant accounts this environment does not have and two of the five surfaces refused scripted access on 2026-09-08. The page publishes the protocol, the reason, and the empty log, and results append monthly. Titling it as though tests existed would have been the exact behavior the page criticizes.",
+  "facts": [
+    {
+      "id": "ai-google-names-aeo-geo",
+      "label": "Google names AEO and GEO and says many of the hacks do not work",
+      "rule": "As generative AI search evolves, so have the theories and practices, and sometimes, the misconceptions, surrounding it. While terms like Answer Engine Optimization (AEO) or Generative Engine Optimization (GEO) are common online, many suggested \"hacks\" aren't effective or supported by how Google Search actually works. To help you focus on what matters for your website's visibility, we've collected some of the most prominent topics circulating the internet around generative AI and Google Search. Here are a few things you can ignore for Google Search.",
+      "source": "Google Search Central, Google's guide to optimizing for generative AI features, section 'Mythbusting generative AI search: what you don't need to do'",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "THE OPENING OF THE PAGE. Google names the two acronyms the category is sold under and says the hacks largely are not supported by how Search works. Everything a vendor sells as AEO or GEO should be checked against the five denials that follow.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-myth-llmstxt",
+      "label": "llms.txt and special files are ignored by Google Search",
+      "rule": "LLMS.txt files and other \"special\" markup: You don't need to create new machine readable files, AI text files, markup, or Markdown to appear in Google Search (including its generative AI capabilities), as Google Search itself doesn't use them. Note that Google may discover, crawl, and index many kinds of files in addition to HTML on a website: this doesn't mean that the file is treated in a special way. It's completely fine if you decide to create and maintain LLMS.txt files (or other similar files) for other services or systems that use these files. Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "SELF-IMPLICATING. nearfront.com publishes llms.txt and llms-full.txt. The page says out loud that they do nothing for Google Search, and keeps them for the carve-out Google itself names: other services that use these files.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-myth-chunking",
+      "label": "There is no requirement to chunk content and no ideal page length",
+      "rule": "\"Chunking\" content: There's no requirement to break your content into tiny pieces for AI to better understand it. Google systems are able to understand the nuance of multiple topics on a page and show the relevant piece to users. However, sometimes shorter (or longer!) pages can work well depending on your audience and subject matter. There's no ideal page length, and in the end, make pages for your audience, not just for generative AI search.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "Kills the 'restructure everything into atomic answer blocks' pitch."
+    },
+    {
+      "id": "ai-myth-rewriting",
+      "label": "You do not need to write in a special way for AI",
+      "rule": "Rewriting content just for AI systems: You don't need to write in a specific way just for generative AI search. AI systems can understand synonyms and general meanings of what someone is seeking, in order to connect them with content that might not use the same precise words. This means you don't have to worry that you don't have enough \"long-tail\" keywords or haven't captured every variation of how someone might seek content like yours.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "Chains to spoke 9: the long-tail-variation anxiety that keyword tools sell is named here as unnecessary."
+    },
+    {
+      "id": "ai-myth-mentions",
+      "label": "Chasing inauthentic mentions is not as useful as it looks",
+      "rule": "Seeking inauthentic \"mentions\": Just like the rest of Google Search, our generative AI features can show what's being said about products and services across the web, including in blogs, videos, and forum discussions. However, seeking inauthentic \"mentions\" across the web isn't as helpful as it might seem. Our core ranking systems focus on high-quality content while other systems block spam; our generative AI features depend on both.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "Directly relevant to the cannabis link and mention vendors, including the niche-edit sellers whose query appears in our own Search Console export."
+    },
+    {
+      "id": "ai-myth-structured-data",
+      "label": "Structured data is not required for AI search",
+      "rule": "Overfocusing on structured data: Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add. However, it's a good idea to continue using it as part of your overall SEO strategy, as it helps with being eligible for rich results on Google Search.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spokes 2 and 7, where it forced a correction of our own earlier post."
+    },
+    {
+      "id": "ai-gbp-is-the-lever",
+      "label": "The Business Profile is what Google names for AI visibility",
+      "rule": "Where appropriate, generative AI responses can include product listings, product information, and information about local businesses. Using products like Merchant Center and Google Business Profiles can help your products and services to be visible in both AI responses and other Google Search results.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "THE ONE POSITIVE LEVER, and for a dispensary it is the same asset that carries the Map Pack. Note the Merchant Center half does not transfer, since Shopping policy prohibits recreational drugs.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-measure-in-search-console",
+      "label": "Google publishes a generative AI performance report, and warns about third-party AI tools",
+      "rule": "To measure how your content is performing in generative AI features on Google Search and Discover, use the Generative AI performance report in Search Console. This can help you get an idea of how people are discovering your content through generative AI features on Google Search. Be wary of third-party tools that promise ranking success or claim to use \"internal\" Google metrics. No third-party tool has access to our internal ranking or AI systems. Use these tools if they help your workflow, but be sure to evaluate their advice against our official guidance.",
+      "source": "Google Search Central, Optimizing for generative AI features",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "retrieved": "2026-09-08",
+      "verify": "TWO FINDINGS IN ONE. A first-party measurement route exists inside Search Console, and Google explicitly warns about the AI-visibility tracking tools now being sold into this category. The warning is the AI-specific version of the third-party tool statement on the hiring page.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-check-vendor-advice",
+      "label": "Google tells buyers to check AEO and GEO advice against its own guidance",
+      "rule": "Do they cite official Google documentation as supporting evidence for their recommendations? If they have advice on optimizing for AI experiences (also known as \"AEO\" \"GEO\" services), is their advice aligned with Google Search's official guidance on optimizing for generative AI features?",
+      "source": "Google Search Central, Do you need an SEO?",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from /cannabis-seo-agency/. Google hands the buyer the test, and the five denials above are what the test is run against."
+    },
+    {
+      "id": "ai-google-extended",
+      "label": "Google-Extended controls Gemini training and grounding, not Search",
+      "rule": "Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini and for grounding (providing content from the Google Search index to the model at prompt time to improve factuality and relevancy) in Gemini Apps and Grounding with Google Search on Vertex AI. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.",
+      "source": "Google Search Central, Google's common crawlers",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+      "retrieved": "2026-09-08",
+      "verify": "The distinction that decides whether a robots.txt line costs anything. Blocking Google-Extended costs Gemini training and grounding and costs nothing in Google Search.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-openai-two-bots",
+      "label": "OpenAI runs separate crawlers for training and for search, and blocking the search one removes you from ChatGPT answers",
+      "rule": "OpenAI uses OAI-SearchBot and GPTBot robots.txt tags to enable webmasters to manage how their sites and content work with AI. Each setting is independent of the others: for example, a webmaster can allow OAI-SearchBot in order to appear in search results while disallowing GPTBot to indicate that crawled content should not be used for training OpenAI's generative AI foundation models. OAI-SearchBot is for search. OAI-SearchBot is used to surface websites in search results in ChatGPT's search features. Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.",
+      "source": "OpenAI, Overview of OpenAI crawlers",
+      "source_url": "https://platform.openai.com/docs/bots",
+      "retrieved": "2026-09-08",
+      "verify": "NON-GOOGLE FIRST-PARTY SOURCE, and the page labels it as the crawler operator's own documentation rather than as a Google statement. It is the difference between a robots.txt line that costs visibility and one that costs only training data, and almost nobody in this category distinguishes them.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-crawler-survey",
+      "label": "AI crawler policy across eight cannabis and cannabis-marketing domains, measured firsthand",
+      "value": {
+        "method": "https://<domain>/robots.txt fetched with a normal browser user agent on 2026-09-08, parsed per user-agent group, falling back to the wildcard group where no AI-specific group exists.",
+        "nearfront.com": "Explicit Allow for every AI crawler, in named groups. The file also carries a maintainer warning that Cloudflare's managed robots.txt feature would silently override the policy if switched on.",
+        "leafly.com": "User-agent: GPTBot with Disallow: / plus a short list of Allow exceptions for individual marketing articles; User-agent: meta-externalagent with Disallow: /. OAI-SearchBot is not restricted. Read against OpenAI's documentation this is a deliberate posture: opt out of training, stay visible in ChatGPT search.",
+        "weedmaps.com": "No AI-specific groups; the wildcard group does not block them.",
+        "dutchie.com": "robots.txt itself returned HTTP 403 to a normal request, so the crawler policy cannot be read from outside.",
+        "four_agencies": "Of the four cannabis SEO agencies we publish comparisons against, one names the AI crawlers in its robots.txt and three have no AI-specific groups at all."
+      },
+      "source": "Firsthand measurement",
+      "as_of": "2026-09-08",
+      "retrieved": "2026-09-08",
+      "verify": "Re-runnable in one command per domain. robots.txt changes without notice, so the page prints the date and calls it a snapshot.",
+      "note": "PUBLISHING RULE APPLIED: the page names Leafly and Dutchie because both are infrastructure a dispensary depends on and the finding is actionable for a store. The four agencies are described in aggregate rather than individually, because naming them adds nothing a reader can act on and the /vs/ pages are where competitor claims belong.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ai-test-protocol",
+      "label": "The twelve-query assistant test protocol, and its empty log",
+      "value": {
+        "queries_entity": [
+          "who is Nearfront",
+          "local SEO agency for cannabis dispensaries",
+          "Guillermo Bravo Foottraffik",
+          "cannabis SEO agency San Diego"
+        ],
+        "queries_commercial": [
+          "best dispensary SEO agency",
+          "dispensary marketing agency",
+          "cannabis SEO company",
+          "how to rank a dispensary in the Map Pack"
+        ],
+        "queries_citation": [
+          "can a dispensary list products on its Google Business Profile",
+          "does Google weigh review velocity",
+          "how many dispensaries are in Washington state",
+          "does schema.org have a cannabis business type"
+        ],
+        "assistants": [
+          "ChatGPT with search",
+          "Perplexity",
+          "Google AI Mode or AI Overview",
+          "Gemini",
+          "Claude with web"
+        ],
+        "logged": "date, assistant, query, whether Nearfront or the founder is named, the URL cited if any, competitors named",
+        "runs_completed": 0
+      },
+      "source": "nearfront-work plan G5; log at ~/NearFront/AI-VISIBILITY-LOG.md",
+      "as_of": "2026-09-08",
+      "retrieved": "2026-09-08",
+      "verify": "Attempted on 2026-09-08: perplexity.ai/search returned HTTP 403 behind a Cloudflare bot verification wall and was not worked around; Google Search served a CAPTCHA to the same headless browser earlier the same day and was not worked around; ChatGPT, Gemini and Claude require signed-in accounts this environment does not have. Recorded as three 'not run' rows rather than quietly skipped.",
+      "note": "SELF-TESTING PROHIBITION: the operator drafting this page is Claude, one of the five assistants on the list. Running the protocol against itself would be marking its own homework with the site in context, so that row must be run by a person in a clean session. The page says so.",
+      "weight": "load-bearing"
+    }
+  ],
+  "gaps": [
+    "NO ASSISTANT RUNS YET. The defining feature of this spoke in the keyword map is published tests, and there are none. Two surfaces refused scripted access and three need accounts. Owner action, then results append monthly.",
+    "NO CANNABIS AI-VISIBILITY BASELINE ANYWHERE: nobody publishes how often dispensaries are named in assistant answers, ourselves included. The page claims no figure.",
+    "GENERATIVE AI PERFORMANCE REPORT: Google documents the report but we have not pulled it for nearfront.com, so no numbers from it appear. Add to the monthly Search Console export routine.",
+    "WHETHER BLOCKING A TRAINING CRAWLER COSTS ANYTHING LATER: unknowable. Google says Google-Extended does not affect Search, and OpenAI says GPTBot is training only, but neither says what a model that never trained on your content does when asked about your category. The page states the documented positions and refuses the speculation.",
+    "ROBOTS.TXT IS A SNAPSHOT: the eight-domain survey was taken on 2026-09-08 and any of those files can change the next day. Dated on the page and re-checkable in one command."
+  ],
+  "internal_links": {
+    "out": [
+      "/services/cannabis-dispensary-seo/#technical-ai",
+      "/dispensary-google-business-profile/",
+      "/dispensary-local-schema/",
+      "/dispensary-keyword-research/",
+      "/dispensary-website/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/cannabis-seo-agency/",
+      "/how-we-rank-ourselves/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": [],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the visible byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-ai-search/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt entry in the playbook section.",
+    "When the owner runs the protocol, append results to AI-VISIBILITY-LOG.md and add the results table to this page with the run dates, including runs where nothing was cited."
+  ]
+}
