@@ -1,0 +1,186 @@
+{
+  "spoke": 6,
+  "slug": "dispensary-website",
+  "phase": "Phase 2, playbook silo",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "#technical-ai",
+  "method": "Five Google documentation pages fetched and read in full on 2026-09-08: the interstitials guidance, the spam policies, the Googlebot verification guide, the page experience page and the Core Web Vitals page. The JavaScript SEO basics page was re-read to confirm for the third time that Google publishes no iframe indexing guidance.",
+  "thesis": "The age gate is the most consequential thing on a dispensary website, and Google publishes exactly what to do with it. The common implementation, redirecting every visitor to a single consent page, is the one Google says removes all but that page from search results.",
+  "facts": [
+    {
+      "id": "ws-mandatory-exempt",
+      "label": "Age gates are exempt from the intrusive-interstitial guidance",
+      "rule": "Certain sites are required to show an interstitial due to the kind of content they are publishing. For example, a casino site may need to show an age gate, which is a type of interstitial where the user must provide their age before accessing the content. Mandatory interstitials are exempted from the guidelines discussed in this document.",
+      "source": "Google Search Central, Interstitials and dialogs, section 'Mandatory interstitials'",
+      "source_url": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials",
+      "retrieved": "2026-09-08",
+      "verify": "THE FOUNDATION OF THE PAGE. Google names the age gate as its worked example of a mandatory interstitial and exempts it from the intrusive-interstitial guidance. So a dispensary's age gate is not itself a problem. Everything that follows is about HOW it is built. Note Google's example is a casino, not cannabis; the page must not claim Google names cannabis here.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-redirect-kills-index",
+      "label": "Redirecting every URL to one consent page removes all but that page from search",
+      "rule": "Don't redirect the incoming HTTP requests to a different page for collecting consent or providing data. Redirecting all URLs to a single page will remove all but that one page from search results, as Googlebot can only fetch that page.",
+      "source": "Google Search Central, Interstitials and dialogs, section 'Mandatory interstitials'",
+      "source_url": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials",
+      "retrieved": "2026-09-08",
+      "verify": "THE MOST CONSEQUENTIAL SENTENCE FOR THIS INDUSTRY. The redirect-to-a-gate pattern is a common cannabis website build, and Google states the outcome plainly: every page except the gate leaves the index. This is a documented indexing consequence, not a ranking theory.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-overlay-not-replace",
+      "label": "Overlay the interstitial so Google can still index the content",
+      "rule": "Ensure that the content is overlaid with the interstitial. This will ensure that Google can still at least index some of the content and potentially show it in search results.",
+      "source": "Google Search Central, Interstitials and dialogs, section 'Mandatory interstitials'",
+      "source_url": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials",
+      "retrieved": "2026-09-08",
+      "verify": "The constructive half of the previous fact. An overlay on top of the served page keeps the content in the response; a redirect or a replacement does not.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-googlebot-past-gate",
+      "label": "Google recommends letting Googlebot through the age gate",
+      "rule": "For content behind a mandatory age gate for adult users, we recommend allowing Googlebot to crawl your content without triggering the age gate. You can do this by verifying Googlebot requests and serving the content without age gate.",
+      "source": "Google Search Central, Interstitials and dialogs, section 'Mandatory interstitials'",
+      "source_url": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials",
+      "retrieved": "2026-09-08",
+      "verify": "COUNTERINTUITIVE AND DIRECTLY RECOMMENDED. Serving Googlebot a different response than a human sounds like cloaking to most operators, and it is Google's own recommendation for this case. Read it against the cloaking definition (ws-cloaking-intent) and the content-gating carve-out (ws-gating-not-cloaking) before writing anything about it.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-interstitial-harm",
+      "label": "Intrusive interstitials can hurt search performance",
+      "rule": "Intrusive dialogs and interstitials make it hard for Google and other search engines to understand your content, which may lead to poor search performance.",
+      "source": "Google Search Central, Interstitials and dialogs",
+      "source_url": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials",
+      "retrieved": "2026-09-08",
+      "verify": "Google's own statement of the consequence. Note the hedge, 'may lead to', which the page keeps rather than hardening."
+    },
+    {
+      "id": "ws-cloaking-intent",
+      "label": "Cloaking is defined by intent to manipulate and mislead",
+      "rule": "Cloaking refers to the practice of presenting different content to users and search engines with the intent to manipulate search rankings and mislead users. Examples of cloaking include: Showing a page about travel destinations to search engines while showing a page about discount drugs to users; Inserting text or keywords into a page only when the user agent that is requesting the page is a search engine, not a human visitor.",
+      "source": "Google Search Central, Spam policies for Google web search, section 'Cloaking'",
+      "source_url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "retrieved": "2026-09-08",
+      "verify": "THE INTENT CLAUSE IS THE RESOLUTION. Cloaking requires intent to manipulate rankings and mislead users. Skipping an age gate for Googlebot serves the same content a person sees after passing the gate, so neither condition is met, and Google recommends it explicitly elsewhere.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-gating-not-cloaking",
+      "label": "Content gating is not cloaking when Google sees what a permitted person sees",
+      "rule": "If you operate a paywall or a content-gating mechanism, we don't consider this to be cloaking if Google can see the full content of what's behind the paywall just like any person who has access to the gated material and if you follow our Flexible Sampling general guidance.",
+      "source": "Google Search Central, Spam policies for Google web search, section 'Cloaking'",
+      "source_url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "retrieved": "2026-09-08",
+      "verify": "The second half of the resolution, in Google's own words, on the same page as the cloaking definition. The clause is written for paywalls; an age gate is a content-gating mechanism of a different kind. State the reasoning as reasoning, not as a Google ruling on age gates, because Google never names age gates in this clause.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-verify-googlebot",
+      "label": "How to verify a request really is Googlebot",
+      "rule": "There are two methods for verifying requests from Google: Manually, for one-off lookups, use command line tools; Automatically, for large scale lookups, use an automatic solution to match a crawler's IP address against the list of published Google IP addresses. Run a reverse DNS lookup on the accessing IP address from your logs, using the host command. Verify that the domain name is either googlebot.com, google.com, or googleusercontent.com. Run a forward DNS lookup on the domain name retrieved in step 1.",
+      "source": "Google Search Central, Verifying Googlebot and other Google crawlers",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+      "retrieved": "2026-09-08",
+      "verify": "The operational half of ws-googlebot-past-gate. Verification must be reverse-then-forward DNS or the published IP list, never the user-agent string alone, which anyone can send. A build that skips the age gate on user agent alone opens the gate to everyone who claims to be Googlebot, which is a compliance problem rather than an SEO one.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-cwv-thresholds",
+      "label": "The three Core Web Vitals and their thresholds",
+      "rule": "Largest Contentful Paint (LCP): Measures loading performance. To provide a good user experience, strive to have LCP occur within the first 2.5 seconds of the page starting to load. Interaction To Next Paint (INP): Measures responsiveness. To provide a good user experience, strive to have an INP of less than 200 milliseconds. Cumulative Layout Shift (CLS): Measures visual stability. To provide a good user experience, strive to have a CLS score of less than 0.1.",
+      "source": "Google Search Central, Understanding Core Web Vitals and Google Search results",
+      "source_url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+      "retrieved": "2026-09-08",
+      "verify": "Exact thresholds, quoted rather than remembered. INP replaced FID; do not publish FID."
+    },
+    {
+      "id": "ws-cwv-used-but",
+      "label": "Core Web Vitals are used in ranking, and a perfect score is not the goal",
+      "rule": "Core Web Vitals are used by our ranking systems. We recommend site owners achieve good Core Web Vitals for success with Search and to ensure a great user experience generally. Keep in mind that getting good results in reports like Search Console's Core Web Vitals report or third-party tools doesn't guarantee that your pages will rank at the top of Google Search results; there's more to great page experience than Core Web Vitals scores alone. These scores are meant to help you to improve your site for your users overall, and trying to get a perfect score just for SEO reasons may not be the best use of your time.",
+      "source": "Google Search Central, Understanding page experience in Google Search results, FAQ",
+      "source_url": "https://developers.google.com/search/docs/appearance/page-experience",
+      "retrieved": "2026-09-08",
+      "verify": "Both halves matter. Google confirms CWV is used by ranking systems AND says chasing a perfect score for SEO reasons may not be worth the time. An agency selling a 100 Lighthouse score is selling against the second half.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-other-aspects-indirect",
+      "label": "The other page-experience aspects do not directly help ranking",
+      "rule": "Beyond Core Web Vitals, other page experience aspects don't directly help your website rank higher in search results. However, they can make your website more satisfying to use, which is generally aligned with what our ranking systems seek to reward.",
+      "source": "Google Search Central, Understanding page experience in Google Search results, FAQ",
+      "source_url": "https://developers.google.com/search/docs/appearance/page-experience",
+      "retrieved": "2026-09-08",
+      "verify": "HONESTY REQUIREMENT. HTTPS, mobile rendering and interstitial behavior are not direct ranking factors by Google's own statement. The age-gate argument on this page is therefore about INDEXING, not ranking, and must be framed that way.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ws-no-single-signal",
+      "label": "There is no single page-experience signal",
+      "rule": "Is there a single \"page experience signal\" that Google Search uses for ranking? There is no single signal. Our core ranking systems look at a variety of signals that align with overall page experience.",
+      "source": "Google Search Central, Understanding page experience in Google Search results, FAQ",
+      "source_url": "https://developers.google.com/search/docs/appearance/page-experience",
+      "retrieved": "2026-09-08",
+      "verify": "Kills the 'page experience score' pitch."
+    },
+    {
+      "id": "ws-self-assess",
+      "label": "Google's six page-experience self-assessment questions",
+      "rule": "Answering yes to the following questions means you're probably on track in providing a good page experience: Do your pages have good Core Web Vitals? Are your pages served in a secure fashion? Does your content display well on mobile devices? Does your content avoid using an excessive amount of ads that distract from or interfere with the main content? Do your pages avoid using intrusive interstitials? Is your page designed so visitors can easily distinguish the main content from other content on your page?",
+      "source": "Google Search Central, Understanding page experience in Google Search results",
+      "source_url": "https://developers.google.com/search/docs/appearance/page-experience",
+      "retrieved": "2026-09-08",
+      "verify": "Google's own checklist, which is shorter and cheaper than most agency site audits."
+    },
+    {
+      "id": "ws-render-queue",
+      "label": "JavaScript content waits for a rendering queue",
+      "rule": "All pages with a 200 HTTP status code are sent to the rendering queue, no matter whether JavaScript is present. The page may stay on this queue for a few seconds, but it can take longer than that. Once Google's resources allow, a headless Chromium renders the page and executes the JavaScript. Googlebot parses the rendered HTML for links again and queues the URLs it finds for crawling. Google also uses the rendered HTML to index the page.",
+      "source": "Google Search Central, Understand JavaScript SEO basics",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "retrieved": "2026-09-08",
+      "verify": "Relevant to any menu or product list drawn client-side. Google does render it, but on its own schedule, and only what appears in the rendered HTML is indexed."
+    },
+    {
+      "id": "ws-no-iframe-guidance",
+      "label": "Google publishes no iframe indexing guidance",
+      "value": "none found",
+      "source": "Our own search of Google Search Central",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "retrieved": "2026-09-08",
+      "verify": "THIRD CHECK OF THE SAME FINDING. Searched on 2026-08-31 across JavaScript SEO basics, fix search-related JavaScript problems and canonicalization while attempting spoke 5, and again on 2026-09-08 on the JavaScript SEO basics page: zero occurrences of 'iframe'. Google gives no guidance on whether content served inside a third-party iframe is indexed for the host domain. The page states the question and refuses to answer it.",
+      "weight": "load-bearing"
+    }
+  ],
+  "gaps": [
+    "AGE GATES ON REAL DISPENSARY SITES: we have not audited live dispensary websites for which age-gate pattern they use, because that needs real dispensary URLs, the same blocker that deferred spoke 5. The page therefore publishes no figure for how many dispensary sites get this wrong, and instead gives the reader a procedure to test their own site in a few minutes.",
+    "MENU IFRAME INDEXING: unanswered, see ws-no-iframe-guidance. Unblocks with 3 to 5 real Dutchie or Jane dispensary URLs.",
+    "WHETHER SKIPPING THE AGE GATE FOR GOOGLEBOT IS TREATED AS CLOAKING IN PRACTICE: Google recommends it on the interstitials page and defines cloaking by intent on the spam page, but never connects the two documents. The page reasons across them and labels the reasoning as ours.",
+    "AGE-GATE LEGAL REQUIREMENTS: age verification obligations come from state cannabis regulations and vary by state. This page is about how the gate interacts with search, and it does not advise on what any state requires. No legal claim appears on it.",
+    "CWV FIELD DATA FOR THIS SITE: nearfront.com lab figures were measured in the September audit (TTFB 110 ms, load 726 ms) but field Core Web Vitals from the Chrome UX Report have not been pulled, so no nearfront.com CWV numbers are published here.",
+    "NO LEGACY 301s: the keyword map records that this spoke inherits no legacy redirects, so it stands on content alone. Nothing to retarget in the promotion push."
+  ],
+  "internal_links": {
+    "out": [
+      "/services/cannabis-dispensary-seo/#technical-ai",
+      "/dispensary-local-schema/",
+      "/dispensary-google-business-profile/",
+      "/dispensary-local-citations/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/dispensary-seo/",
+      "/get-started/"
+    ],
+    "dependency": "Links /dispensary-seo/, which is drafted and scheduled to promote first (plan week 4). If promotion order changes, remove that link or promote the explainer in the same push."
+  },
+  "redirect_retargets": [],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the visible byline date to the promotion date (they read 2026-09-08, the draft date).",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-website/index.html.",
+    "Confirm /dispensary-seo/ is live first, or drop that one link.",
+    "sitemap.xml at priority 0.7, llms.txt and llms-full.txt lines, blog index is not involved (this is a flat playbook slug, not a post).",
+    "Money page: no change needed; the page anchors to the existing #technical-ai card.",
+    "No legacy 301 retargets exist for this spoke."
+  ]
+}
