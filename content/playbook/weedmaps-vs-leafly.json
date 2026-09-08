@@ -1,0 +1,116 @@
+{
+  "spoke": 11,
+  "slug": "dispensary-weedmaps-vs-leafly",
+  "phase": "Phase 3, playbook silo",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "none",
+  "method": "Both platforms' parent companies are SEC registrants, so every operating figure on this page comes from their own filings on EDGAR rather than from either company's marketing. Filings pulled 2026-09-08 via data.sec.gov with a declared contact user agent, per the SEC's fair-access policy. No number on the page comes from a press release, a pitch deck or a third-party estimate.",
+  "thesis": "People append 'reddit' to this query because every comparison they can find was written by someone selling one of the two. The comparison nobody publishes is the one built from the companies' own SEC filings, and it produces a fact that changes the decision: as of Q1 2025 Leafly stopped being a public company, so its numbers are frozen, while Weedmaps still reports quarterly. And the average client spend differs by roughly four times.",
+  "facts": [
+    {
+      "id": "wl-maps-q2-2026",
+      "label": "WM Technology (Weedmaps) operating metrics, three months ended 30 June 2026",
+      "value": {
+        "revenue_usd": 42400000,
+        "revenue_prior_year": 44800000,
+        "avg_monthly_paying_clients": 5040,
+        "avg_monthly_paying_clients_prior": 5241,
+        "avg_monthly_revenue_per_client_usd": 2807,
+        "avg_monthly_revenue_per_client_prior": 2852,
+        "net_income_usd": 2900000,
+        "adjusted_ebitda_usd": 5000000,
+        "adjusted_ebitda_prior": 11700000,
+        "cash_usd": 60500000,
+        "active_listing_pages": 8100
+      },
+      "source": "WM Technology, Inc. Form 10-Q for the quarter ended 2026-06-30, filed 2026-08-06 (CIK 0001779474, ticker MAPS)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1779474/000177947426000033/maps-20260630.htm",
+      "as_of": "2026-06-30",
+      "retrieved": "2026-09-08",
+      "verify": "Second Quarter 2026 Financial Highlights section of the MD&A. Every figure appears as a bullet there.",
+      "note": "DEFINITION TRAP, must be stated on the page: the 5,040 are not 5,040 dispensaries. The filing says these paying clients 'include retailers, brands and other client types (such as doctors)', and that clients 'can choose to purchase multiple listings solutions for each business', with roughly 8,100 active listing pages against 5,040 clients. So $2,807 is the average across all client types, not a dispensary price list.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wl-lfly-q1-2025",
+      "label": "Leafly Holdings operating metrics, three months ended 31 March 2025, its final public quarter",
+      "value": {
+        "total_revenue_usd": 7882000,
+        "total_revenue_prior_year": 9048000,
+        "retail_revenue_usd": 6946000,
+        "brands_revenue_usd": 936000,
+        "ending_retail_accounts": 3362,
+        "ending_retail_accounts_prior": 3840,
+        "retailer_arpa_usd": 684,
+        "retailer_arpa_prior": 677
+      },
+      "source": "Leafly Holdings, Inc. Form 10-Q for the quarter ended 2025-03-31, filed 2025-05-15 (CIK 0001785592)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1785592/000095017025071797/lfly-20250331.htm",
+      "as_of": "2025-03-31",
+      "retrieved": "2026-09-08",
+      "verify": "Key Operating Metrics table in the MD&A: ending retail accounts 3,362 against 3,840, down 12 percent; Retailer ARPA $684 against $677, up 1 percent. Segment revenue table: retail $6,946 thousand, brands $936 thousand, total $7,882 thousand.",
+      "note": "DEFINITION TRAP: Leafly's ending retail accounts are retailer accounts only, and the filing notes an account 'can include more than one retailer'. So $684 is a retail-only average and is NOT directly comparable to Weedmaps' $2,807, which spans retailers, brands and doctors. The page states this before it states the ratio.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wl-lfly-going-private",
+      "label": "Leafly deregistered and stopped filing periodic reports in 2025",
+      "rule": "Following the Reverse Stock Split, the number of issued and outstanding shares of common stock issued and outstanding will be reduced from approximately 3.15 million shares to approximately 5,000 shares and the number of record holders will be reduced below 300, which would allow us to deregister pursuant to Section 12(g) of the Securities Exchange Act of 1934, as amended, and suspend our reporting obligations under Section 15(d) of the Exchange Act.",
+      "source": "Leafly Holdings, Inc. Form 8-K filed 2025-06-18 (event date 2025-06-11); Form 25 filed 2025-03-12; Schedule 13E-3 filed 2025-04-11; Form 15-12G filed 2025-06-20",
+      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001785592&type=10-Q&dateb=&owner=include&count=40",
+      "as_of": "2025-06-20",
+      "retrieved": "2026-09-08",
+      "verify": "EDGAR filing history for CIK 0001785592. Form 25 (notification of delisting) 2025-03-12; SC 13E-3 (going-private transaction) 2025-04-11 with amendments through 2025-06-20; DEF 14A 2025-05-09; 8-K 2025-06-18 describing the reverse split mechanism quoted here; Form 15-12G 2025-05-23 and 2025-06-20. The last periodic report of any kind is the 10-Q filed 2025-05-15. EDGAR lists no ticker and no exchange for the company as of 2026-09-08.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wl-lfly-going-concern",
+      "label": "Leafly's final public filing carried a going-concern warning",
+      "rule": "the substantial doubt regarding the Company's ability to continue as a going concern because it does not currently have the ability to repay the convertible notes due in July 2025. At March 31, 2025, the Company had $25,747 of 2022 Notes maturing on July 1, 2025.",
+      "source": "Leafly Holdings, Inc. Form 10-Q for the quarter ended 2025-03-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1785592/000095017025071797/lfly-20250331.htm",
+      "as_of": "2025-03-31",
+      "retrieved": "2026-09-08",
+      "verify": "Forward-looking statements section and the Going Concern note. The $25,747 is in thousands, so $25.7 million of notes maturing 2025-07-01.",
+      "note": "STATE WHAT THIS IS AND IS NOT. It is what the last public filing said. It is not a claim about the company's present condition, which is not public. The page must not imply Leafly is failing today, because nobody outside it knows.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "wl-crawler-difference",
+      "label": "The two platforms treat AI crawlers differently",
+      "value": "Leafly's robots.txt disallows GPTBot across the site with a short list of article-level Allow exceptions, and disallows meta-externalagent, while leaving OAI-SearchBot unrestricted. Weedmaps carries no AI-specific user-agent groups and its wildcard group does not block them.",
+      "source": "Firsthand fetch and parse of https://leafly.com/robots.txt and https://weedmaps.com/robots.txt",
+      "as_of": "2026-09-08",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 10 (ai-search.json, ai-crawler-survey). Read against OpenAI's published crawler documentation, Leafly's configuration is an opt-out of training rather than of ChatGPT search visibility. Both files can change any day, so the page dates the snapshot."
+    }
+  ],
+  "gaps": [
+    "LEAFLY'S CURRENT NUMBERS DO NOT EXIST PUBLICLY. Everything on this page about Leafly is as of 31 March 2025, its last public quarter. The page dates every Leafly figure and never presents them as current. Whether the business has grown, shrunk or changed hands since is not knowable from outside.",
+    "THE TWO METRICS ARE NOT THE SAME METRIC. Weedmaps counts average monthly paying clients across retailers, brands and doctors; Leafly counts ending retail accounts, retailers only, and an account can cover more than one retailer. The roughly fourfold spend difference is real but the definitions are not aligned, and the page says so before it says the ratio.",
+    "NO TRAFFIC OR LEAD-QUALITY DATA: neither company publishes leads or orders delivered per dispensary, and no third-party estimate meets this site's sourcing bar. The page publishes no traffic comparison at all.",
+    "NO PRICING PAGE: neither platform publishes a rate card for dispensaries. The per-client averages in the filings are the closest published figures and they are averages, not quotes.",
+    "CONVERSION AND ROI: whether either platform pays back for a given store is a question about that store's margins and trade area, and we have no dataset that answers it generally. The page gives a method for deciding rather than a verdict.",
+    "SEC FILINGS ARE MANAGEMENT'S REPORTING: audited annually, reviewed quarterly, but still the company's own characterization of its business. They are the best available source here, not an independent audit of platform performance."
+  ],
+  "internal_links": {
+    "out": [
+      "/dispensary-ai-search/",
+      "/dispensary-local-citations/",
+      "/dispensary-multi-location-seo/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/services/cannabis-dispensary-seo/",
+      "/dispensary-seo/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": [],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-weedmaps-vs-leafly/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt entry in the playbook section.",
+    "Re-verify against the next WM Technology 10-Q (Q3 2026, expected November) in the quarterly sweep, and re-check whether Leafly has resumed filing.",
+    "Corrections invited on the page, same standard as the /vs/ pages."
+  ]
+}
