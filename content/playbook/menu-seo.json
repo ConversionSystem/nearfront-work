@@ -1,0 +1,127 @@
+{
+  "spoke": 5,
+  "slug": "dispensary-menu-seo",
+  "phase": "Phase 2, playbook silo; deferred 2026-08-31, unblocked 2026-09-08",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "#menu-pos",
+  "deferral_history": "Attempted 2026-08-31 and deliberately stopped rather than shipped weak. The recorded unblock condition was 3 to 5 real dispensary URLs running Dutchie or Jane, so the embed architecture could be inspected firsthand. That condition was never met. What changed on 2026-09-08 is better: both vendors publish their own developer documentation on reachable subdomains (docs.dutchie.com and docs.iheartjane.com, both 200 to an ordinary request, both serving Markdown and an llms.txt) even though their marketing sites return 403 behind bot protection. Vendor documentation of the architecture beats inference from a handful of live samples, so the page is built on that instead.",
+  "method": "Both vendors' developer documentation fetched as Markdown on 2026-09-08 and quoted directly. GitBook exposes an LLM 'ask' endpoint on these docs; it was NOT used, because a generated answer is not a citable source. Google's JavaScript SEO documentation re-checked for iframe guidance for the third time.",
+  "thesis": "The default Dutchie and Jane menu is an iframe served from the vendor's domain, which both vendors say in their own documentation. Google publishes no iframe indexing rule, so the honest case does not rest on one. It rests on something stronger: both vendors have built and documented products whose stated purpose is to move the menu onto the retailer's own domain, and one of them explains in its own words that otherwise the value is attributed elsewhere.",
+  "facts": [
+    {
+      "id": "mn-dutchie-is-iframe",
+      "label": "Dutchie's embed is a script tag that renders an iframe",
+      "rule": "Dutchie's embed menu solution uses a script tag to render an iframe element and display your store's menu. In Dutchie admin, there are two available script tags to copy into your website - the full menu script, and a 'Homepage Section' script that generates a single-row carousel. The script renders the iframe menu wherever it is placed, so it's important to consider web page layout and place the script tag in a full-width parent element.",
+      "source": "Dutchie Platform Documentation, Dutchie Embed SDK, Overview and Script Tag",
+      "source_url": "https://docs.dutchie.com/dutchie-core-docs/dutchie-e-commerce/dutchie-embed-sdk/overview",
+      "retrieved": "2026-09-08",
+      "verify": "THE ANSWER THE SPOKE WAS DEFERRED FOR, from the vendor rather than inferred from a sample. The documented script tag is <script async id=\"dutchie--embed__script\" src=\"https://dutchie.com/api/v2/embedded-menu/DISPENSARYID.js\">, so the menu content is served from dutchie.com and injected into an iframe on the retailer's page.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mn-jane-is-iframe",
+      "label": "Jane's embed is also an iframe, driven by postMessage",
+      "rule": "It is also possible to pass a few advanced options to Jane's embedded menus. Partners can use two postMessage APIs to: 1. Customize the look and feel of their embedded iFrame menus 2. Pass in user data to pre-populate the checkout form with the user's data.",
+      "source": "Jane Docs, Advanced Embedded Menu Options",
+      "source_url": "https://docs.iheartjane.com/jane-docs/embeds/advanced-embedded-menu-options",
+      "retrieved": "2026-09-08",
+      "verify": "Jane calls them 'embedded iFrame menus' in its own words. The postMessage target origin in its sample code is https://www.iheartjane.com, which confirms the iframe is a separate origin from the retailer's page.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mn-dutchie-proxy-concedes",
+      "label": "Dutchie sells a proxy whose stated purpose is to stop the value accruing to a third-party domain",
+      "rule": "Dutchie Pro Proxy empowers cannabis retailers to deliver a fully branded, high-performance e-commerce experience directly from their own domain. By serving your Dutchie-powered storefront at yourdomain.com/stores instead of a third-party subdomain, you consolidate your web presence under a single domain. When your storefront lives on your primary domain, all the traffic, backlinks, and engagement your store generates contribute directly to your domain's search rankings, rather than being attributed to a separate subdomain. Automatic Sitemap Generation: Your storefront sitemap is automatically generated at /stores/sitemap.xml. IP Preservation: Client IP addresses are forwarded to maintain analytics accuracy.",
+      "source": "Dutchie Platform Documentation, Dutchie Pro Proxy",
+      "source_url": "https://docs.dutchie.com/dutchie-core-docs/dutchie-e-commerce/dutchie-pro-proxy",
+      "retrieved": "2026-09-08",
+      "verify": "THE STRONGEST EVIDENCE ON THE PAGE, because it is the vendor conceding the problem while selling the fix. Note carefully what is and is not sourced here: the architectural facts (Cloudflare Worker, own domain, /stores/sitemap.xml, IP forwarding) are documentation. The SEO claims in the same passage, 'Higher search rankings' and 'Search engines reward websites with unified domain authority', are DUTCHIE'S MARKETING CLAIMS and go beyond anything Google documents. The page must credit the architecture and attribute the claims.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mn-jane-roots-seo",
+      "label": "Jane's build-your-own path tells retailers to create separate indexable product URLs",
+      "rule": "One important aspect of building your own menu is making sure that search engines can effectively index all of your content. The first SEO consideration is that you will need a separate URL for each product details page. This should be something like /products/{product-name}. The reason why you want separate pages for each product is that search engines will index each page, and will consider it relevant for search terms related to the page content. You will probably also want to create separate pages for brands and categories that you carry. Another thing you will also want to do is to include structured metadata. For JSON-LD, you will want to include the Product Schema.",
+      "source": "Jane Docs, Handling SEO (Jane Roots)",
+      "source_url": "https://docs.iheartjane.com/jane-docs/implementing-roots/building-your-menu/handling-seo",
+      "retrieved": "2026-09-08",
+      "verify": "The mirror of the Dutchie finding. Jane's guidance on how to be indexable appears in its BUILD-YOUR-OWN-MENU path, not in its embed path, and it describes exactly what an iframe cannot give you: separate URLs per product, per brand and per category, each with its own metadata. Neither vendor claims the iframe embed does this.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mn-jane-ga-referrer",
+      "label": "Jane ships a script to pass client_id and referrer into the iframe, because the iframe cannot see them",
+      "rule": "GA Referrer Script: gtag('get', '{UA-Code}', 'client_id', function (clientId) { frameWindow.postMessage({ messageType: 'initializeGa', payload: { clientId: clientId, referrer: document.referrer } }, 'https://www.iheartjane.com'); });",
+      "source": "Jane Docs, GA Referrer Script",
+      "source_url": "https://docs.iheartjane.com/jane-docs/embeds/ga-referrer-script",
+      "retrieved": "2026-09-08",
+      "verify": "FIRST-PARTY CONFIRMATION OF THE ATTRIBUTION BREAK described on spoke 13. The script exists because an iframe on a separate origin has no access to the parent page's analytics client_id or its referrer, so without it every session inside the menu looks like it began there. Note the sample uses a UA- property ID, which is Universal Analytics and long deprecated, so the documentation itself is stale even though the mechanism is real.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mn-dutchie-pro-meta",
+      "label": "Dutchie's Pro SDK can emit title, description, canonical, Open Graph and JSON-LD",
+      "rule": "The getStoreFrontMetaFields function allows you to dynamically generate page metadata (title, description, Open Graph tags, structured data) based on the current page and available data. MetaFields: title, description, ogImage, canonical, structuredData, customMeta.",
+      "source": "Dutchie Platform Documentation, Meta Fields and SEO",
+      "source_url": "https://docs.dutchie.com/dutchie-core-docs/dutchie-ecommerce-pro-sdk/extension-development/meta-fields-and-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Establishes that the Pro SDK path can carry the head contract an indexable page needs, which the iframe embed cannot. The same page warns about a specific canonical-building bug (concatenating storeFrontRoot with pathname duplicates the /stores/<cName> segment and yields a relative URL), which is worth a line because a wrong canonical is worse than none."
+    },
+    {
+      "id": "mn-no-google-iframe-guidance",
+      "label": "Google publishes no iframe indexing guidance, checked three times",
+      "value": "none found",
+      "source": "Our own repeated search of Google Search Central",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "retrieved": "2026-09-08",
+      "verify": "Searched 2026-08-31 across JavaScript SEO basics, fix search-related JavaScript problems and canonicalization while first attempting this spoke; again on 2026-09-08 for spoke 6; and again on 2026-09-08 for this page. Zero occurrences of 'iframe' in the JavaScript SEO documentation. Google gives no rule on whether content served inside a third-party iframe is indexed for the host domain, and this page does not invent one.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "mn-rendered-html-is-what-counts",
+      "label": "Google indexes the rendered HTML, on its own schedule",
+      "rule": "All pages with a 200 HTTP status code are sent to the rendering queue. The page may stay on this queue for a few seconds, but it can take longer than that. Once Google's resources allow, a headless Chromium renders the page and executes the JavaScript. Google also uses the rendered HTML to index the page. When Google renders a page, it flattens the shadow DOM and light DOM content. This means Google can only see content that's visible in the rendered HTML.",
+      "source": "Google Search Central, Understand JavaScript SEO basics",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 6. The relevant half is the last sentence: what is indexed is what appears in the rendered HTML of the URL being indexed. An iframe's content is a separate document at a separate URL, which is why the question arises at all."
+    },
+    {
+      "id": "mn-mp-client-id",
+      "label": "Server and cross-origin events are joined to sessions by client_id",
+      "rule": "Advertising identifiers such as GBRAID/WBRAID collected during online interactions are automatically joined with Measurement Protocol events using client_id or app_instance_id.",
+      "source": "Google Analytics, Measurement Protocol for GA4",
+      "source_url": "https://developers.google.com/analytics/devguides/collection/protocol/ga4",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spoke 13. Explains why Jane's referrer script passes client_id specifically: without the same identifier, the menu session cannot be stitched to the visit that produced it."
+    }
+  ],
+  "gaps": [
+    "NO GOOGLE RULE ON IFRAME INDEXING EXISTS, so the page's conclusion rests on vendor behavior plus Google's rendering documentation, not on a Google statement. That distinction is drawn explicitly on the page and it is the reason this spoke was deferred for eight days rather than shipped on inference.",
+    "NO LIVE DISPENSARY AUDIT: the original unblock condition, 3 to 5 real dispensary URLs, was never met, so the page publishes no figure for how many dispensaries run which architecture and no before-and-after case. It describes architectures, not prevalence.",
+    "DUTCHIE'S SEO CLAIMS ARE DUTCHIE'S: 'Higher search rankings' and 'Search engines reward websites with unified domain authority' appear in Dutchie's own documentation and are not Google statements. The page attributes them rather than repeating them as fact.",
+    "JANE'S GA DOC IS STALE: its sample uses a UA- property ID, which is Universal Analytics and has been shut down. The mechanism is still real; the code sample is not current. Flagged on the page.",
+    "WHAT THE PROXY COSTS: Dutchie Pro Proxy requires a Cloudflare account and is part of the Dutchie Pro tier. Neither pricing nor tier eligibility is published in the documentation, so the page tells the reader to ask rather than quoting a price.",
+    "GITBOOK 'ASK' ENDPOINT NOT USED: both vendors' docs expose an LLM query endpoint that would answer questions about the documentation. It was deliberately not used, because a generated answer is not a citable source and this page's whole value is that every claim traces to a document."
+  ],
+  "internal_links": {
+    "out": [
+      "/services/cannabis-dispensary-seo/#menu-pos",
+      "/dispensary-tracking-attribution/",
+      "/dispensary-website/",
+      "/dispensary-local-schema/",
+      "/dispensary-weedmaps-alternative/",
+      "/dispensary-seo/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": [],
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-menu-seo/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt playbook entry, and REMOVE the 'Deferred: spoke 5' line from the llms-full playbook section.",
+    "Money page: the #menu-pos card already links spoke 13; consider adding this one too.",
+    "Update the ledger and the keyword map: spoke 5 is no longer deferred and the playbook is complete at 13 of 13."
+  ]
+}
