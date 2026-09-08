@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFLQTMGP');</script>
+<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dispensary Tracking and Attribution | Nearfront</title>
+<meta name="description" content="A call in Google's reporting is a click on the call button, not a conversation. Here is what each metric actually counts and where the chain to revenue breaks.">
+<link rel="canonical" href="https://nearfront.com/dispensary-tracking-attribution/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f1f22">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nearfront">
+<meta property="og:title" content="Dispensary Tracking and Attribution | Nearfront">
+<meta property="og:description" content="Google counts the tap, not the sale. The real definitions of every Map Pack metric, the two places attribution genuinely breaks, and what to measure instead.">
+<meta property="og:url" content="https://nearfront.com/dispensary-tracking-attribution/">
+<meta property="og:image" content="https://nearfront.com/assets/logo.svg">
+<meta property="article:published_time" content="2026-09-08">
+<meta property="article:author" content="Guillermo Bravo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dispensary Tracking and Attribution | Nearfront">
+<meta name="twitter:description" content="Google counts the tap, not the sale. The real definitions of every Map Pack metric, the two places attribution genuinely breaks, and what to measure instead.">
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  .post-hero { background: var(--dark-3); padding: 130px 20px 60px; position: relative; overflow: hidden; }
+  .post-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(195,162,93,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(195,162,93,0.04) 1px,transparent 1px); background-size: 60px 60px; }
+  .post-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .post-hero h1 { font-size: clamp(30px,4vw,46px); font-family: Georgia,serif; font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .post-meta { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .post-meta a { color: var(--gold); text-decoration: none; }
+  .post-body { max-width: 720px; margin: 0 auto; padding: 60px 20px 30px; }
+  .post-body p { font-size: 16.5px; color: #3a3a35; line-height: 1.85; margin-bottom: 20px; }
+  .post-body h2 { font-size: 26px; font-family: Georgia,serif; font-weight: 700; color: var(--dark); margin: 40px 0 16px; line-height: 1.2; }
+  .post-body h3 { font-size: 18px; font-weight: 700; color: var(--dark); margin: 26px 0 10px; line-height: 1.3; }
+  .post-body ul, .post-body ol { margin: 0 0 20px 22px; }
+  .post-body li { font-size: 16px; color: #3a3a35; line-height: 1.75; margin-bottom: 8px; }
+  .post-body a { color: var(--gold-dk); }
+  .post-body .takeaway { border-left: 3px solid var(--gold); background: rgba(195,162,93,0.07); padding: 18px 22px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--text); line-height: 1.7; margin: 28px 0; }
+  .post-body blockquote { margin: 22px 0; padding: 16px 22px; background: #f6f5f1; border-left: 3px solid var(--dark-3); border-radius: 0 8px 8px 0; }
+  .post-body blockquote p { margin: 0; font-size: 15.5px; color: var(--dark); line-height: 1.7; }
+  .post-body blockquote cite { display: block; margin-top: 10px; font-size: 13px; font-style: normal; color: var(--muted); }
+  .post-author { max-width: 720px; margin: 20px auto 0; padding: 24px 20px; display: flex; gap: 16px; align-items: flex-start; border-top: 1px solid var(--line); }
+  .post-author img { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .pa-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .pa-bio { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+  .post-related { max-width: 720px; margin: 0 auto; padding: 10px 20px 60px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://nearfront.com/assets/guillermo-bravo.jpg",
+        "width": 520,
+        "height": 520
+      },
+      "headline": "Tracking and attribution for dispensaries",
+      "description": "A call in Google's reporting is a click on the call button, not a conversation. Here is what each metric actually counts and where the chain to revenue breaks.",
+      "url": "https://nearfront.com/dispensary-tracking-attribution/",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "author": {
+        "@type": "Person",
+        "name": "Guillermo Bravo",
+        "url": "https://nearfront.com/about-us/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://nearfront.com/#org",
+        "name": "Nearfront",
+        "url": "https://nearfront.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nearfront.com/assets/logo.svg"
+        }
+      },
+      "mainEntityOfPage": "https://nearfront.com/dispensary-tracking-attribution/",
+      "about": {
+        "@id": "https://nearfront.com/services/cannabis-dispensary-seo/#service"
+      },
+      "citation": [
+        "https://support.google.com/business/answer/9918094",
+        "https://developers.google.com/analytics/devguides/collection/protocol/ga4",
+        "https://support.google.com/business/answer/7091",
+        "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+        "https://support.google.com/webmasters/answer/7042828"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Google tell me how many calls my dispensary got?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It tells you how many people tapped the call button, which is not the same thing. Google's definition is explicit: calls are \"the number of times a customer clicked on the call button on your Business Profile\". Whether the call connected, how long it lasted, whether anyone answered and whether the caller bought anything are all outside that metric. Closing that gap needs call tracking on your own line, not a better reading of the profile report."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I tell how many people actually visited after asking for directions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not from anything Google publishes. Direction requests count people who asked, and Google says it filters multiple taps, cancelled requests and spam out of that number, which makes it cleaner than raw taps. It still stops at the request. Nobody outside Google can connect a direction request to an arrival, and we publish no estimate of the conversion rate between them because none exists that meets our sourcing standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do my Google Business Profile numbers not match my website analytics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because they count different things on different rules. Google says a profile view counts unique visitors and that a person is counted only once a day no matter how many times they look, and that someone using several devices may be counted a limited number of times. Website analytics counts sessions and events on your own site. Those two populations overlap without matching, and no reconciliation method makes them agree. Track each against itself over time rather than against each other."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I connect an in-store purchase back to a search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through server-side events, with a documented limit. Google names \"tie online to offline behavior\" as a use case for the GA4 Measurement Protocol. The catch is the join key: Measurement Protocol events are matched to online behavior using client_id, so an event sent by a system that never met the visitor arrives without a source and lands as direct traffic. That is a real limit rather than a configuration mistake, and it is why a server-recovered conversion should be a separate event rather than merged into your main one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should a dispensary actually report each month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four things, in this order: profile actions (calls, direction requests, website clicks, menu clicks), map position sampled across the area you serve rather than at your own address, orders and revenue from your point of sale split by new and returning, and Search Console impressions and clicks by query family. Rankings alone are an input. Google states there is no way to request or pay for a better local ranking, so a report that only shows positions is describing an input you cannot buy and an outcome it never measured."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a rank tracking tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A grid is useful for seeing where your visibility stops, and it is worth knowing whose number it is. Google publishes no grid metric and no share-of-voice metric, and it states that third-party tools have no access to its internal ranking data and that none is approved by Google. So a grid is a measurement your agency takes of Google's output, not a figure Google issues. Use it for direction, and judge the work on profile actions and revenue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my profile's search terms report always out of date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because it is monthly by design. Google says the searches metric \"is updated at the start of each month\" and \"might take up to 5 days to show up\". If you are checking search terms mid-month you are reading the previous month. Search Console is the daily-ish view; the profile's search terms are the monthly one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my profile is not verified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then you have no measurement at all. Google states that performance data is available only for verified Business Profiles. Verification is not just a visibility question; an unverified or suspended profile stops reporting, which means a suspension costs you the record of what was happening before it."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nearfront.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tracking and attribution for dispensaries",
+          "item": "https://nearfront.com/dispensary-tracking-attribution/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFLQTMGP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Primary">
+  <a href="/" class="nav-logo" aria-label="Nearfront home">
+    <svg width="32" height="32" viewBox="18.59 55 148 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="ng" x1="18.59" y1="98.33" x2="165.86" y2="98.33" gradientUnits="userSpaceOnUse"><stop offset=".24" stop-color="#ae8d49"/><stop offset=".48" stop-color="#c3a25d"/></linearGradient></defs>
+      <polygon fill="url(#ng)" points="18.59 138.8 65.01 58.82 78.02 81.6 71.11 94.05 64.58 84.68 40.95 126.35 57.71 126.44 96.9 58.15 165.86 57.79 158.01 70.72 104.6 71.18 64.58 138.87 18.59 138.8"/>
+      <polygon fill="#c3a25d" points="82.94 118.54 90.38 106.51 96.4 116.45 112.53 88.92 138.51 88.92 131.46 101.72 119.32 101.72 96.48 142.21 82.94 118.54"/>
+      <polygon fill="#c3a25d" points="142.61 89.22 150.15 89.22 143.15 102.03 135.44 102.03 142.61 89.22"/>
+    </svg>
+    <span>Nearfront</span>
+  </a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
+  <div class="nav-links" id="nav-menu">
+    <a href="/services/">Services</a>
+    <a href="/about-us/">About</a>
+    <a href="/seo-rockstars-podcast/">Podcast</a>
+        <a href="https://app.nearfront.com/login" class="nav-login">Log In</a>
+    <a href="/get-started/" class="nav-cta">Get Ranked Free</a>
+  </div>
+</nav>
+<main id="main">
+
+<div class="post-hero">
+  <div class="post-hero-inner fade-up">
+    <span class="svc-kicker">Dispensary local SEO playbook &middot; Spoke 13</span>
+    <h1>Tracking and attribution for dispensaries</h1>
+    <p class="post-meta">By <a href="/about-us/">Guillermo Bravo</a> &middot; September 8, 2026 &middot; 11 min read &middot; <a href="/services/cannabis-dispensary-seo/#menu-pos">&larr; Dispensary SEO service</a></p>
+  </div>
+</div>
+
+<article class="post-body fade-up">
+<p>Here is the sentence that should change how you read every dispensary report you have ever been sent.</p>
+
+<blockquote>
+<p>Calls: The number of times a customer clicked on the call button on your Business Profile.</p>
+<cite>Google Business Profile Help, read September 8, 2026</cite>
+</blockquote>
+
+<p>A call, in the number your agency shows you, is a button press. Not a connected call. Not a conversation. Not a customer. Every other metric in that report works the same way, and once you know the definitions, most dispensary reporting reads differently.</p>
+
+<div class="takeaway">Google counts taps and views, and says so plainly in its own documentation. The job of attribution is building the bridge from those taps to money, and the honest version of this page tells you the two places that bridge cannot be built: nobody can connect a direction request to an arrival, and nobody can tell you whether a call connected.</div>
+
+<h2 id="definitions">What Google actually counts</h2>
+
+<p>Straight from <a href="https://support.google.com/business/answer/9918094" rel="noopener">Google's Business Profile performance documentation</a>, quoted rather than summarized, because the wording is the point.</p>
+
+<ul>
+  <li><strong>Calls</strong> are clicks on the call button. Google adds that you must "add your phone number to track this metric".</li>
+  <li><strong>Directions</strong> are people who asked. Google says it changed how it counts them "to account for: Multiple taps. Direction request cancellation. Spam", so the number is filtered and still stops at the request.</li>
+  <li><strong>Views</strong> count unique people, not impressions: "A person can only be counted once a day. We don't count multiple visits on the same day." Someone who checks you on a phone and a laptop "can be counted a limited number of times".</li>
+  <li><strong>Menu clicks</strong> are counted "per user, per day", covering menu photos, menu links and structured menu data. A customer who checks your menu four times before driving over counts once.</li>
+  <li><strong>Website clicks</strong> are clicks on the website link. That one is what it sounds like.</li>
+  <li><strong>Searches</strong>, the terms people used, are "updated at the start of each month" and "might take up to 5 days to show up".</li>
+</ul>
+
+<p>Two more that shape everything above. Performance data "is available only for verified Business Profiles", so an unverified or suspended profile reports nothing at all. And the data "includes views, searches, and actions from both organic search results and Google Ads", which for a dispensary is mostly academic since the ads are prohibited, but it does mean the metric is not an organic metric by definition.</p>
+
+<p>None of this is Google being evasive. It is Google being precise, and the precision is available to anyone who reads the help page. Almost nobody selling dispensary reporting does.</p>
+
+<h2 id="three">Three systems, three different views</h2>
+
+<p>A dispensary has three sources of truth and they do not agree, for reasons that are structural rather than fixable.</p>
+
+<p><strong>The Business Profile</strong> sees the map surface: how people found the profile and what they tapped. This is where a Map Pack ranking actually cashes out, and it is invisible to your website analytics because most of those actions never touch your site. Someone who searches, taps directions and drives over is a complete customer journey with zero website sessions.</p>
+
+<p><strong>Search Console</strong> sees your website in Google's results: impressions, clicks, average position by query and page. It is the only first-party view of what Google is willing to show you for, and <a href="/dispensary-keyword-research/">the keyword research spoke</a> covers what it does and does not name.</p>
+
+<p><strong>Your analytics and point of sale</strong> see behavior on your property and the money. This is the only one that contains revenue, and it is the one most local reporting leaves out.</p>
+
+<p>The mistake is trying to make these reconcile. Profile views count a person once a day; analytics counts sessions; the point of sale counts transactions. Track each against its own history and stop trying to make the columns tie.</p>
+
+<h2 id="breaks">Where the chain breaks, specifically</h2>
+
+<p>Two breaks, and both are worth naming because vendors routinely paper over them.</p>
+
+<p><strong>The direction request to the door.</strong> Nobody outside Google can tell you who arrived. There is no dispensary-grade store-visit measurement we can point at, and any conversion rate you are quoted between direction requests and visits is an assumption wearing a number. The honest workaround is a proxy you control: ask at the counter, or watch whether direction requests and same-day transactions move together over months. Correlation across a long enough window is not attribution, and it is better than a made-up rate.</p>
+
+<p><strong>The call button to the sale.</strong> Google counts the tap. Whether anyone answered, how long the call lasted and whether it ended in an order are all outside the metric. Call tracking on your own line closes that gap, with one caution carried from <a href="/dispensary-multi-location-seo/">the multi-location spoke</a>: Google requires a profile's phone number to be "the single, authoritative phone number ... verifiable by the business owner", and whether a tracking number satisfies that is not addressed anywhere in Google's documentation. We flag it as an open question rather than recommending around it.</p>
+
+<p>There is a third, softer break specific to this industry: if your menu lives inside a third-party widget, the behavior inside it belongs to that platform's reporting. What each menu provider counts, and how, is something we cannot verify without account access, so this page tells you what to ask them rather than characterizing their numbers.</p>
+
+<h2 id="offline">Tying the offline part back, and its documented limit</h2>
+
+<p>Google names the mechanism. Among the uses of the <a href="https://developers.google.com/analytics/devguides/collection/protocol/ga4" rel="noopener">GA4 Measurement Protocol</a> it lists "Tie online to offline behavior" and "Send events that happen outside standard user-interaction, like offline conversions".</p>
+
+<p>Then it names the limit, which is the part that matters:</p>
+
+<blockquote>
+<p>Advertising identifiers ... are automatically joined with Measurement Protocol events using client_id or app_instance_id.</p>
+<cite>Google Analytics, Measurement Protocol for GA4</cite>
+</blockquote>
+
+<p>The join key is the visitor's own identifier. A system that never met the visitor, a nightly job reading your point of sale, a booking calendar, a call log, has no <code>client_id</code> to send. So the event arrives with no source attached and lands as direct traffic. That is not a misconfiguration, it is the documented behavior, and it has three practical consequences.</p>
+
+<ul>
+  <li><strong>Keep server-recovered conversions as their own event.</strong> Merging an unattributable count into your main conversion silently poisons every channel report you run afterwards.</li>
+  <li><strong>Do not build the whole stack server-side.</strong> Google's own words: "While it's possible to send events to Google Analytics solely with the Measurement Protocol, only partial reporting may be available. The purpose of the Measurement Protocol is to augment existing events."</li>
+  <li><strong>Watch for derived events.</strong> Google states that "Rules for generating or renaming events aren't triggered by events sent with the Measurement Protocol." If your conversion is created by a tag-manager rule from a raw event, sending that raw event server-side means the conversion never fires.</li>
+</ul>
+
+<p>One more small trap in the same documentation: if device information is not sent, it "defaults to desktop for Web streams", which quietly skews a device report nobody thinks to question.</p>
+
+<h2 id="ourselves">What this looks like on our own site, gaps included</h2>
+
+<p>We publish our own numbers monthly, so it would be strange to write this page without saying where our own measurement is incomplete.</p>
+
+<p>Our lead form fires a browser event on success, and the conversion is derived from it in the tag manager rather than sent directly. Booking completion is the interesting one: Google publishes no event API for its appointment scheduling, so a booked call cannot be observed in the browser at all. We recover the count server-side from the calendar feed instead and send it as a separate event, which lands as direct for exactly the <code>client_id</code> reason above. That separation is deliberate and it is why our booking count is never merged into our lead count.</p>
+
+<p>The gap: that job needs two environment secrets that are not set yet, so as of today our own north-star number is dormant. It is on the owner's list, it is written down in our tracking strategy document, and we would rather say so on a page about measurement than imply our own house is finished. <a href="/how-we-rank-ourselves/">Our transparency page</a> carries the numbers that do exist.</p>
+
+<h2 id="instead">What to report instead of rankings</h2>
+
+<p>Rankings are an input. <a href="https://support.google.com/business/answer/7091" rel="noopener">Google</a> states there is "no way to request or pay for a better local ranking", and <a href="https://developers.google.com/search/docs/fundamentals/do-i-need-seo" rel="noopener">separately</a> that third-party tools "don't have access to Google's internal ranking data" and that none is "approved by Google Search". A report made only of positions is describing an input, measured by an instrument nobody validates, against an outcome it never looked at.</p>
+
+<p>Report these four instead, every month, in this order.</p>
+
+<ol>
+  <li><strong>Profile actions.</strong> Calls, direction requests, website clicks and menu clicks, downloaded from the profile rather than retyped. Google supports exporting these to a spreadsheet, and multi-location operators can export several profiles at once. If your columns come back full of asterisks, downloads are not enabled on those profiles yet.</li>
+  <li><strong>Position across the trade area.</strong> Sampled from where customers actually are, since distance is measured from the searcher. Label it as your measurement, not Google's.</li>
+  <li><strong>Revenue from the point of sale,</strong> split by new and returning. This is the column that makes the rest of the report an argument rather than a slide.</li>
+  <li><strong>Search Console by query family,</strong> with families defined before you look at the data so it cannot flatter you afterwards.</li>
+</ol>
+
+<h2 id="checklist">The working checklist</h2>
+
+<ol>
+  <li><strong>Verify the profile</strong> or nothing else on this list produces data.</li>
+  <li><strong>Add the phone number to the profile,</strong> which Google notes is required for the calls metric to exist.</li>
+  <li><strong>Export profile performance monthly</strong> rather than screenshotting it, and enable downloads if you manage several locations.</li>
+  <li><strong>Stop calling button taps "calls"</strong> in your own reporting, and rename the row.</li>
+  <li><strong>Decide the call-tracking question deliberately,</strong> knowing Google's authoritative-number rule and that the interaction is undocumented.</li>
+  <li><strong>Keep server-recovered conversions as separate events</strong> from browser conversions.</li>
+  <li><strong>Check whether any conversion is derived by a rule</strong> before sending its raw event server-side.</li>
+  <li><strong>Send device information</strong> with server events so the report does not default everything to desktop.</li>
+  <li><strong>Define query families in advance</strong> and report core separately from anything you no longer sell.</li>
+  <li><strong>Put revenue in the report.</strong> If it is not there, the report is not finished.</li>
+</ol>
+
+<h2 id="faq">Frequently asked questions</h2>
+  <div class="svc-faq-item"><h3>Does Google tell me how many calls my dispensary got?</h3><p>It tells you how many people tapped the call button, which is not the same thing. Google's definition is explicit: calls are "the number of times a customer clicked on the call button on your Business Profile". Whether the call connected, how long it lasted, whether anyone answered and whether the caller bought anything are all outside that metric. Closing that gap needs call tracking on your own line, not a better reading of the profile report.</p></div>
+  <div class="svc-faq-item"><h3>Can I tell how many people actually visited after asking for directions?</h3><p>Not from anything Google publishes. Direction requests count people who asked, and Google says it filters multiple taps, cancelled requests and spam out of that number, which makes it cleaner than raw taps. It still stops at the request. Nobody outside Google can connect a direction request to an arrival, and we publish no estimate of the conversion rate between them because none exists that meets our sourcing standard.</p></div>
+  <div class="svc-faq-item"><h3>Why do my Google Business Profile numbers not match my website analytics?</h3><p>Because they count different things on different rules. Google says a profile view counts unique visitors and that a person is counted only once a day no matter how many times they look, and that someone using several devices may be counted a limited number of times. Website analytics counts sessions and events on your own site. Those two populations overlap without matching, and no reconciliation method makes them agree. Track each against itself over time rather than against each other.</p></div>
+  <div class="svc-faq-item"><h3>How do I connect an in-store purchase back to a search?</h3><p>Through server-side events, with a documented limit. Google names "tie online to offline behavior" as a use case for the GA4 Measurement Protocol. The catch is the join key: Measurement Protocol events are matched to online behavior using client_id, so an event sent by a system that never met the visitor arrives without a source and lands as direct traffic. That is a real limit rather than a configuration mistake, and it is why a server-recovered conversion should be a separate event rather than merged into your main one.</p></div>
+  <div class="svc-faq-item"><h3>What should a dispensary actually report each month?</h3><p>Four things, in this order: profile actions (calls, direction requests, website clicks, menu clicks), map position sampled across the area you serve rather than at your own address, orders and revenue from your point of sale split by new and returning, and Search Console impressions and clicks by query family. Rankings alone are an input. Google states there is no way to request or pay for a better local ranking, so a report that only shows positions is describing an input you cannot buy and an outcome it never measured.</p></div>
+  <div class="svc-faq-item"><h3>Do I need a rank tracking tool?</h3><p>A grid is useful for seeing where your visibility stops, and it is worth knowing whose number it is. Google publishes no grid metric and no share-of-voice metric, and it states that third-party tools have no access to its internal ranking data and that none is approved by Google. So a grid is a measurement your agency takes of Google's output, not a figure Google issues. Use it for direction, and judge the work on profile actions and revenue.</p></div>
+  <div class="svc-faq-item"><h3>Why is my profile's search terms report always out of date?</h3><p>Because it is monthly by design. Google says the searches metric "is updated at the start of each month" and "might take up to 5 days to show up". If you are checking search terms mid-month you are reading the previous month. Search Console is the daily-ish view; the profile's search terms are the monthly one.</p></div>
+  <div class="svc-faq-item"><h3>What if my profile is not verified?</h3><p>Then you have no measurement at all. Google states that performance data is available only for verified Business Profiles. Verification is not just a visibility question; an unverified or suspended profile stops reporting, which means a suspension costs you the record of what was happening before it.</p></div>
+</article>
+  <div class="post-author">
+    <img src="/assets/guillermo-bravo.jpg" alt="Guillermo Bravo" width="56" height="56" loading="lazy">
+    <div>
+      <div class="pa-name">Guillermo Bravo</div>
+      <div class="pa-bio">Founder &amp; CEO of Nearfront. In SEO since 2007. Founded Foottraffik, the first cannabis-focused SEO company, and exited in 2021. Hosts the SEO Rockstars podcast.</div>
+    </div>
+  </div>
+
+<div class="post-related">
+  <div class="svc-related">
+      <a href="/dispensary-google-business-profile/">The Business Profile guide</a>
+      <a href="/dispensary-keyword-research/">Keyword research for dispensaries</a>
+      <a href="/how-we-rank-ourselves/">Our own numbers, published monthly</a>
+      <a href="/dispensary-seo/">What dispensary SEO is</a>
+  </div>
+</div>
+
+<section class="svc-cta">
+  <div class="svc-cta-inner fade-up">
+    <h2>Want a report that ends in revenue?</h2>
+    <p>Start with a free data audit. We pull your profile actions, sample your map position across the area you serve, and show you exactly which parts of the chain to your point of sale are instrumented and which are guesswork.</p>
+    <a href="/get-started/" class="btn-primary" style="font-size:15px;padding:16px 40px">Get Ranked Free</a>
+  </div>
+</section>
+
+</main>
+<aside aria-label="Related reading" style="background:var(--dark);border-top:1px solid var(--border);padding:48px 40px">
+  <div style="max-width:var(--maxw);margin:0 auto">
+    <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)">Related reading</span>
+    <div style="display:flex;flex-wrap:wrap;gap:16px 32px;margin-top:18px;font-size:15px">
+      <a href="/dispensary-marketing/" style="color:var(--gold);font-weight:600">Dispensary Marketing →</a><a href="/blog/dispensary-near-me-map-pack/" style="color:var(--gold);font-weight:600">The Map Pack, explained →</a><a href="/services/cannabis-dispensary-seo/" style="color:var(--gold);font-weight:600">Cannabis Dispensary SEO →</a>
+    </div>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Nearfront<br>550 W B St, 4th Floor, San Diego, CA 92101 · <a href="tel:+17608292735" style="color:var(--gold)">(760) 829-2735</a></span>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/services/">Services</a>
+    <a href="/about-us/">About</a>
+    <a href="/seo-rockstars-podcast/">Podcast</a>
+    <a href="/get-started/">Get Started</a>
+    <a href="/blog/">Blog</a>
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="/master-subscription-agreement/">Terms (MSA)</a>
+  </nav>
+</footer>
+<script src="/assets/site.js?v=6" defer></script>
+</body>
+</html>

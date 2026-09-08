@@ -1,0 +1,187 @@
+{
+  "spoke": 13,
+  "slug": "dispensary-tracking-attribution",
+  "phase": "Phase 3, playbook silo, final spoke",
+  "updated": "2026-09-08",
+  "status": "drafted, awaiting promotion",
+  "component_anchor": "#menu-pos",
+  "method": "Google's Business Profile performance documentation and its GA4 Measurement Protocol documentation read in full on 2026-09-08. The metric definitions are quoted rather than paraphrased because the whole page rests on what the words actually mean.",
+  "thesis": "Every number a dispensary is shown is a click or a view, and Google's own definitions say so. A call is a click on the call button, not a connected call. A direction request is not a visit. The work is building the bridge from those clicks to revenue, and the honest version of this page admits the two places the bridge cannot be built.",
+  "facts": [
+    {
+      "id": "ta-calls-are-clicks",
+      "label": "A call is a click on the call button, not a connected call",
+      "rule": "Calls: The number of times a customer clicked on the call button on your Business Profile. Add your phone number to track this metric.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "THE DEFINITION THAT MATTERS MOST AND IS ALMOST NEVER STATED. Google counts the tap, not the conversation. A store reporting 'calls from Google' is reporting button presses, and the gap between a press and a person who bought something is the entire subject of this page.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ta-directions-dedup",
+      "label": "Direction requests are deduplicated against taps, cancellations and spam",
+      "rule": "Directions: How many people asked for directions to your business. To better represent this metric, we changed how we count unique directions requests to account for: Multiple taps. Direction request cancellation. Spam.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "Google says it filters multiple taps, cancelled requests and spam. So the number is cleaner than raw taps and still is not a visit: nobody counts who actually arrived.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ta-views-once-per-day",
+      "label": "Views are unique people per day, not impressions",
+      "rule": "Views: How many people viewed your Business Profile on Search and Maps. This number of views might be lower than the number of views you find on your Business Profile and email notifications. The metric counts the number of unique visitors who viewed your profile. A user can be counted a limited number of times if they visit your Business Profile on multiple devices, such as desktop or mobile, and platforms, such as Maps or Search. A person can only be counted once a day. We don't count multiple visits on the same day. This metric only counts the views of your Business Profile and not the overall views of your business on Google.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "Explains why profile views never reconcile with Search Console impressions and why month-on-month comparisons across a device mix shift for reasons that have nothing to do with your marketing.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ta-menu-clicks-dedup",
+      "label": "Menu clicks are counted per user per day",
+      "rule": "Menus: The number of times people clicked on the menu content per user, per day. It includes menu photos, menu links, and structured menu data on your Business Profile.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "Directly relevant to a dispensary, since the menu is the product. A customer who checks the menu four times in a day counts once."
+    },
+    {
+      "id": "ta-searches-monthly-lag",
+      "label": "The searches metric is monthly and lags up to five days",
+      "rule": "Searches: The search terms people used to find your business. The searches metric is updated at the start of each month. It might take up to 5 days to show up.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "A reporting cadence trap: a store checking profile search terms mid-month is reading last month's data."
+    },
+    {
+      "id": "ta-mixes-organic-and-ads",
+      "label": "Profile performance data mixes organic and paid",
+      "rule": "Performance data includes views, searches, and actions from both organic search results and Google Ads.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "Largely moot for a dispensary, which cannot run THC ads, and worth stating anyway because it means the metric is not an organic metric by definition."
+    },
+    {
+      "id": "ta-verified-only",
+      "label": "Performance data requires a verified profile",
+      "rule": "Important: Performance data is available only for verified Business Profiles.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "Chains back to spoke 1 and spoke 8: an unverified or suspended profile produces no measurement at all."
+    },
+    {
+      "id": "ta-download",
+      "label": "Performance data can be downloaded, including for multiple profiles at once",
+      "rule": "To access your data in a spreadsheet, you can download your Business Profile performance data. If you manage multiple Business Profiles, you can download performance data for multiple profiles at once in a spreadsheet to compare the performance of different locations. Tip: If you haven't enabled your profile for downloads, you might find *** in the columns of your performance spreadsheet.",
+      "source": "Google Business Profile Help, Understand your Business Profile performance and insights",
+      "source_url": "https://support.google.com/business/answer/9918094",
+      "retrieved": "2026-09-08",
+      "verify": "The practical route to a monthly record. The asterisks warning matters for multi-location operators, who otherwise export a sheet of blanks."
+    },
+    {
+      "id": "ta-mp-offline",
+      "label": "Google names tying online to offline behavior as a Measurement Protocol use case",
+      "rule": "Here are some ways to use the Measurement Protocol: Tie online to offline behavior. Measure client-side and server-side interactions. Send events that happen outside standard user-interaction, like offline conversions.",
+      "source": "Google Analytics, Measurement Protocol for GA4",
+      "source_url": "https://developers.google.com/analytics/devguides/collection/protocol/ga4",
+      "retrieved": "2026-09-08",
+      "verify": "The documented mechanism for getting an in-store or phone outcome back into the same reporting as the search that produced it.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ta-mp-join-key",
+      "label": "Server events are joined to online behavior by client_id, and without it the join does not happen",
+      "rule": "Advertising identifiers such as GBRAID/WBRAID collected during online interactions are automatically joined with Measurement Protocol events using client_id or app_instance_id. Google Analytics automatically joins the most recent geographic and device information from tagging with Measurement Protocol events using client_id or app_instance_id. If device information isn't collected by your tag, it defaults to desktop for Web streams.",
+      "source": "Google Analytics, Measurement Protocol for GA4",
+      "source_url": "https://developers.google.com/analytics/devguides/collection/protocol/ga4",
+      "retrieved": "2026-09-08",
+      "verify": "THE REASON SERVER-SIDE CONVERSIONS LOSE THEIR SOURCE. The join key is the visitor's client_id. A scheduled job that never met the visitor has no client_id, so the event lands unattributed. This is exactly why our own booking_confirmed event is separate from generate_lead rather than merged into it, and the page says so.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ta-mp-partial",
+      "label": "Measurement Protocol augments tagging rather than replacing it",
+      "rule": "While it's possible to send events to Google Analytics solely with the Measurement Protocol, only partial reporting may be available. The purpose of the Measurement Protocol is to augment existing events collected using gtag, GTM, or Firebase. Some event and parameter names are reserved for use through automatic collection and cannot be sent through the Measurement Protocol. Rules for generating or renaming events aren't triggered by events sent with the Measurement Protocol.",
+      "source": "Google Analytics, Measurement Protocol for GA4",
+      "source_url": "https://developers.google.com/analytics/devguides/collection/protocol/ga4",
+      "retrieved": "2026-09-08",
+      "verify": "Three separate traps in one paragraph. The last one bites anyone whose conversion event is derived by a tag-manager rule: send the raw event server-side and the derived conversion never fires.",
+      "weight": "load-bearing"
+    },
+    {
+      "id": "ta-no-paid-ranking",
+      "label": "There is no way to pay for local ranking, so the metrics cannot be bought either",
+      "rule": "There's no way to request or pay for a better local ranking on Google.",
+      "source": "Google Business Profile Help, Tips to improve your local ranking on Google",
+      "source_url": "https://support.google.com/business/answer/7091",
+      "retrieved": "2026-09-08",
+      "verify": "Included because the alternative to measuring outcomes is usually buying a dashboard that reports positions."
+    },
+    {
+      "id": "ta-no-tool-has-google-data",
+      "label": "No third-party tool has Google's internal data",
+      "rule": "Google doesn't evaluate or endorse third-party SEO tools, and these tools don't have access to Google's internal ranking data. Be wary of tools that claim to be \"acceptable\" or \"approved\" by Google Search.",
+      "source": "Google Search Central, Do you need an SEO?",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "retrieved": "2026-09-08",
+      "verify": "Carried from spokes 9 and 10. The ceiling on any reporting dashboard a dispensary is sold."
+    }
+  ],
+  "gaps": [
+    "CONNECTED CALLS: Google counts the tap on the call button and publishes nothing about whether the call connected, how long it lasted or what came of it. Only a call-tracking system on the store's own line can answer that, and Google separately requires the profile's phone number to be the single authoritative number verifiable by the owner, so whether a tracking number satisfies that rule is undocumented. Recorded as open on the multi-location spoke too.",
+    "STORE VISITS: nobody outside Google can tie a direction request to an arrival. There is no published dispensary-grade store-visit measurement, and this page publishes no estimate.",
+    "MENU PLATFORM ANALYTICS: what Dutchie, Jane or Treez report back and how their numbers are defined cannot be verified without account access, which is the same blocker that has kept spoke 5 unpublished since 2026-08-31. The page describes what to ask a menu provider rather than characterizing any platform's reporting.",
+    "CROSS-DEVICE: Google says a profile view counts a person once a day and that a user visiting on multiple devices may be counted a limited number of times, which means profile metrics and site analytics count different populations and will never reconcile exactly. The page states that rather than offering a reconciliation method.",
+    "OUR OWN STACK HAS OPEN ITEMS: booking completion is recovered server-side because Google publishes no event API for appointment scheduling, and that job needs two environment secrets that are not yet set, so the north-star count is dormant. Stated on the page, since a tracking page that hid its author's own measurement gaps would be worthless.",
+    "PRIVACY-DISCLOSURE ITEM HELD BACK DELIBERATELY: one tracker on this site fires without a matching privacy-policy disclosure and is scheduled for removal in the GTM cleanup. That is a compliance item to fix rather than to publicize, so it is recorded here and in the plan and is NOT published on the page. Revisit once removed."
+  ],
+  "internal_links": {
+    "out": [
+      "/services/cannabis-dispensary-seo/#menu-pos",
+      "/dispensary-google-business-profile/",
+      "/dispensary-keyword-research/",
+      "/dispensary-multi-location-seo/",
+      "/blog/dispensary-near-me-map-pack/",
+      "/how-we-rank-ourselves/",
+      "/dispensary-seo/",
+      "/get-started/"
+    ]
+  },
+  "redirect_retargets": {
+    "note": "PROTECTED FILE. This spoke is the destination the rank-tracking and reporting legacy slugs were held for, per the roadmap. Batch prepared in REDIRECT-RETARGETS-PENDING.md; needs the owner's approved _redirects batch.",
+    "to_this_spoke": [
+      "/local-search-rank-tracker/",
+      "/tag/local-search-rank-tracker/",
+      "/automated-rank-tracker/",
+      "/tag/automated-rank-tracker/",
+      "/seo-reporting-metrics/",
+      "/tag/seo-reporting-metrics/",
+      "/tag/seo-reporting/",
+      "/offline-conversion-tracking/",
+      "/tag/offline-conversion-tracking/",
+      "/how-to-track-keyword-performance/",
+      "/tag/how-to-track-keyword-performance/",
+      "/how-to-track-keyword-rankings/",
+      "/tag/how-to-track-keyword-rankings/",
+      "/best-keyword-tracking-software/",
+      "/tag/best-keyword-tracking-software/",
+      "/tag/keyword-tracking-tools/",
+      "/tag/keyword-tracking/",
+      "/tag/client-reporting/",
+      "/tag/serp-tracking/"
+    ],
+    "value": "/local-search-rank-tracker/ drew 993 impressions at average position 38.4 and /seo-reporting-metrics/ 98, both currently landing on the thin /blog/ index. Smaller than the keyword-research pool but the same argument."
+  },
+  "promotion_checklist": [
+    "Set article:published_time, JSON-LD datePublished and dateModified and the byline date to the promotion date.",
+    "Flip robots to index,follow and copy to nearfront-repo/public/dispensary-tracking-attribution/index.html.",
+    "sitemap.xml at priority 0.7, llms.txt line, llms-full.txt playbook section entry.",
+    "Money page: the #menu-pos component card can link this spoke.",
+    "Ask the owner to approve the rank-tracking retarget batch, now that its destination exists."
+  ]
+}
