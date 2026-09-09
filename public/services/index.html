@@ -104,15 +104,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ind-header p{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto}
   
   .ind-rows{display:flex;flex-direction:column;gap:12px}
-  .ind-row{display:flex;gap:12px;flex-wrap:wrap}
-  .ind-pill{display:flex;align-items:center;gap:10px;padding:16px 22px;background:var(--white);border:1px solid #e8e6df;border-radius:6px;font-size:14px;font-weight:600;color:var(--dark);transition:all .25s;cursor:default;flex:1;min-width:180px}
+  .ind-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .ind-pill{display:flex;align-items:center;gap:10px;padding:16px 22px;background:var(--white);border:1px solid #e8e6df;border-radius:6px;font-size:14px;font-weight:600;color:var(--dark);transition:all .25s;cursor:default}
   .ind-pill:hover{border-color:var(--gold);color:var(--dark)}
   .ind-pill-icon{font-size:20px;flex-shrink:0}
-  .ind-pill-label{}
+  .ind-pill-label{display:block}
   .ind-pill-sub{font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:2px}
-  .ind-pill.featured{background:var(--dark);border-color:var(--dark);color:var(--white)}
-  .ind-pill.featured:hover{border-color:var(--gold)}
-  .ind-pill.featured .ind-pill-sub{color:rgba(255,255,255,0.5)}
 
   /* CTA */
   .cta-band{background:var(--dark);padding:100px 40px;text-align:center;position:relative;overflow:hidden}
@@ -133,6 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* RESPONSIVE */
   @media (max-width:900px){
     .hero,.packages,.industries,.cta-band{padding-left:20px;padding-right:20px}
+    .ind-row{grid-template-columns:1fr}
     .cat-row{grid-template-columns:1fr 1fr}
     .cat-item:nth-child(3n){border-right:1px solid var(--border)}
     .cat-item:nth-child(2n){border-right:none}
@@ -387,9 +385,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="ind-rows fade-up">
       <div class="ind-row">
-        <div class="ind-pill featured">
-          <span class="ind-pill-icon">🌿</span>
-          <span><span class="ind-pill-label">Cannabis Dispensaries</span><span class="ind-pill-sub">The only marketed vertical · Single &amp; multi-location</span></span>
+        <div class="ind-pill">
+          <span class="ind-pill-icon">🏪</span>
+          <span><span class="ind-pill-label">Single location</span><span class="ind-pill-sub">One store against every dispensary within driving distance</span></span>
+        </div>
+        <div class="ind-pill">
+          <span class="ind-pill-icon">🏢</span>
+          <span><span class="ind-pill-label">Multi-location</span><span class="ind-pill-sub">Each store its own profile, grid and landing page, one combined report</span></span>
+        </div>
+        <div class="ind-pill">
+          <span class="ind-pill-icon">⚕️</span>
+          <span><span class="ind-pill-label">Medical or adult-use</span><span class="ind-pill-sub">Registered-patient markets and 21-and-over markets both</span></span>
         </div>
       </div>
     </div>
