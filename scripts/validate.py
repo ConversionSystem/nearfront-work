@@ -89,7 +89,7 @@ AI_TELLS = [r"\bleverag\w*", r"\bnavigat(?:e|ing) the\b", r"\bunlock\w*", r"\bde
     r"\bplethora\b", r"\bmyriad\b", r"\brealm\b", r"\bparamount\b", r"\bembark\w*", r"\bthe world of\b", r"\bbeacon\b"]
 # Hub and service pages that must carry a visible FAQ plus FAQPage. Flip HUB_FAQ_ENABLED in the
 # same commit that ships those FAQs (plan workstream C1) so the check never nags about planned work.
-HUB_FAQ_ENABLED = False
+HUB_FAQ_ENABLED = True
 HUB_FAQ_PAGES = {"/services/", "/markets/", "/about-us/", "/vs/", "/how-we-rank-ourselves/", "/get-started/", "/book/", "/seo-rockstars-podcast/"}
 # Extra evidence-bearing pages beyond /vs/<name>/ and Article pages; add /vs/ and
 # /how-we-rank-ourselves/ when their rebuilds (plan C2) give them sources to link.
@@ -1142,13 +1142,41 @@ def validate(root, args):
                 add(Finding(WARN, rel, 1, "evidence-links", "no outbound source on an evidence-bearing page",
                             "Link the document each claim came from. Competitor artifacts get rel=\"nofollow noopener\"."))
 
-        # faq-sync: the visible FAQ and the FAQPage copy must hold the same number of questions
+        # faq-sync: the visible FAQ and the FAQPage copy must hold the same questions AND the
+        # same text. Google requires the marked-up answer to match what the reader sees; a count
+        # check alone missed three answers on the money page whose linked closing sentence was
+        # visible but absent from the markup (found and fixed 2026-09-09 with plan C1).
         if '"FAQPage"' in jl:
             q = len(re.findall(r'"@type":\s*"Question"', jl))
             v = d.raw.count("svc-faq-item")
             if v and q != v:
                 add(Finding(ERROR, rel, 1, "faq-sync", "FAQPage has %d questions but the page shows %d" % (q, v),
                             "Every visible .svc-faq-item needs a matching Question in the JSON-LD, and vice versa."))
+            elif v:
+                def _flat(s):
+                    return " ".join(html_unescape(re.sub(r"<[^>]+>", "", s)).split())
+                vis = re.findall(r'<div class="svc-faq-item"><h3>(.*?)</h3>\s*<p>(.*?)</p>\s*</div>',
+                                 d.raw, re.S)
+                pairs = []
+                for blob in re.findall(r'<script type="application/ld\+json">(.*?)</script>', d.raw, re.S):
+                    try:
+                        doc = json.loads(blob)
+                    except Exception:
+                        continue
+                    for node in (doc.get("@graph", [doc]) if isinstance(doc, dict) else []):
+                        if isinstance(node, dict) and node.get("@type") == "FAQPage":
+                            for qn in node.get("mainEntity", []):
+                                pairs.append((qn.get("name", ""),
+                                              (qn.get("acceptedAnswer") or {}).get("text", "")))
+                if len(vis) == len(pairs):
+                    for (vq, va), (jq, ja) in zip(vis, pairs):
+                        for label, seen, marked in (("question", vq, jq), ("answer", va, ja)):
+                            if _flat(seen) != " ".join(html_unescape(marked).split()):
+                                add(Finding(ERROR, rel, 1, "faq-sync",
+                                            "FAQ %s text differs between the page and the JSON-LD: %s"
+                                            % (label, _flat(seen)[:70]),
+                                            "The marked-up text must match what the reader sees, "
+                                            "anchor text included."))
 
         # hub-faq: hub and service pages carry a visible FAQ (enabled with plan C1)
         if HUB_FAQ_ENABLED and url in HUB_FAQ_PAGES:

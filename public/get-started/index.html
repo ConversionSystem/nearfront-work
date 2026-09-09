@@ -54,7 +54,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "email": "bravo@nearfront.com",
       "address": { "@type": "PostalAddress", "streetAddress": "550 W B St, 4th Floor", "addressLocality": "San Diego", "addressRegion": "CA", "postalCode": "92101", "addressCountry": "US" },
       "areaServed": ["US","GB","CA","AU"]
-    }, { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearfront.com/" }, { "@type": "ListItem", "position": 2, "name": "Get Started", "item": "https://nearfront.com/get-started/" } ] } ] }
+    }, { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nearfront.com/" }, { "@type": "ListItem", "position": 2, "name": "Get Started", "item": "https://nearfront.com/get-started/" } ] },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens after I submit the form?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We pull your Google Business Profile, map your position against the dispensaries actually competing with you, and come back with a data audit. If you booked a call at the end of the form, it is already on the calendar and Google sends the reminder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the audit really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and there is no obligation to work with us afterward. It is a free data audit, not a ranking guarantee. Google's own hiring guidance says no one can guarantee a number one ranking, and we are not going to be the exception."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you need from me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your business name, your website, and your Google Business Profile. That is enough to run the audit. Anything else you want to tell us about the market is useful but not required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who will I be talking to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Guillermo Bravo, the founder. Thirty minutes on video, and the link arrives on confirmation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you do with the data I submit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It goes to bravo@nearfront.com so we can run your audit. This site also uses RB2B, a business visitor identification service, which is disclosed in full in our privacy policy, and it does not run on client reporting pages. You can opt out of that identification at any time at app.retention.com/optout."
+          }
+        }
+      ]
+    }
+  ] }
 </script>
 <style>
   /* This block loads after site.css, so the page background is set here:
@@ -694,6 +740,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if(location.search.indexOf('error=1')!==-1){document.getElementById('lead-fail').hidden=false;}
 })();
 </script>
+
+<section class="svc-alt">
+  <div class="svc-wrap fade-up">
+    <span class="svc-section-tag">FAQ</span>
+    <h2>Common questions</h2>
+      <div class="svc-faq-item"><h3>What happens after I submit the form?</h3><p>We pull your Google Business Profile, map your position against the dispensaries actually competing with you, and come back with a data audit. If you booked a call at the end of the form, it is already on the calendar and Google sends the reminder.</p></div>
+      <div class="svc-faq-item"><h3>Is the audit really free?</h3><p>Yes, and there is no obligation to work with us afterward. It is a free data audit, not a ranking guarantee. <a href="https://developers.google.com/search/docs/fundamentals/do-i-need-seo" rel="noopener" target="_blank">Google's own hiring guidance</a> says no one can guarantee a number one ranking, and we are not going to be the exception.</p></div>
+      <div class="svc-faq-item"><h3>What do you need from me?</h3><p>Your business name, your website, and your Google Business Profile. That is enough to run the audit. Anything else you want to tell us about the market is useful but not required.</p></div>
+      <div class="svc-faq-item"><h3>Who will I be talking to?</h3><p>Guillermo Bravo, the founder. Thirty minutes on video, and the link arrives on confirmation.</p></div>
+      <div class="svc-faq-item"><h3>What do you do with the data I submit?</h3><p>It goes to bravo@nearfront.com so we can run your audit. This site also uses RB2B, a business visitor identification service, which is disclosed in full in our privacy policy, and it does not run on client reporting pages. You can opt out of that identification at any time at <a href="https://app.retention.com/optout/" rel="noopener" target="_blank">app.retention.com/optout</a>.</p></div>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">

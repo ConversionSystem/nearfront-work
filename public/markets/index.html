@@ -286,6 +286,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "item": "https://nearfront.com/markets/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a market guide built?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From one machine-readable file published by the state's own regulator, parsed directly rather than quoted from somebody's summary. Every figure carries the agency name, the file it came from, the period that file covers and the date we read it. If a number cannot be sourced that way it goes into the guide's gaps list and never onto the page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the as-of date and the read-on date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The as-of date is the period the agency's own file covers. The read-on date is the day we downloaded and parsed it. They are almost never the same day, and printing only one of them is how a stale number passes for a current one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often are the guides refreshed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every state file is re-verified before its page is edited, and on a fixed quarterly sweep regardless. Tax rates and legality move mid-quarter, so a page that was correct in June can be wrong by August without anyone having touched it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are only some markets covered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A guide ships when the regulator publishes a licensee list we can actually parse, and when that data supports a finding worth reading. Where the file does not exist, or cannot isolate the city from the rest of the state, we do not build the page. Las Vegas is the standing example: there is search demand for it and no guide, because the data will not carry one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you build a guide for my market?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask us. The answer depends on what your regulator publishes rather than on how much we would like the page to exist. If the state file isolates your city, it can be built."
+          }
+        }
+      ]
     }
   ]
 }
@@ -508,6 +553,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Most agency location pages are the same page with the state name swapped. They cite nothing, date nothing, and tell an operator less than five minutes on their own state agency's website would.</p>
     <p>Ours start from a facts file per state: license counts pulled from the state cannabis authority, tax rates from the department of revenue, and local-control rules from the agency that administers them. Each fact carries a source URL and the date it was retrieved, and the page shows both. Where we cannot source something, the guide says so rather than filling the gap with a confident-sounding number.</p>
     <p>That discipline is not decoration. Cannabis tax rates and license counts change mid-year, and we have already found a state tax page publishing a rate its own agency had superseded a year earlier. A statistic with no date is a statistic you cannot act on.</p>
+  </div>
+</section>
+
+
+<section class="svc-alt">
+  <div class="svc-wrap fade-up">
+    <span class="svc-section-tag">FAQ</span>
+    <h2>Common questions</h2>
+      <div class="svc-faq-item"><h3>How is a market guide built?</h3><p>From one machine-readable file published by the state's own regulator, parsed directly rather than quoted from somebody's summary. Every figure carries the agency name, the file it came from, the period that file covers and the date we read it. If a number cannot be sourced that way it goes into the guide's gaps list and never onto the page.</p></div>
+      <div class="svc-faq-item"><h3>What is the difference between the as-of date and the read-on date?</h3><p>The as-of date is the period the agency's own file covers. The read-on date is the day we downloaded and parsed it. They are almost never the same day, and printing only one of them is how a stale number passes for a current one.</p></div>
+      <div class="svc-faq-item"><h3>How often are the guides refreshed?</h3><p>Every state file is re-verified before its page is edited, and on a fixed quarterly sweep regardless. Tax rates and legality move mid-quarter, so a page that was correct in June can be wrong by August without anyone having touched it.</p></div>
+      <div class="svc-faq-item"><h3>Why are only some markets covered?</h3><p>A guide ships when the regulator publishes a licensee list we can actually parse, and when that data supports a finding worth reading. Where the file does not exist, or cannot isolate the city from the rest of the state, we do not build the page. Las Vegas is the standing example: there is search demand for it and no guide, because the data will not carry one.</p></div>
+      <div class="svc-faq-item"><h3>Can you build a guide for my market?</h3><p>Ask us. The answer depends on what your regulator publishes rather than on how much we would like the page to exist. If the state file isolates your city, it can be built.</p></div>
   </div>
 </section>
 
