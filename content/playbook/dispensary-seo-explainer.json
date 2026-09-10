@@ -115,14 +115,14 @@
       "id": "ex-four-differences",
       "label": "The four documented constraints that separate dispensary SEO from ordinary local SEO",
       "value": [
-        "No paid channel: Google Ads disallows ads for substances that alter mental state for recreation (mp-ads-prohibited)",
+        "No Google ads: Google Ads disallows ads for substances that alter mental state for recreation (mp-ads-prohibited)",
         "Cannabis is named in Google's Business Profile eligibility guidelines, so a delivery-only operation with no storefront is not eligible as a service-area business (gbp-cannabis-sab)",
         "Profile product listings run under Shopping policy, which prohibits recreational drugs and psychoactive substances (gbp-products-shopping plus gbp-shopping-drugs)",
         "schema.org has no cannabis or dispensary type, enumerated firsthand across all 29 Store sub-types (sc-no-cannabis-type)"
       ],
       "source": "gbp.json, map-pack.json, schema.json",
       "retrieved": "2026-09-08",
-      "verify": "All four are documented by Google or enumerated firsthand. The restricted-content rule (gbp-restricted-content) is deliberately NOT counted as a fifth, because Google does not name cannabis in that list; the page states the rule with that caveat attached.",
+      "verify": "All four are documented by Google or enumerated firsthand. The restricted-content rule (gbp-restricted-content) is deliberately NOT counted as a fifth, because Google does not name cannabis in that list; the page states the rule with that caveat attached. The first item read 'No paid channel' until 2026-09-10, when it was corrected on the page and here: marketplace placement is a paid channel a dispensary can buy (weedmaps-alternative.json wa-auction-fixed-inventory), so the constraint is Google's ads, not paid channels in general.",
       "weight": "load-bearing"
     }
   ],

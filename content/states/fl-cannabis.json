@@ -82,7 +82,8 @@
     "Qualified physician count: the weekly update links a physician list rather than printing a total. Fetch the list page if the number is needed.",
     "Adult use: Florida remains medical only at retrieval. Do not describe it as adult-use or predict a ballot outcome.",
     "This file covers the OMMU cannabis programme only. Florida hemp is a separate FDACS programme with its own file (fl-hemp.json); never merge the two sets of numbers.",
-    "City counts come from the live MMTC address list and carry that day's date, while volumes come from the dated weekly PDF. The two have different currencies; never pair a city count with a weekly volume as though they describe the same moment."
+    "City counts come from the live MMTC address list and carry that day's date, while volumes come from the dated weekly PDF. The two have different currencies; never pair a city count with a weekly volume as though they describe the same moment.",
+    "Miami guide population claims are uncited: \"Florida's biggest metro is its thinnest\" (meta) and \"Florida's largest county is not its largest cannabis market\" (og and twitter). The county location counts are sourced (fl-city-counts verify: Palm Beach 56, Pinellas 54, Hillsborough 52, Orange 51, Lee 43, Duval 40, Miami-Dade 39), but the population ranking and any per-person thinness are not on file. Flagged, not changed, in the 2026-09-10 paid-channel and superlatives sweep. Record Census county populations (read in a browser) or reword to the location counts alone."
   ],
   "cities": [
     "Orlando",

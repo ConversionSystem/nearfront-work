@@ -83,7 +83,8 @@
   "gaps": [
     "Legalization and first-sale dates: Measure 91 (2014) and the start of recreational sales need a primary OLCC or Oregon Secretary of State citation before either appears on the page.",
     "Municipal opt-out count: OLCC publishes opted-out cities and counties. Pull the current list before writing the opt-out sentence.",
-    "Per-city retailer counts for Portland, Eugene, Salem, Bend: needed for city pages. OLCC publishes an active-licenses file that can be grouped by city."
+    "Per-city retailer counts for Portland, Eugene, Salem, Bend: needed for city pages. OLCC publishes an active-licenses file that can be grouped by city.",
+    "Population figures on the Oregon and Portland guides are uncited: Oregon \"roughly four million people\", Portland \"roughly 650,000 people\", and Brooklyn serving \"about four times that population\" in Portland's FAQ. Portland's body adds Brooklyn at \"roughly 2.7 million people\" and \"four times the population\", and the /markets/ hub card says \"a city a quarter of Brooklyn's size\". Flagged, not changed, in both 2026-09-10 sweeps (template overclaims, then paid-channel claims and superlatives). Record them from Census (QuickFacts returns 403 to scripts; read it in a browser) before the next refresh, or cut them."
   ],
   "cities": [
     {
