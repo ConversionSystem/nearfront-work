@@ -20,6 +20,7 @@ import json
 import os
 import re
 from html import unescape as html_unescape
+import collections
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -1062,6 +1063,98 @@ def validate(root, args):
                                 "Vary the statistics selected, the questions answered, and the "
                                 "local detail. Threshold: warn at %d%%, fail at %d%%."
                                 % (SHINGLE_WARN * 100, SHINGLE_ERROR * 100)))
+
+    # --- repeated sentences between programmatic siblings --------------------
+    # shingle-overlap scores whole pages, so one sentence copied between two long
+    # guides barely moves the Jaccard figure and passes. This check looks only at
+    # text a change adds: an 8-word run that is new to a page and now also appears
+    # on a sibling in the same family. A run that two or more family pages already
+    # shared before the change is established template and is left alone, so a new
+    # guide built from a sibling still passes. Two real collisions got past
+    # shingle-overlap on 2026-09-10: new Los Angeles and Manhattan sentences opened
+    # with the same eight words, and a Phoenix FAQ worded a figure exactly the way
+    # the Arizona guide does. Boilerplate meant to be identical on every page goes
+    # between <!-- shared-text --> and <!-- /shared-text --> and is skipped.
+    def _rs_words(raw):
+        raw = re.sub(r"<!--\s*shared-text\s*-->.*?<!--\s*/shared-text\s*-->", " ", raw, flags=re.S | re.I)
+        txt = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
+        return re.findall(r"[a-z0-9]+", re.sub(r"<[^>]+>", " ", txt).lower())
+
+    def _rs_grams(words, n=8):
+        return {tuple(words[i:i + n]) for i in range(len(words) - n + 1)}
+
+    rs_ref = None
+    try:
+        if args.base:
+            rs_ref = subprocess.check_output(
+                ["git", "merge-base", args.base, "HEAD"],
+                cwd=root, stderr=subprocess.STDOUT).decode("utf-8", "replace").strip()
+        else:
+            subprocess.check_output(["git", "rev-parse", "--verify", "HEAD"],
+                                    cwd=root, stderr=subprocess.STDOUT)
+            rs_ref = "HEAD"
+    except Exception:
+        rs_ref = None
+
+    if rs_ref:
+        def _rs_base_raw(rel):
+            try:
+                return subprocess.check_output(
+                    ["git", "show", "%s:%s" % (rs_ref, rel)],
+                    cwd=root, stderr=subprocess.STDOUT).decode("utf-8", "replace")
+            except Exception:
+                return None
+
+        rs_ref_doc = docs.get("public/" + SHELL_REF)
+        rs_shell = _rs_grams(_rs_words(rs_ref_doc.raw)) if rs_ref_doc is not None else set()
+        rs_families = {}
+        for rel in docs:
+            u = url_for(rel).lstrip("/")
+            pre = next((p for p in GEO_PREFIXES if u.startswith(p)), None)
+            if pre and not any(x in u for x in GEO_EXCLUDE):
+                rs_families.setdefault(pre, []).append(rel)
+        for pre, fam in rs_families.items():
+            if len(fam) < 2:
+                continue
+            words_now = {r: _rs_words(docs[r].raw) for r in fam}
+            now = {r: _rs_grams(words_now[r]) - rs_shell for r in fam}
+            raw_then = {r: _rs_base_raw(r) for r in fam}
+            then = {r: (_rs_grams(_rs_words(raw_then[r])) - rs_shell) if raw_then[r] is not None else set()
+                    for r in fam}
+            then_count = collections.Counter(g for r in fam for g in then[r])
+            for p in sorted(fam):
+                if raw_then[p] is not None and raw_then[p] == docs[p].raw:
+                    continue
+                added = now[p] - then[p]
+                if not added:
+                    continue
+                for q in sorted(fam):
+                    if q == p:
+                        continue
+                    hit = {g for g in added if g in now[q] and then_count[g] <= 1}
+                    if not hit:
+                        continue
+                    w, spans, i = words_now[p], [], 0
+                    while i <= len(w) - 8:
+                        if tuple(w[i:i + 8]) in hit:
+                            j = i
+                            while j + 1 <= len(w) - 8 and tuple(w[j + 1:j + 9]) in hit:
+                                j += 1
+                            spans.append(w[i:j + 8])
+                            i = j + 1
+                        else:
+                            i += 1
+                    phrase = spans[0] if spans else list(sorted(hit)[0])
+                    shown = " ".join(phrase[:24]) + (" ..." if len(phrase) > 24 else "")
+                    more = " (and %d more)" % (len(spans) - 1) if len(spans) > 1 else ""
+                    add(Finding(ERROR, p, 1, "repeated-sentence",
+                                "new text repeats a phrase already on %s: \"%s\"%s"
+                                % (url_for(q), shown, more),
+                                "Reword it in this page's own terms. Prose repeated across geo "
+                                "pages is what Google's doorway and scaled-content policies "
+                                "describe. If the text is boilerplate meant to be identical on "
+                                "every page, wrap it in <!-- shared-text --> and "
+                                "<!-- /shared-text -->."))
 
     # --- html uploaded outside public/ -------------------------------------
     # Cloudflare Pages serves public/ and nothing else, so a page dropped
