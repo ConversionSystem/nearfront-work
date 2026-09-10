@@ -103,3 +103,7 @@ Claims map one to one. Of the 27 voice changes, 18 change wording only. Nine rep
 | V19 | "Customers in the ones that opted out already drive to Detroit" | "customers in the suburbs that opted out already drive to Detroit" | 24 | Narrower than before; still an inference, still flagged |
 | V20 | "marketing against a market that does not exist" | "Only the 67 is the current retail field" | 9, 11 | Section 2's sourced advice replaces the hyperbole |
 | V22 | "The work on this page is how a store improves its odds of being named" | "The work described below is how a store improves its odds of being named" | 40 | The same hedged claim, without the self-reference |
+
+## Shipped
+
+The 22 corrections went live on nearfront.com on 2026-09-10 in production commit 8da3dd3, on the owner's instruction and without the voice edits. They were replayed on the production page from `changes-0-first-read.md`, `changes-1-corrections.md` and `changes-1b-corrections.md`, and the result was byte-identical to `baseline.json` apart from the robots meta. Validator 0/0/0 on the whole tree and with `--base origin/main`. Deploy run 34475976955 succeeded, and the live page served every corrected sentence on the first fetch. The voice edits (`changes-2-voice.md`) stay in the work lane for review.
