@@ -111,3 +111,10 @@ The 22 corrections went live on nearfront.com on 2026-09-10 in production commit
 ## Row 27 resolved
 
 On the owner's instruction, the proof bar (200+ locations, 19K+ customer actions, 4 countries) was removed sitewide on 2026-09-10 in production commit 0c68b53. The same change removed the homepage STATS section, the /about-us/ hero figures and the 2026 timeline titles, which repeated the same unsourced figures. The Detroit draft and `baseline.json` lost the bar in work-lane commit d0f24f9, and voice_diff still passes.
+
+## Follow-ups shipped (production 42ff31d, 2026-09-10)
+
+- **Row 13, store names.** The city's active business-license list (BSEED FeatureServer, queried 2026-09-10, recorded in mi.json as `det-named-licensees`) confirms four of the seven names: UTOPIA GARDENS, LLC; HOUSE OF MARY JANE LLC; JAZZ CLUB 2, LLC; WEST COAST MEDS LLC. The page now names those four as the list gives them, dated. Viola, The Reef and Zaza Cannabis Co are not on the list by name and came off the page; the gap is recorded in mi.json.
+- **Row 30, schema.** The Service description no longer says "price compression".
+- **Row 44, "$270 million a month".** Now "$270.5 million in July 2026" in the hero, the meta description and the social descriptions, which is the one month on file.
+- The voice draft, `baseline.json` and the V1 record in `changes-2-voice.md` carry the same changes, and the change set still replays byte for byte.

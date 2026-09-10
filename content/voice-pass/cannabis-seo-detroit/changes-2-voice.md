@@ -1,13 +1,13 @@
 # Detroit, voice rewrite (human-voice pass, step 3)
 
-Applied to the fully corrected page (`baseline.json`) with `reference/voice_apply.py`, then checked with `reference/voice_diff.py check baseline.json` and the work-lane validator. Voice source: `content/brand-voice.md`. No FAQ answer and no JSON-LD is edited here. The store names in the "Who is already licensed" box are untouched pending the owner's decision (fact-check row 13).
+Applied to the fully corrected page (`baseline.json`) with `reference/voice_apply.py`, then checked with `reference/voice_diff.py check baseline.json` and the work-lane validator. Voice source: `content/brand-voice.md`. No FAQ answer and no JSON-LD is edited here. The store names in the "Who is already licensed" box sit outside this change set; on 2026-09-10 they were narrowed to the four the city's license list confirms (fact-check row 13).
 
 ## V1 hero
 Cut the stock transition ("That is the good news. The rest of the story is"). Same four figures, same claim.
 <<<
-Every eligible Michigan retail license earned its municipality a $54,017.10 excise check this year. Detroit cashed 61 of them, more than any other municipality in the state. That is the good news. The rest of the story is a market doing $270 million a month statewide at $58.95 an ounce, which means the stores that win in Detroit are not winning on price.
+Every eligible Michigan retail license earned its municipality a $54,017.10 excise check this year. Detroit cashed 61 of them, more than any other municipality in the state. That is the good news. The rest of the story is a market that sold $270.5 million statewide in July 2026 at $58.95 an ounce, which means the stores that win in Detroit are not winning on price.
 ===
-Every eligible Michigan retail license earned its municipality a $54,017.10 excise check this year. Detroit cashed 61 of them, more than any other municipality in the state. Its stores sell into a market doing $270 million a month statewide at $58.95 an ounce, where nobody wins on price.
+Every eligible Michigan retail license earned its municipality a $54,017.10 excise check this year. Detroit cashed 61 of them, more than any other municipality in the state. Its stores compete in a market that sold $270.5 million statewide in July 2026 at $58.95 an ounce, where nobody wins on price.
 >>>
 
 ## V2 source note

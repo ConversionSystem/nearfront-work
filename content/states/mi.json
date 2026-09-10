@@ -159,6 +159,18 @@
       "as_of": "2026-08-24",
       "retrieved": "2026-08-24",
       "verify": "Same capture as det-retail-licenses. 34 of Michigan's 87 statewide provisioning centers are in Detroit (39%)."
+    },
+    {
+      "id": "det-named-licensees",
+      "value": 4,
+      "unit": "named licensees confirmed",
+      "label": "Detroit marijuana facility licensees named on the Detroit guide and confirmed in the city's active business-license list",
+      "source": "City of Detroit BSEED, Business Licenses (Current), ArcGIS FeatureServer layer bseed_active_business_licenses",
+      "source_url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_active_business_licenses/FeatureServer/0/query?where=license_type='Medical Marijuana Facility License'&outFields=*&f=json",
+      "as_of": "2026-09-10",
+      "retrieved": "2026-09-10",
+      "verify": "154 rows, all license_category ServiceOperator. UTOPIA GARDENS, LLC, 6541 E Lafayette St, BUS2023-00450, expires 2026-09-30; HOUSE OF MARY JANE LLC, 19154 James Couzens Fwy, BUS2023-00255, expires 2027-09-30; JAZZ CLUB 2, LLC, 16890 Telegraph Rd, BUS2023-00429, expires 2026-09-30; WEST COAST MEDS LLC, 8620 Lyndon St, BUS2022-00297, expires 2026-09-30. The page prints the license names without the entity suffix.",
+      "note": "The dataset has one license category for every row, so it cannot say which of these are retail rather than other facility types."
     }
   ],
   "gaps": [
@@ -167,7 +179,9 @@
     "Three Detroit license counts exist and must never be mixed on a page without their dates and lenses: 61 (state Treasury, retail stores + microbusinesses, as of 2025-09-30), 67 (city dashboard KPI, retail, live query 2026-08-24), 154 (city BSEED, all facility types, 2026-08-24). Pick one per claim and date it.",
     "CRA monthly reports from March 2026 onward are .docx, earlier months .pdf; the parse method is zipfile + word/document.xml.",
     "Detroit adult-use opt-in history (2021 ordinance, litigation, first licenses): no primary document on file; do not assert dates until one is fetched.",
-    "Michigan's adult-use excise tax rate (10% statutory under MRTMA): no primary rate document on file; pages cite the Treasury distribution without asserting the rate."
+    "Michigan's adult-use excise tax rate (10% statutory under MRTMA): no primary rate document on file; pages cite the Treasury distribution without asserting the rate.",
+    "Viola, The Reef and Zaza Cannabis Co were named on the Detroit guide until 2026-09-10 but do not appear by name in the city's active business-license list (substring searches for reef, viola, vio, zaza, 2026-09-10). They may license under other legal names. Do not print them until a record ties the trade name to a license.",
+    "Michigan guide figures from the CRA July 2026 report that are not recorded here with a verify string: regional sales other than Wayne (East and Southeast $101.4M, Southwest $89.9M, Upper Lower and UP $32.3M, Mid Lower $16.4M), weights (Southwest 210,653 lb, Wayne 54,787 lb) and plant counts (336,640 immature, 499,927 vegetative, 696,985 flowering, 320,972 harvested). SEO-KPI-LEDGER.md 2026-08-25 records Southwest $89.9M, the five regions summing to the statewide total to the cent, and 1.5M active plants. The report returned HTTP 403 to a scripted request on 2026-09-10; record these from a browser-downloaded copy before the quarterly refresh."
   ],
   "cities": [
     "Detroit"
