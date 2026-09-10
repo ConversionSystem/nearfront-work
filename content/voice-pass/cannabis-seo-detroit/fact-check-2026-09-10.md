@@ -107,3 +107,7 @@ Claims map one to one. Of the 27 voice changes, 18 change wording only. Nine rep
 ## Shipped
 
 The 22 corrections went live on nearfront.com on 2026-09-10 in production commit 8da3dd3, on the owner's instruction and without the voice edits. They were replayed on the production page from `changes-0-first-read.md`, `changes-1-corrections.md` and `changes-1b-corrections.md`, and the result was byte-identical to `baseline.json` apart from the robots meta. Validator 0/0/0 on the whole tree and with `--base origin/main`. Deploy run 34475976955 succeeded, and the live page served every corrected sentence on the first fetch. The voice edits (`changes-2-voice.md`) stay in the work lane for review.
+
+## Row 27 resolved
+
+On the owner's instruction, the proof bar (200+ locations, 19K+ customer actions, 4 countries) was removed sitewide on 2026-09-10 in production commit 0c68b53. The same change removed the homepage STATS section, the /about-us/ hero figures and the 2026 timeline titles, which repeated the same unsourced figures. The Detroit draft and `baseline.json` lost the bar in work-lane commit d0f24f9, and voice_diff still passes.
