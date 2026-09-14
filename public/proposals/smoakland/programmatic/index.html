@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Smoakland - Programmatic Media Proposal | Nearfront</title>
+<style>
+  :root{
+    --forest:#1c3439;
+    --gold:#c3a25d;
+    --gold-dark:#ae8d49;
+    --cream-50:#f8f8f6;
+    --cream-100:#f1f1ee;
+    --ink:#1c3439;
+    --ink-soft:#4b5c60;
+    --line:#e3e1da;
+    --white:#ffffff;
+    --danger:#a8452f;
+    --ok:#2c6e4f;
+    --radius-sm:12px;
+    --radius-lg:18px;
+    --content-w:1140px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Neue Haas Grotesk Display","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream-50);
+    line-height:1.5;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--content-w);margin:0 auto;padding:0 28px;}
+
+  .hero{
+    background:linear-gradient(160deg,var(--forest) 0%,#152a2e 100%);
+    color:var(--cream-50);
+    padding:64px 0 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:-120px;right:-120px;
+    width:420px;height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(195,162,93,.18) 0%,rgba(195,162,93,0) 70%);
+  }
+  .hero .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,4.2vw,46px);
+    line-height:1.14;
+    margin:0 0 18px;
+    max-width:780px;
+    position:relative;
+  }
+  .hero p{
+    font-size:17px;
+    color:#cfd8d6;
+    max-width:640px;
+    margin:0 0 6px;
+    position:relative;
+  }
+  .hero .stat-row{
+    display:flex;
+    gap:36px;
+    margin-top:36px;
+    flex-wrap:wrap;
+    position:relative;
+  }
+  .hero .stat{min-width:150px;}
+  .hero .stat .num{font-size:30px;font-weight:700;color:var(--white);}
+  .hero .stat .label{font-size:12px;color:#a9bcb9;text-transform:uppercase;letter-spacing:.08em;margin-top:4px;}
+
+  .section{padding:56px 0;}
+  .section h2{font-size:26px;margin:0 0 8px;}
+  .section .lede{color:var(--ink-soft);max-width:720px;margin:0 0 32px;font-size:15.5px;}
+
+  .callout{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    border-radius:var(--radius-sm);
+    padding:22px 26px;
+    margin-bottom:24px;
+  }
+  .callout .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--gold-dark);
+    background:#faf3e4;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  .callout h3{margin:0 0 8px;font-size:18px;}
+  .callout p{margin:0;color:var(--ink-soft);font-size:15px;}
+
+  /* Honest math block */
+  .honest-block{
+    background:var(--forest);
+    color:var(--cream-50);
+    border-radius:var(--radius-lg);
+    padding:38px 36px;
+    margin-bottom:32px;
+  }
+  .honest-block .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--forest);
+    background:var(--gold);
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .honest-block h3{margin:0 0 14px;font-size:22px;color:var(--white);max-width:640px;}
+  .honest-split{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:22px 0 20px;}
+  .honest-num{background:rgba(255,255,255,.06);border-radius:14px;padding:22px;}
+  .honest-num .big{font-size:36px;font-weight:700;color:var(--gold);}
+  .honest-num .cap{font-size:13px;color:#c7d3d1;margin-top:6px;line-height:1.4;}
+  .honest-block p.body{color:#cfd8d6;font-size:15px;max-width:760px;margin:0 0 10px;}
+  .honest-block p.fix{color:var(--white);font-size:15px;max-width:760px;margin:14px 0 0;font-weight:600;}
+
+  /* Funnel row */
+  .funnel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;}
+  @media (max-width:760px){.funnel-row{grid-template-columns:1fr 1fr;}}
+  .funnel-step{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:20px 16px;
+    text-align:center;
+    position:relative;
+  }
+  .funnel-step .rank{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--cream-100);color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;margin:0 auto 12px;
+  }
+  .funnel-step h4{margin:0 0 6px;font-size:15px;}
+  .funnel-step p{margin:0;font-size:12.5px;color:var(--ink-soft);}
+  .funnel-step.current{
+    background:var(--forest);
+    border-color:var(--forest);
+  }
+  .funnel-step.current .rank{background:var(--gold);color:var(--forest);}
+  .funnel-step.current h4{color:var(--white);}
+  .funnel-step.current p{color:#c7d3d1;}
+  .funnel-step .here-badge{
+    position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--forest);
+    font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    padding:3px 9px;border-radius:999px;
+  }
+
+  /* Terms table */
+  table.rec-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    overflow:hidden;
+    font-size:14px;
+  }
+  table.rec-table th, table.rec-table td{
+    padding:13px 16px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+  }
+  table.rec-table th{
+    background:var(--cream-100);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+  table.rec-table tr:last-child td{border-bottom:none;}
+  .table-scroll{overflow-x:auto;}
+  .rate-highlight{background:#faf3e4;}
+
+  /* Distribution grid */
+  .grid-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:16px;
+  }
+  .grid-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:20px;
+  }
+  .grid-card .cat-label{
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--gold-dark);margin-bottom:10px;
+  }
+  .grid-card ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft);}
+  .grid-card ul li{margin-bottom:5px;}
+
+  .feature-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px;}
+  .feature-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:20px;position:relative;
+  }
+  .feature-card .free-tag{
+    position:absolute;top:14px;right:14px;
+    background:#e7f2ea;color:var(--ok);
+    font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    padding:3px 8px;border-radius:999px;
+  }
+  .feature-card h4{margin:0 0 6px;font-size:15px;padding-right:64px;}
+  .feature-card p{margin:0;font-size:13px;color:var(--ink-soft);}
+
+  /* Launch process */
+  .launch-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px;}
+  @media (max-width:760px){.launch-row{grid-template-columns:1fr 1fr;}}
+  .launch-step{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:20px;
+  }
+  .launch-step .rank{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--forest);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;margin-bottom:12px;
+  }
+  .launch-step h4{margin:0 0 6px;font-size:14.5px;}
+  .launch-step p{margin:0;font-size:12.5px;color:var(--ink-soft);}
+
+  /* Dashboard mock */
+  .dash-card{
+    background:var(--forest);
+    border-radius:var(--radius-lg);
+    padding:30px 32px;
+    margin-top:24px;
+  }
+  .dash-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:18px;}
+  .dash-tile{background:rgba(255,255,255,.06);border-radius:12px;padding:14px 12px;display:flex;align-items:center;gap:8px;}
+  .dash-tile .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .dash-tile .lbl{font-size:11.5px;color:#c7d3d1;text-transform:uppercase;letter-spacing:.05em;}
+  .dash-card p.note{color:#cfd8d6;font-size:14px;margin:0;max-width:680px;}
+
+  /* Bio / credibility */
+  .bio-band{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:32px 34px;
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:26px;
+    align-items:start;
+  }
+  @media (max-width:640px){.bio-band{grid-template-columns:1fr;}}
+  .bio-avatar{
+    width:96px;height:96px;border-radius:50%;
+    background:linear-gradient(160deg,var(--forest),#152a2e);
+    color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-size:32px;font-weight:700;
+  }
+  .bio-band h3{margin:0 0 4px;font-size:19px;}
+  .bio-band .role{font-size:13px;color:var(--gold-dark);font-weight:700;margin-bottom:12px;}
+  .bio-band p{margin:0 0 10px;font-size:14.5px;color:var(--ink-soft);}
+
+  .footer-cta{
+    background:var(--forest);
+    color:var(--cream-50);
+    padding:56px 0 64px;
+    text-align:center;
+  }
+  .footer-cta h2{color:var(--white);font-size:26px;margin:0 0 12px;}
+  .footer-cta p{color:#c7d3d1;max-width:520px;margin:0 auto 28px;}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14.5px;
+    text-decoration:none;
+  }
+  .btn-gold{background:var(--gold);color:var(--forest);}
+  .btn-outline{border:1px solid #4b6a67;color:var(--cream-50);}
+  .footer-note{font-size:12px;color:#8ba3a0;margin-top:28px;}
+
+  .next-teaser{
+    border:1px dashed var(--line);
+    border-radius:var(--radius-sm);
+    padding:18px 22px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    background:var(--cream-100);
+  }
+  .next-teaser .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dark);}
+  .next-teaser p{margin:4px 0 0;font-size:14px;color:var(--ink-soft);max-width:560px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Nearfront &middot; Programmatic Media Proposal</div>
+    <h1>Programmatic that tells you the truth about what it can, and can't, do for new customers.</h1>
+    <p>A suppression-first display campaign built to reach net-new customers across the Bay Area, Central Valley, Sacramento, and Southern California, with your in-house creative running the show.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">$12 CPM</div><div class="label">Starting rate</div></div>
+      <div class="stat"><div class="num">$3,000</div><div class="label">Minimum investment</div></div>
+      <div class="stat"><div class="num">~250,000</div><div class="label">Est. impressions at minimum</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">Existing customers suppressed from targeting</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h2>The honest math on programmatic and new customers</h2>
+    <p class="lede">Most media plans lead with the return on ad spend and stop there. We'd rather show you the full picture before you commit budget.</p>
+
+    <div class="honest-block">
+      <span class="tag">The Honest Math</span>
+      <h3>Programmatic can deliver a real 20x+ return on ad spend. Here's what most agencies won't tell you about where that revenue actually comes from.</h3>
+      <div class="honest-split">
+        <div class="honest-num">
+          <div class="big">20x+</div>
+          <div class="cap">Typical return on ad spend across the programmatic campaigns we've run and reconciled</div>
+        </div>
+        <div class="honest-num">
+          <div class="big">10&ndash;15%</div>
+          <div class="cap">Share of that revenue that's genuinely new customers, even with suppression applied</div>
+        </div>
+      </div>
+      <p class="body">We reconciled the numbers across every programmatic campaign we've managed or audited, spanning multiple ad platforms and joint commerce data, and the pattern holds nearly every time: suppression lists never match 100% of your existing customer base against the ad platform's identity graph, so some of that "return" is customers who would have bought anyway. That's not a Smoakland problem. It's a structural limit of the channel.</p>
+      <p class="fix">The fix: we upload your customer list securely and suppress it at launch, we monitor match rates through the flight, and we set your expectations up front instead of taking credit for revenue that was already yours.</p>
+    </div>
+
+    <h2>Where programmatic fits in your marketing mix</h2>
+    <p class="lede">For pure new-customer economics, channels rank in this order. Programmatic is real, but it's a top-of-funnel reach and brand-awareness play, not the most efficient way to buy a new customer.</p>
+    <div class="funnel-row">
+      <div class="funnel-step">
+        <div class="rank">1</div>
+        <h4>SEO</h4>
+        <p>Lowest cost per new customer once ranking. Compounds over time.</p>
+      </div>
+      <div class="funnel-step">
+        <div class="rank">2</div>
+        <h4>Google Ads</h4>
+        <p>Captures people already searching to buy. High intent, immediate.</p>
+      </div>
+      <div class="funnel-step">
+        <div class="rank">3</div>
+        <h4>Meta Ads</h4>
+        <p>Strong for new customers too, most of your audience is on Instagram, with a more direct path to conversion.</p>
+      </div>
+      <div class="funnel-step current">
+        <span class="here-badge">This proposal</span>
+        <div class="rank">4</div>
+        <h4>Programmatic</h4>
+        <p>Broad top-of-funnel reach and brand awareness at scale, not the primary new-customer engine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-100);">
+  <div class="wrap">
+    <h2>The campaign</h2>
+    <p class="lede">Terms as discussed on the call with Brian Lee.</p>
+    <div class="table-scroll">
+      <table class="rec-table">
+        <tbody>
+          <tr><th>Objective</th><td>New customer acquisition, existing customers suppressed from delivery</td></tr>
+          <tr><th>Pricing model</th><td>CPM (cost per thousand impressions)</td></tr>
+          <tr class="rate-highlight"><th>Minimum investment</th><td>$3,000.00</td></tr>
+          <tr><th>Geotargeting</th><td>Every ZIP code across your full service area, Oakland to Sacramento, built from your own city list</td></tr>
+          <tr><th>Audience</th><td>21+ cannabis consumers, existing customers suppressed via secure list upload</td></tr>
+          <tr><th>Tracking</th><td>Conversion pixel already live on smoakland.com, sitting on top of your e-commerce checkout to track every conversion</td></tr>
+          <tr><th>Creative</th><td>Provided and produced by Smoakland's in-house creative team</td></tr>
+          <tr><th>Launch timeline</th><td>Live within 24 hours of a signed IO, since creative is already in hand</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:20px;">
+      <span class="tag">Full geotargeting coverage</span>
+      <h3>Every city in your service area, targeted by ZIP</h3>
+      <div class="table-scroll">
+        <table class="rec-table" style="margin-top:12px;">
+          <tbody>
+            <tr><th>Northern California</th><td>Oakland, Fremont, Hayward, Walnut Creek, Berkeley, San Ramon, Concord, Modesto, Lathrop, Tracy, Richmond, Stockton, Palo Alto, Antioch, San Francisco, Daly City, Cupertino, Sunnyvale, Vallejo, Martinez, Livermore, Fairfield, Elk Grove, South Sacramento, Sacramento, Arden Arcade / Carmichael, Citrus Heights, Roseville / Rocklin, Folsom, San Jose, Brentwood, San Leandro, Alameda, Pittsburg, Redwood City, Manteca, Pleasanton, Rancho Cordova, Union City, San Mateo, Newark, Lodi, Castro Valley, Mountain View, Dublin, Carmichael, Danville, Yuba City, Santa Clara, North Highlands, Lincoln, Oakley, El Cerrito, South San Francisco, Rocklin, Pleasant Hill, Fair Oaks, San Rafael, San Bruno, Milpitas, Burlingame, San Pablo, El Sobrante, Menlo Park, Pinole, Novato, Benicia, Belmont, West Sacramento, Hercules, Orangevale, Antelope, Albany, Emeryville, Foster City, San Lorenzo, Turlock, Bay Point, San Carlos, Sausalito</td></tr>
+            <tr><th>Southern California</th><td>Santa Barbara, Simi Valley, Thousand Oaks, Camarillo, Oxnard, Ventura, Port Hueneme, Los Angeles, Downtown LA, Vacaville, Echo Park, Culver City, Beverly Hills, Koreatown, Santa Monica</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 style="margin-top:44px;">Choose your media mix</h2>
+    <p class="lede">Pick the ad format(s) that fit your goals. Standard Display is the recommended starting point, and the basis for the impressions estimate above, every other format is available at launch or as the campaign scales.</p>
+    <div class="table-scroll">
+      <table class="rec-table">
+        <thead>
+          <tr><th>Ad format</th><th>Rate (CPM)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="rate-highlight"><td>Standard Display <span style="color:var(--gold-dark);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;">&middot; Recommended start</span></td><td>$12</td></tr>
+          <tr><td>Premium Display</td><td>$20</td></tr>
+          <tr><td>Retargeting Display</td><td>$24</td></tr>
+          <tr><td>Rich Media</td><td>$28</td></tr>
+          <tr><td>Custom Audience Segments</td><td>Quoted individually</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede" style="margin:14px 0 0;font-size:13px;">Video Premium and Connected TV/OTT are priced and scoped separately and aren't included in this display program.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Where your ads run</h2>
+    <p class="lede">A run-of-network publisher mix at Standard Display, built from placements we've seen actually perform, not a generic network buy.</p>
+
+    <div class="callout">
+      <span class="tag">What actually converts</span>
+      <h3>Everyday utility, puzzle, and gaming apps have outperformed local news</h3>
+      <p>Across the programmatic campaigns we've run, high-frequency utility apps, puzzle and game placements, and a handful of major national sites have consistently outperformed local news placements on engagement. We'd weight the Standard Display buy toward these publishers.</p>
+    </div>
+
+    <div class="grid-card">
+      <div class="cat-label">Proven publishers, standard display</div>
+      <ul style="column-count:2;column-gap:28px;">
+        <li>CallApp: Caller ID &amp; Recording</li>
+        <li>Holy Bible: Time, Verses &amp; Audio</li>
+        <li>AOL</li>
+        <li>Sudoku.com</li>
+        <li>New York Post</li>
+        <li>The Hill</li>
+        <li>ProBuilds.net</li>
+        <li>Blitz (blitzapp.gg)</li>
+      </ul>
+    </div>
+
+    <div class="callout" style="margin-top:20px;">
+      <span class="tag">Available as an upgrade</span>
+      <h3>Want the Bay Area press specifically?</h3>
+      <p>Hyperlocal outlets like the San Francisco Chronicle, SFGate, Oaklandside, and Berkeleyside are direct/premium buys, not part of the Standard Display network above. They're available as Premium Display at $20 CPM if you want that specific placement and credibility in-market, roughly 150,000 impressions at the $3,000 minimum, versus ~250,000 on Standard Display.</p>
+    </div>
+
+    <h2 style="margin-top:44px;">Included targeting, no extra charge</h2>
+    <p class="lede">Every campaign is built on DemoGraph Targeting at no additional cost.</p>
+    <div class="feature-row">
+      <div class="feature-card">
+        <span class="free-tag">Included</span>
+        <h4>First-party data onboarding</h4>
+        <p>Your customer and suppression lists onboarded securely into the platform.</p>
+      </div>
+      <div class="feature-card">
+        <span class="free-tag">Included</span>
+        <h4>Audience demographic insights</h4>
+        <p>Real-time visibility into who's actually seeing and engaging with the campaign.</p>
+      </div>
+      <div class="feature-card">
+        <span class="free-tag">Included</span>
+        <h4>Look-alike modeling</h4>
+        <p>Once we know who converts, we can build audiences that look like them, not your existing base.</p>
+      </div>
+      <div class="feature-card">
+        <span class="free-tag">Included</span>
+        <h4>AI contextual targeting</h4>
+        <p>Placement targeting tuned to context, not just demographics, to keep spend efficient.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-100);">
+  <div class="wrap">
+    <h2>How it launches</h2>
+    <p class="lede">Once the IO is signed, there's no lengthy ramp-up. Here's what happens between signature and go-live.</p>
+    <div class="launch-row">
+      <div class="launch-step">
+        <div class="rank">1</div>
+        <h4>Geotargeting is built</h4>
+        <p>We set up every ZIP code across your full service area, Oakland to Sacramento, using your own city list.</p>
+      </div>
+      <div class="launch-step">
+        <div class="rank">2</div>
+        <h4>Audience is set</h4>
+        <p>Targeting is locked to 21+ cannabis consumers, with your existing customer list suppressed via secure upload.</p>
+      </div>
+      <div class="launch-step">
+        <div class="rank">3</div>
+        <h4>Tracking is confirmed</h4>
+        <p>The conversion pixel is already live on smoakland.com, sitting on top of checkout, so every conversion is captured from day one.</p>
+      </div>
+      <div class="launch-step">
+        <div class="rank">4</div>
+        <h4>Campaign goes live</h4>
+        <p>Because your creative is already in hand, we can launch within 24 hours of a signed IO.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:44px;">Your live dashboard</h2>
+    <p class="lede">Once the campaign is live, you get direct access to reporting, not a monthly recap email.</p>
+    <div class="dash-card">
+      <div class="dash-tiles">
+        <div class="dash-tile"><span class="dot"></span><div class="lbl">Impressions</div></div>
+        <div class="dash-tile"><span class="dot"></span><div class="lbl">Clicks</div></div>
+        <div class="dash-tile"><span class="dot"></span><div class="lbl">Click-through rate</div></div>
+        <div class="dash-tile"><span class="dot"></span><div class="lbl">Conversions</div></div>
+        <div class="dash-tile"><span class="dot"></span><div class="lbl">Spend &amp; pacing</div></div>
+        <div class="dash-tile"><span class="dot"></span><div class="lbl">ROAS</div></div>
+      </div>
+      <p class="note">Every metric updates in real time, with trend charts for the full flight so you always know where the campaign stands.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="wrap">
+    <h2>Who's running this</h2>
+    <div class="bio-band">
+      <div class="bio-avatar">GB</div>
+      <div>
+        <h3>Guillermo Bravo</h3>
+        <div class="role">Founder, Nearfront</div>
+        <p>18 years in SEO and cannabis marketing. Founded Foottraffik in 2017, the first cannabis-focused SEO company, and scaled it into a national practice before exiting to MediaJel in 2021. Founded Nearfront in 2023 to work directly with retailers again: SEO, AI visibility, Google Ads, Meta Ads, and programmatic, run by the person who built the playbook, not handed off to an account manager.</p>
+        <div class="next-teaser">
+          <div>
+            <div class="lbl">Coming next</div>
+            <p>A full local SEO audit for smoakland.com, including your city-by-city rankings across the Bay Area and Southern California, is being finalized now and will be added to this page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-cta">
+  <div class="wrap">
+    <h2>Let's launch the pilot and see the real numbers</h2>
+    <p>Zero spin, real suppression, and a partner who'll tell you exactly where the revenue is coming from.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="tel:+17608292735">Call (760) 829-2735</a>
+      <a class="btn btn-outline" href="https://calendar.app.google/uwaeqFvoBdraFccA6">Book a call</a>
+    </div>
+    <div class="footer-note">Guillermo Bravo &middot; Nearfront &middot; bravo@nearfront.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
