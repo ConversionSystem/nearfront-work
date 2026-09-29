@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Farmer's Choice New Paltz &middot; Local Search &amp; Reviews Report &middot; August 2026 &middot; Nearfront</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1c3439; --forest-deep: #111f22;
+    --gold: #c3a25d; --gold-lt: #d4b878; --gold-dim: rgba(195,162,93,.15);
+    --white: #ffffff; --off: #f5f2ed; --gray: #8a9199; --gray-lt: #e8e4dd;
+    --green: #1a6b3a; --green-bg: #eef7f0; --red: #c0392b; --red-bg: #fef0ef;
+    --radius: 10px; --shadow: 0 2px 16px rgba(28,52,57,.08);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--off); color: #111a1c; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--forest-deep); border-bottom: 1px solid rgba(195,162,93,.2); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; }
+  .nav-logo { width: 28px; height: 28px; background: var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--forest-deep); }
+  .nav-wordmark { font-size: 13px; font-weight: 600; color: var(--white); letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-sep { color: rgba(255,255,255,.2); margin: 0 8px; }
+  .nav-client { font-size: 13px; color: var(--gold); font-weight: 500; }
+  .nav-meta { font-size: 12px; color: rgba(255,255,255,.45); }
+
+  .hero { background: var(--forest); padding: 64px 32px 56px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(195,162,93,.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-inner { max-width: 960px; margin: 0 auto; position: relative; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .hero-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+  .hero-title { font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 12px; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,.55); margin-bottom: 36px; max-width: 560px; }
+  .hero-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 100px; padding: 6px 14px; font-size: 12px; color: rgba(255,255,255,.7); }
+  .hero-chip span { color: var(--gold); font-weight: 600; }
+  .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ecc71; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+
+  .page { max-width: 960px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 48px; }
+  .section-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .section-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; white-space: nowrap; }
+  .section-title { font-size: 18px; font-weight: 700; color: var(--forest); }
+  .section-rule { flex: 1; height: 1px; background: var(--gray-lt); margin-left: 12px; }
+  .section-sub { font-size: 13px; color: var(--gray); margin-top: -12px; margin-bottom: 20px; }
+
+  .mg { display: grid; gap: 12px; }
+  .mg4 { grid-template-columns: repeat(4,1fr); }
+  .mg3 { grid-template-columns: repeat(3,1fr); }
+  .mg2 { grid-template-columns: repeat(2,1fr); }
+  .metric-card { background: var(--white); border: 1px solid var(--gray-lt); border-radius: var(--radius); padding: 20px; transition: box-shadow .2s, transform .2s; }
+  .metric-card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+  .metric-card.gold-top { border-top: 3px solid var(--gold); }
+  .metric-card.green-top { border-top: 3px solid var(--green); }
+  .metric-card.red-top { border-top: 3px solid var(--red); }
+  .metric-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .metric-value { font-size: 28px; font-weight: 700; color: var(--forest); line-height: 1; margin-bottom: 10px; }
+  .metric-value.sm { font-size: 22px; }
+  .metric-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 100px; }
+  .chip.up { background: var(--green-bg); color: var(--green); }
+  .chip.down { background: var(--red-bg); color: var(--red); }
+  .chip.neutral { background: var(--gold-dim); color: var(--gold); }
+  .mperiod { font-size: 12px; color: var(--gray); }
+  .msrc { font-size: 11px; color: var(--gray); margin-top: 6px; opacity: .7; }
+
+  .hl-row { background: var(--forest); border-radius: var(--radius); padding: 28px; display: grid; grid-template-columns: repeat(3,1fr); margin-bottom: 12px; }
+  .hl-item { padding: 0 24px; border-right: 1px solid rgba(255,255,255,.08); }
+  .hl-item:first-child { padding-left: 0; }
+  .hl-item:last-child { border-right: none; }
+  .hl-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 8px; }
+  .hl-value { font-size: 32px; font-weight: 700; color: var(--white); line-height: 1; }
+  .hl-change { font-size: 13px; color: var(--gold); font-weight: 500; margin-top: 6px; }
+
+  .lf-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-lt); margin-top: 16px; }
+  .lf-table th { background: var(--forest); color: var(--white); font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 10px 12px; text-align: center; line-height: 1.5; vertical-align: top; }
+  .lf-table td { padding: 11px 12px; font-size: 13px; border-bottom: 1px solid var(--gray-lt); vertical-align: middle; }
+  .lf-table tr:last-child td { border-bottom: none; }
+  .lf-table tr:nth-child(even) td { background: #fafaf8; }
+  .solv-wrap { display: flex; align-items: center; gap: 10px; }
+  .solv-bar-bg { flex: 1; height: 6px; background: var(--gray-lt); border-radius: 100px; overflow: hidden; }
+  .solv-bar-fill { height: 100%; border-radius: 100px; transition: width 1.2s ease; }
+  .solv-pct { font-size: 12px; font-weight: 700; min-width: 42px; text-align: right; }
+  .badge { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 100px; }
+  .badge.up { background: var(--green-bg); color: var(--green); }
+  .badge.down { background: var(--red-bg); color: var(--red); }
+  .badge.neutral { background: var(--gold-dim); color: var(--gold); }
+
+  .insight { display: flex; gap: 14px; align-items: flex-start; background: #fdf8ee; border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin-top: 12px; font-size: 14px; color: var(--forest); line-height: 1.6; }
+  .insight.green { background: var(--green-bg); border-left-color: var(--green); }
+  .insight.red { background: var(--red-bg); border-left-color: var(--red); }
+  .insight-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .info-card { background: var(--white); border: 1px solid var(--gray-lt); border-radius: var(--radius); padding: 18px; }
+  .info-label { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .info-text { font-size: 14px; color: var(--forest); line-height: 1.6; }
+  .next-list { display: flex; flex-direction: column; gap: 10px; }
+  .next-item { display: flex; gap: 14px; align-items: flex-start; background: var(--white); border: 1px solid var(--gray-lt); border-radius: var(--radius); padding: 14px 16px; }
+  .next-num { width: 26px; height: 26px; border-radius: 50%; background: var(--forest); color: var(--gold); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .next-text { font-size: 14px; color: var(--forest); font-weight: 500; }
+  .next-who { font-size: 12px; color: var(--gray); margin-top: 3px; }
+
+  code { background: rgba(255,255,255,.1); color: var(--gold-lt); padding: 1px 7px; border-radius: 4px; font-family: monospace; font-size: 12px; }
+
+  .rank-row { padding: 14px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--gray-lt); }
+  .rank-row:last-child { border-bottom: none; }
+  .rank-circle { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+
+  footer { background: var(--forest-deep); border-top: 1px solid rgba(195,162,93,.15); padding: 28px 32px; text-align: center; }
+  .footer-brand { font-size: 12px; color: rgba(255,255,255,.35); }
+  .footer-brand a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 16px; } .hero { padding: 40px 16px 36px; } .page { padding: 0 16px 60px; }
+    .mg4 { grid-template-columns: repeat(2,1fr); }
+    .hl-row { grid-template-columns: 1fr !important; }
+    .hl-item { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 20px; }
+    .hl-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .two-col { grid-template-columns: 1fr; }
+    .mg2 { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 769px) and (max-width: 900px) {
+    .hl-row[style*="repeat(5"] .hl-item { padding: 0 14px; } .hl-row[style*="repeat(5"] .hl-item:first-child { padding-left: 0; }
+    .hl-row[style*="repeat(5"] .hl-value { font-size: 28px; }
+  }
+  @media (max-width: 560px) { .nav-meta { display: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo">NF</div>
+    <span class="nav-wordmark">Nearfront</span>
+    <span class="nav-sep">|</span>
+    <span class="nav-client">Farmer's Choice, New Paltz</span>
+  </div>
+  <span class="nav-meta">August 2026 Local Search &amp; Reviews Report</span>
+</nav>
+
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Monthly Performance Report</div>
+    <h1 class="hero-title">Farmer's Choice New Paltz<br>Local Search &amp; Reviews Report, August 2026</h1>
+    <p class="hero-sub">New Paltz, NY &nbsp;&middot;&nbsp; Local SEO &amp; Reputation Campaign &nbsp;&middot;&nbsp; Managed by Nearfront</p>
+    <div class="hero-meta">
+      <div class="hero-chip"><div class="live-dot"></div> Live Data</div>
+      <div class="hero-chip">Reviews scan: <span>Sep 28, 2026 (vs Sep 15)</span></div><div class="hero-chip">Rankings scan: <span>Sep 28, 2026 (vs Sep 15)</span></div><div class="hero-chip">Source: <span>Local Falcon grid data &middot; Google Business Profile</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">01</span><span class="section-title">Revenue &amp; Conversions</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Google Analytics 4 &nbsp;&middot;&nbsp; Aug 26 &ndash; Sep 25, 2026 vs Jul 26 &ndash; Aug 25, 2026</p>
+    <div class="hl-row" style="grid-template-columns:repeat(4,1fr)">
+      <div class="hl-item">
+        <div class="hl-label">Website Revenue</div>
+        <div class="hl-value">$266,753</div>
+        <div class="hl-change">&#8593; 6.2% vs prior period</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Sessions</div>
+        <div class="hl-value">13,722</div>
+        <div class="hl-change">&#8593; 14.2% vs prior period</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Transactions</div>
+        <div class="hl-value">3,336</div>
+        <div class="hl-change">&#8593; 6.7% vs prior period</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Conversion Rate</div>
+        <div class="hl-value">24.3%</div>
+        <div class="hl-change">3,336 &divide; 13,722 sessions</div>
+      </div>
+    </div>
+
+    <div class="mg mg4" style="margin-bottom:12px">
+      <div class="metric-card gold-top">
+        <div class="metric-label">Direction Requests</div>
+        <div class="metric-value sm">742</div>
+        <div class="metric-footer"><span class="chip down">&#8595; 7.4%</span><span class="mperiod">prior 801</span></div>
+        <div class="msrc">Google Business Profile</div>
+      </div>
+      <div class="metric-card gold-top">
+        <div class="metric-label">Phone Calls</div>
+        <div class="metric-value sm">121</div>
+        <div class="metric-footer"><span class="chip neutral">&#8594; 0.0%</span><span class="mperiod">prior 121</span></div>
+        <div class="msrc">Google Business Profile</div>
+      </div>
+      <div class="metric-card gold-top">
+        <div class="metric-label">Website Clicks</div>
+        <div class="metric-value sm">2,910</div>
+        <div class="metric-footer"><span class="chip down">&#8595; 9.6%</span><span class="mperiod">prior 3,220</span></div>
+        <div class="msrc">Google Business Profile</div>
+      </div>
+      <div class="metric-card gold-top">
+        <div class="metric-label">Profile Actions Total</div>
+        <div class="metric-value sm">3,773</div>
+        <div class="metric-footer"><span class="chip down">&#8595; 8.9%</span><span class="mperiod">prior 4,142</span></div>
+        <div class="msrc">Google Business Profile</div>
+      </div>
+    </div>
+
+    <div class="mg mg2">
+      <div class="metric-card green-top">
+        <div class="metric-label">Avg Map Rank (ARP)</div>
+        <div class="metric-value sm">4.55</div>
+        <div class="metric-footer"><span class="chip up">&#8593; 1.1%</span><span class="mperiod" style="font-size:11px">from 4.60 Sep 15</span></div>
+        <div class="msrc">Google Maps grid data &nbsp;&middot;&nbsp; Lower is better &nbsp;&middot;&nbsp; Sep 28, 2026 &nbsp;&middot;&nbsp; Core Geo + General, 14 keywords blended</div>
+      </div>
+      <div class="metric-card red-top">
+        <div class="metric-label">Share of Local Voice</div>
+        <div class="metric-value sm">77.3%</div>
+        <div class="metric-footer"><span class="chip down">&#8595; 1.1%</span><span class="mperiod" style="font-size:11px">from 78.1% Sep 15</span></div>
+        <div class="msrc">Google Maps grid data &nbsp;&middot;&nbsp; Core Geo + General, 14 keywords blended &nbsp;&middot;&nbsp; Sep 28, 2026</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-icon">&#128161;</div>
+      <div>Website revenue climbed 6.2% to $266,753 on a 14.2% jump in sessions and a 6.7% rise in transactions, though conversion rate eased from 26.0% to 24.3% as some of that extra traffic is still working its way down the funnel. Like Fishkill, this is driven almost entirely by in-store kiosk and embedded-menu ordering rather than organic web traffic, GA4 attributes only about $218 of this directly to the &ldquo;Organic Search&rdquo; channel. Local search&rsquo;s real job here is upstream of that number: getting shoppers to request directions, call, or tap through from the Google Business Profile before they ever reach the kiosk, and that side of the funnel cooled this period even as on-site revenue grew: direction requests eased 7.4%, website clicks fell 9.6%, and phone calls held exactly flat at 121, a pullback worth watching next cycle. The GA4 and Business Profile figures above run through Sep 25, and the latest Local Falcon rescan, Sep 28 versus Sep 15, is in and it is a holding pattern after last cycle&rsquo;s strong bounce-back: blended average map rank held essentially flat at 4.55 (from 4.60) and Share of Local Voice eased slightly to 77.3% (from 78.1%), both well within normal week-to-week variance rather than a reversal. Full detail is in sections 06 and 06b.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">02</span><span class="section-title">Search Console Performance</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Google Search Console, farmerschoicedispensary.com &nbsp;&middot;&nbsp; Aug 26 &ndash; Sep 25, 2026 vs Jul 26 &ndash; Aug 25, 2026</p>
+    <div class="hl-row" style="grid-template-columns:repeat(4,1fr)">
+      <div class="hl-item">
+        <div class="hl-label">Clicks, Site-Wide</div>
+        <div class="hl-value">10,985</div>
+        <div class="hl-change">&#8593; 19.5% vs prior period</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Impressions, Site-Wide</div>
+        <div class="hl-value">95,338</div>
+        <div class="hl-change">&#8593; 8.7% vs prior period</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">CTR, Site-Wide</div>
+        <div class="hl-value">11.52%</div>
+        <div class="hl-change">&#8593; 9.9% vs prior period</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Avg Position, Site-Wide</div>
+        <div class="hl-value">9.32</div>
+        <div class="hl-change">&#8593; improved from 11.98</div>
+      </div>
+    </div>
+
+    <p class="section-sub" style="margin-top:16px">New Paltz dedicated pages only (/shop-new-paltz, New Paltz menu and location pages) &nbsp;&middot;&nbsp; last available page-level pull: Jul 22 &ndash; Aug 21, 2026</p>
+    <div class="mg mg4">
+      <div class="metric-card gold-top">
+        <div class="metric-label">Clicks</div>
+        <div class="metric-value sm">515</div>
+        <div class="metric-footer"><span class="chip up">&#8593; 23.2%</span><span class="mperiod">prior 418</span></div>
+        <div class="msrc">Google Search Console</div>
+      </div>
+      <div class="metric-card gold-top">
+        <div class="metric-label">Impressions</div>
+        <div class="metric-value sm">24,715</div>
+        <div class="metric-footer"><span class="chip up">&#8593; 39.0%</span><span class="mperiod">prior 17,776</span></div>
+        <div class="msrc">Google Search Console</div>
+      </div>
+      <div class="metric-card gold-top">
+        <div class="metric-label">CTR</div>
+        <div class="metric-value sm">2.08%</div>
+        <div class="metric-footer"><span class="chip down">&#8595; 11.5%</span><span class="mperiod">prior 2.35%</span></div>
+        <div class="msrc">Google Search Console</div>
+      </div>
+      <div class="metric-card gold-top">
+        <div class="metric-label">Avg Position</div>
+        <div class="metric-value sm">4.45</div>
+        <div class="metric-footer"><span class="chip down">&#8595; 30.1%</span><span class="mperiod">prior 3.42</span></div>
+        <div class="msrc">Google Search Console</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-icon">&#128161;</div>
+      <div>Site-wide, clicks are up 19.5% and impressions up 8.7% on the newest pull, with average position improving from 11.98 to 9.32, a broad-based gain across the whole domain. Most of that site-wide traffic lands on the homepage and general pages before a visitor picks a store, which is normal and why it cannot be split by location. Our data connector did not return a fresh page-level breakdown for New Paltz's dedicated pages this cycle (an availability gap on the connector side, not a ranking issue), so those four cards above still reflect the last confirmed pull, Jul 22 &ndash; Aug 21, 2026; we are working with Windsor.ai support to get page-level detail flowing again and will refresh those cards as soon as it is back.</div>
+    </div>
+
+    <p class="section-sub" style="margin-top:28px">Top rising non-branded queries &nbsp;&middot;&nbsp; Google Search Console, Queries report, Non-branded filter &nbsp;&middot;&nbsp; Last 28 days vs Previous 28 days</p>
+    
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow-x:auto">
+      <table class="lf-table" style="margin-top:0">
+        <thead>
+          <tr>
+            <th style="min-width:170px;width:34%;text-align:left">Query</th>
+            <th style="width:16%;text-align:center">Clicks<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Last 28d</span></th>
+            <th style="width:16%;text-align:center">Clicks<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Prior 28d</span></th>
+            <th style="width:12%;text-align:center">Change</th>
+            <th style="width:11%;text-align:center">Impr.<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Last 28d</span></th>
+            <th style="width:11%;text-align:center">Impr.<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Prior 28d</span></th>
+          </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;dispensary near me&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">640</td>
+            <td style="color:var(--gray);text-align:center">568</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +72</span></td>
+            <td style="text-align:center">7,397</td>
+            <td style="color:var(--gray);text-align:center">6,131</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;dispensary new paltz&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">40</td>
+            <td style="color:var(--gray);text-align:center">21</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +19</span></td>
+            <td style="text-align:center">350</td>
+            <td style="color:var(--gray);text-align:center">348</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;dispensary&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">102</td>
+            <td style="color:var(--gray);text-align:center">66</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +36</span></td>
+            <td style="text-align:center">1,308</td>
+            <td style="color:var(--gray);text-align:center">1,372</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;dispensaries near me&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">55</td>
+            <td style="color:var(--gray);text-align:center">43</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +12</span></td>
+            <td style="text-align:center">760</td>
+            <td style="color:var(--gray);text-align:center">715</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;new paltz dispensary&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">32</td>
+            <td style="color:var(--gray);text-align:center">24</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +8</span></td>
+            <td style="text-align:center">273</td>
+            <td style="color:var(--gray);text-align:center">288</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;dispensary in new paltz&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">10</td>
+            <td style="color:var(--gray);text-align:center">1</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +9</span></td>
+            <td style="text-align:center">40</td>
+            <td style="color:var(--gray);text-align:center">41</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;farmers market new paltz&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">10</td>
+            <td style="color:var(--gray);text-align:center">4</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +6</span></td>
+            <td style="text-align:center">34</td>
+            <td style="color:var(--gray);text-align:center">10</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;dispensary in new paltz ny&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">8</td>
+            <td style="color:var(--gray);text-align:center">1</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +7</span></td>
+            <td style="text-align:center">22</td>
+            <td style="color:var(--gray);text-align:center">13</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;fishkill dispensary&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">66</td>
+            <td style="color:var(--gray);text-align:center">54</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +12</span></td>
+            <td style="text-align:center">658</td>
+            <td style="color:var(--gray);text-align:center">615</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">&ldquo;farm dispensary&rdquo;</td>
+            <td style="font-weight:700;color:var(--forest);text-align:center">7</td>
+            <td style="color:var(--gray);text-align:center">1</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +6</span></td>
+            <td style="text-align:center">26</td>
+            <td style="color:var(--gray);text-align:center">21</td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    
+
+    <div class="insight">
+      <div class="insight-icon">&#128161;</div>
+      <div>Pulled directly from the Search Console Queries report with the Non-branded filter applied (1,521 non-branded queries total, ranked by clicks gained). Every New Paltz geo-modified variant on this list is climbing together, &ldquo;dispensary new paltz,&rdquo; &ldquo;new paltz dispensary,&rdquo; &ldquo;dispensary in new paltz,&rdquo; &ldquo;farmers market new paltz,&rdquo; and &ldquo;dispensary in new paltz ny&rdquo; all posted double-digit percentage gains, consistent evidence the New Paltz content and citation work is compounding. &ldquo;Dispensary near me&rdquo; is still the single biggest driver site-wide, up 72 clicks and 1,266 impressions period over period.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">03</span><span class="section-title">AI Search Visibility</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Local Falcon AI-platform grid scans &nbsp;&middot;&nbsp; Farmer&rsquo;s Choice Cannabis Dispensary, New Paltz &nbsp;&middot;&nbsp; Core Geo + General, 14 keywords blended &nbsp;&middot;&nbsp; Sep 28, 2026 vs Sep 15, 2026</p>
+    <div class="hl-row" style="grid-template-columns:repeat(4,1fr)">
+      <div class="hl-item">
+        <div class="hl-label">Google AI Overviews</div>
+        <div class="hl-value">49.3%</div>
+        <div class="hl-change"><span class="chip down">&#8595; 13.2%</span> Avg position 1.06 when mentioned</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Google AI Mode</div>
+        <div class="hl-value">45.9%</div>
+        <div class="hl-change"><span class="chip up">&#8593; 1.3%</span> Avg position 1.93 when mentioned</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Google Gemini</div>
+        <div class="hl-value">75.0%</div>
+        <div class="hl-change"><span class="chip up">&#8593; 53.8%</span> Avg position 1.40 when mentioned</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">ChatGPT</div>
+        <div class="hl-value">90.5%</div>
+        <div class="hl-change"><span class="chip up">&#8593; 1.4%</span> Avg position 1.63 when mentioned</div>
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight-icon">&#128161;</div>
+      <div>A more mixed scan after last cycle&rsquo;s broad gains, which is the volatility we flagged to expect from AI-platform answers. Gemini is the standout this cycle, up from 48.8% to 75.0% Share of AI Voice, its strongest showing yet. ChatGPT held its position as the strongest platform overall, essentially flat at 90.5% blended (from 89.3%), and the branded-versus-generic gap kept narrowing: 97.4% on the branded Core Geo terms, unchanged, against 83.7% on the broader General terms, up from 81.2%. Google AI Mode was roughly flat, 45.3% to 45.9%. Google AI Overviews was the one real pullback, easing from 56.8% to 49.3% after leading gains last cycle, worth watching next scan but not yet a trend on a single data point.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">04</span><span class="section-title">Google Reviews and Reputation</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Local Falcon grid scan, most recent &nbsp;&middot;&nbsp; Sep 28, 2026 vs Sep 15, 2026</p>
+    <div class="hl-row">
+      <div class="hl-item">
+        <div class="hl-label">New Reviews</div>
+        <div class="hl-value" style="color:var(--white)">+44</div>
+        <div class="hl-change"><span class="chip up">&#8593; 15.4%</span> 286 &rarr; 330</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Total Reviews on Google</div>
+        <div class="hl-value">330</div>
+        <div class="hl-change">As of Sep 28, 2026</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Average Rating</div>
+        <div class="hl-value">5.0 &#9733;</div>
+        <div class="hl-change"><span class="chip neutral">&#8594; 0.0%</span> from 5.0 &#9733;</div>
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight-icon">&#128161;</div>
+      <div>New Paltz&rsquo;s public review total climbed from 286 to 330 between the Sep 15 and Sep 28 Local Falcon scans, a gain of 44 reviews over two weeks, keeping pace with the strong stretch flagged last cycle, and the 5.0 rating held steady. Everett&rsquo;s team is clearly sustaining the habit of asking happy customers to leave a review rather than it being a one-time push. The iMessage program remains live at both locations with the opt-out line and budtender safeguards in place, and it continues doing exactly what it was built to do.</div>
+    </div>
+  </div>
+
+<div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden;margin-top:16px"><div style="background:var(--forest);padding:12px 16px"><div style="font-size:13px;font-weight:700;color:var(--white)">Review Benchmark, dispensary near me</div><div style="font-size:11px;color:var(--gold);margin-top:2px">Most recent competitor scan, top ranked results</div></div><div class="rank-row" style="background:#eef7f0"><div class="rank-circle" style="background:var(--green);color:white">1</div><div style="flex:1"><div style="font-size:13px;font-weight:700;color:var(--green)">Farmer&rsquo;s Choice New Paltz &larr; us, holds the top spot</div><div style="font-size:11px;color:var(--gray);margin-top:2px">New Paltz, NY</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:var(--green)"><strong>330</strong> reviews &nbsp;|&nbsp; 5.0 &#9733;</div></div></div><div class="rank-row" style="background:#fafaf8"><div class="rank-circle" style="background:var(--gold);color:var(--forest)">2</div><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--forest)">Daydream Dispensary</div><div style="font-size:11px;color:var(--gray);margin-top:2px">Highland, NY</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:#555"><strong>158</strong> reviews &nbsp;|&nbsp; 4.9 &#9733;</div></div></div><div class="rank-row" style=""><div class="rank-circle" style="background:#ccc;color:#666">3</div><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--forest)">Green Goat Cannabis Shoppe</div><div style="font-size:11px;color:var(--gray);margin-top:2px">New Paltz, NY</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:#555"><strong>52</strong> reviews &nbsp;|&nbsp; 4.9 &#9733;</div></div></div><div class="rank-row" style="background:#fafaf8"><div class="rank-circle" style="background:#ccc;color:#666">4</div><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--forest)">Rosie&rsquo;s Botanicals</div><div style="font-size:11px;color:var(--gray);margin-top:2px">Highland, NY</div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:13px;color:#555"><strong>15</strong> reviews &nbsp;|&nbsp; 4.9 &#9733;</div></div></div></div>
+
+    <div class="insight">
+      <div class="insight-icon">&#128064;</div>
+      <div><strong>Two to watch:</strong> Big Gas Dispensary is not in the top 3 for &ldquo;dispensary near me&rdquo; today, but it is already carrying 142 reviews, more than every business currently ranking above it besides Farmer&rsquo;s Choice. If its ranking catches up to its review count, it becomes the next real challenger in this market. Daydream Dispensary is also worth flagging, its review count nearly doubled since the last scan, from 88 to 158, the fastest growth of any competitor tracked here even though its rating eased slightly to 4.9.</div>
+    </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">05</span><span class="section-title">Google Ads Performance</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Google Ads &nbsp;&middot;&nbsp; August 2026 vs July 2026 &nbsp;&middot;&nbsp; New Paltz campaigns only, Fishkill does not currently run Google Ads</p>
+    <div class="hl-row" style="grid-template-columns:repeat(5,1fr)">
+      <div class="hl-item">
+        <div class="hl-label">Spend</div>
+        <div class="hl-value">$2,926</div>
+        <div class="hl-change">&#8593; 16.5% vs July</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Conversions</div>
+        <div class="hl-value">135.5</div>
+        <div class="hl-change">&#8593; 226.4% vs July</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Cost / Conversion</div>
+        <div class="hl-value">$21.59</div>
+        <div class="hl-change">&#8595; 64.3% vs July</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">Total Conversion Value</div>
+        <div class="hl-value">$10,968</div>
+        <div class="hl-change">&#8593; 490.7% vs July</div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-label">ROAS</div>
+        <div class="hl-value">3.75x</div>
+        <div class="hl-change">&#8593; 407.0% vs July</div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow-x:auto">
+      <table class="lf-table" style="margin-top:0">
+        <thead>
+          <tr>
+            <th style="text-align:left">Campaign</th>
+            <th style="text-align:center">July CPA</th>
+            <th style="text-align:center">August CPA</th>
+            <th style="text-align:center">Change</th>
+            <th style="text-align:center">July Conv. Value</th>
+            <th style="text-align:center">August Conv. Value</th>
+            <th style="text-align:center">Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">Brand</td>
+            <td style="text-align:center;color:var(--gray)">$10.08</td>
+            <td style="text-align:center;font-weight:700;color:var(--forest)">$4.86</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -51.8%</span></td>
+            <td style="text-align:center;color:var(--gray)">$1,009.18</td>
+            <td style="text-align:center;font-weight:700;color:var(--forest)">$3,267.29</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +223.8%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">Non-Brand</td>
+            <td style="text-align:center;color:var(--gray)">$69.86</td>
+            <td style="text-align:center;font-weight:700;color:var(--forest)">$21.99</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -68.5%</span></td>
+            <td style="text-align:center;color:var(--gray)">$262.52</td>
+            <td style="text-align:center;font-weight:700;color:var(--forest)">$6,211.19</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +2266.0%</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">Competitor</td>
+            <td style="text-align:center;color:var(--gray)">$107.79</td>
+            <td style="text-align:center;font-weight:700;color:var(--forest)">$34.55</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -67.9%</span></td>
+            <td style="text-align:center;color:var(--gray)">$585.45</td>
+            <td style="text-align:center;font-weight:700;color:var(--forest)">$1,489.15</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +154.4%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="two-col">
+      <div class="info-card">
+        <div class="info-label">What Changed in August</div>
+        <div class="info-text">Conversions rose from 41.51 to 135.49 (+226%). CPA fell from $60.51 to $21.59 (-64%). Conversion value increased from $1,857 to $10,968 (+491%). ROAS improved from 0.74x to 3.75x.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Recommended Focus</div>
+        <div class="info-text">Protect non-brand budget, it generated 59% of August conversions. Maintain competitor coverage while watching CPA. Keep brand efficient and prioritize incremental spend toward non-brand. Launch a P-Max campaign with video assets.</div>
+      </div>
+    </div>
+
+
+    <div class="insight">
+      <div class="insight-icon">&#128161;</div>
+      <div>Non-Brand is the story of the month: cost per conversion fell 68.5% to $21.99 and conversion value grew more than 20&times; to $6,211, now generating 59% of all August conversions. Competitor campaigns are efficient and worth maintaining, CPA down 67.9% to $34.55. Brand stayed the most efficient line item at $4.86 CPA, but there is limited room left to scale it further, the incremental opportunity is in Non-Brand and a P-Max campaign with video assets.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">06</span><span class="section-title">Google Maps Grid Rankings, Core Geo Keywords</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Local Falcon grid data &nbsp;&middot;&nbsp; Farmer&rsquo;s Choice Cannabis Dispensary, 1 Old Rte 299, New Paltz NY &nbsp;&middot;&nbsp; 5-mile radius, 7&times;7 grid &nbsp;&middot;&nbsp; Sep 28, 2026 scan vs Sep 15, 2026</p>
+    
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow-x:auto">
+      <table class="lf-table" style="margin-top:0">
+        <thead>
+          <tr>
+            <th style="min-width:170px;width:24%;text-align:left">Keyword</th>
+            <th style="width:11%;text-align:center">Avg Rank<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 28, 2026</span></th>
+            <th style="width:11%;text-align:center">Avg Rank<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 15, 2026</span></th>
+            <th style="width:10%;text-align:center">Change</th>
+            <th style="width:17%;text-align:center">Share of Local Voice<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 28, 2026</span></th>
+            <th style="width:11%;text-align:center">SoLV<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 15, 2026</span></th>
+            <th style="width:10%;text-align:center">Change</th>
+            <th style="width:11%;text-align:center">Share of AI Voice<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">SAIV, blended AI platforms</span></th>
+          </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">weed dispensary new paltz</td>
+            <td style="font-weight:700;color:var(--red);text-align:center">21.00</td>
+            <td style="color:var(--gray);text-align:center">21.00</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.00</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--red)" data-width="0.0"></div></div><span class="solv-pct" style="color:var(--red)">0.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">0.0%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--gold)">82.2%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">dispensary near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.46</td>
+            <td style="color:var(--gray);text-align:center">2.33</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.13</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="79.59"></div></div><span class="solv-pct" style="color:var(--gold)">79.6%</span></div></td>
+            <td style="color:var(--gray);text-align:center">85.7%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -6.1%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">49.5%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">cannabis near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.16</td>
+            <td style="color:var(--gray);text-align:center">2.31</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.15</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="85.71"></div></div><span class="solv-pct" style="color:var(--green)">85.7%</span></div></td>
+            <td style="color:var(--gray);text-align:center">87.8%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -2.1%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">27.6%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">dispensary near new paltz</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">1.41</td>
+            <td style="color:var(--gray);text-align:center">1.49</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.08</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="95.92"></div></div><span class="solv-pct" style="color:var(--green)">95.9%</span></div></td>
+            <td style="color:var(--gray);text-align:center">98.0%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -2.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--green)">95.9%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">cannabis store new paltz</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">1.02</td>
+            <td style="color:var(--gray);text-align:center">1.12</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.10</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="100.0"></div></div><span class="solv-pct" style="color:var(--green)">100.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">100.0%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--green)">92.2%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">dispensary new paltz</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">1.02</td>
+            <td style="color:var(--gray);text-align:center">1.18</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.16</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="100.0"></div></div><span class="solv-pct" style="color:var(--green)">100.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">100.0%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--green)">97.9%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">cannabis dispensary new paltz</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">1.02</td>
+            <td style="color:var(--gray);text-align:center">1.14</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.12</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="100.0"></div></div><span class="solv-pct" style="color:var(--green)">100.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">100.0%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--green)">93.8%</td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="insight green" style="margin-top:12px">
+      <div class="insight-icon">&#127942;</div>
+      <div>Near-total map pack lock on core geo terms holds: 4 of 7 keywords still sit at or near 100% Share of Local Voice, and campaign average rank held essentially flat, 4.37 to 4.30, confirming last cycle&rsquo;s rebound was a real, settled level rather than a one-time bounce. Share of Local Voice eased slightly from 81.6% to 80.2%, almost entirely due to &ldquo;dispensary near me&rdquo; softening from 85.7% to 79.6%, worth a light watch but not yet a pattern. The one real gap remains &ldquo;weed dispensary new paltz&rdquo; at 0% SoLV, the same synonym issue seen at Fishkill, worth a content and schema fix rather than a ranking concern.</div>
+    </div>
+    <div class="insight">
+      <div class="insight-icon">&#128200;</div>
+      <div><strong>Top-3 positions held:</strong> &ldquo;dispensary new paltz,&rdquo; &ldquo;cannabis dispensary new paltz,&rdquo; and &ldquo;cannabis store new paltz&rdquo; all stayed at or near #1 this scan, and &ldquo;dispensary near new paltz&rdquo; improved further to 1.41. That confirms last cycle&rsquo;s rebound to the #1 to #2 range held through a second scan, exactly the kind of consistency that AI answer platforms reward, and lines up with Gemini&rsquo;s strong gain for New Paltz covered in section 03. We now consider this level settled rather than provisional.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">06b</span><span class="section-title">Google Maps Grid Rankings, General Keywords</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Local Falcon grid data &nbsp;&middot;&nbsp; Same location &nbsp;&middot;&nbsp; 5-mile radius, 7&times;7 grid &nbsp;&middot;&nbsp; Sep 28, 2026 scan vs Sep 15, 2026</p>
+    
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow-x:auto">
+      <table class="lf-table" style="margin-top:0">
+        <thead>
+          <tr>
+            <th style="min-width:170px;width:24%;text-align:left">Keyword</th>
+            <th style="width:11%;text-align:center">Avg Rank<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 28, 2026</span></th>
+            <th style="width:11%;text-align:center">Avg Rank<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 15, 2026</span></th>
+            <th style="width:10%;text-align:center">Change</th>
+            <th style="width:17%;text-align:center">Share of Local Voice<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 28, 2026</span></th>
+            <th style="width:11%;text-align:center">SoLV<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">Sep 15, 2026</span></th>
+            <th style="width:10%;text-align:center">Change</th>
+            <th style="width:11%;text-align:center">Share of AI Voice<br><span style="font-weight:400;opacity:.7;font-size:10px;text-transform:none;letter-spacing:0">SAIV, blended AI platforms</span></th>
+          </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">weed dispensary near me</td>
+            <td style="font-weight:700;color:var(--red);text-align:center">21.00</td>
+            <td style="color:var(--gray);text-align:center">21.00</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.00</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--red)" data-width="0.0"></div></div><span class="solv-pct" style="color:var(--red)">0.0%</span></div></td>
+            <td style="color:var(--gray);text-align:center">0.0%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">46.4%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">dispensary near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.47</td>
+            <td style="color:var(--gray);text-align:center">2.33</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.14</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--gold)" data-width="81.63"></div></div><span class="solv-pct" style="color:var(--gold)">81.6%</span></div></td>
+            <td style="color:var(--gray);text-align:center">85.7%</td>
+            <td style="text-align:center"><span class="badge down">&#8595; -4.1%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">51.0%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">cannabis store near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.10</td>
+            <td style="color:var(--gray);text-align:center">2.29</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.19</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="85.71"></div></div><span class="solv-pct" style="color:var(--green)">85.7%</span></div></td>
+            <td style="color:var(--gray);text-align:center">85.7%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--gold)">75.0%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">dispensary open now</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.08</td>
+            <td style="color:var(--gray);text-align:center">2.00</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.08</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="87.76"></div></div><span class="solv-pct" style="color:var(--green)">87.8%</span></div></td>
+            <td style="color:var(--gray);text-align:center">87.8%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">50.7%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">cannabis dispensary near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.04</td>
+            <td style="color:var(--gray);text-align:center">2.29</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.25</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="87.76"></div></div><span class="solv-pct" style="color:var(--green)">87.8%</span></div></td>
+            <td style="color:var(--gray);text-align:center">85.7%</td>
+            <td style="text-align:center"><span class="badge up">&#8593; +2.1%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">59.4%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">cannabis near me</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">2.14</td>
+            <td style="color:var(--gray);text-align:center">2.31</td>
+            <td style="text-align:center"><span class="badge up">&#8593; -0.17</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="87.76"></div></div><span class="solv-pct" style="color:var(--green)">87.8%</span></div></td>
+            <td style="color:var(--gray);text-align:center">87.8%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">51.0%</td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight:600;color:var(--forest)">dispensary hudson valley</td>
+            <td style="font-weight:700;color:var(--green);text-align:center">1.80</td>
+            <td style="color:var(--gray);text-align:center">1.57</td>
+            <td style="text-align:center"><span class="badge down">&#8595; +0.23</span></td>
+            <td><div class="solv-wrap"><div class="solv-bar-bg"><div class="solv-bar-fill" style="width:0%;background:var(--green)" data-width="89.8"></div></div><span class="solv-pct" style="color:var(--green)">89.8%</span></div></td>
+            <td style="color:var(--gray);text-align:center">89.8%</td>
+            <td style="text-align:center"><span class="badge neutral">&#8594; +0.0%</span></td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">40.1%</td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="insight green" style="margin-top:12px">
+      <div class="insight-icon">&#128200;</div>
+      <div>Average rank on general terms held essentially flat, 4.83 to 4.80, confirming last cycle&rsquo;s sharp rebound from 8.02 was a real, settled level rather than a one-time bounce, and Share of Local Voice stayed steady around 74%. &ldquo;Cannabis dispensary near me&rdquo; and &ldquo;cannabis store near me&rdquo; both continued improving on average rank this cycle. &ldquo;Weed dispensary near me&rdquo; is still the exception at 0% SoLV, the same synonym gap tracked across every campaign. We now consider the general-term rebound settled and are watching for the next content push to push these terms further.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">07</span><span class="section-title">Link Building, July &amp; August 2026</span><div class="section-rule"></div></div>
+    <p class="section-sub">Farmer&rsquo;s Choice New Paltz &nbsp;&middot;&nbsp; All links built, indexed, and confirmed complete &nbsp;&middot;&nbsp; DR sourced from Ahrefs, cloud infrastructure platforms average DR 86 to 98</p>
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden">
+      <div style="background:var(--forest);padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-size:13px;font-weight:700;color:var(--white)">July 2026 &nbsp;<span style="font-weight:400;opacity:.6">6 links built</span></div>
+        <div style="font-size:11px;color:var(--gold);font-weight:600">All indexed &nbsp;&#10003;</div>
+      </div>
+      <div style="padding:12px 16px;border-bottom:1px solid var(--gray-lt);background:#fafaf8">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Brand Entity Corroboration (1 link)</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.6">A dedicated brand entity asset that corroborates the business name, location, and category signals used across the Google Business Profile, supporting entity recognition for both Maps rankings and AI platform citations.</div>
+      </div>
+      
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;background:#fafaf8">
+          <a href="https://dispensary-new-paltz-ny.web.app/" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">Firebase Hosting (dispensary-new-paltz-ny) (brand entity) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 91 &nbsp;&#10003;</div>
+        </div>
+      <div style="padding:12px 16px;border-bottom:1px solid var(--gray-lt);background:#fafaf8">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Best of List / Competitor Listicle (5 links)</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.6">High-impact geo-specific content targeting &ldquo;dispensary near me&rdquo; and &ldquo;dispensary new paltz ny&rdquo; keywords. Each page is a ranked listicle featuring Farmer&rsquo;s Choice as the undisputed #1, with a map embed, FAQ, and WebPage, Organization, and FAQPage schema. Hosted on major cloud infrastructure for domain authority signal, and performs well in both Google and AI platform results.</div>
+      </div>
+      
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;background:#fafaf8">
+          <a href="https://dispensaries19.blob.core.windows.net/farmers-choice/top-dispensary-new-paltz-ny-farmers-choice.html" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">Azure Blob (farmers-choice) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 92 &nbsp;&#10003;</div>
+        </div>
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;">
+          <a href="https://farmers-choice.b-cdn.net/top-dispensary-new-paltz-ny-farmers-choice.html" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">BunnyCDN (farmers-choice) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 88 &nbsp;&#10003;</div>
+        </div>
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;background:#fafaf8">
+          <a href="https://fra1.digitaloceanspaces.com/farmers-choice/top-dispensary-new-paltz-ny-farmers-choice.html" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">DigitalOcean Spaces (farmers-choice) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 90 &nbsp;&#10003;</div>
+        </div>
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;">
+          <a href="https://s3.us-west-004.backblazeb2.com/farmers-choice/top-dispensary-new-paltz-ny-farmers-choice.html" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">Backblaze B2 (farmers-choice) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 86 &nbsp;&#10003;</div>
+        </div>
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;background:#fafaf8">
+          <a href="https://storage.googleapis.com/farmers-choice/top-dispensary-new-paltz-ny-farmers-choice.html" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">Google Cloud Storage (farmers-choice) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 98 &nbsp;&#10003;</div>
+        </div>
+    </div>
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden;margin-top:16px">
+      <div style="background:var(--forest);padding:12px 16px;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-size:13px;font-weight:700;color:var(--white)">August 2026 &nbsp;<span style="font-weight:400;opacity:.6">1 link built</span></div>
+        <div style="font-size:11px;color:var(--gold);font-weight:600">All indexed &nbsp;&#10003;</div>
+      </div>
+      <div style="padding:12px 16px;border-bottom:1px solid var(--gray-lt);background:#fafaf8">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">State License Verification Page (1 link)</div>
+        <div style="font-size:12px;color:var(--gray);line-height:1.6">A dedicated page verifying Farmer&rsquo;s Choice&rsquo;s active New York State cannabis license, reinforcing trust and compliance signals for the domain. Cannabis is a heavily regulated, trust-sensitive category, so a page that lets a searcher or an AI platform verify licensing directly supports E-E-A-T and adds another prominent, geo-specific backlink.</div>
+      </div>
+      
+        <div style="padding:10px 16px;border-bottom:1px solid var(--gray-lt);display:flex;justify-content:space-between;align-items:center;background:#fafaf8">
+          <a href="https://new-paltz-dispensary-license-check.vercel.app/" target="_blank" style="font-size:12px;color:var(--forest);text-decoration:none;font-weight:500">Vercel (new-paltz-dispensary-license-check) &#8599;</a>
+          <div style="font-size:12px;font-weight:700;color:var(--green)">DR 91 &nbsp;&#10003;</div>
+        </div>
+    </div>
+    <div style="background:#fdf8ee;border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;font-size:13px;color:var(--forest);line-height:1.6;margin-top:12px">
+      <strong>7 links built across July and August 2026, all confirmed indexed.</strong> Average DR across all batches is 91. These cloud infrastructure links pass strong topical and entity authority signals to the New Paltz listing, reinforcing the near-total map pack lock tracked above.
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">08</span><span class="section-title">Competitors</span><div class="section-rule"></div></div>
+    <p class="section-sub">Source: Local Falcon competitor scan &nbsp;&middot;&nbsp; dispensary near me &nbsp;&middot;&nbsp; New Paltz / Highland, NY area &nbsp;&middot;&nbsp; Sep 15, 2026</p>
+    <div class="insight">
+      <div class="insight-icon">&#127942;</div>
+      <div>Farmer&rsquo;s Choice New Paltz holds the top spot in the &ldquo;dispensary near me&rdquo; competitor scan with 330 reviews and a 5.0 rating, well ahead of Daydream Dispensary (158 reviews, 4.9) and Green Goat Cannabis Shoppe (52 reviews, 4.9), both of which rank behind it. Rosie&rsquo;s Botanicals in Highland rounds out the top 3 with 15 reviews. The position is strong and the review-count lead keeps widening. The one to watch is Daydream, whose review count nearly doubled last cycle, the job now is to hold the lead as it and Big Gas Dispensary (142 reviews, not yet top 3) build up their own review counts.</div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">09</span><span class="section-title">Findings and Work This Month</span><div class="section-rule"></div></div>
+    
+    <div class="two-col">
+      <div class="info-card">
+        <div class="info-label">Local Falcon Grid Tracking</div>
+        <div class="info-text">Two monthly campaigns live, Core Geo Keywords (7 terms) and General Keywords (7 terms), 5-mile radius, 7&times;7 grid. Recommend expanding both to a 10-mile radius to match the wider Ulster County market and to properly benchmark against Highland-based competitors like Daydream Dispensary.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Review Program</div>
+        <div class="info-text">44 new Google reviews between the Sep 15 and Sep 28 Local Falcon scans, with the iMessage automation live and the opt-out line and budtender script (section 04) in place. Keeping it running is what protects this pace.</div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="section">
+    <div class="section-header"><span class="section-num">10</span><span class="section-title">September Plan</span><div class="section-rule"></div></div>
+    <div class="next-list">
+      <div class="next-item">
+        <div class="next-num">1</div>
+        <div>
+          <div class="next-text">Expand the New Paltz grid scan from a 5-mile to a 10-mile radius across both campaigns</div>
+          <div class="next-who">Nearfront &nbsp;&middot;&nbsp; Needed to properly track and compete against Highland-based competitors and AI platform visibility at a wider radius</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">2</div>
+        <div>
+          <div class="next-text">Close the &ldquo;weed dispensary new paltz&rdquo; synonym gap with targeted content and schema</div>
+          <div class="next-who">Nearfront content team &nbsp;&middot;&nbsp; Still the only 0% SoLV term across both campaigns after two straight scans</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">3</div>
+        <div>
+          <div class="next-text">Keep an eye on Daydream Dispensary&rsquo;s review growth and the slight softening on &ldquo;dispensary near me&rdquo; Share of Local Voice</div>
+          <div class="next-who">Nearfront content team &nbsp;&middot;&nbsp; The general and core-geo rank rebound has now held for two straight scans and is considered settled; these are the two smaller items worth tracking next cycle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">
+    NEARFRONT &nbsp;&middot;&nbsp; <a href="https://nearfront.com">nearfront.com</a> &nbsp;&middot;&nbsp; bravo@nearfront.com &nbsp;&middot;&nbsp; Prepared for Farmer's Choice New Paltz &middot; August 2026
+  </div>
+</footer>
+
+
+<script>
+const bobs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    setTimeout(() => { e.target.style.width = e.target.dataset.width + '%'; }, 200);
+    bobs.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.solv-bar-fill').forEach(el => bobs.observe(el));
+window.addEventListener('beforeprint', () => document.querySelectorAll('.solv-bar-fill').forEach(el => { el.style.transition = 'none'; el.style.width = el.dataset.width + '%'; }));
+</script>
+
+</body>
+</html>
