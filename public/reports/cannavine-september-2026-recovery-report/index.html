@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Cannavine &middot; Recovery Report &middot; September 2026 &middot; Nearfront</title>
+<style>
+:root{
+  --forest:#1c3439; --forest-700:#2a4a4d; --gold:#c3a25d; --gold-dark:#ae8d49;
+  --white:#ffffff; --ink-900:#24403f; --ink-line:rgba(255,255,255,0.14);
+  --cream-50:#f8f8f6; --cream-100:#f1f1ee; --cream-200:rgba(28,52,57,0.14);
+  --charcoal-soft:#54615f; --sage:#5b6866; --sage-dark:rgba(255,255,255,0.68);
+  --gold-300:#d6bd8a; --green-600:#3f7a52; --green-300:#7fc194;
+  --font-brand:"Neue Haas Grotesk Display","Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream-50);color:var(--forest);font-family:var(--font-brand);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.hero,.data,.footer{background:var(--forest);color:var(--cream-100)}
+.section{background:var(--cream-50);color:var(--forest)}
+.section-alt{background:var(--cream-100)}
+.hero{padding:34px 0 56px}
+.data{padding:8px 0 64px}
+.section{padding:64px 0}
+.footer{padding:56px 0 48px}
+
+.brand{display:flex;align-items:center;gap:11px;padding-bottom:34px}
+.mark{width:34px;height:34px;flex:none}
+.wordmark{line-height:1.05}
+.wordmark .n{font-size:16px;font-weight:700;letter-spacing:.17em;color:var(--white)}
+.wordmark .t{font-size:8.5px;font-weight:600;letter-spacing:.21em;color:var(--gold);text-transform:uppercase;margin-top:3px}
+
+.prep{font-size:13.5px;color:var(--sage-dark);margin:0 0 4px}
+.prep b{color:var(--cream-100);font-weight:600}
+.prep-sub{font-size:13px;color:rgba(255,255,255,.5);margin:0 0 40px}
+
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-dark);margin:0 0 14px}
+.hero .eyebrow{color:var(--gold)}
+h1{font-size:clamp(30px,4.6vw,46px);font-weight:700;letter-spacing:-.01em;line-height:1.08;margin:0 0 20px;max-width:20ch}
+h1 .g{color:var(--gold-300)}
+h2{font-size:clamp(23px,3.2vw,32px);font-weight:700;line-height:1.16;margin:0 0 16px;max-width:24ch}
+.lede{font-size:17px;color:var(--sage);margin:0 0 4px;max-width:70ch}
+.hero .lede,.data .lede{color:var(--sage-dark)}
+h3{font-size:16px;font-weight:700;margin:0 0 6px}
+
+.rule{height:1px;background:var(--ink-line);margin:0}
+.section .rule{background:var(--cream-200)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;
+  background:var(--ink-line);border:1px solid var(--ink-line);margin:36px 0 0}
+.stat{background:var(--forest);padding:22px 24px}
+.stat .k{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
+.stat .v{font-size:38px;font-weight:700;letter-spacing:-.025em;line-height:1;margin:0;color:var(--white)}
+.stat .d{font-size:13.5px;color:var(--sage-dark);margin:11px 0 0}
+.up{color:var(--green-300);font-weight:600}
+
+figure{margin:40px 0 0}
+svg{width:100%;height:auto;display:block}
+figcaption{font-size:13px;color:var(--sage-dark);margin-top:12px;max-width:74ch}
+.section figcaption{color:var(--charcoal-soft)}
+.g{stroke:rgba(255,255,255,.12);stroke-width:1}
+.section .g{stroke:var(--cream-200)}
+.ax{fill:var(--sage-dark);font-size:11.5px;font-family:var(--font-brand)}
+.section .ax{fill:var(--charcoal-soft)}
+.ax.gold{fill:var(--gold-300)}
+.ln{fill:none;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.ln.imp{stroke:var(--gold)}
+.ln.pos{stroke:var(--green-300);stroke-width:1.8;stroke-dasharray:5 4}
+.mk{stroke:var(--green-300);stroke-width:1.4;stroke-dasharray:4 4}
+.dot{fill:var(--gold);stroke:var(--forest);stroke-width:2}
+.mklab{fill:var(--green-300);font-size:11.5px;font-weight:600;font-family:var(--font-brand)}
+.b{fill:#cfd3cf} .b.hi{fill:var(--forest)} .b.lo{fill:#e3e6e4}
+.bv{fill:var(--charcoal-soft);font-size:10.5px;font-family:var(--font-brand)}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--sage-dark);margin-top:14px}
+.sw{display:inline-block;width:16px;height:3px;vertical-align:middle;margin-right:7px}
+
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px}
+caption{text-align:left;font-size:13px;color:var(--charcoal-soft);padding-bottom:10px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--cream-200)}
+thead th{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--charcoal-soft);border-bottom:1px solid var(--forest)}
+tbody tr:last-child td{border-bottom:1px solid var(--cream-200)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.peak td{background:rgba(195,162,93,.16);font-weight:600}
+tr.now td{background:rgba(63,122,82,.13);font-weight:600}
+
+.steps{list-style:none;padding:0;margin:30px 0 0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:20px 0 20px 56px;border-top:1px solid var(--cream-200)}
+.steps li:last-child{border-bottom:1px solid var(--cream-200)}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:20px;
+  font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--gold-dark)}
+.steps p{margin:4px 0 0;color:var(--sage);max-width:76ch}
+.badge{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 9px;margin-left:10px;vertical-align:2px;border:1px solid currentColor}
+.badge.ok{color:var(--green-600)} .badge.warn{color:var(--gold-dark)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;
+  background:var(--cream-200);border:1px solid var(--cream-200);margin-top:30px}
+.col{background:var(--cream-50);padding:24px}
+.col .k{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-dark);margin:0 0 10px}
+.col p{margin:0;color:var(--sage);font-size:14.5px}
+
+.callout{border-left:2px solid var(--gold);padding:4px 0 4px 22px;margin-top:30px;max-width:78ch}
+.callout p{margin:0;color:var(--sage)}
+
+.foot-h{font-size:clamp(22px,3vw,30px);font-weight:700;margin:0 0 16px;max-width:22ch;color:var(--white)}
+.foot-meta{font-size:13.5px;color:var(--sage-dark);margin:0}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:38px;
+  padding-top:28px;border-top:1px solid var(--ink-line)}
+.foot-grid .k{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.foot-grid p{margin:0;font-size:13.5px;color:var(--sage-dark)}
+@media(max-width:640px){
+  .wrap{padding:0 16px}
+  .hero{padding:26px 0 44px}.section{padding:48px 0}.data{padding:8px 0 48px}
+  .stat .v{font-size:31px}
+  table{font-size:14px}th,td{padding:11px 8px}
+  .ax,.mklab{font-size:24px}.bv{font-size:22px}
+  .ln.imp{stroke-width:4.4}.ln.pos{stroke-width:3.4}.mk{stroke-width:2.6}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+ <div class="wrap">
+  <div class="brand">
+   <svg class="mark" viewBox="0 0 34 34" aria-hidden="true">
+     <rect x="0" y="0" width="34" height="34" fill="#c3a25d"/>
+     <path d="M8 25 V9 h3.4 l8.2 11.1 V9 H23 v16 h-3.4 L11.4 13.9 V25 Z" fill="#1c3439"/>
+   </svg>
+   <div class="wordmark"><div class="n">NEARFRONT</div><div class="t">Local SEO Agency</div></div>
+  </div>
+
+  <p class="prep">Prepared for <b>Cannavine</b></p>
+  <p class="prep-sub">Ukiah &middot; Belmont &middot; San Francisco &middot; Santa Rosa, CA &middot; September 29, 2026</p>
+
+  <p class="eyebrow">Google Search Console &middot; Recovery Report</p>
+  <h1>The manual action is <span class="g">lifted</span>. Search visibility is back.</h1>
+  <p class="lede">Google approved the reconsideration request for trycannavine.com on Saturday, September 26. Within 24 hours the site moved from page three to page one on average, and impressions returned at roughly fourteen times the prior day's level. Two days in, it is holding.</p>
+ </div>
+</div>
+
+<div class="data">
+ <div class="wrap">
+  <div class="stats">
+   <div class="stat"><p class="k">Impressions</p><p class="v">21,096</p><p class="d"><span class="up">+1,329%</span> from 1,476 on Sep 25</p></div>
+   <div class="stat"><p class="k">Average position</p><p class="v">7.8</p><p class="d"><span class="up">Up 15.8 spots</span> from 23.5</p></div>
+   <div class="stat"><p class="k">Daily clicks</p><p class="v">233</p><p class="d"><span class="up">+88%</span> from 124</p></div>
+   <div class="stat"><p class="k">Reviews, all stores</p><p class="v">3,989</p><p class="d">4.9 average, 444 added since July</p></div>
+  </div>
+
+  <figure>
+   <svg viewBox="0 0 940 320" role="img" aria-label="Daily Search Console impressions and average position, September 2026">
+<defs><linearGradient id="ig" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#c3a25d" stop-opacity=".34"/><stop offset="100%" stop-color="#c3a25d" stop-opacity="0"/>
+</linearGradient></defs><line class="g" x1="64" y1="278.0" x2="878" y2="278.0"/><text class="ax" x="52" y="282.0" text-anchor="end">0k</text><line class="g" x1="64" y1="220.7" x2="878" y2="220.7"/><text class="ax" x="52" y="224.7" text-anchor="end">5k</text><line class="g" x1="64" y1="163.5" x2="878" y2="163.5"/><text class="ax" x="52" y="167.5" text-anchor="end">10k</text><line class="g" x1="64" y1="106.2" x2="878" y2="106.2"/><text class="ax" x="52" y="110.2" text-anchor="end">15k</text><line class="g" x1="64" y1="48.9" x2="878" y2="48.9"/><text class="ax" x="52" y="52.9" text-anchor="end">20k</text><text class="ax gold" x="890" y="52.9">5</text><text class="ax gold" x="890" y="121.6">20</text><text class="ax gold" x="890" y="190.4">35</text><text class="ax gold" x="890" y="259.1">50</text><line class="mk" x1="846.7" y1="26" x2="846.7" y2="278"/><circle class="dot" cx="846.7" cy="37.9" r="4.5"/><text class="mklab" x="836.7" y="41" text-anchor="end">Manual action removed, Sep 26</text>
+<polygon fill="url(#ig)" points="64,278 64.0,241.0 95.3,215.1 126.6,242.3 157.9,243.5 189.2,242.8 220.5,238.5 251.8,236.4 283.2,241.7 314.5,221.6 345.8,255.1 377.1,251.4 408.4,253.1 439.7,249.3 471.0,251.9 502.3,253.8 533.6,250.6 564.9,261.1 596.2,257.7 627.5,257.5 658.8,255.9 690.2,260.1 721.5,260.9 752.8,259.5 784.1,262.2 815.4,261.1 846.7,37.9 878.0,36.4 878.0,278"/><polyline class="ln imp" points="64.0,241.0 95.3,215.1 126.6,242.3 157.9,243.5 189.2,242.8 220.5,238.5 251.8,236.4 283.2,241.7 314.5,221.6 345.8,255.1 377.1,251.4 408.4,253.1 439.7,249.3 471.0,251.9 502.3,253.8 533.6,250.6 564.9,261.1 596.2,257.7 627.5,257.5 658.8,255.9 690.2,260.1 721.5,260.9 752.8,259.5 784.1,262.2 815.4,261.1 846.7,37.9 878.0,36.4"/><polyline class="ln pos" points="64.0,227.7 95.3,233.0 126.6,220.8 157.9,211.1 189.2,216.8 220.5,224.0 251.8,228.6 283.2,222.2 314.5,228.6 345.8,199.7 377.1,203.8 408.4,209.6 439.7,225.6 471.0,220.8 502.3,207.4 533.6,210.6 564.9,172.8 596.2,186.7 627.5,183.2 658.8,199.7 690.2,189.6 721.5,169.7 752.8,173.5 784.1,155.8 815.4,133.9 846.7,61.5 878.0,61.6"/><text class="ax" x="64.0" y="306" text-anchor="middle">01</text><text class="ax" x="157.9" y="306" text-anchor="middle">04</text><text class="ax" x="251.8" y="306" text-anchor="middle">07</text><text class="ax" x="345.8" y="306" text-anchor="middle">10</text><text class="ax" x="439.7" y="306" text-anchor="middle">13</text><text class="ax" x="533.6" y="306" text-anchor="middle">16</text><text class="ax" x="627.5" y="306" text-anchor="middle">19</text><text class="ax" x="721.5" y="306" text-anchor="middle">22</text><text class="ax" x="815.4" y="306" text-anchor="middle">25</text></svg>
+   <div class="legend">
+    <span><span class="sw" style="background:#c3a25d"></span>Impressions, left axis</span>
+    <span><span class="sw" style="background:#7fc194"></span>Average position, right axis, lower is better</span>
+   </div>
+   <figcaption>Daily Search Console performance, September 1 to 27, 2026. The step change on September 26 lines up exactly with the approval notice.</figcaption>
+  </figure>
+ </div>
+</div>
+
+<div class="section">
+ <div class="wrap">
+  <p class="eyebrow">What happened</p>
+  <h2>Four things had to be true before Google would clear it</h2>
+  <p class="lede">The manual action was "thin content with little or no added value," applied site wide. Here is the sequence that closed it out.</p>
+  <ol class="steps">
+   <li><h3>Root cause identified<span class="badge ok">Fixed</span></h3>
+     <p>The 21+ age gate was redirecting Googlebot to a single interstitial page, so every URL on the domain resolved to the same content. Google read the whole site as thin and duplicative.</p></li>
+   <li><h3>Redirect removed and verified<span class="badge ok">Verified</span></h3>
+     <p>The site now returns a 200 to Googlebot and to cookie-less browsers, with real page content served on the first request.</p></li>
+   <li><h3>Contributing factors cleared<span class="badge ok">Done</span></h3>
+     <p>584 WordPress tag archive pages against roughly 185 posts, plus a run of near-daily formulaic articles, were adding weight to the thin-content signal. Tag archives were noindexed and the publishing pattern was stopped.</p></li>
+   <li><h3>Reconsideration request filed and approved<span class="badge ok">Approved</span></h3>
+     <p>A one-shot submission, reviewed before filing. Google approved it on September 26 and confirmed the manual action has been removed.</p></li>
+  </ol>
+ </div>
+</div>
+
+<div class="section section-alt">
+ <div class="wrap">
+  <p class="eyebrow">The baseline</p>
+  <h2>What we are recovering to</h2>
+  <p class="lede">July 2026 was the peak before the action landed in August. Recovery has two days of data so far and average position is already back at the pre-action level.</p>
+  <figure>
+   <svg viewBox="0 0 940 250" role="img" aria-label="Monthly organic clicks 2026"><line class="g" x1="64" y1="210.0" x2="900" y2="210.0"/><text class="ax" x="52" y="214.0" text-anchor="end">0k</text><line class="g" x1="64" y1="172.0" x2="900" y2="172.0"/><text class="ax" x="52" y="176.0" text-anchor="end">10k</text><line class="g" x1="64" y1="134.0" x2="900" y2="134.0"/><text class="ax" x="52" y="138.0" text-anchor="end">20k</text><line class="g" x1="64" y1="96.0" x2="900" y2="96.0"/><text class="ax" x="52" y="100.0" text-anchor="end">30k</text><line class="g" x1="64" y1="58.0" x2="900" y2="58.0"/><text class="ax" x="52" y="62.0" text-anchor="end">40k</text><line class="g" x1="64" y1="20.0" x2="900" y2="20.0"/><text class="ax" x="52" y="24.0" text-anchor="end">50k</text><rect class="b" x="84.4" y="191.7" width="52.0" height="18.3"/><text class="ax" x="110.4" y="236" text-anchor="middle">Jan</text><text class="bv" x="110.4" y="183.7" text-anchor="middle">4,806</text><rect class="b" x="177.3" y="187.9" width="52.0" height="22.1"/><text class="ax" x="203.3" y="236" text-anchor="middle">Feb</text><text class="bv" x="203.3" y="179.9" text-anchor="middle">5,824</text><rect class="b" x="270.2" y="188.6" width="52.0" height="21.4"/><text class="ax" x="296.2" y="236" text-anchor="middle">Mar</text><text class="bv" x="296.2" y="180.6" text-anchor="middle">5,623</text><rect class="b" x="363.1" y="171.0" width="52.0" height="39.0"/><text class="ax" x="389.1" y="236" text-anchor="middle">Apr</text><text class="bv" x="389.1" y="163.0" text-anchor="middle">10,272</text><rect class="b" x="456.0" y="148.2" width="52.0" height="61.8"/><text class="ax" x="482.0" y="236" text-anchor="middle">May</text><text class="bv" x="482.0" y="140.2" text-anchor="middle">16,270</text><rect class="b" x="548.9" y="94.6" width="52.0" height="115.4"/><text class="ax" x="574.9" y="236" text-anchor="middle">Jun</text><text class="bv" x="574.9" y="86.6" text-anchor="middle">30,366</text><rect class="b hi" x="641.8" y="32.4" width="52.0" height="177.6"/><text class="ax" x="667.8" y="236" text-anchor="middle">Jul</text><text class="bv" x="667.8" y="24.4" text-anchor="middle">46,737</text><rect class="b lo" x="734.7" y="193.3" width="52.0" height="16.7"/><text class="ax" x="760.7" y="236" text-anchor="middle">Aug</text><text class="bv" x="760.7" y="185.3" text-anchor="middle">4,392</text><rect class="b lo" x="827.5" y="194.2" width="52.0" height="15.8"/><text class="ax" x="853.6" y="236" text-anchor="middle">Sep*</text><text class="bv" x="853.6" y="186.2" text-anchor="middle">4,149</text></svg>
+   <figcaption>Monthly organic clicks, Google Search Console. September is partial through the 27th and includes only two post-recovery days.</figcaption>
+  </figure>
+  <div class="table-scroll"><table>
+   <thead><tr><th>Month</th><th class="n">Clicks</th><th class="n">Impressions</th><th class="n">Avg position</th></tr></thead>
+   <tbody>
+    <tr><td>May 2026</td><td class="n">16,270</td><td class="n">1,913,761</td><td class="n">7.8</td></tr>
+    <tr><td>June 2026</td><td class="n">30,366</td><td class="n">3,762,686</td><td class="n">6.9</td></tr>
+    <tr class="peak"><td>July 2026, peak</td><td class="n">46,737</td><td class="n">4,725,494</td><td class="n">6.6</td></tr>
+    <tr><td>August 2026, action applied</td><td class="n">4,392</td><td class="n">190,843</td><td class="n">41.0</td></tr>
+    <tr class="now"><td>September 27, single day</td><td class="n">233</td><td class="n">21,096</td><td class="n">7.8</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+</div>
+
+<div class="section">
+ <div class="wrap">
+  <p class="eyebrow">Local search</p>
+  <h2>Your map pack never went down</h2>
+  <p class="lede">The manual action applied to the website only. Google Business Profile rankings and map pack presence were untouched, which is why store traffic held while organic search was suppressed.</p>
+  <div class="table-scroll"><table>
+   <caption>Most recent complete 9x9 grid scan per location, 2.5 mile radius, Google Maps.</caption>
+   <thead><tr><th>Location</th><th class="n">Rating</th><th class="n">Reviews</th><th class="n">Avg rank</th><th class="n">Share of local voice</th></tr></thead>
+   <tbody>
+    <tr><td>Nug Cannavine Belmont</td><td class="n">5.0</td><td class="n">1,671</td><td class="n">2.74</td><td class="n">81.3%</td></tr>
+    <tr><td>Cannavine Ukiah</td><td class="n">4.7</td><td class="n">848</td><td class="n">2.54</td><td class="n">72.6%</td></tr>
+    <tr><td>Cannavine San Francisco</td><td class="n">4.9</td><td class="n">1,001</td><td class="n">9.04</td><td class="n">8.8%</td></tr>
+    <tr><td>Cannavine Santa Rosa</td><td class="n">5.0</td><td class="n">469</td><td class="n">7.00</td><td class="n">26.2%</td></tr>
+   </tbody>
+  </table></div>
+  <div class="callout"><p>Reviews grew straight through the penalty window. Belmont added 231, San Francisco added 172, Santa Rosa added 41 since the July pull. That is 444 new reviews in roughly two months with no rating drop at any location.</p></div>
+ </div>
+</div>
+
+<div class="section section-alt">
+ <div class="wrap">
+  <p class="eyebrow">Next 30 days</p>
+  <h2>Where the work goes from here</h2>
+  <div class="cols">
+   <div class="col"><p class="k">Hold the recovery</p><p>Daily monitoring through mid-October. Impressions should keep climbing as Google re-crawls the full URL set. A full return to the July run rate takes weeks, not days.</p></div>
+   <div class="col"><p class="k">Launch the rebuild</p><p>The new platform is built and staged. Launch is waiting on one answer from Jane about the storefront hostname. Once it arrives it is a same-day cutover.</p></div>
+   <div class="col"><p class="k">San Francisco upside</p><p>At 8.8% share of local voice against 72% to 81% at Ukiah and Belmont, SF is absent from most of its grid rather than ranking low. Same brand, 1,001 reviews, far less visibility. The largest single opportunity in the account.</p></div>
+   <div class="col"><p class="k">Canonical cleanup</p><p>Store pages are indexed twice, once with the UTM-tagged canonical and once bare, splitting their authority. Resolves with the rebuild.</p></div>
+   <div class="col"><p class="k">Branding input</p><p>Vector logo files, typography direction and the Belmont naming decision are still outstanding. They shape the store hub templates and the schema markup.</p></div>
+   <div class="col"><p class="k">Account</p><p>September invoices 1752, 1756, 1757 and 1758 were issued September 1 and total $7,800. All four are still showing open. QuickBooks payment links are live.</p></div>
+  </div>
+ </div>
+</div>
+
+<div class="footer">
+ <div class="wrap">
+  <p class="foot-h">The penalty is behind you. Now we rebuild the ceiling.</p>
+  <p class="foot-meta">Built for Cannavine's four California locations, using live Search Console and Google Maps data pulled September 29, 2026.</p>
+  <div class="foot-grid">
+   <div><p class="k">Prepared by</p><p>Guillermo Bravo, Nearfront<br>bravo@nearfront.com</p></div>
+   <div><p class="k">Prepared for</p><p>Hrant Ekmekjian<br>Cannavine</p></div>
+   <div><p class="k">Data sources</p><p>Google Search Console via Ahrefs and Windsor.ai. Local Falcon 9x9 grid scans, 2.5 mile radius, Google Maps.</p></div>
+  </div>
+ </div>
+</div>
+
+</body>
+</html>
