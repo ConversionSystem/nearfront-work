@@ -152,7 +152,7 @@
   @media (max-width: 768px) {
     nav { padding: 0 16px; } .hero { padding: 40px 16px 36px; } .page { padding: 0 16px 60px; }
     .mg4 { grid-template-columns: repeat(2,1fr); }
-    .hl-row { grid-template-columns: 1fr; }
+    .hl-row { grid-template-columns: 1fr !important; }
     .hl-item { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 20px; }
     .hl-item:last-child { border-bottom: none; padding-bottom: 0; }
     .maps-row { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; }
@@ -687,7 +687,7 @@
     </div>
 
     <!-- KEYWORD TABLE WITH TREND -->
-    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow:hidden">
+    <div style="background:var(--white);border:1px solid var(--gray-lt);border-radius:var(--radius);overflow-x:auto">
       <table class="lf-table" style="margin-top:0">
         <thead>
           <tr>
@@ -1233,6 +1233,7 @@ const bobs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('.solv-bar-fill').forEach(el => bobs.observe(el));
+window.addEventListener('beforeprint', () => document.querySelectorAll('.solv-bar-fill').forEach(el => { el.style.transition = 'none'; el.style.width = el.dataset.width + '%'; }));
 
 // Map expand: show static thumbnail by default, load iframe on click
 function expandMap(id) {
