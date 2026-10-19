@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Farmer's Choice &middot; SEO Report &middot; September 2026 &middot; Nearfront</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>:root{
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Farmer's Choice September Report</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>:root{
   --bg:#f5f2ed; --surface:#ffffff; --surface2:#f0ebe2; --cream:#fbf6ea; --ink:#1c3439; --muted:#5f7174; --line:#e3ddd2;
   --forest:#1c3439; --forest2:#24434a; --gold:#c3a25d; --gold-ink:#8a6d2c; --on-forest:#f5f2ed; --on-forest-muted:#a9bab8;
   --good:#1f7a47; --good-bg:#e4f2e9; --bad:#b03a2a; --bad-bg:#f9e7e3; --flat:#6b7a7d; --flat-bg:#ecebe6;
@@ -172,7 +172,6 @@ details.more[open] summary:after{content:"\2212"}
 @media (max-width:640px){.locbtn span{display:none}.locbar .lab{display:none}.locbtn{padding:6px 14px}}
 .lbcta{display:inline-block;background:var(--forest);color:#eef0ea;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:999px;border:1px solid var(--gold);transition:transform .15s}.lbcta:hover{transform:translateY(-1px)}.lbcta:after{content:" \2192";color:#d4b574}
 @media (max-width:560px){.band .v{font-size:26px}}
-@media (max-width:900px){th{white-space:normal}}
 </style></head><body><nav class="nav"><div class="wrap">
   <div class="logo"><span class="nf">NF</span><b>NEARFRONT</b><span class="sep"></span><span class="cl">Farmer&rsquo;s Choice Dispensary</span></div>
   <div class="navr"><span class="t">September 2026 Sales and Leads Report</span><button class="themebtn" id="themebtn" type="button">Dark mode</button></div>
@@ -344,7 +343,7 @@ function drawWeekly(){
   function fv(v){return f==='money'?'$'+Math.round(v).toLocaleString('en-US'):Math.round(v).toLocaleString('en-US')}
   for(var v=0;v<=top+1e-9;v+=st){svg.appendChild(mk('line',{x1:vb.l,x2:vb.w-vb.r,y1:y(v),y2:y(v),'class':'gridline'}));var tl=mk('text',{x:vb.l-6,y:y(v)+4,'text-anchor':'end',style:'fill:var(--muted);font-size:10.5px'});tl.textContent=fv(v);svg.appendChild(tl)}
   if(dm!=='s'){var ui=dates.indexOf('2026-08-24');var hb=mk('rect',{x:x(0),y:vb.t,width:x(ui)-x(0),height:vb.h-vb.t-vb.b,fill:'var(--surface2)'});svg.appendChild(hb);var ht=mk('text',{x:(x(0)+x(ui))/2,y:vb.t+(vb.h-vb.t-vb.b)/2,'text-anchor':'middle',style:'fill:var(--muted);font-size:'+(narrow?10:11.5)+'px'});ht.textContent=narrow?'Not tracked':'Purchases not tracked before Aug 24';svg.appendChild(ht)}
-  [['2026-08-18','Store pages live'],['2026-08-24','Tracking starts'],['2026-09-01','September']].forEach(function(mk2,k){var i=dates.indexOf(mk2[0]);if(i<0)return;if(dm==='s'&&k===1)return;var xx=x(i);svg.appendChild(mk('line',{x1:xx,x2:xx,y1:vb.t-6,y2:vb.h-vb.b,stroke:'var(--gold)','stroke-dasharray':'3 3','stroke-width':1}));if(narrow&&k===2)return;var tt=mk('text',{x:xx+3,y:vb.t-9+(k===1?12:0),style:'fill:var(--gold-ink);font-size:10.5px;font-weight:600'});tt.textContent=mk2[1];svg.appendChild(tt)});
+  [['2026-08-18','Store pages live'],['2026-08-24','Tracking starts'],['2026-09-01','September']].forEach(function(mk2,k){var i=dates.indexOf(mk2[0]);if(i<0)return;if(dm==='s'&&k===1)return;var xx=x(i);svg.appendChild(mk('line',{x1:xx,x2:xx,y1:vb.t-6,y2:vb.h-vb.b,stroke:'var(--gold)','stroke-dasharray':'3 3','stroke-width':1}));if(narrow&&k===2)return;var tt=mk('text',{x:xx+3,y:vb.t-9+(k===1?10:0),style:'fill:var(--gold-ink);font-size:10.5px;font-weight:600'});tt.textContent=mk2[1];svg.appendChild(tt)});
   var sep0=dates.indexOf('2026-09-01'),sv=vals.slice(sep0),avg=sv.reduce(function(a,b){return a+b},0)/sv.length;
   function show(el,h){tip.innerHTML=h;tip.classList.add('on');var wr=wrap.getBoundingClientRect(),br=el.getBoundingClientRect();var xx=br.left-wr.left+br.width/2-tip.offsetWidth/2;xx=Math.max(0,Math.min(wr.width-tip.offsetWidth,xx));tip.style.left=xx+'px';tip.style.top=Math.max(0,y(top*0.92)-tip.offsetHeight)+'px'}
   function hide(){tip.classList.remove('on')}
